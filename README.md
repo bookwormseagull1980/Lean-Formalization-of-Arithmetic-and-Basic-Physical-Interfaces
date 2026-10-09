@@ -100,7 +100,7 @@ mathematical proofs; compilation and the axiom audit are separate checks.
 
 The public GitHub Actions workflow runs the same sequence on pushes and pull
 requests to `main`: it installs the toolchain named by `lean-toolchain`, runs
-`lake build` with one worker, installs the pinned Python test dependencies,
+`lake build` with `LEAN_NUM_THREADS=1`, installs the pinned Python test dependencies,
 runs the verifier regression tests, and performs a complete compiled proof and
 transitive axiom audit. The workflow keeps the resulting manifest and audit
 log as run artifacts; its dependency and build caches only accelerate the run
