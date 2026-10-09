@@ -2,6 +2,7 @@ cff-version: 1.2.0
 title: "Lean Formalization of Arithmetic and Basic Physical Interfaces"
 message: "Cite this proof library with the exact source revision and the relevant companion manuscript. Attribution terms are preserved in LICENSE."
 type: software
+repository-code: "https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces"
 authors:
   - family-names: Guo
     given-names: Jinku

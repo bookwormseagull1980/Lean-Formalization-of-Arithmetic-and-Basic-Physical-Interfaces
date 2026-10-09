@@ -1,5 +1,7 @@
 # Lean Formalization of Arithmetic and Basic Physical Interfaces
 
+Source repository: [Lean Formalization of Arithmetic and Basic Physical Interfaces](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces).
+
 This independent Lean 4 library formalizes the common mathematical
 foundations used in:
 
@@ -60,7 +62,10 @@ The dependency manifest must be kept with the proof sources. The Lake package
 and Lean namespace retain the identifier `GeneratedFoundations`.
 
 A fresh checkout requires Git, Python 3.10 or later, and the pinned Lean
-toolchain, which can be selected by `elan` using `lean-toolchain`. Restore the
+toolchain. To retain the default directory used by the V5 integration, clone
+the repository with
+`git clone https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces.git Foundations-from-Minimal-Change`.
+Select the pinned Lean toolchain with `elan` using `lean-toolchain`. Restore the
 locked dependencies with `lake build`; do not update the dependency lock to
 newer revisions. The full verifier below then checks every local target and
 the transitive axioms. Its elapsed time depends on whether dependencies and
