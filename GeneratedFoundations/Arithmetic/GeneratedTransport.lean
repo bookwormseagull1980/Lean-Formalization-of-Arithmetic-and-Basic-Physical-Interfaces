@@ -249,6 +249,43 @@ theorem response_transport (u : Mode d h L o) (t : ℝ≥0) :
   rw [component_transport]
   exact NeumannScaleTransport.componentTransport_response L M _ t
 
+/-- At one positive normalized parameter, the exact heat response identifies
+every source mode. Hence response preservation alone forces the canonical
+transport; no arithmetic-homomorphism or bijectivity premise is used. -/
+theorem transport_unique_of_response (F : Mode d h L o → Mode e he M p)
+    {t : ℝ≥0} (ht : 0 < t)
+    (hresponse : ∀ u,
+      NeumannSpectralProjections.response M
+          (component e he M p (F u))
+          (NeumannScaleTransport.changeParameter L M t) =
+        NeumannSpectralProjections.response L (component d h L o u) t) :
+    F = transport d h L o e he M p := by
+  have hchanged : 0 < NeumannScaleTransport.changeParameter L M t := by
+    apply NNReal.coe_pos.mp
+    rw [NeumannScaleTransport.changeParameter_coe]
+    exact mul_pos (NNReal.coe_pos.mpr ht)
+      (div_pos (NeumannScaleTransport.energyUnit_pos L)
+        (NeumannScaleTransport.energyUnit_pos M))
+  funext u
+  apply toGenerated_injective e he M p
+  apply (GeneratedModes.componentEquiv M).injective
+  apply NeumannSpectralProjections.response_injective M hchanged
+  change NeumannSpectralProjections.response M (component e he M p (F u))
+      (NeumannScaleTransport.changeParameter L M t) =
+    NeumannSpectralProjections.response M
+      (component e he M p (transport d h L o e he M p u))
+      (NeumannScaleTransport.changeParameter L M t)
+  rw [hresponse, response_transport]
+
+theorem responseTransport_existsUnique {t : ℝ≥0} (ht : 0 < t) :
+    ∃! F : Mode d h L o → Mode e he M p, ∀ u,
+      NeumannSpectralProjections.response M
+          (component e he M p (F u))
+          (NeumannScaleTransport.changeParameter L M t) =
+        NeumannSpectralProjections.response L (component d h L o u) t :=
+  ⟨transport d h L o e he M p, fun u => response_transport d h L o e he M p u t,
+    fun F hF => transport_unique_of_response d h L o e he M p F ht hF⟩
+
 theorem positive_lift_transport (u : Mode d h L o) :
     OrientedLift.lift M
       (NeumannScaleTransport.unitary L M (representative d h L o u : ComplexIntervalL2 0 L))

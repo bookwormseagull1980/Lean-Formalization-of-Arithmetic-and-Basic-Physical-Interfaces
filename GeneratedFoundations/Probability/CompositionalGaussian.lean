@@ -3,6 +3,7 @@ module
 public import Mathlib.Probability.CentralLimitTheorem
 public import Mathlib.MeasureTheory.Group.IntegralConvolution
 public import Mathlib.Probability.Moments.Variance
+public import GeneratedFoundations.Analysis.NonnegativeAdditive
 public import Mathlib.Tactic.Convert
 public import Mathlib.Tactic.Linarith
 
@@ -23,6 +24,33 @@ open MeasureTheory ProbabilityTheory Filter
 open scoped NNReal Real Topology
 
 namespace GeneratedFoundations.Probability
+
+/-- The variance-level content of exact self-similarity before the scale
+factor is identified. Independent composition adds variances; unit variance
+fixes the remaining dimensional normalization. -/
+structure SelfSimilarVarianceScale (a : ℝ≥0 → ℝ) : Prop where
+  nonnegative : ∀ t, 0 ≤ a t
+  unit : a 1 = 1
+  variance_compose : ∀ s t, a (s + t) ^ 2 = a s ^ 2 + a t ^ 2
+
+namespace SelfSimilarVarianceScale
+
+variable {a : ℝ≥0 → ℝ} (h : SelfSimilarVarianceScale a)
+
+include h
+
+/-- Additive variance and unit normalization force the square-root scale.
+Thus the exponent `1/2` is a consequence of compositional self-similarity,
+not an adjustable member of the comparison class. -/
+theorem eq_sqrt (t : ℝ≥0) : a t = Real.sqrt (t : ℝ) := by
+  have hlinear := Analysis.NonnegativeAdditive.eq_mul_one
+    (fun u : ℝ≥0 => a u ^ 2) (fun u => sq_nonneg (a u)) h.variance_compose t
+  have hsq : a t ^ 2 = (t : ℝ) := by
+    simpa [h.unit] using hlinear
+  have hsqrt : Real.sqrt (t : ℝ) ^ 2 = (t : ℝ) := Real.sq_sqrt t.property
+  nlinarith [h.nonnegative t, Real.sqrt_nonneg (t : ℝ)]
+
+end SelfSimilarVarianceScale
 
 /-- The one-dimensional C/S/V hypotheses. Finite second moment is stated
 separately from unit variance, so that the totalized real-valued variance

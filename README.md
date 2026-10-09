@@ -26,8 +26,11 @@ silently replaced merely because a label still exists in an updated manuscript.
 The sole root input is minimal unbiased compositional change, represented by
 `Source.MinimalUnbiasedChange.Datum`. Its four fields are the orthogonal change
 datum, carrier minimality, a law on the generated trace Lie line, and the
-composition/scaling/variance conditions on that law. The comparison class and
-C/S/V conditions are stated explicitly; no Gaussian formula is assumed.
+composition/scaling/variance conditions on that law. The root type stores the
+normalized square-root form of the scale law.  A separate variance-scale
+rigidity theorem starts from an arbitrary nonnegative same-shape scale and
+proves that compositional variance additivity and unit normalization force
+this square-root form.  No Gaussian formula is assumed.
 The existing existence theorem supplies a compatible law, and uniqueness fixes
 it at positive parameters on that carrier.
 
@@ -46,9 +49,13 @@ while the separated-boundary theorem classifies constant-preserving
 competitors. These characterizations are not adjustable fitting parameters,
 and their comparison classes must not be omitted from uniqueness claims.
 In particular, additive information alone determines a multiple of the
-negative logarithm; the unit calibration at `exp(-1)` fixes that multiple.
+negative logarithm; nonnegativity already supplies the regularity needed for
+this classification, and the unit calibration at `exp(-1)` fixes that multiple.
 Uniqueness throughout is at the equivalence level stated in each theorem,
 not literal equality of all choices of coordinates or realizing maps.
+For the least physical carrier, the commutant calculation makes this last
+qualification exact: any unitary ambiguity is one basis phase on each simple
+response block.
 
 Declaration counts include named definitions, abbreviations, auxiliary lemmas
 and theorems. They are not counts of manuscript theorems. A manuscript mapping

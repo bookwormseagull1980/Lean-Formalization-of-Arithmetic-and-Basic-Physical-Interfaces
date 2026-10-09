@@ -6,6 +6,7 @@ public import GeneratedFoundations.Geometry.SourceSymmetricUnitary
 public import GeneratedFoundations.Geometry.SourceQuadraticSplit
 public import Mathlib.Analysis.InnerProductSpace.TensorProduct
 public import Mathlib.LinearAlgebra.Contraction
+public import Mathlib.LinearAlgebra.FreeModule.Basic
 public import Mathlib.Algebra.Algebra.Prod
 
 /-!
@@ -367,6 +368,112 @@ theorem carrierRepresentation_injective : Function.Injective carrierRepresentati
   · apply LinearMap.ext
     intro x
     exact congrArg (fun T : Module.End ℂ (Coloured × Scalar) => (T (0, x)).2) h
+
+/-- An endomorphism commuting with the complete joint response algebra is
+scalar on each of its two simple carrier blocks.  Thus the least carrier is
+unique more precisely than merely up to an unspecified intertwiner: the only
+residual linear freedom is one scalar on the coloured block and one on the
+scalar block. -/
+theorem commutant_carrierRepresentation_is_blockScalar
+    (T : Module.End ℂ (Coloured × Scalar))
+    (hT : ∀ A x, T (carrierRepresentation A x) =
+      carrierRepresentation A (T x)) :
+    ∃ lambda mu : ℂ, ∀ x : Coloured × Scalar,
+      T x = (lambda • x.1, mu • x.2) := by
+  let Tc : Module.End ℂ Coloured :=
+    { toFun := fun x => (T (x, 0)).1
+      map_add' := by
+        intro x y
+        simpa using congrArg Prod.fst (T.map_add (x, 0) (y, 0))
+      map_smul' := by
+        intro c x
+        simpa using congrArg Prod.fst (T.map_smul c (x, 0)) }
+  let Ts : Module.End ℂ Scalar :=
+    { toFun := fun x => (T (0, x)).2
+      map_add' := by
+        intro x y
+        simpa using congrArg Prod.snd (T.map_add (0, x) (0, y))
+      map_smul' := by
+        intro c x
+        simpa using congrArg Prod.snd (T.map_smul c (0, x)) }
+  have hcoloured (x : Coloured) : T (x, 0) = (Tc x, 0) := by
+    have h := hT (1, 0) (x, 0)
+    simpa [carrierRepresentation, Tc] using h
+  have hscalar (x : Scalar) : T (0, x) = (0, Ts x) := by
+    have h := hT (0, 1) (0, x)
+    simpa [carrierRepresentation, Ts] using h
+  have hTc : Tc ∈ Set.center (Module.End ℂ Coloured) := by
+    rw [Semigroup.mem_center_iff]
+    intro A
+    apply LinearMap.ext
+    intro x
+    have h := congrArg Prod.fst (hT (A, 0) (x, 0))
+    simpa [carrierRepresentation, Tc] using h.symm
+  have hTs : Ts ∈ Set.center (Module.End ℂ Scalar) := by
+    rw [Semigroup.mem_center_iff]
+    intro A
+    apply LinearMap.ext
+    intro x
+    have h := congrArg Prod.snd (hT (0, A) (0, x))
+    simpa [carrierRepresentation, Ts] using h.symm
+  obtain ⟨lambda, _, hlambda⟩ := Module.End.mem_center_iff.mp hTc
+  obtain ⟨mu, _, hmu⟩ := Module.End.mem_center_iff.mp hTs
+  refine ⟨lambda, mu, ?_⟩
+  intro x
+  calc
+    T x = T (x.1, 0) + T (0, x.2) := by
+      rw [← T.map_add]
+      congr
+      ext <;> simp
+    _ = (Tc x.1, Ts x.2) := by rw [hcoloured, hscalar]; simp
+    _ = (lambda • x.1, mu • x.2) := by
+      rw [hlambda, hmu]
+      rfl
+
+/-- For a unitary symmetry of the carrier, the two residual block scalars
+are phases. -/
+theorem unitary_commutant_carrierRepresentation_is_blockPhase
+    (U : (Coloured × Scalar) ≃ₗᵢ[ℂ] (Coloured × Scalar))
+    (hU : ∀ A x, U (carrierRepresentation A x) =
+      carrierRepresentation A (U x)) :
+    ∃ lambda mu : ℂ, ‖lambda‖ = 1 ∧ ‖mu‖ = 1 ∧
+      ∀ x : Coloured × Scalar, U x = (lambda • x.1, mu • x.2) := by
+  obtain ⟨lambda, mu, hblock⟩ :=
+    commutant_carrierRepresentation_is_blockScalar
+      U.toLinearEquiv.toLinearMap hU
+  obtain ⟨x, hx⟩ : ∃ x : Coloured, x ≠ 0 :=
+    Module.finrank_pos_iff_exists_ne_zero.mp (by
+    rw [coloured_finrank]
+    norm_num)
+  obtain ⟨y, hy⟩ : ∃ y : Scalar, y ≠ 0 :=
+    Module.finrank_pos_iff_exists_ne_zero.mp (by
+    rw [scalar_finrank]
+    norm_num)
+  have hlambda : ‖lambda‖ = 1 := by
+    have hnorm : ‖lambda‖ * ‖x‖ = 1 * ‖x‖ := calc
+      ‖lambda‖ * ‖x‖ = ‖(lambda • x, (0 : Scalar))‖ := by
+        rw [Prod.norm_def]
+        simp only [norm_zero]
+        rw [max_eq_left (norm_nonneg _)]
+        exact (norm_smul lambda x).symm
+      _ = ‖U.toLinearEquiv (x, 0)‖ :=
+        (congrArg (fun z : Coloured × Scalar => ‖z‖) (hblock (x, 0))).symm
+      _ = ‖(x, 0)‖ := U.norm_map (x, 0)
+      _ = 1 * ‖x‖ := by simp [Prod.norm_def]
+    exact mul_right_cancel₀ (norm_ne_zero_iff.mpr hx) hnorm
+  have hmu : ‖mu‖ = 1 := by
+    have hnorm : ‖mu‖ * ‖y‖ = 1 * ‖y‖ := calc
+      ‖mu‖ * ‖y‖ = ‖((0 : Coloured), mu • y)‖ := by
+        rw [Prod.norm_def]
+        simp only [norm_zero]
+        rw [max_eq_right (norm_nonneg _)]
+        exact (norm_smul mu y).symm
+      _ = ‖U.toLinearEquiv (0, y)‖ :=
+        (congrArg (fun z : Coloured × Scalar => ‖z‖) (hblock (0, y))).symm
+      _ = ‖(0, y)‖ := U.norm_map (0, y)
+      _ = 1 * ‖y‖ := by simp [Prod.norm_def]
+    exact mul_right_cancel₀ (norm_ne_zero_iff.mpr hy) hnorm
+  exact ⟨lambda, mu, hlambda, hmu, hblock⟩
 
 theorem carrier_finrank_eight : Module.finrank ℂ (Coloured × Scalar) = 8 := by
   rw [Module.finrank_prod, coloured_finrank, scalar_finrank]

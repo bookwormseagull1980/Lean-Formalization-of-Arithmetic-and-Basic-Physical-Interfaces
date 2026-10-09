@@ -2,6 +2,7 @@ module
 
 public import Mathlib.Analysis.SpecialFunctions.Log.Basic
 public import Mathlib.Algebra.Order.Group.MinMax
+public import GeneratedFoundations.Analysis.NonnegativeAdditive
 public import Mathlib.Topology.Instances.RealVectorSpace
 public import Mathlib.Topology.Instances.NNReal.Lemmas
 public import Mathlib.Tactic.Linarith
@@ -9,8 +10,9 @@ public import Mathlib.Tactic.NormNum
 public import Mathlib.Tactic.Ring
 
 /-!
-Continuous multiplicatively additive local information on `(0, 1]`.
-The logarithmic form is derived before imposing the unit calibration.
+Nonnegative multiplicatively additive local information on `(0, 1]`.
+Nonnegativity makes the associated additive half-line map monotone, so
+continuity and the logarithmic form are conclusions rather than assumptions.
 -/
 
 @[expose] public section
@@ -48,41 +50,7 @@ theorem expNeg_add (x y : ℝ≥0) :
   apply Subtype.ext
   simp [expNeg, levelMul, Real.exp_add, mul_comm]
 
-/-- The real additive extension supplies the half-line linearity step. -/
-theorem continuous_additive_nnreal (H : ℝ≥0 → ℝ) (hc : Continuous H)
-    (ha : ∀ x y, H (x + y) = H x + H y) (x : ℝ≥0) :
-    H x = (x : ℝ) * H 1 := by
-  have hzero : H 0 = 0 := by
-    have h := ha 0 0
-    simp only [add_zero] at h
-    linarith
-  let extension : ℝ →+ ℝ :=
-    { toFun := fun t => H t.toNNReal - H (-t).toNNReal
-      map_zero' := by simp
-      map_add' := by
-        intro a b
-        have hparts :
-            a.toNNReal + b.toNNReal + (-(a + b)).toNNReal =
-              (a + b).toNNReal + (-a).toNNReal + (-b).toNNReal := by
-          apply NNReal.eq
-          simp only [NNReal.coe_add, Real.coe_toNNReal']
-          linarith [max_zero_sub_max_neg_zero_eq_self a,
-            max_zero_sub_max_neg_zero_eq_self b,
-            max_zero_sub_max_neg_zero_eq_self (a + b)]
-        have hh := congrArg H hparts
-        simp only [ha] at hh
-        linarith }
-  have he : Continuous extension :=
-    (hc.comp continuous_real_toNNReal).sub
-      (hc.comp (continuous_real_toNNReal.comp continuous_neg))
-  have hx : Real.toNNReal (-(x : ℝ)) = 0 :=
-    Real.toNNReal_of_nonpos (neg_nonpos.mpr x.property)
-  have h1 : Real.toNNReal (-1) = 0 := Real.toNNReal_of_nonpos (by norm_num)
-  have hl := map_real_smul extension he (x : ℝ) (1 : ℝ)
-  simpa [extension, smul_eq_mul, Real.toNNReal_coe, hx, h1, hzero] using hl
-
 structure AdditiveLocalInformation (F : CorrelationLevel → ℝ) : Prop where
-  continuous : Continuous F
   nonnegative : ∀ r, 0 ≤ F r
   additive : ∀ r s, F (levelMul r s) = F r + F s
 
@@ -100,6 +68,29 @@ theorem value_at_unit : F unitLevel = 0 := by
   rw [hunit] at h
   linarith
 
+theorem continuous : Continuous F := by
+  have hlinear : ∀ x : ℝ≥0,
+      F (expNeg x) = (x : ℝ) * F (expNeg 1) :=
+    Analysis.NonnegativeAdditive.eq_mul_one (fun t => F (expNeg t))
+      (fun t => hF.nonnegative _) (fun a b => by rw [expNeg_add, hF.additive])
+  have hrepr : F = fun r : CorrelationLevel =>
+      -(F (expNeg 1)) * Real.log (r : ℝ) := by
+    funext r
+    let x : ℝ≥0 := ⟨-Real.log (r : ℝ),
+      neg_nonneg.mpr (Real.log_nonpos r.property.1.le r.property.2)⟩
+    have hx : expNeg x = r := by
+      apply Subtype.ext
+      change Real.exp (- -Real.log (r : ℝ)) = (r : ℝ)
+      rw [neg_neg, Real.exp_log r.property.1]
+    have hl := hlinear x
+    rw [hx] at hl
+    calc
+      F r = (-Real.log (r : ℝ)) * F (expNeg 1) := hl
+      _ = -(F (expNeg 1)) * Real.log (r : ℝ) := by ring
+  rw [hrepr]
+  exact continuous_const.mul
+    (continuous_subtype_val.log (fun r : CorrelationLevel => r.property.1.ne'))
+
 theorem eq_neg_log_scale (r : CorrelationLevel) :
     F r = -(F (expNeg 1)) * Real.log (r : ℝ) := by
   let x : ℝ≥0 := ⟨-Real.log (r : ℝ),
@@ -108,8 +99,8 @@ theorem eq_neg_log_scale (r : CorrelationLevel) :
     apply Subtype.ext
     change Real.exp (- -Real.log (r : ℝ)) = (r : ℝ)
     rw [neg_neg, Real.exp_log r.property.1]
-  have hlinear := continuous_additive_nnreal (fun t => F (expNeg t))
-    (hF.continuous.comp continuous_expNeg)
+  have hlinear := Analysis.NonnegativeAdditive.eq_mul_one (fun t => F (expNeg t))
+    (fun t => hF.nonnegative _)
     (fun a b => by rw [expNeg_add, hF.additive]) x
   rw [hx] at hlinear
   calc
@@ -143,7 +134,6 @@ end AdditiveLocalInformation
 def negativeLog (r : CorrelationLevel) : ℝ := -Real.log (r : ℝ)
 
 theorem negativeLog_axioms : AdditiveLocalInformation negativeLog where
-  continuous := (continuous_subtype_val.log (fun r => r.property.1.ne')).neg
   nonnegative r := neg_nonneg.mpr (Real.log_nonpos r.property.1.le r.property.2)
   additive r s := by
     dsimp [negativeLog, levelMul]
