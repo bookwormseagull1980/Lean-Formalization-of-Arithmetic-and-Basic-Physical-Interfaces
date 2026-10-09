@@ -1,0 +1,331 @@
+# Logical axioms and mathematical assumptions
+
+This document applies to the separately pinned `GeneratedFoundations` library.
+It distinguishes logical axioms, hypotheses of mathematical theorems, and
+definitions of the objects being constructed. Absence of custom Lean axioms
+does not imply absence of mathematical hypotheses or uniqueness among all
+possible constructions.
+
+## Logical axioms
+
+The verification policy permits exactly these transitive axiom dependencies:
+
+| Lean name | Statement or meaning |
+|---|---|
+| `propext` | Logically equivalent propositions are equal: `(P ↔ Q) → P = Q`. |
+| `Classical.choice` | An element may be selected from any nonempty type: `Nonempty α → α`. |
+| `Quot.sound` | Related representatives determine equal elements of the primitive quotient: `r a b → Quot.mk r a = Quot.mk r b`. |
+
+These are the standard classical foundations used by this library and mathlib.
+In the pinned Lean source, `propext` is declared in `Init/Core.lean` and the
+other two are declared in `Init/Prelude.lean`. Function extensionality and
+classical excluded middle are derived results, not additional axioms in this
+list. Inductive types, computation, universes and proof irrelevance belong to
+Lean's underlying type theory; `#print axioms` is not a specification or
+independent validation of that type theory or its implementation.
+
+The completed audit on 9 October 2026 covers all 235 local modules,
+11,664 compiled-environment constants, 6,339 named type checks and 225
+indexed claims. The constants include private declarations, anonymous
+instances and generated helpers; they are not 11,664 manuscript theorems.
+The full collector uses `Lean.collectAxioms`; named declarations also have
+explicit `#print axioms` reports checked against that inventory. Every
+reported transitive axiom belongs to the three-element allowlist above.
+There are no local constants of axiom kind and no `sorryAx` dependencies.
+
+Both `Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange` and
+`Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange` depend on
+exactly `propext`, `Classical.choice` and `Quot.sound`. Their modules and
+dependencies passed compilation. This includes the constructed common-source
+geometry and the complete basic physical interface specified below.
+
+The authoritative evidence is `verification-manifest.json` together with
+its saved audit log and the source, index, dependency and tool fingerprints
+bound by that record. Use `--check-manifest` to test its freshness. A
+successful record cannot certify subsequently changed sources merely
+because the file still exists.
+
+The source checker rejects explicit `sorry`, `admit`, and `axiom` declarations.
+The compiled audit rejects any transitive axiom outside the three above,
+including `sorryAx`, custom mathematical axioms, and compiler-evaluation
+axioms. Source traversal of the current library found no such placeholders,
+custom axiom declarations, `native_decide`, or `unsafe` proof implementations.
+That source result alone does not substitute for a completed compiled audit.
+
+The complete environment has zero `unsafe` flags and nine `partial` flags.
+All nine flagged constants have the suffix `._unsafe_rec`; the corresponding
+public definitions have both flags false. The full names are obtained by
+appending that suffix to each name in the following table, under the common
+namespace `GeneratedFoundations`:
+
+| Namespace | Public definitions with generated recursion implementations |
+|---|---|
+| `Geometry.SourceFiniteControlDiffusion` | `IndependentSample`, `independentLaw`, `operationProduct` |
+| `Geometry.SourceOperationWalk` | `Sample`, `sampleLaw`, `sampleProduct`, `walkLaw` |
+| `Operations.HermiteFamily` | `raw` |
+| `Operations.HermiteSpan` | `monomialGaussian` |
+
+These are compiler-generated implementations of the ordinary structurally
+recursive source definitions, not handwritten `partial` declarations or
+unfinished proofs. In the pinned Lean source,
+`Lean/Elab/PreDefinition/Structural/Main.lean`, `structuralRecursion` first
+registers the translated definition and then calls `addAndCompilePartialRec`.
+That function in `Lean/Elab/PreDefinition/Basic.lean` creates names via
+`Compiler.mkUnsafeRecName` and marks the additional implementations
+`DefinitionSafety.partial`. The original definitions remain the safe logical
+definitions. The audit includes these additional constants and records their
+flags and transitive axioms without treating their recursive implementation
+bodies as nine further safe definitions. Their reported axioms are exactly
+the three standard axioms above. Thus the source scan has no handwritten
+`partial`, but the compiled inventory does not have zero `partial` entries.
+
+Use of `noncomputable`, `Classical.choose`, an orthonormal basis, or an inverse
+selected from a proved existence theorem does not insert an unproved
+mathematical assertion. It does mean that an executable extraction algorithm
+has not necessarily been furnished. Equivalence-class uniqueness must also
+be distinguished from uniqueness of the selected witness or coordinates.
+
+## The root datum
+
+The two `fromMinimalUnbiasedChange` entry theorems take
+`Source.MinimalUnbiasedChange.Datum`. Its fields are:
+
+| Field | Mathematical content |
+|---|---|
+| `change` | A nonzero finite-dimensional real inner-product carrier, a nontrivial compact connected Lie group, and a continuous faithful irreducible orthogonal action. The declaration also records the topology, smooth charts, Hausdorff and second-countability structures used by the construction. |
+| `minimal` | Least carrier dimension among all data in this explicitly stated comparison class. |
+| `law` | A measure family on the trace Hilbert line constructed from that carrier. |
+| `compositional` | Probability normalization at positive parameters, convolution composition, exact square-root scaling, finite second moment at unit parameter, and unit covariance for every real linear observation. |
+
+The full declarations are in `Source/MinimalCarrier.lean`,
+`Source/MinimalUnbiasedChange.lean`, and
+`Probability/GeneratedTangentLaw.lean`. These are the mathematical contents
+of minimal unbiased compositional change in this formalization. They are not
+additional logical axioms, and they are not consequences of the phrase
+"minimal change" without its mathematical definition. Carrier minimality
+alone is not claimed to imply the compositional law conditions.
+
+The Gaussian formula, endpoint values, Neumann boundary operator, spectra,
+arithmetic operations and physical interface conclusions are not root fields.
+Existence of a compatible root datum is proved. Law uniqueness is proved at
+strictly positive parameters on a fixed generated carrier; equality of the
+entire real-indexed family at unrestricted nonpositive parameters is not
+claimed.
+
+Orientations and positive widths are quantified in the conclusions of the
+root entries. They index realizations; they are not additional fitted root
+principles. Their presence is not a claim of literal equality of every
+oriented or rescaled realization.
+
+## Internal definitions and comparison classes
+
+Constructing a particular object from root data and classifying competitors
+within a specified class are different statements. Both can be rigorous.
+The following definitions and comparison classes have distinct roles even
+when they are not arguments of the root theorem:
+
+| Construction | Definition or comparison in the formal statement |
+|---|---|
+| Local information endpoint | Additive continuous information is calibrated at `exp(-1)`. Uncalibrated additivity determines a scalar multiple of the negative logarithm. |
+| Global correlation width | The width is the normalized total mass divided by the peak of the Gaussian profile. Uniqueness of invariant normalized mass does not classify every conceivable width functional. |
+| Reflecting closure | Even reflection constructs a constant-preserving closure. The boundary classification compares separated homogeneous boundary conditions admitting constants; it does not classify all self-adjoint extensions. |
+| Projective internal observation | The projective quotient retains centre-invariant observations. The complete source observation system can detect the central sign. |
+| Dimension three | The constructed source sphere has actual real tangent dimension three. Separately, `SourceSphereCapacity` classifies the exact scalar spherical multiplicity and affine energy-capacity formulas for dimensions at least two, including the even-degree class. These are distinct from the manuscripts' general Weyl-law inference for a closed manifold realizing the complete square-capacity spectrum; that newer argument is not part of the current formalized statements. |
+| Exchange-retained response | The retained algebra is the part commuting with exchange. Its block classification does not state that every pre-exchange response commutes with exchange. |
+| Least matter realization | Dimension eight and unitary equivalence are classifications of faithful adjoint-compatible realizations of the specified joint response algebra. For two such realizations, one unitary intertwines their actions, projections and grading; after fixing that unitary, every source operator has a unique compatible transport. The unitary itself is not asserted to be unique. |
+| Two chiral sectors | `SourceCliffordChirality` constructs the grading from source Clifford products, identifies the real and complex even algebras, classifies the primitive central projections of the real even algebra, and identifies their two-dimensional spinor ranges. Its Hermite intertwining and range theorems identify the corresponding actual eight-dimensional matter sectors. These results are connected to the compiled and audited root output. |
+| Elementary connector | Naturality and reversal compatibility define the comparison class. The doublet coordinate is unique for each connector in that class; the theorem does not select one value of the doublet or exclude multiple copies. |
+| Local frames | `SourceColourPhase` factors every unitary colour frame pointwise into a circle phase and an SU(3) factor; their opposite cube-root changes describe the finite central ambiguity. This does not identify the determinant phase with the common matter phase, select a global continuous cube root or provide a determinant-bundle trivialization. Relative transitions from supplied frame functions obey the cocycle law. The factorization is connected to the compiled and audited root output. |
+| Geometric scale | `SourceEndpointCasimir.radius` is another notation for the already generated `irEndpoint`, not an independently supplied length. The actual polar amplitude at this radius has norm equal to that same IR length, and its trace metric supplies the radius-squared angular factor. The Gaussian half-generator coefficient follows separately from its variance normalization. |
+
+These definitions and comparison classes introduce no numerical fitting parameters. Naming them as
+definitions, rather than placing them in a theorem's argument list, does not
+prove that no other restriction or construction is possible. Claims of
+necessity must cite the corresponding derivation or comparison theorem.
+Records named `Conclusions` are output records only when their fields are
+filled by proved declarations; their names alone provide no guarantee.
+
+This inventory does not authorize extra independent principles. If a claimed
+result requires a restriction to follow from the root datum, disclosing the
+restriction is insufficient: its derivation and its use in the actual
+construction must be supplied. Conversely, a property already proved for a
+constructed object must not be misreported as an assumption merely because
+it also occurs in the classification of competitors. The source-generated
+reversal-real elementary connector is one such example.
+
+For the root-to-interface claim, each intermediate hypothesis must therefore
+have a proved source: the fixed root datum, a property of the constructed
+object, or a transport along a proved equivalence. An unresolved hypothesis
+may remain in an auxiliary conditional theorem, but that theorem does not
+complete the claimed root-to-interface implication until the hypothesis is
+discharged. Moving it into a structure field or a definition does not
+discharge it. In particular, the root datum must not be enlarged with the
+desired P4--P6 conclusions to make the final theorem type-check.
+
+Uniqueness also requires an explicit comparison relation. It is legitimate
+to compare representations of the same generated algebra, or observations
+at the same stated resolution. If a claim instead says that the root datum
+forces that resolution, a least-realization requirement, or a metric
+calibration between independently defined quantities, the corresponding
+necessity must be proved separately. The
+classification of objects already satisfying the requirement does not
+prove that necessity.
+
+In particular, `radius b` and `irEndpoint b` denote one length. Likewise,
+`uvEndpoint b` is the local unit-information resolution length itself.
+Neither identity calls for an additional matching hypothesis. The local and
+global lengths are distinct functionals of the same Gaussian source; their
+calculated ratio is `sqrt pi`. The amplitude-norm and endpoint-functional
+identities are included explicitly among the geometric root theorem's
+outputs and are covered by the complete compiled audit described above.
+
+The arithmetic formalization uses Lean's existing natural numbers for
+indices, recursion and auxiliary models. The final source modes are also
+defined intrinsically from the actual operator and then identified with
+those models. This verifies a generated arithmetic system within Lean's
+mathematical foundations; it does not reconstruct the `Nat` type in Lean's
+metatheory without prior natural-number machinery. Likewise, the positive
+Gaussian amplitude is a constructed representative, not a uniqueness
+theorem for every complex amplitude having the same squared modulus.
+
+The physical root theorem currently targets the basic source response and
+Hermitian determinant interfaces. It does not assert a complete Standard
+Model, a reconstructed physical spacetime or clock, or interacting field
+dynamics. These are not missing premises that may silently be assumed in
+order to strengthen its conclusion.
+
+The source output records now include the Clifford-sector identifications,
+their actual Hermite ranges, the pointwise colour factorization and the
+fixed-unitary operator-transport statements above. They are filled by
+construction declarations, not added to `MinimalUnbiasedChange.Datum`.
+Their compilation and transitive axiom checks have passed. This does not
+prove that every conceivable continuation is minimal,
+exchange-preserving or centre-invariant; those would be different claims.
+
+The dimension statements refer to different carriers: the initial real
+change plane has dimension two; the constructed angular tangent fibres have
+real dimension three; adjoining the radial amplitude gives real dimension
+four; the symmetric-square colour carrier has complex dimension three.
+The connected response rank of a two-level corner is also three, by the
+separate rank formula `n^2 - 1`. Equal numerical dimensions do not identify
+these spaces. In the arithmetic manuscript, coefficient capacity is defined
+before any geometric realization, and its Weyl dimension proposition is
+conditional on a common complete Laplace realization. No such realization
+is inserted into the arithmetic root datum.
+
+## Audit and independent checking
+
+Run `scripts/verify_foundations.py` from the repository root, using the pinned
+Lake executable. A successful full run builds or checks freshness of every
+local module, checks declaration types, prints their transitive axiom
+dependencies, rejects unexpected axioms, and binds sources, dependencies,
+tools, index and saved audit log to one verification manifest.
+
+The audit retains a `#check` for every collected named declaration and uses
+ordinary type display, avoiding expansion of implementation-level implicit
+instances. Display settings do not change the checked declarations or their
+axiom dependencies. These printed signatures aid review; they are not a
+proof export. Kernel checking is supplied by the module builds.
+
+The collector checks ordinary publicly accessible named declarations and
+indexed claims, then imports all declarations of each local module and
+enumerates its constants from the compiled environment. This second inventory
+includes private declarations, anonymous instances and generated helpers. It
+records each constant's originating module, kind, safety flags and transitive
+axiom dependencies, and requires a complete inventory before publishing a
+successful manifest. The inventory is an audit through the pinned Lean
+implementation; it is not an independently implemented kernel check.
+
+The runner forwards named-check and environment-audit progress when received.
+Lean can buffer these messages and render declaration signatures lazily;
+their timestamps therefore do not measure the full wall-clock cost of
+rendering and output. The runner uses one-pass log parsing and module counting
+while preserving every named check and full-environment record. A timeout
+terminates its own process tree, preserves a marked incomplete log and does
+not publish a successful manifest.
+
+The independent verifier and index regression tests pass 98 cases. Their mocked
+compiler responses test the verification machinery, including rejection of
+incomplete inventories and unexpected axioms. They are not 98 Lean proof
+checks. V5's external-library integration tests are maintained separately in
+the numerical software repository. A standalone `example` that leaves no environment constant is checked
+during module compilation; it is not counted as an enumerated declaration.
+
+`--source-only` certifies neither compiled proofs nor their axiom dependencies.
+`--check-manifest` checks the saved record's freshness; it does not rerun the
+proof checker. A compiler resource limit changes how long proof elaboration
+may run, not which propositions the kernel accepts.
+
+The local option inventory on 9 October 2026 contains the following twelve
+occurrences. Paths are relative to `GeneratedFoundations/`; line numbers
+locate that source snapshot. Every occurrence uses `in` and applies to one
+declaration.
+
+| Source | Line | Option and value |
+|---|---:|---|
+| `Spectral/CircleNormalization.lean` | 166 | `maxHeartbeats 800000` |
+| `Geometry/SourceDirectionalStep.lean` | 78 | `backward.isDefEq.respectTransparency false` |
+| `Operations/FiniteHermiteCornerExponential.lean` | 91 | `backward.isDefEq.respectTransparency false` |
+| `Operations/SourceSpinCornerFlow.lean` | 86 | `backward.isDefEq.respectTransparency false` |
+| `Source/CharacterDifferential.lean` | 64 | `backward.isDefEq.respectTransparency false` |
+| `Source/CharacterDifferential.lean` | 113 | `backward.isDefEq.respectTransparency false` |
+| `Source/CharacterDifferential.lean` | 132 | `backward.isDefEq.respectTransparency false` |
+| `Source/OriginalLieFlow.lean` | 45 | `backward.isDefEq.respectTransparency false` |
+| `Source/OriginalLieFlow.lean` | 64 | `backward.isDefEq.respectTransparency false` |
+| `Source/OriginalLieFlow.lean` | 126 | `backward.isDefEq.respectTransparency false` |
+| `Source/RepresentationDifferential.lean` | 96 | `backward.isDefEq.respectTransparency false` |
+| `Spectral/PositiveOperatorTrace.lean` | 64 | `backward.isDefEq.respectTransparency false` |
+
+The heartbeat limit belongs to the pre-existing proof of
+`haarCircleReflection_halfToHaar_coe`; it was not introduced or increased
+in this audit. It allocates checking resources and does not skip the kernel.
+The other eleven settings change elaboration transparency when comparing
+implicit arguments: they permit unfolding semireducible definitions at
+default transparency. They are neither heartbeat or recursion limits nor
+logical axioms, and the resulting proof terms still require kernel checking.
+No local `maxRecDepth` override was found. The only project-level Lean option
+is `autoImplicit false`.
+
+Two local `irreducible` attributes protect already established coordinate
+maps from automatic expansion into their underlying function-space models:
+`colourPair` in `Physical/SourceSplitResponse.lean:80` and
+`matrixRealization` in `Physical/SourceMatterPhaseExponential.lean:178`.
+Subsequent proofs use their proved coordinate and continuity identities.
+These attributes control elaboration within those files; they introduce no
+axioms or additional mathematical hypotheses and do not bypass kernel checks.
+
+A scan of all 235 local proof modules, with comments and strings masked,
+found no executable `sorry`, `admit`, custom `axiom`, `sorryAx`, `unsafe`,
+`partial`, `native_decide`, `implemented_by` or `extern` usage, and no local
+macro, elaborator or initialization command. This is a source snapshot,
+not an audit of mathlib and not a substitute for the complete compiled
+axiom inventory. These implementation checks do not remove the mathematical
+definitions, root contents or comparison classes documented above.
+
+Rebuilding with the pinned Lean kernel is reproducible verification using
+that implementation. `#print axioms` lists dependencies; it is not a proof
+export to a separately implemented checker. No such external-checker run is
+claimed here. An independent-checker claim requires an actual proof export,
+support for the relevant Lean primitives, a successful check, and preserved
+tool and artifact identities.
+
+Manuscript correspondence also respects statement-level conventions. Paper 7
+uses an inner product linear in its first slot, so its zero-mode coefficient
+is the inner product of the input with the normalized constant mode. Its
+projective heat-kernel assertion is for positive heat parameter, and the
+capacity lift uses finite, strictly positive fibre dimensions. Paper 4's
+spherical comparison class explicitly consists of Riemannian manifolds of
+dimension at least two. These qualifications do not add fields to the root
+datum or extend the scope of the indexed formal results.
+
+Manuscript correspondence remains a separate semantic obligation. The ten
+mapped manuscript sources have been reviewed against the indexed
+premises, conclusions and construction dependencies. Their hashes and
+clause-specific scope are recorded in `theorem-index.json`; 178 of the 225
+indexed entries correspond to those ten sources. The new dimension mappings
+cover the actual source tangent space and the exact spherical comparison
+classes. They do not cover the added general Weyl counting argument or the
+resolvent-trace bound obtained from it. This semantic
+review does not cover unmapped manuscript assertions. The completed
+compiled audit verifies the formal statements and their dependencies; it
+does not replace this separate review of manuscript correspondence.

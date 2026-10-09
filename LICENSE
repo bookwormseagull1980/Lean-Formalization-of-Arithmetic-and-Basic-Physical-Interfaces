@@ -1,0 +1,55 @@
+Coarse-Graining Genesis Framework V5.0
+Author: Jinku Guo <guojk@nwpu.edu.cn>
+Northwestern Polytechnical University, Xi'an 710072, China
+ORCID: 0009-0000-6600-6171
+References:
+Guo, J. (2026a). Certified Spectral Computation for Semilinear Evolution: Finite Records and Polynomial Bit Cost. Unpublished manuscript.
+Guo, J. (2026b). Coarse-Graining and Long-Range Response in Generated Systems. Unpublished manuscript.
+Guo, J. (2026c). Dynamics of Generated Spectra from Minimal Change: Certified Function Classes and Finite Windows. Unpublished manuscript.
+Guo, J. (2026d). The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap. Unpublished manuscript.
+Guo, J. (2026e). A Spectral Construction of Natural-Number Arithmetic. Unpublished manuscript.
+Guo, J. (2026f). A Spectral Criterion for Emergent Gravity. Unpublished manuscript.
+Guo, J. (2026g). The Spectrum of a Compact Internal Space II: Effective Couplings and Mass Scales. Unpublished manuscript.
+Guo, J. (2026h). The Spectrum of a Compact Internal Space III: Finite-Window Dynamics of Cosmic Structure Formation. Unpublished manuscript.
+Full bibliography: REFERENCES.md and CITATION.cff.
+
+Copyright (c) 2026 Jinku Guo (Northwestern Polytechnical University, Xi'an, China)
+
+================================================================================
+ATTRIBUTION REQUIREMENT (required, in addition to the MIT License below)
+================================================================================
+
+Any use, modification, distribution, or publication that builds on this
+framework MUST cite all three of the following:
+
+  1. the author  — Jinku Guo, Northwestern Polytechnical University, Xi'an, China;
+  2. the companion papers —
+       Guo, J. (2026d). The Spectrum of a Compact Internal Space I:
+       Gauge Structure and a Scalar Mass Gap. Unpublished manuscript.
+       Guo, J. (2026g). The Spectrum of a Compact Internal Space II:
+       Effective Couplings and Mass Scales. Unpublished manuscript.
+  3. the source  — this Git repository: https://github.com/bookwormseagull1980/coarse-graining-genesis
+
+The complete bibliography is given in REFERENCES.md and CITATION.cff.
+
+================================================================================
+MIT License
+================================================================================
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

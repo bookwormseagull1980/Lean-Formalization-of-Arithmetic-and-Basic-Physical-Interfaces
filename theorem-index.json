@@ -1,0 +1,2087 @@
+{
+  "schema_version": 1,
+  "entry_modules": ["GeneratedFoundations"],
+  "verification_policy": "Indexed declarations require a successful build and transitive axiom audit of this exact source snapshot. This index alone is not a verification report.",
+  "root_chain_status": "implemented_root_interfaces",
+  "manuscript_review_status": {
+    "status": "mapped_clauses_semantically_reviewed",
+    "scope": "The ten mapped files below were reviewed against their actual included statements, proofs, Lean declaration types and construction dependencies. Their 178 indexed entries retain clause-specific coverage; this is not certification of every assertion in those files or of the complete manuscripts. The dimension-three mappings cover the actual source tangent space and the exact spherical comparison classes, not the new general Weyl-law route. The recorded hashes identify this semantic review only. Compiled verification is recorded separately by the matching verification manifest.",
+    "changed_sources": [],
+    "reviewed_sources": [
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/02_change_and_gaussian_correlation.tex", "mapped_declarations": 40, "sha256": "6a57851b7eaa913b85af93f6317b62b66fee6658d8c734872b2401649c640ad8", "scope": "Minimal-carrier classification, original trace-Lie Gaussian law, orientation and overlap clauses. C/S/V belongs to the root definition; Gaussian centering, the density and its positive-parameter uniqueness are outputs. The C/S/V independence examples and Fourier uncertainty classification are not certified by these entries."},
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/03_finite_correlation_window.tex", "mapped_declarations": 39, "sha256": "bfd032b878e4d256cd5fd8de742ebc1a7e90823f8e778c7257fcb6ee458908aa", "scope": "Calibrated information, integral capacity, separated constant-preserving closure, reflecting Sobolev domains and heat clauses. Endpoint values are calculated readouts, with the stated functional comparison classes. Each operator, metric and covering clause is limited to its actual domain and normalization; no full-section coverage is inferred."},
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/05_analytic_spectral_semiring.tex", "mapped_declarations": 4, "sha256": "ad6e765dcfb71196113f18c9aeb03121901889351112f27585826cd735a64a80", "scope": "Circle-endomorphism classification, native operations and their source Fourier identification. The broader analytic lift is provided by separate source/spectral modules; these four entries alone do not certify the homotopy-ring or Grothendieck-completion theorem."},
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/08_spectral_natural_number_theorem.tex", "mapped_declarations": 1, "sha256": "70f90d53ed8e380e4ab5c4a558b9400c3b75214028832a2b8285070a767afaf4", "scope": "The root entry proves source closure, original-map Peano arithmetic, winding/energy certification and finite prime profiles. The theorem's bar homology, prime cotangent and Fock-completion part is not covered by that entry. Cross-source transport has a separate declaration and is not silently added to the root record."},
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/appendix_a_gaussian_neumann.tex", "mapped_declarations": 4, "sha256": "d8d638a708f1736a086f5e2290c978a247173e665ea2c6ed1adf3607d6cb7320", "scope": "Normalized Gaussian Fourier transform, periodization and circle convolution multipliers. These are ingredients of the displayed reflected interval kernel, not a declaration of the whole method-of-images formula or of the Poisson-summation subsection."},
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/appendix_e_conditional_projective_fibre.tex", "mapped_declarations": 2, "sha256": "357f509ae9674e40165f7e60fdd15c8fd1b0ea8510bd0fcb05c41670e0ebccbf", "scope": "The all-degree and even-degree affine classifications for the explicitly given spherical eigenvalue and multiplicity formulas, in every dimension at least two. These entries do not formalize the preceding general Weyl dimension proposition, construct a geometric realization from arithmetic coefficient capacity, or prove all later projective-lift statements."},
+      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec03_disorder_axiom.tex", "mapped_declarations": 26, "sha256": "4922c582d492719961ac960b5f676c86f32fe960affbca76aee3f4b53bdcb83d", "scope": "The normalized affine first-order ladder class, phase-independent ordered products, order-neutral half-sum, actual Hermite completeness, self-adjoint closure and full-space central phase. The affine and self-adjoint-extension comparison classes remain part of the respective conclusions, not new fields of the root datum."},
+      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec04_emergent_structures.tex", "mapped_declarations": 44, "sha256": "1f4edaf17bdffd65fa3e95714b2b0aea1e10716f0e144c2d7ba8deb4496bd258", "scope": "Constructed exchange-retained algebra, least faithful representations, source frames, phase lift and elementary doublet comparison. Exact spherical capacity uniqueness and the actual three-dimensional source tangent space are now separately mapped; the added complete-spectrum Weyl asymptotics and general dimension inference are not certified by these entries. The generated Clifford even algebra, its primitive real central projections, two-dimensional spinor ranges and actual eight-dimensional Hermite sectors are indexed separately. Least pairs admit unique transport of every operator after fixing the realizing unitary. Colour determinant-phase factorization is pointwise, with cube-root ambiguity; it does not prove a global determinant reduction or identify that phase with the common matter phase. The generated IR length is the geometric amplitude-shell radius, not an independent fitted length. The root interface supplies the Hermitian determinant form, not a scalar mass gap, Higgs mass spectrum, arbitrary-bundle construction or spacetime dynamics."},
+      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/appendix_f_source_response.tex", "mapped_declarations": 14, "sha256": "faeb55d59cde363ec0bf325bb5fb10d0eb02416e8aa47309baf7fd13e62d4c75", "scope": "Actual source compression, generated SU(2) operations, restricted oscillator phase and central quotient clauses. Individual mappings do not certify the complete appendix, all source-state completions, the SO(3) double cover or the Clifford theorem simply because they share a proposition label."},
+      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/proofs_source_operations.tex", "mapped_declarations": 4, "sha256": "11dfa7ddd536b5b1397adcc1ba4fd9110fdd76d2fe605ec89824e5e75198af0a", "scope": "The local Gaussian cycle and the algebraic central-quotient clause. The local cycle is I-2P and differs from the global sign; centre-invariant observations are a specified retained observation class. The four entries alone do not certify the complete process algebra, general finite-variance diffusion limit or polar-metric proof."}
+    ]
+  },
+  "root_input": {
+    "datum": "GeneratedFoundations.Source.MinimalUnbiasedChange.Datum",
+    "meaning": "Minimal unbiased compositional change: the stated orthogonal-action comparison class, carrier minimality and C/S/V law conditions on its trace Lie line.",
+    "fields": ["change", "minimal", "law", "compositional"],
+    "realization_indices": "Every orientation and positive width is quantified in the root conclusions. These indices are not extra root principles.",
+    "internal_constructions": "Calibrated information and mass readouts, endpoints, reflecting closure, spectra, arithmetic and physical responses are constructed internally. Definitions and uniqueness comparison classes remain explicit; their outputs are not root assumptions."
+  },
+  "arithmetic_source_integration": {
+    "entry": "GeneratedFoundations.Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
+    "status": "source_integrated",
+    "scope": "The sole root datum yields source closure, native arithmetic and prime factorization for every orientation and positive width. No endpoint or boundary-operator premise is an argument."
+  },
+  "physical_source_integration": {
+    "entry": "GeneratedFoundations.Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange",
+    "status": "source_integrated",
+    "scope": "The sole root datum yields the constructed P4-P6 source interface, source Clifford sectors with their Hermite ranges, pointwise colour determinant-phase factorization, and two-mode Hermitian determinant interface for every orientation and positive width. Least representations admit unique operator transport after fixing one realizing unitary. No endpoint, boundary operator or aggregate P4-P6 premise. Classification comparison classes remain explicit; external spacetime and field dynamics are outside this entry."
+  },
+  "manuscript_snapshot_method": "Starting from main.tex, recursively resolve local TeX input/include files. Sort relative POSIX paths in ordinal order. Hash the UTF-8 concatenation of relative_path, NUL, lowercase file SHA-256, LF for each file. The graph includes main.tex and local macro inputs; class/style files, bibliography files and external images are excluded. These identities locate the reviewed sources and do not certify semantic coverage.",
+  "manuscripts": [
+    {
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "tex_input_graph": {
+        "entry": "main.tex",
+        "file_count": 37,
+        "sha256": "6036610485e26ad9366e9d723518e1cc04ca2ece690db06511ed48d4ed51e0b5"
+      },
+      "mapped_tex_sha256": {
+        "sections-en/appendix_a_gaussian_neumann.tex": "d8d638a708f1736a086f5e2290c978a247173e665ea2c6ed1adf3607d6cb7320",
+        "sections-en/appendix_e_conditional_projective_fibre.tex": "357f509ae9674e40165f7e60fdd15c8fd1b0ea8510bd0fcb05c41670e0ebccbf",
+        "sections-en/02_change_and_gaussian_correlation.tex": "6a57851b7eaa913b85af93f6317b62b66fee6658d8c734872b2401649c640ad8",
+        "sections-en/03_finite_correlation_window.tex": "bfd032b878e4d256cd5fd8de742ebc1a7e90823f8e778c7257fcb6ee458908aa",
+        "sections-en/04_discrete_spectral_components.tex": "d2843b41b55eab68dcde144516673d4fb60344af41ad044f2521043a51782c3e",
+        "sections-en/05_analytic_spectral_semiring.tex": "ad6e765dcfb71196113f18c9aeb03121901889351112f27585826cd735a64a80",
+        "sections-en/06_peano_primes_and_decomposition.tex": "c1761ae67d996914bbab870292ca00174d9b1ac70d91ed8c056faf47f71e8d8d",
+        "sections-en/08_spectral_natural_number_theorem.tex": "70f90d53ed8e380e4ab5c4a558b9400c3b75214028832a2b8285070a767afaf4",
+        "sections-en/appendix_b_euclidean_factorization.tex": "b7c4914f445185904f33bf11d0189241d77ef90493d4ac21379e3b5ef268d002"
+      }
+    },
+    {
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "tex_input_graph": {
+        "entry": "main.tex",
+        "file_count": 27,
+        "sha256": "85639f85689925b09878392c2b4958c7eba620ddf240991443642c2c9c5612ff"
+      },
+      "mapped_tex_sha256": {
+        "sections-en/appendix_f_source_response.tex": "faeb55d59cde363ec0bf325bb5fb10d0eb02416e8aa47309baf7fd13e62d4c75",
+        "sections-en/proofs_source_operations.tex": "11dfa7ddd536b5b1397adcc1ba4fd9110fdd76d2fe605ec89824e5e75198af0a",
+        "sections-en/sec03_disorder_axiom.tex": "4922c582d492719961ac960b5f676c86f32fe960affbca76aee3f4b53bdcb83d",
+        "sections-en/sec04_emergent_structures.tex": "1f4edaf17bdffd65fa3e95714b2b0aea1e10716f0e144c2d7ba8deb4496bd258",
+        "sections-en/appendix_c.tex": "ddb12a34d08780f3f5fb9e6ae63c006f8da60d667d1bca31a982224278900dd1"
+      }
+    }
+  ],
+  "declarations": [
+  {
+    "name": "GeneratedFoundations.Geometry.SourceSphereCapacity.capacity_all_iff",
+    "module": "GeneratedFoundations.Geometry.SourceSphereCapacity",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:capacity-selects-three-p4",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "For the displayed scalar spherical multiplicity formula and every natural dimension at least two, equality with (l+1)^2 at every degree holds exactly in dimension three. This does not classify arbitrary manifolds or prove the preceding Weyl-law dimension route."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceSphereCapacity.source_capacity_even_iff",
+    "module": "GeneratedFoundations.Geometry.SourceSphereCapacity",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:capacity-selects-three-p4",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Compares every even spherical degree with the dimension of the endomorphism algebra of the actual finite Gaussian source corner and selects dimension three in that spherical class. It neither equates the interval and process Hilbert spaces nor proves the general closed-manifold Weyl theorem."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceSphereCapacity.affine_all_iff",
+    "module": "GeneratedFoundations.Geometry.SourceSphereCapacity",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:three-dimensional-energy-capacity-uniqueness",
+    "tex_source": "sections-en/appendix_e_conditional_projective_fibre.tex",
+    "coverage_kind": "clause",
+    "scope": "For the explicitly defined round-sphere spectral formulas with dimension at least two, a positive-slope affine relation at all degrees holds exactly when dimension is three and both coefficients equal one. The preceding conditional Weyl dimension proposition and the separate S1 observation are outside this declaration."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceSphereCapacity.affine_even_iff",
+    "module": "GeneratedFoundations.Geometry.SourceSphereCapacity",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:three-dimensional-energy-capacity-uniqueness",
+    "tex_source": "sections-en/appendix_e_conditional_projective_fibre.tex",
+    "coverage_kind": "clause",
+    "scope": "The same exact affine classification holds on all even spherical degrees, including degree zero, for dimensions at least two. It classifies the spherical formulas, not the existence of a geometric realization of the arithmetic coefficient spaces or the more general Weyl route."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceSphereTangent.tangent_finrank",
+    "module": "GeneratedFoundations.Geometry.SourceSphereTangent",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:four-dimensional-response-carrier",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Every actual tangent fibre of the constructed unit source sphere has real dimension three, through its continuous linear identification with the quaternion angular space. This is the angular dimension in the radial-angular decomposition, not the complex colour dimension or the dimension of every possible spectral realization."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.GeneratedSourceGeometry.generatedSourceGeometry",
+    "module": "GeneratedFoundations.Geometry.GeneratedSourceGeometry",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:source-process-geometry-p4",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Connects the same minimal-carrier compositional source to the constructed geometry; its output includes actual three-dimensional angular tangent fibres, four-dimensional real amplitudes, and exact capacity and affine uniqueness in the stated spherical class. It does not contain the newly added complete-spectrum counting asymptotics or a general closed-manifold Weyl dimension inference."
+  },
+  {
+    "name": "GeneratedFoundations.Source.MinimalUnbiasedChange.Datum",
+    "module": "GeneratedFoundations.Source.MinimalUnbiasedChange",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "ax:unbiased-change",
+    "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+    "coverage_kind": "definition",
+    "scope": "Packages the minimal orthogonal change datum with the C/S/V law conditions on its trace Lie line. These specify the source object; no Gaussian formula, endpoint, boundary operator or physical response is a field. This definition alone is not a derivation theorem."
+  },
+  {
+    "name": "GeneratedFoundations.Source.MinimalUnbiasedChange.law_unique",
+    "module": "GeneratedFoundations.Source.MinimalUnbiasedChange",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:gaussian-change-uniqueness",
+    "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+    "coverage_kind": "clause",
+    "scope": "Any two laws satisfying the explicit C/S/V conditions on the same minimal carrier agree at every positive parameter. This is law uniqueness in the stated source class, not a derivation of C/S/V from carrier minimality."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
+    "module": "GeneratedFoundations.Arithmetic.GeneratedFoundation",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:prime-spectral-basis",
+    "tex_source": "sections-en/08_spectral_natural_number_theorem.tex",
+    "coverage_kind": "clause",
+    "scope": "Root-only entry through source closure, native arithmetic and prime factorization for every orientation and positive width. Readout calibration and separated-boundary comparison classes remain explicit in its conclusions. Does not cover all later bar, cotangent, Fock or completion structures of the manuscript theorem."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange",
+    "module": "GeneratedFoundations.Physical.SourcePhysicalInterface",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:smtypecompletion",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Root-only entry through the constructed source geometry, retained responses, source Clifford sectors with their Hermite projections, frames, matter and elementary connector, for every orientation and positive width. P4-P6 are not an aggregate premise. The nested records include pointwise determinant-phase factorization and fixed-unitary compatible operator transport. The Hermitian matrix readout has determinant signature (1,3) and the specified determinant-preserving action. Scalar mass gaps, Higgs masses, external spacetime and field dynamics are outside this statement."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceSplitResponse.generated_split",
+    "module": "GeneratedFoundations.Physical.SourceSplitResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:split-colour-response-algebra-p4",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Classifies the actual pre-exchange generated responses commuting with exchange, and intertwines their tensor action with the existing joint-colour representation."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceSplitResponse.retainedEquiv",
+    "module": "GeneratedFoundations.Physical.SourceSplitResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:split-colour-response-algebra-p4",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Algebra equivalence from the actual exchange-retained source algebra to End(W) times End(L), constructed through the established unitary splitting."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceSplitResponse.exchangeUnitary_colourAction",
+    "module": "GeneratedFoundations.Physical.SourceSplitResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:full-joint-response-algebra-p4",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The same exchange unitary intertwines every retained source tensor operator with the joint-colour action; this is an operator identity, not dimension matching."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceJointResponse.responseAlgebra_eq_top",
+    "module": "GeneratedFoundations.Physical.SourceJointResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:full-joint-response-algebra-p4",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "The algebra generated by the split-colour and retained spin responses is the full joint block algebra."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceFrameConstruction.generated_frames",
+    "module": "GeneratedFoundations.Physical.SourceFrameConstruction",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:gauge",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Colour, phase and pseudoreal frame classifications on the actual source spaces, including pointwise colour determinant-phase factorization, its cube-root ambiguity and faithful effective action. Does not identify the determinant phase with the common matter phase, choose a global determinant reduction, differentiate connections or construct an arbitrary principal bundle."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceFrameConstruction.relativeTransition_cocycle",
+    "module": "GeneratedFoundations.Physical.SourceFrameConstruction",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:gauge",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "Relative transitions f_i inverse times f_j obey the cocycle on any specified patch domains. These are transitions of the constructed frame family, not a classification of nontrivial bundles."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceFrameConstruction.relativeTransition_unique",
+    "module": "GeneratedFoundations.Physical.SourceFrameConstruction",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:gauge",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "Every effective transition producing the same comparison of the selected source matter frames equals the constructed relative transition."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalResponse.least_chiral_pair",
+    "module": "GeneratedFoundations.Physical.SourceInternalResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:matterunique",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Every pair of least faithful finite-dimensional star-compatible representations has dimension sixteen and a single unitary intertwining both labelled actions, chiral projections and grading. The unitary is not claimed unique."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalResponse.source_internalResponse",
+    "module": "GeneratedFoundations.Physical.SourceInternalResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:smtypecompletion",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Constructs the source Clifford sectors and their actual Hermite ranges, least faithful source module, fixed-unitary transport of all responses, vacuum stabilizer and lift, primitive charge, faithful global quotient, charged response quotient and elementary connector on the same source carrier. Comparison conditions remain explicit; no aggregate P4-P6 assumption is an argument."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.grading_from_source_product",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:lorentz",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The existing grading matrix is the signed product of four actual source Clifford generators. It is not introduced as a new root operator."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.evenEquiv",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:lorentz",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Real algebra equivalence between two quaternion factors and the algebra generated by products of actual source Clifford operators; not a classification of arbitrary representations from their dimensions alone."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.complexEvenEquiv",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:lorentz",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "The complex algebra generated by the real source even algebra is equivalent to M2(C) times M2(C). This declaration does not classify the full odd algebra or all external Clifford bundles."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.primitiveCentral_iff",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:lorentz",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "Every primitive central idempotent in the actual real source even algebra is one of the two constructed projections. The domain is the real quaternion-pair algebra; no claim that all complex matrix-algebra idempotents have this form is made."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.positiveSpace_finrank",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:lorentz",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual positive source Clifford projection has a two-dimensional complex range, proved by an explicit coordinate equivalence."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.negativeSpace_finrank",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:lorentz",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual negative source Clifford projection has a two-dimensional complex range, proved by an explicit coordinate equivalence."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.hermite_leftProjection",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:matterunique",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The existing matter-to-Hermite isometry intertwines the left matter projector with the positive source Clifford corner at every positive width; this identifies actual operators rather than only dimensions."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.hermite_rightProjection",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:matterunique",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The same matter-to-Hermite isometry intertwines the right matter projector with the negative source Clifford corner at every positive width."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.sourcePositive_finrank",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:matterunique",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The range of the positive operator on the actual Gaussian L2 space has complex dimension eight, using its equality with the left source embedding range."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCliffordChirality.sourceNegative_finrank",
+    "module": "GeneratedFoundations.Physical.SourceCliffordChirality",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:matterunique",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The range of the negative operator on the actual Gaussian L2 space has complex dimension eight, using its equality with the right source embedding range."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalResponse.source_chirality",
+    "module": "GeneratedFoundations.Physical.SourceInternalResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:smtypecompletion",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Collects the generated grading, real and complex even algebras, primitive real projections, spinor dimensions, actual Hermite intertwining, range identification and eight-plus-eight source dimensions. Its only realization parameter is the positive source width."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceColourPhase.exists_phase_specialUnitary",
+    "module": "GeneratedFoundations.Physical.SourceColourPhase",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:gauge",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "Every unitary three-by-three matrix factors into a circle phase and a special-unitary matrix, with the cube of the phase equal to its determinant. The statement is pointwise and does not choose a global continuous cube root."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceColourPhase.decomposition_ambiguity",
+    "module": "GeneratedFoundations.Physical.SourceColourPhase",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:gauge",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "For two pointwise phase times SU(3) factorizations of the same matrix, the phase ratio is a cube root of unity and the SU(3) factor changes by its inverse. This is finite central ambiguity, not a preferred phase or a determinant-bundle trivialization."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceColourPhase.colourFrame_exists_phase_specialUnitary",
+    "module": "GeneratedFoundations.Physical.SourceColourPhase",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:gauge",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Applies the determinant-phase decomposition to every actual unitary frame of the generated W carrier. It does not by itself identify the determinant phase with the independently constructed common matter phase."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMinimalChiralPair.responseTransport_existsUnique",
+    "module": "GeneratedFoundations.Physical.SourceMinimalChiralPair",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:matterunique",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "Once a realizing unitary is fixed, every endomorphism of the actual full source carrier has exactly one intertwining endomorphism on that realization. This does not make the realizing unitary unique."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMinimalChiralPair.least_pair_compatible_response",
+    "module": "GeneratedFoundations.Physical.SourceMinimalChiralPair",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:matterunique",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "For arbitrary two least faithful joint-algebra representations, a single realizing unitary intertwines both algebra actions, both projections and grading, and uniquely transports every further endomorphism. The comparison class remains least faithful representations; this theorem does not assert all algebra extensions are least or that the unitary is unique."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourcePhaseLift.continuous_lift_unique",
+    "module": "GeneratedFoundations.Physical.SourcePhaseLift",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:pointwise-vacuum-stabilizer-p4",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Uniqueness among continuous identity-based right-frame lifts whose actual scalar matrix action equals the source number flow."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceScalarConnector.canonical_elementary",
+    "module": "GeneratedFoundations.Physical.SourceScalarConnector",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:single-higgs",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Every constructed doublet connector satisfies independent-source naturality and reversal reality. Elementary status is proved rather than supplied for this family. The doublet remains a variable; neither its value nor a Higgs mass is selected by this theorem."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceScalarConnector.elementary_iff_unique_doublet",
+    "module": "GeneratedFoundations.Physical.SourceScalarConnector",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:single-higgs",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "All and only elementary pre-exchange source connectors have a unique doublet coordinate; the elementary comparison class states independent-source naturality and reversal reality. Uniqueness is of the coordinate representing each connector, not of one fixed doublet value among the family."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceExchangeConnectorTransport.chiralConnector_transport_doublet",
+    "module": "GeneratedFoundations.Physical.SourceExchangeConnectorTransport",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:single-higgs",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "Exchange transport and chiral pairing carry the original doublet connector into the same scalar connector used on the full matter carrier."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceHermitianReadout.coordinatesEquivHermitian",
+    "module": "GeneratedFoundations.Physical.SourceHermitianReadout",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "def:wightman",
+    "tex_source": "sections-en/appendix_c.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "A real-linear equivalence between four real coordinates and all Hermitian two-by-two matrices. Supports the algebraic representation convention only; not the Wightman assumptions or a field reconstruction."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceHermitianReadout.determinantForm_coordinateTransform",
+    "module": "GeneratedFoundations.Physical.SourceHermitianReadout",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "def:wightman",
+    "tex_source": "sections-en/appendix_c.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "Determinant-one complex congruence preserves the (+---) quadratic form of the Hermitian readout. Does not classify the full Lorentz cover or introduce a physical clock."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceHermitianReadout.sourceHermitianAction_coe",
+    "module": "GeneratedFoundations.Physical.SourceHermitianReadout",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "def:wightman",
+    "tex_source": "sections-en/appendix_c.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The Hermitian readout acts as the actual finite-corner operator on the original Gaussian vacuum and first excitation. Relativistic spacetime interpretation remains separate."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourcePhysicalInterface.minimalChange_physicalInterface",
+    "module": "GeneratedFoundations.Physical.SourcePhysicalInterface",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:smtypecompletion",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Expanded application of the minimal unbiased compositional change construction at a specified orientation and positive width. Combines the common-law geometry, exchange-retained algebra, frames and internal response with the same-source Hermitian determinant interface. Endpoints, boundary operators and P4-P6 conclusions are internally constructed. Compilation and axiom evidence is recorded separately in the matching verification manifest."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.PeriodicGaussian.density_fourier",
+    "module": "GeneratedFoundations.Spectral.PeriodicGaussian",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:general-gaussian-fourier-transform",
+    "tex_source": "sections-en/appendix_a_gaussian_neumann.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The Fourier transform of the normalized density of the generated Gaussian law is proved for every positive width. This is the normalized-density specialization of the displayed Gaussian transform."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.PeriodicGaussian.kernel_fourierCoeff",
+    "module": "GeneratedFoundations.Spectral.PeriodicGaussian",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:neumann-heat-kernel-images",
+    "tex_source": "sections-en/appendix_a_gaussian_neumann.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The locally absolutely convergent periodization of the generated density on the unit circle has the derived Gaussian Fourier coefficients. Reflection to the original interval is a separate step."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.GaussianHeatConvolution.kernel_image_sum",
+    "module": "GeneratedFoundations.Spectral.GaussianHeatConvolution",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:neumann-heat-kernel-images",
+    "tex_source": "sections-en/appendix_a_gaussian_neumann.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "For every positive circumference and Gaussian width, the probability-Haar circle kernel is circumference times the actual image sum. This is the periodic kernel underlying the reflected interval formula."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.GaussianHeatConvolution.convolution_fourierCoeff_gaussian",
+    "module": "GeneratedFoundations.Spectral.GaussianHeatConvolution",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:neumann-heat-kernel-series",
+    "tex_source": "sections-en/appendix_a_gaussian_neumann.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "Fubini and Haar translation invariance compute the Fourier multiplier of the actual Gaussian Bochner convolution for every circle L2 input. The interval heat-operator identification is not assumed."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.GaussianHeatConvolution.convolutionValue_nonneg",
+    "module": "GeneratedFoundations.Spectral.GaussianHeatConvolution",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:closed-correlation-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The actual circle convolution preserves almost-everywhere nonnegative real inputs and gives pointwise nonnegative real outputs. The companion convolutionValue_const proves constant preservation. The original interval Markov statement requires the separate reflection identification."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatTrace.heat_isPositiveTraceClass",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatTrace",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:closed-correlation-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "On the original interval Hilbert space, every strictly positive-parameter Neumann heat operator is self-adjoint, has a nonnegative quadratic form, and has finite positive trace. The trace is the supremum over all finite orthonormal families; this does not assert positivity preservation of functions."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatTrace.heat_positiveTrace_zeroMode",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatTrace",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:closed-correlation-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The basis-independent trace of the original heat operator equals one plus the sum over all positive cosine modes. The constant mode is retained and summability is proved for every strictly positive parameter."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.spectralProjection_existsUnique",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:unlabeled-spectral-carrier",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "Every nonzero orthogonal projection onto an eigenspace at a point of the original Neumann spectrum is one unique cosine projection. The original differential domain is retained in the eigenspace definition."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.component_rank_one",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "Every member of the unlabelled class has a one-dimensional complex range. The companion component_eigenspace identifies this range with the original operator's eigenspace."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.restrictedHeat_trace",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual heat operator restricted to each original spectral range has finite-dimensional trace exp(-tE/2). This is not a trace on the full infinite-dimensional space."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.zero_energy_existsUnique",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The intrinsic class has exactly one zero-energy projection, namely the constant-mode projection."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.response_order_time_independent",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:response-energy-order",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "All strictly positive change parameters give the same response order. The companion energy_order identifies it with increasing original Neumann energy."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.enumerationOrderIso_unique",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The proved intrinsic response order admits exactly one order isomorphism from the natural-number order; enumerationOrderIso supplies its existence."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.component_wellFounded",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:component-order",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The response order on the original spectral projections is well founded; finite_initial_segment proves that every initial segment is finite."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.immediate_successor_existsUnique",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:component-order",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "Every original spectral component has one unique immediate successor in its response order."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.canonical_representative_existsUnique",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "Unit norm and a positive real left Sobolev trace select exactly one vector in each original spectral range, removing the complex phase ambiguity."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.energy_coordinate_certification",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:unlabeled-spectrum-coordinate-certification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The original spectral energy equals the square of the unique order coordinate times the first positive Neumann eigenvalue."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.response_eq_unit_inner",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:response-energy",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The finite-dimensional trace response agrees with the actual heat survival inner product of every unit vector in the same spectral range."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannSpectralProjections.response_log_ratio_hasDerivAt",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectralProjections",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:response-order-amplification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "At every positive change parameter, the logarithm of the actual response ratio has derivative half the energy difference; response_log_ratio_derivative_pos gives its sign for ordered distinct components."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCorner.annihilation_compression",
+    "module": "GeneratedFoundations.Operations.SourceSpinCorner",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:source-spin-generators-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "The projected actual Schwartz lowering operation equals the rank-one matrix corner on every original L2 vector. The projection and its core representative use the same generated ground and first Hermite states."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCorner.creation_compression",
+    "module": "GeneratedFoundations.Operations.SourceSpinCorner",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:source-spin-generators-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "The corresponding actual differential raising operation, compressed on both sides to the generated two-state source, equals the adjoint matrix corner. The third Hermite state is removed by the same orthogonal projection."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCorner.spin_commutator_cyclic",
+    "module": "GeneratedFoundations.Operations.SourceSpinCorner",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:source-spin-centre-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "Together with spin_commutator in the same module, this statement gives all cyclic commutator relations for the three spin operators constructed from the actual compressed raising and lowering operations on the full source space. Minimality of this corner among all noncommutative corners is not included."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCorner.spin_casimir",
+    "module": "GeneratedFoundations.Operations.SourceSpinCorner",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:source-spin-centre-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual compressed spin Casimir is three quarters of the source projection, hence three quarters of the identity on its two-dimensional range."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCornerGroup.generated_subgroup_eq_top",
+    "module": "GeneratedFoundations.Operations.SourceSpinCornerGroup",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:source-spin-centre-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "An explicit Euler factorization proves that the two source-axis exponential families generate the entire special unitary matrix group algebraically. This is stronger than topological density; no rotation double cover is claimed here."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCornerFlow.source_exponentials_generate_all",
+    "module": "GeneratedFoundations.Operations.SourceSpinCornerFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:source-spin-centre-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "Every controlled special unitary on the actual source corner is a product of three exponentials of the actual bounded source spin operators. The complementary identity is included by a unital product-algebra exponential bridge."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCornerFlow.hamiltonian_projection",
+    "module": "GeneratedFoundations.Operations.SourceSpinCornerFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:same-carrier-source-centre-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "The finite Hamiltonian is the actual compression of the previously proved self-adjoint Gaussian differential closure, with domain membership proved for each projected L2 vector. Its identity-plus-spin formula is established in the same module."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCornerFlow.source_phase_spin",
+    "module": "GeneratedFoundations.Operations.SourceSpinCornerFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:same-carrier-source-centre-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "On the actual two-state source subspace, the original Gaussian unitary flow equals its scalar phase times the source spin rotation. This factorization is not asserted on the infinite-dimensional complement."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCornerFlow.localFlow_formula",
+    "module": "GeneratedFoundations.Operations.SourceSpinCornerFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:source-local-gaussian-cycle-p4",
+    "tex_source": "sections-en/proofs_source_operations.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual exponential of the bounded compressed Hamiltonian equals I-P plus the original full Gaussian flow composed with P, on every L2 vector."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCornerFlow.localFlow_two_pi",
+    "module": "GeneratedFoundations.Operations.SourceSpinCornerFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:source-local-gaussian-cycle-p4",
+    "tex_source": "sections-en/proofs_source_operations.tex",
+    "coverage_kind": "clause",
+    "scope": "The local full-turn cycle equals I-2P on the original Hilbert space, acting as minus the identity on the two-state source and as the identity on its complement. It is distinct from the global Gaussian cycle minus I."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceSpinCornerFlow.localFlow_four_pi",
+    "module": "GeneratedFoundations.Operations.SourceSpinCornerFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:source-local-gaussian-cycle-p4",
+    "tex_source": "sections-en/proofs_source_operations.tex",
+    "coverage_kind": "clause",
+    "scope": "The local double-turn cycle is the identity on the full original source space. The intermediate path is unitary; no claim that it is special unitary at every parameter is made."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceSpinCentre.mem_centre_iff",
+    "module": "GeneratedFoundations.Geometry.SourceSpinCentre",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:source-spin-centre-p4",
+    "tex_source": "sections-en/appendix_f_source_response.tex",
+    "coverage_kind": "clause",
+    "scope": "The centre of the actual special unitary matrix group consists exactly of I and minus I. Explicit generated-group probes exclude all other elements. This classification does not establish the SO(3) double cover."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceSpinCentre.quotientMap_matrix_eq_iff",
+    "module": "GeneratedFoundations.Geometry.SourceSpinCentre",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:source-central-observation-p4",
+    "tex_source": "sections-en/proofs_source_operations.tex",
+    "coverage_kind": "clause",
+    "scope": "For the algebraic central quotient discussed after this equation, two special unitaries have the same quotient image exactly when their matrices agree up to sign. The conditional expectation, invariant continuous-function algebra and RP3 identification are not included."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatSemigroup.heat_add",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatSemigroup",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:closed-correlation-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual cosine multipliers on the original interval L2 space satisfy the semigroup composition law for all nonnegative change parameters. The translated physical window remains a separate coordinate identification."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatSemigroup.heat_stronglyContinuous",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatSemigroup",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:closed-correlation-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The semigroup is strongly continuous on the full original interval Hilbert space, including at zero. No operator-norm continuity at zero is asserted."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatSemigroup.heat_norm_le",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatSemigroup",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:closed-correlation-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The constructed semigroup is contractive in the original L2 norm. Positivity preservation of functions and the complete Markov assertion are not claimed by this norm estimate."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatSemigroup.heat_selfAdjoint",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatSemigroup",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:closed-correlation-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "Each bounded heat operator is self-adjoint on the original complex interval L2 space. Trace class is established separately in NeumannHeatTrace; reflected Gaussian convolution uses its own identification. Neither result is part of this self-adjointness declaration alone."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatSemigroup.heat_fixes_constant_mode",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatSemigroup",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:closed-correlation-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "Every nonnegative change parameter fixes the actual normalized constant cosine mode; linearity then fixes its entire line."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatSemigroup.rightGenerator_iff",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatSemigroup",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:windowed-change-semigroup",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The strong right derivative exists exactly on the original Sobolev Neumann domain and equals minus one half of that original differential operator. The converse includes every L2 vector and does not assume extra regularity."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.NeumannHeatSemigroup.heat_cosine",
+    "module": "GeneratedFoundations.Spectral.NeumannHeatSemigroup",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:joint-eigenfunctions",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "Each actual normalized cosine eigenvector has heat multiplier exp(-t lambda_n/2) for every nonnegative parameter. This supplies the general multiplier formula; the generated endpoint and translated-window substitutions remain separate interfaces."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.mem_neumannResolventSet_iff",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectrum",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:correlation-spectrum",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The resolvent set of the original unbounded Neumann operator consists exactly of all complex parameters different from every cosine eigenvalue. The definition requires a bounded two-sided inverse whose image lies in the original Sobolev domain."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.neumannSpectrum_eq_range",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectrum",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:correlation-spectrum",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The full spectrum, defined as the complement of that actual resolvent set, is precisely the range of (n pi / L)^2. There are no additional continuous or residual spectral points."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.neumannResolvent_existsUnique",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectrum",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "Every complex parameter outside the full Neumann spectrum has exactly one bounded two-sided resolvent on the original differential domain."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.IsNeumannResolvent.isCompact",
+    "module": "GeneratedFoundations.Spectral.NeumannSpectrum",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "Every bounded two-sided resolvent of the actual Neumann operator is compact, by uniqueness and the construction from its compact inverse of I + A."
+  },
+  {
+    "name": "GeneratedFoundations.Source.GeneratedSpectralCircle.carrierCircle_existsUnique",
+    "module": "GeneratedFoundations.Source.GeneratedSpectralCircle",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:generated-carrier-covering-compatibility",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The original oriented Lie flow determines exactly one continuous group isomorphism to the reflecting circle satisfying the normalized covering-coordinate formula. Smoothness of the inverse in the original atlas and the differential formulation are not certified by this declaration."
+  },
+  {
+    "name": "GeneratedFoundations.Source.GeneratedSpectralCircle.spectralCoordinate_flow",
+    "module": "GeneratedFoundations.Source.GeneratedSpectralCircle",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:generated-carrier-intertwiner",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The integral curve of the carrier-selected actual trace-unit Lie vector is sent to the class of L theta / pi in the circle of circumference 2L."
+  },
+  {
+    "name": "GeneratedFoundations.Source.GeneratedSpectralCircle.orientedFlow_isQuotientCoveringMap",
+    "module": "GeneratedFoundations.Source.GeneratedSpectralCircle",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:generated-carrier-covering-compatibility",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The original left-invariant integral curve is an additive quotient covering map by 2 pi Z. The original flow is constructed before identifying its scalar phase."
+  },
+  {
+    "name": "GeneratedFoundations.Source.GeneratedSpectralCircle.orientedFlow_least_positive_period",
+    "module": "GeneratedFoundations.Source.GeneratedSpectralCircle",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:generated-carrier-covering-compatibility",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "Every positive period of the actual oriented source flow is at least 2 pi; the proved covering kernel also gives its exact period lattice."
+  },
+  {
+    "name": "GeneratedFoundations.Source.GeneratedSpectralCircle.covering_kernel_correspondence",
+    "module": "GeneratedFoundations.Source.GeneratedSpectralCircle",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:generated-carrier-cover-map",
+    "tex_source": "sections-en/03_finite_correlation_window.tex",
+    "coverage_kind": "clause",
+    "scope": "The scaling L / pi sends the exact original covering kernel 2 pi Z to the kernel 2L Z of the reflecting circle."
+  },
+  {
+    "name": "GeneratedFoundations.Source.GeneratedSpectralCircle.spectral_fourier_nativeMode",
+    "module": "GeneratedFoundations.Source.GeneratedSpectralCircle",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:circle-characters",
+    "tex_source": "sections-en/05_analytic_spectral_semiring.tex",
+    "coverage_kind": "clause",
+    "scope": "Nonnegative Fourier characters on the same generated spectral circle equal the existing actual circle power maps evaluated on its source phase. The intrinsic positive first-order spectral channel and Neumann analytic lift are separate proof obligations."
+  },
+    {
+      "name": "GeneratedFoundations.Spectral.neumannCanonicalMode_existsUnique",
+      "module": "GeneratedFoundations.Spectral.NeumannCanonicalModes",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:unlabeled-spectral-classification",
+      "tex_source": "sections-en/04_discrete_spectral_components.tex",
+      "coverage_kind": "clause",
+      "scope": "In each actual Neumann eigenspace there is exactly one unit vector with strictly positive real left Sobolev trace. This fixes the entire complex phase and includes the constant mode. Uniqueness concerns vectors in the original interval L2 domain, not extensions of pointwise representatives outside that interval."
+    },
+  {
+    "name": "GeneratedFoundations.Probability.GeneratedTangentLaw.exists_unique",
+    "module": "GeneratedFoundations.Probability.GeneratedTangentLaw",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:gaussian-change-uniqueness",
+    "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+    "coverage_kind": "clause",
+    "scope": "Existence and equality of the actual positive-parameter measures on the representation-trace Hilbert space of the original Lie algebra, under intrinsic composition, square-root scaling, finite second moment and unit covariance. The unconstrained values of a real-indexed family at nonpositive parameters are not included in uniqueness."
+  },
+  {
+    "name": "GeneratedFoundations.Probability.GeneratedTangentLaw.classification",
+    "module": "GeneratedFoundations.Probability.GeneratedTangentLaw",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:gaussian-change-uniqueness",
+    "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual trace-Lie measure equals the Gaussian transported through an isometric phase coordinate obtained from the original minimal carrier and actual representation differential. Equality is of measures, not just of moments."
+  },
+  {
+    "name": "GeneratedFoundations.Probability.GeneratedTangentLaw.reflection_invariant",
+    "module": "GeneratedFoundations.Probability.GeneratedTangentLaw",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "cor:generated-tangent-unbiasedness",
+    "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+    "coverage_kind": "clause",
+    "scope": "Reflection invariance of the actual generated tangent law is deduced from intrinsic C/S/V. This clause does not independently package the vector mean, the covariance at every parameter, or the full orthogonal-group statement."
+  },
+  {
+    "name": "GeneratedFoundations.Probability.GeneratedTangentLaw.continuous_zero_extension",
+    "module": "GeneratedFoundations.Probability.GeneratedTangentLaw",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:scaling-implies-weak-continuity",
+    "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+    "coverage_kind": "clause",
+    "scope": "The positive-parameter generated tangent family admits a continuous probability-measure extension to nonnegative parameters with a Dirac mass at zero. This constructs an extension rather than imposing a value on the original unrestricted family at zero."
+  },
+  {
+    "name": "GeneratedFoundations.Probability.GeneratedTangentLaw.original_tangent_law",
+    "module": "GeneratedFoundations.Probability.GeneratedTangentLaw",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:gaussian-change-uniqueness",
+    "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+    "coverage_kind": "clause",
+    "scope": "The same actual measure is expressed on the original tangent-space type by its identity-on-vectors continuous linear equivalence with the trace-Hilbert wrapper, preserving the original atlas and topology. An intrinsic C/S/V equivalence for arbitrary families on both types is not separately packaged here."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.HermitePhaseFlow.stronglyContinuous",
+    "module": "GeneratedFoundations.Operations.HermitePhaseFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:gaussian-central-sign",
+    "tex_source": "sections-en/sec03_disorder_axiom.tex",
+    "coverage_kind": "clause",
+    "scope": "The unitary group defined by the complete Hermite coefficient expansion is strongly continuous on the original Lebesgue L2 space, for every vector."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.HermitePhaseFlow.differentiableAt_zero_iff",
+    "module": "GeneratedFoundations.Operations.HermitePhaseFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:gaussian-central-sign",
+    "tex_source": "sections-en/sec03_disorder_axiom.tex",
+    "coverage_kind": "clause",
+    "scope": "A full Hilbert-space orbit is differentiable at zero exactly when its initial vector belongs to the original oscillator's self-adjoint closure domain. The generator domain is not restricted to finite Hermite sums."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.HermitePhaseFlow.hasDerivAt_phase",
+    "module": "GeneratedFoundations.Operations.HermitePhaseFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:gaussian-central-sign",
+    "tex_source": "sections-en/sec03_disorder_axiom.tex",
+    "coverage_kind": "clause",
+    "scope": "For every vector in the full oscillator closure domain, the phase orbit has derivative -i U(t) H at every real parameter."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.HermitePhaseFlow.flow_two_pi",
+    "module": "GeneratedFoundations.Operations.HermitePhaseFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:gaussian-central-sign",
+    "tex_source": "sections-en/sec03_disorder_axiom.tex",
+    "coverage_kind": "clause",
+    "scope": "The negative-sign phase convention exp(-itH) gives U(2 pi) = -I on every vector of the original Hilbert space."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.HermitePhaseFlow.flow_four_pi",
+    "module": "GeneratedFoundations.Operations.HermitePhaseFlow",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:gaussian-central-sign",
+    "tex_source": "sections-en/sec03_disorder_axiom.tex",
+    "coverage_kind": "clause",
+    "scope": "The same strongly continuous unitary group satisfies U(4 pi) = I on every vector of the original Hilbert space."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.neumannResolventTruncation_norm_tendsto_zero",
+    "module": "GeneratedFoundations.Spectral.NeumannResolvent",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The finite-rank resolvent sums converge in operator norm on the original interval L2 space."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.neumannResolvent_isCompact",
+    "module": "GeneratedFoundations.Spectral.NeumannResolvent",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual bounded inverse of I + A for the original Neumann differential operator is compact. This declaration does not assert a resolvent for every complex parameter outside the point eigenvalues."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.neumannResolvent_mem_domain",
+    "module": "GeneratedFoundations.Spectral.NeumannResolvent",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The resolvent sends every original interval L2 vector into the original H2 Neumann domain, as identified by absolutely continuous representatives."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.neumannResolvent_right_inverse",
+    "module": "GeneratedFoundations.Spectral.NeumannResolvent",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The constructed bounded map is a right inverse of I + A on all original interval L2 vectors, with its image in the original differential domain."
+  },
+  {
+    "name": "GeneratedFoundations.Spectral.neumannResolvent_left_inverse",
+    "module": "GeneratedFoundations.Spectral.NeumannResolvent",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "prop:unlabeled-spectral-classification",
+    "tex_source": "sections-en/04_discrete_spectral_components.tex",
+    "coverage_kind": "clause",
+    "scope": "The constructed bounded map is a left inverse of I + A on the entire original H2 Neumann domain."
+  },
+    {
+      "name": "GeneratedFoundations.Source.CarrierOrientation.carrierUnit_existsUnique",
+      "module": "GeneratedFoundations.Source.CarrierOrientation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "cor:generated-complex-structure",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "Each orientation of the original minimal real carrier selects a unique trace-unit vector in the original Lie algebra whose actual representation differential is its positive quarter-turn. The statement assumes only the original datum, its minimality and the carrier orientation; coordinates occur only in the proof."
+    },
+    {
+      "name": "GeneratedFoundations.Source.CarrierOrientation.carrierUnitEquiv",
+      "module": "GeneratedFoundations.Source.CarrierOrientation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "cor:generated-complex-structure",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "The two orientations of the original carrier and its representation-trace unit Lie vectors are in bijection. Reversing the orientation negates the selected vector; the original group atlas is unchanged."
+    },
+    {
+      "name": "GeneratedFoundations.Source.CarrierOrientation.carrierUnit_iff_area_pos",
+      "module": "GeneratedFoundations.Source.CarrierOrientation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "cor:generated-complex-structure",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "For every nonzero carrier vector, the oriented area with its actual infinitesimal action detects precisely the selected trace-unit Lie generator. This is a criterion in the original carrier metric, independent of a chosen complex coordinate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.CarrierOrientation.carrier_complexScalarAction_existsUnique",
+      "module": "GeneratedFoundations.Source.CarrierOrientation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:generated-complex-scalar-action",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "The quarter-turn selected by the actual carrier orientation determines a unique real-algebra homomorphism from the complex numbers into real endomorphisms. Orientation reversal composes this scalar action with complex conjugation."
+    },
+    {
+      "name": "GeneratedFoundations.Source.CarrierOrientation.carrier_sourceHermitian_reverse",
+      "module": "GeneratedFoundations.Source.CarrierOrientation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:generated-hermitian-form",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "The Hermitian form defined using the original carrier inner product and oriented quarter-turn is conjugated when carrier orientation is reversed."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.complexNeumannOperator_cosine",
+      "module": "GeneratedFoundations.Spectral.NeumannCosineEigenfunctions",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:joint-eigenfunctions",
+      "tex_source": "sections-en/04_discrete_spectral_components.tex",
+      "coverage_kind": "clause",
+      "scope": "Every member of the actual complete interval cosine basis belongs to the original H2 Neumann domain and satisfies the negative-second-derivative eigenvalue equation with eigenvalue (n pi/L)^2. This is the generator clause; the heat-response clause and shifted-window transport are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.complexNeumann_selfAdjoint",
+      "module": "GeneratedFoundations.Spectral.NeumannSpectralDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:unlabeled-spectral-classification",
+      "tex_source": "sections-en/04_discrete_spectral_components.tex",
+      "coverage_kind": "clause",
+      "scope": "The original Sobolev Neumann operator on [0,L] equals its Hilbert adjoint. The reverse domain inclusion is obtained using the actual mean-zero Poisson solution and its constant-mode correction, without replacing the operator by a sequence model. Closedness and nonnegativity are also established."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.complexNeumann_domain_iff",
+      "module": "GeneratedFoundations.Spectral.NeumannSpectralDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:neumann-laplacian",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "clause",
+      "scope": "Membership in the original H2 Neumann differential domain on [0,L] is equivalent to square summability of its eigenvalue-weighted coefficients in the actual cosine basis."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.complexNeumann_eigenvalue_iff",
+      "module": "GeneratedFoundations.Spectral.NeumannSpectralDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:correlation-spectrum",
+      "tex_source": "sections-en/04_discrete_spectral_components.tex",
+      "coverage_kind": "clause",
+      "scope": "The point eigenvalues of the actual differential operator are exactly (n pi/L)^2. This statement does not by itself assert a bounded resolvent off this set or the compact-resolvent and heat-semigroup clauses."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.complexNeumann_eigenvector_iff",
+      "module": "GeneratedFoundations.Spectral.NeumannSpectralDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:unlabeled-spectral-classification",
+      "tex_source": "sections-en/04_discrete_spectral_components.tex",
+      "coverage_kind": "clause",
+      "scope": "For each derived eigenvalue, all eigenvectors in the original differential domain are exactly the complex multiples of its normalized cosine mode. The eigenspace is a single line, including the constant zero mode; spectral-projection and heat-order constructions are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.neumannEigenvalue_strictMono",
+      "module": "GeneratedFoundations.Spectral.NeumannSpectralDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:spectral-monotonicity",
+      "tex_source": "sections-en/04_discrete_spectral_components.tex",
+      "coverage_kind": "clause",
+      "scope": "Strict increase of the actual derived generator eigenvalues. Monotonicity of the heat-response weights is not included in this declaration."
+    },
+    {
+      "name": "GeneratedFoundations.Source.TraceLieGeometry.norm_sq_eq_trace",
+      "module": "GeneratedFoundations.Source.TraceLieGeometry",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:representation-induced-lie-inner-product",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "The inner product on a separate wrapper of the original Lie algebra is defined by the actual representation trace form. The identity on vectors is a continuous linear equivalence to the original tangent norm; no original norm or atlas is replaced."
+    },
+    {
+      "name": "GeneratedFoundations.Source.TraceLieGeometry.unit_orientation_existsUnique",
+      "module": "GeneratedFoundations.Source.TraceLieGeometry",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The two orientations of the original one-dimensional Lie algebra correspond bijectively to its two trace-unit vectors, and reversing orientation negates the selected vector. This is a Lie-line orientation statement; the identification with orientations of the two-dimensional carrier is separate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.OriginalLieFlow.minimalCarrier_original_phase_flow",
+      "module": "GeneratedFoundations.Source.OriginalLieFlow",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:generated-u-one-realization",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "For the original minimal datum, a trace-unit generator has a global integral curve of its original left-invariant vector field. The exponential at parameter one and scalar-flow identity are proved before deriving the complex phase formula. Existence and uniqueness use the original atlas, without assuming a smooth inverse character or defining the exponential by the inverse character."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.circleHaarNormalization",
+      "module": "GeneratedFoundations.Spectral.CircleNormalization",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The actual half-volume circle L2 space is complex unitarily equivalent to probability Haar L2 by multiplication by sqrt(L), with inverse and almost-everywhere representative formulas. The multiplier follows from the computed measure ratio."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.reflectingHaar_unitary",
+      "module": "GeneratedFoundations.Spectral.CircleNormalization",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "clause",
+      "scope": "Actual folding reflection, followed by the measure normalization, is a unitary from complex L2([0,L]) onto the usual reflection-even Haar circle subspace. Shifted-window and angular-coordinate transport, and the Haar operator conjugacy, remain separate."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.neumannCosineBasis",
+      "module": "GeneratedFoundations.Spectral.NeumannCosineBasis",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "A complete Hilbert basis of actual complex interval L2 is obtained by pairing positive and negative Fourier characters in the Haar-even space. Completeness is proved independently of the differential operator; membership in its Neumann domain and spectral-domain characterization are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.neumannCosineMode_succ_coe",
+      "module": "GeneratedFoundations.Spectral.NeumannCosineBasis",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:neumann-as-even-characters",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "clause",
+      "scope": "Every positive basis mode has the actual interval representative sqrt(L)^(-1) sqrt(2) cos((n+1) pi x/L); the zero-mode constant and normalized reflection formula are also proved. This identifies functions and normalization without assuming differential spectral completeness."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.ZeroMoments.ae_eq_zero_of_all_moments_eq_zero",
+      "module": "GeneratedFoundations.Operations.ZeroMoments",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "An integrable complex function with all nonnegative absolute exponential moments and vanishing polynomial moments is zero almost everywhere. Dominated summation yields its Fourier transform; inversion is used only on Schwartz test functions, with no continuity assumption on the original function."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteSpan.monomialGaussian_mem_span",
+      "module": "GeneratedFoundations.Operations.HermiteSpan",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The algebraic span of the actual generated Schwartz Hermite functions contains every coordinate monomial times the same normalized Gaussian. This follows from the actual raising/lowering identity for coordinate multiplication, without completeness as an input."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteMoments.weightedSource_exponential_integrable",
+      "module": "GeneratedFoundations.Operations.HermiteMoments",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "For every vector in the original Lebesgue L2 space, its product with the same positive generating Gaussian has finite absolute exponential moments of every real order. Polynomial moments are separately proved integrable and vanish under Hermite orthogonality."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteCompleteness.basis",
+      "module": "GeneratedFoundations.Operations.HermiteCompleteness",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "The recursively generated Hermite family is a complete Hilbert basis of the original Lebesgue L2 space. The orthogonal complement is annihilated by Gaussian-weighted moment uniqueness and positivity; the coefficient-space isometry is constructed only after this proof."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteCompleteness.hasSum_expansion",
+      "module": "GeneratedFoundations.Operations.HermiteCompleteness",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "Every original L2 vector is the norm-convergent sum of its inner-product coefficients times the same generated Hermite functions, at every positive source width."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.EigenbasisClosure.closure_eq_adjoint",
+      "module": "GeneratedFoundations.Operations.EigenbasisClosure",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "For a symmetric partial operator containing a complete real-eigenvalue Hilbert basis, finite eigenvector sums approximate every adjoint graph point. The actual graph closure equals the Hilbert adjoint. Domain membership is equivalently square summability of the weighted basis coefficients."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.EigenbasisClosure.selfAdjoint_extension_unique",
+      "module": "GeneratedFoundations.Operations.EigenbasisClosure",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "A symmetric partial operator with a complete real eigenbasis has exactly one self-adjoint extension in the same Hilbert space, namely its graph closure. The comparison class is all self-adjoint extensions, not only diagonal presentations."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteOscillator.hamiltonian_selfAdjoint",
+      "module": "GeneratedFoundations.Operations.HermiteOscillator",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "The graph closure of the actual Schwartz differential oscillator N+1/2 is self-adjoint. Its equality with the half-sum of the two source orderings, density, symmetry and generated Hermite eigenvectors are proved before invoking the closure theorem. The full unitary phase flow and central sign are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteOscillator.hamiltonian_domain_iff",
+      "module": "GeneratedFoundations.Operations.HermiteOscillator",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "The actual oscillator closure has exactly the domain of original L2 vectors whose Hermite coefficients satisfy sum_n (n+1/2)^2 |c_n|^2 < infinity. Its action has coefficients (n+1/2)c_n; this is a domain theorem for the differential operator closure."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteOscillator.selfAdjoint_extension_unique",
+      "module": "GeneratedFoundations.Operations.HermiteOscillator",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "For each positive Gaussian width, every self-adjoint operator extending the actual order-neutral Schwartz differential oscillator equals its graph closure. No diagonal-model restriction is imposed on competing extensions."
+    },
+    {
+      "name": "GeneratedFoundations.Source.RepresentationDifferential.endomorphism_eq_smul_generator",
+      "module": "GeneratedFoundations.Source.RepresentationDifferential",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The actual manifold derivative of the original operator-valued action, in its original Lie atlas, equals the imaginary character differential times the same coordinate's quarter-turn. Smoothness follows from the original continuous character and proved intertwining; no replacement atlas or assumed differentiability is used."
+    },
+    {
+      "name": "GeneratedFoundations.Source.RepresentationDifferential.minimalCarrier_trace_generators",
+      "module": "GeneratedFoundations.Source.RepresentationDifferential",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "Starting only with the original orthogonal change datum and minimality, construct a common coordinate and character, prove the actual action smooth and its dimension-normalized representation trace metric positive, and classify all trace-unit Lie vectors as precisely two opposite generators whose representation images are plus and minus the quarter-turn. The original exponential formula, orientation interface and general nonminimal trace-metric assertion are not included."
+    },
+    {
+      "name": "GeneratedFoundations.Source.RepresentationDifferential.unit_endomorphism_properties",
+      "module": "GeneratedFoundations.Source.RepresentationDifferential",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "thm:minimal-real-carrier",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "For the same minimal change datum and proved character-coordinate intertwining, every Lie vector of unit representation trace length has an actual representation derivative that is skew, squares to minus identity and preserves the original carrier norm. Unit length is not taken from the default chart-model norm. The upstream coordinate and character assumptions are discharged by minimalCarrier_trace_generators."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteFamily.state_orthonormal",
+      "module": "GeneratedFoundations.Operations.HermiteFamily",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "All Hermite states are constructed by the actual Schwartz raising differential operator applied to the same normalized Gaussian. Integration by parts and the CCR prove orthogonality and factorial norms, hence an infinite orthonormal family in Lebesgue L2. Completeness, self-adjoint closure and the full-space central phase remain separate statements."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteFamily.symmetric_generator_hermite",
+      "module": "GeneratedFoundations.Operations.HermiteFamily",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "cor:gaussian-central-sign",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The actual order-neutral differential generator on its Schwartz core has eigenvalue n+1/2 on each normalized generated Hermite function, for every natural degree and positive width. The underlying all-order raising and lowering identities are proved. This does not assert spectral exhaustion or the domain of the self-adjoint closure."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteFamily.state_one",
+      "module": "GeneratedFoundations.Operations.HermiteFamily",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:source-spin-centre-p4",
+      "tex_source": "sections-en/appendix_f_source_response.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The first state of the full recursively generated Hermite family is exactly the previously constructed first excited L2 state at the same positive width; state_zero identifies the ground state as well. Thus the existing two-dimensional source is part of this same family. The full source algebra and centre action are not inferred from this identification alone."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.PeriodicIntervalH2.secondCircleL2_unique",
+      "module": "GeneratedFoundations.Spectral.CircleOperator",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "Arbitrary periodic H2 representatives of the same actual circle L2 class have the same second weak derivative class. This constructs the periodic operator independently of reflection and without classical C2 or spectral assumptions."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.reflectingIsometry_mem_graph_iff",
+      "module": "GeneratedFoundations.Spectral.CircleOperator",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "clause",
+      "scope": "The actual folding L2 isometry identifies the graph of the Neumann negative second weak derivative on [0,L] with the even sector of the independently defined full periodic H2 circle operator. This includes domain equivalence and derivative action. Probability-Haar normalization, window translation, angular coordinates, self-adjointness and the complete spectrum are separate interfaces."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.PeriodicIntervalH2.globalRepresentative",
+      "module": "GeneratedFoundations.Spectral.CircleSobolev",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "Every actual H2 representative with matching value and first-derivative traces extends periodically to a genuine H2 representative on each bounded real interval. The proof uses locally square-integrable periodic derivatives and primitive integral identities, with no classical C2 hypothesis or spectral expansion."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.reflectingIsometry_mem_periodicH2_iff",
+      "module": "GeneratedFoundations.Spectral.CircleSobolev",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "clause",
+      "scope": "Under the actual folding L2 isometry, membership in the circle H2 domain is equivalent to membership in the actual interval Neumann domain. The circle domain is defined independently using arbitrary periodic Sobolev representatives, not as the reflection image. The second-derivative operator conjugacy, shifted window, angular coordinate and probability-Haar rescaling remain separate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.CharacterDifferential.minimalCarrier_differential_injective",
+      "module": "GeneratedFoundations.Source.CharacterDifferential",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "For every original minimal orthogonal change datum, the same character intertwining its action is smooth in the original atlas and has injective differential at the original identity tangent space. Kernel triviality follows from actual local integral curves and character faithfulness. The original action differential, its representation trace metric, orientation and exponential identification are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.CharacterDifferential.minimalCarrier_groupDimension_eq_one",
+      "module": "GeneratedFoundations.Source.CharacterDifferential",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "The original Lie-group model dimension of every minimal datum is exactly one. The upper bound is proved from the injective imaginary differential; zero dimension is excluded using the original charts, connectedness and nontriviality. No one-dimensionality or smooth inverse is assumed."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.native_irreducibles_infinite",
+      "module": "GeneratedFoundations.Arithmetic.InternalPrimes",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "cor:infinitely-many-spectral-primes",
+      "tex_source": "sections-en/06_peano_primes_and_decomposition.tex",
+      "coverage_kind": "clause",
+      "scope": "Composition-irreducible actual circle modes form an infinite set. For every finite prime list, factorization of its product followed by one successor produces a prime outside that list; the contradiction uses native divisibility and cancellation. The proof does not use the infinitude of ordinary natural-number primes. The source-spectrum identification remains upstream."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.Differences.pair_le_pair",
+      "module": "GeneratedFoundations.Arithmetic.DifferenceOrder",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:internal-difference-ring-order",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "clause",
+      "scope": "The order on the actual quotient of mode pairs is defined by adding an embedded native mode. It is proved equivalent to the cross-addition inequality on representatives. The linear order is constructed internally, without transfer from Int."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.Differences.positive_native_unique",
+      "module": "GeneratedFoundations.Arithmetic.DifferenceOrder",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "lem:internal-ordered-difference-ring",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "clause",
+      "scope": "Every strictly positive element of the actual difference ring has a unique nonzero native-mode representative. Its full nonnegative cone is exactly the image of the proved injective semiring embedding."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.Differences.difference_is_integral_domain",
+      "module": "GeneratedFoundations.Arithmetic.DifferenceOrder",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "lem:internal-ordered-difference-ring",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "clause",
+      "scope": "The actual pair quotient is a nontrivial linearly ordered commutative integral domain. Ring laws descend from native representative operations, and positive multiplication follows from nonzero native composition. No ordinary-integer ring structure or order is assumed."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.Differences.bezout_in_difference_ring",
+      "module": "GeneratedFoundations.Arithmetic.DifferenceRing",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:intrinsic-bezout",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "clause",
+      "scope": "For any two actual modes, the gcd constructed by native remainder descent is a linear combination of their embeddings in the constructed difference ring. The coefficients are differences of the already constructed positive-part witnesses; no integer gcd or Bezout theorem is used."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.Differences.additive_extension_existsUnique",
+      "module": "GeneratedFoundations.Arithmetic.DifferenceUniversal",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "lem:internal-ordered-difference-ring",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "Every additive homomorphism from actual modes to any additive commutative group has a unique extension to the actual pair quotient. The extension is constructed by the representative formula f(a)-f(b), proving the Grothendieck group universal property."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.Differences.ring_extension_existsUnique",
+      "module": "GeneratedFoundations.Arithmetic.DifferenceUniversal",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "lem:internal-ordered-difference-ring",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "Every semiring homomorphism from actual modes to any commutative ring has a unique ring-homomorphism extension to the constructed difference ring, with the same representative formula. Comparison with degree or arbitrary continuous circle-map homotopy classes is not part of this statement."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.neumann_iff_periodic_even_extension",
+      "module": "GeneratedFoundations.Spectral.ReflectionSobolev",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "clause",
+      "scope": "An actual H2 interval representative has the two Neumann derivative traces exactly when it admits a periodic even H2 extension to the doubled interval. Forward reflection uses primitive integral identities, and the reverse direction applies to any such extension, using weak-derivative uniqueness and trace matching. This statement concerns actual interval representatives; their quotient-circle L2 identification and differential-operator conjugacy are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.GaussianLadderCore.embedding_groundSchwartz",
+      "module": "GeneratedFoundations.Operations.GaussianLadderCore",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:canonical-gaussian-ladder-p4",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The normalized generated Gaussian is constructed as an actual Schwartz function using bounds for all Hermite derivatives, and its Lebesgue L2 embedding is exactly the previously constructed source vacuum. Schwartz membership is proved, not assumed."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.GaussianLadderCore.gaussian_ladder_unique_on_hilbert_core",
+      "module": "GeneratedFoundations.Operations.GaussianLadderCore",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:canonical-gaussian-ladder-p4",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "For arbitrary complex affine first-order coefficients, actual Hilbert-space annihilation of the generated Gaussian and the Hilbert-adjoint commutator on the invariant Schwartz core imply a unique unit complex phase multiplying the canonical lowering expression. The adjoint action on that core is proved by integration by parts. No equality of full product domains or essential self-adjointness is asserted."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.GaussianLadderCore.hilbert_ordered_products_eq_canonical",
+      "module": "GeneratedFoundations.Operations.GaussianLadderCore",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:canonical-gaussian-ladder-p4",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "Both actual Hilbert-adjoint ordered products on every Schwartz-core vector agree with their canonical Gaussian-ladder products under the original annihilation and normalized-commutator hypotheses. Their independence of the remaining unit phase is proved. Full Hermite completeness and operator closures are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.native_euclid",
+      "module": "GeneratedFoundations.Arithmetic.InternalPrimes",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "lem:spectral-euclid",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "clause",
+      "scope": "An irreducible actual circle mode dividing a composite divides one of its two factors. The proof uses the native gcd and positive-part Bezout equality, followed by additive cancellation. It does not invoke natural-number primes or assume a difference-ring divisor theorem. Identification of the mode family with the complete generated spectrum remains upstream."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.native_factorization_unique",
+      "module": "GeneratedFoundations.Arithmetic.InternalPrimes",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:unique-spectral-factorization",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "clause",
+      "scope": "Any two finite lists of composition-irreducible actual circle modes having the same product are permutations of one another. The proof removes common factors using the native Euclid lemma and cancellation; no integer factorization theorem is used."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.native_exponent_profile_existsUnique",
+      "module": "GeneratedFoundations.Arithmetic.InternalPrimes",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:spectral-factorization",
+      "tex_source": "sections-en/06_peano_primes_and_decomposition.tex",
+      "coverage_kind": "clause",
+      "scope": "Every nonzero actual mode has a unique finitely supported natural-number exponent function, supported on composition-irreducible modes, whose product is that mode. Existence uses descent in the native additive order; uniqueness uses the internally proved divisor property. The complete Neumann-spectrum bridge and subsequent comparison with ordinary prime labels are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.SmoothCharacter.minimalCarrier_character_smooth",
+      "module": "GeneratedFoundations.Source.SmoothCharacter",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "For every original minimal change datum, the circle character that intertwines its actual orthogonal action is smooth in the original Lie-group atlas. Smoothness is obtained from Haar averaging against a smooth bump with a proved nonzero mean; it is not an input and no atlas is replaced. Injectivity of the Lie differential, its trace normalization and the exponential-flow identification remain separate."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.native_gcd_existsUnique",
+      "module": "GeneratedFoundations.Arithmetic.InternalEuclid",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:intrinsic-bezout",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "On the actual nonnegative circle-map semiring, decreasing native remainders construct a unique gcd together with a positive-part Bezout equality. Only the gcd is unique; its four coefficient witnesses are not asserted to be unique. The ordered difference ring and interpretation of the equality there are separate. No natural-number gcd or factorization theorem is used."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.GaussianAffineLadder.gaussian_affine_ladder_unique",
+      "module": "GeneratedFoundations.Operations.GaussianAffineLadder",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:canonical-gaussian-ladder-p4",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "clause",
+      "scope": "For arbitrary complex affine first-order coefficients, annihilation of the actual Gaussian function and the normalized commutator on actual Schwartz space imply a unique unit-modulus scalar multiplying the generated lowering differential expression. The coefficient relations and phase are conclusions. Separate interfaces for the Gaussian's Schwartz membership and phase independence of both ordered products are not included in this declaration."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.GaussianAffineLadder.core_adjoint_le_hilbert_adjoint",
+      "module": "GeneratedFoundations.Operations.GaussianAffineLadder",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:canonical-gaussian-ladder-p4",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The proposed formal adjoint is proved by integration by parts on the actual Schwartz core. Through its injective dense embedding in Lebesgue L2, that core operator is contained in the maximal Hilbert adjoint. Equality of the full unbounded adjoint domains is not asserted."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.reflectingDouble_unitary",
+      "module": "GeneratedFoundations.Spectral.ReflectionEven",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:reflection-unitary",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The actual complex L2 space on [0,L] is linearly isometric to precisely the even subspace on the period-2L quotient circle, with half the ordinary circle volume. This normalization preserves the interval mass. The proof calculates the folding pushforward and proves surjectivity onto the reflection-fixed subspace. The manuscript's shifted interval and angular coordinate, its square-root-L rescaling to probability Haar, and its H2 differential-operator correspondence remain separate."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.reflectionCircleMeasure_eq_haar",
+      "module": "GeneratedFoundations.Spectral.ReflectionEven",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:reflecting-double",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The measure used by the actual reflection isometry is L times probability Haar measure on the period-2L circle. This fixes the measure normalization before choosing a spectral basis."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.native_lt_iff_exists_add",
+      "module": "GeneratedFoundations.Arithmetic.InternalDivision",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:intrinsic-additive-order",
+      "tex_source": "sections-en/06_peano_primes_and_decomposition.tex",
+      "coverage_kind": "clause",
+      "scope": "On the actual circle-map semiring, the successor-chain order is exactly the native additive order: u is less than v precisely when v=u+w for a nonzero mode w. Its identification with the complete source spectrum remains upstream."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.native_mul_cancel_left",
+      "module": "GeneratedFoundations.Arithmetic.InternalDivision",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "lem:internal-semiring-cancellation",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "clause",
+      "scope": "A nonzero common factor cancels under actual circle-map composition. The proof uses strict preservation of native additive order. No integer factorization or prime classification is used."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.native_division_existsUnique",
+      "module": "GeneratedFoundations.Arithmetic.InternalDivision",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:intrinsic-euclidean-division",
+      "tex_source": "sections-en/appendix_b_euclidean_factorization.tex",
+      "coverage_kind": "clause",
+      "scope": "Every actual nonnegative circle mode has a unique quotient-remainder pair for every nonzero divisor, with remainder strictly smaller than the divisor. Existence is constructed by native successor induction, and uniqueness follows from the additive order and cancellation. Natural-number division, gcd and factorization are not imported. The source-spectrum identification is separate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.ComplexStructure.minimalCarrier_complexHilbert",
+      "module": "GeneratedFoundations.Source.ComplexStructure",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "cor:generated-complex-structure",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "The same carrier and norm of every minimal datum acquire a one-dimensional complex Hilbert structure, and the original continuous group action becomes complex scalar multiplication through the constructed circle isomorphism. The exponential statement for the original Lie differential is separate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.ComplexStructure.sourceHermitian_unique",
+      "module": "GeneratedFoundations.Source.ComplexStructure",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:generated-hermitian-form",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "For the selected quarter-turn, the first-slot-linear complex form with the prescribed real inner product is unique. The actual generated form is proved conjugate-symmetric, additive, complex-linear in that slot and positive definite."
+    },
+    {
+      "name": "GeneratedFoundations.Source.ComplexStructure.reverseCoordinate_sourceHermitian",
+      "module": "GeneratedFoundations.Source.ComplexStructure",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "cor:generated-complex-structure",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "Conjugating the real-isometric complex coordinate replaces the actual quarter-turn by its negative and conjugates the generated Hermitian form. Coordinate reversal is constructed explicitly."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteSource.groundProfile_squared_measure",
+      "module": "GeneratedFoundations.Operations.HermiteSource",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "eq:normalized-tangent-gaussian-p4",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The square of the actual normalized source amplitude is the member at parameter b squared over two of every original C/S/V measure family. Its connection to the earlier Gaussian state uses the explicit width change b to square-root-two times b."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteSource.sourceModes_orthonormal",
+      "module": "GeneratedFoundations.Operations.HermiteSource",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:source-spin-centre-p4",
+      "tex_source": "sections-en/appendix_f_source_response.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The actual Gaussian ground and first excited states are orthonormal in complex Lebesgue L2. Orthogonality and normalization are proved by Gaussian moments; they are not supplied as representation data. This does not assert completeness of the full Hermite family."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteSource.compressedLowering_differential",
+      "module": "GeneratedFoundations.Operations.HermiteSource",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:source-spin-centre-p4",
+      "tex_source": "sections-en/appendix_f_source_response.tex",
+      "coverage_kind": "clause",
+      "scope": "For every complex linear combination of the two actual source states, the bounded compressed lowering map agrees almost everywhere with the source differential expression. The two-state space is constructed as their actual L2 span."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteSource.compressedNumber_differential",
+      "module": "GeneratedFoundations.Operations.HermiteSource",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:source-spin-centre-p4",
+      "tex_source": "sections-en/appendix_f_source_response.tex",
+      "coverage_kind": "clause",
+      "scope": "The bounded Hilbert adjoint composed with the compressed lowering map agrees with the differential number expression on every vector in the two-state source space. This does not identify the full unbounded creation operator's Hilbert-adjoint domain."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.HermiteSource.source_vacuum_line",
+      "module": "GeneratedFoundations.Operations.HermiteSource",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:source-spin-centre-p4",
+      "tex_source": "sections-en/appendix_f_source_response.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "Inside the actual two-state L2 source space, the kernel of the compressed lowering operation is exactly the complex line through the source-generated Gaussian ground state. Charge and vacuum transport classifications are subsequent obligations."
+    },
+    {
+      "name": "GeneratedFoundations.Source.PlaneGenerator.minimalCarrier_has_two_unit_generators",
+      "module": "GeneratedFoundations.Source.PlaneGenerator",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "On every minimal real carrier, all skew endomorphisms of unit representation trace form are exactly J and -J, with J squared equal to minus the identity. This classifies operators on the actual carrier. Identification with the original Lie differential, the trace form on its tangent space, and the exponential flow are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.PlaneGenerator.complexScalarAction_existsUnique",
+      "module": "GeneratedFoundations.Source.PlaneGenerator",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:generated-complex-scalar-action",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "coverage_kind": "clause",
+      "scope": "A specified real endomorphism J with J squared equal to minus the identity extends real scalars to a unique real-algebra homomorphism from the complex numbers sending i to J. The preceding minimal-carrier theorem supplies the two possible signs. Their coordinate-independent selection by an orientation is separate."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.complexNeumannOperator_on_representative",
+      "module": "GeneratedFoundations.Spectral.ComplexNeumannDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:neumann-laplacian",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "clause",
+      "scope": "The complex-linear partial operator on actual interval L2 acts as minus the second derivative on every absolutely continuous H2 representative with vanishing first-derivative traces. Representative independence is proved."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.complexNeumann_formalAdjoint",
+      "module": "GeneratedFoundations.Spectral.ComplexNeumannDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:neumann-selection",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "Green's identity makes the actual complex Neumann partial operator formally self-adjoint on its Sobolev domain. This is symmetry on the specified domain, not yet equality with the full Hilbert-space adjoint."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.neumannPoisson_existsUnique",
+      "module": "GeneratedFoundations.Spectral.NeumannPoisson",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:neumann-laplacian",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "For every mean-zero source in actual complex interval L2, there is exactly one mean-zero element of the actual H2 Neumann domain solving Au=g. The solution is constructed by two indefinite integrals, without assuming any spectral expansion."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.neumann_range_eq_meanZero",
+      "module": "GeneratedFoundations.Spectral.NeumannPoisson",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:neumann-laplacian",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "coverage_kind": "supporting_lemma",
+      "scope": "The range of the actual complex Neumann operator is precisely the mean-zero subspace of interval L2. Complete spectral classification and the reflected-circle correspondence are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Probability.SourceContinuity.source_integral_tendsto_zero",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Probability.SourceContinuity",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:scaling-implies-weak-continuity",
+      "scope": "Every bounded continuous real test function converges to its value at zero under the positive-parameter source laws as the parameter decreases to zero. The proof uses probability and square-root scaling directly; it imposes no value on the originally unconstrained nonpositive parameters."
+    },
+    {
+      "name": "GeneratedFoundations.Probability.SourceContinuity.positiveSource_continuous",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Probability.SourceContinuity",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:scaling-implies-weak-continuity",
+      "scope": "The positive-parameter source is continuous in the actual weak topology on probability measures. A separate explicitly constructed extension takes the Dirac law at zero."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.neumannOperator_on_representative",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Spectral.NeumannDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:neumann-laplacian",
+      "scope": "A partial linear operator on actual real interval L2 is constructed from H2 representatives with vanishing derivative traces. Its value is the negative second derivative independently of the representative. Self-adjointness and complete spectral classification are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.separatedClosure_selects_neumann",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Spectral.NeumannDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:neumann-selection",
+      "scope": "Among nonzero separated real homogeneous boundary conditions, admitting the constant state forces the Neumann condition at both endpoints. The comparison concerns domains, not unique coefficient pairs."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.neumann_kernel_constants",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Spectral.NeumannDomain",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:neumann-selection",
+      "scope": "For actual real H2 representatives in the Neumann domain, zero second derivative in interval L2 is equivalent to being constant on the interval."
+    },
+    {
+      "name": "GeneratedFoundations.Spectral.dirichletDistance_eq",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Spectral.DirichletMetric",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:correlation-dirichlet-metric",
+      "scope": "The supremum over all real absolutely continuous H1 representatives with squared derivative at most one almost everywhere equals the coordinate distance. This is the intrinsic Dirichlet-distance clause; its comparison with the Gaussian correlation distance is separate."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.ComplexGaussianStates.complexState_inner",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Correlation.ComplexGaussianStates",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:change-state-overlap",
+      "scope": "The actual normalized Gaussian states in complex L2 have the stated real overlap under the second-slot-linear Hermitian convention. The real-to-complex map is constructed as a real-linear isometric embedding."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.ComplexGaussianStates.sourceInner_complexState",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Correlation.ComplexGaussianStates",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:change-state-overlap",
+      "scope": "Conjugating to the first-slot-linear convention gives the same real Gaussian overlap. The conversion of conventions is explicit; no compatibility is inferred solely from notation."
+    },
+    {
+      "name": "GeneratedFoundations.Source.MinimalCarrier.minimalCarrier_classification",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Source.MinimalCarrier",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "scope": "Every minimal datum in the stated compact connected Lie-group comparison class has real carrier dimension two and is orthogonally intertwined with the full circle rotation action, through a topological group isomorphism. The original Lie differential, induced Lie metric and normalized infinitesimal generator are not covered by this declaration."
+    },
+    {
+      "name": "GeneratedFoundations.Source.MinimalCarrier.rotationDatum_isMinimal",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Source.MinimalCarrier",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:change-consistency-model",
+      "scope": "The actual rotation datum satisfies the compact connected Lie-group, faithfulness, continuity and real irreducibility conditions and attains least carrier dimension in the complete specified comparison class."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.MinimalFaithfulModule.standardJointRepresentation_isLeast",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.MinimalFaithfulModule",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "thm:matterunique",
+      "scope": "The actual standard Hilbert representation of the two-block joint algebra is faithful, adjoint-preserving and least-dimensional in the specified comparison class. Its source interpretation is provided separately by SourceJointResponse and SourceMinimalRepresentation; it is not an additional premise of the root theorem."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.MinimalFaithfulModule.leastFaithfulJointRep_finrank_eight",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.MinimalFaithfulModule",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "eq:minimal-faithful-joint-module-p4",
+      "scope": "Every least-dimensional faithful adjoint-preserving representation of the joint algebra has dimension eight. Minimality is a quantified comparison condition; eight is a conclusion, not its definition."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.MinimalFaithfulModule.leastFaithfulJointRep_unique",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.MinimalFaithfulModule",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "thm:matterunique",
+      "scope": "Any two representations satisfying the specified least-dimensional faithful adjoint-preserving condition are intertwined by a complex-linear isometry. The intertwiner itself is not asserted to be unique."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.MinimalFaithfulModule.pairedLeastFaithfulJointRep_finrank_sixteen",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.MinimalFaithfulModule",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "thm:matterunique",
+      "scope": "The product of two least faithful joint-algebra representations has dimension sixteen, with no neutral charge line removed. This declaration classifies a pair once given; derivation of the two graded source sectors is a separate Clifford-chirality statement."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.MatrixModuleClassification.nondegenerate_iff_map_one",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.MatrixModuleClassification",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "thm:matterunique",
+      "scope": "For a possibly nonunital algebra representation, nondegeneracy is equivalent to the identity acting as the identity operator. Unitalization preserves the actual action, so the later unital classification does not silently strengthen nondegeneracy."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.MatrixModuleClassification.natural_iff_existsUnique_reducedMap",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.MatrixModuleClassification",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "eq:natural-connector-factorization-p4",
+      "scope": "A linear connector commutes with every full-matrix color action exactly when it applies one uniquely determined linear map to every color coordinate. Its source construction, reversal reality and gauge charge are separate assertions."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.Endpoints.uvEndpoint_isLeast",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Correlation.Endpoints",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:uv-endpoint",
+      "scope": "The stated endpoint is the least member of the actual positive separation threshold set defined by calibrated information. Its equality with the infimum and uniqueness at unit information are proved in the same module."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.Endpoints.irEndpoint_unique",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Correlation.Endpoints",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:ir-endpoint",
+      "scope": "The actual integral equal-capacity equation has a unique positive solution. The Gaussian evaluation, normalized Haar uniqueness and invariance of the specified peak-equivalent width are proved separately; no uniqueness among arbitrary width definitions is asserted."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.Endpoints.ReadoutLaws.endpointReadout_unique",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Correlation.Endpoints",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:unique-endpoint-ratio-readout",
+      "scope": "A continuous positive scale-invariant multiplicative cocycle on positive scales equals the ratio after unit logarithmic derivative calibration. Values on nonpositive arguments are outside the uniqueness claim."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.GaussianCorrelation.sourceLaw_eq_profileDensity",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Correlation.GaussianCorrelation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:normalized-change-kernel",
+      "scope": "At positive parameter b squared, every C/S/V source law equals the measure with the normalized profile as its actual Lebesgue density. Identification of the generated Lie tangent coordinate is separate."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.GaussianCorrelation.hilbertState_inner",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Correlation.GaussianCorrelation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:change-state-overlap",
+      "scope": "The inner product of the actual translated normalized Gaussian states in real L2 of Lebesgue measure is the profile at their displacement. A separate complex scalar extension is not asserted here."
+    },
+    {
+      "name": "GeneratedFoundations.Source.DimensionLowerBound.faithful_connected_dimension_at_least_two",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Source.DimensionLowerBound",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:minimal-scalar-group",
+      "scope": "Any faithful continuous orthogonal action of a nontrivial connected group on a nonzero finite-dimensional real carrier has dimension at least two. Full minimal-carrier classification and the normalized Lie generator are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Source.RotationWitness.real_irreducible",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Source.RotationWitness",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:change-consistency-model",
+      "scope": "The actual circle multiplication action on the complex plane has no nontrivial invariant real subspace. Faithfulness, continuity and real dimension two are proved in the same module; the general minimality and Lie-theoretic identification are separate."
+    },
+    {
+      "name": "GeneratedFoundations.Probability.gaussian_entropy_maximal",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Probability.GaussianEntropy",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:gaussian-maximum-entropy",
+      "scope": "The centered Gaussian maximizes extended differential entropy among absolutely continuous probability laws with mean zero and the prescribed positive finite variance. No additional entropy-integrability assumption is imposed."
+    },
+    {
+      "name": "GeneratedFoundations.Probability.gaussian_entropy_density_equality_iff",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Probability.GaussianEntropy",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:gaussian-maximum-entropy",
+      "scope": "Equality in the entropy bound holds exactly when the density equals the Gaussian density almost everywhere. The extended-entropy definition is identified with the positive and negative parts of the Lebesgue integral of minus p log p."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.CircleCharacters.character_existsUnique_fourier",
+      "tex_source": "sections-en/05_analytic_spectral_semiring.tex",
+      "module": "GeneratedFoundations.Arithmetic.CircleCharacters",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:circle-endomorphism-classification",
+      "scope": "Every continuous normalized multiplicative character of the additive circle is a unique Fourier monomial. CircleEndomorphisms provides the coordinate bridge; the source-generated analytic lift is separate."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.CircleEndomorphisms.circleEndomorphism_classification",
+      "tex_source": "sections-en/05_analytic_spectral_semiring.tex",
+      "module": "GeneratedFoundations.Arithmetic.CircleEndomorphisms",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:circle-endomorphism-classification",
+      "scope": "Every actual continuous unit-circle group endomorphism is a unique integer power map. Identification of this integer with topological winding degree and with the source-generated spectrum is separate."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.instCommSemiringMode",
+      "tex_source": "sections-en/05_analytic_spectral_semiring.tex",
+      "module": "GeneratedFoundations.Arithmetic.NativeModes",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:natural-mode-semiring",
+      "scope": "The nonnegative power maps themselves form a commutative semiring under pointwise multiplication and composition. The zero is the constant-one map. GeneratedModes, GeneratedWindowModes and the root arithmetic entry separately identify these operations with the oriented reflected source modes."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.successor_induction",
+      "tex_source": "sections-en/06_peano_primes_and_decomposition.tex",
+      "module": "GeneratedFoundations.Arithmetic.NativeModes",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:peano-completion",
+      "scope": "Induction on actual nonnegative circle maps using modulation by the first positive mode as successor. The source-to-mode identification is not included."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.NativeModes.recursion_existsUnique",
+      "tex_source": "sections-en/06_peano_primes_and_decomposition.tex",
+      "module": "GeneratedFoundations.Arithmetic.NativePeano",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:peano-completion",
+      "scope": "Existence and uniqueness of recursion into any target type from a chosen base point and successor map, on the actual map semiring."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.LocalInformation.AdditiveLocalInformation.existsUnique_nonnegative_coefficient",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Correlation.LocalInformation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:additive-local-information",
+      "scope": "Classification of continuous nonnegative multiplicatively additive information functions on the actual domain (0,1]."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.LocalInformation.calibrated_existsUnique",
+      "tex_source": "sections-en/03_finite_correlation_window.tex",
+      "module": "GeneratedFoundations.Correlation.LocalInformation",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "prop:additive-local-information",
+      "scope": "Existence and uniqueness of the negative logarithm under unit information calibration."
+    },
+    {
+      "name": "GeneratedFoundations.Probability.CompositionalGaussianAxioms.mean_one_eq_zero",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Probability.CompositionalGaussian",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "eq:composition-forces-centering",
+      "scope": "Centering follows from composition, square-root scaling and finite second moment on the normalized real tangent line; it is not an input assumption."
+    },
+    {
+      "name": "GeneratedFoundations.Probability.CompositionalGaussianAxioms.law_eq_gaussian",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Probability.CompositionalGaussian",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:gaussian-change-uniqueness",
+      "scope": "Equality of every positive-parameter law with the centered Gaussian of variance t, on the real tangent line. The preceding minimal-carrier and Lie-algebra coordinate construction is not included."
+    },
+    {
+      "name": "GeneratedFoundations.Probability.gaussianFamily_exists_unique",
+      "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
+      "module": "GeneratedFoundations.Probability.CompositionalGaussian",
+      "paper": "A Spectral Construction of Natural-Number Arithmetic",
+      "label": "thm:gaussian-change-uniqueness",
+      "scope": "An actual Gaussian family satisfies C/S/V, and all such families agree at every positive parameter. Unconstrained nonpositive parameters are not asserted to be unique."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.GaussianOrderNeutral.orderNeutral_weight_existsUnique",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "module": "GeneratedFoundations.Operations.GaussianOrderNeutral",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:gaussian-order-neutral",
+      "scope": "The unique fixed weight of the affine order-exchange involution in the unit interval. No Hilbert-space conjugation exchanging creation-annihilation products is asserted."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.GaussianOrderNeutral.quadraticClosure_orderNeutral_iff",
+      "tex_source": "sections-en/sec03_disorder_axiom.tex",
+      "module": "GeneratedFoundations.Operations.GaussianOrderNeutral",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:gaussian-order-neutral",
+      "scope": "Order-neutrality of a nonconstant affine family in an arbitrary real module. GaussianAffineLadder, GaussianLadderCore and HermiteOscillator supply the actual source differential operators, invariant core and normalized commutator separately; this abstract affine lemma alone does not assert them."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.ReversalRealConnector.reversalReal_iff_existsUnique_parameters",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.ReversalRealConnector",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "eq:reversal-real-higgs-matrix-p4",
+      "scope": "Classification of every complex 2 by 2 matrix commuting with the specified antilinear reversal, with unique two-complex-number coordinates."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.ReversalRealConnector.reversalReal_iff_existsUnique_doublet",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.ReversalRealConnector",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:single-higgs",
+      "scope": "The matrix-reality clause: every solution has a unique second-column doublet coordinate. Source realization, response naturality, gauge transformation and charge are not covered by this declaration."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.ReversalRealConnector.doubletEquivReversalReal",
+      "tex_source": "sections-en/sec04_emergent_structures.tex",
+      "module": "GeneratedFoundations.Physical.ReversalRealConnector",
+      "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+      "label": "prop:single-higgs",
+      "scope": "Real-linear equivalence between the complex two-component coordinate space and all reversal-real matrices; not a complex-linear solution subspace."
+    }
+  ],
+  "planned": [
+    {"id": "A1", "target": "Minimal carrier, orientation and complex structure"},
+    {"id": "A2", "target": "Compile and audit Gaussian existence and uniqueness; connect the generated tangent coordinate"},
+    {"id": "A2E", "target": "Gaussian maximum entropy including extended-entropy cases"},
+    {"id": "A3", "target": "Same-source overlap, internally constructed endpoints and unique calibrated readout"},
+    {"id": "A4", "target": "Actual Neumann domain and boundary selection"},
+    {"id": "A5", "target": "Reflecting double, operator domains and original carrier compatibility"},
+    {"id": "A6", "target": "Complete spectrum and reflected Gaussian heat kernel"},
+    {"id": "A7", "target": "Oriented analytic lift and all circle endomorphisms"},
+    {"id": "A8", "target": "Actual-mode semiring, Peano axioms and unique recursion"},
+    {"id": "A9", "target": "Internal Euclidean division and unique prime exponent profiles"},
+    {"id": "A10", "target": "Canonical transport and complete arithmetic root theorem"},
+    {"id": "B1", "target": "Source axioms and conventions across both manuscripts"},
+    {"id": "B2", "target": "Physical window and correlation metric interface"},
+    {"id": "B3", "target": "Actual Hermite source, domains and generated matrix units"},
+    {"id": "B4", "target": "Full operation observations and finite averaging"},
+    {"id": "B5", "target": "Complete SU(2) spectrum and finite-variance diffusion"},
+    {"id": "B6", "target": "Centre quotient, quaternion cone and Spin actions"},
+    {"id": "B7", "target": "All minimal centre-sensitive representations and quadratic algebra"},
+    {"id": "B8", "target": "Audit the constructed relative frames and arbitrary least faithful joint-module classification", "status": "source_integrated"},
+    {"id": "B9", "target": "Audit source vacuum transport, charges and the faithful global quotient", "status": "source_integrated"},
+    {"id": "B10", "target": "Audit the source-generated elementary connector and basic physical interface, including the same-source Hermitian determinant readout", "status": "source_integrated"}
+  ]
+}

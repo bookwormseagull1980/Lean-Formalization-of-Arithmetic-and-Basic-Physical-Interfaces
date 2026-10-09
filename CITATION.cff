@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "Lean Formalization of Arithmetic and Basic Physical Interfaces"
+message: "Cite this proof library with the exact source revision and the relevant companion manuscript. Attribution terms are preserved in LICENSE."
+type: software
+authors:
+  - family-names: Guo
+    given-names: Jinku
+    affiliation: "Northwestern Polytechnical University, Xi'an, China"
+    orcid: "https://orcid.org/0009-0000-6600-6171"
+abstract: >-
+  A Lean formalization of arithmetic and basic physical interfaces from
+  minimal unbiased compositional change. The library develops the common
+  Gaussian and spectral constructions, generated natural-number arithmetic,
+  internal response structures, and the basic Hermitian determinant interface.
+  Exact formal statements, comparison classes and manuscript mappings are
+  recorded in the accompanying theorem index.
+keywords:
+  - Lean
+  - formal proof
+  - natural-number arithmetic
+  - spectral geometry
+  - minimal change
+notes: "The original license and additional attribution requirements are preserved in LICENSE."
+references:
+  - type: unpublished
+    title: "A Spectral Construction of Natural-Number Arithmetic"
+    authors:
+      - family-names: Guo
+        given-names: Jinku
+    year: 2026
+  - type: unpublished
+    title: "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap"
+    authors:
+      - family-names: Guo
+        given-names: Jinku
+    year: 2026

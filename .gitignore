@@ -1,0 +1,14 @@
+.lake/
+.cache/
+verification-result.json
+verification-manifest.json
+!verification/verification-manifest.json
+*.olean
+*.ilean
+*.c
+*.o
+*.trace
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv/

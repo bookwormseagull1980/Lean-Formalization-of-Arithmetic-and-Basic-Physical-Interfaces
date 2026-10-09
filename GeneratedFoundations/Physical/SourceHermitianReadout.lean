@@ -1,0 +1,162 @@
+module
+
+public import GeneratedFoundations.Physical.ReversalRealConnector
+public import GeneratedFoundations.Physical.SourceVacuumTransport
+public import Mathlib.LinearAlgebra.Matrix.Hermitian
+public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+public import Mathlib.Tactic.Linarith
+
+/-!
+# Hermitian readout of the generated two-mode carrier
+
+The matrix algebra of the actual Gaussian source admits a real-linear
+Hermitian readout with determinant of signature `(+, -, -, -)`.
+Determinant-one congruences preserve this readout and its quadratic form.
+The corresponding matrices act on the original two Gaussian modes through
+the existing source-coordinate intertwiner.
+
+This is an algebraic representation interface for a specified external
+realization. Coordinate zero is a real matrix coordinate, not a generated
+physical clock. The positive quaternionic source trace metric is unchanged.
+Compatibility of the existing special unitary matrices does not identify
+the internal weak action with an external spacetime action; independent
+physical action factors remain part of the subsequent realization.
+-/
+
+@[expose] public section
+
+noncomputable section
+
+open GeneratedFoundations.Correlation.ComplexGaussianStates
+open GeneratedFoundations.Operations.SourceSpinCorner
+open GeneratedFoundations.Operations.SourceSpinCornerGroup
+open GeneratedFoundations.Operations.HermiteSource (sourceCoordinates)
+open GeneratedFoundations.Physical.ReversalRealConnector (Spinor)
+
+namespace GeneratedFoundations.Physical.SourceHermitianReadout
+
+abbrev RealCoordinates := Fin 4 → ℝ
+
+/-- A fixed Hermitian basis of the existing complex two-by-two matrix algebra. -/
+def hermitianMatrix (q : RealCoordinates) : Mat2 :=
+  !![((q 0 + q 3 : ℝ) : ℂ), ⟨q 1, q 2⟩;
+    ⟨q 1, -q 2⟩, ((q 0 - q 3 : ℝ) : ℂ)]
+
+theorem hermitianMatrix_isHermitian (q : RealCoordinates) :
+    (hermitianMatrix q).IsHermitian := by
+  apply Matrix.IsHermitian.ext
+  intro i j
+  fin_cases i <;> fin_cases j <;> apply Complex.ext <;> simp [hermitianMatrix]
+
+def matrixCoordinates (X : Mat2) : RealCoordinates :=
+  ![((X 0 0).re + (X 1 1).re) / 2, (X 0 1).re,
+    (X 0 1).im, ((X 0 0).re - (X 1 1).re) / 2]
+
+@[simp] theorem matrixCoordinates_hermitianMatrix (q : RealCoordinates) :
+    matrixCoordinates (hermitianMatrix q) = q := by
+  funext i
+  fin_cases i <;> simp [matrixCoordinates, hermitianMatrix]
+
+theorem hermitianMatrix_matrixCoordinates (X : Mat2) (hX : X.IsHermitian) :
+    hermitianMatrix (matrixCoordinates X) = X := by
+  have h00 := congrArg Complex.im (hX.apply 0 0)
+  have h11 := congrArg Complex.im (hX.apply 1 1)
+  have h10r := congrArg Complex.re (hX.apply 1 0)
+  have h10i := congrArg Complex.im (hX.apply 1 0)
+  simp only [Complex.star_def, Complex.conj_re, Complex.conj_im] at h00 h11 h10r h10i
+  apply Matrix.ext
+  intro i j
+  fin_cases i <;> fin_cases j <;> apply Complex.ext <;>
+    simp [hermitianMatrix, matrixCoordinates] <;> linarith
+
+def hermitianSubmodule : Submodule ℝ Mat2 where
+  carrier := {X | X.IsHermitian}
+  zero_mem' := Matrix.isHermitian_zero
+  add_mem' := fun hX hY => hX.add hY
+  smul_mem' := fun r _ hX => hX.smul (IsSelfAdjoint.all r)
+
+/-- Every Hermitian matrix has exactly one real four-coordinate readout. -/
+def coordinatesEquivHermitian : RealCoordinates ≃ₗ[ℝ] hermitianSubmodule where
+  toFun q := ⟨hermitianMatrix q, hermitianMatrix_isHermitian q⟩
+  invFun X := matrixCoordinates X.1
+  left_inv := matrixCoordinates_hermitianMatrix
+  right_inv X := by
+    apply Subtype.ext
+    exact hermitianMatrix_matrixCoordinates X.1 X.2
+  map_add' q r := by
+    apply Subtype.ext
+    apply Matrix.ext
+    intro i j
+    fin_cases i <;> fin_cases j <;> apply Complex.ext <;>
+      simp [hermitianMatrix] <;> ring
+  map_smul' c q := by
+    apply Subtype.ext
+    apply Matrix.ext
+    intro i j
+    fin_cases i <;> fin_cases j <;> apply Complex.ext <;>
+      simp [hermitianMatrix, smul_eq_mul]
+    ring
+
+def determinantForm (q : RealCoordinates) : ℝ :=
+  q 0 ^ 2 - q 1 ^ 2 - q 2 ^ 2 - q 3 ^ 2
+
+theorem det_hermitianMatrix (q : RealCoordinates) :
+    (hermitianMatrix q).det = (determinantForm q : ℂ) := by
+  rw [Matrix.det_fin_two]
+  apply Complex.ext <;> simp [hermitianMatrix, determinantForm, pow_two]
+  all_goals ring
+
+def congruence (A X : Mat2) : Mat2 := A * X * A.conjTranspose
+
+theorem congruence_isHermitian (A X : Mat2) (hX : X.IsHermitian) :
+    (congruence A X).IsHermitian :=
+  Matrix.isHermitian_mul_mul_conjTranspose A hX
+
+theorem det_congruence (A X : Mat2) (hA : A.det = 1) :
+    (congruence A X).det = X.det := by
+  simp [congruence, Matrix.det_mul, Matrix.det_conjTranspose, hA]
+
+/-- The existing source matrices satisfy the determinant-one hypothesis. -/
+theorem specialUnitary_det (A : SU2) : (A : Mat2).det = 1 :=
+  (Matrix.mem_specialUnitaryGroup_iff.mp A.property).2
+
+def coordinateTransform (A : Mat2) (q : RealCoordinates) : RealCoordinates :=
+  matrixCoordinates (congruence A (hermitianMatrix q))
+
+theorem hermitianMatrix_coordinateTransform (A : Mat2) (q : RealCoordinates) :
+    hermitianMatrix (coordinateTransform A q) = congruence A (hermitianMatrix q) :=
+  hermitianMatrix_matrixCoordinates _
+    (congruence_isHermitian A _ (hermitianMatrix_isHermitian q))
+
+theorem determinantForm_coordinateTransform (A : Mat2) (hA : A.det = 1)
+    (q : RealCoordinates) : determinantForm (coordinateTransform A q) = determinantForm q := by
+  have h : (determinantForm (coordinateTransform A q) : ℂ) = (determinantForm q : ℂ) := by
+    rw [← det_hermitianMatrix, hermitianMatrix_coordinateTransform,
+      det_congruence A _ hA, det_hermitianMatrix]
+  simpa using congrArg Complex.re h
+
+theorem specialUnitary_determinantForm (A : SU2) (q : RealCoordinates) :
+    determinantForm (coordinateTransform A q) = determinantForm q :=
+  determinantForm_coordinateTransform A (specialUnitary_det A) q
+
+def spinorAction (A : Mat2) (v : Spinor) : Spinor := A.mulVec v
+
+variable {b : ℝ} (hb : 0 < b)
+
+/-- The readout acts on the actual vacuum and first Gaussian excitation. -/
+def sourceHermitianAction (q : RealCoordinates) :=
+  SourceVacuumTransport.sourceAction hb (hermitianMatrix q)
+
+theorem sourceHermitianAction_coordinates (q : RealCoordinates)
+    (v : SourceVacuumTransport.V hb) :
+    sourceCoordinates hb (sourceHermitianAction hb q v) =
+      WithLp.toLp 2 (spinorAction (hermitianMatrix q)
+        (fun i => sourceCoordinates hb v i)) :=
+  SourceVacuumTransport.sourceAction_coordinates hb (hermitianMatrix q) v
+
+theorem sourceHermitianAction_coe (q : RealCoordinates)
+    (v : SourceVacuumTransport.V hb) :
+    (sourceHermitianAction hb q v : ComplexL2) = corner hb (hermitianMatrix q) v :=
+  SourceVacuumTransport.sourceAction_coe hb (hermitianMatrix q) v
+
+end GeneratedFoundations.Physical.SourceHermitianReadout
