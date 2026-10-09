@@ -1,0 +1,59 @@
+name: Lean verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lean-verification-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Build, audit, and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out the pinned source
+        uses: actions/checkout@v4
+
+      - name: Install the pinned Lean toolchain and build
+        uses: leanprover/lean-action@v1
+        with:
+          build: true
+          test: false
+          build-args: "-j 1"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install verifier test dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements-test.txt
+
+      - name: Run verifier regression tests
+        run: python -m pytest
+
+      - name: Run the complete compiled proof and axiom audit
+        run: >-
+          python scripts/verify_foundations.py
+          --manifest "$RUNNER_TEMP/verification-manifest.json"
+          --timeout 1800
+
+      - name: Publish verification records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lean-verification-records-${{ github.run_id }}
+          if-no-files-found: warn
+          path: |
+            ${{ runner.temp }}/verification-manifest.json
+            .lake/foundations-audit.txt

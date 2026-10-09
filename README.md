@@ -1,5 +1,7 @@
 # Lean Formalization of Arithmetic and Basic Physical Interfaces
 
+[![Lean verification](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml)
+
 Source repository: [Lean Formalization of Arithmetic and Basic Physical Interfaces](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces).
 
 This independent Lean 4 library formalizes the common mathematical
@@ -95,6 +97,14 @@ The verifier uses only the Python standard library. To run its regression
 tests, install `requirements-test.txt` and run `python -m pytest` from this
 directory. These tests exercise the verification machinery, not the
 mathematical proofs; compilation and the axiom audit are separate checks.
+
+The public GitHub Actions workflow runs the same sequence on pushes and pull
+requests to `main`: it installs the toolchain named by `lean-toolchain`, runs
+`lake build` with one worker, installs the pinned Python test dependencies,
+runs the verifier regression tests, and performs a complete compiled proof and
+transitive axiom audit. The workflow keeps the resulting manifest and audit
+log as run artifacts; its dependency and build caches only accelerate the run
+and do not replace the locked source and manifest checks.
 
 ## Independent verification record
 
