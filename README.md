@@ -1,8 +1,59 @@
 # Lean Formalization of Arithmetic and Basic Physical Interfaces
 
 [![Lean verification](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml)
+[![Zenodo concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23254521.svg)](https://doi.org/10.5281/zenodo.23254521)
+[![Zenodo V1.0 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23254522.svg)](https://doi.org/10.5281/zenodo.23254522)
 
 Source repository: [Lean Formalization of Arithmetic and Basic Physical Interfaces](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces).
+
+## 1. Narrative
+
+This project makes a common foundational claim checkable in Lean: starting from
+minimal unbiased compositional change, one can construct a generated arithmetic
+interface and a basic physical response interface within one explicit source
+class. The library is an independent proof package for the mathematical and
+interface-level statements it implements; it is not a replacement for the V5
+numerical software or a claim that every statement in the companion manuscripts
+has been formalized.
+
+The public entry points are the two root constructions
+`Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange` and
+`Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange`. They expose the
+same source datum to the arithmetic and physical branches while keeping their
+downstream constructions separate.
+
+## 2. Concrete record
+
+The released source is pinned to Lean 4.34.0 and mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. The current audit records 235
+modules, 11,664 constants, 6,339 named type checks, and 225 indexed manuscript
+claims. These are library and audit counts, not a claim that there are 225
+independent mathematical theorems. The transitive audit permits only Lean's
+declared `propext`, `Classical.choice`, and `Quot.sound` axioms; no custom
+axioms or proof placeholders are part of the released proof sources.
+
+## 3. Program implementation
+
+For a first check, run the standard-library-only smoke test in
+[`examples/quickstart`](examples/quickstart). For the complete package, install
+the pinned Lean toolchain, run `lake build`, then run
+`python scripts/verify_foundations.py`. The public workflow performs these
+checks together with the verifier regression tests on every push and pull
+request to `main`.
+
+## 4. Credibility boundary
+
+The CI and verifier make the compiled declarations, dependency locks, source
+hashes, and transitive axiom audit reproducible. The theorem index records which
+manuscript clauses are mapped to which declarations. The semantic fidelity of
+each manuscript mapping remains an author-level mathematical responsibility,
+and the formalization does not certify numerical outputs or claims outside the
+listed scope. Cite the version series with DOI
+`[10.5281/zenodo.23254521](https://doi.org/10.5281/zenodo.23254521)` or the
+released V1.0 record with DOI
+`[10.5281/zenodo.23254522](https://doi.org/10.5281/zenodo.23254522)`.
+
+## Detailed scope and boundaries
 
 This independent Lean 4 library formalizes the common mathematical
 foundations used in:
