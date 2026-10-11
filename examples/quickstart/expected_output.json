@@ -1,0 +1,11 @@
+{
+  "lean_toolchain": "leanprover/lean4:v4.34.0",
+  "mathlib_commit": "5ed2965256430c3649e86755f9576b54eca72435",
+  "root_entries": [
+    "Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
+    "Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange"
+  ],
+  "theorem_index_present": true,
+  "axioms_document_present": true,
+  "verification_record_present": true
+}
