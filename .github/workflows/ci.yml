@@ -40,6 +40,9 @@ jobs:
       - name: Install verifier test dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-test.txt
 
+      - name: Run public quickstart check
+        run: python examples/quickstart/check_environment.py
+
       - name: Run verifier regression tests
         run: python -m pytest
 
