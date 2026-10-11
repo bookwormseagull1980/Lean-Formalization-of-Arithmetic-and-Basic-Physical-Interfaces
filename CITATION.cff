@@ -2,6 +2,8 @@ cff-version: 1.2.0
 title: "Lean Formalization of Arithmetic and Basic Physical Interfaces"
 message: "Cite this proof library with the exact source revision and the relevant companion manuscript. Attribution terms are preserved in LICENSE."
 type: software
+version: "1.0.0"
+date-released: 2026-10-09
 repository-code: "https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces"
 authors:
   - family-names: Guo
@@ -18,9 +20,18 @@ abstract: >-
 keywords:
   - Lean
   - formal proof
+  - formal verification
+  - reproducible research
   - natural-number arithmetic
   - spectral geometry
   - minimal change
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23254521"
+    description: "Zenodo DOI for the version series"
+  - type: doi
+    value: "10.5281/zenodo.23254522"
+    description: "Zenodo DOI for version V1.0"
 notes: "The original license and additional attribution requirements are preserved in LICENSE."
 references:
   - type: unpublished
