@@ -11,6 +11,7 @@ public import GeneratedFoundations.Source.CarrierOrientation
 public import GeneratedFoundations.Source.GeneratedSpectralCircle
 public import GeneratedFoundations.Source.MinimalUnbiasedChange
 public import GeneratedFoundations.Arithmetic.GeneratedFoundation
+public import GeneratedFoundations.Arithmetic.ReducedExpressionFoundation
 public import GeneratedFoundations.Arithmetic.InternalPrimes
 public import GeneratedFoundations.Arithmetic.DifferenceOrder
 public import GeneratedFoundations.Arithmetic.DifferenceUniversal
@@ -31,8 +32,9 @@ public import GeneratedFoundations.Spectral.GaussianHeatConvolution
 /-!
 # Arithmetic foundation from minimal unbiased compositional change
 
-`Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange` takes one root
-datum and covers every carrier orientation and positive width in its conclusion.
+`Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange` and
+`Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange` take one
+root datum and cover every carrier orientation and positive width in their conclusions.
 The datum contains the minimal original change action and its compositional
 probability law. Orientations and widths index realizations; the endpoints,
 reflecting operator and arithmetic objects are constructed internally. The
@@ -87,6 +89,11 @@ positive angular observations and native arithmetic are joined in
 Gaussian heat average on the generated window. Its arithmetic statements give
 Peano recursion, unique finite prime profiles, infinitely many prime modes,
 and a unique source-spectral transport between independent realizations.
+The reduced-expression continuation retains ordered bracketing before
+evaluation, removes only the six unit and absorbing-zero rules, has unique
+normal forms and finite evaluation fibres, recovers the native mode semiring
+as its evaluation quotient, and commutes with canonical scale and orientation
+transport.
 These are statements about the defined generated construction, with each
 classification's comparison class retained in its theorem.
 -/

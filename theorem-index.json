@@ -5,15 +5,17 @@
   "root_chain_status": "implemented_root_interfaces",
   "manuscript_review_status": {
     "status": "mapped_clauses_semantically_reviewed",
-    "scope": "The ten mapped files below were reviewed against their actual included statements, proofs, Lean declaration types and construction dependencies. Their 183 indexed entries retain clause-specific coverage; this is not certification of every assertion in those files or of the complete manuscripts. The dimension-three mappings cover the actual source tangent space and the exact spherical comparison classes, not the new general Weyl-law route. The recorded hashes identify this semantic review only. Compiled verification is recorded separately by the matching verification manifest.",
+    "scope": "The twelve mapped files below were reviewed against their actual included statements, proofs, Lean declaration types and construction dependencies. Their 196 indexed entries retain clause-specific coverage; this is not certification of every assertion in those files or of the complete manuscripts. The reduced-expression entries cover ordered syntax, the six-law normalization congruence, initiality in its exact comparison class, evaluation quotient with operations descended from expression assembly, finite fibres, successor injection, scalar Gaussian fibre compatibility and canonical scale-orientation transport. They do not certify the Hilbert uniform-difference splitting, coisometry, fibre-count recurrence, exponential count bound or whole-tree telescoping formulas. The dimension-three mappings cover the actual source tangent space and the exact spherical comparison classes, not the new general Weyl-law route. The recorded hashes identify this semantic review only. Compiled verification is recorded separately by the matching verification manifest.",
     "changed_sources": [],
     "reviewed_sources": [
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/02_change_and_gaussian_correlation.tex", "mapped_declarations": 41, "sha256": "01286ab2db7332f05f58a8dc6b9d1cb004fdcb9a4ac23186838b640caa7b94c4", "scope": "Minimal-carrier classification, original trace-Lie Gaussian law, variance-scale rigidity, orientation and overlap clauses. C/S/V belongs to the root definition; Gaussian centering, the density and its positive-parameter uniqueness are outputs. The C/S/V independence examples and Fourier uncertainty classification are not certified by these entries."},
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/03_finite_correlation_window.tex", "mapped_declarations": 39, "sha256": "b23a7f4e8ff24ed2c284ae4e6eafa43cf7f73b970cbe531b8bf0f1e7fd91742c", "scope": "Calibrated information, integral capacity, separated constant-preserving closure, reflecting Sobolev domains and heat clauses. Endpoint values are calculated readouts, with the stated functional comparison classes. Each operator, metric and covering clause is limited to its actual domain and normalization; no full-section coverage is inferred."},
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/05_analytic_spectral_semiring.tex", "mapped_declarations": 4, "sha256": "ad6e765dcfb71196113f18c9aeb03121901889351112f27585826cd735a64a80", "scope": "Circle-endomorphism classification, native operations and their source Fourier identification. The broader analytic lift is provided by separate source/spectral modules; these four entries alone do not certify the homotopy-ring or Grothendieck-completion theorem."},
-      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/08_spectral_natural_number_theorem.tex", "mapped_declarations": 3, "sha256": "bdf6a3574c1d7d51aeac902eca6c393a11ca53c802381c6cf60f3c1190abae66", "scope": "The root entry proves source closure, original-map Peano arithmetic, winding/energy certification and finite prime profiles; the two response-transport entries record the exact one-parameter rigidity used to identify the canonical cross-scale map. The theorem's bar homology, prime cotangent and Fock-completion part is not covered by these entries. Cross-source transport has a separate declaration and is not silently added to the root record."},
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex", "mapped_declarations": 8, "sha256": "4d7ed32cf57ed9ff46d8152e3ecf697fc55f734f8f62f95c250ad6fcb5561939", "scope": "The reduced-expression theorem is mapped through its ordered raw syntax, least six-law congruence, unique normal form, exact initiality class, surjective two-operation evaluation, the operations descended to the evaluation quotient and the quotient's semiring equivalence, and the finite-fibre conclusion. No associativity, commutativity or distributivity is imposed before evaluation. The preceding bar homology and Fock functors remain outside these eight entries."},
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/08_spectral_natural_number_theorem.tex", "mapped_declarations": 5, "sha256": "886ff5365a049fc00818caac56a3c37bdf9352c949a2fb93eaf8bd29a0792559", "scope": "The arithmetic root entry proves source closure, original-map Peano arithmetic, winding/energy certification and finite prime profiles; the reduced-expression root entry adds finite-fibre expression resolution from the same sole source datum, and its same-source scale-orientation theorem transports expressions without changing their syntax. The two response-transport entries record the exact one-parameter rigidity used to identify the canonical cross-scale map. The theorem's bar homology, prime cotangent, Fock completion and Hilbert expression splitting are not covered by these entries."},
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/appendix_a_gaussian_neumann.tex", "mapped_declarations": 4, "sha256": "d8d638a708f1736a086f5e2290c978a247173e665ea2c6ed1adf3607d6cb7320", "scope": "Normalized Gaussian Fourier transform, periodization and circle convolution multipliers. These are ingredients of the displayed reflected interval kernel, not a declaration of the whole method-of-images formula or of the Poisson-summation subsection."},
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/appendix_e_conditional_projective_fibre.tex", "mapped_declarations": 2, "sha256": "357f509ae9674e40165f7e60fdd15c8fd1b0ea8510bd0fcb05c41670e0ebccbf", "scope": "The all-degree and even-degree affine classifications for the explicitly given spherical eigenvalue and multiplicity formulas, in every dimension at least two. These entries do not formalize the preceding general Weyl dimension proposition, construct a geometric realization from arithmetic coefficient capacity, or prove all later projective-lift statements."},
+      {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/appendix_l_reduced_expression_resolution.tex", "mapped_declarations": 3, "sha256": "4467f4fc6eef2075d63294b6804191b51ba72076b87ce9f40b516c882b2823fe", "scope": "Formalized appendix clauses are the intrinsic depth bound used for fibre finiteness, injectivity of right-unit insertion on reduced expressions, and constancy of the existing Gaussian scalar response on evaluation fibres. The exact fibre recursion and initial counts, h_n < 8^n, Hilbert coisometry and uniform-difference splitting, whole-tree telescoping and orthogonal successor assembly are not included."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec03_disorder_axiom.tex", "mapped_declarations": 26, "sha256": "4922c582d492719961ac960b5f676c86f32fe960affbca76aee3f4b53bdcb83d", "scope": "The normalized affine first-order ladder class, phase-independent ordered products, order-neutral half-sum, actual Hermite completeness, self-adjoint closure and full-space central phase. The affine and self-adjoint-extension comparison classes remain part of the respective conclusions, not new fields of the root datum."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec04_emergent_structures.tex", "mapped_declarations": 46, "sha256": "571cf7eebbf57956230a0e5d287c3093dd3a42abc961ad511d48b2e8d2dd1a5e", "scope": "Constructed exchange-retained algebra, least faithful representations, source frames, block-phase rigidity, phase lift and elementary doublet comparison. Exact spherical capacity uniqueness and the actual three-dimensional source tangent space are now separately mapped; the added complete-spectrum Weyl asymptotics and general dimension inference are not certified by these entries. The generated Clifford even algebra, its primitive real central projections, two-dimensional spinor ranges and actual eight-dimensional Hermite sectors are indexed separately. Least pairs admit unique transport of every operator after fixing the realizing unitary; the two residual block phases are basis gauge, not physical parameters. Colour determinant-phase factorization is pointwise, with cube-root ambiguity; it does not prove a global determinant reduction or identify that phase with the common matter phase. The generated IR length is the geometric amplitude-shell radius, not an independent fitted length. The root interface supplies the Hermitian determinant form, not a scalar mass gap, Higgs mass spectrum, arbitrary-bundle construction or spacetime dynamics."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/appendix_f_source_response.tex", "mapped_declarations": 14, "sha256": "faeb55d59cde363ec0bf325bb5fb10d0eb02416e8aa47309baf7fd13e62d4c75", "scope": "Actual source compression, generated SU(2) operations, restricted oscillator phase and central quotient clauses. Individual mappings do not certify the complete appendix, all source-state completions, the SO(3) double cover or the Clifford theorem simply because they share a proposition label."},
@@ -25,12 +27,12 @@
     "meaning": "Minimal unbiased compositional change: the stated orthogonal-action comparison class, carrier minimality and C/S/V law conditions on its trace Lie line.",
     "fields": ["change", "minimal", "law", "compositional"],
     "realization_indices": "Every orientation and positive width is quantified in the root conclusions. These indices are not extra root principles.",
-    "internal_constructions": "Calibrated information and mass readouts, endpoints, reflecting closure, spectra, arithmetic and physical responses are constructed internally. Definitions and uniqueness comparison classes remain explicit; their outputs are not root assumptions."
+    "internal_constructions": "Calibrated information and mass readouts, endpoints, reflecting closure, spectra, arithmetic, finite-fibre reduced-expression resolution and physical responses are constructed internally. Definitions and uniqueness comparison classes remain explicit; their outputs are not root assumptions."
   },
   "arithmetic_source_integration": {
     "entry": "GeneratedFoundations.Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
     "status": "source_integrated",
-    "scope": "The sole root datum yields source closure, native arithmetic and prime factorization for every orientation and positive width. No endpoint or boundary-operator premise is an argument."
+    "scope": "The sole root datum yields source closure, native arithmetic and prime factorization for every orientation and positive width. A sibling root declaration yields the ordered finite-fibre reduced-expression resolution and canonical same-source scale-orientation transport without enlarging the datum. No endpoint, boundary-operator or expression-selection premise is an argument."
   },
   "physical_source_integration": {
     "entry": "GeneratedFoundations.Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange",
@@ -54,8 +56,10 @@
         "sections-en/04_discrete_spectral_components.tex": "d2843b41b55eab68dcde144516673d4fb60344af41ad044f2521043a51782c3e",
         "sections-en/05_analytic_spectral_semiring.tex": "ad6e765dcfb71196113f18c9aeb03121901889351112f27585826cd735a64a80",
         "sections-en/06_peano_primes_and_decomposition.tex": "c1761ae67d996914bbab870292ca00174d9b1ac70d91ed8c056faf47f71e8d8d",
-        "sections-en/08_spectral_natural_number_theorem.tex": "70f90d53ed8e380e4ab5c4a558b9400c3b75214028832a2b8285070a767afaf4",
-        "sections-en/appendix_b_euclidean_factorization.tex": "b7c4914f445185904f33bf11d0189241d77ef90493d4ac21379e3b5ef268d002"
+        "sections-en/07_decomposition_homology_and_fock_functors.tex": "4d7ed32cf57ed9ff46d8152e3ecf697fc55f734f8f62f95c250ad6fcb5561939",
+        "sections-en/08_spectral_natural_number_theorem.tex": "886ff5365a049fc00818caac56a3c37bdf9352c949a2fb93eaf8bd29a0792559",
+        "sections-en/appendix_b_euclidean_factorization.tex": "b7c4914f445185904f33bf11d0189241d77ef90493d4ac21379e3b5ef268d002",
+        "sections-en/appendix_l_reduced_expression_resolution.tex": "4467f4fc6eef2075d63294b6804191b51ba72076b87ce9f40b516c882b2823fe"
       }
     },
     {
@@ -182,6 +186,123 @@
     "tex_source": "sections-en/08_spectral_natural_number_theorem.tex",
     "coverage_kind": "clause",
     "scope": "Existence and uniqueness of the map preserving the complete normalized mode response at one positive parameter; the unique map is the already constructed canonical transport."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.normalForm_existsUnique",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionSyntax",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:reduced-expression-resolution",
+    "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex",
+    "coverage_kind": "clause",
+    "scope": "Structural normalization reaches exactly one reduced representative of each raw ordered term. This is the terminating unique-normal-form statement for the six unit and absorbing-zero rules only; no associative, commutative or distributive rewrite is present."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.reductionEq_least",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionSyntax",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:reduced-expression-resolution",
+    "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex",
+    "coverage_kind": "clause",
+    "scope": "Equality of normal forms is contained in every operation congruence satisfying the six displayed reductions, hence is their least congruence. The comparison congruence is quantified and is not root data."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.Target.hom_existsUnique",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionSyntax",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:reduced-expression-resolution",
+    "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex",
+    "coverage_kind": "clause",
+    "scope": "Initiality in the exact class of ordered two-operation targets with two distinguished elements and only the six reduction laws. The targets are universally quantified test objects; they do not enlarge MinimalUnbiasedChange.Datum."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.evalNative_surjective",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionEvaluation",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:reduced-expression-resolution",
+    "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex",
+    "coverage_kind": "clause",
+    "scope": "Every already generated native natural mode is the evaluation of a canonical finite right-successor expression. This is surjectivity onto the existing mode family, not a replacement construction of that family."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.evalQuotientRingEquiv",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionEvaluation",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:reduced-expression-resolution",
+    "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex",
+    "coverage_kind": "clause",
+    "scope": "Quotienting reduced ordered expressions precisely by equality of their generated native-mode evaluations gives a semiring equivalence with the previously constructed native mode semiring. Separate mapped declarations verify that its operations are the operations descended from expression assembly."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.evalQuotient_add_eq_descended",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionEvaluation",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:reduced-expression-resolution",
+    "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex",
+    "coverage_kind": "clause",
+    "scope": "Addition on the evaluation quotient is exactly the operation induced from ordered-expression addition, not an independently selected pullback operation."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.evalQuotient_mul_eq_descended",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionEvaluation",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:reduced-expression-resolution",
+    "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex",
+    "coverage_kind": "clause",
+    "scope": "Multiplication on the evaluation quotient is exactly the operation induced from ordered-expression cascade, not an independently selected pullback operation."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.finite_fiber",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionFibers",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:reduced-expression-resolution",
+    "tex_source": "sections-en/07_decomposition_homology_and_fock_functors.tex",
+    "coverage_kind": "clause",
+    "scope": "For each natural evaluation value, the subtype of reduced ordered expressions with that value is finite. The proof bounds normalized tree depth by value and embeds the fibre into finite bounded-depth raw syntax; it does not prove the appendix's exact fibre-cardinality recursion or exponential estimate."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.expr_depth_le_evalNat",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionFibers",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:expression-depth-filtration",
+    "tex_source": "sections-en/appendix_l_reduced_expression_resolution.tex",
+    "coverage_kind": "clause",
+    "scope": "The parallel depth of a reduced expression is bounded by its natural evaluation value. Together with the finite bounded-depth syntax this supplies fibre finiteness; it is not an equality between depth, value, node count or observation scale."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.successorExpr_injective",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionEvaluation",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "eq:right-successor-expression-isometry",
+    "tex_source": "sections-en/appendix_l_reduced_expression_resolution.tex",
+    "coverage_kind": "clause",
+    "scope": "Right insertion of the distinguished unit followed by normalization is injective on reduced expressions, including the separately normalized zero case. The induced Hilbert-space isometry and orthogonal complement are not formalized by this declaration."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.gaussianResponse_constant_on_fiber",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionTransport",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:expression-gaussian-compatibility",
+    "tex_source": "sections-en/appendix_l_reduced_expression_resolution.tex",
+    "coverage_kind": "clause",
+    "scope": "The existing scalar Neumann Gaussian response has equal values on reduced expressions with equal natural evaluation. This is fibrewise scalar compatibility, not a Hilbert-space coisometry, difference-sector dynamics or whole-tree factorization theorem."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionFoundation",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:prime-spectral-basis",
+    "tex_source": "sections-en/08_spectral_natural_number_theorem.tex",
+    "coverage_kind": "clause",
+    "scope": "The same sole MinimalUnbiasedChange.Datum supplies surjective operation-preserving typed expression evaluation with finite fibres for every orientation and positive width. The expression syntax introduces no new field of the root datum."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.transport_fromMinimalUnbiasedChange",
+    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionFoundation",
+    "paper": "A Spectral Construction of Natural-Number Arithmetic",
+    "label": "thm:prime-spectral-basis",
+    "tex_source": "sections-en/08_spectral_natural_number_theorem.tex",
+    "coverage_kind": "clause",
+    "scope": "For one root datum, evaluation of the same reduced expression commutes with the already generated canonical comparison between any two derived positive widths and carrier orientations. No separate expression transport or matching premise is supplied."
   },
   {
     "name": "GeneratedFoundations.Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange",

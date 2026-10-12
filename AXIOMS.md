@@ -188,6 +188,17 @@ metatheory without prior natural-number machinery. Likewise, the positive
 Gaussian amplitude is a constructed representative, not a uniqueness
 theorem for every complex amplitude having the same squared modulus.
 
+The reduced-expression extension adds no root field. Its raw ordered syntax
+uses only zero, one, modulation and cascade. The least congruence removes only
+the two additive-unit, two multiplicative-unit and two absorbing-zero laws.
+Structural normalization has a unique reduced result; evaluation is onto the
+already generated native modes, each value fibre is finite, and the evaluation
+quotient is canonically their semiring. Comparison targets in the initiality
+theorem are universally quantified test objects, not assumptions stored in
+`MinimalUnbiasedChange.Datum`. The Gaussian statement formalized here is
+constancy of the existing scalar response on an evaluation fibre; it adds no
+probability weight or fibre dynamics.
+
 The physical root theorem currently targets the basic source response and
 Hermitian determinant interfaces. It does not assert a complete Standard
 Model, a reconstructed physical spacetime or clock, or interacting field

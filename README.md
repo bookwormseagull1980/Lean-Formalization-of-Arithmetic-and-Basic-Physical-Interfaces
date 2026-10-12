@@ -16,19 +16,20 @@ interface-level statements it implements; it is not a replacement for the V5
 numerical software or a claim that every statement in the companion manuscripts
 has been formalized.
 
-The public entry points are the two root constructions
-`Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange` and
+The public entry points are the three root constructions
+`Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange`,
+`Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange`, and
 `Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange`. They expose the
-same source datum to the arithmetic and physical branches while keeping their
-downstream constructions separate.
+same source datum to the arithmetic, expression-resolution, and physical
+branches while keeping their downstream constructions separate.
 
 ## 2. Concrete record
 
 The released source is pinned to Lean 4.34.0 and mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. The current audit records 235
-modules, 11,664 constants, 6,339 named type checks, and 225 indexed manuscript
-claims. These are library and audit counts, not a claim that there are 225
-independent mathematical theorems. The transitive audit permits only Lean's
+`5ed2965256430c3649e86755f9576b54eca72435`. The current audit records 241
+modules, 12,082 constants, 6,467 named type checks, and 243 indexed manuscript
+claims. These are library and audit counts, not a count of independent
+mathematical theorems. The transitive audit permits only Lean's
 declared `propext`, `Classical.choice`, and `Quot.sound` axioms; no custom
 axioms or proof placeholders are part of the released proof sources.
 
@@ -61,8 +62,16 @@ foundations used in:
 - J. Guo, *A Spectral Construction of Natural-Number Arithmetic*.
 - J. Guo, *The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap*.
 
-The two implemented root theorems construct native natural-number arithmetic
-and the basic internal physical interface, respectively. Their exact
+The arithmetic root also exposes a finite-fibre reduced-expression resolution.
+Ordered binary expressions are normalized only by the stated unit and
+absorbing-zero laws; their evaluation quotient is the already generated
+native-mode semiring, and evaluation commutes with canonical scale and
+orientation transport. This adds pre-evaluation resolution without adding a
+field to the root datum or replacing the existing arithmetic.
+
+The implemented root theorems construct native natural-number arithmetic,
+its reduced-expression resolution, and the basic internal physical interface.
+Their exact
 conclusions and comparison classes are recorded in `theorem-index.json`;
 this scope does not include every assertion of the two manuscripts.
 Each mapped statement has a relative TeX source path and label. The index also
@@ -254,9 +263,9 @@ axiom audit records its transitive logical dependencies. Review of its premises
 and correspondence to the manuscript is a separate semantic assessment and is
 not implied by a successful verification manifest.
 
-The current 235-module library has passed compilation and the complete
-compiled-environment axiom audit. The saved record covers 11,664 constants,
-6,339 named type checks and 225 indexed claims. These counts have different
+The current 241-module library has passed compilation and the complete
+compiled-environment axiom audit. The saved record covers 12,082 constants,
+6,467 named type checks and 243 indexed claims. These counts have different
 meanings; consult the index for the precise scope of each claim and use
 `--check-manifest` to confirm that the record matches the current sources.
 
