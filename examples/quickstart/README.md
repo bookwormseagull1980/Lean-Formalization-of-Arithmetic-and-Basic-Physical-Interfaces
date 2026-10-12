@@ -7,7 +7,7 @@ python examples/quickstart/check_environment.py
 ```
 
 The check confirms the pinned Lean toolchain, the locked mathlib revision, the
-two public root entries, and the release documents used by the full audit. It
+three public root entries, and the release documents used by the full audit. It
 uses only the Python standard library and finishes before a Lean rebuild.
 
 This is a release smoke test, not a proof of the mathematical claims. To run

@@ -1,6 +1,6 @@
 """Small release smoke test for the public Lean proof package.
 
-This checks the pinned source metadata and the two public root entries. It is
+This checks the pinned source metadata and the three public root entries. It is
 deliberately independent of Lean compilation; the full proof and axiom audit is
 performed by ``scripts/verify_foundations.py`` and the repository CI workflow.
 """
@@ -16,6 +16,7 @@ EXPECTED_TOOLCHAIN = "leanprover/lean4:v4.34.0"
 EXPECTED_MATHLIB = "5ed2965256430c3649e86755f9576b54eca72435"
 EXPECTED_ROOTS = [
     "Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
+    "Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange",
     "Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange",
 ]
 
