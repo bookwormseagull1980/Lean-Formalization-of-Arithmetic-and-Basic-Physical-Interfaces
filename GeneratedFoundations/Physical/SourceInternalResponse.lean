@@ -7,6 +7,7 @@ public import GeneratedFoundations.Physical.SourceMatterPhaseExponential
 public import GeneratedFoundations.Physical.SourceGaugeCocycle
 public import GeneratedFoundations.Physical.SourceChargedQuotient
 public import GeneratedFoundations.Physical.SourceScalarGaugeCovariance
+public import GeneratedFoundations.Physical.SourceScalarInvariant
 public import GeneratedFoundations.Geometry.GeneratedSourceGeometry
 public import GeneratedFoundations.Physical.SourceMinimalChiralPair
 public import GeneratedFoundations.Physical.SourceLocalizedMatter
@@ -168,6 +169,18 @@ structure Conclusions (b : ℝ) (hb : 0 < b) : Prop where
   gauge_kernel : SourceGaugeTransport.representation.ker = SourceGlobalGaugeGroup.centralSix
   kernel_card : Nat.card SourceGlobalGaugeGroup.centralSix = 6
   effective_faithful : Function.Injective SourceGaugeUnitary.effectiveUnitaryRepresentation
+  effective_group_classification : ∀ (K : Type) [Group K]
+    (ρ : K →* (Module.End ℂ FullMatter)ˣ),
+    SourceGlobalGaugeGroup.IsGeneratedEffectiveRealization ρ →
+      ∃! e : K ≃* SourceGlobalGaugeGroup.unitRepresentation.range,
+        ∀ k, ((e k : SourceGlobalGaugeGroup.unitRepresentation.range) :
+          (Module.End ℂ FullMatter)ˣ) = ρ k
+  source_commutant_unique : ∀ T : Module.End ℂ (SourceVacuumTransport.V hb),
+    (∀ (U : Operations.SourceSpinCornerGroup.SU2)
+        (v : SourceVacuumTransport.V hb),
+      T (SourceVacuumTransport.sourceAction hb U v) =
+        SourceVacuumTransport.sourceAction hb U (T v)) →
+      ∃! z : ℂ, ∀ v, T v = z • v
   neutral_nonzero : neutralVector ≠ 0
   neutral_dimension : Module.finrank ℂ neutralLine = 1
   response_kernel : LinearMap.ker SourceColourCasimir.fullQuadraticResponse = neutralLine
@@ -200,6 +213,7 @@ structure Conclusions (b : ℝ) (hb : 0 < b) : Prop where
     SourceGaugeTransport.representation g * scalarConnector H *
         SourceGaugeTransport.representation g⁻¹ =
       scalarConnector (SourceScalarGaugeCovariance.scalarAction g H)
+  scalar_invariant : SourceScalarInvariant.Conclusions
   scalar_descent : ∀ H : Spinor, SourceChargedQuotient.Descends (scalarConnector H) ↔ H = 0
 
 theorem source_internalResponse {b : ℝ} (hb : 0 < b) : Conclusions b hb where
@@ -218,6 +232,13 @@ theorem source_internalResponse {b : ℝ} (hb : 0 < b) : Conclusions b hb where
   gauge_kernel := SourceGaugeTransport.kernel_eq_zpowers
   kernel_card := SourceGlobalGaugeGroup.centralSix_card
   effective_faithful := SourceGaugeUnitary.effectiveUnitaryRepresentation_injective
+  effective_group_classification := by
+    intro K _ ρ hρ
+    refine ⟨SourceGlobalGaugeGroup.generatedRealizationEquiv ρ hρ,
+      SourceGlobalGaugeGroup.generatedRealizationEquiv_apply ρ hρ, ?_⟩
+    intro e he
+    exact SourceGlobalGaugeGroup.generatedRealizationEquiv_unique ρ hρ e he
+  source_commutant_unique := SourceVacuumTransport.source_commutant_scalar_unique hb
   neutral_nonzero := neutralVector_ne_zero
   neutral_dimension := neutralLine_finrank
   response_kernel := SourceColourCasimir.fullQuadraticResponse_kernel
@@ -232,6 +253,7 @@ theorem source_internalResponse {b : ℝ} (hb : 0 < b) : Conclusions b hb where
   scalar_odd := scalarConnector_odd
   scalar_source := scalarConnector_hermite hb
   scalar_covariance := SourceScalarGaugeCovariance.scalarConnector_covariant
+  scalar_invariant := SourceScalarInvariant.sourceScalarInvariantConclusions
   scalar_descent := SourceChargedQuotient.scalarConnector_descends_iff
 
 /-- The root data determine the Gaussian amplitude at every orientation and

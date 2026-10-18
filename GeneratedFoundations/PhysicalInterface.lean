@@ -38,21 +38,43 @@ on its orthogonal complement. The operation group's centre is exactly
 `{I, -I}`, and its algebraic central quotient has precisely the corresponding
 two-element fibres. Its rotation double cover and projective-space
 identification are separate geometric assertions.
-`SourcePhysicalInterface.fromMinimalUnbiasedChange` takes only the minimal
-unbiased compositional change datum. For every orientation and positive width,
-it collects the
+The physical component of `CommonFoundation.fromMinimalUnbiasedChange` takes
+only the minimal unbiased compositional change datum. For every orientation
+and positive width, it collects the
 source geometry, exchange-retained response, frame classifications, least
 faithful matter, vacuum phase lift and elementary connector. The source maps
 identify their actual actions, rather than only matching dimensions. The
 constructed frame transitions satisfy their cocycle without an extra cocycle
-premise. Endpoints and reflecting evolution are constructed internally.
+premise. The exact six-element gauge kernel and the unique realization of the
+intrinsic effective operator group are included in the same output. Endpoints
+and reflecting evolution are constructed internally.
 Classifications of competing realizations retain their stated
 comparison classes and unitary equivalences.
 
 The same Gaussian modes support the four-real-coordinate Hermitian readout and
-its determinant-preserving congruence. This is the basic algebraic interface
-for relativistic kinematics; subsequent spacetime and dynamical interpretation
-belongs to the manuscript. This import graph includes the implemented proof sources.
+its determinant-preserving congruence.  The resulting four-carrier supports the
+generated gauge connection and its locally covariant colour Yang--Mills
+curvature.  On its three spatial directions, the transverse--traceless
+constraints have exactly two polarization amplitudes.  The tensor response
+endpoint, the uniquely selected local linear Einstein operator, its pure-gauge
+identity, TT reduction and massless simple pole are included in the compiled
+physical root output. The generated left--right source representations supply
+a complete bidegree family with calculated dimensions, central characters and
+Casimir operators. The actual projective scalar spectrum and both its finite
+and complete conformal restoring responses are connected to the closed source
+quotient operator. The complete response is continuous, strictly increasing
+and unbounded on the nonnegative line; every positive source drive therefore
+has one positive balance, whose positive curvature supplies the normalized
+spectral bottom of the complete even scalar tower. At the unit of the generated
+response coordinate this selects a canonical balance and positive spectral
+bottom without an additional coupling or scale datum. The generated critical
+radius and colour feedback then select a unique condensed Yang--Mills
+coordinate. The normalized radial/scalar block and the complete positive-odd
+coclosed colour-connection tower have a common strictly positive direct-sum
+spectral bottom. Field-type branch labels
+remain outside the root package until their
+differential-operator classification is derived. This import graph includes
+the implemented proof sources.
 Its current kernel-verification status is governed by a fresh build and axiom
 audit, not by the presence of this entry point.
 -/

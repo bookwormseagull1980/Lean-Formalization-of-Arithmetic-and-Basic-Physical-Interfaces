@@ -1,11 +1,14 @@
 {
   "schema_version": 1,
-  "entry_modules": ["GeneratedFoundations"],
+  "entry_modules": [
+    "GeneratedFoundations",
+    "GeneratedFoundations.ResearchExtensions"
+  ],
   "verification_policy": "Indexed declarations require a successful build and transitive axiom audit of this exact source snapshot. This index alone is not a verification report.",
   "root_chain_status": "implemented_root_interfaces",
   "manuscript_review_status": {
     "status": "mapped_clauses_semantically_reviewed",
-    "scope": "The twelve mapped files below were reviewed against their actual included statements, proofs, Lean declaration types and construction dependencies. Their 196 indexed entries retain clause-specific coverage; this is not certification of every assertion in those files or of the complete manuscripts. The reduced-expression entries cover ordered syntax, the six-law normalization congruence, initiality in its exact comparison class, evaluation quotient with operations descended from expression assembly, finite fibres, successor injection, scalar Gaussian fibre compatibility and canonical scale-orientation transport. They do not certify the Hilbert uniform-difference splitting, coisometry, fibre-count recurrence, exponential count bound or whole-tree telescoping formulas. The dimension-three mappings cover the actual source tangent space and the exact spherical comparison classes, not the new general Weyl-law route. The recorded hashes identify this semantic review only. Compiled verification is recorded separately by the matching verification manifest.",
+    "scope": "The fourteen mapped files below were reviewed against their actual included statements, proofs, Lean declaration types and construction dependencies. Their indexed entries retain clause-specific coverage; this is not certification of every assertion in those files or of the complete manuscripts. The reduced-expression entries cover ordered syntax, the six-law normalization congruence, initiality in its exact comparison class, evaluation quotient with operations descended from expression assembly, finite fibres, successor injection, scalar Gaussian fibre compatibility and canonical scale-orientation transport. They do not certify the Hilbert uniform-difference splitting, coisometry, fibre-count recurrence, exponential count bound or whole-tree telescoping formulas. The dimension-three mappings cover the actual source tangent space and the exact spherical comparison classes, not the new general Weyl-law route. The internal-response mappings now include the generated critical radius, long-root dimension and Casimir, adjoint colour Casimir, unique affine drive, positive restoring balance, normalized one-dimensional radial/scalar intertwiner and finite radial/coclosed spectral bottom. The Lorentz mappings cover the four-real Hermitian carrier, determinant form, equality of the positive and future cones, determinant-one form invariance, future-unit stabilizer equation and central-sign action. The recorded hashes identify this semantic review only. Compiled verification is recorded separately by the matching verification manifest.",
     "changed_sources": [],
     "reviewed_sources": [
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/02_change_and_gaussian_correlation.tex", "mapped_declarations": 41, "sha256": "642984fc374f1592ba139a305d6e03d0a14ff822d84aff362a2e5d48d3b46791", "scope": "Minimal-carrier classification, original trace-Lie Gaussian law, variance-scale rigidity, orientation and overlap clauses. C/S/V belongs to the root definition; Gaussian centering, the density and its positive-parameter uniqueness are outputs. The C/S/V independence examples and Fourier uncertainty classification are not certified by these entries."},
@@ -17,7 +20,9 @@
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/appendix_e_conditional_projective_fibre.tex", "mapped_declarations": 2, "sha256": "30c365356f147c4b1cbcab57825d2da936ef37714991e58c79548ba054109a76", "scope": "The all-degree and even-degree affine classifications for the explicitly given spherical eigenvalue and multiplicity formulas, in every dimension at least two. These entries do not formalize the preceding general Weyl dimension proposition, construct a geometric realization from arithmetic coefficient capacity, or prove all later projective-lift statements."},
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/appendix_l_expression_resolution.tex", "mapped_declarations": 3, "sha256": "c1c7a8f0c5a89866e4a271347a60c82e55cb9eea359b6a89df21f4fcc92d594d", "scope": "Formalized appendix clauses are the intrinsic depth bound used for fibre finiteness, injectivity of right-unit insertion on reduced expressions, and constancy of the existing Gaussian scalar response on evaluation fibres. The exact fibre recursion and initial counts, h_n < 8^n, Hilbert coisometry and uniform-difference splitting, whole-tree telescoping and orthogonal successor assembly are not included."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec03_disorder_axiom.tex", "mapped_declarations": 26, "sha256": "4922c582d492719961ac960b5f676c86f32fe960affbca76aee3f4b53bdcb83d", "scope": "The normalized affine first-order ladder class, phase-independent ordered products, order-neutral half-sum, actual Hermite completeness, self-adjoint closure and full-space central phase. The affine and self-adjoint-extension comparison classes remain part of the respective conclusions, not new fields of the root datum."},
-      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec04_emergent_structures.tex", "mapped_declarations": 46, "sha256": "571cf7eebbf57956230a0e5d287c3093dd3a42abc961ad511d48b2e8d2dd1a5e", "scope": "Constructed exchange-retained algebra, least faithful representations, source frames, block-phase rigidity, phase lift and elementary doublet comparison. Exact spherical capacity uniqueness and the actual three-dimensional source tangent space are now separately mapped; the added complete-spectrum Weyl asymptotics and general dimension inference are not certified by these entries. The generated Clifford even algebra, its primitive real central projections, two-dimensional spinor ranges and actual eight-dimensional Hermite sectors are indexed separately. Least pairs admit unique transport of every operator after fixing the realizing unitary; the two residual block phases are basis gauge, not physical parameters. Colour determinant-phase factorization is pointwise, with cube-root ambiguity; it does not prove a global determinant reduction or identify that phase with the common matter phase. The generated IR length is the geometric amplitude-shell radius, not an independent fitted length. The root interface supplies the Hermitian determinant form, not a scalar mass gap, Higgs mass spectrum, arbitrary-bundle construction or spacetime dynamics."},
+      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec04_emergent_structures.tex", "mapped_declarations": 50, "sha256": "72d73ba50caa6080904fa7247dca0775f73ac0cd5d74d60c5aa49e6ba001f863", "scope": "Constructed exchange-retained algebra, least faithful representations, source frames, block-phase rigidity, phase lift and elementary doublet comparison. Exact spherical capacity uniqueness and the actual three-dimensional source tangent space are separately mapped; the complete-spectrum Weyl asymptotics and general dimension inference are not certified by these entries. The generated Clifford even algebra, its primitive real central projections, two-dimensional spinor ranges and actual eight-dimensional Hermite sectors are indexed separately. Least pairs admit unique transport of every operator after fixing the realizing unitary; the two residual block phases are basis gauge, not physical parameters. Colour determinant-phase factorization is pointwise, with cube-root ambiguity. The generated colour, source-spin and lifted-phase families minimally generate the intrinsic operator group; the computed central kernel gives its effective quotient, and the scalar representation descends through the same kernel. The generated IR length is the geometric amplitude-shell radius, not an independent fitted length."},
+      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec08_construction.tex", "mapped_declarations": 18, "sha256": "882e799b9754180e33d55751dbee796877b6444b3bed29d670966a7e562811b1", "scope": "The actual even scalar shells determine the dimensionless conformal indices and multiplicities. Their complete restoring response is unbounded and strictly increasing, so every positive generated drive has one positive balance and a positive normalized scalar bottom. The same source representation computes the long-root dimension 15 and Casimir 16; the endpoint ratio gives the critical radius; the unit-slope affine comparison class fixes the relative drive; the explicit colour basis gives the adjoint Casimir 3 and the 120 connection-coefficient count. The normalized one-dimensional radial and scalar blocks have a unique generator-preserving unitary and an exactly intertwined scalar mass semigroup. The generated feedback identity and finite radial/coclosed spectral combination are formalized; full unbounded operator domains and the round projective volume formula remain manuscript arguments."},
+      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec10_lorentz_carrier.tex", "mapped_declarations": 6, "sha256": "d77e0d71a3225ee94fb5cc90f50f71424f01ca834b0d5b0d1a1692c002e70d2b", "scope": "The four-real Hermitian carrier, Minkowski determinant form, equality of the positive-semidefinite cone with the algebraic future cone, determinant-one form invariance, future-unit stabilizer equation and central-sign action are formalized. The global image classification as SO+(1,3), affine event C*-algebra, Poincare completion and quantum-field reconstruction are not declarations in this finite interface."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/appendix_f_source_response.tex", "mapped_declarations": 14, "sha256": "faeb55d59cde363ec0bf325bb5fb10d0eb02416e8aa47309baf7fd13e62d4c75", "scope": "Actual source compression, generated SU(2) operations, restricted oscillator phase and central quotient clauses. Individual mappings do not certify the complete appendix, all source-state completions, the SO(3) double cover or the Clifford theorem simply because they share a proposition label."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/proofs_source_operations.tex", "mapped_declarations": 4, "sha256": "11dfa7ddd536b5b1397adcc1ba4fd9110fdd76d2fe605ec89824e5e75198af0a", "scope": "The local Gaussian cycle and the algebraic central-quotient clause. The local cycle is I-2P and differs from the global sign; centre-invariant observations are a specified retained observation class. The four entries alone do not certify the complete process algebra, general finite-variance diffusion limit or polar-metric proof."}
     ]
@@ -27,17 +32,12 @@
     "meaning": "Minimal unbiased compositional change: the stated orthogonal-action comparison class, carrier minimality and C/S/V law conditions on its trace Lie line.",
     "fields": ["change", "minimal", "law", "compositional"],
     "realization_indices": "Every orientation and positive width is quantified in the root conclusions. These indices are not extra root principles.",
-    "internal_constructions": "Calibrated information and mass readouts, endpoints, reflecting closure, spectra, arithmetic, finite-fibre reduced-expression resolution and physical responses are constructed internally. Definitions and uniqueness comparison classes remain explicit; their outputs are not root assumptions."
+    "internal_constructions": "Calibrated information and mass readouts, endpoints, reflecting closure, spectra, arithmetic, finite-fibre reduced-expression resolution, physical responses, the intrinsic generated gauge group, four-dimensional gauge kinematics, Yang--Mills covariance, the two-dimensional transverse--traceless carrier, the tensor-response endpoint, the local linear Einstein operator, and the complete normalized conformal response with its canonical scalar spectral bottom are constructed internally. Definitions and uniqueness comparison classes remain explicit; their outputs are not root assumptions."
   },
-  "arithmetic_source_integration": {
-    "entry": "GeneratedFoundations.Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
+  "common_source_integration": {
+    "entry": "GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange",
     "status": "source_integrated",
-    "scope": "The sole root datum yields source closure, native arithmetic and prime factorization for every orientation and positive width. A sibling root declaration yields the ordered finite-fibre reduced-expression resolution and canonical same-source scale-orientation transport without enlarging the datum. No endpoint, boundary-operator or expression-selection premise is an argument."
-  },
-  "physical_source_integration": {
-    "entry": "GeneratedFoundations.Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange",
-    "status": "source_integrated",
-    "scope": "The sole root datum yields the constructed P4-P6 source interface, source Clifford sectors with their Hermite ranges, pointwise colour determinant-phase factorization, and two-mode Hermitian determinant interface for every orientation and positive width. Least representations admit unique operator transport after fixing one realizing unitary. No endpoint, boundary operator or aggregate P4-P6 premise. Classification comparison classes remain explicit; external spacetime and field dynamics are outside this entry."
+    "scope": "One MinimalUnbiasedChange.Datum simultaneously yields source closure, native arithmetic with prime factorization, the ordered-expression evaluation quotient with directly descended operations, complete ordered history and phase fibers, their intrinsic finite observables, the exact whole-history transport ledger, detailed-balance edge dynamics, and the physical branch through the minimally generated effective gauge group, descended scalar representation, four-dimensional gauge kinematics, Yang--Mills covariance, the derived two-polarization TT carrier, response-endpoint rigidity, the uniquely selected local linear Einstein operator with its TT simple pole, and the complete normalized conformal response with its canonical scalar spectral bottom. Orientation and positive width are universally quantified realization indices rather than additional root data. Signed characters and finite Fourier observations are separate research extensions."
   },
   "manuscript_snapshot_method": "Starting from main.tex, recursively resolve local TeX input/include files. Sort relative POSIX paths in ordinal order. Hash the UTF-8 concatenation of relative_path, NUL, lowercase file SHA-256, LF for each file. The graph includes main.tex and local macro inputs; class/style files, bibliography files and external images are excluded. These identities locate the reviewed sources and do not certify semantic coverage.",
   "manuscripts": [
@@ -73,7 +73,9 @@
         "sections-en/appendix_f_source_response.tex": "faeb55d59cde363ec0bf325bb5fb10d0eb02416e8aa47309baf7fd13e62d4c75",
         "sections-en/proofs_source_operations.tex": "11dfa7ddd536b5b1397adcc1ba4fd9110fdd76d2fe605ec89824e5e75198af0a",
         "sections-en/sec03_disorder_axiom.tex": "4922c582d492719961ac960b5f676c86f32fe960affbca76aee3f4b53bdcb83d",
-        "sections-en/sec04_emergent_structures.tex": "1f4edaf17bdffd65fa3e95714b2b0aea1e10716f0e144c2d7ba8deb4496bd258",
+        "sections-en/sec04_emergent_structures.tex": "72d73ba50caa6080904fa7247dca0775f73ac0cd5d74d60c5aa49e6ba001f863",
+        "sections-en/sec08_construction.tex": "882e799b9754180e33d55751dbee796877b6444b3bed29d670966a7e562811b1",
+        "sections-en/sec10_lorentz_carrier.tex": "d77e0d71a3225ee94fb5cc90f50f71424f01ca834b0d5b0d1a1692c002e70d2b",
         "sections-en/appendix_c.tex": "ddb12a34d08780f3f5fb9e6ae63c006f8da60d667d1bca31a982224278900dd1"
       }
     }
@@ -159,15 +161,6 @@
     "tex_source": "sections-en/02_change_and_gaussian_correlation.tex",
     "coverage_kind": "clause",
     "scope": "Any two laws satisfying the explicit C/S/V conditions on the same minimal carrier agree at every positive parameter. This is law uniqueness in the stated source class, not a derivation of C/S/V from carrier minimality."
-  },
-  {
-    "name": "GeneratedFoundations.Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
-    "module": "GeneratedFoundations.Arithmetic.GeneratedFoundation",
-    "paper": "A Spectral Construction of Natural-Number Arithmetic",
-    "label": "thm:prime-spectral-basis",
-    "tex_source": "sections-en/08_spectral_natural_number_theorem.tex",
-    "coverage_kind": "clause",
-    "scope": "Root-only entry through source closure, native arithmetic and prime factorization for every orientation and positive width. Readout calibration and separated-boundary comparison classes remain explicit in its conclusions. Does not cover all later bar, cotangent, Fock or completion structures of the manuscript theorem."
   },
   {
     "name": "GeneratedFoundations.Arithmetic.GeneratedTransport.transport_unique_of_response",
@@ -287,15 +280,6 @@
     "scope": "The existing scalar Neumann Gaussian response has equal values on reduced expressions with equal natural evaluation. This is fibrewise scalar compatibility, not a Hilbert-space coisometry, difference-sector dynamics or whole-tree factorization theorem."
   },
   {
-    "name": "GeneratedFoundations.Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange",
-    "module": "GeneratedFoundations.Arithmetic.ReducedExpressionFoundation",
-    "paper": "A Spectral Construction of Natural-Number Arithmetic",
-    "label": "thm:prime-spectral-basis",
-    "tex_source": "sections-en/08_spectral_natural_number_theorem.tex",
-    "coverage_kind": "clause",
-    "scope": "The same sole MinimalUnbiasedChange.Datum supplies surjective operation-preserving typed expression evaluation with finite fibres for every orientation and positive width. The expression syntax introduces no new field of the root datum."
-  },
-  {
     "name": "GeneratedFoundations.Arithmetic.ReducedExpression.transport_fromMinimalUnbiasedChange",
     "module": "GeneratedFoundations.Arithmetic.ReducedExpressionFoundation",
     "paper": "A Spectral Construction of Natural-Number Arithmetic",
@@ -305,13 +289,236 @@
     "scope": "For one root datum, evaluation of the same reduced expression commutes with the already generated canonical comparison between any two derived positive widths and carrier orientations. No separate expression transport or matching premise is supplied."
   },
   {
-    "name": "GeneratedFoundations.Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange",
-    "module": "GeneratedFoundations.Physical.SourcePhysicalInterface",
-    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
-    "label": "prop:smtypecompletion",
-    "tex_source": "sections-en/sec04_emergent_structures.tex",
-    "coverage_kind": "clause",
-    "scope": "Root-only entry through the constructed source geometry, retained responses, source Clifford sectors with their Hermite projections, frames, matter and elementary connector, for every orientation and positive width. P4-P6 are not an aggregate premise. The nested records include pointwise determinant-phase factorization and fixed-unitary compatible operator transport. The Hermitian matrix readout has determinant signature (1,3) and the specified determinant-preserving action. Scalar mass gaps, Higgs masses, external spacetime and field dynamics are outside this statement."
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistory.flatWeight_sum_one",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistorySource",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete-history flat law",
+    "coverage_kind": "theorem",
+    "scope": "Every positive generated value has a finite complete ordered history fiber, and equal conditional division among all admissible addition and non-unit multiplication channels at each vertex has total mass one on that fiber."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistory.flatGaussian_pushforward",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistorySource",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete-history flat Gaussian pushforward",
+    "coverage_kind": "theorem",
+    "scope": "Multiplying the normalized flat history law by the Gaussian square-index root mass and pushing to the root recovers that Gaussian mass exactly for every positive value and every real scale pair."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistory.localCoupling_unique",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistorySource",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "Gaussian directory coupling uniqueness",
+    "coverage_kind": "theorem",
+    "scope": "For every value at least two, positivity of the full child-channel partition makes conservation of the parent Gaussian mass determine the local directory coupling uniquely."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistory.directoryMass_sum_gaussian",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistorySource",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "dynamic Gaussian directory pushforward",
+    "coverage_kind": "theorem",
+    "scope": "The recursively conserved Gaussian directory mass sums over every complete ordered history of a positive root value to exactly the Gaussian square-index mass at that root."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistory.evalNat_toExpression",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistorySource",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "history expression realization",
+    "coverage_kind": "theorem",
+    "scope": "Forgetting the index of a complete ordered history produces an expression in the established reduced syntax whose native natural evaluation is exactly the history root."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistory.completeHistoryConclusions",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistorySource",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete history source",
+    "coverage_kind": "root_component",
+    "scope": "Packages the complete finite ordered history fibers, their normalized flat law, the exact flat Gaussian root pushforward and their reduced-expression realization as one positive-source theorem component. Signed characters and harmonic observations are not fields of this conclusion."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteNaturalObject.phaseKernelEquiv",
+    "module": "GeneratedFoundations.Arithmetic.CompleteNaturalObject",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonical finite phase kernel",
+    "coverage_kind": "construction",
+    "scope": "For every positive generated root k, the canonical finite phase coordinate ZMod k is equivalent to the kernel of the k-fold circle endomorphism; no signed or Fourier observation is used to construct this fibre."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteNaturalObject.phaseFiber_card",
+    "module": "GeneratedFoundations.Arithmetic.CompleteNaturalObject",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "phase-fibre cardinality",
+    "coverage_kind": "theorem",
+    "scope": "The canonical finite phase fibre over a positive root k has exactly k elements."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryGeometry.leafCount_eq_nodeCount_succ",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryGeometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete-history binary identity",
+    "coverage_kind": "theorem",
+    "scope": "Every complete ordered construction history has one more unit leaf than the total number of its native additive and multiplicative internal vertices."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryGeometry.capacityDefectZ_mul_node",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryGeometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "multiplicative capacity-defect recurrence",
+    "coverage_kind": "theorem",
+    "scope": "At an actual multiplicative history vertex, the retained capacity defect is the two child defects plus the exact local multiplicative excess."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryGeometry.orientationScore_reflect",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryGeometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "history-reflection orientation law",
+    "coverage_kind": "theorem",
+    "scope": "Reflecting every ordered history vertex preserves the even count observables and negates the intrinsic orientation score."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryGeometry.orientationScore_node_from_sources",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryGeometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "history vertex source law",
+    "coverage_kind": "theorem",
+    "scope": "The orientation coordinate at each native history vertex is reconstructed exactly from the child additive and multiplicative counts and child orientations."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryTransport.internalEnergy_telescope",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryTransport",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "whole-history energy telescope",
+    "coverage_kind": "theorem",
+    "scope": "The sum of the square-energy defects over all internal vertices equals the root square energy minus the retained unit-leaf source energy."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryTransport.completeTransport_descends",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryTransport",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete transport quotient descent",
+    "coverage_kind": "theorem",
+    "scope": "After source and internal transports are combined, the whole-history transport depends only on the generated root and descends exactly to its Gaussian square-spectrum response."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryTransport.internalEnergy_not_root_determined",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryTransport",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unresolved history witness",
+    "coverage_kind": "theorem",
+    "scope": "Two explicit histories with scalar root six have different internal energies before the complementary source term is included."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryDynamics.edge_detailed_balance",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryDynamics",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "history-edge detailed balance",
+    "coverage_kind": "theorem",
+    "scope": "The Gaussian history intensity and generated merge rate obey exact detailed balance on every actual ordered merge/split edge."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.CompleteHistoryDynamics.mergeRate_unique",
+    "module": "GeneratedFoundations.Arithmetic.CompleteHistoryDynamics",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "detailed-balance rate uniqueness",
+    "coverage_kind": "theorem",
+    "scope": "With the reverse split rate normalized to one, the scalar forward merge rate is uniquely determined by the generated Gaussian source balance equation."
+  },
+  {
+    "name": "GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange",
+    "module": "GeneratedFoundations.CommonFoundation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "common-root interface",
+    "coverage_kind": "root_interface",
+    "scope": "Packages source closure, native arithmetic and factorization, the directly descended expression quotient, the complete ordered history and phase fibres, intrinsic history observables, the exact whole-history transport ledger, detailed-balance edge dynamics and the basic physical interfaces as simultaneous conclusions of one MinimalUnbiasedChange.Datum. No signed-character premise, aggregate P4-P6 premise or cross-branch matching premise is introduced."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.GeneratedCentralCharacter.centreCharacter_mul_channel",
+    "module": "GeneratedFoundations.Analysis.GeneratedCentralCharacter",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "downstream multiplicative central character",
+    "coverage_kind": "downstream_analysis",
+    "scope": "After the positive natural object has been constructed, the classical Liouville character is constant on each history fibre and multiplicative on every admissible multiplicative channel. It is not a root input or a field of the common foundation."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.GeneratedCentralCharacter.centreCharacter_additive_reconstruction",
+    "module": "GeneratedFoundations.Analysis.GeneratedCentralCharacter",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "downstream additive character defect",
+    "coverage_kind": "downstream_analysis",
+    "scope": "The additive-channel defect reconstructs the parent Liouville character from the two child characters as a later signed observation; it does not construct the underlying natural-number system."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.GeneratedPrimeParity.modeCentre_unique",
+    "module": "GeneratedFoundations.Arithmetic.GeneratedPrimeParity",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "intrinsic generated prime parity",
+    "coverage_kind": "research_extension",
+    "scope": "The unique native irreducible multiset determines its parity character: every multiplicative integer character normalized at one and taking value minus one on each native irreducible equals this character on every nonzero native mode. Classical Liouville is not used in the definition."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.GeneratedMobiusObservation.generatedSquarefree_iff_squarefree",
+    "module": "GeneratedFoundations.Analysis.GeneratedMobiusObservation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "intrinsic generated squarefree support",
+    "coverage_kind": "research_extension",
+    "scope": "Absence of repetition in the unique native irreducible multiset, after the generated natural coordinate is applied, is equivalent to classical squarefreeness. The generated factor multiset rather than the classical predicate defines the signed-source support."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.GeneratedMobiusObservation.generatedMoebius_divisor_sum",
+    "module": "GeneratedFoundations.Analysis.GeneratedMobiusObservation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated divisor-incidence inverse",
+    "coverage_kind": "research_extension",
+    "scope": "The intrinsic squarefree prime-parity observation has divisor sum one at the unit root and zero at every other root, hence is the incidence inverse of the constant-one divisor source. Its classical Moebius identification is a derived coordinate comparison."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.SignedGaussianEnergy.completeSignedEnergy_decomposition",
+    "module": "GeneratedFoundations.Analysis.SignedGaussianEnergy",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete signed Gaussian energy",
+    "coverage_kind": "research_extension",
+    "scope": "The finite complete signed Gaussian amplitude is squared only after summing all generated roots and histories; its exact expansion retains the full diagonal and every ordered off-diagonal cross term without absolute-value separation."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.FiniteResidueFourier.residueFourier_inversion",
+    "module": "GeneratedFoundations.Analysis.FiniteResidueFourier",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "finite residue Fourier inversion",
+    "coverage_kind": "research_extension",
+    "scope": "For every positive finite residue modulus, the generated signed source grouped by residue class is recovered exactly from all of its finite Fourier coordinates. This is a lossless basis change and supplies no cancellation estimate by itself."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryFrontier.historyFrontierConclusions",
+    "module": "GeneratedFoundations.Analysis.HistoryFrontier",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonical minimal-frontier history evaluation",
+    "coverage_kind": "research_extension",
+    "scope": "The larger-register-first schedule with fixed left tie-breaking has peak frontier equal to the Sethi-Ullman register number; a register demand q requires at least 2^(q-1) leaves, yielding the logarithmic frontier bound, and the exact path length is twice the leaf count minus one."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.FinitePoissonOverlap.finitePoissonOverlapConclusions",
+    "module": "GeneratedFoundations.Analysis.FinitePoissonOverlap",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "finite factorial-overlap kernel",
+    "coverage_kind": "research_extension",
+    "scope": "For local falling-factorial orders at most two, the exact overlap product identity is proved by finite algebra, together with the unit-intensity polynomial bounds giving constants seven and two. The declaration does not formalize an all-scale probability or Green-kernel estimate."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryTiltedBalance.doubled_tilt_edge_identity",
+    "module": "GeneratedFoundations.Analysis.HistoryTiltedBalance",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "doubled-tilt generated edge balance",
+    "coverage_kind": "research_extension",
+    "scope": "On every actual generated merge/split edge, squared tilted edge demand divided by the base detailed-balance rate and multiplied by the two doubled-tilt child intensities equals exactly the doubled-tilt parent intensity. No unweighted species count replaces that intensity."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.GeneratedRecoveryKernel.generatedRecoveryKernelConclusions",
+    "module": "GeneratedFoundations.Analysis.GeneratedRecoveryKernel",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "finite generated recovery kernel",
+    "coverage_kind": "research_extension",
+    "scope": "Packages the canonical frontier, finite overlap algebra and doubled-tilt bottom-edge identity as one source-internal finite recovery kernel. It introduces no new datum and does not assert the later analytic context summation or limiting theorem."
   },
   {
     "name": "GeneratedFoundations.Physical.SourceSplitResponse.generated_split",
@@ -620,13 +827,274 @@
     "scope": "The Hermitian readout acts as the actual finite-corner operator on the original Gaussian vacuum and first excitation. Relativistic spacetime interpretation remains separate."
   },
   {
+    "name": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup.sourceFactorClosure_eq_generated",
+    "module": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:globalgroup",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "The determinant-one changes of the generated colour carrier, the group generated by the source-spin axes and the uniquely lifted phase circle generate exactly the intrinsic operator group on the complete matter carrier."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup.generatedGaugeGroup_least",
+    "module": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:globalgroup",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Any subgroup of the matter-operator units containing all three generated source families contains the full intrinsic operator group. This is the least-subgroup form of generation."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup.generatedGaugeGroupEquivEffective",
+    "module": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:globalgroup",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "The intrinsic generated operator group is group-isomorphic to the product presentation modulo its computed central subgroup of order six."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup.centralSix_le_scalarKernel",
+    "module": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:single-higgs",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The scalar doublet action annihilates the same generated central six-element subgroup, so it descends to the effective gauge quotient rather than depending on a product-group lift."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup.sourceGeneratedGaugeGroup",
+    "module": "GeneratedFoundations.Physical.SourceGeneratedGaugeGroup",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:smtypecompletion",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "clause",
+    "scope": "Packages the generated origins of the colour, weak and phase factors, their minimal generation of the intrinsic operator group, the exact central kernel and the descended scalar representation with colour-singlet, defining-doublet and half-phase characters."
+  },
+  {
     "name": "GeneratedFoundations.Physical.SourcePhysicalInterface.minimalChange_physicalInterface",
     "module": "GeneratedFoundations.Physical.SourcePhysicalInterface",
     "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
     "label": "prop:smtypecompletion",
     "tex_source": "sections-en/sec04_emergent_structures.tex",
     "coverage_kind": "clause",
-    "scope": "Expanded application of the minimal unbiased compositional change construction at a specified orientation and positive width. Combines the common-law geometry, exchange-retained algebra, frames and internal response with the same-source Hermitian determinant interface. Endpoints, boundary operators and P4-P6 conclusions are internally constructed. Compilation and axiom evidence is recorded separately in the matching verification manifest."
+    "scope": "From one minimal unbiased compositional change datum, for every orientation and positive width, this theorem combines the common-law geometry, exchange-retained algebra, frames, internal response and same-source Hermitian determinant interface, and exports the generated gauge group, four-dimensional gauge, Yang--Mills, TT-response, linear-gravity, projective scalar-spectrum and complete conformal-response certificates. The cited manuscript label maps the generated gauge-and-scalar completion fields of this aggregate theorem; later field clauses have their own mappings. Endpoints, boundary operators and P4--P6 conclusions are internally constructed. No separate probability law is supplied by the caller. Compilation and axiom evidence is recorded separately in the matching verification manifest."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceConformalResponse.conformalIndex_eq_scalar_shift",
+    "module": "GeneratedFoundations.Physical.SourceConformalResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:native-original-diagonal-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "The conformal shell index is the actual generated even scalar Casimir plus three quarters. The matching multiplicity identity is proved in the same module."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceConformalResponse.completeResponse_unboundedAbove",
+    "module": "GeneratedFoundations.Physical.SourceConformalResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:native-original-diagonal-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "The complete dimensionless restoring response of the generated even scalar tower exceeds every real target on the nonnegative line. The proof uses an explicit lower bound from the first N+1 generated shells."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceConformalResponse.existsUnique_completeResponse_root",
+    "module": "GeneratedFoundations.Physical.SourceConformalResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:native-original-diagonal-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "Compact continuity, strict increase and unboundedness give exactly one positive dimensionless balance for every positive drive. This is the response equation, not the separate dimensional parameter prescription."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceConformalResponse.existsUnique_root_with_scalarGap",
+    "module": "GeneratedFoundations.Physical.SourceConformalResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "cor:native-complete-scalar-gap-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "At the unique positive dimensionless balance, the radial curvature gives a positive normalized gap. Adding it to every actual generated even scalar Casimir yields a complete shell tower bounded below by that gap, with equality at the constant shell."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceColourAdjointCasimir.adjointCasimir_generator",
+    "module": "GeneratedFoundations.Physical.SourceColourAdjointCasimir",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:generated-ym-normalization-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "The double commutator of the eight explicit trace-normalized generated colour matrices acts by the scalar 3 on every generated colour basis vector. The proof derives the Fierz completeness identity from the matrices themselves; no structure-constant or adjoint-Casimir table is an input."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse.criticalRadius_eq_endpointRatio",
+    "module": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:generated-critical-drive-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "For every positive Gaussian width, the internal critical radius sqrt(pi) is exactly the already generated IR-to-UV endpoint ratio. It is not supplied as a second scale."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse.longRoot_finrank",
+    "module": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:generated-critical-drive-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The actual source left-right carrier of bidegree (4,2) has complex dimension 15 by the uniform generated carrier-dimension theorem. The unrelated fifteen-dimensional charged quotient is not used."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse.longRootCasimirIndex_eq",
+    "module": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:generated-critical-drive-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "The same actual (4,2) source carrier has dimensionless left-right Casimir index 16."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse.unitSlopeAffineDrive_unique",
+    "module": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:generated-critical-drive-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "Among unit-slope affine functions of the generated long-root eigenvalue, vanishing at the generated critical radius uniquely fixes lambda_R(L)-lambda_R(L_c)."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse.existsUnique_response_with_scalarGap",
+    "module": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:generated-ym-response-hessian-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "For radius above the generated critical radius and a positive effective coefficient, the generated negative long-root drive gives one positive complete restoring amplitude and its positive normalized scalar bottom. This is the dimensionless response block, not the full unbounded Yang-Mills Hessian-domain theorem."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse.connectionCoefficientCount_eq",
+    "module": "GeneratedFoundations.Physical.SourceInternalYangMillsResponse",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:generated-ym-radial-metric-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The eight generated colour directions and the actual fifteen-dimensional long-root source carrier give 120 connection coefficients."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceRadialMassIntertwiner.scoreScale_sq_mul_variance",
+    "module": "GeneratedFoundations.Physical.SourceRadialMassIntertwiner",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:generated-ym-radial-intertwiner-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "For nonzero intensity, the displayed radial score scale and its variance multiply to unit squared norm, using the already computed coefficient count 120."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceRadialMassIntertwiner.radialToConstant_unique",
+    "module": "GeneratedFoundations.Physical.SourceRadialMassIntertwiner",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:generated-ym-radial-intertwiner-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "After both one-dimensional blocks are normalized by their displayed generators, there is exactly one complex-linear isometry sending the radial generator to the scalar constant generator."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceRadialMassIntertwiner.radialToConstant_intertwines",
+    "module": "GeneratedFoundations.Physical.SourceRadialMassIntertwiner",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:generated-ym-radial-intertwiner-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "The unique normalized one-dimensional unitary intertwines the common scalar mass evolution for every mass and evolution parameter."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceRadialMassIntertwiner.radialProjectionCoefficient_pos",
+    "module": "GeneratedFoundations.Physical.SourceRadialMassIntertwiner",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:generated-ym-radial-intertwiner-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "The coefficient built from the positive long-root eigenvalue, complete generated curvature and positive response amplitude is strictly positive, giving nonzero radial overlap in this normalized block."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap.generatedFeedback_eq",
+    "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:generated-ym-normalization-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "The computed colour ratio 3/8 divided by the round projective volume gives the displayed feedback coefficient 3/(8 pi^2 L^3). The round projective volume formula is the manuscript's geometric input to this finite algebraic identity."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap.generatedYangMillsGapSq_pos",
+    "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:generated-ym-gap-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "For positive radius and positive condensed response, both the normalized radial block and the lowest coclosed connection shell are positive, so the minimum defining the finite spectral bottom is strictly positive."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap.existsUnique_generatedYangMillsGap",
+    "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:generated-ym-response-hessian-p4",
+    "tex_source": "sections-en/sec08_construction.tex",
+    "coverage_kind": "clause",
+    "scope": "Above the generated critical radius, the source feedback and long-root drive select exactly one positive dimensionless response amplitude, at which the finite radial/coclosed spectral combination has a positive bottom. This declaration does not formalize the manuscript's unbounded Hessian domain or nonlinear probe functional."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceLorentzCarrier.realCoordinates_finrank",
+    "module": "GeneratedFoundations.Physical.SourceLorentzCarrier",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:generated-lorentz-carrier-p4",
+    "tex_source": "sections-en/sec10_lorentz_carrier.tex",
+    "coverage_kind": "clause",
+    "scope": "The Hermitian source readout has real dimension four."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceLorentzCarrier.futureCone_iff_sqrt_le",
+    "module": "GeneratedFoundations.Physical.SourceLorentzCarrier",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:generated-lorentz-carrier-p4",
+    "tex_source": "sections-en/sec10_lorentz_carrier.tex",
+    "coverage_kind": "clause",
+    "scope": "The generated closed future cone defined by nonnegative time coordinate and determinant is exactly t at least the Euclidean length of the three spatial coordinates."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceLorentzCarrier.posSemidef_iff_futureCone",
+    "module": "GeneratedFoundations.Physical.SourceLorentzCarrier",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:generated-lorentz-carrier-p4",
+    "tex_source": "sections-en/sec10_lorentz_carrier.tex",
+    "coverage_kind": "clause",
+    "scope": "The positive cone of the generated Hermitian source algebra is exactly the algebraically characterized closed future cone."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceLorentzCarrier.coordinateTransform_preserves_form",
+    "module": "GeneratedFoundations.Physical.SourceLorentzCarrier",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:generated-lorentz-carrier-p4",
+    "tex_source": "sections-en/sec10_lorentz_carrier.tex",
+    "coverage_kind": "clause",
+    "scope": "A determinant-one complex congruence preserves the generated Minkowski determinant form."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceLorentzCarrier.coordinateTransform_futureUnit_iff",
+    "module": "GeneratedFoundations.Physical.SourceLorentzCarrier",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:generated-lorentz-carrier-p4",
+    "tex_source": "sections-en/sec10_lorentz_carrier.tex",
+    "coverage_kind": "clause",
+    "scope": "For a determinant-one source matrix, fixing the distinguished future unit is equivalent to the special-unitary stabilizer equation A A* = I."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceLorentzCarrier.coordinateTransform_negativeIdentity",
+    "module": "GeneratedFoundations.Physical.SourceLorentzCarrier",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "thm:generated-lorentz-carrier-p4",
+    "tex_source": "sections-en/sec10_lorentz_carrier.tex",
+    "coverage_kind": "supporting_lemma",
+    "scope": "The negative central identity acts trivially on every generated Lorentz coordinate, giving the proved central-sign part of the double-cover statement."
   },
   {
     "name": "GeneratedFoundations.Spectral.PeriodicGaussian.density_fourier",

@@ -12,6 +12,11 @@ public import GeneratedFoundations.Source.GeneratedSpectralCircle
 public import GeneratedFoundations.Source.MinimalUnbiasedChange
 public import GeneratedFoundations.Arithmetic.GeneratedFoundation
 public import GeneratedFoundations.Arithmetic.ReducedExpressionFoundation
+public import GeneratedFoundations.Arithmetic.CompleteHistorySource
+public import GeneratedFoundations.Arithmetic.CompleteNaturalObject
+public import GeneratedFoundations.Arithmetic.CompleteHistoryGeometry
+public import GeneratedFoundations.Arithmetic.CompleteHistoryTransport
+public import GeneratedFoundations.Arithmetic.CompleteHistoryDynamics
 public import GeneratedFoundations.Arithmetic.InternalPrimes
 public import GeneratedFoundations.Arithmetic.DifferenceOrder
 public import GeneratedFoundations.Arithmetic.DifferenceUniversal
@@ -32,9 +37,9 @@ public import GeneratedFoundations.Spectral.GaussianHeatConvolution
 /-!
 # Arithmetic foundation from minimal unbiased compositional change
 
-`Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange` and
-`Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange` take one
-root datum and cover every carrier orientation and positive width in their conclusions.
+The arithmetic component of
+`CommonFoundation.fromMinimalUnbiasedChange` takes one root datum and covers
+every carrier orientation and positive width in its conclusions.
 The datum contains the minimal original change action and its compositional
 probability law. Orientations and widths index realizations; the endpoints,
 reflecting operator and arithmetic objects are constructed internally. The
@@ -93,7 +98,17 @@ The reduced-expression continuation retains ordered bracketing before
 evaluation, removes only the six unit and absorbing-zero rules, has unique
 normal forms and finite evaluation fibres, recovers the native mode semiring
 as its evaluation quotient, and commutes with canonical scale and orientation
-transport.
+transport. Complete ordered histories above positive values carry both the
+normalized flat conditional law and its persistent Gaussian root intensity.
+Their complete finite fibres retain the canonical phase kernel together with
+leaf charge, the two native node counts, orientation and capacity defect.
+The source boundary and internal square-energy defects form an exact
+telescoping ledger, so the complete transport descends to the root square
+spectrum while the unresolved internal part does not.  The same positive
+source uniquely fixes the detailed-balance merge rate for unit reverse split
+rate.  A recursively renormalized Gaussian directory remains available only
+as a fixed-scale local identity.  Signed arithmetic and finite harmonic
+readouts are separate research extensions and are not imported by this root.
 These are statements about the defined generated construction, with each
 classification's comparison class retained in its theorem.
 -/

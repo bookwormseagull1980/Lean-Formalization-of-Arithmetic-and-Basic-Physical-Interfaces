@@ -24,20 +24,26 @@ list. Inductive types, computation, universes and proof irrelevance belong to
 Lean's underlying type theory; `#print axioms` is not a specification or
 independent validation of that type theory or its implementation.
 
-The completed audit on 9 October 2026 covers all 235 local modules,
-11,664 compiled-environment constants, 6,339 named type checks and 225
+The completed audit on 18 October 2026 covers all 273 local modules,
+13,854 compiled-environment constants, 7,231 named type checks and 298
 indexed claims. The constants include private declarations, anonymous
-instances and generated helpers; they are not 11,664 manuscript theorems.
+instances and generated helpers; they are not 13,854 manuscript theorems.
 The full collector uses `Lean.collectAxioms`; named declarations also have
 explicit `#print axioms` reports checked against that inventory. Every
 reported transitive axiom belongs to the three-element allowlist above.
 There are no local constants of axiom kind and no `sorryAx` dependencies.
 
-Both `Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange` and
-`Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange` depend on
-exactly `propext`, `Classical.choice` and `Quot.sound`. Their modules and
-dependencies passed compilation. This includes the constructed common-source
-geometry and the complete basic physical interface specified below.
+`GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange` depends on
+exactly `propext`, `Classical.choice` and `Quot.sound`. Its module and all
+dependencies passed compilation. Its conclusion includes the constructed
+common-source geometry, the single natural-number branch with its complete
+history and phase fibres, intrinsic history observables, exact whole-history
+transport and detailed-balance dynamics, and the complete basic physical
+interface specified below. Intrinsic prime parity and squarefree signed
+observations, their classical Liouville/Moebius comparisons, finite Fourier
+and signed-energy constructions, and the finite generated recovery kernel
+live in the separate `GeneratedFoundations.ResearchExtensions` entry and are
+not dependencies of this common-root theorem.
 
 The authoritative evidence is `verification-manifest.json` together with
 its saved audit log and the source, index, dependency and tool fingerprints
@@ -52,18 +58,26 @@ axioms. Source traversal of the current library found no such placeholders,
 custom axiom declarations, `native_decide`, or `unsafe` proof implementations.
 That source result alone does not substitute for a completed compiled audit.
 
-The complete environment has zero `unsafe` flags and nine `partial` flags.
-All nine flagged constants have the suffix `._unsafe_rec`; the corresponding
+The complete environment has zero `unsafe` flags and 29 `partial` flags.
+All 29 flagged constants have the suffix `._unsafe_rec`; the corresponding
 public definitions have both flags false. The full names are obtained by
 appending that suffix to each name in the following table, under the common
 namespace `GeneratedFoundations`:
 
 | Namespace | Public definitions with generated recursion implementations |
 |---|---|
+| `Analysis.FinitePoissonOverlap` | `falling` |
+| `Analysis.HistoryFrontier` | `pathLength`, `registerNumber`, `scheduledPeak` |
 | `Geometry.SourceFiniteControlDiffusion` | `IndependentSample`, `independentLaw`, `operationProduct` |
 | `Geometry.SourceOperationWalk` | `Sample`, `sampleLaw`, `sampleProduct`, `walkLaw` |
 | `Operations.HermiteFamily` | `raw` |
 | `Operations.HermiteSpan` | `monomialGaussian` |
+| `Arithmetic.CompleteHistory` | `directoryMass`, `flatWeight`, `toExpression` |
+| `Arithmetic.CompleteHistoryGeometry` | `addCount`, `leafCount`, `mulCount`, `orientationScore`, `reflect` |
+| `Arithmetic.CompleteHistoryTransport` | `internalEnergy` |
+| `Arithmetic.ReducedExpression.RawExpr` | `depth`, `normalize`, `upToDepth` |
+| `Arithmetic.ReducedExpression.Target` | `interpretRaw` |
+| `Arithmetic.ReducedExpression` | `instDecidableEqRawExpr.decEq`, `instReprRawExpr.repr`, `numeral` |
 
 These are compiler-generated implementations of the ordinary structurally
 recursive source definitions, not handwritten `partial` declarations or
@@ -75,7 +89,7 @@ That function in `Lean/Elab/PreDefinition/Basic.lean` creates names via
 `DefinitionSafety.partial`. The original definitions remain the safe logical
 definitions. The audit includes these additional constants and records their
 flags and transitive axioms without treating their recursive implementation
-bodies as nine further safe definitions. Their reported axioms are exactly
+bodies as 29 further safe definitions. Their reported axioms are exactly
 the three standard axioms above. Thus the source scan has no handwritten
 `partial`, but the compiled inventory does not have zero `partial` entries.
 
@@ -87,7 +101,7 @@ be distinguished from uniqueness of the selected witness or coordinates.
 
 ## The root datum
 
-The two `fromMinimalUnbiasedChange` entry theorems take
+The single public `fromMinimalUnbiasedChange` entry theorem takes
 `Source.MinimalUnbiasedChange.Datum`. Its fields are:
 
 | Field | Mathematical content |
@@ -112,8 +126,8 @@ strictly positive parameters on a fixed generated carrier; equality of the
 entire real-indexed family at unrestricted nonpositive parameters is not
 claimed.
 
-Orientations and positive widths are quantified in the conclusions of the
-root entries. They index realizations; they are not additional fitted root
+Orientations and positive widths are quantified in the conclusion of the
+root entry. They index realizations; they are not additional fitted root
 principles. Their presence is not a claim of literal equality of every
 oriented or rescaled realization.
 
@@ -137,6 +151,13 @@ when they are not arguments of the root theorem:
 | Elementary connector | Naturality and reversal compatibility define the comparison class. The doublet coordinate is unique for each connector in that class; the theorem does not select one value of the doublet or exclude multiple copies. |
 | Local frames | `SourceColourPhase` factors every unitary colour frame pointwise into a circle phase and an SU(3) factor; their opposite cube-root changes describe the finite central ambiguity. This does not identify the determinant phase with the common matter phase, select a global continuous cube root or provide a determinant-bundle trivialization. Relative transitions from supplied frame functions obey the cocycle law. The factorization is connected to the compiled and audited root output. |
 | Geometric scale | `SourceEndpointCasimir.radius` is another notation for the already generated `irEndpoint`, not an independently supplied length. The actual polar amplitude at this radius has norm equal to that same IR length, and its trace metric supplies the radius-squared angular factor. The Gaussian half-generator coefficient follows separately from its variance normalization. |
+| Four-dimensional gauge configurations | The Hermitian source readout supplies four real coordinates and the generated effective group acts faithfully on the existing matter carrier. Connection values, first jets and local gauge two-jets are universally quantified configuration variables. The colour Lie algebra, curvature law, local covariance and quadratic density are proved from the generated colour basis; none is a field of the root datum. |
+| Lorentz positive cone | The self-adjoint part of the generated two-mode matrix corner has four real coordinates. Its determinant is the Lorentz quadratic form, and its positive-semidefinite matrices are proved to be exactly the closed algebraic future cone. Determinant-one congruence, the future-unit stabilizer equation and the central-sign action are derived on this same carrier. |
+| Internal Yang--Mills response | The critical radius is the already generated IR/UV endpoint ratio. The long-root dimension and Casimir come from the actual source left--right representation, while the adjoint Casimir is computed from the explicit colour matrices. The affine drive, coefficient count and feedback normalization therefore add no independent root field. |
+| Radial/coclosed mass blocks | The finite Gaussian intensity score fixes the radial metric normalization. The radial and scalar constant blocks are one-dimensional source restrictions with a unique generator-preserving unitary. Their common scalar evolution is intertwined, and the positive condensed response supplies a positive bottom for the radial block and every coclosed connection shell. |
+| Transverse--traceless carrier | `IsAxisTT` is the intersection of symmetry, transversality and trace-zero constraints on the generated three spatial coordinates. The plus/cross representation, its uniqueness and real dimension two are proved consequences of those constraints rather than a supplied two-state type. |
+| Tensor response endpoint | The kernel `q⁴/(q²+m²)²` defines the mass-fraction response `y(1-y)²`. Its unique maximum `4/27` and the positive endpoint formula `c=27A/4` are theorems. The universally quantified positive coefficient in the uniqueness theorem is a competitor variable, not an added root field. |
+| Linear gravity operator | Within the complete local five-coefficient symmetric tensor class with two momentum factors, pure-gauge annihilation, transversality on symmetric fields and unit TT normalization uniquely select coefficients `(1,-1,1,1,-1)`. The selected operator, its TT reduction, sourced inverse away from zero momentum and simple massless pole are root outputs on the generated four-carrier. |
 
 These definitions and comparison classes introduce no numerical fitting parameters. Naming them as
 definitions, rather than placing them in a theorem's argument list, does not
@@ -199,19 +220,48 @@ theorem are universally quantified test objects, not assumptions stored in
 constancy of the existing scalar response on an evaluation fibre; it adds no
 probability weight or fibre dynamics.
 
-The physical root theorem currently targets the basic source response and
-Hermitian determinant interfaces. It does not assert a complete Standard
-Model, a reconstructed physical spacetime or clock, or interacting field
-dynamics. These are not missing premises that may silently be assumed in
-order to strengthen its conclusion.
+The physical component of the common root theorem constructs the source
+response, Hermitian determinant, four-dimensional gauge, TT response and
+linear tensor-gravity interfaces. Its exact conclusion is the
+`physical_interface` field of `CommonFoundation.Conclusions`.
 
 The source output records now include the Clifford-sector identifications,
 their actual Hermite ranges, the pointwise colour factorization and the
-fixed-unitary operator-transport statements above. They are filled by
+fixed-unitary operator-transport statements above. The physical root output
+also contains the generated gauge-group certificate: the three source factor
+families generate the intrinsic operator group minimally, its kernel is the
+computed six-element central subgroup, and the scalar doublet descends to the
+effective quotient with its colour, weak and phase characters. They are filled by
 construction declarations, not added to `MinimalUnbiasedChange.Datum`.
 Their compilation and transitive axiom checks have passed. This does not
 prove that every conceivable continuation is minimal,
 exchange-preserving or centre-invariant; those would be different claims.
+
+The root record additionally contains the four-dimensional colour
+Yang--Mills certificate, the derived two-polarization TT carrier, the `4/27`
+response extremum, positive-endpoint uniqueness and the uniquely selected
+linear Einstein tensor operator with its simple massless pole.  These modules
+quantify over field configurations and momenta after the carrier is generated;
+they do not enlarge `MinimalUnbiasedChange.Datum`.
+
+The finite internal response is also part of the same root output. The
+generated endpoint ratio fixes the critical radius; the `(4,2)` source carrier
+and explicit colour matrices fix the long-root and adjoint Casimirs; and their
+normalized response determines the unique positive condensed amplitude and a
+strictly positive radial/coclosed spectral bottom. No critical scale, gauge
+coupling, kinetic coefficient or mass value is added to the root datum. The
+formalized statement is the finite spectral combination; the manuscript's
+unbounded operator-domain analysis remains a separate analytic proof.
+
+The actual generated even scalar shells also determine the complete
+dimensionless conformal response. Its continuity, strict increase,
+unboundedness and positive curvature are theorems. Consequently every positive
+source drive has one positive balance, and that balance produces a positive
+normalized radial gap which is the lower bound of the complete even scalar
+tower and is attained by its constant shell. The unit of the generated
+dimensionless response coordinate selects one canonical balance and gap. No
+coupling, reference radius, kinetic normalization, field-spectrum table or
+mass-gap value is a field of the root datum.
 
 The dimension statements refer to different carriers: the initial real
 change plane has dimension two; the constructed angular tangent fibres have
@@ -267,7 +317,7 @@ during module compilation; it is not counted as an enumerated declaration.
 proof checker. A compiler resource limit changes how long proof elaboration
 may run, not which propositions the kernel accepts.
 
-The local option inventory on 9 October 2026 contains the following twelve
+The local option inventory contains the following twelve
 occurrences. Paths are relative to `GeneratedFoundations/`; line numbers
 locate that source snapshot. Every occurrence uses `in` and applies to one
 declaration.
@@ -305,7 +355,7 @@ Subsequent proofs use their proved coordinate and continuity identities.
 These attributes control elaboration within those files; they introduce no
 axioms or additional mathematical hypotheses and do not bypass kernel checks.
 
-A scan of all 235 local proof modules, with comments and strings masked,
+A scan of all 273 local proof modules, with comments and strings masked,
 found no executable `sorry`, `admit`, custom `axiom`, `sorryAx`, `unsafe`,
 `partial`, `native_decide`, `implemented_by` or `extern` usage, and no local
 macro, elaborator or initialization command. This is a source snapshot,
@@ -329,11 +379,10 @@ spherical comparison class explicitly consists of Riemannian manifolds of
 dimension at least two. These qualifications do not add fields to the root
 datum or extend the scope of the indexed formal results.
 
-Manuscript correspondence remains a separate semantic obligation. The ten
-mapped manuscript sources have been reviewed against the indexed
+The eighteen mapped manuscript source files have been reviewed against the indexed
 premises, conclusions and construction dependencies. Their hashes and
-clause-specific scope are recorded in `theorem-index.json`; 178 of the 225
-indexed entries correspond to those ten sources. The new dimension mappings
+clause-specific scope are recorded in `theorem-index.json`; 269 of the 298
+indexed entries correspond to those eighteen source files. The new dimension mappings
 cover the actual source tangent space and the exact spherical comparison
 classes. They do not cover the added general Weyl counting argument or the
 resolvent-trace bound obtained from it. This semantic

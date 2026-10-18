@@ -560,7 +560,7 @@ def run_logged_result(command: list[str], project: Path, timeout: int,
         if any(reader.is_alive() for reader in readers):
             marker += "Output readers did not finish; captured output may be truncated.\n"
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(marker + output, encoding="utf-8")
+        output_path.write_text(marker + output, encoding="utf-8", newline="\n")
         print(f"Incomplete audit output saved: {output_path}", flush=True)
         if cleanup_error is not None:
             print(f"Process-tree cleanup failed: {cleanup_error}", file=sys.stderr, flush=True)
@@ -569,9 +569,9 @@ def run_logged_result(command: list[str], project: Path, timeout: int,
     output_path.parent.mkdir(parents=True, exist_ok=True)
     if reader_errors:
         output_path.write_text("FOUNDATIONS_AUDIT_INCOMPLETE: output capture failed\n" + output,
-                               encoding="utf-8")
+                               encoding="utf-8", newline="\n")
         raise VerificationError("Audit output capture failed: " + "; ".join(reader_errors))
-    output_path.write_text(output, encoding="utf-8")
+    output_path.write_text(output, encoding="utf-8", newline="\n")
     return code, output
 
 
@@ -756,7 +756,7 @@ def verify(project: Path, lake_exe: str | None, source_only: bool, timeout: int,
         raise VerificationError("Verifier changed during verification")
     # Bind the actual saved log, not a hash of a summary of its contents.
     log = project / AUDIT_LOG
-    if log.read_text(encoding="utf-8") != output:
+    if log.read_bytes() != output.encode("utf-8"):
         raise VerificationError("Saved declaration audit log differs from compiler output")
     record = {
         "schema_version": 1, "kind": "generated-foundations-verification", "status": "passed",

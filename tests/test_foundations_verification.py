@@ -80,6 +80,7 @@ def test_complete_audit_output_is_preserved_without_console_expansion(project, m
     log = project / ".lake" / "foundations-audit.txt"
     assert verify.run(["not-executed"], project, 10, output_path=log) == output
     assert log.read_text(encoding="utf-8") == output
+    assert log.read_bytes() == output.encode("utf-8")
     assert "∀" not in capsys.readouterr().out
 
 

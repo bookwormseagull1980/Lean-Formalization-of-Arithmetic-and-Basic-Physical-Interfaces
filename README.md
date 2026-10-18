@@ -9,25 +9,25 @@ Source repository: [Lean Formalization of Arithmetic and Basic Physical Interfac
 ## 1. Narrative
 
 This project makes a common foundational claim checkable in Lean: starting from
-minimal unbiased compositional change, one can construct a generated arithmetic
-interface and a basic physical response interface within one explicit source
-class. The library is an independent proof package for the mathematical and
-interface-level statements it implements; it is not a replacement for the V5
-numerical software or a claim that every statement in the companion manuscripts
-has been formalized.
+minimal unbiased compositional change, one constructs a single generated
+natural-number system and a basic physical response interface within one
+explicit source class. Addition, multiplication, factorization, reduced
+expressions and complete ordered histories are structures of that same
+natural-number construction, not alternative constructions.
 
-The public entry points are the three root constructions
-`Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange`,
-`Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange`, and
-`Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange`. They expose the
-same source datum to the arithmetic, expression-resolution, and physical
-branches while keeping their downstream constructions separate.
+The sole public root entry is
+`GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange`. From one
+`Source.MinimalUnbiasedChange.Datum`, it simultaneously produces source closure,
+the complete generated natural-number system, and the basic physical interface.
+The arithmetic and physical branches are parallel conclusions of this theorem;
+neither is assumed by the other. The former branch-by-branch compatibility
+wrappers have been removed from the current library.
 
 ## 2. Concrete record
 
 The released source is pinned to Lean 4.34.0 and mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. The current audit records 241
-modules, 12,082 constants, 6,467 named type checks, and 243 indexed manuscript
+`5ed2965256430c3649e86755f9576b54eca72435`. The current audit records 273
+modules, 13,854 constants, 7,231 named type checks, and 298 indexed
 claims. These are library and audit counts, not a count of independent
 mathematical theorems. The transitive audit permits only Lean's
 declared `propext`, `Classical.choice`, and `Quot.sound` axioms; no custom
@@ -42,17 +42,25 @@ the pinned Lean toolchain, run `lake build`, then run
 checks together with the verifier regression tests on every push and pull
 request to `main`.
 
-## 4. Credibility boundary
+## 4. Reproducible verification
 
 The CI and verifier make the compiled declarations, dependency locks, source
-hashes, and transitive axiom audit reproducible. The theorem index records which
-manuscript clauses are mapped to which declarations. The semantic fidelity of
-each manuscript mapping remains an author-level mathematical responsibility,
-and the formalization does not certify numerical outputs or claims outside the
-listed scope. Cite the version series with DOI
+hashes, and transitive axiom audit reproducible. The theorem index records the
+reviewed manuscript clauses and their corresponding declarations. Cite the
+version series with DOI
 `[10.5281/zenodo.23254521](https://doi.org/10.5281/zenodo.23254521)` or the
 released V1.0 record with DOI
 `[10.5281/zenodo.23254522](https://doi.org/10.5281/zenodo.23254522)`.
+
+The verifier audits two dependency-separated entries: the current root library
+and `GeneratedFoundations.ResearchExtensions`. The latter contains the
+intrinsic prime-parity and squarefree signed source, their classical
+Liouville/Moebius coordinate identifications, finite signed-energy and residue
+Fourier observations, and the finite recovery kernel selected from the later
+generated-world analysis. That kernel proves canonical minimal-frontier
+evaluation, the order-two factorial-overlap algebra and exact doubled-tilt
+edge balance. Audit coverage of these research extensions does not place them
+in the root import closure.
 
 ## Detailed scope and boundaries
 
@@ -69,9 +77,15 @@ native-mode semiring, and evaluation commutes with canonical scale and
 orientation transport. This adds pre-evaluation resolution without adding a
 field to the root datum or replacing the existing arithmetic.
 
-The implemented root theorems construct native natural-number arithmetic,
-its reduced-expression resolution, and the basic internal physical interface.
-Their exact
+The common root theorem constructs one native natural-number system, including
+its arithmetic, factorization, reduced-expression resolution, complete ordered
+history and phase fibres, intrinsic history observables, an exact whole-history
+transport ledger and detailed-balance edge dynamics, together with the basic
+internal physical interface. Intrinsic signed arithmetic observations, finite
+Fourier and signed-energy constructions, and the finite generated recovery
+kernel are collected under the separate
+`GeneratedFoundations.ResearchExtensions` entry and do not enter this root
+chain. Its exact
 conclusions and comparison classes are recorded in `theorem-index.json`;
 this scope does not include every assertion of the two manuscripts.
 Each mapped statement has a relative TeX source path and label. The index also
@@ -94,11 +108,21 @@ this square-root form.  No Gaussian formula is assumed.
 The existing existence theorem supplies a compatible law, and uniqueness fixes
 it at positive parameters on that carrier.
 
-Orientations and positive widths index realizations. The arithmetic and
-physical `fromMinimalUnbiasedChange` theorems quantify over all of them in their
-conclusions. Endpoint values, reflecting boundary operators, spectral data,
+Orientations and positive widths index realizations. The common
+`fromMinimalUnbiasedChange` theorem quantifies over all of them in its
+conclusion. Endpoint values, reflecting boundary operators, spectral data,
 arithmetic operations and physical response objects are not root fields or
 additional caller-supplied hypotheses.
+
+On the physical branch, the generated projective scalar shells determine the
+complete dimensionless conformal response. The library proves its compact
+continuity, strict increase, unboundedness and positive curvature, hence a
+unique positive balance for every positive source drive. The same balance
+gives a positive normalized radial gap and the bottom of the complete even
+scalar tower, attained by its constant shell. At one generated response unit,
+the unique balance and positive bottom are canonical objects of the root
+output. No coupling, reference radius, kinetic normalization, spectrum table
+or mass-gap value is added to the root datum in this construction.
 
 Structural conditions, realization indices and calculated outputs have
 different roles. The C/S/V conditions define the source class. Calibrated
@@ -263,9 +287,9 @@ axiom audit records its transitive logical dependencies. Review of its premises
 and correspondence to the manuscript is a separate semantic assessment and is
 not implied by a successful verification manifest.
 
-The current 241-module library has passed compilation and the complete
-compiled-environment axiom audit. The saved record covers 12,082 constants,
-6,467 named type checks and 243 indexed claims. These counts have different
+The current 273-module library has passed compilation and the complete
+compiled-environment axiom audit. The saved record covers 13,854 constants,
+7,231 named type checks and 298 indexed claims. These counts have different
 meanings; consult the index for the precise scope of each claim and use
 `--check-manifest` to confirm that the record matches the current sources.
 
@@ -278,14 +302,14 @@ not been performed.
 
 ## Constructed physical interface
 
-`Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange` and
-`Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange` are the two root
-entries. Each takes only `Source.MinimalUnbiasedChange.Datum` and gives its
-conclusions for every orientation and positive width. The former supplies the
-basic physical interface; the latter supplies the source closure, native
-arithmetic and prime-factorization results. Both are imported by the public
-library entry. The earlier expanded-argument theorems remain available for
-applications to a particular realization.
+`GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange` is the single
+root entry. It takes only `Source.MinimalUnbiasedChange.Datum` and gives all
+conclusions for every orientation and positive width. Its `physical_interface`
+field supplies the basic physical interface alongside, but not as an assumption
+of, the single generated natural-number system and its source closure.
+Expanded-argument theorems remain
+available inside the component modules for applications to a particular
+realization.
 
 The same law and width determine the source used throughout each realization.
 The unit-information endpoint and peak-equivalent width are evaluated from its
@@ -301,16 +325,23 @@ constants; it is not an additional assumption of the root construction.
 | Source frames | `SourceFrameConstruction.generated_frames`, `relativeTransition_cocycle`, `relativeTransition_unique` | Colour, phase and pseudoreal frame classifications; relative transitions constructed from source frames satisfy the cocycle and act uniquely on the common matter carrier. |
 | Least matter | `SourceInternalResponse.least_chiral_pair`, `Conclusions.least_source`, `Conclusions.least_classification` | The canonical faithful module attains the least dimension; arbitrary least faithful representations are unitarily equivalent to it, including the paired chiral action. The intertwiner itself is not asserted to be unique. |
 | Vacuum and charge | `SourceInternalResponse.source_internalResponse` | Actual vacuum stabilizer, continuous source lift, primitive charge classification, six-element gauge kernel and faithful effective action. |
+| Generated gauge group | `SourceGeneratedGaugeGroup.sourceGeneratedGaugeGroup`, `sourceFactorClosure_eq_generated`, `generatedGaugeGroup_least` | The determinant-one changes of the generated colour carrier, the group generated by the source-spin axes and the exhausted phase circle generate the full intrinsic operator group. Its exact six-element kernel gives the effective quotient `(SU(3) x SU(2) x U(1)) / Z6`; the descended scalar action is a colour singlet, the defining weak doublet and has phase character one half. |
 | Elementary connector | `SourceScalarConnector.canonical_elementary`, `elementary_iff_unique_doublet` | The canonical family satisfies independent-source naturality and reversal reality; every connector in that comparison class has a unique doublet coordinate. Its original Gaussian realization and covariance are included. |
-| Relativistic algebraic interface | `SourceHermitianReadout.coordinatesEquivHermitian`, `determinantForm_coordinateTransform`, `sourceHermitianAction_coe` | All Hermitian two-by-two matrices have unique four-real coordinates, with signature `(+---)` and determinant-one congruence invariance; their action is the actual two-mode source action. |
+| Relativistic algebraic interface | `SourceHermitianReadout.coordinatesEquivHermitian`, `SourceLorentzCarrier.posSemidef_iff_futureCone`, `coordinateTransform_futureUnit_iff` | All Hermitian two-by-two matrices have unique four-real coordinates. Their determinant has signature `(+---)`, their positive cone is exactly the closed algebraic future cone, determinant-one congruence preserves the form, and the generated future unit has the special-unitary stabilizer equation. |
+| Four-dimensional gauge dynamics | `SourceFourDimensionalGaugeKinematics.sourceFourDimensionalGaugeProperties`, `SourceFourDimensionalYangMills.sourceFourDimensionalYangMillsProperties` | The Hermitian readout supplies the four coordinate directions. The generated colour directions exhaust the skew-Hermitian traceless `3 x 3` algebra; connection curvature, local covariance, the source-normalized positive colour form and its Lorentz contraction are proved without adding a lattice or gauge group. |
+| Internal Yang--Mills response | `SourceColourAdjointCasimir.adjointCasimir_generator`, `SourceInternalYangMillsResponse.properties` | The explicit generated colour matrices give adjoint Casimir `3`; the endpoint ratio gives `L_c=sqrt(pi)`; and the actual `(4,2)` source carrier gives dimension `15`, Casimir `16`, the unique normalized affine drive and `120` colour-connection coefficients. |
+| Radial/coclosed spectral bottom | `SourceRadialMassIntertwiner.properties`, `SourceGeneratedYangMillsGap.properties` | The finite Gaussian score fixes the radial normalization. The unique generator-preserving one-dimensional unitary intertwines the radial and scalar constant evolutions. On the positive condensed branch, the normalized radial block and every coclosed connection shell are positive, so their direct-sum bottom is strictly positive. |
+| TT carrier and response endpoint | `SourceTransverseTraceless.sourceTransverseTracelessProperties`, `SourceTensorResponseEndpoint.sourceTensorResponseEndpointProperties` | Symmetry, transversality and vanishing trace determine a unique plus/cross decomposition and a two-dimensional TT carrier. The mass-weighted kernel has the unique maximum `4/27` at `y=1/3`; a positive fixed spectral coefficient has the unique endpoint `c=27A/4`. |
+| Linear tensor gravity | `SourceLinearizedGravity.sourceLinearizedGravityProperties`, `generalTensorOperator_coefficients_unique` | Gauge annihilation, transversality and unit TT normalization uniquely select the five coefficients of the local two-derivative linear Einstein operator. It annihilates pure gauge tensors, reduces to `Q² I₂` on the derived TT carrier, has a unique sourced solution away from zero momentum and an exact positive-residue simple pole at `Q²=0`. |
 
-The common-source geometry, both root entries and all local dependencies
-have compiled successfully. The complete axiom inventory reports only
-`propext`, `Classical.choice` and `Quot.sound`; both root entries depend on
-exactly these three. `AXIOMS.md` describes the inventory, including generated
+The common root, its physical component and all local dependencies have
+compiled successfully. The complete axiom inventory reports only `propext`,
+`Classical.choice` and `Quot.sound`; the common root depends on exactly these
+three. `AXIOMS.md` describes the inventory, including generated
 recursion implementation entries, and the limits of this evidence. The
-public entry imports both branches, while the physical branch itself does
+public entry exports the common root, while the physical component itself does
 not import arithmetic constructions.
-The relative-frame construction does not claim existence of
-arbitrary nontrivial bundles, and the Hermitian interface does not reconstruct
-a physical clock, a spacetime manifold or interacting field dynamics.
+The relative-frame construction does not claim existence of arbitrary
+nontrivial bundles.  Field and jet values in the gauge and tensor modules are
+variables of configuration spaces on the generated four-carrier; they are not
+additional fields of `MinimalUnbiasedChange.Datum`.

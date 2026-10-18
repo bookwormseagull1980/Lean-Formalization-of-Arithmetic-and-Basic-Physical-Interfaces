@@ -23,11 +23,30 @@ namespace GeneratedFoundations.Arithmetic.ReducedExpression
 
 open TypedSourceModes
 
-/-- The finite-fiber expression-resolution properties of an actual generated
-source-mode family. -/
+/-- The complete algebraic resolution of the generated natural-mode family.
+
+The ordered expression syntax is reduced only by the six displayed unit and
+zero laws.  Evaluation then supplies a second quotient.  The fields below
+record that its two operations descend from the syntax itself and that the
+resulting quotient is exactly the generated native arithmetic.  Thus the
+semiring structure is not transported back after an unrelated identification.
+-/
 structure IsGeneratedResolution
     (d : MinimalCarrier.OrthogonalChangeDatum) (h : MinimalCarrier.IsMinimal d)
     (L : ℝ) [Fact (0 < L)] (o : OrientationOnCarrier d) : Prop where
+  normal_form : ∀ e : RawExpr,
+    ∃! f : RawExpr, f.IsReduced ∧ ReductionEq e f
+  initial : ∀ (A : Type) (T : Target A),
+    ∃! F : Target.Hom T, ∀ e, F e = Target.interpret T e
+  eval_congruence_add : ∀ {e e' f f' : Expr},
+    EvalEq e e' → EvalEq f f' → EvalEq (e + f) (e' + f')
+  eval_congruence_mul : ∀ {e e' f f' : Expr},
+    EvalEq e e' → EvalEq f f' → EvalEq (e * f) (e' * f')
+  quotient_native : Function.Bijective quotientEval
+  quotient_add_descends : ∀ q r : EvalQuotient, q + r = quotientAdd q r
+  quotient_mul_descends : ∀ q r : EvalQuotient, q * r = quotientMul q r
+  eval_classification : ∀ e f : Expr, EvalEq e f ↔ evalNat e = evalNat f
+  finite_value_fibers : ∀ n : ℕ, Set.Finite {x : Expr | evalNat x = n}
   onto : Function.Surjective (evalTyped d h L o)
   finite : ∀ u : Mode d h L o, Set.Finite {x : Expr | evalTyped d h L o x = u}
   add : ∀ x y, evalTyped d h L o (x + y) =
@@ -39,6 +58,15 @@ theorem generatedResolution
     (d : MinimalCarrier.OrthogonalChangeDatum) (h : MinimalCarrier.IsMinimal d)
     (L : ℝ) [Fact (0 < L)] (o : OrientationOnCarrier d) :
     IsGeneratedResolution d h L o where
+  normal_form := normalForm_existsUnique
+  initial := fun _ T => Target.hom_existsUnique T
+  eval_congruence_add := fun he hf => evalEq_add he hf
+  eval_congruence_mul := fun he hf => evalEq_mul he hf
+  quotient_native := evalQuotientEquiv.bijective
+  quotient_add_descends := evalQuotient_add_eq_descended
+  quotient_mul_descends := evalQuotient_mul_eq_descended
+  eval_classification := evalEq_iff_evalNat_eq
+  finite_value_fibers := finite_fiber
   onto := evalTyped_surjective d h L o
   finite := finite_typed_fiber d h L o
   add := evalTyped_add d h L o
@@ -48,17 +76,6 @@ open GeneratedFoundation
 open GeneratedFoundations.Spectral
 
 set_option linter.style.haveILetI false
-
-/-- The expression resolution requires no root input beyond the existing
-minimal-unbiased-compositional-change datum. -/
-theorem resolution_fromMinimalUnbiasedChange
-    (source : MinimalUnbiasedChange.Datum) :
-    ∀ (o : OrientationOnCarrier source.change) (b : ℝ) (hb : 0 < b),
-      letI : Fact (0 < windowLengthGenerated b) := ⟨windowLengthGenerated_pos hb⟩
-      IsGeneratedResolution source.change source.minimal (windowLengthGenerated b) o := by
-  intro o b hb
-  haveI : Fact (0 < windowLengthGenerated b) := ⟨windowLengthGenerated_pos hb⟩
-  exact generatedResolution source.change source.minimal (windowLengthGenerated b) o
 
 /-- For a single root datum, every pair of its derived scales and orientations
 uses the same reduced expression and commutes with the canonical transport. -/

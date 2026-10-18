@@ -355,6 +355,19 @@ theorem source_commutant_scalar (T : Module.End ℂ (V hb))
     exact ((sourceActionEquiv hb).apply_symm_apply T).symm
   rw [he, sourceAction_scalar]
 
+/-- The scalar in the source commutant classification is itself unique. -/
+theorem source_commutant_scalar_unique (T : Module.End ℂ (V hb))
+    (hT : ∀ (U : SU2) (v : V hb),
+      T (sourceAction hb (U : Mat2) v) = sourceAction hb (U : Mat2) (T v)) :
+    ∃! z : ℂ, ∀ v : V hb, T v = z • v := by
+  obtain ⟨z, hz⟩ := source_commutant_scalar hb T hT
+  refine ⟨z, hz, ?_⟩
+  intro w hw
+  have hvec : z • basisVector hb 0 = w • basisVector hb 0 :=
+    (hz (basisVector hb 0)).symm.trans (hw (basisVector hb 0))
+  have hcoord := congrArg (fun v : V hb => sourceCoordinates hb v 0) hvec
+  simpa using hcoord.symm
+
 /-- Every unitary source intertwiner differs from the constructed transport
 by one scalar of modulus one. -/
 theorem transport_unique_up_to_phase
