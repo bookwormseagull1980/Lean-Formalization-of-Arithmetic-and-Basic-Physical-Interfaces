@@ -1,6 +1,7 @@
 module
 
 public import GeneratedFoundations.Physical.SourceInternalResponse
+public import GeneratedFoundations.Physical.SourceCompleteMatterExactSequence
 public import GeneratedFoundations.Physical.SourceSplitResponse
 public import GeneratedFoundations.Physical.SourceFrameConstruction
 public import GeneratedFoundations.Physical.SourceFourDimensionalYangMills
@@ -25,6 +26,9 @@ The endpoints, reflecting source evolution, exchange-retained response,
 source frames, least matter realization, vacuum lift and elementary connector
 are internal constructions and outputs. In particular, no endpoint, boundary
 operator or aggregate P4--P6 realization premise is supplied by the caller.
+The neutral line, complete sixteen-dimensional matter carrier and charged
+fifteen-dimensional quotient form a canonical short exact sequence, and the
+charged quotient is characterized by its unique factorization property.
 The complete source action has the six-element central kernel, and every
 faithful realization of the same generated operator group is uniquely
 isomorphic to its intrinsic action group; the product presentation therefore
@@ -86,6 +90,7 @@ structure Conclusions
   split_response : SourceSplitResponse.SplitConclusions
   frames : SourceFrameConstruction.FrameConclusions
   internal_response : SourceInternalResponse.Conclusions b hb
+  complete_matter_exact_sequence : SourceCompleteMatterExactSequence.Conclusions
   generated_gauge_group : SourceGeneratedGaugeGroup.FactorOriginProperties
   four_dimensional_gauge_kinematics :
     SourceFourDimensionalGaugeKinematics.Properties
@@ -142,6 +147,7 @@ theorem minimalChange_physicalInterface
   split_response := SourceSplitResponse.generated_split
   frames := SourceFrameConstruction.generated_frames
   internal_response := SourceInternalResponse.source_internalResponse hb
+  complete_matter_exact_sequence := SourceCompleteMatterExactSequence.conclusions
   generated_gauge_group := SourceGeneratedGaugeGroup.sourceGeneratedGaugeGroupProperties
   four_dimensional_gauge_kinematics :=
     SourceFourDimensionalGaugeKinematics.sourceFourDimensionalGaugeProperties

@@ -1,7 +1,9 @@
 module
 
 public import GeneratedFoundations.Arithmetic.CompleteHistoryDynamics
+public import GeneratedFoundations.Analysis.CanonicalEndpointLedger
 public import GeneratedFoundations.Physical.SourcePhysicalInterface
+public import GeneratedFoundations.Source.CanonicalRoot
 
 /-!
 # Common arithmetic and physical foundation
@@ -77,6 +79,12 @@ structure Conclusions
     CompleteHistoryTransport.Conclusions
   complete_history_dynamics :
     CompleteHistoryDynamics.Conclusions
+  joint_occupation_scale :
+    JointOccupationScale.Conclusions
+  canonical_mobius_readout :
+    Analysis.CanonicalMobiusReadout.Conclusions
+  canonical_endpoint_ledger :
+    Analysis.CanonicalEndpointLedger.Conclusions
   physical_interface :
     Physical.SourcePhysicalInterface.Conclusions source.change source.minimal
       o source.law b hb
@@ -100,9 +108,22 @@ theorem fromMinimalUnbiasedChange (source : MinimalUnbiasedChange.Datum) :
     complete_history_geometry := CompleteHistoryGeometry.completeHistoryGeometryConclusions
     complete_history_transport := CompleteHistoryTransport.completeHistoryTransportConclusions
     complete_history_dynamics := CompleteHistoryDynamics.completeHistoryDynamicsConclusions
+    joint_occupation_scale := JointOccupationScale.jointOccupationScaleConclusions
+    canonical_mobius_readout :=
+      Analysis.CanonicalMobiusReadout.canonicalMobiusReadoutConclusions
+    canonical_endpoint_ledger :=
+      Analysis.CanonicalEndpointLedger.conclusions
     physical_interface := Physical.SourcePhysicalInterface.minimalChange_physicalInterface
       source o b hb }
   exact @generatedResolution source.change source.minimal
     (windowLengthGenerated b) ⟨windowLengthGenerated_pos hb⟩ o
+
+/-- Canonical entry point: the caller provides only a minimal change carrier.
+The unique positive-parameter compositional law is constructed internally
+before the common arithmetic and physical world is generated. -/
+theorem fromCanonicalRoot (root : CanonicalRoot.Datum) :
+    ∀ (o : OrientationOnCarrier root.change) (b : ℝ) (hb : 0 < b),
+      Conclusions (CanonicalRoot.complete root) o b hb :=
+  fromMinimalUnbiasedChange (CanonicalRoot.complete root)
 
 end GeneratedFoundations.CommonFoundation

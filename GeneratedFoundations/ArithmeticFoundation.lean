@@ -17,6 +17,7 @@ public import GeneratedFoundations.Arithmetic.CompleteNaturalObject
 public import GeneratedFoundations.Arithmetic.CompleteHistoryGeometry
 public import GeneratedFoundations.Arithmetic.CompleteHistoryTransport
 public import GeneratedFoundations.Arithmetic.CompleteHistoryDynamics
+public import GeneratedFoundations.Arithmetic.JointOccupationScale
 public import GeneratedFoundations.Arithmetic.InternalPrimes
 public import GeneratedFoundations.Arithmetic.DifferenceOrder
 public import GeneratedFoundations.Arithmetic.DifferenceUniversal

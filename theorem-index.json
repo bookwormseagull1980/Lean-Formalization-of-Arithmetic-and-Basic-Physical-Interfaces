@@ -5,7 +5,7 @@
     "GeneratedFoundations.ResearchExtensions"
   ],
   "verification_policy": "Indexed declarations require a successful build and transitive axiom audit of this exact source snapshot. This index alone is not a verification report.",
-  "root_chain_status": "implemented_root_interfaces",
+  "root_chain_status": "implemented_canonical_root_and_compatibility_interfaces",
   "manuscript_review_status": {
     "status": "mapped_clauses_semantically_reviewed",
     "scope": "The fourteen mapped files below were reviewed against their actual included statements, proofs, Lean declaration types and construction dependencies. Their indexed entries retain clause-specific coverage; this is not certification of every assertion in those files or of the complete manuscripts. The reduced-expression entries cover ordered syntax, the six-law normalization congruence, initiality in its exact comparison class, evaluation quotient with operations descended from expression assembly, finite fibres, successor injection, scalar Gaussian fibre compatibility and canonical scale-orientation transport. They do not certify the Hilbert uniform-difference splitting, coisometry, fibre-count recurrence, exponential count bound or whole-tree telescoping formulas. The dimension-three mappings cover the actual source tangent space and the exact spherical comparison classes, not the new general Weyl-law route. The internal-response mappings now include the generated critical radius, long-root dimension and Casimir, adjoint colour Casimir, unique affine drive, positive restoring balance, normalized one-dimensional radial/scalar intertwiner and finite radial/coclosed spectral bottom. The Lorentz mappings cover the four-real Hermitian carrier, determinant form, equality of the positive and future cones, determinant-one form invariance, future-unit stabilizer equation and central-sign action. The recorded hashes identify this semantic review only. Compiled verification is recorded separately by the matching verification manifest.",
@@ -28,16 +28,17 @@
     ]
   },
   "root_input": {
-    "datum": "GeneratedFoundations.Source.MinimalUnbiasedChange.Datum",
-    "meaning": "Minimal unbiased compositional change: the stated orthogonal-action comparison class, carrier minimality and C/S/V law conditions on its trace Lie line.",
-    "fields": ["change", "minimal", "law", "compositional"],
+    "datum": "GeneratedFoundations.Source.CanonicalRoot.Datum",
+    "compatibility_datum": "GeneratedFoundations.Source.MinimalUnbiasedChange.Datum",
+    "meaning": "The canonical root contains only the minimal orthogonal change carrier and its minimality proof. The positive-parameter compositional Gaussian law is constructed internally and is unique in the stated C/S/V comparison class. The compatibility datum packages the same derived law for existing modules.",
+    "fields": ["change", "minimal"],
     "realization_indices": "Every orientation and positive width is quantified in the root conclusions. These indices are not extra root principles.",
-    "internal_constructions": "Calibrated information and mass readouts, endpoints, reflecting closure, spectra, arithmetic, finite-fibre reduced-expression resolution, physical responses, the intrinsic generated gauge group, four-dimensional gauge kinematics, Yang--Mills covariance, the two-dimensional transverse--traceless carrier, the tensor-response endpoint, the local linear Einstein operator, and the complete normalized conformal response with its canonical scalar spectral bottom are constructed internally. Definitions and uniqueness comparison classes remain explicit; their outputs are not root assumptions."
+    "internal_constructions": "The unique compositional Gaussian law, calibrated information and mass readouts, endpoints, reflecting closure, spectra, arithmetic, finite-fibre reduced-expression resolution, the complete occupation--scale source, its center action, canonical Mobius--Gaussian readout and endpoint ledger, physical responses, the intrinsic generated gauge group, the canonical neutral-complete-charged short exact sequence, four-dimensional gauge kinematics, Yang--Mills covariance, the two-dimensional transverse--traceless carrier, the tensor-response endpoint, the local linear Einstein operator, and the complete normalized conformal response with its canonical scalar spectral bottom are constructed internally. Definitions and uniqueness comparison classes remain explicit; their outputs are not root assumptions."
   },
   "common_source_integration": {
-    "entry": "GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange",
+    "entry": "GeneratedFoundations.CommonFoundation.fromCanonicalRoot",
     "status": "source_integrated",
-    "scope": "One MinimalUnbiasedChange.Datum simultaneously yields source closure, native arithmetic with prime factorization, the ordered-expression evaluation quotient with directly descended operations, complete ordered history and phase fibers, their intrinsic finite observables, the exact whole-history transport ledger, detailed-balance edge dynamics, and the physical branch through the minimally generated effective gauge group, descended scalar representation, four-dimensional gauge kinematics, Yang--Mills covariance, the derived two-polarization TT carrier, response-endpoint rigidity, the uniquely selected local linear Einstein operator with its TT simple pole, and the complete normalized conformal response with its canonical scalar spectral bottom. Orientation and positive width are universally quantified realization indices rather than additional root data. Signed characters and finite Fourier observations are separate research extensions."
+    "scope": "One canonical minimal-change carrier internally generates its unique positive-parameter compositional Gaussian law and simultaneously yields source closure, native arithmetic with prime factorization, the ordered-expression evaluation quotient, complete histories, the global occupation--scale center closure, the canonical Mobius--Gaussian readout, its exact positive endpoint-sector energy ledger, and the physical branch through the canonical complete-matter exact sequence and generated gauge and geometric interfaces. Orientation and positive width are universally quantified realization indices rather than additional root data."
   },
   "manuscript_snapshot_method": "Starting from main.tex, recursively resolve local TeX input/include files. Sort relative POSIX paths in ordinal order. Hash the UTF-8 concatenation of relative_path, NUL, lowercase file SHA-256, LF for each file. The graph includes main.tex and local macro inputs; class/style files, bibliography files and external images are excluded. These identities locate the reviewed sources and do not certify semantic coverage.",
   "manuscripts": [
@@ -425,12 +426,52 @@
     "scope": "With the reverse split rate normalized to one, the scalar forward merge rate is uniquely determined by the generated Gaussian source balance equation."
   },
   {
+    "name": "GeneratedFoundations.Source.CanonicalRoot.law_unique",
+    "module": "GeneratedFoundations.Source.CanonicalRoot",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonical-root compositional-law uniqueness",
+    "coverage_kind": "root_uniqueness",
+    "scope": "For every canonical minimal-change carrier, every competing compositional law satisfying the same C/S/V comparison class agrees with the internally constructed Gaussian law at every positive parameter. No probability law is a field of the canonical root datum."
+  },
+  {
+    "name": "GeneratedFoundations.CommonFoundation.fromCanonicalRoot",
+    "module": "GeneratedFoundations.CommonFoundation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonical common-root interface",
+    "coverage_kind": "root_interface",
+    "scope": "Starting only from the canonical minimal-change carrier, constructs the unique positive-parameter compositional law internally and returns the common arithmetic and physical conclusions for every orientation and positive width."
+  },
+  {
     "name": "GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange",
     "module": "GeneratedFoundations.CommonFoundation",
     "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
     "label": "common-root interface",
     "coverage_kind": "root_interface",
-    "scope": "Packages source closure, native arithmetic and factorization, the directly descended expression quotient, the complete ordered history and phase fibres, intrinsic history observables, the exact whole-history transport ledger, detailed-balance edge dynamics and the basic physical interfaces as simultaneous conclusions of one MinimalUnbiasedChange.Datum. No signed-character premise, aggregate P4-P6 premise or cross-branch matching premise is introduced."
+    "scope": "Compatibility interface packaging source closure, native arithmetic and factorization, expression and history structure, the global occupation--scale center closure, the canonical Mobius--Gaussian coherent readout, the exact endpoint centre-energy ledger, and the physical interface including the canonical complete-matter exact sequence as simultaneous conclusions of one MinimalUnbiasedChange.Datum. The canonical entry constructs this packaged law internally."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.JointOccupationScale.jointOccupationScaleConclusions",
+    "module": "GeneratedFoundations.Arithmetic.JointOccupationScale",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "global occupation-scale center closure",
+    "coverage_kind": "global_source_closure",
+    "scope": "On all finite prime occupations and the full logarithmic scale line, each joint prime toggle is an involution, reverses the derived center character, preserves the label-to-scale ratio, the native Gaussian response and counting-times-Lebesgue measure, and forces every integrable center-odd observable to have exactly zero total response."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.CanonicalMobiusReadout.canonicalMobiusReadoutConclusions",
+    "module": "GeneratedFoundations.Analysis.CanonicalMobiusReadout",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonical Mobius-Gaussian readout descent",
+    "coverage_kind": "global_readout_identification",
+    "scope": "Finite prime occupations are canonically equivalent to positive squarefree generated values; their center character is exactly the generated Mobius observation; their joint Gaussian response is exactly the native two-endpoint square-spectrum window; finite coherent amplitudes and energies agree after descent, preserving every off-diagonal cross term."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.CanonicalEndpointLedger.conclusions",
+    "module": "GeneratedFoundations.Analysis.CanonicalEndpointLedger",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonical endpoint centre-energy ledger",
+    "coverage_kind": "global_readout_identification",
+    "scope": "The native Gaussian endpoint window resolves into two nonnegative centre sectors whose signed difference is exactly the canonical generated Mobius amplitude and whose capacity is exactly the positive squarefree support. Capacity times the centre quadratic potential reconstructs the full coherent energy, with every cross term retained."
   },
   {
     "name": "GeneratedFoundations.Analysis.GeneratedCentralCharacter.centreCharacter_mul_channel",
@@ -618,6 +659,15 @@
     "tex_source": "sections-en/sec04_emergent_structures.tex",
     "coverage_kind": "clause",
     "scope": "Constructs the source Clifford sectors and their actual Hermite ranges, least faithful source module, fixed-unitary transport of all responses, vacuum stabilizer and lift, primitive charge, faithful global quotient, charged response quotient and elementary connector on the same source carrier. Comparison conditions remain explicit; no aggregate P4-P6 assumption is an argument."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceCompleteMatterExactSequence.conclusions",
+    "module": "GeneratedFoundations.Physical.SourceCompleteMatterExactSequence",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "complete-matter neutral quotient exact sequence",
+    "tex_source": "sections-en/sec04_emergent_structures.tex",
+    "coverage_kind": "root_interface",
+    "scope": "The generated neutral line injects into the sixteen-dimensional complete matter carrier, its image is exactly the kernel of the canonical charged quotient, and the quotient is surjective of dimension fifteen. Every linear response annihilating the neutral line factors uniquely through this quotient."
   },
   {
     "name": "GeneratedFoundations.Physical.SourceCliffordChirality.grading_from_source_product",

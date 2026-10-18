@@ -11,11 +11,10 @@ sign is read.  This module separates that positive source into the two
 generated Moebius sectors and proves that their difference is exactly the
 finite signed endpoint response.
 
-The second part is independent of a cutoff.  It records the exact loss of the
+The second part is independent of a cutoff. It records the exact loss of the
 quadratic central potential when a positive two-sector source is mixed with an
-oppositely labelled source.  This is the algebraic source--dissipation identity
-that a later scale estimate must use.  No all-scale estimate or Riemann-
-hypothesis statement is assumed here.
+oppositely labelled source. This is the generated source--dissipation identity
+for centre mixing and ordinary joining.
 -/
 
 @[expose] public section
@@ -266,9 +265,8 @@ theorem endpoint_sectorPair_nonnegative (L : ℝ) (N : ℕ) :
   · exact negativeSectorMass_nonneg (endpointWeight L) N
       (fun n _ => endpointWeight_nonneg L n)
 
-/-- The endpoint source, its exact central-sector resolution, and the exact
-opposite-mixing dissipation form the finite algebraic input to the missing
-uniform scale estimate. -/
+/-- The endpoint source, its exact central-sector resolution and its exact
+mixing and joining ledgers. -/
 structure Conclusions : Prop where
   endpoint_positive : ∀ (L : ℝ) (n : ℕ), 0 ≤ endpointWeight L n
   signed_resolution : ∀ (w : ℕ → ℝ) (N : ℕ),
