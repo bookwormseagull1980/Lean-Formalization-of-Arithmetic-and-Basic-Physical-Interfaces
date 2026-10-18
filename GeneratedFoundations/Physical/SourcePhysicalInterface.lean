@@ -11,7 +11,7 @@ public import GeneratedFoundations.Physical.SourceConformalResponse
 public import GeneratedFoundations.Physical.SourceInternalYangMillsResponse
 public import GeneratedFoundations.Physical.SourceRadialMassIntertwiner
 public import GeneratedFoundations.Physical.SourceLorentzCarrier
-public import GeneratedFoundations.Physical.SourceGeneratedYangMillsGap
+public import GeneratedFoundations.Physical.SourceGeneratedYangMillsClosure
 public import GeneratedFoundations.Source.MinimalUnbiasedChange
 
 /-!
@@ -116,6 +116,7 @@ structure Conclusions
     SourceRadialMassIntertwiner.Properties
   generated_lorentz_carrier : SourceLorentzCarrier.Properties
   generated_yang_mills_gap : SourceGeneratedYangMillsGap.Properties
+  generated_yang_mills_closure : SourceGeneratedYangMillsClosure.Conclusions
   spin_same_source : ∀ (M : Mat2) (v : SourceVacuumTransport.V hb),
     SourceSpinIdentification.sourceUnitary hb (SourceVacuumTransport.sourceAction hb M v) =
       SourceSpinIdentification.spinAction M (SourceSpinIdentification.sourceUnitary hb v)
@@ -173,6 +174,7 @@ theorem minimalChange_physicalInterface
     SourceRadialMassIntertwiner.properties
   generated_lorentz_carrier := SourceLorentzCarrier.properties
   generated_yang_mills_gap := SourceGeneratedYangMillsGap.properties
+  generated_yang_mills_closure := SourceGeneratedYangMillsClosure.conclusions
   spin_same_source := SourceSpinIdentification.sourceUnitary_matrix hb
   hermitian_coordinates := by
     intro X hX

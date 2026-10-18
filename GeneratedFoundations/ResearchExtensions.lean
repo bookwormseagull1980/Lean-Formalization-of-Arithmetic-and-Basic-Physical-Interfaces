@@ -4,6 +4,8 @@ public import GeneratedFoundations.Analysis.GeneratedCentralCharacter
 public import GeneratedFoundations.Analysis.GeneratedMobiusObservation
 public import GeneratedFoundations.Analysis.SignedGaussianEnergy
 public import GeneratedFoundations.Analysis.CanonicalEndpointLedger
+public import GeneratedFoundations.Analysis.PrimeCylinderScaleBudget
+public import GeneratedFoundations.Analysis.NaturalCutoffPrimeDescent
 public import GeneratedFoundations.Analysis.FiniteResidueFourier
 public import GeneratedFoundations.Analysis.GeneratedRecoveryKernel
 

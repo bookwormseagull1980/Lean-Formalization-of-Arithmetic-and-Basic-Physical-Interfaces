@@ -1,7 +1,8 @@
 module
 
 public import GeneratedFoundations.Arithmetic.CompleteHistoryDynamics
-public import GeneratedFoundations.Analysis.CanonicalEndpointLedger
+public import GeneratedFoundations.Analysis.PrimeCylinderScaleBudget
+public import GeneratedFoundations.Analysis.NaturalCutoffPrimeDescent
 public import GeneratedFoundations.Physical.SourcePhysicalInterface
 public import GeneratedFoundations.Source.CanonicalRoot
 
@@ -85,6 +86,12 @@ structure Conclusions
     Analysis.CanonicalMobiusReadout.Conclusions
   canonical_endpoint_ledger :
     Analysis.CanonicalEndpointLedger.Conclusions
+  prime_cylinder_descent :
+    Analysis.PrimeCylinderDescent.Conclusions
+  prime_cylinder_scale_budget :
+    Analysis.PrimeCylinderScaleBudget.ScaleBudgetConclusions
+  natural_cutoff_prime_descent :
+    Analysis.NaturalCutoffPrimeDescent.Conclusions
   physical_interface :
     Physical.SourcePhysicalInterface.Conclusions source.change source.minimal
       o source.law b hb
@@ -113,6 +120,12 @@ theorem fromMinimalUnbiasedChange (source : MinimalUnbiasedChange.Datum) :
       Analysis.CanonicalMobiusReadout.canonicalMobiusReadoutConclusions
     canonical_endpoint_ledger :=
       Analysis.CanonicalEndpointLedger.conclusions
+    prime_cylinder_descent :=
+      Analysis.PrimeCylinderDescent.conclusions
+    prime_cylinder_scale_budget :=
+      Analysis.PrimeCylinderScaleBudget.conclusions
+    natural_cutoff_prime_descent :=
+      Analysis.NaturalCutoffPrimeDescent.conclusions
     physical_interface := Physical.SourcePhysicalInterface.minimalChange_physicalInterface
       source o b hb }
   exact @generatedResolution source.change source.minimal
