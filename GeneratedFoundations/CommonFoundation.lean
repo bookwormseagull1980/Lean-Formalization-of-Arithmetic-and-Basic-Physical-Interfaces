@@ -3,6 +3,9 @@ module
 public import GeneratedFoundations.Arithmetic.CompleteHistoryDynamics
 public import GeneratedFoundations.Analysis.PrimeCylinderScaleBudget
 public import GeneratedFoundations.Analysis.NaturalCutoffPrimeDescent
+public import GeneratedFoundations.Analysis.MaximumPrimeFactorRelativeStage
+public import GeneratedFoundations.Analysis.NaturalSourceScaleBudget
+public import GeneratedFoundations.Analysis.GaussianPrefixTail
 public import GeneratedFoundations.Physical.SourcePhysicalInterface
 public import GeneratedFoundations.Source.CanonicalRealization
 
@@ -84,7 +87,12 @@ structure Conclusions : Prop where
   prime_cylinder_scale_budget :
     Analysis.PrimeCylinderScaleBudget.ScaleBudgetConclusions
   natural_cutoff_prime_descent : Analysis.NaturalCutoffPrimeDescent.Conclusions
-  physical_interface : Physical.SourcePhysicalInterface.Conclusions
+  maximum_prime_generation : Analysis.MaximumPrimeFactorStage.StageConclusions
+  maximum_prime_relative_ledger : Analysis.MaximumPrimeFactorRelativeStage.Conclusions
+  gaussian_window_ledger : Analysis.GaussianWindowCapacity.Conclusions
+  gaussian_prefix_tail : Analysis.GaussianPrefixTail.Conclusions
+  natural_source_scale_budget : Analysis.NaturalSourceScaleBudget.Conclusions
+  physical_interface : Physical.SourcePhysicalInterface.CoreConclusions
 
 /-- Minimal unbiased compositional change generates the complete common world
 without any realization argument. -/
@@ -109,7 +117,12 @@ theorem generated : Conclusions := by
     prime_cylinder_descent := Analysis.PrimeCylinderDescent.conclusions
     prime_cylinder_scale_budget := Analysis.PrimeCylinderScaleBudget.conclusions
     natural_cutoff_prime_descent := Analysis.NaturalCutoffPrimeDescent.conclusions
-    physical_interface := Physical.SourcePhysicalInterface.generated }
+    maximum_prime_generation := Analysis.MaximumPrimeFactorStage.conclusions
+    maximum_prime_relative_ledger := Analysis.MaximumPrimeFactorRelativeStage.conclusions
+    gaussian_window_ledger := Analysis.GaussianWindowCapacity.conclusions
+    gaussian_prefix_tail := Analysis.GaussianPrefixTail.conclusions
+    natural_source_scale_budget := Analysis.NaturalSourceScaleBudget.conclusions
+    physical_interface := Physical.SourcePhysicalInterface.generatedCore }
   · let : Fact (0 < windowLengthGenerated width) :=
       ⟨windowLengthGenerated_pos width_pos⟩
     exact ⟨fun x hx => TypedArithmetic.primeProfile_existsUnique

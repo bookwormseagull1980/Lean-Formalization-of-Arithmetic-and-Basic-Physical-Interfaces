@@ -10,6 +10,8 @@ public import GeneratedFoundations.Analysis.MaximumPrimeFactorStage
 public import GeneratedFoundations.Analysis.CenterRelativePotential
 public import GeneratedFoundations.Analysis.MaximumPrimeFactorRelativeStage
 public import GeneratedFoundations.Analysis.GaussianWindowCapacity
+public import GeneratedFoundations.Analysis.GaussianPrefixTail
+public import GeneratedFoundations.Analysis.NaturalSourceScaleBudget
 public import GeneratedFoundations.Analysis.CenterTwistedHistoryResistance
 public import GeneratedFoundations.Analysis.FiniteResidueFourier
 public import GeneratedFoundations.Analysis.GeneratedRecoveryKernel

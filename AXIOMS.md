@@ -218,6 +218,14 @@ calculated ratio is `sqrt pi`. The amplitude-norm and endpoint-functional
 identities are included explicitly among the geometric root theorem's
 outputs and are covered by the complete compiled audit described above.
 
+These identities concern the Gaussian correlation window's IR **edge**,
+`sqrt(2*pi)`.  They do **not** identify that edge with the V5 finite-response
+TT endpoint `kL`: the TT endpoint is the root of `A(L)=4/27`, it lies strictly
+below the edge, and at the edge the TT sum is about `0.147374 < 4/27`.  The
+zero-argument `CanonicalYangMills` theorem is the IR-edge model; the V5 TT
+model is the separate, certificate-conditional `CanonicalYangMillsTT`.  The
+critical ratio `sqrt(pi)` is a third object, not an edge and not `kL`.
+
 The arithmetic formalization uses Lean's existing natural numbers for
 indices, recursion and auxiliary models. The final source modes are also
 defined intrinsically from the actual operator and then identified with

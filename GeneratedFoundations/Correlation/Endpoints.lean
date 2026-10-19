@@ -65,8 +65,19 @@ theorem calibrated_information {F : CorrelationLevel → ℝ}
 
 def uvThresholdSet (b : ℝ) : Set ℝ := {d | 0 < d ∧ 1 ≤ information b d}
 
+/-- UV endpoint of the Gaussian correlation window.
+
+This is the lower edge of the source window.  It is **not** the internal
+radius of the condensed response and it is **not** the V5 finite-response
+TT endpoint. -/
 def uvEndpoint (b : ℝ) : ℝ := sInf (uvThresholdSet b)
 
+/-- IR peak-equivalent width of the Gaussian correlation window.
+
+This is the upper edge of the source window.  The Lean physical branch uses
+it as its canonical internal radius.  It is **not** the V5 finite-response
+TT endpoint `kL`: at this edge the TT spectral sum is about `0.147374`,
+below `4/27`, so the TT endpoint equation is not satisfied here. -/
 def irEndpoint (b : ℝ) : ℝ := (∫ d : ℝ, profile b d) / profile b 0
 
 def peakEquivalentWidth (K : ℝ → ℝ) : ℝ :=

@@ -18,11 +18,13 @@ discrete number of Gaussian ladder levels retained by the window; it is not a
 continuous radius.  The response domain itself is the corresponding finite
 window `q^2 < level * cutoff^2`.
 
-The TT spectral sum and the endpoint-root certificate are deliberately not
-defined here: they require the Gaussian-weighted frequency integral over the
-generated spectrum and belong to the companion `SourceTTResponse` module.
-This file only fixes the finite window and the weight, so that the later
-selection theorem has a precise object to speak about.
+The TT spectral sum and the Gaussian-weighted frequency integral are V5
+numerical inputs; they are not re-derived here.  The Lean structural
+consequence is the root/interval theorem in `SourceTTEndpointInterval`, which
+consumes the V5 coefficient interval.  This file only fixes the finite window
+and the weight, so that the integer-selection theorem has a precise object to
+speak about.  The structure is a standalone scaffold and is not a field of
+`SourcePhysicalInterface.CoreConclusions`.
 -/
 
 @[expose] public section

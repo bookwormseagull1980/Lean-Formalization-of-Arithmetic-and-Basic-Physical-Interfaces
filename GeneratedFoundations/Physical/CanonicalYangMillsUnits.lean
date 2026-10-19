@@ -4,11 +4,16 @@ public import GeneratedFoundations.Physical.CanonicalYangMills
 public import GeneratedFoundations.Physical.SourceGeneratedYangMillsNewtonAnchor
 
 /-!
-# Units for the canonical generated Yang--Mills response
+# Units for the IR-edge canonical Yang--Mills response
 
 The dimensionless radius, condensed amplitude and closed Hessian are already
 fixed by the canonical source. The only argument of the dimensional readout
 is the positive Newton calibration. No radius is selected at this interface.
+
+The radius here is the Gaussian window's IR **edge** `sqrt(2*pi)`; this is the
+IR-edge model.  V5's finite-response TT endpoint `kL` is a different radius,
+and its absolute gap is not this calibration.  The TT model is kept separately
+in `CanonicalYangMillsTT`, conditional on `SourceTTResponse.EndpointCertificate`.
 
 The generated endpoint ratio has square one half. Consequently the emergence
 mass squared is `1 / (16 pi G_N)`, and multiplying by the already attained

@@ -4,19 +4,36 @@ public import GeneratedFoundations.Physical.SourceGeneratedYangMillsClosure
 public import GeneratedFoundations.Physical.SourceHaarYangMillsHessian
 public import GeneratedFoundations.Physical.SourceHaarCurvatureTrace
 public import GeneratedFoundations.Physical.SourceHaarYangMillsFock
+public import GeneratedFoundations.Physical.SourceYangMillsFockSemigroup
 public import GeneratedFoundations.Source.CanonicalRealization
 
 /-!
-# Yang--Mills response at the generated infrared radius
+# Yang--Mills response at the generated infrared edge (IR-edge model)
 
-The natural infrared endpoint of the unit-covariance source fixes the radius
-used here. It lies strictly beyond the critical endpoint ratio. Consequently
+The natural infrared edge of the unit-covariance Gaussian window fixes the
+radius used here. It lies strictly beyond the critical endpoint ratio.
+Consequently
 the unique condensed response, its self-adjoint Hessian and its attained
 positive bottom require no supplied radius, amplitude, orientation or mass.
 
 Statements with a variable radius elsewhere describe the already generated
 response as that radius varies. This module supplies the particular response
 fixed by the canonical source itself.
+
+The radius used here is the infrared **edge** of the unit-covariance Gaussian
+window, `sqrt(2*pi)`.  It is not the finite-response TT endpoint `kL` of V5:
+at this edge the TT spectral sum is about `0.147374`, below `4/27`, so the
+edge does not satisfy the TT endpoint equation.  The two scales differ by
+about 0.5% and must not be identified.  The V5 TT-endpoint model is kept
+separately in `Physical.CanonicalYangMillsTT`, conditional on
+`SourceTTResponse.EndpointCertificate`; it is not a field of the zero-argument
+`CommonFoundation.Conclusions`.
+
+The `fock_semigroup` field is the diagonal heat semigroup on the
+finite-occupation Fock core.  It is not a claim that the GNS Hilbert
+completion has been constructed in this module: the core is dense, and the
+standard completion/self-adjoint extension is the generic functional-analytic
+layer.
 -/
 
 @[expose] public section
@@ -32,7 +49,13 @@ open SourceGeneratedYangMillsGap SourceGeneratedYangMillsPhysicalHessian
 open SourceFourDimensionalYangMills SourceGeneratedYangMillsResponseHessian
 open SourceGeneratedYangMillsFrameResponse
 
-/-- The generated Gaussian infrared endpoint in unit-covariance coordinates. -/
+/-- The generated Gaussian infrared **edge** in unit-covariance coordinates.
+
+This is `sqrt(2*pi)`, the upper edge of the source correlation window.  It is
+**not** the V5 finite-response TT endpoint `kL` (about `2.4935`): at this edge
+the TT spectral sum is about `0.147374`, below `4/27`.  The canonical
+Yang--Mills results below therefore belong to the IR-edge closure, not to the
+V5 TT-endpoint closure, until the companion TT-response endpoint is supplied. -/
 def internalRadius : ℝ :=
   Correlation.Endpoints.irEndpoint Source.CanonicalRealization.width
 
@@ -225,6 +248,7 @@ structure Conclusions : Prop where
         (transformFrameJet q sourceFrame) =
       responseAction radial (colourMatrixConnectionJet A)
   selfAdjoint : IsSelfAdjoint responseHessian
+  fock_semigroup : SourceYangMillsFockSemigroup.Conclusions
   haar_action_second_derivative : ∀ (radial : ℝ) (x : SourceHaarYangMillsHessian.ResponseCore),
     SourceHaarYangMillsHessian.radialProjection x.val = (radial : ℂ) →
     HasDerivAt (fun t : ℝ => deriv (fun u : ℝ =>
@@ -270,6 +294,7 @@ theorem generated : Conclusions where
   mixed_second_derivative_zero := responseAction_mixed_secondDeriv_zero
   common_frame_transport := responseAction_frame_transport
   selfAdjoint := responseHessian_selfAdjoint
+  fock_semigroup := SourceYangMillsFockSemigroup.generated
   haar_action_second_derivative := haarAction_secondDeriv
   closed_field_lower_bound := responseHessian_coercive
   unique_selfAdjoint_extension := responseHessian_unique

@@ -6,6 +6,12 @@ public import GeneratedFoundations.CanonicalClosedWorld
 public import GeneratedFoundations.Physical.SourceGaussianResponseDomain
 public import GeneratedFoundations.Physical.SourceResponseLevel
 public import GeneratedFoundations.Physical.SourceGeneratedYangMillsNewtonAnchor
+public import GeneratedFoundations.Physical.SourceYangMillsFockSemigroup
+public import GeneratedFoundations.Physical.SourceTTEndpointInterval
+-- Separate V5 TT-endpoint model: imported for audit coverage only.  It is
+-- deliberately not a field of CommonFoundation.Conclusions.
+public import GeneratedFoundations.Physical.SourceTTResponse
+public import GeneratedFoundations.Physical.CanonicalYangMillsTT
 
 /-!
 # Generated foundations: implemented declarations
@@ -37,4 +43,9 @@ linear TT gravity interface are parallel outputs of the same root.  A positive
 Newton constant appears only in the separate dimensional-calibration module;
 it does not enter the carrier, action, Hessian or dimensionless gap theorem.
 The theorem index records the exact public declarations and scopes.
+
+The separate V5 TT-endpoint model (`SourceTTResponse` and
+`CanonicalYangMillsTT`) is imported only so the audit covers every local
+module.  It is not a field of `CommonFoundation.Conclusions`; the zero-argument
+canonical entry uses the IR edge `sqrt(2*pi)`, not the TT endpoint `kL`.
 -/

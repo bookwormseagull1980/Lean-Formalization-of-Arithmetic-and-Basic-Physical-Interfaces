@@ -15,12 +15,11 @@ three-position condition gives two real inequalities on the endpoint root
 
   `sqrt(11/2) <= c R` and `c R < sqrt(15/2)`.
 
-If `c` is strictly increasing, `c 4 < sqrt(11/2)` and
-`sqrt(15/2) <= c 6`, then the only natural level satisfying the
-three-position condition is `5`.  The analytic certificate
-`c 4 < sqrt(11/2)`, `sqrt(15/2) <= c 6` is supplied by the companion
-Gaussian TT response module; this file proves the integer-selection half,
-with no numerical fitting and no observational input.
+The shell support is a distinct condition: the last retained index is `49/4`
+and the first excluded index is `16`. It gives `49/(4*pi) < R <= 16/pi`.
+The three-position condition alone does not imply this support restriction.
+With the lower crossing `c 4 < sqrt(11/2)`, monotonicity and the support
+restriction select the unique natural level `5`.
 -/
 
 @[expose] public section
@@ -36,16 +35,24 @@ abbrev ResponseLevel := ℕ
 def ThreePosition (c : ℝ) : Prop :=
   Real.sqrt (11 / 2 : ℝ) ≤ c ∧ c < Real.sqrt (15 / 2 : ℝ)
 
-/-- The three-point certificate for the endpoint root as a function of the
-discrete level.  The analytic inputs are the lower crossing
-`c 4 < sqrt(11/2)` and the shell-support upper bound `R <= 16/pi`; the upper
-edge is not a crossing of `c` because `c 6 < sqrt(15/2)` in the production
-realization. -/
+/-- The retained shell set is unchanged precisely on this bandwidth range. -/
+def SameShellSupport (R : ResponseLevel) : Prop :=
+  49 / (4 * Real.pi) < (R : ℝ) ∧ (R : ℝ) ≤ 16 / Real.pi
+
+/-- Analytic lower-crossing data; the support condition is imposed separately
+at the observation to which the selection theorem is applied. -/
 structure ThreePointCertificate (c : ResponseLevel → ℝ) : Prop where
   strictMono : StrictMono c
   four_lt : c 4 < Real.sqrt (11 / 2 : ℝ)
-  upper_bound : ∀ {R : ResponseLevel}, ThreePosition (c R) →
-    (R : ℝ) ≤ 16 / Real.pi
+
+theorem sameShellSupport_five : SameShellSupport 5 := by
+  constructor
+  · rw [div_lt_iff₀ (mul_pos (by norm_num) Real.pi_pos)]
+    norm_num
+    nlinarith [Real.pi_gt_three]
+  · rw [le_div_iff₀ Real.pi_pos]
+    norm_num
+    nlinarith [Real.pi_lt_d2]
 
 /-- The three-position condition at level `5`, from the two local bounds. -/
 theorem threePosition_five {c : ResponseLevel → ℝ}
@@ -54,17 +61,18 @@ theorem threePosition_five {c : ResponseLevel → ℝ}
     ThreePosition (c 5) :=
   ⟨h5lo, h5hi⟩
 
-/-- The only natural level satisfying the three-position condition is `5`. -/
+/-- The unique natural level satisfying both the three-position condition
+and the retained shell support is `5`. -/
 theorem threePosition_eq_five {c : ResponseLevel → ℝ}
     (cert : ThreePointCertificate c) {R : ResponseLevel}
-    (hR : ThreePosition (c R)) : R = 5 := by
+    (hR : ThreePosition (c R)) (hsupport : SameShellSupport R) : R = 5 := by
   have hnot4 : ¬ R ≤ 4 := by
     intro hRle
     have hcRle : c R ≤ c 4 := cert.strictMono.monotone hRle
     have hlt : c R < Real.sqrt (11 / 2 : ℝ) :=
       lt_of_le_of_lt hcRle cert.four_lt
     exact (not_le_of_gt hlt) hR.1
-  have hUpper : (R : ℝ) ≤ 16 / Real.pi := cert.upper_bound hR
+  have hUpper : (R : ℝ) ≤ 16 / Real.pi := hsupport.2
   have hpi : (8 / 3 : ℝ) < Real.pi := by
     linarith [Real.pi_gt_three]
   have h6 : (16 : ℝ) / Real.pi < 6 := by

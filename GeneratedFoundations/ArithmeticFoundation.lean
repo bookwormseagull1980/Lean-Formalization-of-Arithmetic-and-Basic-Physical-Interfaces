@@ -36,6 +36,8 @@ public import GeneratedFoundations.Spectral.NeumannHeatTrace
 public import GeneratedFoundations.Spectral.GaussianHeatConvolution
 public import GeneratedFoundations.Analysis.PrimeCapacity
 public import GeneratedFoundations.Analysis.GaussianWindowCapacity
+public import GeneratedFoundations.Analysis.GaussianPrefixTail
+public import GeneratedFoundations.Analysis.NaturalSourceScaleBudget
 
 /-!
 # Arithmetic foundation from minimal unbiased compositional change
@@ -109,8 +111,10 @@ telescoping ledger, so the complete transport descends to the root square
 spectrum while the unresolved internal part does not.  The same positive
 source uniquely fixes the detailed-balance merge rate for unit reverse split
 rate.  A recursively renormalized Gaussian directory remains available only
-as a fixed-scale local identity.  Signed arithmetic and finite harmonic
-readouts are separate research extensions and are not imported by this root.
+as a fixed-scale local identity. The generated signed observation, exact
+capacity-weighted energy, complete natural-prefix scale capacity and
+cutoff-independent Gaussian tails are imported by this root. Finite harmonic
+readouts remain separate research extensions.
 These are statements about the defined generated construction, with each
 classification's comparison class retained in its theorem.
 -/

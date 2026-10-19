@@ -30,6 +30,43 @@ Reversing that presentation gives the proved conjugate structure. The arithmetic
 physical branches are parallel conclusions;
 neither is assumed by the other.
 
+### Two internal-radius conventions (do not mix)
+
+| object | meaning | value |
+|---|---|---:|
+| `SourceEndpointCasimir.radius b = irEndpoint b` | IR **edge** of the Gaussian correlation window; the Lean canonical entry's internal radius | `sqrt(2*pi) ≈ 2.506628` |
+| `kL` (V5) | finite-response **TT endpoint**: root of the TT spectral-sum equation `A(L)=4/27` | `2.493534` |
+| `criticalRadius` | endpoint **ratio** `irEndpoint/uvEndpoint = sqrt(pi)`, not an edge | `1.772454` |
+| `R=5` (V5) | finite **response-domain level** `q^2 < R Lambda^2`, not an internal radius | `5` |
+
+`CanonicalYangMills` is the unconditional **IR-edge** model.  The V5
+**TT-endpoint** model is separate and certificate-conditional:
+`CanonicalYangMillsTT.generated` takes a
+`SourceTTResponse.EndpointCertificate`.  It is deliberately not a field of
+`CommonFoundation.Conclusions`; the zero-argument entry and the V5 TT model
+are never identified.  At the IR edge the TT sum is about `0.147374`, below
+`4/27`, so the two closures are genuinely different.
+
+The zero-argument physical surface is
+`SourcePhysicalInterface.CoreConclusions` (proved by `generatedCore`).  It
+groups the gauge and matter layers and keeps the physical outputs without
+repeating every intermediate bundle; the older `Conclusions` remains a
+compatibility bundle for finer layers.
+
+### Lean versus V5
+
+Lean proves the **structural** physical branch: source and Gaussian law,
+internal spectra, field spaces/operators/domains, YM nonlinear action and
+Hessian, the finite-occupation Fock core and its heat semigroup, collective
+linear gravity, `4/27`, `1/50`, and the TT endpoint root/interval layer.
+V5 supplies the **numerical** layer: the TT spectral coefficient, Gaussian
+frequency integral, finite-domain `R=5` bounds and effective gravitational
+parameters.  `SourceTTEndpointInterval` consumes a V5 coefficient interval;
+`SourceResponseLevel` consumes the V5 lower bound and proves the integer
+selection.  The effective Einstein completion is macroscopic, not a
+microscopic closure of the collective TT response.  No independent graviton
+field or separate gravitational Fock space is introduced.
+
 The concrete matter bundle is now constructed on the generated Hermitian
 four-carrier with the complete source matter space as its fibre. Its global
 coordinates, unitary frame action, relative transitions and passive-component
@@ -51,7 +88,8 @@ separate from this affine-dilation result.
 The source is pinned to Lean 4.34.0 and mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The 19 October canonical-root audit
 passed for all 346 local modules imported by the zero-argument entry, with
-16,584 compiled constants, 8,490 named type checks and 342 indexed claims.
+16,584 compiled constants, 8,490 named type checks and the indexed claims
+recorded in `theorem-index.json`.
 Those counts describe that audited snapshot, before the concrete-bundle and
 nonlinear-density extensions above. The root and its dependencies in that
 snapshot use only Lean's `propext`, `Classical.choice`
@@ -177,6 +215,39 @@ several declarations may support one manuscript result. Full coverage requires
 matching all premises and conclusions and completing the intervening construction.
 
 ## Gaussian observation windows and capacity-weighted energy
+
+The common root now also exposes the actual maximum-prime-factor stages,
+their relative-potential ledger, the complete natural-prefix scale budget
+and the cutoff-independent Gaussian tail. These are conclusions of the
+constructed source; no balance or decay hypothesis is supplied to the root.
+
+`NaturalSourceScaleBudget` integrates the full squarefree occupation
+capacity `C_N`, rather than only the unit--prime pair. If `I_sigma` is the
+empty-occupation Gaussian budget, its exact formula is
+
+```text
+integral C_N(exp u) exp(-2 sigma u) du
+  = I_sigma * sum_{1 <= n <= N, generated-squarefree n} n^(-2 sigma).
+```
+
+For every `sigma > 1/2` this is bounded independently of `N`. The same bound
+controls the normalized potential `B_N^2/C_N`, including empty prefixes.
+The coherent budget has the exact, separate reconstruction
+`integral B_N^2 = integral C_N * (B_N^2/C_N)` with the scale weight on both
+sides. Its capacity factor is retained inside the integral.
+
+`GaussianPrefixTail` replaces the outside-cardinality bound by a convergent
+envelope. For `K = ceil(sqrt(R) * L) > 0`, put
+
+```text
+r = exp(-K/L^2),
+T = exp(-K^2/L^2) / (1-r).
+```
+
+For every natural cutoff, `C_outside <= T`, the signed amplitude error is
+at most `T`, and the coherent energy error is at most
+`T^2 + 2*abs(B_visible)*T`. The bound is independent of the number of
+omitted labels. The observation scale and window level remain explicit.
 
 The arithmetic entry also exposes `GaussianWindowCapacity`. At observation
 level `R`, the generated square spectrum is partitioned by `n^2 < R*L^2`.
@@ -408,9 +479,12 @@ constants; it is not an additional assumption of the root construction.
 | Relativistic algebraic interface | `SourceHermitianReadout.coordinatesEquivHermitian`, `SourceLorentzCarrier.posSemidef_iff_futureCone`, `coordinateTransform_futureUnit_iff` | All Hermitian two-by-two matrices have unique four-real coordinates. Their determinant has signature `(+---)`, their positive cone is exactly the closed algebraic future cone, determinant-one congruence preserves the form, and the generated future unit has the special-unitary stabilizer equation. |
 | Four-dimensional gauge dynamics | `SourceFourDimensionalGaugeKinematics.sourceFourDimensionalGaugeProperties`, `SourceFourDimensionalYangMills.sourceFourDimensionalYangMillsProperties` | The Hermitian readout supplies the four coordinate directions. The generated colour directions exhaust the skew-Hermitian traceless `3 x 3` algebra; connection curvature, local covariance, the source-normalized positive colour form and its Lorentz contraction are proved without adding a lattice or gauge group. |
 | Internal Yang--Mills response | `SourceColourAdjointCasimir.adjointCasimir_generator`, `SourceInternalYangMillsResponse.properties` | The explicit generated colour matrices give adjoint Casimir `3`; the endpoint ratio gives `L_c=sqrt(pi)`; and the actual `(4,2)` source carrier gives dimension `15`, Casimir `16`, the unique normalized affine drive and `120` colour-connection coefficients. |
-| Generated Yang--Mills action, differential Hessian and spectral gap | `SourceHaarCurvatureTrace.action_eq_trace`, `SourceHaarYangMillsHessian.action_secondDeriv`, `SourceOneFormCoclosedSpectrum.coclosedHilbertBasis`, `CanonicalYangMills.generated` | The nonlinear action is evaluated on the original Haar one-form fields; its curvature term equals the integral of the actual colour-matrix curvature trace. Differentiation gives the radial block and the source curl-squared connection block, with zero mixed second derivative. The weak divergence kernel has a complete basis of differentiated source eigenfields. The original-field Hessian has a unique self-adjoint closure, its full weighted-square domain, an attained positive bottom and the corresponding finite-occupation Fock gap. Every colour and every nongauge field direction is retained. |
-| Newton mass calibration | `CanonicalYangMillsUnits.generated`, `CanonicalYangMillsUnits.gapMass_sq`, `CanonicalYangMillsUnits.gapMass_unique` | The dimensional readout takes only a positive Newton constant; the IR radius has already been generated. In the stated reduced-Planck convention, the emergence mass squared is `1/(16*pi*G_N)` and the unique positive gap mass squared is `gapSq/(16*pi*G_N)`. The calibration cancels from their ratio and does not enter the action, condensate or operator. |
-| Canonical Yang--Mills response | `CanonicalYangMills.generated` | The generated IR radius is `sqrt(2*pi)` and exceeds the critical radius. Its unique positive condensed amplitude, original-Haar-field action, self-adjoint differential response Hessian, attained positive spectral bottom and finite-occupation gap are outputs of a theorem without realization arguments. |
+| Generated Yang--Mills action, differential Hessian and spectral gap | `SourceHaarCurvatureTrace.action_eq_trace`, `SourceHaarYangMillsHessian.action_secondDeriv`, `SourceOneFormCoclosedSpectrum.coclosedHilbertBasis`, `CanonicalYangMills.generated` | The nonlinear action is evaluated on the original Haar one-form fields; its curvature term equals the integral of the actual colour-matrix curvature trace. Differentiation gives the radial block and the source curl-squared connection block, with zero mixed second derivative. The weak divergence kernel has a complete basis of differentiated source eigenfields. The original-field Hessian has a unique self-adjoint closure, its full weighted-square domain, an attained positive bottom and the corresponding finite-occupation Fock gap. Every colour and every nongauge field direction is retained. The radius in this row is the IR edge of `CanonicalYangMills`, not the V5 TT endpoint `kL`. |
+| Newton mass calibration | `CanonicalYangMillsUnits.generated`, `CanonicalYangMillsUnits.gapMass_sq`, `CanonicalYangMillsUnits.gapMass_unique` | The dimensional readout takes only a positive Newton constant; the IR radius has already been generated. In the stated reduced-Planck convention, the emergence mass squared is `1/(16*pi*G_N)` and the unique positive gap mass squared is `gapSq/(16*pi*G_N)`. The calibration cancels from their ratio and does not enter the action, condensate or operator. This calibration belongs to the IR-edge model; V5's TT endpoint `kL` is a different radius and its absolute gap is not this one. |
+| Canonical Yang--Mills response | `CanonicalYangMills.generated` | The generated IR **edge** `sqrt(2*pi)` exceeds the critical ratio. Its unique positive condensed amplitude, original-Haar-field action, self-adjoint differential response Hessian, attained positive spectral bottom and finite-occupation gap are outputs of a theorem without realization arguments. This is the **IR-edge model**; the V5 **TT-endpoint** model `kL` is separate and certificate-conditional in `CanonicalYangMillsTT`, not this theorem. |
+| Torsion content `1/50` | `SourceTorsionContent.generated` | The generated hypercharge operator gives `sum c*Y^2=10/3`; the left/charged-right counts are `8/7`; the charged quotient has dimension `15`. Hence `(N_L-N_R)/(N_f*sum Y^2)=1/50` as a rational theorem, not a fitted parameter. |
+| V5 finite Gaussian TT coefficient | `SourceTTGaussianCoefficient.generated`, `existsUnique_endpoint` | The eight retained branches use the generated torsion value and the actual Gaussian frequency integrals. Their coefficient `A5` is strictly positive and selects the unique positive radius `27*A5/4` with response `A5/c=4/27`. These integral and uniqueness results are outputs of the zero-argument physical interface. |
+| V5 TT-endpoint Yang--Mills model (separate) | `SourceTTResponse.EndpointCertificate`, `endpointCertificateOfBounds`, `CanonicalYangMillsTT.generated` | A geometric enclosure of the actual coefficient places its unique radius between the critical radius and the IR edge. Every endpoint certificate has this same radius; it contains no independent response value. The condensed TT-endpoint Yang--Mills conclusion uses that geometric enclosure and remains separate from the IR-edge Yang--Mills theorem. |
 | Geometric volume and colour covariance | `SourceProjectiveVolume.roundMeasure_total`, `SourceGeneratedYangMillsGap.transverseCovarianceAction_eq`, `CanonicalYangMills.sourceColourContraction` | The actual ambient polar measure and two-sheeted quotient give `pi^2*L^3`. Isotropic variance with the generated total intensity is fixed across the 24 spatial-colour components; the two transverse directions and the actual adjoint double commutator compute the connection response shift. |
 | Orientation reversal of the nonlinear response | `CanonicalYangMills.responseAction_orientation_reverse` | Conjugating the complete connection jet preserves its curvature trace, connection norm and common radial response. Together with the source orientation classification, this identifies the response in the two orientation presentations. |
 | Differentiated source spinor | `SourceSpinorCovariantDerivative.polynomialDirac_eq_contraction`, `SourceSpinorHaarBlock.differential_normalizedSynthesis`, `SourceSpinorClosedSpectrum.closedDirac_unique`, `SourceSpinorResolvent.spectrum_half_integers` | The Koszul formula computes the spin connection from the original trace-metric source frame. Clifford contraction gives the actual field differential. Its complete Haar basis yields a unique self-adjoint closure on the full weighted-square domain, spectrum `+/- (k+3/2)` and a full-domain squared-norm lower bound `9/4`. Bounded two-sided resolvents exclude additional continuous and residual spectrum. |

@@ -144,7 +144,11 @@ def longRootCasimirIndex : ℝ :=
 @[simp] theorem longRootCasimirIndex_eq : longRootCasimirIndex = 16 := by
   norm_num [longRootCasimirIndex, longRootDegree_eq, casimirIndex]
 
-/-- The generated endpoint ratio, used as the internal critical radius. -/
+/-- The generated endpoint **ratio**, used as the internal critical radius.
+
+This is `irEndpoint/uvEndpoint = sqrt(pi)`.  It is not an IR edge
+(`sqrt(2*pi)`) and not the V5 finite-response TT endpoint `kL`; it is the
+lower threshold of the condensed branch. -/
 def criticalRadius : ℝ := Real.sqrt Real.pi
 
 theorem criticalRadius_pos : 0 < criticalRadius := by

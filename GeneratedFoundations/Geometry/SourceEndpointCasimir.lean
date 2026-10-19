@@ -254,8 +254,13 @@ theorem eigenvalue_iff (R : ℝ) (z : ℂ) :
       quotientBasisVector_orthonormal.ne_zero a, operator_basis R a⟩
 
 /-- The global correlation length, denoted as the radius in the geometric formulas.
-`radius` and `irEndpoint` name the same quantity. The generated amplitude at
-source width `b` has this norm; no separate radius or matching hypothesis is supplied. -/
+
+`radius` and `irEndpoint` name the same quantity: the IR **edge** of the
+unit-covariance Gaussian window, `sqrt(2*pi)*b`.  This is the Lean physical
+branch's canonical internal radius.  It is **not** the V5 finite-response TT
+endpoint `kL`; that endpoint is the root of the TT spectral-sum equation
+`A(L)=4/27` and is a different point (about 0.5% below this edge).  Do not
+substitute one for the other without the companion TT-response construction. -/
 def radius (b : ℝ) : ℝ := irEndpoint b
 
 theorem radius_eq {b : ℝ} (hb : 0 < b) :

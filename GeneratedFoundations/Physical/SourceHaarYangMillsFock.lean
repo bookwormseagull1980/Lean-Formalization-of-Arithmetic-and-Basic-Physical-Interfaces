@@ -9,6 +9,11 @@ public import Mathlib.Data.Finsupp.Order
 The occupied vectors are the complete Haar-field eigenbasis of the closed
 differential Hessian. Positivity and the minimizing occupation therefore use
 the same operator as the differentiated nonlinear action.
+
+This is the **finite-occupation dense core** of the generated Fock/GNS
+response.  The vacuum, gap and heat semigroup are proved on this core; the
+standard Hilbert completion and self-adjoint extension are the generic
+functional-analytic completion layer, not a separate numerical input.
 -/
 
 @[expose] public section

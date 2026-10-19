@@ -920,7 +920,7 @@
     "label": "prop:smtypecompletion",
     "tex_source": "sections-en/sec04_emergent_structures.tex",
     "coverage_kind": "clause",
-    "scope": "With no carrier, law, width or orientation argument, this theorem combines the canonical common-law geometry, exchange-retained algebra, frames, internal response and same-source Hermitian determinant interface, and exports the generated gauge group, four-dimensional gauge, Yang--Mills, TT-response, linear-gravity, projective scalar-spectrum and complete conformal-response certificates. The cited manuscript label maps the generated gauge-and-scalar completion fields of this aggregate theorem; later field clauses have their own mappings. Endpoints, boundary operators and P4--P6 conclusions are internally constructed. Compilation and axiom evidence is recorded separately in the matching verification manifest."
+    "scope": "Extended compatibility bundle. It retains the finer intermediate layers; the public lean zero-input surface is SourcePhysicalInterface.generatedCore. The cited manuscript label maps the generated gauge-and-scalar completion fields of the aggregate; later field clauses have their own mappings. Endpoints, boundary operators and P4--P6 conclusions are internally constructed. Compilation and axiom evidence is recorded separately in the matching verification manifest."
   },
   {
     "name": "GeneratedFoundations.Physical.SourceConformalResponse.conformalIndex_eq_scalar_shift",
@@ -2814,7 +2814,7 @@
       "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
       "label": "canonical Yang--Mills response without realization arguments",
       "coverage_kind": "root_interface",
-      "scope": "At the generated infrared radius sqrt(2*pi), produces the unique positive condensed amplitude, the original-Haar-field nonlinear action and its self-adjoint differential response Hessian, a positive attained mode bottom and the finite-occupation vacuum and gap. No radius, amplitude, orientation, width, Newton constant or mass is supplied to this theorem."
+      "scope": "At the generated infrared **edge** sqrt(2*pi) of the Gaussian window (the IR-edge model, not the V5 finite-response TT endpoint kL), produces the unique positive condensed amplitude, the original-Haar-field nonlinear action and its self-adjoint differential response Hessian, a positive attained mode bottom and the finite-occupation vacuum and gap. No radius, amplitude, orientation, width, Newton constant or mass is supplied to this theorem."
     },
     {
       "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsNewtonAnchor.gapRatio_anchor_independent",
@@ -3054,7 +3054,7 @@
       "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
       "label": "absolute canonical Yang--Mills gap calibration",
       "coverage_kind": "theorem",
-      "scope": "The already attained dimensionless original-field Hessian bottom gives gap mass squared gapSq/(16*pi*G_N). The Newton constant is the only argument of the dimensional readout and enters neither the generated radius nor the action, condensate, operator or positivity proof."
+      "scope": "The already attained dimensionless original-field Hessian bottom gives gap mass squared gapSq/(16*pi*G_N). This calibration belongs to the IR-edge model; the V5 TT endpoint kL is a different radius and is not used here. The Newton constant is the only argument of the dimensional readout and enters neither the generated radius nor the action, condensate, operator or positivity proof."
     },
     {
       "name": "GeneratedFoundations.Physical.CanonicalYangMillsUnits.gapMass_unique",
@@ -3096,30 +3096,9 @@
       "coverage_kind": "theorem",
       "scope": "The original Haar one-form space, source curl, closed Hodge Laplacian, complete coclosed Hilbert basis, full field basis, complete weighted domain and Hilbert-sum decomposition are outputs with no supplied one-form carrier, connection, spectrum or cutoff."
     },
-    {
-      "name": "GeneratedFoundations.Physical.SourceHaarConnectionHessian.operator_selfAdjoint",
-      "module": "GeneratedFoundations.Physical.SourceHaarConnectionHessian",
-      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
-      "label": "closed self-adjoint connection Hessian on the original Haar field",
-      "coverage_kind": "theorem",
-      "scope": "The differentiated source curl plus Gaussian colour-covariance response has a unique self-adjoint closed extension on the actual weak-divergence kernel of the original Haar field space."
-    },
-    {
-      "name": "GeneratedFoundations.Physical.SourceHaarConnectionHessian.complete_coercivity",
-      "module": "GeneratedFoundations.Physical.SourceHaarConnectionHessian",
-      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
-      "label": "closed-domain connection coercivity",
-      "coverage_kind": "theorem",
-      "scope": "The closed connection Hessian controls the full weighted-square domain by its lowest generated response eigenvalue, uniformly in the omitted finite cutoff."
-    },
-    {
-      "name": "GeneratedFoundations.Physical.SourceHaarYangMillsHessian.gap_attained",
-      "module": "GeneratedFoundations.Physical.SourceHaarYangMillsHessian",
-      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
-      "label": "attained original-Haar-field Yang--Mills bottom",
-      "coverage_kind": "theorem",
-      "scope": "The complete radial plus colour response basis diagonalizes the closed original-field Hessian, and the minimizing generated mode attains the positive bottom exactly."
-    },
+
+
+
     {
       "name": "GeneratedFoundations.Physical.CanonicalMatterBundle.generated",
       "module": "GeneratedFoundations.Physical.CanonicalMatterBundle",
@@ -3175,6 +3154,70 @@
       "label": "zero-input nonlinear density and affine self-coupling theorem",
       "coverage_kind": "theorem",
       "scope": "The generated four-carrier supplies the first-order nonlinear density, actual dilation derivatives and unique relative cubic coefficient in the stated comparison class, with no supplied carrier or coupling parameter."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceTTResponse.EndpointCertificate",
+      "module": "GeneratedFoundations.Physical.SourceTTResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "V5 finite-response TT endpoint certificate",
+      "coverage_kind": "definition_with_proved_properties",
+      "scope": "Records the V5 TT endpoint L with L > criticalRadius, L < sqrt(2*pi), and the endpoint equation A(L)=4/27. The spectral-sum derivation is a V5 computation; the certificate is deliberately not part of the zero-argument Lean entry."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalYangMillsTT.generated",
+      "module": "GeneratedFoundations.Physical.CanonicalYangMillsTT",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "V5 TT-endpoint Yang--Mills model (certificate-conditional)",
+      "coverage_kind": "theorem",
+      "scope": "At a certified TT endpoint strictly below the Gaussian IR edge, produces the positive condensed amplitude and positive dimensionless gap. Deliberately separate from the IR-edge CanonicalYangMills conclusion; the endpoint is never identified with sqrt(2*pi)."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore",
+      "module": "GeneratedFoundations.Physical.SourcePhysicalInterface",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "lean zero-input physical core interface",
+      "coverage_kind": "theorem",
+      "scope": "The lean public structural physical surface: geometry, grouped gauge and matter cores, TT carrier and endpoint, collective linear gravity, left--right family, projective scalar spectrum, complete conformal response, canonical Yang--Mills with Fock heat semigroup, exact torsion content, spinor, TT tensor, coclosed one-form and Hermitian readout. V5 supplies the numerical TT coefficient/Gaussian integral and finite-domain bounds; collective gravity is the emergent TT response, not an independent graviton field."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceTorsionContent.generated",
+      "module": "GeneratedFoundations.Physical.SourceTorsionContent",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "exact torsion content tau=1/50",
+      "coverage_kind": "theorem",
+      "scope": "The generated hypercharge operator gives sum c*Y^2=10/3, the left count 8 and the charged-right count 7; the charged quotient has dimension 15. The content identity (N_L-N_R)/(N_f*sum Y^2) is therefore exactly 1/50, as a rational theorem with no fitted parameter."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceTensorResponseEndpoint.unique_response_maximizer",
+      "module": "GeneratedFoundations.Physical.SourceTensorResponseEndpoint",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "TT mass-fraction maximum 4/27",
+      "coverage_kind": "theorem",
+      "scope": "The source-normalized TT mass-weighted response y*(1-y)^2 has the exact factorization 4/27 - y(1-y)^2 = (y-1/3)^2*(4/3-y) on [0,1], so 4/27 is the unique maximum at y=1/3. Every positive fixed spectral coefficient therefore has one positive endpoint 27A/4."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.generated",
+      "module": "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "generated Yang--Mills Fock heat semigroup",
+      "coverage_kind": "theorem",
+      "scope": "The diagonal heat weights exp(-t*totalEnergy n) on the finite-occupation Fock core form a one-parameter semigroup, fix the unique vacuum, stay strictly positive and damp every nonvacuum occupation by at least the generated Yang-Mills gap. The core is dense in the standard GNS/Fock completion; that completion is a generic functional-analytic layer, not a numerical input."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceTTEndpointInterval.generated",
+      "module": "GeneratedFoundations.Physical.SourceTTEndpointInterval",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "TT endpoint root interval certificate",
+      "coverage_kind": "theorem",
+      "scope": "Given a V5 coefficient interval [A_lo,A_hi] enclosing the positive TT spectral coefficient A, the unique positive root of A/c-4/27=0 lies in [27*A_lo/4,27*A_hi/4]. The spectral sum and Gaussian integral are V5 numerical inputs; this theorem is the structural root/interval consequence."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceCollectiveGravityClosure.generated",
+      "module": "GeneratedFoundations.Physical.SourceCollectiveGravityClosure",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "collective linear gravity closure",
+      "coverage_kind": "theorem",
+      "scope": "The two TT polarizations form a two-dimensional collective channel; the linearized operator annihilates pure gauge, satisfies the linearized conservation identity, is unique in its local five-coefficient class, reduces to Q^2 on TT and has the massless pole. No independent graviton field is introduced."
     },
     {
       "name": "GeneratedFoundations.Analysis.PrimeCapacity.CapacityPair.transverse_eq",
@@ -3247,6 +3290,70 @@
       "label": "complete coherent energy error from retained outside capacity",
       "coverage_kind": "theorem",
       "scope": "The full-to-visible coherent energy error is bounded by C_outside^2+2*abs(B_visible)*C_outside using the actual nonnegative outside source. The cross term is retained in the exact reconstruction before this finite error estimate."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceTTGaussianCoefficient.generated",
+      "module": "GeneratedFoundations.Physical.SourceTTGaussianCoefficient",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual finite Gaussian TT coefficient and unique positive endpoint",
+      "coverage_kind": "theorem",
+      "scope": "The eight retained V5 spectral branches with torsion 1/50 and three matter copies define positive Gaussian frequency integrals. Their actual coefficient fixes a unique positive radius with response A5/c=4/27. Numerical placement between the critical radius and the IR edge is a separate geometric enclosure."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceTTResponse.endpoint_unique",
+      "module": "GeneratedFoundations.Physical.SourceTTResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "TT endpoint certificates identify one integral-defined radius",
+      "coverage_kind": "theorem",
+      "scope": "Every positive TT endpoint certificate is bound to the actual finite Gaussian coefficient and therefore has the same radius. No independent response scalar can satisfy the certificate in place of the spectral integral."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceResponseLevel.threePosition_eq_five",
+      "module": "GeneratedFoundations.Physical.SourceResponseLevel",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "integer level selection with explicit shell support",
+      "coverage_kind": "theorem",
+      "scope": "Strict monotonicity, the certified level-four lower crossing, the three-position condition and the separately retained shell support 49/(4*pi)<R<=16/pi select R=5. The shell support is not inferred from the three-position condition alone."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget.capacityBudget_eq",
+      "module": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "exact full-occupation natural-prefix capacity budget",
+      "coverage_kind": "theorem",
+      "scope": "The weighted logarithmic scale integral of the actual squarefree source capacity is exactly the base Gaussian integral times the sum of n^(-2*sigma) over its generated squarefree natural support."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget.capacityBudget_iSup_lt_top",
+      "module": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "uniform complete natural-prefix positive capacity",
+      "coverage_kind": "theorem",
+      "scope": "For every sigma>1/2 the supremum of positive occupation-capacity budgets over all natural prefixes is finite, with an explicit base-Gaussian times p-series bound."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget.normalizedBudget_iSup_lt_top",
+      "module": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "uniform normalized central potential on all natural prefixes",
+      "coverage_kind": "theorem",
+      "scope": "For every sigma>1/2 the B^2/C potential of the actual centre sectors has a uniform scale budget over all natural cutoffs. This declaration controls the capacity-normalized potential."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget.coherentBudget_eq_capacityWeightedPotential",
+      "module": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete coherent budget with the actual capacity factor",
+      "coverage_kind": "theorem",
+      "scope": "The entire coherent Gaussian energy integral equals the integral of C times B^2/C, retaining every signed cross term. The capacity factor remains inside the scale integral, including at empty prefixes."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.GaussianPrefixTail.conclusions",
+      "module": "GeneratedFoundations.Analysis.GaussianPrefixTail",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "cutoff-independent Gaussian capacity and coherent tail errors",
+      "coverage_kind": "theorem",
+      "scope": "For positive first omitted label K, the outside capacity and amplitude error are bounded by exp(-K^2/L^2)/(1-exp(-K/L^2)), uniformly over natural cutoffs. The coherent error retains the visible-outside term 2*abs(B_visible)*T in addition to T^2."
     }
   ],
   "planned": [

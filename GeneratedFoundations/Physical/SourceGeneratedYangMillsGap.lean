@@ -18,6 +18,12 @@ into the mass operator used by Paper 4 and V5.  Its two invariant blocks are
 the normalized radial intensity and the coclosed colour connection.  Both
 have a strictly positive bottom on the condensed branch, hence so does their
 orthogonal direct sum.
+
+`L` is a variable internal radius.  V5 evaluates this operator at the
+finite-response TT endpoint `kL`; the zero-argument `CanonicalYangMills`
+module evaluates it at the Gaussian IR edge `sqrt(2*pi)`.  This file proves
+the common `L > criticalRadius` statement and does **not** identify those two
+radii.
 -/
 
 @[expose] public section
