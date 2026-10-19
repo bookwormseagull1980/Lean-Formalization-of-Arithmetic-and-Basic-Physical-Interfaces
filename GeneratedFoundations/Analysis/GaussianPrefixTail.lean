@@ -115,10 +115,9 @@ theorem outside_capacity_uniform {R : ℝ} (hR : 0 ≤ R) (L : PositiveScale)
   intro n hn
   have hw : 0 ≤ gaussianWindowMass L.1 n := endpointWeight_nonneg _ _
   by_cases hp : generatedMoebius n = 1
-  · have hm : generatedMoebius n ≠ -1 := by omega
-    simp [hp, hm]
+  · simp [hp]
   · by_cases hm : generatedMoebius n = -1
-    · simp [hp, hm]
+    · simp [hm]
     · simp [hp, hm, hw]
 
 theorem outside_amplitude_uniform {R : ℝ} (hR : 0 ≤ R) (L : PositiveScale)

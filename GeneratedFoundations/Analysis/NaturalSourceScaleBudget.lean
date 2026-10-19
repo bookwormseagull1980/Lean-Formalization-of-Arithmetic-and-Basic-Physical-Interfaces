@@ -71,7 +71,7 @@ theorem gaussian_label_translation {n : ℕ} (hn : 0 < n) (u : ℝ) :
     field_simp
   simp only [gaussianWindowMass, gaussianRootMass, gaussianResponse, ratio,
     expScale, label, Finset.prod_empty, Nat.cast_one, one_div, heq]
-  congr 1 <;> field_simp <;> ring
+  congr 1 <;> field_simp
 
 theorem root_scale_integral {n : ℕ} (hn : 0 < n) (sigma : ℝ) :
     (∫⁻ u : ℝ, logWeight sigma u *

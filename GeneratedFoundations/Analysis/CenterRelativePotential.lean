@@ -3,6 +3,8 @@ module
 public import GeneratedFoundations.Analysis.CenterEndpointPotential
 public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
 
+set_option linter.unnecessarySeqFocus false
+
 /-!
 # The full binary relative potential of the central sectors
 
@@ -193,7 +195,7 @@ theorem relativePotential_nonneg (x : CentrePair)
   · simp [relativePotential, hzero]
   · have hcap0 : 0 ≤ capacity x := capacity_nonneg x hpos hneg
     have hcap : 0 < capacity x := lt_of_le_of_ne hcap0 (Ne.symm hzero)
-    rw [relativePotential, if_neg hzero]
+    rw [relativePotential, ite_eq_right hzero]
     exact mul_nonneg hcap0 <|
       binaryDensity_nonneg
         (positiveFraction_nonneg x hpos hcap0)
@@ -218,7 +220,7 @@ theorem half_quadraticPotential_le_relativePotential (x : CentrePair)
       positiveFraction_le_one x hneg hcap
     have hbinary := half_central_square_le_binaryDensity hp0 hp1
     have hscaled := mul_le_mul_of_nonneg_left hbinary hcap0
-    rw [relativePotential, if_neg hzero]
+    rw [relativePotential, ite_eq_right hzero]
     calc
       (1 / 2 : ℝ) * quadraticPotential x =
           capacity x * ((1 / 2 : ℝ) *
@@ -241,8 +243,8 @@ theorem positiveFraction_swap (x : CentrePair) (hcap : capacity x ≠ 0) :
     relativePotential (swap x) = relativePotential x := by
   by_cases hcap : capacity x = 0
   · simp [relativePotential, hcap]
-  · rw [relativePotential, relativePotential, if_neg hcap,
-      if_neg (by simpa using hcap), capacity_swap,
+  · rw [relativePotential, relativePotential, ite_eq_right hcap,
+      ite_eq_right (by simpa using hcap), capacity_swap,
       positiveFraction_swap x hcap, binaryDensity_reflection]
 
 /-- Jensen--Shannon loss when two sources carrying the same central labels are
@@ -341,8 +343,8 @@ theorem joinJSDissipation_nonneg (x y : CentrePair)
         simp only at hxp hxn
         subst xp
         subst xn
-        simp [joinJSDissipation, relativePotential, add, capacity, positiveFraction] <;>
-          exact le_rfl
+        simp [joinJSDissipation, relativePotential, add, capacity, positiveFraction]
+        exact le_rfl
   · by_cases hcy : capacity y = 0
     · have hyp : y.positive = 0 := by
         simp only [capacity] at hcy
@@ -355,8 +357,8 @@ theorem joinJSDissipation_nonneg (x y : CentrePair)
           simp only at hyp hyn
           subst yp
           subst yn
-          simp [joinJSDissipation, relativePotential, add, capacity, positiveFraction] <;>
-            exact le_rfl
+          simp [joinJSDissipation, relativePotential, add, capacity, positiveFraction]
+          exact le_rfl
     · unfold joinJSDissipation
       linarith [relativePotential_add_le_of_pos_capacity x y
         hxpos hxneg hypos hyneg

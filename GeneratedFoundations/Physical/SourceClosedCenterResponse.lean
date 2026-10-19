@@ -84,6 +84,19 @@ theorem diagonalBlocks_trace (A B : Module.End ℂ SourceCarrier) :
   rw [LinearMap.trace_conj', LinearMap.trace_prodMap']
 
 set_option maxHeartbeats 1200000 in
+/-- A general pair of chiral responses is measured by their actual operator
+difference. The common-response cancellation is its zero-defect case. -/
+theorem centre_trace_response_difference (A B : Module.End ℂ SourceCarrier) :
+    LinearMap.trace ℂ FullMatter (grading * diagonalBlocks A B) =
+      LinearMap.trace ℂ SourceCarrier (A - B) := by
+  calc
+    _ = LinearMap.trace ℂ FullMatter (diagonalBlocks A (-B)) := by
+      rfl
+    _ = LinearMap.trace ℂ SourceCarrier A + LinearMap.trace ℂ SourceCarrier (-B) :=
+      diagonalBlocks_trace A (-B)
+    _ = _ := by simp only [map_add, map_neg, sub_eq_add_neg]
+
+set_option maxHeartbeats 1200000 in
 /-- A common response has exactly zero centre trace, with all matrix entries
 retained. Positivity or diagonality inside a chiral block is not needed. -/
 theorem common_response_centre_trace (A : Module.End ℂ SourceCarrier) :
@@ -204,6 +217,9 @@ structure Conclusions : Prop where
   exchange_on_basis : ∀ i, exchange (fullBasis i) = fullBasis (exchangeIndex i)
   common_response_balance : ∀ A : Module.End ℂ SourceCarrier,
     LinearMap.trace ℂ FullMatter (grading * diagonalBlocks A A) = 0
+  response_difference : ∀ A B : Module.End ℂ SourceCarrier,
+    LinearMap.trace ℂ FullMatter (grading * diagonalBlocks A B) =
+      LinearMap.trace ℂ SourceCarrier (A - B)
   finite_trace : ∀ h, partition h = Real.cosh h
   unique_unbiased_probe : ∀ h, bias h = 0 ↔ h = 0
   positive_fluctuation : ∀ h, 0 < susceptibility h
@@ -220,6 +236,7 @@ theorem generated : Conclusions where
   grading_eigenvalues := grading_fullBasis
   exchange_on_basis := exchange_fullBasis
   common_response_balance := common_response_centre_trace
+  response_difference := centre_trace_response_difference
   finite_trace := partition_eq_cosh
   unique_unbiased_probe := bias_eq_zero_iff
   positive_fluctuation := susceptibility_pos

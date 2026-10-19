@@ -8,17 +8,21 @@ public import Mathlib.Analysis.Real.Pi.Bounds
 public import Mathlib.Tactic
 
 /-!
-# The actual finite-window TT coefficient
+# Reduced eight-branch TT coefficient
 
-The eight retained RP³ branches at level five are integrated with their
-Gaussian frequency weight. The torsion shift is the generated content value,
+This module defines the reduced eight-branch coefficient used by the
+certificate-conditional endpoint model. The branches are integrated with their
+Gaussian frequency weight; the torsion shift is the generated content value,
 not a parameter supplied to the endpoint certificate. Multiplicities include
-the three matter copies used by the V5 finite-window response.
+the three matter copies.
 
 At the self-consistent scale the change of frequency variable `u = c * omega`
-leaves a dimensionless coefficient `A₅`; the response is `A₅ / c`. Thus the
-positive endpoint is fixed by the integral itself. Numerical enclosures of
-this coefficient are additional, independently checkable propositions.
+leaves a dimensionless coefficient `A₅`; this model uses the response `A₅ / c`.
+The V5 certificate `tt_branch_reduction` proves externally that, on the
+endpoint bracket, the full active V5 spectrum is exactly these eight branches
+and that `A_V5(c)=A_5/c`; that bridge is not formalized in this module.
+Numerical enclosures of the coefficient are additional, independently
+checkable propositions about this coefficient model.
 -/
 
 @[expose] public section

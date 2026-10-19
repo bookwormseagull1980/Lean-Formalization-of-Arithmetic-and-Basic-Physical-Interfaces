@@ -3418,8 +3418,257 @@
       "label": "resolved-unresolved capacity conservation on the same generated source",
       "coverage_kind": "theorem",
       "scope": "For every genuine prime birth in a complete natural prefix, resolved capacity plus the capacity of its actual unresolved complement is identical before and after the update. Both complements are subsets of the same original source; no external capacity is introduced."
-    }
-  ],
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CoherentScaleTransport.conclusions",
+      "module": "GeneratedFoundations.Analysis.CoherentScaleTransport",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "capacity-restored common-response transport on the actual arithmetic source",
+      "coverage_kind": "theorem",
+      "scope": "The actual maximum-prime-factor update is the difference of paired old responses at L and L/p plus the natural-cutoff boundary. The complete coherent scale-energy increment retains the exact p^(-2 sigma) self-return and signed old-return correlation. Finite-source integrability is proved internally for every sigma>1/2 before any signed integral is split. The quadratic comparison is independent of cutoff and observation scale but still involves the actual old and paired energies; no uniform limiting coherent-energy bound is asserted. Arithmetic imports no physical premise."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CoherentScaleTransport.stage_energy_increment",
+      "module": "GeneratedFoundations.Analysis.CoherentScaleTransport",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete signed scale-energy increment after capacity restoration",
+      "coverage_kind": "theorem",
+      "scope": "For every actual generated prime and natural cutoff, the full energy increment equals the transported paired self-energy minus twice the old-return correlation, with the boundary already retained in the old response. No sign or bound on that correlation is assumed."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceClosedCenterResponse.centre_trace_response_difference",
+      "module": "GeneratedFoundations.Physical.SourceClosedCenterResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "physical centre trace of unequal chiral responses",
+      "coverage_kind": "theorem",
+      "scope": "On the generated full sixteen-dimensional carrier, the centre trace of the two actual response blocks is exactly the trace of their operator difference. Common-response balance is its zero-difference specialization. No arithmetic result is used."
+    },
+  {
+    "name": "GeneratedFoundations.Source.CommonSource.generated",
+    "module": "GeneratedFoundations.Source.CommonSource",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "one common zero-input Gaussian source",
+    "coverage_kind": "theorem",
+    "scope": "Both independent branch entries use this identical canonical source theorem. Unit covariance, the compositional law, three density times, state correlation and natural window are proved upstream."
+  },
+  {
+    "name": "GeneratedFoundations.Correlation.GeneratedSourceGround.coordinate_density",
+    "module": "GeneratedFoundations.Correlation.GeneratedSourceGround",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "common oscillator ground density",
+    "coverage_kind": "theorem",
+    "scope": "The actual Gaussian source law at b^2/2 has the oscillator ground-profile squared density in any trace-line isometric coordinate. Positive width and the original compositional-law premises remain explicit."
+  },
+  {
+    "name": "GeneratedFoundations.MathematicalInterface.generated",
+    "module": "GeneratedFoundations.MathematicalInterface",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "zero-input arithmetic response interface",
+    "coverage_kind": "theorem",
+    "scope": "The actual history, phase, matrix, response, reaction, occupation and shared differential systems are assembled without carrier, probability law, rate or positivity-certificate arguments and without importing Physical modules."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryObservation.energy_decomposition",
+    "module": "GeneratedFoundations.Arithmetic.HistoryObservation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual weighted reflection decomposition",
+    "coverage_kind": "theorem",
+    "scope": "On the actual complete history fibre, the generated positive law is reflection invariant. Its even and odd projections reconstruct every observation and their weighted energies add exactly."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseBundle",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique complete history-phase law",
+    "coverage_kind": "theorem",
+    "scope": "Translation invariance together with the already generated history marginal uniquely determines the positive probability on the actual history-phase fibre."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.energy_decomposition",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseBundle",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "retained phase-compression energy",
+    "coverage_kind": "theorem",
+    "scope": "The actual phase average is orthogonal to its retained zero-average residual for the generated history-phase probability. Both energies are retained."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.tomography",
+    "module": "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "full arithmetic finite matrix tomography",
+    "coverage_kind": "theorem",
+    "scope": "The action on the actual history-phase coefficient space determines every matrix coefficient, including off-diagonal coefficients."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.OccupationResponse.complete_energy_composition",
+    "module": "GeneratedFoundations.Arithmetic.OccupationResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "whole-root occupation energy composition",
+    "coverage_kind": "theorem",
+    "scope": "For native positive generated modes, energy is root^2-1 and multiplicative composition gives E(xy)=E(x)+E(y)+E(x)E(y). The joint term is retained."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.OccupationResponse.heat_nonvacuum_le",
+    "module": "GeneratedFoundations.Arithmetic.OccupationResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual occupation heat damping",
+    "coverage_kind": "theorem",
+    "scope": "Every native nonvacuum prime occupation has energy at least 3, and its heat weight is at most exp(-3t) for forward time. This is the occupation Hamiltonian, not the reaction generator."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryGibbsResponse.hessian_covariance",
+    "module": "GeneratedFoundations.Analysis.HistoryGibbsResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "connected Hessian of the actual history probability",
+    "coverage_kind": "theorem",
+    "scope": "The complete matrix log-partition Hessian restricted to actual diagonal history observations equals covariance under the generated persistent history law."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryPhaseResponse.generated",
+    "module": "GeneratedFoundations.Analysis.HistoryPhaseResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "full history-phase Hermitian response",
+    "coverage_kind": "theorem",
+    "scope": "The strictly positive reference is Gaussian root mass times the uniquely generated phase law. Its partition, normalized weights, full connected Hessian, scalar kernel and response rank are proved."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryCentralResponse.generated",
+    "module": "GeneratedFoundations.Analysis.HistoryCentralResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual history orientation fluctuation-response",
+    "coverage_kind": "theorem",
+    "scope": "At every exponential probe coordinate, the log-partition derivative is the actual orientation mean and its derivative is the actual variance. Reflection gives zero unperturbed bias; the unperturbed variance is computed from the real history law, not imposed to be one."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionForm.full_mixed_expansion",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionForm",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "full three-leg reaction action",
+    "coverage_kind": "theorem",
+    "scope": "Every actual additive and multiplicative assembly contributes its Gaussian conductance times (parent-left-right)^2, with all three pairwise mixed terms retained."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionOperator.mixed_hessian_operator",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionOperator",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual action-Hessian operator identity",
+    "coverage_kind": "theorem",
+    "scope": "The mixed variation of the actual reaction action equals the coefficient pairing with its incidence-conductance-adjoint operator."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionKernel.operator_zero_iff_leaf",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionKernel",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete finite reaction nullspace",
+    "coverage_kind": "theorem",
+    "scope": "For N>=1 the entire kernel consists exactly of leaf charge multiplied by the unit-leaf value. It is not the constant-function kernel of an ordinary graph Laplacian."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionKernel.equilibrium_unique_stationary",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionKernel",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique anchored actual reaction equilibrium",
+    "coverage_kind": "theorem",
+    "scope": "At each natural finite cutoff N>=1, prescribing the unit-leaf value selects a unique stationary actual history coefficient vector."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionComplex.unique_primitive",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionComplex",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete finite history integration",
+    "coverage_kind": "theorem",
+    "scope": "Every actual reaction one-cochain has a unique zero-cochain primitive after fixing its unit value to zero. The proof recursively retains both children and the unique parent assembly."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_square",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionComplex",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "graded history operator square",
+    "coverage_kind": "theorem",
+    "scope": "The weighted symmetric graded operator on actual zero- and one-cochains squares to the full previously derived reaction Hessian and the actual degree-one Laplacian."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionCovariance.action_covariant",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionCovariance",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "covariance of the full history action",
+    "coverage_kind": "theorem",
+    "scope": "Actual reflection reindexes every assembly and preserves its original Gaussian conductance, hence the entire common action and its mixed Hessian."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionFlow.energy_hasDerivAt",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "exact reaction-flow coefficient dissipation",
+    "coverage_kind": "theorem",
+    "scope": "The exponential of the full actual reaction generator has coefficient-energy derivative equal to minus the full reaction form, with no mixed terms removed."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionFlow.charge_preserved",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "leaf-charge conservation under actual evolution",
+    "coverage_kind": "theorem",
+    "scope": "The actual full reaction exponential preserves the coefficient pairing with its derived leaf-charge kernel at every finite cutoff."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionFlow.action_hasDerivAt",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "exact full-action dissipation",
+    "coverage_kind": "theorem",
+    "scope": "Along the actual reaction exponential the action derivative is minus the sum of the squared actual operator coefficients. No cutoff-independent positive reaction rate is included."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryCentralResponse.closed_hessian",
+    "module": "GeneratedFoundations.Analysis.HistoryCentralResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "same-source scalar and full-matrix response",
+    "coverage_kind": "theorem",
+    "scope": "At zero probe, the actual history orientation susceptibility equals its precise direction in the complete Hermitian Gaussian Hessian for every observation scale."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHodge.complete_hodge",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHodge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete finite history Hodge decomposition",
+    "coverage_kind": "theorem",
+    "scope": "The leaf-charge orthogonal remainder is represented by a unique coexact potential. That potential is computed from actual assembly basis primitives and Gaussian conductances."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHodge.pythagoras",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHodge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "orthogonal history energy decomposition",
+    "coverage_kind": "theorem",
+    "scope": "Coefficient energy is exactly the sum of the leaf-charge projection energy and orthogonal response energy. The finite cutoff and N>=1 remain explicit."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryResponseReduction.schur_identity",
+    "module": "GeneratedFoundations.Analysis.HistoryResponseReduction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "full Hermitian history Schur energy identity",
+    "coverage_kind": "theorem",
+    "scope": "The actual connected Hessian retains all off-diagonal observations and the complete eliminated directional energy. The scalar-kernel proof also covers null directions."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryResponseReduction.unique_coefficient",
+    "module": "GeneratedFoundations.Analysis.HistoryResponseReduction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique non-null history response reduction",
+    "coverage_kind": "theorem",
+    "scope": "The Schur coefficient is uniquely determined by Hessian orthogonality when the selected observation direction is non-null; no arbitrary positivity certificate is used at the root."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReflectionFlow.generated",
+
+    "module": "GeneratedFoundations.Analysis.HistoryReflectionFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "separate actual reflection exchange flow",
+    "coverage_kind": "theorem",
+    "scope": "The even history sector is fixed and the odd sector decays under its explicitly derived reflection generator. It is separate from the complete three-leg reaction flow."
+  }
+],
   "planned": [
     {"id": "A1", "target": "Minimal carrier, orientation and complex structure"},
     {"id": "A2", "target": "Compile and audit Gaussian existence and uniqueness; connect the generated tangent coordinate"},

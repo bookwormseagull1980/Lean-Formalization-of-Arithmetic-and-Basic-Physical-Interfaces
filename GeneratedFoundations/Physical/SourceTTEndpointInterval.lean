@@ -16,7 +16,9 @@ unique positive root of
 
 lies in `[27*A_lo/4, 27*A_hi/4]`.  The coefficient interval itself must be
 supplied by the RP³ TT spectral sum and Gaussian frequency integral; this
-module does not manufacture it from an external number.
+module does not manufacture it from an external number.  The V5 certificate
+`tt_branch_reduction` proves externally that the full active V5 spectrum
+reduces exactly to this eight-branch coefficient on the endpoint bracket.
 
 The algebraic maximum `4/27` and the uniqueness of the positive root are
 already proved in `SourceTensorResponseEndpoint`.

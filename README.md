@@ -58,7 +58,11 @@ compatibility bundle for finer layers.
 Lean proves the **structural** physical branch: source and Gaussian law,
 internal spectra, field spaces/operators/domains, YM nonlinear action and
 Hessian, the finite-occupation Fock core and its heat semigroup, collective
-linear gravity, `4/27`, `1/50`, and the TT endpoint root/interval layer.
+linear gravity, `4/27`, `1/50`, and a certificate-conditional TT endpoint
+root/interval layer for a **reduced eight-branch coefficient model** (given its
+coefficient interval). Its identification with the full V5 finite spectral
+sum is supplied by the separate V5 certificate described below; that bridge
+is not formalized in this Lean branch.
 V5 supplies the **numerical** layer: the TT spectral coefficient, Gaussian
 frequency integral, finite-domain `R=5` bounds and effective gravitational
 parameters.  `SourceTTEndpointInterval` consumes a V5 coefficient interval;
@@ -66,6 +70,45 @@ parameters.  `SourceTTEndpointInterval` consumes a V5 coefficient interval;
 selection.  The effective Einstein completion is macroscopic, not a
 microscopic closure of the collective TT response.  No independent graviton
 field or separate gravitational Fock space is introduced.
+
+### Yang--Mills mass gap proved in the generated IR-edge model
+
+The zero-argument theorem proves a **Yang--Mills mass gap** for the generated
+Yang--Mills operator. `CanonicalYangMills.generated` combines the nonlinear
+generated action, the self-adjoint differential Hessian (radial block plus the
+complete coclosed colour-connection block), the attained positive spectral
+bottom and the finite-occupation Fock gap. The relevant theorem names are
+`SourceHaarYangMillsHessian.operator_selfAdjoint`,
+`SourceHaarYangMillsHessian.complete_coercivity`,
+`SourceHaarYangMillsHessian.gap_attained` and
+`CanonicalYangMills.generated`.
+
+This is a mass-gap theorem for the **generated finite IR-edge operator**, not a
+proof of the Clay four-dimensional QCD mass-gap problem. It uses the IR edge
+`sqrt(2*pi)`, not the V5 TT endpoint `kL`, and it does not use a V5 numerical
+input. The separate V5 TT-endpoint number is a different operator and is not
+identified with this theorem.
+
+### The V5 TT-endpoint interface is an exact reduction
+
+`SourceTTGaussianCoefficient` defines the eight active branches with response
+`A_5/c`; `SourceTTEndpointInterval` proves the algebraic root/interval
+statement for that coefficient model. The V5 endpoint is the root of the full
+finite spectral sum `A_V5(c)=4/27`.
+
+V5's `tt_branch_reduction` certificate supplies the missing bridge: on the
+certified endpoint bracket the full active V5 spectrum consists of exactly
+these eight branches, and the change of variable `u=c*omega` proves
+`A_V5(c)=A_5/c` exactly. The V5 scaled-response interval is identical to the
+Lean coefficient interval. Thus the Lean root theorem applies to the V5 full
+response as an exact model reduction, not a numerical approximation.
+
+The bridge is a V5 table/interval certificate; it is not a Lean import and is
+not formalized inside this repository. `CanonicalYangMillsTT` remains a
+certificate-conditional comparison module, not a field of
+`CommonFoundation.Conclusions` and not a dependency of the zero-argument
+physical theorem. V5 remains a separate release whose calculation and test
+imports do not read this repository.
 
 The concrete matter bundle is now constructed on the generated Hermitian
 four-carrier with the complete source matter space as its fibre. Its global
@@ -280,6 +323,31 @@ scale `L`; its pointwise estimate does not assert all-scale integrability.
 The remaining growth estimate concerns the capacity-restored coherent
 integral, including the signed visible--outside response.
 
+`CoherentScaleTransport` implements the common-response comparison within
+the arithmetic branch itself. At a genuine maximum-prime birth, its response
+is the paired old response minus that same response at `L/p`, plus the actual
+unpaired cutoff boundary. With `E_sigma(S)` denoting the complete coherent
+scale energy of the finite generated set `S`, it proves
+
+```text
+E_sigma(after) - E_sigma(before)
+  = p^(-2 sigma) * E_sigma(paired) - 2 * C_sigma(before, paired at L/p).
+```
+
+Here `C_sigma` is the real signed correlation under the original scale
+measure. Its integrability is derived from the finite Gaussian source before
+linearity of the integral is used. The return coefficient applies to the
+capacity-restored square, and the old response includes the complete cutoff
+boundary. A quadratic comparison is applied only after combining these two
+responses; it retains the old energy and paired-return energy separately.
+It is not a bound on the signed correlation that can be discarded in an
+iteration. This module imports only arithmetic and analysis modules.
+
+The physical branch independently proves that the centre trace of responses
+`diag(A,B)` is `trace(A-B)`. Its common-response cancellation is the case
+`A=B`; it is not a statement that arbitrary unequal observation responses
+have vanishing centre trace. Neither branch uses the other as a premise.
+
 `GaussianPrefixTail` replaces the outside-cardinality bound by a convergent
 envelope. For `K = ceil(sqrt(R) * L) > 0`, put
 
@@ -395,8 +463,11 @@ this directory. `--manifest PATH` selects another JSON output. The record binds:
 
 The current record and audit log are build artifacts, ignored by Git by default.
 Release evidence is retained together in `verification/`: the manifest,
-its complete audit log, and a relative-file hash inventory. Public records
-use relative source paths and do not contain local installation paths. A source
+its complete audit log, and a relative-file hash inventory. Those preserved
+files are the V1.0 evidence snapshot (239 source files), not a claim that the
+current working tree is freshly verified; the current root audit is separate.
+Public records use relative source paths and do not contain local installation
+paths. A source
 change, an index or lock change, a verifier change, a changed tool or dependency,
 or a missing or changed audit log requires fresh verification before that
 record can be treated as current. Record presence alone is not a success check.
@@ -423,25 +494,28 @@ does not make an old numerical run current.
 ## Relation to the numerical software
 
 This repository is the sole maintained source of this proof library. The
-Coarse-Graining Genesis Framework V5 refers to a fixed source snapshot through
-`foundations-reference.json`; it does not maintain a second copy of these
-proofs. Its optional `python scripts/verify_v5.py --foundations` entry invokes
-this repository's verifier. Use `--foundations-project` or the
-`FOUNDATIONS_PROJECT` environment variable to select its location, and
-`--foundations-lake-exe` to select Lake when needed. The default checkout is
-the sibling directory `Foundations-from-Minimal-Change`.
+Coarse-Graining Genesis Framework V5 is a separate, self-contained release: its
+calculation and test imports do not read this checkout, and it carries its own
+small Lean 4.7 archive under `lean_proofs/`. V5 has no
+`foundations-reference.json` and no `--foundations` verification entry; the
+earlier cross-repository pin was removed.
 
-The V5 entry requires a newly completed audit, checks the resulting independent
-record, and saves its identity and SHA-256 with the aggregate verification.
-The record's scope remains the currently implemented library. Its presence
-does not certify the full manuscript chain. Reading the aggregate status
-checks the saved proof record, local proof sources, verifier and audit log;
+The two releases are therefore independent build units. The only cross-reference
+is documentary and one-way: the certificate-conditional TT-endpoint module
+(`SourceTTResponse` / `CanonicalYangMillsTT`) describes the numerical interval
+supplied by the V5 endpoint calculation, while the zero-argument
+`CanonicalClosedWorld.generated` entry does not use that V5 TT model.
+
+A complete run of this repository writes its own independent
+`verification-manifest.json`; it does not update V5's numerical run record.
+The record's scope remains the currently implemented library. Its presence does
+not certify the full manuscript chain or any numerical run. Reading the saved
+status checks the proof record, local proof sources, verifier and audit log;
 it does not rerun compilation or inspect the current compiler installation.
 
-The V5 reference pins proof sources, the Lean and Lake configuration,
-dependency lock, theorem index and verifier. Downloaded dependencies and
-build caches are not a second source of truth. An altered proof snapshot
-must not be reported as the pinned one. Numerical-run hashes are not
+Downloaded dependencies and build caches are not a second source of truth. An
+altered proof snapshot must not be reported as the pinned one. Numerical-run
+hashes are not
 refreshed merely because a proof check passed. For proof development without
 physical reproduction or aggregate-record publication, use this repository's
 `scripts/verify_foundations.py` directly.
@@ -494,6 +568,37 @@ absence of custom axioms does not establish that every downstream choice is
 forced uniquely by the root datum. Independent external proof checking has
 not been performed.
 
+## Parallel mathematical and physical constructions
+
+Both branches use `Source.CommonSource.generated`, the same zero-argument
+construction from `Source.CanonicalRoot.generated`. The mathematical response
+entry is `MathematicalInterface.generated`; the physical response entry is
+`SourcePhysicalInterface.generatedCore`. `CommonFoundation.generated` gathers
+them. The mathematical entry has no transitive dependency on `Physical`.
+
+The mathematical instances use complete generated histories, their finite
+phase fibres, the persistent positive source law and native prime occupations.
+Their full Hermitian Gibbs response includes off-diagonal observations. The
+actual reaction action contains every ordered three-leg assembly and all its
+mixed terms. Its varied Hessian is the same operator used in the finite
+reaction evolution and in the squared graded differential.
+
+The history complex has a unique unit-anchored primitive and a separate
+orthogonal leaf-charge/coexact decomposition. The finite reaction evolution
+preserves leaf charge, dissipates coefficient energy by the reaction form and
+dissipates action by the squared actual operator. Schur reduction of the
+complete Gibbs Hessian retains the eliminated energy, including singular
+directions through the proved scalar kernel. The orientation probe satisfies
+the exact log-partition and variance identities; its zero-probe susceptibility
+is the same direction of that full Gaussian Hessian.
+
+[BRANCH_ALIGNMENT.md](BRANCH_ALIGNMENT.md) gives the 56-feature construction
+ledger and the declaration-level review procedure. Feature coverage and
+individual declaration review are separate. A finite reaction evolution
+does not establish an infinite-history limit or a cutoff-independent
+positive reaction-gap theorem. Different arithmetic and physical carriers
+retain their own dimensions, invariant directions and response constants.
+
 ## Constructed physical interface
 
 `GeneratedFoundations.CanonicalClosedWorld.generated` is the single
@@ -529,7 +634,7 @@ constants; it is not an additional assumption of the root construction.
 | Torsion content `1/50` | `SourceTorsionContent.generated` | The generated hypercharge operator gives `sum c*Y^2=10/3`; the left/charged-right counts are `8/7`; the charged quotient has dimension `15`. Hence `(N_L-N_R)/(N_f*sum Y^2)=1/50` as a rational theorem, not a fitted parameter. |
 | V5 finite Gaussian TT coefficient | `SourceTTGaussianCoefficient.generated`, `existsUnique_endpoint` | The eight retained branches use the generated torsion value and the actual Gaussian frequency integrals. Their coefficient `A5` is strictly positive and selects the unique positive radius `27*A5/4` with response `A5/c=4/27`. These integral and uniqueness results are outputs of the zero-argument physical interface. |
 | Complete matter centre response | `SourceClosedCenterResponse.generated` | The actual sixteen-state basis carries the generated grading and exchange. Exchange preserves the total capacity for every weight on this carrier. Every common left/right matrix response has zero centre trace. Its finite exponential trace is `cosh h`; the logarithmic response is `tanh h`, with positive susceptibility `1/cosh(h)^2`. The exponential probe family has a unique unbiased point, with centre bias zero, fluctuation one and restoring Hessian one. The neutral direction is retained. |
-| V5 TT-endpoint Yang--Mills model (separate) | `SourceTTResponse.EndpointCertificate`, `endpointCertificateOfBounds`, `CanonicalYangMillsTT.generated` | A geometric enclosure of the actual coefficient places its unique radius between the critical radius and the IR edge. Every endpoint certificate has this same radius; it contains no independent response value. The condensed TT-endpoint Yang--Mills conclusion uses that geometric enclosure and remains separate from the IR-edge Yang--Mills theorem. |
+| V5 TT-endpoint Yang--Mills model (separate, reduced coefficient) | `SourceTTResponse.EndpointCertificate`, `endpointCertificateOfBounds`, `CanonicalYangMillsTT.generated` | A geometric enclosure of the reduced eight-branch coefficient places its unique radius between the critical radius and the IR edge. Every endpoint certificate has this same radius; it contains no independent response value. The condensed TT-endpoint Yang--Mills conclusion uses that enclosure and remains separate from the IR-edge Yang--Mills theorem. The exact reduction from the full V5 finite spectral response is certified separately in V5 and is not formalized here. |
 | Geometric volume and colour covariance | `SourceProjectiveVolume.roundMeasure_total`, `SourceGeneratedYangMillsGap.transverseCovarianceAction_eq`, `CanonicalYangMills.sourceColourContraction` | The actual ambient polar measure and two-sheeted quotient give `pi^2*L^3`. Isotropic variance with the generated total intensity is fixed across the 24 spatial-colour components; the two transverse directions and the actual adjoint double commutator compute the connection response shift. |
 | Orientation reversal of the nonlinear response | `CanonicalYangMills.responseAction_orientation_reverse` | Conjugating the complete connection jet preserves its curvature trace, connection norm and common radial response. Together with the source orientation classification, this identifies the response in the two orientation presentations. |
 | Differentiated source spinor | `SourceSpinorCovariantDerivative.polynomialDirac_eq_contraction`, `SourceSpinorHaarBlock.differential_normalizedSynthesis`, `SourceSpinorClosedSpectrum.closedDirac_unique`, `SourceSpinorResolvent.spectrum_half_integers` | The Koszul formula computes the spin connection from the original trace-metric source frame. Clifford contraction gives the actual field differential. Its complete Haar basis yields a unique self-adjoint closure on the full weighted-square domain, spectrum `+/- (k+3/2)` and a full-domain squared-norm lower bound `9/4`. Bounded two-sided resolvents exclude additional continuous and residual spectrum. |

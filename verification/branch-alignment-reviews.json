@@ -1,0 +1,444 @@
+{
+  "GeneratedFoundations.Physical.SourceFrameConstruction.relativeTransition": {
+    "source_sha256": "5006e0878d1120c8fa4522d732263b466a46ff04b0421a0a9bee0f3c250d4932",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition"
+    ],
+    "objects": "Relative effective-group frames of the physical matter carrier versus relative finite phase frames of the actual complete history-phase fibre.",
+    "comparison": "Both transitions are the difference or quotient of two frames acting on the same carrier.",
+    "hypotheses_and_scope": "The physical comparison quantifies over selected frame families; the arithmetic transition acts on the already constructed fibre using q-p in ZMod(n+1). No identification of the two frame groups is made."
+  },
+  "GeneratedFoundations.Physical.SourceFrameConstruction.relativeTransition_comp": {
+    "source_sha256": "5006e0878d1120c8fa4522d732263b466a46ff04b0421a0a9bee0f3c250d4932",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition_cocycle"
+    ],
+    "objects": "Composition of the actual relative transitions in the two branch-specific carriers.",
+    "comparison": "The intermediate frame cancels exactly; the arithmetic theorem gives the equality on every fibre element.",
+    "hypotheses_and_scope": "The physical theorem is a group product identity; the arithmetic theorem is the corresponding equality of actual translated states. Each uses its own composition convention."
+  },
+  "GeneratedFoundations.Physical.SourceFrameConstruction.relativeTransition_cocycle": {
+    "source_sha256": "5006e0878d1120c8fa4522d732263b466a46ff04b0421a0a9bee0f3c250d4932",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition_cocycle"
+    ],
+    "objects": "Relative physical frame cocycles on selected chart overlaps and the concrete arithmetic finite phase cocycle.",
+    "comparison": "The arithmetic identity holds everywhere on its actual fibre and therefore also after restriction to any overlap.",
+    "hypotheses_and_scope": "The arithmetic base is the generated positive root index. This is a discrete flat transition system, not an asserted spacetime connection or a classification of all bundles."
+  },
+  "GeneratedFoundations.Physical.SourceQuadraticResponse.endomorphismCoordinates": {
+    "source_sha256": "e56add67ae38490a95cdc260755e61ddea73f4e3c1cd380515ca23a161e039b1",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.representation",
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.reconstruct",
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.composition"
+    ],
+    "objects": "Matrix coordinates of all endomorphisms of the actual physical quadratic carrier and of the actual arithmetic history-phase coefficient carrier.",
+    "comparison": "Explicit algebra equivalences preserve every matrix entry and composition, with unique reconstruction.",
+    "hypotheses_and_scope": "The physical equivalence uses its proved homogeneous monomial coordinate equivalence; the arithmetic space is already a complete finite coefficient space. This comparison does not assert that the arithmetic native phase/reflection generators alone generate all matrices."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.exchangeIndex_involution": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryObservation.reflect_involutive"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "Actual involutions on their own generated carriers.",
+    "hypotheses_and_scope": "The arithmetic reflection reverses each ordered vertex; the physical exchange swaps chiral slots."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.exchange_capacity_conservation": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryObservation.mean_reflect"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "Sum preservation follows by reindexing the actual involution.",
+    "hypotheses_and_scope": "Arithmetic reindexing includes its proved reflection-invariant history weights. The physical statement is for a finite unweighted sum."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.centreSign_exchange": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.score_reflect"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "The actual observation changes sign under the actual exchange.",
+    "hypotheses_and_scope": "The arithmetic orientation score is integer-valued and may vanish; it is not identified with a two-valued occupation character."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.partition": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.partition"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "Exponential partition uses the reference law of the actual carrier.",
+    "hypotheses_and_scope": "The physical reference is its normalized complete trace; the arithmetic reference is the persistent history law."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.bias": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.bias"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "The first exponential moment is divided by its own partition.",
+    "hypotheses_and_scope": "The observation coordinate is a probe variable of the fixed source, not a caller-supplied source input."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.susceptibility": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.susceptibility"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "Susceptibility is the actual second moment minus the squared first moment.",
+    "hypotheses_and_scope": "The arithmetic observable may have more than two values; no constant second moment is imported."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.partition_pos": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.partition_pos"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "Every actual exponential weight is positive and the fibre is nonempty.",
+    "hypotheses_and_scope": "The arithmetic proof uses positivity of the generated law for every positive root."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.partition_even": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.partition_even"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "The involution and its odd observable make the same partition even.",
+    "hypotheses_and_scope": "No two-level cosh formula is needed in the arithmetic instance."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.logPartition_hasDerivAt": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.logPartition_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.closed_hessian"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "Differentiating the same log partition gives its actual bias.",
+    "hypotheses_and_scope": "The closed scalar Hessian is also identified with the same direction of the full Gaussian history Hessian."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.bias_hasDerivAt": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.bias_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.variance_identity"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "Differentiating the actual bias gives the variance under the same exponential weights.",
+    "hypotheses_and_scope": "The equality holds for every real probe coordinate, including the unperturbed source."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.susceptibility_pos": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.susceptibility_nonneg",
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.susceptibility_zero_iff"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "The covariance is nonnegative and its exact degeneracy is computed.",
+    "hypotheses_and_scope": "The physical two-level sign is nonconstant and hence has strictly positive fluctuation. An arithmetic history fibre can have constant score; its theorem retains this actual degeneracy instead of asserting universal strict positivity."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.closed_partition": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.closed_partition"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "The partition of the unchanged source is one.",
+    "hypotheses_and_scope": "Normalization is proved from the actual history law, not imposed as a new probability."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.closed_bias": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.closed_bias"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "The unchanged source has zero mean of its reflection-odd observable.",
+    "hypotheses_and_scope": "The complete positive history source and its actual involution are used."
+  },
+  "GeneratedFoundations.Physical.SourceClosedCenterResponse.closed_susceptibility": {
+    "source_sha256": "1f600ed22154b4f322ba187d0b027fd8c074dec469790d20a9d9f42c04aaf73f",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.closed_susceptibility"
+    ],
+    "objects": "Complete physical chiral trace versus the generated arithmetic history law and its actual reflection observable.",
+    "comparison": "The unperturbed susceptibility is computed from the same actual source.",
+    "hypotheses_and_scope": "It equals the arithmetic score energy, not the physical carrier's numerical value one."
+  },
+  "GeneratedFoundations.Physical.SourceOrigin.coordinate_ground_density": {
+    "source_sha256": "a88898deac66571b2d1a634b6b0eca2b6ceafd3513006dd63f327c10dec7442d",
+    "status": "shared_result",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Correlation.GeneratedSourceGround.coordinate_density"
+    ],
+    "objects": "One original compositional Gaussian measure on the trace line and its oscillator-ground squared density.",
+    "comparison": "The physical declaration delegates to this same common theorem, with the same source time b^2/2.",
+    "hypotheses_and_scope": "Positive b and the declared compositional axioms are unchanged; this comparison does not identify the oscillator with the Neumann generator."
+  },
+  "GeneratedFoundations.Physical.SourceOrigin.original_ground_density": {
+    "source_sha256": "a88898deac66571b2d1a634b6b0eca2b6ceafd3513006dd63f327c10dec7442d",
+    "status": "shared_result",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Correlation.GeneratedSourceGround.original_density"
+    ],
+    "objects": "One original compositional Gaussian measure on the trace line and its oscillator-ground squared density.",
+    "comparison": "The physical declaration delegates to this same common theorem, with the same source time b^2/2.",
+    "hypotheses_and_scope": "Positive b and the declared compositional axioms are unchanged; this comparison does not identify the oscillator with the Neumann generator."
+  },
+  "GeneratedFoundations.Physical.SourceOrigin.ground_density_coordinate_independent": {
+    "source_sha256": "a88898deac66571b2d1a634b6b0eca2b6ceafd3513006dd63f327c10dec7442d",
+    "status": "shared_result",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Correlation.GeneratedSourceGround.coordinate_independent"
+    ],
+    "objects": "One original compositional Gaussian measure on the trace line and its oscillator-ground squared density.",
+    "comparison": "The physical declaration delegates to this same common theorem, with the same source time b^2/2.",
+    "hypotheses_and_scope": "Positive b and the declared compositional axioms are unchanged; this comparison does not identify the oscillator with the Neumann generator."
+  },
+  "GeneratedFoundations.Physical.SourceOrigin.common_densities": {
+    "source_sha256": "a88898deac66571b2d1a634b6b0eca2b6ceafd3513006dd63f327c10dec7442d",
+    "status": "shared_result",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Correlation.GeneratedSourceWindow.coordinate_profile_density",
+      "GeneratedFoundations.Correlation.GeneratedSourceWindow.coordinate_state_squared_density",
+      "GeneratedFoundations.Correlation.GeneratedSourceGround.coordinate_density"
+    ],
+    "objects": "The original law, squared translated Gaussian state and squared oscillator ground state in the same oriented trace coordinate.",
+    "comparison": "Identical three common density equalities, assembled in the physical theorem.",
+    "hypotheses_and_scope": "The three times remain b^2, b^2/4 and b^2/2. Positive width and the source-law premises are identical."
+  },
+  "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.heatWeight": {
+    "source_sha256": "3c42d480b757e19fd47564bded7c704a73c1c6ea7e6d16556bc1f6a2a40f391c",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heatWeight"
+    ],
+    "objects": "Physical finite coclosed-mode occupation versus the actual generated arithmetic prime occupation.",
+    "comparison": "The same exponential-weight construction, vacuum and semigroup mechanism, instantiated on each branch's own complete energy.",
+    "hypotheses_and_scope": "Both carriers are actual finite occupations. The arithmetic energy is root^2-1 and retains its multiplicative joint term; the physical occupation energy is the sum of its own one-particle energies. These are not asserted to be equal."
+  },
+  "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.heatWeight_zero": {
+    "source_sha256": "3c42d480b757e19fd47564bded7c704a73c1c6ea7e6d16556bc1f6a2a40f391c",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_zero"
+    ],
+    "objects": "Physical finite coclosed-mode occupation versus the actual generated arithmetic prime occupation.",
+    "comparison": "The same exponential-weight construction, vacuum and semigroup mechanism, instantiated on each branch's own complete energy.",
+    "hypotheses_and_scope": "Both carriers are actual finite occupations. The arithmetic energy is root^2-1 and retains its multiplicative joint term; the physical occupation energy is the sum of its own one-particle energies. These are not asserted to be equal."
+  },
+  "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.heatWeight_add": {
+    "source_sha256": "3c42d480b757e19fd47564bded7c704a73c1c6ea7e6d16556bc1f6a2a40f391c",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_semigroup"
+    ],
+    "objects": "Physical finite coclosed-mode occupation versus the actual generated arithmetic prime occupation.",
+    "comparison": "The same exponential-weight construction, vacuum and semigroup mechanism, instantiated on each branch's own complete energy.",
+    "hypotheses_and_scope": "Both carriers are actual finite occupations. The arithmetic energy is root^2-1 and retains its multiplicative joint term; the physical occupation energy is the sum of its own one-particle energies. These are not asserted to be equal."
+  },
+  "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.heatWeight_pos": {
+    "source_sha256": "3c42d480b757e19fd47564bded7c704a73c1c6ea7e6d16556bc1f6a2a40f391c",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_pos"
+    ],
+    "objects": "Physical finite coclosed-mode occupation versus the actual generated arithmetic prime occupation.",
+    "comparison": "The same exponential-weight construction, vacuum and semigroup mechanism, instantiated on each branch's own complete energy.",
+    "hypotheses_and_scope": "Both carriers are actual finite occupations. The arithmetic energy is root^2-1 and retains its multiplicative joint term; the physical occupation energy is the sum of its own one-particle energies. These are not asserted to be equal."
+  },
+  "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.heatWeight_vacuum": {
+    "source_sha256": "3c42d480b757e19fd47564bded7c704a73c1c6ea7e6d16556bc1f6a2a40f391c",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_vacuum"
+    ],
+    "objects": "Physical finite coclosed-mode occupation versus the actual generated arithmetic prime occupation.",
+    "comparison": "The same exponential-weight construction, vacuum and semigroup mechanism, instantiated on each branch's own complete energy.",
+    "hypotheses_and_scope": "Both carriers are actual finite occupations. The arithmetic energy is root^2-1 and retains its multiplicative joint term; the physical occupation energy is the sum of its own one-particle energies. These are not asserted to be equal."
+  },
+  "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.heatWeight_nonvacuum_le": {
+    "source_sha256": "3c42d480b757e19fd47564bded7c704a73c1c6ea7e6d16556bc1f6a2a40f391c",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_nonvacuum_le"
+    ],
+    "objects": "Physical finite coclosed-mode occupation versus the actual generated arithmetic prime occupation.",
+    "comparison": "The same exponential-weight construction, vacuum and semigroup mechanism, instantiated on each branch's own complete energy.",
+    "hypotheses_and_scope": "Both carriers are actual finite occupations. The arithmetic energy is root^2-1 and retains its multiplicative joint term; the physical occupation energy is the sum of its own one-particle energies. These are not asserted to be equal. Forward time and nonvacuum are explicit. The arithmetic lower bound is the proved value 3, independent of an occupation cutoff."
+  },
+  "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.Conclusions": {
+    "source_sha256": "3c42d480b757e19fd47564bded7c704a73c1c6ea7e6d16556bc1f6a2a40f391c",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.Conclusions"
+    ],
+    "objects": "Physical finite coclosed-mode occupation versus the actual generated arithmetic prime occupation.",
+    "comparison": "The same exponential-weight construction, vacuum and semigroup mechanism, instantiated on each branch's own complete energy.",
+    "hypotheses_and_scope": "Both carriers are actual finite occupations. The arithmetic energy is root^2-1 and retains its multiplicative joint term; the physical occupation energy is the sum of its own one-particle energies. These are not asserted to be equal."
+  },
+  "GeneratedFoundations.Physical.SourceYangMillsFockSemigroup.generated": {
+    "source_sha256": "3c42d480b757e19fd47564bded7c704a73c1c6ea7e6d16556bc1f6a2a40f391c",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.generated"
+    ],
+    "objects": "Physical finite coclosed-mode occupation versus the actual generated arithmetic prime occupation.",
+    "comparison": "The same exponential-weight construction, vacuum and semigroup mechanism, instantiated on each branch's own complete energy.",
+    "hypotheses_and_scope": "Both carriers are actual finite occupations. The arithmetic energy is root^2-1 and retains its multiplicative joint term; the physical occupation energy is the sum of its own one-particle energies. These are not asserted to be equal."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsAction.spectralAction": {
+    "source_sha256": "f0cf6e69dea03bd1a2ad4856ed8aa9edade6279fd75b2df08c9147446664ac32",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action"
+    ],
+    "objects": "Finite physical radial/coclosed coefficients versus all actual arithmetic history species.",
+    "comparison": "Concrete finite quadratic action or pairing on each carrier; no identification of carriers or spectra.",
+    "hypotheses_and_scope": "The physical finite shell witness suppresses branch multiplicities and has a positive diagonal mass. The arithmetic form sums every actual ordered reaction and preserves all three pair cross terms."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsAction.spectralAction_nonneg": {
+    "source_sha256": "f0cf6e69dea03bd1a2ad4856ed8aa9edade6279fd75b2df08c9147446664ac32",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionForm.form_nonneg"
+    ],
+    "objects": "Finite physical radial/coclosed coefficients versus all actual arithmetic history species.",
+    "comparison": "Concrete finite quadratic action or pairing on each carrier; no identification of carriers or spectra.",
+    "hypotheses_and_scope": "Physical positivity uses L>0 and z>0. Arithmetic positivity is derived from the Gaussian reaction conductances for all real observation coordinates alpha,L."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsAction.SpectralConfiguration.normSq": {
+    "source_sha256": "f0cf6e69dea03bd1a2ad4856ed8aa9edade6279fd75b2df08c9147446664ac32",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.pairZero"
+    ],
+    "objects": "Finite physical radial/coclosed coefficients versus all actual arithmetic history species.",
+    "comparison": "Concrete finite quadratic action or pairing on each carrier; no identification of carriers or spectra.",
+    "hypotheses_and_scope": "The arithmetic coefficient space consists of all retained actual histories. Its unweighted pairing is distinct from the separate Gaussian reaction-edge pairing."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsEquation.equation": {
+    "source_sha256": "94441d9ab4b9a7ee4e726c9c31567375f6cc295fc64786045b0f14aaf4fdb80a",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionOperator.operator",
+      "GeneratedFoundations.Analysis.HistoryReactionOperator.mixed_hessian_operator"
+    ],
+    "objects": "The Euler operator and variations of each branch's own actual finite action.",
+    "comparison": "Methodological analogue with explicitly compared kernels and constraints.",
+    "hypotheses_and_scope": "The arithmetic operator is incidence-adjoint-conductance-incidence, including mixed entries. It is not replaced by the physical diagonal shell formula."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsEquation.firstVariation": {
+    "source_sha256": "94441d9ab4b9a7ee4e726c9c31567375f6cc295fc64786045b0f14aaf4fdb80a",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionForm.form",
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action_line_deriv"
+    ],
+    "objects": "The Euler operator and variations of each branch's own actual finite action.",
+    "comparison": "Methodological analogue with explicitly compared kernels and constraints.",
+    "hypotheses_and_scope": "All perturbations in the finite arithmetic species space are admitted and the Gaussian source conductances are retained."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsEquation.spectralAction_add": {
+    "source_sha256": "94441d9ab4b9a7ee4e726c9c31567375f6cc295fc64786045b0f14aaf4fdb80a",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action_line",
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action_mixed_variation"
+    ],
+    "objects": "The Euler operator and variations of each branch's own actual finite action.",
+    "comparison": "Methodological analogue with explicitly compared kernels and constraints.",
+    "hypotheses_and_scope": "Both statements polarize their actual quadratic action, before taking any bound. The arithmetic theorem includes every reaction cross term."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsEquation.equation_eq_zero_iff": {
+    "source_sha256": "94441d9ab4b9a7ee4e726c9c31567375f6cc295fc64786045b0f14aaf4fdb80a",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionKernel.operator_zero_iff_leaf",
+      "GeneratedFoundations.Analysis.HistoryReactionKernel.equilibrium_unique_stationary"
+    ],
+    "objects": "The Euler operator and variations of each branch's own actual finite action.",
+    "comparison": "Methodological analogue with explicitly compared kernels and constraints.",
+    "hypotheses_and_scope": "The physical reduced positive operator has trivial kernel. The arithmetic operator has precisely leaf charge, and has a unique equilibrium only after the unit value is specified; N>=1 is explicit."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsEquation.firstVariation_self_pos": {
+    "source_sha256": "94441d9ab4b9a7ee4e726c9c31567375f6cc295fc64786045b0f14aaf4fdb80a",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionKernel.positive_on_anchored"
+    ],
+    "objects": "The Euler operator and variations of each branch's own actual finite action.",
+    "comparison": "Methodological analogue with explicitly compared kernels and constraints.",
+    "hypotheses_and_scope": "Strict arithmetic positivity requires the actual unit observation to vanish and the vector to be nonzero. The physical positive reduced space already removed its gauge kernel."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFlow.spectralFlow": {
+    "source_sha256": "50e2a1f350221c7abe1e777e863a24a4c8f50d4cef281e6aa9014829ab4b5d44",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow"
+    ],
+    "objects": "Physical diagonal reduced-shell flow and the arithmetic full history-reaction exponential.",
+    "comparison": "The evolution belongs to the action-derived operator in each branch.",
+    "hypotheses_and_scope": "The arithmetic exponential uses the full reaction operator, not the separate reflection exchange and not a diagonal surrogate."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFlow.flow_zero_time": {
+    "source_sha256": "50e2a1f350221c7abe1e777e863a24a4c8f50d4cef281e6aa9014829ab4b5d44",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_zero"
+    ],
+    "objects": "Physical diagonal reduced-shell flow and the arithmetic full history-reaction exponential.",
+    "comparison": "The evolution belongs to the action-derived operator in each branch.",
+    "hypotheses_and_scope": "Zero time is the identity on every actual species coefficient."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFlow.flow_add_time": {
+    "source_sha256": "50e2a1f350221c7abe1e777e863a24a4c8f50d4cef281e6aa9014829ab4b5d44",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_add"
+    ],
+    "objects": "Physical diagonal reduced-shell flow and the arithmetic full history-reaction exponential.",
+    "comparison": "The evolution belongs to the action-derived operator in each branch.",
+    "hypotheses_and_scope": "Composition order is reversed in notation only; both apply the same one-parameter operator exponential."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFlow.spectralAction_flow_le_initial": {
+    "source_sha256": "50e2a1f350221c7abe1e777e863a24a4c8f50d4cef281e6aa9014829ab4b5d44",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.action_antitone"
+    ],
+    "objects": "Physical diagonal reduced-shell flow and the arithmetic full history-reaction exponential.",
+    "comparison": "The evolution belongs to the action-derived operator in each branch.",
+    "hypotheses_and_scope": "Physical assumptions L>0,z>0,forward time are retained in the original theorem. The arithmetic exact action derivative is minus the squared full operator and gives monotonicity; no cutoff-independent positive reaction rate is claimed."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFlow.spectralAction_flow_le": {
+    "source_sha256": "50e2a1f350221c7abe1e777e863a24a4c8f50d4cef281e6aa9014829ab4b5d44",
+    "status": "pending_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.action_hasDerivAt",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_nonvacuum_le"
+    ],
+    "objects": "Uniform physical reduced-action decay versus actual arithmetic reaction dissipation and occupation damping.",
+    "comparison": "These are two distinct arithmetic outputs; their combination has not established a cutoff-independent positive reaction gap.",
+    "hypotheses_and_scope": "The arithmetic reaction rate would require an additional concrete coercivity estimate on its conserved-charge complement. Occupation damping alone does not prove that estimate."
+  }
+}

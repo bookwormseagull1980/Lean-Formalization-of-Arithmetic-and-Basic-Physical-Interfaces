@@ -84,7 +84,7 @@ theorem mem_stageCutoffBoundary {p N n : ℕ} :
 
 /-- The pre-stage state is exactly the paired interior plus its cutoff
 boundary. -/
-theorem stageBefore_eq_union (p N : ℕ) (hp : 0 < p) :
+theorem stageBefore_eq_union (p N : ℕ) (_hp : 0 < p) :
     stageBefore p N =
       stagePairedBase p N ∪ stageCutoffBoundary p N := by
   ext n

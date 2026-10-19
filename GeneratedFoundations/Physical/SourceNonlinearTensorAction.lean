@@ -174,9 +174,9 @@ theorem dilationRay_hasDerivAt_zero (c : ℝ) (q : Tensor) (A : Connection)
         2 * (1 - c) * pairing background (quadraticRicci A) +
         4 * c * pairing q (quadraticRicci A)) 0 := by
   have htwo : HasDerivAt (fun t : ℝ => 1 + 2 * t) 2 0 := by
-    convert! ((hasDerivAt_id (0 : ℝ)).const_mul 2).const_add 1 using 1 <;> ring
+    convert! ((hasDerivAt_id (0 : ℝ)).const_mul 2).const_add 1 using 1; ring
   have hone : HasDerivAt (fun t : ℝ => 1 + t) 1 0 := by
-    convert! (hasDerivAt_id (0 : ℝ)).const_add 1 using 1 <;> ring
+    exact (hasDerivAt_id (0 : ℝ)).const_add 1
   have h := ((htwo.pow 2).mul_const (pairing q (linearRicci dA))).add
     ((hone.pow 2).mul
       ((hasDerivAt_const (0 : ℝ)
@@ -188,7 +188,9 @@ theorem dilationRay_hasDerivAt_zero (c : ℝ) (q : Tensor) (A : Connection)
         (c * pairing q (quadraticRicci A)) * (1 + 2 * t)) :=
     funext (dilationRay_expansion c q A dA)
   rw [heq]
-  convert! h using 1 <;> norm_num <;> ring
+  convert! h using 1
+  norm_num
+  ring
 
 def dilationWardResidual (c : ℝ) (q : Tensor) (A : Connection)
     (dA : ConnectionDerivative) : ℝ :=

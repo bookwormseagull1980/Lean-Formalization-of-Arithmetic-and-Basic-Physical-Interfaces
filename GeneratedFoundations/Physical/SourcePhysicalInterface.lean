@@ -24,6 +24,7 @@ public import GeneratedFoundations.Geometry.SourceTensorTTSystem
 public import GeneratedFoundations.Geometry.SourceOneFormSystem
 public import GeneratedFoundations.Source.MinimalUnbiasedChange
 public import GeneratedFoundations.Source.CanonicalRealization
+public import GeneratedFoundations.Source.CommonSource
 
 /-!
 # Generated source to the basic physical interfaces
@@ -174,6 +175,7 @@ gauge, matter, Yang--Mills, torsion, spinor, TT, one-form and Hermitian
 outputs, while leaving the finer intermediate bundles in the compatibility
 `Conclusions` below. -/
 structure CoreConclusions : Prop where
+  common_source : Source.CommonSource.Conclusions
   geometry : Geometry.GeneratedSourceGeometry.Conclusions
   gauge : GaugeConclusions
   matter : MatterConclusions
@@ -201,6 +203,7 @@ structure CoreConclusions : Prop where
 /-- Extended compatibility bundle.  Prefer `CoreConclusions` for the public
 zero-argument surface; this structure retains the finer intermediate layers. -/
 structure Conclusions : Prop where
+  common_source : Source.CommonSource.Conclusions
   geometry : Geometry.GeneratedSourceGeometry.Conclusions
   split_response : SourceSplitResponse.SplitConclusions
   frames : SourceFrameConstruction.FrameConclusions
@@ -273,6 +276,7 @@ argument. Unit covariance has already fixed the width to one and the canonical
 complex rotation supplies the orientation. -/
 theorem generated : Conclusions := by
   refine {
+  common_source := Source.CommonSource.generated
   geometry := Geometry.GeneratedSourceGeometry.generatedSourceGeometry
   split_response := SourceSplitResponse.generated_split
   frames := SourceFrameConstruction.generated_frames
@@ -332,6 +336,7 @@ theorem generated : Conclusions := by
 /-- The lean zero-argument physical surface, selected from the full
 compatibility bundle. -/
 theorem generatedCore : CoreConclusions where
+  common_source := generated.common_source
   geometry := generated.geometry
   gauge := {
     group := generated.generated_gauge_group

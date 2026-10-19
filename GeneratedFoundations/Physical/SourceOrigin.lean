@@ -1,6 +1,7 @@
 module
 
 public import GeneratedFoundations.Correlation.GeneratedSourceWindow
+public import GeneratedFoundations.Correlation.GeneratedSourceGround
 public import GeneratedFoundations.Source.OrientedTraceCoordinate
 public import GeneratedFoundations.Physical.SourceSpinIdentification
 public import GeneratedFoundations.Geometry.SourceEndpointCasimir
@@ -47,19 +48,19 @@ theorem coordinate_ground_density (e : TraceLieSpace d h ≃ₗᵢ[ℝ] ℝ)
     {b : ℝ} (hb : 0 < b) :
     (μ (b ^ 2 / 2)).map e =
       volume.withDensity (fun y => ENNReal.ofReal (groundProfile b y ^ 2)) :=
-  (groundProfile_squared_measure (hμ.coordinate_axioms e) hb).symm
+  GeneratedSourceGround.coordinate_density d h hμ e hb
 
 /-- Pulling back the coordinate density recovers the original measure itself. -/
 theorem original_ground_density (e : TraceLieSpace d h ≃ₗᵢ[ℝ] ℝ)
     {b : ℝ} (hb : 0 < b) :
     μ (b ^ 2 / 2) =
-      (volume.withDensity (fun y => ENNReal.ofReal (groundProfile b y ^ 2))).map e.symm := by
-  rw [← coordinate_ground_density d h hμ e hb, isometry_map_symm_map]
+      (volume.withDensity (fun y => ENNReal.ofReal (groundProfile b y ^ 2))).map e.symm :=
+  GeneratedSourceGround.original_density d h hμ e hb
 
 theorem ground_density_coordinate_independent
     (e f : TraceLieSpace d h ≃ₗᵢ[ℝ] ℝ) {b : ℝ} (hb : 0 < b) :
-    (μ (b ^ 2 / 2)).map e = (μ (b ^ 2 / 2)).map f := by
-  rw [coordinate_ground_density d h hμ e hb, coordinate_ground_density d h hμ f hb]
+    (μ (b ^ 2 / 2)).map e = (μ (b ^ 2 / 2)).map f :=
+  GeneratedSourceGround.coordinate_independent d h hμ e f hb
 
 /-- One oriented coordinate supplies all three densities. -/
 theorem common_densities (o : OrientationOnCarrier d) {b : ℝ} (hb : 0 < b) :

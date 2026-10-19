@@ -3,7 +3,7 @@ title: "Lean Formalization of Arithmetic and Basic Physical Interfaces"
 message: "Cite this proof library with the exact source revision and the relevant companion manuscript. Attribution terms are preserved in LICENSE."
 type: software
 version: "1.0.0"
-date-released: 2026-10-09
+date-released: 2026-10-19
 repository-code: "https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces"
 authors:
   - family-names: Guo

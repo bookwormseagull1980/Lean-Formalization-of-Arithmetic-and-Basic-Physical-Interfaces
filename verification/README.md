@@ -1,8 +1,9 @@
 # Verification evidence
 
-This directory preserves a completed verification of **Lean Formalization
-of Arithmetic and Basic Physical Interfaces**. The Lean namespace remains
-`GeneratedFoundations`.
+This directory preserves the V1.0 verification snapshot of **Lean
+Formalization of Arithmetic and Basic Physical Interfaces**. The Lean namespace
+remains `GeneratedFoundations`; this snapshot is not a claim of current
+working-tree freshness.
 
 The evidence consists of `verification-manifest.json`, the complete
 `foundations-audit.txt`, and `SHA256SUMS.json`. The manifest binds the proof
@@ -30,3 +31,17 @@ can precede message rendering and do not measure the full wall-clock run.
 The verification scope is the implemented library identified by the manifest,
 not every claim in the companion manuscripts. See `AXIOMS.md` and
 `theorem-index.json` for the axiom inventory and statement-level scope.
+
+## Branch comparison records
+
+`branch-alignment-features.json` records the 56 construction features and
+their actual mathematical proof targets. `branch-alignment-reviews.json`
+contains declaration-specific object and scope comparisons. The generated
+`branch-alignment-inventory.json` enumerates every physical source declaration,
+checks those records against the exact source hashes and checks the two
+independent import graphs. Unreviewed declarations remain explicit.
+
+These three source ledgers do not extend the preserved V1.0 verification
+snapshot above. A current kernel/environment audit is produced separately by
+the foundations verifier; only its source-bound manifest establishes which
+compiled declarations and transitive axioms were checked in that run.

@@ -1,0 +1,251 @@
+# Arithmetic and physical branches of the same generated source
+
+The two branches start from the same object, not from two isomorphic inputs.
+`Source.CommonSource.generated` uses `Source.CanonicalRoot.generated` and
+accepts no arguments. It constructs the compositional Gaussian law, its
+coordinate density, the squared state density, the oscillator ground density,
+the state correlation and the natural correlation window. Unit covariance
+fixes the dimensionless width; orientation is the original source orientation.
+
+The public dependency direction is
+
+```text
+Source.CanonicalRoot.generated
+              |
+Source.CommonSource.generated
+              |
+      +-------+-----------------------------+
+      |                                     |
+MathematicalInterface.generated     PhysicalInterface
+      |                                     |
+ArithmeticFoundation               SourcePhysicalInterface.generatedCore
+      +------------------+------------------+
+                         |
+            CommonFoundation.generated
+                         |
+          CanonicalClosedWorld.generated
+```
+
+The mathematical entry imports no module in `Physical`. Shared Gaussian,
+operation-algebra and differential-geometric results remain in the common
+library. The arithmetic response constructions instantiate that library on
+actual generated histories, phase fibres, modes and occupations.
+
+## What is being compared
+
+Three forms of correspondence occur.
+
+1. **Shared construction.** Both branches use the identical source law,
+   differential operator or theorem. A second copy of its proof is unnecessary.
+2. **Concrete arithmetic instance.** The method is shared, but the carrier is
+   the generated history or history--phase fibre. Its probability, action,
+   operator and observables are constructed on that carrier.
+3. **Different output.** For example, the reaction kernel is leaf charge,
+   whereas an exchange generator has constants in its kernel. Physical carrier
+   dimensions and response constants do not prescribe arithmetic dimensions
+   or cutoff levels.
+
+The numbered feature table below organizes the implementation. It is separate
+from the declaration inventory. A feature can have its main construction in
+place while individual physical lemmas still await a comparison of their
+types and scopes. The declaration inventory records that distinction rather
+than assigning completion from a file name.
+
+## A. Common source and canonical entry
+
+| Item | Mathematical construction and actual proof | Comparison and scope |
+|---|---|---|
+| A1 Minimal carrier | `Source.CanonicalRoot.generated`; `CommonSource.generated.minimal` | The same canonical minimal carrier in both branches. |
+| A2 Orientation and original flow | `Source.CanonicalRealization.orientation`; original rotation and trace coordinate | Orientation is internally fixed; reversal is a comparison of presentations. |
+| A3 Compositional law | `CommonSource.generated.compositional`, `.unique_law` | Uniqueness is in the declared compositional covariance and scaling class, at positive times. |
+| A4 State, ground state and correlation | `CommonSource.same_source_window`; `Correlation.GeneratedSourceGround.coordinate_density` | Profile, squared state and squared oscillator ground state are densities at times `b²`, `b²/4`, `b²/2`. They are not identified at a single time. |
+| A5 Natural endpoints | `CommonSource.generated.natural_endpoints`, `.positive_window` | Same UV/IR endpoints, with unit-covariance width. |
+| A6 Reflection window | `Arithmetic.GeneratedFoundation.minimalChange_sourceClosure`; closed Neumann domain | Boundary closure and operator domain are included in the existing source construction. |
+| A7 Scale coordinates | `Spectral.NeumannScaleTransport.domainEquiv`, `.normalized_operator_intertwining`, `.heat_intertwining` | Transport includes domains and the required change of heat time. |
+| A8 Root entry | `CommonSource.generated`; `MathematicalInterface.generated` | Both the common source and mathematical interface are zero-argument theorems. Observation indices occur inside their conclusions. |
+
+`Correlation.GeneratedSourceGround` extracts the genuinely shared ground
+density comparison from the physical-origin module. The former physical
+declarations retain their names and types as wrappers around this common
+proof. Thus the mathematical branch does not import a physical spin theorem
+merely to identify the Gaussian ground density.
+
+## B. Operations and finite response
+
+| Item | Mathematical construction and actual proof | Comparison and scope |
+|---|---|---|
+| B1 Differential operations | `Operations.HermiteSource`; `SourceFiniteCornerAlgebra.sourceAnnihilator_differential`, `.sourceCreator_differential` | Actual Gaussian differential operations, shared before branching. |
+| B2 Ladders and finite corners | `SourceFiniteCornerAlgebra.adjoin_sourceAnnihilator_eq_top` | The finite corner is generated by the compressed source operations. |
+| B3 Hermite and Neumann systems | Complete Hermite system; `Spectral.neumannSpectrum_eq_range`; `NeumannScaleTransport` | These are distinct operators: oscillator and interval eigenvalues must not be equated. Same-source origin does not supply a generator-intertwining unitary between unequal spectra. |
+| B4 Actual finite algebra | `Arithmetic.HistoryMatrixAlgebra.representation`, `.faithful`, `.full` | Every matrix acts on the full history--phase coefficient space. |
+| B5 Central character | `Arithmetic.GeneratedPrimeParity.modeCentre_mul`, `.modeCentre_unique`; `HistoryObservation` reflection projectors | Prime-occupation parity and history reflection are separately identified actions, not assumed identical. |
+| B6 Complete observation | `HistoryMatrixAlgebra.coefficient`, `.tomography`; shared `SourceCoherentObservations` | Full matrix coefficients are reconstructible, including off-diagonal entries. |
+| B7 Concrete Gibbs reference | `HistoryGibbsResponse.partition_eq_root`, `.conditional_weight`; `HistoryPhaseResponse.partition_eq_root`, `.conditional_weight` | The reference is the actual positive Gaussian intensity on histories or complete history--phase fibres. |
+| B8 Connected Hessian | Both concrete response modules' `.full_hessian`, `.hessian_kernel`, `.response_rank` | Full Hermitian perturbations are retained. The scalar kernel and traceless positivity follow from the shared Gibbs theorem. |
+
+For diagonal history observations, `HistoryGibbsResponse.hessian_covariance`
+identifies the connected Hessian with covariance under the actual persistent
+history law. `orientation_hessian` specializes this identity to the actual
+reflection-odd orientation observable, whose mean is proved to vanish.
+
+## C. Complete carriers, phase frames and quotients
+
+| Item | Mathematical construction and actual proof | Comparison and scope |
+|---|---|---|
+| C1 Complete carrier | `CompleteNaturalObject.CompleteFiber`; `HistoryPhaseBundle.Fiber`, `.Total` | Root evaluation retains the complete ordered history and finite phase kernel. |
+| C2 Central sectors | `HistoryObservation.evenPart`, `.oddPart`, `.reconstruct`, `.energy_decomposition` | These are actual reflection projections and an exact weighted orthogonal decomposition. |
+| C3 Kernel and quotient | `HistoryPhaseBundle.phaseProjection_unique`, `.invariant_factorization`, `.residual_zero_iff` | Phase-invariant observations factor uniquely through the history projection. |
+| C4 Characters | `CompleteNaturalObject.phaseKernelEquiv`; `GeneratedPrimeParity`; `Analysis.FiniteResidueFourier.residueFourier_inversion` | Actual roots-of-unity characters and native occupation parity are available, with their own comparison classes. |
+| C5 Faithfulness | `HistoryPhaseBundle.translate_faithful`; `HistoryMatrixAlgebra.reconstruct` | Translation is faithful on the actual phase fibre; the matrix action determines every coefficient. |
+| C6 Frame transitions | `HistoryPhaseBundle.transition_cocycle`, `.reflection_translate` | Transitions are actual phase translations and commute with history reflection. |
+| C7 Concrete bundle and law | `HistoryPhaseBundle.Total`, `.probability_total`, `.probability_unique` | No arbitrary bundle enters the root. Translation invariance plus the already generated history marginal uniquely select the phase law. |
+| C8 Effective action and retained part | `.invariant_factorization`, `.retained_residual_decomposition`, `.energy_decomposition` | Compression has an explicit residual; its energy is retained, not discarded. |
+
+The phase transport here is flat: relative translations satisfy the cocycle
+identity exactly. A nonzero curvature cannot be inferred merely from the
+presence of frames. The common source geometry below supplies its own actual
+covariant derivatives and curvature calculations.
+
+## D. Differential systems and complete domains
+
+| Item | Mathematical construction and actual proof | Comparison and scope |
+|---|---|---|
+| D1 Inner product and measure | Original trace-line Gaussian measure; Haar field inner products; `HistoryObservation.pairing`; `HistoryPhaseBundle.mean` | Each response uses its actual measure. A finite fibre mean is not substituted for the Haar field norm. |
+| D2 Connection | Actual shared source-frame covariant derivatives; arithmetic phase transitions | Continuous source geometry and discrete fibre transport remain distinct constructions. |
+| D3 Curvature | Shared source connection calculations; exact arithmetic transition cocycle | The curvature is computed from the selected transport, rather than prescribed by analogy. |
+| D4 Scalar operator | `Spectral.neumannSpectrum_eq_range`, `.neumannResolvent_existsUnique`; `NeumannHeatSemigroup.rightGenerator_domain_iff` | The operator, compact resolvent and exact heat-generator domain belong to the full interval Hilbert space. |
+| D5 One-form system | Shared `SourceOneFormSystem`; `HistoryReactionComplex.unique_primitive`; `HistoryReactionHodge.complete_hodge`, `.pythagoras` | The shared Haar complex is complete. The separate finite history complex has a weighted adjoint, a unique anchored primitive and an orthogonal leaf-charge/coexact decomposition. |
+| D6 Graded Dirac system | Shared `SourceSpinorSystem`; `HistoryReactionComplex.dirac_symmetric`, `.dirac_square`, `.dirac_odd` | The continuous spinor domain is shared. The actual finite history operator is symmetric and odd; its square contains the previously derived full reaction Hessian. |
+| D7 Tensor constraints | `Geometry.SourceTensorTTSystem.generated` | Shared actual tensor Haar space, weak TT constraints and closed rough operator. |
+| D8 Completeness | The three shared system interfaces; complete Neumann and Hermite constructions | Spectrum labels alone do not replace the domain and completeness clauses. |
+
+These shared source systems are themselves mathematical constructions. Their
+reuse by the arithmetic entry does not import a physical branch conclusion.
+They also do not identify arithmetic addition with an Einstein equation or
+multiplication with a Yang--Mills connection.
+
+## E. Common action and its full variations
+
+| Item | Mathematical construction and actual proof | Comparison and scope |
+|---|---|---|
+| E1 Same-source response | `HistoryGibbsResponse.response`; `HistoryPhaseResponse.response` | Both are log-partition responses of the proved source probabilities. |
+| E2 Common action | `HistoryReactionForm.action`, `.conductance_from_children` | All actual ordered additive and multiplicative reaction channels enter one form. |
+| E3 First variation | `HistoryReactionForm.action_line_hasDerivAt`, `.action_line_deriv` | Exact derivative of the actual finite action along every perturbation. |
+| E4 Mixed Hessian | `.full_mixed_expansion`, `.action_mixed_variation`; concrete Gibbs Hessians | All three pairwise terms of `parent-left-right` are retained. |
+| E5 Equilibrium and restoring form | `HistoryReactionKernel.operator_zero_iff_leaf`, `.unique_zero_action`, `.positive_on_anchored` | The complete finite kernel is leaf charge; fixing its unit value removes it. |
+| E6 Actual operator | `HistoryReactionOperator.adjoint_identity`, `.mixed_hessian_operator` | The incidence-adjoint operator is proved to be the Hessian of the action. |
+| E7 Retained reduction | `HistoryPhaseBundle.energy_decomposition`; `HistoryResponseReduction.schur_identity`, `.residual_energy_le` | Phase projection and full Hermitian-Hessian Schur reduction retain their complements. All matrix directions, including off-diagonal entries, remain in the latter form. |
+| E8 Nonlinear/history covariance | `HistoryReactionCovariance.form_covariant`, `.action_covariant`, `.mixed_hessian_covariant` | Reflection reindexes actual complete reactions and preserves the entire action. |
+
+The reaction differential is `f(parent)-f(left)-f(right)`. It is not an
+ordinary graph differential between two species. In particular constants are
+not generally stationary. `HistoryReactionKernel` derives the nullspace from
+the actual assembly relations instead of importing the kernel of a graph
+Laplacian.
+
+For the finite reaction complex, the recursive primitive fixes the unit-leaf
+value and is not an orthogonal projection. `HistoryReactionHodge` constructs
+the orthogonal projection separately: the leaf-charge coefficient is its
+inner product with the state divided by the squared leaf-charge norm. The
+remaining state is in the range of the actual Gaussian-weighted adjoint. Its
+coexact potential is computed using the primitives of individual assembly
+basis vectors and their actual conductances. Adjoint injectivity proves
+uniqueness. The degree-one harmonic kernel is zero.
+
+The matrix-response reduction uses the actual connected Gibbs Hessian, rather
+than the raw coefficient pairing. Writing this form as `B`, its residual along
+an observation direction `J` is `K - B(K,J)/B(J,J) * J`. The exact identity is
+`B(K,K) = B(residual,residual) + B(K,J)^2/B(J,J)`. If `B(J,J)=0`, the proved
+scalar kernel gives `B(K,J)=0`. A nonzero denominator is needed only for
+uniqueness of the coefficient.
+
+## F. Evolution, conservation and occupation
+
+| Item | Mathematical construction and actual proof | Comparison and scope |
+|---|---|---|
+| F1 Actual rates | `CompleteHistoryDynamics.mergeRate_pos`, `.mergeRate_unique` | The merge rate is selected by the actual Gaussian intensities and unit reverse rate. |
+| F2 Detailed balance | `.edge_detailed_balance`; `HistoryReactionForm.conductance_from_children` | The full finite form sums the actual detailed-balance conductances. |
+| F3 Generator | `HistoryReactionFlow.linearOperator`, `.generator`, `.generator_apply`; shared complete Neumann generator | The reaction generator acts on every finite species coefficient and is continuous there; the Neumann generator has its full unbounded domain. |
+| F4 Evolution | `HistoryReactionFlow.flow_add`, `.flow_hasDerivAt`; `HistoryReflectionFlow.flow_add` | The full reaction flow is the exponential of its actual operator. Reflection exchange is a separate flow. |
+| F5 Conservation | `HistoryReactionOperator.leafCharge_conservation`; `HistoryReactionFlow.charge_preserved`; existing capacity/window reconstruction | Conservation follows from the actual incidence kernel. Window complements and birth terms stay in their original ledgers. |
+| F6 Energy and dissipation | `HistoryReactionFlow.energy_hasDerivAt`, `.action_hasDerivAt`; `HistoryReflectionFlow.flow_energy` | Coefficient energy dissipates by the reaction form; action dissipates by the squared actual operator. Neither argument drops mixed terms. |
+| F7 Occupation lift | `Arithmetic.OccupationResponse.complete_energy_composition`, `.heat_semigroup`, `.nonvacuum_gap` | Native multiplicative occupation energy is `root²-1`. Its composition includes `E(x)E(y)`; it is not replaced by independent additive particle energies. |
+| F8 Finite/full scope | `NeumannHeatSemigroup.heat_stronglyContinuous`, `.rightGenerator_iff`; finite history exponentials | The shared full heat evolution is complete. An infinite reaction-history generator obtained by taking all cutoffs remains a separate construction; the finite theorem does not assert that limit. |
+
+The occupation output has the same scope as the physical finite-occupation
+heat-weight interface: a semigroup of weights, a fixed vacuum and damping of
+every nonvacuum occupation. It does not add an unproved interacting measure
+or identify two different occupation Hamiltonians.
+
+## G. Capacity, observations and audit
+
+| Item | Mathematical construction and actual proof | Comparison and scope |
+|---|---|---|
+| G1 Effective rank | `HistoryGibbsResponse.response_rank`; `HistoryPhaseResponse.response_rank`; shared finite-corner capacity | Rank is computed from the actual fibre cardinality and the proved scalar kernel. |
+| G2 Fluctuation/response | `HistoryCentralResponse.logPartition_hasDerivAt`, `.bias_hasDerivAt`, `.closed_hessian`, `.susceptibility_zero_iff` | The log-partition derivative is the actual bias and its derivative is the actual variance, at every probe coordinate. At zero this is exactly the corresponding full Gaussian-Hessian direction. |
+| G3 Windows and tails | `GaussianWindowCapacity.window_partition`, `.signed_reconstruction`; `GaussianPrefixTail.coherent_energy_uniform_error` | Visible and outside parts are retained with their actual Gaussian weights. |
+| G4 Internal choices | `HistoryPhaseBundle.probability_unique`; `HistoryFrontier.scheduledPeak_eq_registerNumber` | The phase law and deterministic evaluation order are internally characterized. Physical `R=5` is not made into an arithmetic selection theorem. |
+| G5 Certificate interface | Existing exact finite tail and window inequalities; declaration/environment verifier | Exact Lean bounds and finite source data are separated from any external numerical interval. No numerical interval is a root input. |
+| G6 Normalization | `CommonSource.generated.normalized_width`; `NeumannScaleTransport.normalized_eigenvalue` | Mathematical outputs are dimensionless. Physical unit calibration remains in its own interface. |
+| G7 Reconstruction | `HistoryMatrixAlgebra.tomography`; `HistoryPhaseBundle.retained_residual_decomposition`; window signed reconstruction | Full coefficients and retained complements recover the original observations before taking bounds. |
+| G8 Public entry | `MathematicalInterface.generated`; shared source field in both branch interfaces | Source-level dependency checks are separate from compilation and transitive axiom checks. |
+
+## Declaration inventory and verification
+
+`verification/branch-alignment-features.json` contains the 56 feature records.
+Each names actual mathematical objects, constructions, hypotheses and
+reachable proof declarations. Shared constructions, arithmetic instances,
+distinct outputs and partial scopes are recorded separately. A feature record
+does not mark every auxiliary physical declaration as reviewed.
+
+`scripts/branch_alignment.py` enumerates every ordinary explicitly named
+declaration in every physical source module. A module must be assigned
+explicitly; additions cannot silently inherit a completion category. The
+inventory includes the exact source-file hash, the assigned method family,
+candidate arithmetic modules and the declaration-specific review record.
+
+A completed review requires actual mathematical declarations, an object
+comparison, a comparison type and the hypotheses/scope. Mathematical targets
+must be reachable from the mathematical entry. An old source hash, a removed
+declaration, an unknown status, a physical proof used as the arithmetic target,
+or a completed entry without a mathematical target is rejected.
+
+The source inventory is generated by:
+
+```text
+python -m scripts.branch_alignment --reviews verification/branch-alignment-reviews.json --feature-ledger verification/branch-alignment-features.json --output verification/branch-alignment-inventory.json
+```
+
+`--require-complete`
+also rejects pending construction or pending review records. It does not turn
+the inventory into a compiled proof certificate.
+
+The import check is symmetric: neither branch entry may depend on the other
+branch, and the common source may depend on neither. General analysis and
+geometry remain in the common library; a directory name alone does not make
+such a theorem a branch-specific construction.
+
+The final verification uses the repository-pinned Lean toolchain, the two
+independent entries and the common aggregate. The existing foundations
+verifier checks the actual compiled declaration environment and its transitive
+axioms. Its exact source snapshot determines the scope of a verification
+record. The branch inventory never substitutes for that check.
+
+## Remaining implementation review
+
+The current inventory contains 91 physical modules and 2,665 explicitly named
+physical declarations. Of these, 42 have completed object-and-scope comparisons
+(38 concrete analogues and four shared results); 2,622 await individual review,
+and one reviewed declaration still requires a construction. Pending review is
+not a count of missing mathematical constructions. These counts belong to the
+current inventory snapshot and do not follow from the 56-feature table.
+
+The new common source, actual finite history response, quotient, matrix action,
+reaction form/operator/kernel, covariance, evolution and occupation modules
+are connected to the mathematical entry. The complete declaration review must
+still compare the individual auxiliary claims in the physical modules,
+particularly their classification classes, non-diagonal reductions,
+certificate premises and limits. The infinite reaction-history limit and any
+cutoff-independent restoring rate require separate theorems if that stronger
+scope is selected. This work does not change the established complete source
+heat operators or the physical branch's own hypotheses.

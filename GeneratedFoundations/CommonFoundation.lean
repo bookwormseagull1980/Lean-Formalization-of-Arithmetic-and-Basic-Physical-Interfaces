@@ -7,8 +7,10 @@ public import GeneratedFoundations.Analysis.MaximumPrimeFactorRelativeStage
 public import GeneratedFoundations.Analysis.NaturalSourceScaleBudget
 public import GeneratedFoundations.Analysis.GaussianPrefixTail
 public import GeneratedFoundations.Analysis.CapacityRestoredWindowBudget
+public import GeneratedFoundations.Analysis.CoherentScaleTransport
 public import GeneratedFoundations.Physical.SourcePhysicalInterface
 public import GeneratedFoundations.Source.CanonicalRealization
+public import GeneratedFoundations.MathematicalInterface
 
 /-!
 # Common arithmetic and physical foundation
@@ -49,6 +51,7 @@ namespace GeneratedFoundations.CommonFoundation
 realization of minimal unbiased compositional change. This proposition has no
 carrier, law, width, orientation, coupling or boundary argument. -/
 structure Conclusions : Prop where
+  common_source : Source.CommonSource.Conclusions
   source_closure :
     SourceClosure CanonicalRoot.generated.change CanonicalRoot.generated.minimal
       orientation CanonicalRoot.generated.law width width_pos
@@ -94,12 +97,15 @@ structure Conclusions : Prop where
   gaussian_prefix_tail : Analysis.GaussianPrefixTail.Conclusions
   natural_source_scale_budget : Analysis.NaturalSourceScaleBudget.Conclusions
   capacity_restored_window : Analysis.CapacityRestoredWindowBudget.Conclusions
+  coherent_scale_transport : Analysis.CoherentScaleTransport.Conclusions
+  mathematical_interface : MathematicalInterface.Conclusions
   physical_interface : Physical.SourcePhysicalInterface.CoreConclusions
 
 /-- Minimal unbiased compositional change generates the complete common world
 without any realization argument. -/
 theorem generated : Conclusions := by
   refine {
+    common_source := Source.CommonSource.generated
     source_closure := GeneratedFoundation.minimalChange_sourceClosure
       CanonicalRoot.generated.change CanonicalRoot.generated.minimal orientation
       CanonicalRoot.generated.compositional width_pos
@@ -125,6 +131,8 @@ theorem generated : Conclusions := by
     gaussian_prefix_tail := Analysis.GaussianPrefixTail.conclusions
     natural_source_scale_budget := Analysis.NaturalSourceScaleBudget.conclusions
     capacity_restored_window := Analysis.CapacityRestoredWindowBudget.conclusions
+    coherent_scale_transport := Analysis.CoherentScaleTransport.conclusions
+    mathematical_interface := MathematicalInterface.generated
     physical_interface := Physical.SourcePhysicalInterface.generatedCore }
   · let : Fact (0 < windowLengthGenerated width) :=
       ⟨windowLengthGenerated_pos width_pos⟩

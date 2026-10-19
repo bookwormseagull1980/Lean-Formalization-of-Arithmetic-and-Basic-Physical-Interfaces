@@ -50,11 +50,15 @@ dependencies passed compilation. Its conclusion includes the constructed
 common-source geometry, the single natural-number branch with its complete
 history and phase fibres, intrinsic history observables, exact whole-history
 transport and detailed-balance dynamics, and the complete basic physical
-interface specified below. Intrinsic prime parity and squarefree signed
-observations, their classical Liouville/Moebius comparisons, finite Fourier
-and signed-energy constructions, and the finite generated recovery kernel
-live in the separate `GeneratedFoundations.ResearchExtensions` entry and are
-not dependencies of this common-root theorem.
+interface specified below. The current root also includes native prime
+occupations and parity, the finite signed occupation and endpoint ledgers,
+complete finite history/phase observations, the connected Hermitian response,
+the actual reaction Hessian, its finite evolution and its orthogonal Hodge
+decomposition. These are fields of the proved mathematical interface, not
+additional arguments to the root. `GeneratedFoundations.ResearchExtensions`
+also assembles these constructions with the separate finite residue Fourier
+and recovery-kernel modules. Their dependency scope is determined by actual
+imports rather than by the name of the aggregate entry.
 
 The canonical-root evidence is its separately named record and audit log
 above, bound to the source, index, dependencies, verifier scripts and

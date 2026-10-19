@@ -43,6 +43,7 @@ before the edge energies are added. -/
 def resistanceEnergy (conductance : E → ℝ) (load : E → ℝ) : ℝ :=
   ∑ e, load e ^ 2 / conductance e
 
+omit [Fintype E] in
 /-- A unit-modulus centre phase cannot increase the complete load on any
 physical edge.  The phase remains inside the shared-edge sum. -/
 theorem abs_twistedEdgeLoad_le_untwistedEdgeLoad

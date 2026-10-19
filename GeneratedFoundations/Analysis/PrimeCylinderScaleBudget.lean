@@ -105,8 +105,8 @@ theorem integrableOn_baseMellinDensity (sigma : ℝ) (hsigma : 0 < sigma) :
         Real.exp (-Real.pi * x ^ (1 : ℝ))) (Set.Ioi 0) :=
     integrableOn_rpow_mul_exp_neg_mul_rpow (by linarith) zero_lt_one Real.pi_pos
   exact (hone.sub hpi).congr_fun (fun x hx => by
-    simp only [Pi.sub_apply, baseMellinDensity, Real.rpow_one]
-    ring) measurableSet_Ioi
+    simp only [Pi.sub_apply, baseMellinDensity, Real.rpow_one, neg_one_mul,
+      mul_sub]) measurableSet_Ioi
 
 /-- Positive Mellin weight in logarithmic scale. -/
 def logWeight (sigma u : ℝ) : ℝ≥0∞ :=

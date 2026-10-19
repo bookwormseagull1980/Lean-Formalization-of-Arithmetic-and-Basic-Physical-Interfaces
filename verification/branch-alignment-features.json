@@ -1,0 +1,577 @@
+{
+  "A1": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Source.CanonicalRoot.generated"
+    ],
+    "objects": "The canonical minimal orthogonal-change carrier.",
+    "construction": "Both branches use the identical generated datum.",
+    "hypotheses_and_scope": "No carrier parameter enters the root."
+  },
+  "A2": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Source.CommonSource.generated"
+    ],
+    "objects": "The original oriented trace coordinate and rotation.",
+    "construction": "Canonical orientation is part of the common source construction.",
+    "hypotheses_and_scope": "Orientation comparisons are internal coordinate statements."
+  },
+  "A3": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Source.CommonSource.generated"
+    ],
+    "objects": "One compositional Gaussian probability law.",
+    "construction": "The common theorem includes composition and uniqueness.",
+    "hypotheses_and_scope": "The uniqueness class is the declared unbiased compositional covariance/scaling class, at positive times."
+  },
+  "A4": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Source.CommonSource.same_source_window",
+      "GeneratedFoundations.Correlation.GeneratedSourceGround.coordinate_density"
+    ],
+    "objects": "State, correlation kernel and oscillator ground density.",
+    "construction": "The same original measure is evaluated at its proved three times.",
+    "hypotheses_and_scope": "Times b^2, b^2/4 and b^2/2 remain distinct."
+  },
+  "A5": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Source.CommonSource.generated"
+    ],
+    "objects": "Natural UV/IR correlation endpoints and the finite window.",
+    "construction": "Endpoint values and positivity are outputs of the common source.",
+    "hypotheses_and_scope": "Unit covariance fixes the dimensionless width."
+  },
+  "A6": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.GeneratedFoundation.minimalChange_sourceClosure"
+    ],
+    "objects": "The reflecting source interval, Hilbert space and closed Neumann operator.",
+    "construction": "The existing generated source closure is used directly.",
+    "hypotheses_and_scope": "The actual boundary condition and domain are preserved."
+  },
+  "A7": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.domainEquiv",
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_operator_intertwining",
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.heat_intertwining"
+    ],
+    "objects": "Realizations at two positive window lengths.",
+    "construction": "The unitary transports domains and normalized generators with the necessary time change.",
+    "hypotheses_and_scope": "An internal comparison family, not additional root input."
+  },
+  "A8": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.MathematicalInterface.generated",
+      "GeneratedFoundations.Source.CommonSource.generated"
+    ],
+    "objects": "The mathematical public interface.",
+    "construction": "Zero-argument assembly of actually proved outputs.",
+    "hypotheses_and_scope": "States and observation cutoffs are quantified inside conclusions."
+  },
+  "B1": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Operations.SourceFiniteCornerAlgebra.sourceAnnihilator_differential",
+      "GeneratedFoundations.Operations.SourceFiniteCornerAlgebra.sourceCreator_differential"
+    ],
+    "objects": "The source Gaussian differential operations.",
+    "construction": "The actual differential equalities are common before branching.",
+    "hypotheses_and_scope": "Finite corners retain the projection explicitly."
+  },
+  "B2": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Operations.SourceFiniteCornerAlgebra.adjoin_sourceAnnihilator_eq_top"
+    ],
+    "objects": "The generated finite Hermite corner.",
+    "construction": "The compressed source operation generates its whole star algebra.",
+    "hypotheses_and_scope": "The finite corner size remains explicit."
+  },
+  "B3": {
+    "scope_class": "distinct_outputs",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_eigenvalue",
+      "GeneratedFoundations.Operations.SourceFiniteCornerAlgebra.matrixEquiv"
+    ],
+    "objects": "The Hermite oscillator and reflected interval systems.",
+    "construction": "Reuse their complete constructions with their own operator laws.",
+    "hypotheses_and_scope": "Different spectra are not called generator-intertwining equivalent."
+  },
+  "B4": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.representation",
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.faithful",
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.full"
+    ],
+    "objects": "All coefficients of an actual history--phase fibre.",
+    "construction": "Matrix-to-endomorphism equivalence on this concrete finite space.",
+    "hypotheses_and_scope": "Full linear action; no unjustified unitary claim for the raw coefficient norm."
+  },
+  "B5": {
+    "scope_class": "distinct_outputs",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.GeneratedPrimeParity.modeCentre_mul",
+      "GeneratedFoundations.Arithmetic.HistoryObservation.reconstruct"
+    ],
+    "objects": "Prime-occupation parity and history exchange.",
+    "construction": "Each action and its preserved structure are separately proved.",
+    "hypotheses_and_scope": "The two actions are not identified by their signs alone."
+  },
+  "B6": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.coefficient",
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.tomography"
+    ],
+    "objects": "Complete matrix observations on the history--phase coefficient space.",
+    "construction": "Basis preparation recovers every matrix coefficient.",
+    "hypotheses_and_scope": "Off-diagonal entries are retained."
+  },
+  "B7": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryGibbsResponse.partition_eq_root",
+      "GeneratedFoundations.Analysis.HistoryPhaseResponse.conditional_weight"
+    ],
+    "objects": "Actual Gaussian history intensities and the complete phase law.",
+    "construction": "Logarithms of strictly positive generated intensities instantiate Gibbs response.",
+    "hypotheses_and_scope": "No caller-selected probability law or positivity certificate."
+  },
+  "B8": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryPhaseResponse.full_hessian",
+      "GeneratedFoundations.Analysis.HistoryPhaseResponse.hessian_kernel",
+      "GeneratedFoundations.Analysis.HistoryPhaseResponse.response_rank"
+    ],
+    "objects": "All Hermitian directions on the complete finite fibre.",
+    "construction": "The concrete connected Hessian has the proved scalar kernel.",
+    "hypotheses_and_scope": "Traceless positivity and rank refer to this actual finite fibre."
+  },
+  "C1": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.Total",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_total"
+    ],
+    "objects": "Every generated root with retained history and finite phase.",
+    "construction": "The dependent bundle is built from complete arithmetic fibres.",
+    "hypotheses_and_scope": "Positive roots use n+1; the arithmetic zero is not silently identified with a positive fibre."
+  },
+  "C2": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryObservation.evenPart_idempotent",
+      "GeneratedFoundations.Arithmetic.HistoryObservation.oddPart_idempotent",
+      "GeneratedFoundations.Arithmetic.HistoryObservation.energy_decomposition"
+    ],
+    "objects": "The actual history reflection sectors.",
+    "construction": "Weighted orthogonal projections with exact reconstruction.",
+    "hypotheses_and_scope": "No forced physical dimension or sector multiplicity."
+  },
+  "C3": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.invariant_factorization",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.residual_zero_iff"
+    ],
+    "objects": "Phase-invariant functions and discarded phase detail.",
+    "construction": "The projection has a unique quotient factor and an explicit residual.",
+    "hypotheses_and_scope": "Only phase-blind observations descend unchanged."
+  },
+  "C4": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.character_composition",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.translate_faithful"
+    ],
+    "objects": "Native occupation character and actual finite phase translations.",
+    "construction": "Characters are tied to the existing occupation and fibre operations.",
+    "hypotheses_and_scope": "Occupation parity and additive phase are not conflated."
+  },
+  "C5": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.translate_faithful",
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.reconstruct"
+    ],
+    "objects": "Phase translation and the complete coefficient action.",
+    "construction": "Faithfulness and unique matrix reconstruction on the actual carrier.",
+    "hypotheses_and_scope": "Uniqueness is for these specified action coordinates."
+  },
+  "C6": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition_cocycle",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.reflection_translate"
+    ],
+    "objects": "Relative phase frames over the history fibre.",
+    "construction": "Actual translations satisfy the transition cocycle.",
+    "hypotheses_and_scope": "This transport is flat, with no extra curvature inferred."
+  },
+  "C7": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_unique",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_marginal"
+    ],
+    "objects": "The constructed complete history--phase bundle and its positive law.",
+    "construction": "Translation invariance and the generated history marginal uniquely fix its law.",
+    "hypotheses_and_scope": "The marginal is already generated; it is not a caller root input."
+  },
+  "C8": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.phaseProjection_unique",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.retained_residual_decomposition",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.energy_decomposition"
+    ],
+    "objects": "Visible phase quotient and retained complement.",
+    "construction": "Unique projection, full reconstruction and weighted energy decomposition.",
+    "hypotheses_and_scope": "The complement is stored, not set to zero."
+  },
+  "D1": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryObservation.energy_eq_zero_iff",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.mean_eq_probability_sum",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.pairOne_zero_iff"
+    ],
+    "objects": "History probability and actual Gaussian reaction conductances.",
+    "construction": "Positive faithful pairings are proved on both actual cochain spaces.",
+    "hypotheses_and_scope": "The probability pairing and reaction-edge pairing remain distinct."
+  },
+  "D2": {
+    "scope_class": "distinct_outputs",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition_cocycle",
+      "GeneratedFoundations.Geometry.SourceOneFormSystem.generated"
+    ],
+    "objects": "Discrete phase transport and continuous common source connection.",
+    "construction": "Each is a concrete transport on its own carrier.",
+    "hypotheses_and_scope": "The discrete phase cocycle is not declared to be a nonzero continuous curvature."
+  },
+  "D3": {
+    "scope_class": "distinct_outputs",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition_cocycle",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.differential_primitive"
+    ],
+    "objects": "Relative phase frames and the free assembly-history complex.",
+    "construction": "Exact flat cocycle and explicit integration of the actual reaction differential.",
+    "hypotheses_and_scope": "Algebraic associativity is not inserted as a new closed edge."
+  },
+  "D4": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.domainEquiv",
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_operator_intertwining"
+    ],
+    "objects": "The full reflected scalar operator and its domain.",
+    "construction": "The existing complete source operator is shared by both branches.",
+    "hypotheses_and_scope": "Scalar spectral labels alone are not substituted for its domain."
+  },
+  "D5": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.adjoint_identity",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.unique_primitive",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.zero_decomposition",
+      "GeneratedFoundations.Analysis.HistoryReactionHodge.pythagoras",
+      "GeneratedFoundations.Analysis.HistoryReactionHodge.unique_orthogonal_coefficient",
+      "GeneratedFoundations.Analysis.HistoryReactionHodge.complete_hodge"
+    ],
+    "objects": "Actual history zero- and one-cochains.",
+    "construction": "Weighted adjoint, a canonical chain contraction and the actual leaf-charge orthogonal decomposition are constructed.",
+    "hypotheses_and_scope": "The anchored primitive and coefficient-inner-product orthogonal reduction are distinct. Both use the actual finite differential; the degree-one harmonic kernel vanishes by adjoint injectivity."
+  },
+  "D6": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_symmetric",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_square",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_odd"
+    ],
+    "objects": "The graded finite history differential operator.",
+    "construction": "The weighted symmetric odd operator squares to the two actual Laplacians.",
+    "hypotheses_and_scope": "The degree-zero square is the previously derived full reaction Hessian."
+  },
+  "D7": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Geometry.SourceTensorTTSystem.generated"
+    ],
+    "objects": "The common source tensor Haar fields and weak constraints.",
+    "construction": "Reuse the complete tensor system before physical/arithmetic interpretation.",
+    "hypotheses_and_scope": "No arithmetic Einstein equation is inferred solely from source tensor constraints."
+  },
+  "D8": {
+    "scope_class": "distinct_outputs",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Geometry.SourceOneFormSystem.generated",
+      "GeneratedFoundations.Geometry.SourceSpinorSystem.generated",
+      "GeneratedFoundations.Geometry.SourceTensorTTSystem.generated",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.differential_surjective"
+    ],
+    "objects": "Complete continuous source systems and finite history cochains.",
+    "construction": "Full shared operator domains coexist with exhaustive finite history sums.",
+    "hypotheses_and_scope": "No finite-history theorem is promoted to an infinite reaction operator."
+  },
+  "E1": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryGibbsResponse.response",
+      "GeneratedFoundations.Analysis.HistoryPhaseResponse.partition_eq_root"
+    ],
+    "objects": "Log-partition response of the actual generated reference.",
+    "construction": "Strictly positive intensities and exact normalization select the response.",
+    "hypotheses_and_scope": "Observation perturbations are variables, not added source data."
+  },
+  "E2": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action",
+      "GeneratedFoundations.Analysis.HistoryReactionForm.conductance_from_children"
+    ],
+    "objects": "All ordered additive and multiplicative assemblies.",
+    "construction": "Their generated conductances enter one common action.",
+    "hypotheses_and_scope": "No reaction branch or repeated child incidence is removed."
+  },
+  "E3": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action_line_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action_line_deriv"
+    ],
+    "objects": "Actual finite history action.",
+    "construction": "Exact line derivative for every finite perturbation.",
+    "hypotheses_and_scope": "Gaussian source dependence is retained in its conductance."
+  },
+  "E4": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionForm.full_mixed_expansion",
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action_mixed_variation"
+    ],
+    "objects": "The full three-leg history response.",
+    "construction": "All three pairwise mixed terms are expanded before estimating.",
+    "hypotheses_and_scope": "No mixed block is assumed to vanish."
+  },
+  "E5": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionKernel.operator_zero_iff_leaf",
+      "GeneratedFoundations.Analysis.HistoryReactionKernel.equilibrium_unique_stationary",
+      "GeneratedFoundations.Analysis.HistoryReactionKernel.positive_on_anchored"
+    ],
+    "objects": "Actual equilibrium and constrained restoring form.",
+    "construction": "History induction determines the complete leaf-charge kernel.",
+    "hypotheses_and_scope": "The unit anchor and N>=1 are explicit; no uniform reaction gap follows merely from positivity."
+  },
+  "E6": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionOperator.mixed_hessian_operator",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_square"
+    ],
+    "objects": "Incidence, Gaussian conductance and actual Hessian.",
+    "construction": "The varied action and the squared graded operator give the same degree-zero operator.",
+    "hypotheses_and_scope": "This is an actual operator identity, not a separate spectral definition."
+  },
+  "E7": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.projection_residual_orthogonal",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.energy_decomposition",
+      "GeneratedFoundations.Analysis.HistoryResponseReduction.schur_identity",
+      "GeneratedFoundations.Analysis.HistoryResponseReduction.residual_energy_le"
+    ],
+    "objects": "The actual phase projection and complete Hermitian history Hessian.",
+    "construction": "The phase complement is retained. The full Gibbs Hessian admits exact directional Schur reduction, including off-diagonal observations and the eliminated energy.",
+    "hypotheses_and_scope": "The null-direction case follows from the proved scalar kernel. A unique Schur coefficient is asserted only for a non-null direction."
+  },
+  "E8": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionCovariance.action_covariant",
+      "GeneratedFoundations.Analysis.HistoryReactionCovariance.mixed_hessian_covariant"
+    ],
+    "objects": "The complete generated history action under reflection.",
+    "construction": "Reflection reindexes the actual channels and preserves conductances.",
+    "hypotheses_and_scope": "This symmetry is not asserted to be a full nonlinear spacetime gauge theory."
+  },
+  "F1": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.CompleteHistoryDynamics.mergeRate_pos",
+      "GeneratedFoundations.Arithmetic.CompleteHistoryDynamics.mergeRate_unique"
+    ],
+    "objects": "Actual merge and reverse rates.",
+    "construction": "Detailed balance and the generated intensities select the merge rate.",
+    "hypotheses_and_scope": "The reverse-rate normalization and comparison class remain explicit."
+  },
+  "F2": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.CompleteHistoryDynamics.edge_detailed_balance",
+      "GeneratedFoundations.Analysis.HistoryReactionForm.conductance_from_children"
+    ],
+    "objects": "All actual reaction edges.",
+    "construction": "Each true rate contributes its common Gaussian conductance to the whole form.",
+    "hypotheses_and_scope": "The sum includes every retained ordered channel."
+  },
+  "F3": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.generator",
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.generator_apply",
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.adjoint_identity"
+    ],
+    "objects": "The full finite history coefficient operator.",
+    "construction": "Finite dimensionality supplies continuity on the whole actual species space.",
+    "hypotheses_and_scope": "The existing complete Neumann operator separately retains its unbounded domain."
+  },
+  "F4": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_add",
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_hasDerivAt"
+    ],
+    "objects": "The exponential of the actual reaction generator.",
+    "construction": "Proved semigroup and evolution equation.",
+    "hypotheses_and_scope": "Not replaced by the distinct two-sector reflection flow."
+  },
+  "F5": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.charge_preserved",
+      "GeneratedFoundations.Analysis.GaussianWindowCapacity.capacity_conservation"
+    ],
+    "objects": "Leaf-charge conservation and retained window complements.",
+    "construction": "Conserved charge follows from the actual kernel; window capacity retains the outside source.",
+    "hypotheses_and_scope": "No external source is added to the closed generator."
+  },
+  "F6": {
+    "scope_class": "partial_scope",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.energy_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.action_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.action_antitone"
+    ],
+    "objects": "Coefficient energy and the actual reaction action.",
+    "construction": "Their derivatives are the negative form and negative operator square respectively.",
+    "hypotheses_and_scope": "Exact dissipation is proved; cutoff-independent positive reaction decay rate remains separate."
+  },
+  "F7": {
+    "scope_class": "distinct_outputs",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.complete_energy_composition",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.occupation_composition",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_nonvacuum_le"
+    ],
+    "objects": "Native prime occupation and whole-root Gaussian energy.",
+    "construction": "The actual occupation lift retains the multiplicative joint energy.",
+    "hypotheses_and_scope": "Its nonvacuum bound 3 belongs to this occupation Hamiltonian, not to every reaction generator."
+  },
+  "F8": {
+    "scope_class": "partial_scope",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.heat_intertwining",
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_hasDerivAt"
+    ],
+    "objects": "Complete shared heat evolution and finite reaction evolution.",
+    "construction": "The domain-preserving source heat flow and each actual finite history flow are established.",
+    "hypotheses_and_scope": "An infinite reaction-history generator with all cutoffs requires its own limit theorem."
+  },
+  "G1": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryPhaseResponse.response_rank",
+      "GeneratedFoundations.Analysis.HistoryGibbsResponse.response_rank"
+    ],
+    "objects": "All Hermitian directions of the actual finite fibre.",
+    "construction": "The rank is computed from the proved scalar kernel.",
+    "hypotheses_and_scope": "The carrier cardinality is arithmetic, not copied from physical 16 or 15."
+  },
+  "G2": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.HistoryGibbsResponse.hessian_covariance",
+      "GeneratedFoundations.Analysis.HistoryGibbsResponse.orientation_hessian",
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.bias_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.closed_hessian",
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.susceptibility_zero_iff"
+    ],
+    "objects": "The actual history probability and orientation observable.",
+    "construction": "The log-partition derivative is the bias and its next derivative is the actual variance at every probe coordinate; at zero it equals the full Hermitian Hessian direction.",
+    "hypotheses_and_scope": "No sign-randomness or free equilibrium measure is assumed. Constant-score fibres have zero fluctuation; the physical unit variance is not imposed on a different carrier."
+  },
+  "G3": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.GaussianWindowCapacity.window_partition",
+      "GeneratedFoundations.Analysis.GaussianPrefixTail.coherent_energy_uniform_error"
+    ],
+    "objects": "Gaussian visible window and retained outside labels.",
+    "construction": "Exact reconstruction precedes the explicit tail estimate.",
+    "hypotheses_and_scope": "Observation window parameters are not replacements for the natural generation cutoff."
+  },
+  "G4": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_unique"
+    ],
+    "objects": "Actual phase law and its comparison class.",
+    "construction": "Translation symmetry and the generated marginal fix the law uniquely.",
+    "hypotheses_and_scope": "No automatic arithmetic selection of the physical cutoff R=5 is claimed."
+  },
+  "G5": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Analysis.GaussianPrefixTail.coherent_energy_uniform_error",
+      "GeneratedFoundations.Analysis.GaussianWindowCapacity.label_le_windowCutoff"
+    ],
+    "objects": "Finite source observations and explicit error envelopes.",
+    "construction": "Lean inequalities supply finite certificate-consumption bounds.",
+    "hypotheses_and_scope": "Source inventory, kernel proof and numerical interval evidence are kept distinct."
+  },
+  "G6": {
+    "scope_class": "shared_construction",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Source.CommonSource.generated",
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_eigenvalue"
+    ],
+    "objects": "Dimensionless source width and normalized spectra.",
+    "construction": "Unit covariance and generated spectral unit fix normalization.",
+    "hypotheses_and_scope": "Physical dimensional calibration stays outside the dimensionless mathematical root."
+  },
+  "G7": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.tomography",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.retained_residual_decomposition",
+      "GeneratedFoundations.Analysis.GaussianWindowCapacity.signed_reconstruction"
+    ],
+    "objects": "Complete coefficients, phase complement and Gaussian outside source.",
+    "construction": "Full observation is reconstructed before taking any bound.",
+    "hypotheses_and_scope": "Neither scalar compression nor quotient discards its retained complement."
+  },
+  "G8": {
+    "scope_class": "arithmetic_instance",
+    "mathematical_declarations": [
+      "GeneratedFoundations.MathematicalInterface.generated",
+      "GeneratedFoundations.Source.CommonSource.generated"
+    ],
+    "objects": "The independent mathematical entry and common source entry.",
+    "construction": "Both connect actual proved constructions without importing Physical modules.",
+    "hypotheses_and_scope": "Feature evidence does not mark all individual physical declarations reviewed."
+  }
+}
