@@ -583,6 +583,12 @@ actual reaction action contains every ordered three-leg assembly and all its
 mixed terms. Its varied Hessian is the same operator used in the finite
 reaction evolution and in the squared graded differential.
 
+The complete history coefficient Hilbert space also carries the actual
+Gaussian reaction operator. Its root layers converge absolutely in operator
+norm, using the normalized history law rather than a history-count bound.
+The finite quadratic forms converge to its full form, and their embedded
+operator exponentials converge to its full-space contraction evolution.
+
 The history complex has a unique unit-anchored primitive and a separate
 orthogonal leaf-charge/coexact decomposition. The finite reaction evolution
 preserves leaf charge, dissipates coefficient energy by the reaction form and
@@ -594,9 +600,11 @@ is the same direction of that full Gaussian Hessian.
 
 [BRANCH_ALIGNMENT.md](BRANCH_ALIGNMENT.md) gives the 56-feature construction
 ledger and the declaration-level review procedure. Feature coverage and
-individual declaration review are separate. A finite reaction evolution
-does not establish an infinite-history limit or a cutoff-independent
-positive reaction-gap theorem. Different arithmetic and physical carriers
+individual declaration review are separate. The inventory includes supporting
+source, probability, correlation, operation, geometry and spectral declarations,
+including those used by physical modules outside the public entry. The proved
+full-history limit and contraction are distinct from a strictly positive
+cutoff-independent reaction-gap theorem. Different arithmetic and physical carriers
 retain their own dimensions, invariant directions and response constants.
 
 ## Constructed physical interface

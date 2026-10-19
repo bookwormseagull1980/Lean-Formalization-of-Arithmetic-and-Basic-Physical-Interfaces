@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Inventory the two Lean branches without treating correspondence as proof.
 
-Every physical source module must be assigned explicitly.  Every ordinary
+Every physical source module must be assigned explicitly. Every ordinary
 named declaration receives its own record, including its exact source hash.
+The public physical entry and supporting project modules are inventoried as
+well, including dependencies of physical modules outside the public entry.
 Candidate mathematical modules are a work queue; only declaration-specific
 review records can change a declaration's correspondence status.  This audit
 also rejects imports from either branch into the other branch's entry.
@@ -151,6 +153,22 @@ def physical_assignments() -> dict[str, str]:
     return result
 
 
+def load_records(path: Path) -> dict:
+    """Reject duplicate keys instead of silently overwriting a review."""
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise verify.VerificationError(f"Duplicate record key in {path}: {key}")
+            result[key] = value
+        return result
+
+    records = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
+    if not isinstance(records, dict):
+        raise verify.VerificationError(f"Record file must contain a JSON object: {path}")
+    return records
+
+
 def inventory(project: Path, reviews: dict | None = None, features: dict | None = None) -> dict:
     modules = verify.discover_modules(project)
     code = {m: verify.lean_code(p.read_text(encoding="utf-8-sig")) for m, p in modules.items()}
@@ -186,8 +204,36 @@ def inventory(project: Path, reviews: dict | None = None, features: dict | None 
     arithmetic_imports = sorted(physics_reachable & arithmetic)
     if arithmetic_imports:
         raise verify.VerificationError(f"Physical entry imports mathematical branch: {arithmetic_imports}")
+    complete_math_closure = set(math_reachable)
+    for module in arithmetic & modules.keys():
+        complete_math_closure.update(graph_closure(graph, module))
+    extra_physical_imports = sorted(complete_math_closure & physical)
+    if extra_physical_imports:
+        raise verify.VerificationError(
+            "Implemented mathematical module imports physical branch: "
+            f"{extra_physical_imports}")
 
     reviews = reviews or {}
+
+    def check_review(name: str, source_hash: str, review: dict | None) -> None:
+        if not review:
+            return
+        if review.get("source_sha256") != source_hash:
+            raise verify.VerificationError(f"Stale declaration review: {name}")
+        for proof in review.get("mathematical_declarations", []):
+            if proof not in all_names:
+                raise verify.VerificationError(f"Missing mathematical declaration: {proof}")
+            if declaration_modules[proof] not in math_reachable:
+                raise verify.VerificationError(f"Mathematical declaration outside entry: {proof}")
+        if review.get("status") not in REVIEW_STATUSES:
+            raise verify.VerificationError(f"Unknown declaration review status: {name}")
+        if review["status"] in COMPLETE_REVIEW_STATUSES:
+            if not review.get("mathematical_declarations"):
+                raise verify.VerificationError(f"Review has no actual mathematical declarations: {name}")
+            for field in ("objects", "comparison", "hypotheses_and_scope"):
+                if not isinstance(review.get(field), str) or not review[field].strip():
+                    raise verify.VerificationError(f"Review missing {field}: {name}")
+
     rows = []
     for module in sorted(physical):
         family = assignments[module]
@@ -198,22 +244,7 @@ def inventory(project: Path, reviews: dict | None = None, features: dict | None 
         source_hash = hashlib.sha256(modules[module].read_bytes()).hexdigest()
         for name in sorted(verify.source_declarations(code[module])):
             review = reviews.get(name)
-            if review:
-                if review.get("source_sha256") != source_hash:
-                    raise verify.VerificationError(f"Stale declaration review: {name}")
-                for proof in review.get("mathematical_declarations", []):
-                    if proof not in all_names:
-                        raise verify.VerificationError(f"Missing mathematical declaration: {proof}")
-                    if declaration_modules[proof] not in math_reachable:
-                        raise verify.VerificationError(f"Mathematical declaration outside entry: {proof}")
-                if review.get("status") not in REVIEW_STATUSES:
-                    raise verify.VerificationError(f"Unknown declaration review status: {name}")
-                if review["status"] in COMPLETE_REVIEW_STATUSES:
-                    if not review.get("mathematical_declarations"):
-                        raise verify.VerificationError(f"Review has no actual mathematical declarations: {name}")
-                    for field in ("objects", "comparison", "hypotheses_and_scope"):
-                        if not isinstance(review.get(field), str) or not review[field].strip():
-                            raise verify.VerificationError(f"Review missing {field}: {name}")
+            check_review(name, source_hash, review)
             rows.append({
                 "physical_declaration": name,
                 "physical_module": module,
@@ -223,7 +254,37 @@ def inventory(project: Path, reviews: dict | None = None, features: dict | None 
                 "correspondence_review": review or {"status": "pending_declaration_review"},
             })
 
-    unknown = reviews.keys() - {r["physical_declaration"] for r in rows}
+    # Include all implemented physical modules, not just those imported by the
+    # public physical entry. Their supporting modules are part of the task too.
+    complete_physical_closure = set(physics_reachable)
+    for module in physical:
+        complete_physical_closure.update(graph_closure(graph, module))
+    extra_arithmetic_imports = sorted(complete_physical_closure & arithmetic)
+    if extra_arithmetic_imports:
+        raise verify.VerificationError(
+            "Implemented physical module imports mathematical branch: "
+            f"{extra_arithmetic_imports}")
+    support_modules = (complete_physical_closure & modules.keys()) - physical
+    support_rows = []
+    for module in sorted(support_modules):
+        source_hash = hashlib.sha256(modules[module].read_bytes()).hexdigest()
+        for name in sorted(verify.source_declarations(code[module])):
+            review = reviews.get(name)
+            check_review(name, source_hash, review)
+            # This is identity of the Lean declaration and its source, rather
+            # than a guessed analogy. It records availability on both sides;
+            # semantic use in a branch is still checked in its feature ledger.
+            shared = module in math_reachable
+            support_rows.append({
+                "physical_declaration": name,
+                "physical_module": module,
+                "source_sha256": source_hash,
+                "entry_or_dependency": "public_entry" if module == PHYSICS_ENTRY else "dependency",
+                "mathematical_availability": "identical_declaration" if shared else "not_imported",
+                "identical_mathematical_declaration": name if shared else None,
+                "correspondence_review": review or {"status": "pending_declaration_review"},
+            })
+    unknown = reviews.keys() - {r["physical_declaration"] for r in rows + support_rows}
     if unknown:
         raise verify.VerificationError(f"Reviews refer to removed declarations: {sorted(unknown)}")
     feature_titles = {f"{g}{i}": title for g, titles in FEATURES.items()
@@ -245,7 +306,7 @@ def inventory(project: Path, reviews: dict | None = None, features: dict | None 
                 if not isinstance(record.get(field), str) or not record[field].strip():
                     raise verify.VerificationError(f"Feature {feature} missing {field}")
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "evidence": "source_inventory_only",
         "mathematical_entry": MATH_ENTRY,
         "physical_entry": PHYSICS_ENTRY,
@@ -258,6 +319,15 @@ def inventory(project: Path, reviews: dict | None = None, features: dict | None 
         "review_status_counts": dict(Counter(r["correspondence_review"]["status"] for r in rows)),
         "unreviewed_or_unconstructed": sum(r["correspondence_review"]["status"]
             not in COMPLETE_REVIEW_STATUSES for r in rows),
+        "physical_support_modules": len(support_modules),
+        "physical_support_declarations": len(support_rows),
+        "identical_shared_support_declarations": sum(
+            r["mathematical_availability"] == "identical_declaration" for r in support_rows),
+        "support_review_status_counts": dict(Counter(
+            r["correspondence_review"]["status"] for r in support_rows)),
+        "support_unreviewed_or_unconstructed": sum(r["correspondence_review"]["status"]
+            not in COMPLETE_REVIEW_STATUSES for r in support_rows),
+        "support_declarations": support_rows,
         "features": feature_titles,
         "feature_proof_ledger": features,
         "shared_dependencies": sorted(math_reachable & physics_reachable),
@@ -273,16 +343,18 @@ def main() -> int:
     parser.add_argument("--output", type=Path)
     parser.add_argument("--require-complete", action="store_true")
     args = parser.parse_args()
-    reviews = json.loads(args.reviews.read_text(encoding="utf-8")) if args.reviews else {}
-    features = json.loads(args.feature_ledger.read_text(encoding="utf-8")) if args.feature_ledger else None
+    reviews = load_records(args.reviews) if args.reviews else {}
+    features = load_records(args.feature_ledger) if args.feature_ledger else None
     report = inventory(args.project, reviews, features)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     summary = {k: v for k, v in report.items()
-        if k not in {"declarations", "shared_dependencies", "features", "feature_proof_ledger"}}
+        if k not in {"declarations", "support_declarations", "shared_dependencies",
+            "features", "feature_proof_ledger"}}
     print(json.dumps(summary, ensure_ascii=False, indent=2))
-    if args.require_complete and report["unreviewed_or_unconstructed"]:
+    if args.require_complete and (report["unreviewed_or_unconstructed"]
+            or report["support_unreviewed_or_unconstructed"]):
         return 1
     return 0
 

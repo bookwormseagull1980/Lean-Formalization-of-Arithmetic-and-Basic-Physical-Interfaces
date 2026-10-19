@@ -19,6 +19,8 @@ public import GeneratedFoundations.Analysis.HistoryReactionComplex
 public import GeneratedFoundations.Analysis.HistoryReactionHodge
 public import GeneratedFoundations.Analysis.HistoryReactionCovariance
 public import GeneratedFoundations.Analysis.HistoryReactionFlow
+public import GeneratedFoundations.Analysis.HistoryReactionHilbert
+public import GeneratedFoundations.Analysis.HistoryReactionHilbertFlow
 public import GeneratedFoundations.Analysis.HistoryReflectionFlow
 public import GeneratedFoundations.Geometry.SourceOneFormSystem
 public import GeneratedFoundations.Geometry.SourceSpinorSystem
@@ -36,8 +38,9 @@ arithmetic objects.  This entry imports no physical-branch conclusion.
 Every field is a proved output.  The zero-argument theorem accepts neither a
 carrier, bundle, rate, quadratic form nor positivity certificate from its
 caller.  Observation indices remain universally quantified inside each
-output, and the finite scope of history matrix and reaction statements is
-part of their types.
+output. History matrix statements retain their finite fibres; the complete
+reaction operator and its evolution act on the full history Hilbert space,
+with their actual finite-cutoff limits included below.
 -/
 
 @[expose] public section
@@ -60,6 +63,8 @@ structure Conclusions : Prop where
   orthogonal_reaction_reduction : Analysis.HistoryReactionHodge.Conclusions
   reaction_covariance : Analysis.HistoryReactionCovariance.Conclusions
   actual_reaction_flow : Analysis.HistoryReactionFlow.Conclusions
+  complete_reaction_operator : Analysis.HistoryReactionHilbert.Conclusions
+  complete_reaction_flow : Analysis.HistoryReactionHilbertFlow.Conclusions
   history_reflection_flow : Analysis.HistoryReflectionFlow.Conclusions
   complete_occupation_response : Arithmetic.OccupationResponse.Conclusions
   source_one_form_system : Geometry.SourceOneFormSystem.Conclusions
@@ -83,6 +88,8 @@ theorem generated : Conclusions where
   orthogonal_reaction_reduction := Analysis.HistoryReactionHodge.generated
   reaction_covariance := Analysis.HistoryReactionCovariance.generated
   actual_reaction_flow := Analysis.HistoryReactionFlow.generated
+  complete_reaction_operator := Analysis.HistoryReactionHilbert.generated
+  complete_reaction_flow := Analysis.HistoryReactionHilbertFlow.generated
   history_reflection_flow := Analysis.HistoryReflectionFlow.generated
   complete_occupation_response := Arithmetic.OccupationResponse.generated
   source_one_form_system := Geometry.SourceOneFormSystem.generated

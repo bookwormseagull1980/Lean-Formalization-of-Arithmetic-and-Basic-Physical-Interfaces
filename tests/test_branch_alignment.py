@@ -219,3 +219,86 @@ def test_feature_ledger_does_not_complete_unreviewed_declarations(tiny_project):
     report = alignment.inventory(project, features=feature_records())
     assert len(report["feature_proof_ledger"]) == 56
     assert report["unreviewed_or_unconstructed"] == 1
+
+
+def test_support_declarations_are_not_omitted_or_automatically_reviewed(tiny_project):
+    project, _ = tiny_project
+    report = alignment.inventory(project)
+    shared = {r["physical_declaration"]: r for r in report["support_declarations"]}
+    name = "GeneratedFoundations.Source.CommonSource.generated"
+    assert shared[name]["mathematical_availability"] == "identical_declaration"
+    assert shared[name]["identical_mathematical_declaration"] == name
+    assert shared[name]["correspondence_review"]["status"] == "pending_declaration_review"
+    assert report["identical_shared_support_declarations"] == 1
+    assert report["support_unreviewed_or_unconstructed"] == 1
+
+
+def test_unshared_support_and_public_entry_have_individual_records(tiny_project):
+    project, source = tiny_project
+    source("GeneratedFoundations.PhysicalInterface",
+        "import GeneratedFoundations.Physical.SourceOrigin\n"
+        "import GeneratedFoundations.Geometry.PhysicalSupport\n"
+        "namespace GeneratedFoundations.PhysicalInterface\n"
+        "theorem generated : True := by trivial\nend\n")
+    source("GeneratedFoundations.Geometry.PhysicalSupport",
+        "namespace GeneratedFoundations.Geometry.PhysicalSupport\n"
+        "theorem complete : True := by trivial\nend\n")
+    rows = {r["physical_declaration"]: r for r in alignment.inventory(project)["support_declarations"]}
+    assert rows["GeneratedFoundations.PhysicalInterface.generated"]["entry_or_dependency"] == "public_entry"
+    support = rows["GeneratedFoundations.Geometry.PhysicalSupport.complete"]
+    assert support["mathematical_availability"] == "not_imported"
+    assert support["identical_mathematical_declaration"] is None
+
+
+def test_support_of_unimported_physical_module_is_still_inventoried(tiny_project, monkeypatch):
+    project, source = tiny_project
+    monkeypatch.setitem(alignment.FAMILIES["A"], "physical", "SourceOrigin Extra")
+    source("GeneratedFoundations.Physical.Extra",
+        "import GeneratedFoundations.Spectral.ExtraSupport\n")
+    source("GeneratedFoundations.Spectral.ExtraSupport", "def isolatedSupport : Nat := 1\n")
+    rows = alignment.inventory(project)["support_declarations"]
+    assert any(r["physical_declaration"] == "isolatedSupport" for r in rows)
+
+
+def test_support_review_uses_the_same_source_hash_and_proof_checks(tiny_project):
+    project, _ = tiny_project
+    row = alignment.inventory(project)["support_declarations"][0]
+    reviews = {row["physical_declaration"]: {
+        "status": "shared_result", "source_sha256": "wrong-source",
+        "mathematical_declarations": [row["physical_declaration"]],
+    }}
+    with pytest.raises(verify.VerificationError, match="Stale declaration"):
+        alignment.inventory(project, reviews)
+
+
+def test_unimported_physical_module_cannot_hide_arithmetic_dependency(tiny_project, monkeypatch):
+    project, source = tiny_project
+    monkeypatch.setitem(alignment.FAMILIES["A"], "physical", "SourceOrigin Extra")
+    source("GeneratedFoundations.Arithmetic.Hidden", "def arithmeticOnly : Nat := 1\n")
+    source("GeneratedFoundations.Physical.Extra",
+        "import GeneratedFoundations.Arithmetic.Hidden\n")
+    with pytest.raises(verify.VerificationError, match="Implemented physical module imports"):
+        alignment.inventory(project)
+
+
+def test_unimported_arithmetic_module_cannot_hide_physical_dependency(tiny_project):
+    project, source = tiny_project
+    source("GeneratedFoundations.Arithmetic.Hidden",
+        "import GeneratedFoundations.Physical.SourceOrigin\n")
+    with pytest.raises(verify.VerificationError, match="Implemented mathematical module imports"):
+        alignment.inventory(project)
+
+
+def test_duplicate_review_cannot_silently_overwrite_an_earlier_result(tmp_path):
+    path = tmp_path / "reviews.json"
+    path.write_text('{"same": {"status": "shared_result"}, "same": {"status": "proved_analogue"}}',
+        encoding="utf-8")
+    with pytest.raises(verify.VerificationError, match="Duplicate record key"):
+        alignment.load_records(path)
+
+
+def test_record_file_requires_an_object(tmp_path):
+    path = tmp_path / "reviews.json"
+    path.write_text('[]', encoding="utf-8")
+    with pytest.raises(verify.VerificationError, match="must contain a JSON object"):
+        alignment.load_records(path)

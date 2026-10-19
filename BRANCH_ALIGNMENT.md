@@ -165,12 +165,12 @@ uniqueness of the coefficient.
 |---|---|---|
 | F1 Actual rates | `CompleteHistoryDynamics.mergeRate_pos`, `.mergeRate_unique` | The merge rate is selected by the actual Gaussian intensities and unit reverse rate. |
 | F2 Detailed balance | `.edge_detailed_balance`; `HistoryReactionForm.conductance_from_children` | The full finite form sums the actual detailed-balance conductances. |
-| F3 Generator | `HistoryReactionFlow.linearOperator`, `.generator`, `.generator_apply`; shared complete Neumann generator | The reaction generator acts on every finite species coefficient and is continuous there; the Neumann generator has its full unbounded domain. |
-| F4 Evolution | `HistoryReactionFlow.flow_add`, `.flow_hasDerivAt`; `HistoryReflectionFlow.flow_add` | The full reaction flow is the exponential of its actual operator. Reflection exchange is a separate flow. |
+| F3 Generator | `HistoryReactionFlow.generator`; `HistoryReactionHilbert.operator_selfAdjoint`, `.norm_layer_le` | The actual complete reaction operator is a norm-convergent sum on all history coefficients. The Neumann generator separately retains its unbounded domain. |
+| F4 Evolution | `HistoryReactionFlow.flow_add`; `HistoryReactionHilbertFlow.flow_add`, `.flow_hasDerivAt` | The finite and full reaction flows are exponentials of their actual operators. Reflection exchange is a separate flow. |
 | F5 Conservation | `HistoryReactionOperator.leafCharge_conservation`; `HistoryReactionFlow.charge_preserved`; existing capacity/window reconstruction | Conservation follows from the actual incidence kernel. Window complements and birth terms stay in their original ledgers. |
-| F6 Energy and dissipation | `HistoryReactionFlow.energy_hasDerivAt`, `.action_hasDerivAt`; `HistoryReflectionFlow.flow_energy` | Coefficient energy dissipates by the reaction form; action dissipates by the squared actual operator. Neither argument drops mixed terms. |
-| F7 Occupation lift | `Arithmetic.OccupationResponse.complete_energy_composition`, `.heat_semigroup`, `.nonvacuum_gap` | Native multiplicative occupation energy is `root²-1`. Its composition includes `E(x)E(y)`; it is not replaced by independent additive particle energies. |
-| F8 Finite/full scope | `NeumannHeatSemigroup.heat_stronglyContinuous`, `.rightGenerator_iff`; finite history exponentials | The shared full heat evolution is complete. An infinite reaction-history generator obtained by taking all cutoffs remains a separate construction; the finite theorem does not assert that limit. |
+| F6 Energy and dissipation | `HistoryReactionFlow.action_hasDerivAt`; `HistoryReactionHilbertFlow.energy_hasDerivAt`, `.norm_flow_le` | Full coefficient energy dissipates by the exact reaction form and the evolution is a contraction. Finite action dissipates by the squared actual operator. Neither argument drops mixed terms. |
+| F7 Occupation lift | `OccupationResponse.particleNumber_composition`, `.factors_oneParticle`, `.energy_groundOccupation`, `.heat_semigroup` | Native prime multiplicity is additive. Whole-root energy is `root²-1` with its joint product term, unique vacuum and attained lower edge. |
+| F8 Finite/full scope | `HistoryReactionHilbert.finite_form_tendsto`; `HistoryReactionHilbertFlow.cutoff_evolution_tendsto` | The full history operator and its fixed-time evolution are actual operator-norm limits of the embedded finite root layers. This retains the original finite quadratic forms and all their cross terms. |
 
 The occupation output has the same scope as the physical finite-occupation
 heat-weight interface: a semigroup of weights, a fixed vacuum and damping of
@@ -199,10 +199,16 @@ distinct outputs and partial scopes are recorded separately. A feature record
 does not mark every auxiliary physical declaration as reviewed.
 
 `scripts/branch_alignment.py` enumerates every ordinary explicitly named
-declaration in every physical source module. A module must be assigned
+declaration in every physical source module, the public physical entry and
+all supporting project modules. Dependencies of implemented physical modules
+outside the public entry are included too. A physical module must be assigned
 explicitly; additions cannot silently inherit a completion category. The
 inventory includes the exact source-file hash, the assigned method family,
 candidate arithmetic modules and the declaration-specific review record.
+Supporting declarations have separate records, with their exact source hash
+and whether that identical Lean declaration is reachable from the mathematical
+entry. Identical availability is not an automatically completed semantic
+review. The feature ledger still identifies its use on the actual branch objects.
 
 A completed review requires actual mathematical declarations, an object
 comparison, a comparison type and the hypotheses/scope. Mathematical targets
@@ -217,11 +223,14 @@ python -m scripts.branch_alignment --reviews verification/branch-alignment-revie
 ```
 
 `--require-complete`
-also rejects pending construction or pending review records. It does not turn
+also rejects pending construction or pending review records, including the
+supporting declarations. It does not turn
 the inventory into a compiled proof certificate.
 
-The import check is symmetric: neither branch entry may depend on the other
-branch, and the common source may depend on neither. General analysis and
+The import check is symmetric: neither branch entry nor any implemented
+module in the arithmetic or physical branch may depend on the other branch,
+including modules outside its public entry. The common source may depend on
+neither. General analysis and
 geometry remain in the common library; a directory name alone does not make
 such a theorem a branch-specific construction.
 
@@ -234,9 +243,12 @@ record. The branch inventory never substitutes for that check.
 ## Remaining implementation review
 
 The current inventory contains 91 physical modules and 2,665 explicitly named
-physical declarations. Of these, 42 have completed object-and-scope comparisons
-(38 concrete analogues and four shared results); 2,622 await individual review,
-and one reviewed declaration still requires a construction. Pending review is
+physical declarations. Of these, 70 have completed object-and-scope comparisons
+(66 concrete analogues and four shared results); 2,594 await individual review,
+and one reviewed declaration still requires a construction. In addition, 199
+supporting modules contain 4,396 declarations: 3,119 are already the identical
+Lean constants available to both branches. Their individual comparison and use
+records remain separate from that shared availability. Pending review is
 not a count of missing mathematical constructions. These counts belong to the
 current inventory snapshot and do not follow from the 56-feature table.
 
@@ -245,7 +257,22 @@ reaction form/operator/kernel, covariance, evolution and occupation modules
 are connected to the mathematical entry. The complete declaration review must
 still compare the individual auxiliary claims in the physical modules,
 particularly their classification classes, non-diagonal reductions,
-certificate premises and limits. The infinite reaction-history limit and any
-cutoff-independent restoring rate require separate theorems if that stronger
-scope is selected. This work does not change the established complete source
+certificate premises and limits. The complete reaction-history limit is now
+constructed by `HistoryReactionHilbert`: the coefficient space contains every
+actual generated history, and each full three-leg root layer has operator norm
+at most nine times its actual Gaussian root mass. Normalization of the history
+law gives this bound without a history-count factor. At fixed positive Gaussian
+observation coordinates the full operator is bounded and self-adjoint, and the
+finite forms converge exactly to its form. `HistoryReactionHilbertFlow` proves
+the full-space semigroup, evolution equation, energy dissipation, contraction
+factor one and operator-norm convergence of the cutoff exponentials at fixed
+time. A strictly positive cutoff-independent restoring rate is a distinct
+property. This work does not change the established complete source
 heat operators or the physical branch's own hypotheses.
+
+The occupation comparison now includes the actual prime multiplicity, its
+additive composition, the empty-occupation characterization, singleton prime
+states and attainment of the arithmetic energy lower edge. The physical Fock
+energy is additive; the arithmetic Gaussian energy depends on the whole
+evaluated root and retains its multiplicative joint term. The two constructions
+therefore have corresponding functions without being the same Hamiltonian.

@@ -3667,6 +3667,62 @@
     "label": "separate actual reflection exchange flow",
     "coverage_kind": "theorem",
     "scope": "The even history sector is fixed and the odd sector decays under its explicitly derived reflection generator. It is separate from the complete three-leg reaction flow."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHilbert.norm_layer_le",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHilbert",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete history Gaussian reaction layer bound",
+    "coverage_kind": "theorem",
+    "scope": "Every full three-leg root layer has operator norm at most nine times its Gaussian root mass, using the normalized actual history law and retaining repeated child incidence. The constant does not depend on the number of histories."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHilbert.operator_selfAdjoint",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHilbert",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete history reaction self-adjoint operator",
+    "coverage_kind": "theorem",
+    "scope": "At fixed positive Gaussian observation strength and scale, the actual root-layer sum is a bounded self-adjoint operator on the Hilbert space of all generated histories. Its domain is the whole space."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHilbert.finite_form_tendsto",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHilbert",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "exact finite-to-complete history reaction limit",
+    "coverage_kind": "theorem",
+    "scope": "The actual finite reaction forms on restrictions of full history coefficients converge to the complete operator form, with every mixed incidence term preserved."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.energy_hasDerivAt",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete history reaction energy law",
+    "coverage_kind": "theorem",
+    "scope": "The derivative of full Hilbert coefficient energy is minus the exact complete reaction form along the actual operator exponential. This is a complete-space statement, not only a family of finite matrix identities."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.cutoff_evolution_tendsto",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "history reaction semigroup cutoff limit",
+    "coverage_kind": "theorem",
+    "scope": "At fixed time and positive Gaussian observation coordinates, the exponentials of the embedded finite root-layer operators converge in operator norm to the complete reaction evolution."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.OccupationResponse.particleNumber_composition",
+    "module": "GeneratedFoundations.Arithmetic.OccupationResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated prime occupation number composition",
+    "coverage_kind": "theorem",
+    "scope": "Actual prime multiplicity is additive under native mode multiplication, even though whole-root Gaussian energy has a nonzero multiplicative joint term."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.OccupationResponse.energy_groundOccupation",
+    "module": "GeneratedFoundations.Arithmetic.OccupationResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "attained arithmetic occupation lower edge",
+    "coverage_kind": "theorem",
+    "scope": "The generated positive mode of root two attains energy three and is not the vacuum. This attains the previously proved occupation lower bound and does not identify it with a gap of the reaction operator."
   }
 ],
   "planned": [

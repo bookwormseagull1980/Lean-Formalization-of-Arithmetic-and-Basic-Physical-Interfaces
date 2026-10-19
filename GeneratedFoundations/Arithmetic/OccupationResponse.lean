@@ -91,6 +91,68 @@ def character (x : Occupation) : ℤ := modeCentre x.val x.property
 theorem character_composition (x y : Occupation) :
     character (compose x y) = character x * character y := modeCentre_mul _ _ _ _
 
+/-- Particle number counts the actual generated prime multiset, including
+repeated primes. It is not the spectral root or the square-spectrum energy. -/
+def particleNumber (x : Occupation) : ℕ := factorCount x.val x.property
+
+@[simp] theorem factors_vacuum : factorMultiset vacuum.val vacuum.property = 0 :=
+  (factorMultiset_unique mode_one_ne_zero 0 (by simp)).symm
+
+@[simp] theorem particleNumber_vacuum : particleNumber vacuum = 0 := by
+  simp [particleNumber, factorCount]
+
+theorem particleNumber_composition (x y : Occupation) :
+    particleNumber (compose x y) = particleNumber x + particleNumber y :=
+  factorCount_mul _ _ _ _
+
+theorem particleNumber_eq_zero_iff (x : Occupation) :
+    particleNumber x = 0 ↔ x = vacuum := by
+  constructor
+  · intro h
+    have hf : factorMultiset x.val x.property = 0 := Multiset.card_eq_zero.mp h
+    apply Subtype.ext
+    change x.val = 1
+    have hp := (factorMultiset_spec x.val x.property).2
+    simpa only [hf, Multiset.prod_zero] using hp.symm
+  · rintro rfl
+    exact particleNumber_vacuum
+
+/-- A native prime occupies exactly its own generated prime direction. -/
+def oneParticle (p : Mode) (hp : NativeIrreducible p) : Occupation := ⟨p, hp.1⟩
+
+@[simp] theorem factors_oneParticle (p : Mode) (hp : NativeIrreducible p) :
+    factorMultiset (oneParticle p hp).val (oneParticle p hp).property = {p} := by
+  symm
+  apply factorMultiset_unique hp.1
+  exact ⟨by simpa using hp, by simp⟩
+
+@[simp] theorem particleNumber_oneParticle (p : Mode) (hp : NativeIrreducible p) :
+    particleNumber (oneParticle p hp) = 1 := by
+  simp [particleNumber, factorCount]
+
+@[simp] theorem energy_oneParticle (p : Mode) (hp : NativeIrreducible p) :
+    energy (oneParticle p hp) = (index p : ℝ) ^ 2 - 1 := rfl
+
+theorem oneParticle_ne_vacuum (p : Mode) (hp : NativeIrreducible p) :
+    oneParticle p hp ≠ vacuum := by
+  intro h
+  exact hp.2.1 (congrArg Subtype.val h)
+
+/-- The least nonvacuum root is an actual generated mode. The lower edge is
+attained, not merely an inequality on all other occupations. -/
+def groundOccupation : Occupation := ⟨powerMode 2, by
+  intro h
+  have := congrArg index h
+  simp at this⟩
+
+@[simp] theorem energy_groundOccupation : energy groundOccupation = 3 := by
+  norm_num [energy, root, groundOccupation]
+
+theorem groundOccupation_ne_vacuum : groundOccupation ≠ vacuum := by
+  intro h
+  have := congrArg energy h
+  simp at this
+
 def heatWeight (t : ℝ) (x : Occupation) : ℝ := Real.exp (-t * energy x)
 
 @[simp] theorem heat_zero (x : Occupation) : heatWeight 0 x = 1 := by simp [heatWeight]
@@ -128,6 +190,11 @@ structure Conclusions : Prop where
   semigroup : ∀ s t x, heatWeight (s + t) x = heatWeight s x * heatWeight t x
   original_response : ∀ t x,
     Real.exp (-t * (root x : ℝ) ^ 2) = Real.exp (-t) * heatWeight t x
+  occupation_number : ∀ x y,
+    particleNumber (compose x y) = particleNumber x + particleNumber y
+  empty_iff_vacuum : ∀ x, particleNumber x = 0 ↔ x = vacuum
+  one_prime : ∀ p hp, particleNumber (oneParticle p hp) = 1
+  gap_attained : groundOccupation ≠ vacuum ∧ energy groundOccupation = 3
 
 theorem generated : Conclusions where
   unique_vacuum := energy_eq_zero_iff
@@ -136,5 +203,9 @@ theorem generated : Conclusions where
   actual_prime_occupation := occupation_composition
   semigroup := heat_semigroup
   original_response := original_gaussian
+  occupation_number := particleNumber_composition
+  empty_iff_vacuum := particleNumber_eq_zero_iff
+  one_prime := particleNumber_oneParticle
+  gap_attained := ⟨groundOccupation_ne_vacuum, energy_groundOccupation⟩
 
 end GeneratedFoundations.Arithmetic.OccupationResponse

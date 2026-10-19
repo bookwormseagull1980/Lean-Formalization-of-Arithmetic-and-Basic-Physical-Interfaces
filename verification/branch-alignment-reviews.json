@@ -440,5 +440,291 @@
     "objects": "Uniform physical reduced-action decay versus actual arithmetic reaction dissipation and occupation damping.",
     "comparison": "These are two distinct arithmetic outputs; their combination has not established a cutoff-independent positive reaction gap.",
     "hypotheses_and_scope": "The arithmetic reaction rate would require an additional concrete coercivity estimate on its conserved-charge complement. Occupation damping alone does not prove that estimate."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.BosonicOccupation": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.Occupation",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.generated_factorization"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of BosonicOccupation with Occupation, generated_factorization on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.vacuum": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.vacuum"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of vacuum with vacuum on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.particleNumber": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.particleNumber"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of particleNumber with particleNumber on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.totalEnergy": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.complete_energy_composition"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of totalEnergy with energy, complete_energy_composition on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.particleNumber_vacuum": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.particleNumber_vacuum"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of particleNumber_vacuum with particleNumber_vacuum on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.totalEnergy_vacuum": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_vacuum"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of totalEnergy_vacuum with energy_vacuum on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.oneParticle": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.oneParticle",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.factors_oneParticle"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of oneParticle with oneParticle, factors_oneParticle on the branch's own generated occupation.",
+    "hypotheses_and_scope": "A physical singleton occupies one of its own response eigenmodes; the arithmetic singleton is an actual native irreducible prime. Its multiset is proved to be precisely that prime. The two mode classes are not identified."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.particleNumber_oneParticle": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.particleNumber_oneParticle"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of particleNumber_oneParticle with particleNumber_oneParticle on the branch's own generated occupation.",
+    "hypotheses_and_scope": "A physical singleton occupies one of its own response eigenmodes; the arithmetic singleton is an actual native irreducible prime. Its multiset is proved to be precisely that prime. The two mode classes are not identified."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.totalEnergy_oneParticle": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_oneParticle"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of totalEnergy_oneParticle with energy_oneParticle on the branch's own generated occupation.",
+    "hypotheses_and_scope": "A physical singleton occupies one of its own response eigenmodes; the arithmetic singleton is an actual native irreducible prime. Its multiset is proved to be precisely that prime. The two mode classes are not identified."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.oneParticle_ne_vacuum": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.oneParticle_ne_vacuum"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of oneParticle_ne_vacuum with oneParticle_ne_vacuum on the branch's own generated occupation.",
+    "hypotheses_and_scope": "A physical singleton occupies one of its own response eigenmodes; the arithmetic singleton is an actual native irreducible prime. Its multiset is proved to be precisely that prime. The two mode classes are not identified."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.totalEnergy_nonneg": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_nonneg"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of totalEnergy_nonneg with energy_nonneg on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.gap_le_totalEnergy_of_ne_vacuum": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.nonvacuum_gap"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of gap_le_totalEnergy_of_ne_vacuum with nonvacuum_gap on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.totalEnergy_eq_zero_iff_vacuum": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_eq_zero_iff"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of totalEnergy_eq_zero_iff_vacuum with energy_eq_zero_iff on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.groundOccupation": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.groundOccupation"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of groundOccupation with groundOccupation on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.groundOccupation_ne_vacuum": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.groundOccupation_ne_vacuum"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of groundOccupation_ne_vacuum with groundOccupation_ne_vacuum on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.totalEnergy_groundOccupation": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_groundOccupation"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of totalEnergy_groundOccupation with energy_groundOccupation on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.Conclusions": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.Conclusions"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Both aggregate their own vacuum, nonvacuum lower edge, attained minimum or occupation heat statements; the arithmetic bundle is proved without carrier or spectral parameters.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceGeneratedYangMillsFock.conclusions": {
+    "source_sha256": "1ddf4f942f96fec55256a13af5e702dc09219104f8faf7ff54231b42fbb0fcf3",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.generated"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Both aggregate their own vacuum, nonvacuum lower edge, attained minimum or occupation heat statements; the arithmetic bundle is proved without carrier or spectral parameters.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.Occupation": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.Occupation",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.generated_factorization"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of Occupation with Occupation, generated_factorization on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.vacuum": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.vacuum"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of vacuum with vacuum on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.totalEnergy": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.complete_energy_composition"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of totalEnergy with energy, complete_energy_composition on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.totalEnergy_vacuum": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_vacuum"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of totalEnergy_vacuum with energy_vacuum on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.eigenvalue_pos": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.oneParticle_ne_vacuum",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.nonvacuum_gap"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of eigenvalue_pos with oneParticle_ne_vacuum, nonvacuum_gap on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Every physical response eigenvalue is positive on L>0,z>0. Every arithmetic prime state is nonvacuum and its actual energy is at least three; arithmetic vacuum energy remains zero."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.nonvacuum_gap": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.nonvacuum_gap"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of nonvacuum_gap with nonvacuum_gap on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.vacuum_unique": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_eq_zero_iff"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of vacuum_unique with energy_eq_zero_iff on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.groundOccupation": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.groundOccupation"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of groundOccupation with groundOccupation on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.groundOccupation_ne_vacuum": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.groundOccupation_ne_vacuum"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of groundOccupation_ne_vacuum with groundOccupation_ne_vacuum on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
+  },
+  "GeneratedFoundations.Physical.SourceHaarYangMillsFock.groundOccupation_energy": {
+    "source_sha256": "1e43888bb3bea7162922519129a1f853ed03cbfa66a56ae0f11c6b5ef2d8572e",
+    "status": "proved_analogue",
+    "mathematical_declarations": [
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_groundOccupation"
+    ],
+    "objects": "Finite physical response occupations and the actual complete native prime occupation of a nonzero generated arithmetic mode.",
+    "comparison": "Declaration-specific comparison of groundOccupation_energy with energy_groundOccupation on the branch's own generated occupation.",
+    "hypotheses_and_scope": "Physical energy is additive over its response eigenmodes. Arithmetic energy is the square of the entire evaluated prime occupation minus one, with the proved nonadditive composition term retained. Its unique vacuum and attained lower edge three hold for all positive native modes."
   }
 }

@@ -323,7 +323,7 @@
     ],
     "objects": "Complete continuous source systems and finite history cochains.",
     "construction": "Full shared operator domains coexist with exhaustive finite history sums.",
-    "hypotheses_and_scope": "No finite-history theorem is promoted to an infinite reaction operator."
+    "hypotheses_and_scope": "The shared unbounded differential systems retain their operator domains. The separate complete history reaction operator is constructed by an operator-norm limit on its full coefficient Hilbert space."
   },
   "E1": {
     "scope_class": "arithmetic_instance",
@@ -433,21 +433,25 @@
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionFlow.generator",
       "GeneratedFoundations.Analysis.HistoryReactionFlow.generator_apply",
-      "GeneratedFoundations.Analysis.HistoryReactionComplex.adjoint_identity"
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.adjoint_identity",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbert.operator_selfAdjoint",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbert.norm_layer_le"
     ],
-    "objects": "The full finite history coefficient operator.",
-    "construction": "Finite dimensionality supplies continuity on the whole actual species space.",
-    "hypotheses_and_scope": "The existing complete Neumann operator separately retains its unbounded domain."
+    "objects": "Finite coefficient operators and the complete Hilbert space of all actual generated histories.",
+    "construction": "All Gaussian-weighted three-leg rank-one layers are absolutely summable in operator norm. Their sum is bounded and self-adjoint on the whole history Hilbert space.",
+    "hypotheses_and_scope": "At each positive Gaussian observation strength and scale. The constant nine in the layer estimate is independent of history counts. The existing complete Neumann operator separately retains its unbounded domain."
   },
   "F4": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_add",
-      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_hasDerivAt"
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.flow_add",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.flow_hasDerivAt"
     ],
-    "objects": "The exponential of the actual reaction generator.",
-    "construction": "Proved semigroup and evolution equation.",
-    "hypotheses_and_scope": "Not replaced by the distinct two-sector reflection flow."
+    "objects": "Exponentials of the actual finite and complete history reaction generators.",
+    "construction": "The complete bounded operator generates the proved semigroup and evolution equation on the whole history Hilbert space.",
+    "hypotheses_and_scope": "Not replaced by the distinct two-sector reflection flow. No uniform positive reaction gap is imposed."
   },
   "F5": {
     "scope_class": "arithmetic_instance",
@@ -464,32 +468,40 @@
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionFlow.energy_hasDerivAt",
       "GeneratedFoundations.Analysis.HistoryReactionFlow.action_hasDerivAt",
-      "GeneratedFoundations.Analysis.HistoryReactionFlow.action_antitone"
+      "GeneratedFoundations.Analysis.HistoryReactionFlow.action_antitone",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.energy_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.norm_flow_le"
     ],
     "objects": "Coefficient energy and the actual reaction action.",
-    "construction": "Their derivatives are the negative form and negative operator square respectively.",
-    "hypotheses_and_scope": "Exact dissipation is proved; cutoff-independent positive reaction decay rate remains separate."
+    "construction": "The finite derivatives are the negative form and negative operator square. Complete-space coefficient energy also has the exact negative-form derivative and a cutoff-independent contraction factor one.",
+    "hypotheses_and_scope": "Exact finite and full-space dissipation is proved. A strictly positive cutoff-independent reaction decay rate is a separate comparison from nonincrease."
   },
   "F7": {
     "scope_class": "distinct_outputs",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.OccupationResponse.complete_energy_composition",
       "GeneratedFoundations.Arithmetic.OccupationResponse.occupation_composition",
-      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_nonvacuum_le"
+      "GeneratedFoundations.Arithmetic.OccupationResponse.heat_nonvacuum_le",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.particleNumber_composition",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.particleNumber_eq_zero_iff",
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_groundOccupation"
     ],
     "objects": "Native prime occupation and whole-root Gaussian energy.",
-    "construction": "The actual occupation lift retains the multiplicative joint energy.",
+    "construction": "The actual occupation lift retains the multiplicative joint energy, additive prime multiplicity, unique empty occupation, one-prime states and attainment of its lower edge.",
     "hypotheses_and_scope": "Its nonvacuum bound 3 belongs to this occupation Hamiltonian, not to every reaction generator."
   },
   "F8": {
-    "scope_class": "partial_scope",
+    "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Spectral.NeumannScaleTransport.heat_intertwining",
-      "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_hasDerivAt"
+      "GeneratedFoundations.Analysis.HistoryReactionHilbert.finite_form_tendsto",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbert.cutoffOperator_tendsto",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.cutoff_evolution_tendsto",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.cutoff_flow_tendsto"
     ],
-    "objects": "Complete shared heat evolution and finite reaction evolution.",
-    "construction": "The domain-preserving source heat flow and each actual finite history flow are established.",
-    "hypotheses_and_scope": "An infinite reaction-history generator with all cutoffs requires its own limit theorem."
+    "objects": "Complete shared heat evolution and the full actual history Hilbert-space reaction evolution.",
+    "construction": "Finite reaction forms converge exactly to the full form; root-layer operators and their fixed-time exponentials converge in operator norm.",
+    "hypotheses_and_scope": "The limit is proved at fixed positive Gaussian observation coordinates and fixed time. It includes every finite reaction cross term and does not assume a positive spectral gap."
   },
   "G1": {
     "scope_class": "arithmetic_instance",
