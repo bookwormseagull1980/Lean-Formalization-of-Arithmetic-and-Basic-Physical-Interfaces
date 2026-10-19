@@ -2,6 +2,7 @@
 .cache/
 verification-result.json
 verification-manifest.json
+canonical-root-verification.json
 !verification/verification-manifest.json
 *.olean
 *.ilean

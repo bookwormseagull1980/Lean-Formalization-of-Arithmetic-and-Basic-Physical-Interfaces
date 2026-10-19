@@ -33,7 +33,18 @@ explicit `#print axioms` reports checked against that inventory. Every
 reported transitive axiom belongs to the three-element allowlist above.
 There are no local constants of axiom kind and no `sorryAx` dependencies.
 
-`GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange` depends on
+The completed canonical-root audit on 19 October 2026 covers all 346 local
+modules in the zero-argument entry's actual import closure, 16,584
+compiled-environment constants, 8,490 named type checks and 342 indexed
+claims. It reports zero unsafe constants, zero local axioms and 25
+compiler-generated partial recursion implementations. Every transitive axiom
+is in the same three-element allowlist. The root record is
+`canonical-root-verification.json`, with the complete declaration inventory
+in `.lake/canonical-root-axioms.txt`. This scoped audit includes all
+intermediate imported modules, whether indexed or not; it makes no claim
+about research modules not imported by the root.
+
+`GeneratedFoundations.CanonicalClosedWorld.generated` depends on
 exactly `propext`, `Classical.choice` and `Quot.sound`. Its module and all
 dependencies passed compilation. Its conclusion includes the constructed
 common-source geometry, the single natural-number branch with its complete
@@ -45,9 +56,12 @@ and signed-energy constructions, and the finite generated recovery kernel
 live in the separate `GeneratedFoundations.ResearchExtensions` entry and are
 not dependencies of this common-root theorem.
 
-The authoritative evidence is `verification-manifest.json` together with
-its saved audit log and the source, index, dependency and tool fingerprints
-bound by that record. Use `--check-manifest` to test its freshness. A
+The canonical-root evidence is its separately named record and audit log
+above, bound to the source, index, dependencies, verifier scripts and
+toolchain by their recorded fingerprints. Re-running
+`scripts/verify_canonical_root.py` regenerates that evidence. The
+whole-library verifier instead writes `verification-manifest.json`; its
+`--check-manifest` option checks the freshness of that separate record. A
 successful record cannot certify subsequently changed sources merely
 because the file still exists.
 
@@ -58,7 +72,7 @@ axioms. Source traversal of the current library found no such placeholders,
 custom axiom declarations, `native_decide`, or `unsafe` proof implementations.
 That source result alone does not substitute for a completed compiled audit.
 
-The complete environment has zero `unsafe` flags and 29 `partial` flags.
+The 18 October whole-library environment has zero `unsafe` flags and 29 `partial` flags.
 All 29 flagged constants have the suffix `._unsafe_rec`; the corresponding
 public definitions have both flags false. The full names are obtained by
 appending that suffix to each name in the following table, under the common
@@ -99,10 +113,12 @@ mathematical assertion. It does mean that an executable extraction algorithm
 has not necessarily been furnished. Equivalence-class uniqueness must also
 be distinguished from uniqueness of the selected witness or coordinates.
 
-## The root datum
+## The root construction
 
-The single public `fromMinimalUnbiasedChange` entry theorem takes
-`Source.MinimalUnbiasedChange.Datum`. Its fields are:
+The single public `CanonicalClosedWorld.generated` theorem takes no argument.
+Internally, `Source.CanonicalRoot.generated` constructs the canonical minimal
+carrier and `Source.MinimalUnbiasedChange.fromMinimalCarrier` equips it with
+the unique compositional law. The implementation package has the fields:
 
 | Field | Mathematical content |
 |---|---|
@@ -126,10 +142,12 @@ strictly positive parameters on a fixed generated carrier; equality of the
 entire real-indexed family at unrestricted nonpositive parameters is not
 claimed.
 
-Orientations and positive widths are quantified in the conclusion of the
-root entry. They index realizations; they are not additional fitted root
-principles. Their presence is not a claim of literal equality of every
-oriented or rescaled realization.
+The geometric, physical and common-root output records contain neither an
+orientation nor a width parameter. Unit covariance fixes the positive
+dimensionless width to one and the original complex rotation supplies the
+canonical presentation orientation. Individual scale and reversal lemmas
+quantify over comparison variables; no parameterized aggregate world theorem
+is retained.
 
 ## Internal definitions and comparison classes
 
@@ -244,14 +262,66 @@ linear Einstein tensor operator with its simple massless pole.  These modules
 quantify over field configurations and momenta after the carrier is generated;
 they do not enlarge `MinimalUnbiasedChange.Datum`.
 
-The finite internal response is also part of the same root output. The
-generated endpoint ratio fixes the critical radius; the `(4,2)` source carrier
-and explicit colour matrices fix the long-root and adjoint Casimirs; and their
-normalized response determines the unique positive condensed amplitude and a
-strictly positive radial/coclosed spectral bottom. No critical scale, gauge
-coupling, kinetic coefficient or mass value is added to the root datum. The
-formalized statement is the finite spectral combination; the manuscript's
-unbounded operator-domain analysis remains a separate analytic proof.
+The generated Yang--Mills response is part of the same root output. The
+endpoint ratio fixes the critical radius; the `(4,2)` source carrier and
+explicit colour matrices fix the long-root and adjoint Casimirs; and their
+normalized response determines the unique positive condensed amplitude. The
+nonlinear curvature is retained before variation. The Haar-field curvature
+norm is proved equal to the integral of the actual colour-matrix curvature
+trace, with the source-derived colour normalization. Its common radial--connection
+response has zero mixed Hessian, while the radial coefficient is exactly the
+source intensity-score variance times the complete restoring curvature. The
+projective volume is computed from the ambient Lebesgue polar measure and
+the actual two-sheeted source quotient. The source-intensity normalization
+uniquely fixes the isotropic variance on the three-by-eight connection
+components. Two transverse spatial directions and the actual colour
+double commutator compute its quadratic covariance response. Complex
+conjugation transports both connection values and derivatives, preserves
+the nonlinear curvature trace and leaves the full local source response
+unchanged under orientation reversal. The complete coclosed colour one-form
+space contains both source vector branches,
+their full multiplicities, every positive odd degree and all eight colour
+directions. The finite operator is identified with the differentiated source
+curl-squared operator on every coefficient row before closing its graph.
+It has a unique self-adjoint closure with an explicit weighted-square domain.
+The radial direct sum has an attained,
+strictly positive spectral bottom on the condensed branch, and finite bosonic
+occupations have a unique vacuum and the same attained non-vacuum gap. No
+critical scale, gauge coupling, kinetic coefficient or dimensionless mass
+value is added to the root datum. `CanonicalYangMillsUnits.generated` attaches
+mass units at that same generated IR radius. Its sole dimensional argument is
+a positive Newton constant. In the stated reduced-Planck convention, the
+emergence mass squared is `1/(16*pi*G_N)` and the gap mass squared is the
+already attained dimensionless bottom divided by `16*pi*G_N`; positivity
+selects the mass uniquely. No radius is supplied at this interface, and the
+calibration enters neither the carrier, action, Hessian, condensate nor
+dimensionless gap theorem.
+
+The source spinor differential uses the same trace-orthonormal frame.
+Its Koszul coefficients determine the spin connection; Clifford contraction
+derives the constant term `3/2`. The first-order operator is intertwined with
+actual matrix-coefficient fields before diagonalization. The differentiated
+degree-`m` block has kinetic branches `m` and `-(m+2)`, with dimensions `m+2`
+and `m`, respectively. Completeness is proved in the original two-component
+Haar space. The finite differential core has a unique self-adjoint closure,
+an explicit full weighted-square domain and a cutoff-independent squared-norm
+lower bound `9/4`. A bounded two-sided inverse exists at every complex value
+outside the two half-integer towers. Thus the complete spinor spectrum is
+derived from the source differential rather than supplied as branch data.
+
+The rank-two tensor construction acts on the original nine-component
+projective Haar field. Symmetry, trace and the computed covariant divergence
+define its closed weak TT kernel. The actual Koszul connection acts on both
+tensor indices. Its differentiated curl and rough restrictions satisfy
+`rough = curl squared - 3`; connection energy excludes the inadmissible low
+branch. The complete original-field basis then gives a unique self-adjoint
+rough closure and its full weighted-square domain. Actual nonzero polynomial
+witnesses establish branch presence, and bounded two-sided resolvents exclude
+any additional spectrum. The complete spectral set is `k(k+2)-2` for even
+`k >= 2`, with attained lower edge `6` in the unit trace-metric frame.
+The separate representation-label multiplicity formula is not used to
+define or diagonalize this operator. This result is bundled in the same
+zero-argument physical and common-root conclusions.
 
 The actual generated even scalar shells also determine the complete
 dimensionless conformal response. Its continuity, strict increase,
@@ -305,9 +375,9 @@ while preserving every named check and full-environment record. A timeout
 terminates its own process tree, preserves a marked incomplete log and does
 not publish a successful manifest.
 
-The independent verifier and index regression tests pass 98 cases. Their mocked
+The independent verifier, root-scope and index regression tests pass 102 cases. Their mocked
 compiler responses test the verification machinery, including rejection of
-incomplete inventories and unexpected axioms. They are not 98 Lean proof
+incomplete inventories and unexpected axioms. They are not 102 Lean proof
 checks. V5's external-library integration tests are maintained separately in
 the numerical software repository. A standalone `example` that leaves no environment constant is checked
 during module compilation; it is not counted as an enumerated declaration.
@@ -317,10 +387,9 @@ during module compilation; it is not counted as an enumerated declaration.
 proof checker. A compiler resource limit changes how long proof elaboration
 may run, not which propositions the kernel accepts.
 
-The local option inventory contains the following twelve
-occurrences. Paths are relative to `GeneratedFoundations/`; line numbers
-locate that source snapshot. Every occurrence uses `in` and applies to one
-declaration.
+The declaration-local checking options are listed below. Paths are relative
+to `GeneratedFoundations/`; line numbers locate this source snapshot. Each
+listed occurrence uses `in` and applies to one declaration.
 
 | Source | Line | Option and value |
 |---|---:|---|
@@ -336,26 +405,35 @@ declaration.
 | `Source/OriginalLieFlow.lean` | 126 | `backward.isDefEq.respectTransparency false` |
 | `Source/RepresentationDifferential.lean` | 96 | `backward.isDefEq.respectTransparency false` |
 | `Spectral/PositiveOperatorTrace.lean` | 64 | `backward.isDefEq.respectTransparency false` |
+| `Physical/SourceGeneratedRadialVariation.lean` | 30 | `backward.isDefEq.respectTransparency false` |
+| `Physical/SourceGeneratedRadialVariation.lean` | 88 | `backward.isDefEq.respectTransparency false` |
+| `Geometry/SourceSpinorConnection.lean` | 44 | `maxHeartbeats 1600000` |
+| `Geometry/SourceTensorCovariantDerivative.lean` | 176 | `maxHeartbeats 800000` |
+| `Geometry/SourceTensorCurl.lean` | 53 | `maxHeartbeats 1600000` |
+| `Geometry/SourceTensorRoughIdentity.lean` | 97 | `maxHeartbeats 800000` |
+| `Geometry/SourceTensorSpectralCore.lean` | 62 | `maxHeartbeats 800000` |
 
-The heartbeat limit belongs to the pre-existing proof of
-`haarCircleReflection_halfToHaar_coe`; it was not introduced or increased
-in this audit. It allocates checking resources and does not skip the kernel.
-The other eleven settings change elaboration transparency when comparing
-implicit arguments: they permit unfolding semireducible definitions at
-default transparency. They are neither heartbeat or recursion limits nor
-logical axioms, and the resulting proof terms still require kernel checking.
-No local `maxRecDepth` override was found. The only project-level Lean option
-is `autoImplicit false`.
+Heartbeat limits allocate elaboration resources to the circle normalization,
+Koszul and tensor differential calculations; they do not change kernel
+acceptance. The transparency settings permit unfolding semireducible
+definitions when comparing implicit arguments. No local `maxRecDepth`
+override is used. `Arithmetic/ReducedExpressionFoundation.lean:78` separately
+disables the `haveILetI` style linter within that module. This affects style
+messages, not theorem checking. The project-level option is
+`autoImplicit false`.
 
-Two local `irreducible` attributes protect already established coordinate
-maps from automatic expansion into their underlying function-space models:
-`colourPair` in `Physical/SourceSplitResponse.lean:80` and
-`matrixRealization` in `Physical/SourceMatterPhaseExponential.lean:178`.
-Subsequent proofs use their proved coordinate and continuity identities.
-These attributes control elaboration within those files; they introduce no
-axioms or additional mathematical hypotheses and do not bypass kernel checks.
+The `irreducible` attributes protect established coordinate maps, differentiated
+blocks and their eigenbases from automatic expansion. The maps `colourPair`
+and `matrixRealization` occur in `Physical/SourceSplitResponse.lean` and
+`Physical/SourceMatterPhaseExponential.lean`. The new one-form, spinor and
+tensor files apply the same mechanism to their finite operators and derived
+bases. In `Geometry/SourceCoclosedDifferentialBlock.lean`, the attribute is
+exported for `coclosedBasis` and `coclosedEigenvalue`; the other occurrences
+are local. Subsequent proofs use the proved coordinate, differential and
+basis identities. These elaboration attributes introduce no mathematical
+hypotheses or axioms, and the resulting terms are kernel-checked.
 
-A scan of all 273 local proof modules, with comments and strings masked,
+The 18 October scan of all 273 local proof modules, with comments and strings masked,
 found no executable `sorry`, `admit`, custom `axiom`, `sorryAx`, `unsafe`,
 `partial`, `native_decide`, `implemented_by` or `extern` usage, and no local
 macro, elaborator or initialization command. This is a source snapshot,

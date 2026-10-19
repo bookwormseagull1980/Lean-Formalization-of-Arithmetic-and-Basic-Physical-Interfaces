@@ -2,19 +2,19 @@ module
 
 import GeneratedFoundations.ArithmeticFoundation
 import GeneratedFoundations.PhysicalInterface
-public import GeneratedFoundations.CommonFoundation
+public import GeneratedFoundations.CanonicalClosedWorld
+public import GeneratedFoundations.Physical.SourceGaussianResponseDomain
+public import GeneratedFoundations.Physical.SourceResponseLevel
+public import GeneratedFoundations.Physical.SourceGeneratedYangMillsNewtonAnchor
 
 /-!
 # Generated foundations: implemented declarations
 
-This entry point exposes a canonical root interface and the compatibility
-interface used by existing modules.  The theorem
-`CommonFoundation.fromCanonicalRoot` takes only a minimal change carrier and
-constructs its unique positive-parameter compositional law internally.
-`CommonFoundation.fromMinimalUnbiasedChange` packages the same single generated
-natural-number system and the basic physical branch as outputs of the same sole
-compatibility root datum, `Source.MinimalUnbiasedChange.Datum`, for
-every orientation and positive width.  Its arithmetic conclusions include
+This entry point exposes the zero-argument canonical generated world.  Its
+carrier and positive-parameter law are constructed from minimal unbiased
+compositional change; unit covariance uniquely fixes the Gaussian width and
+the original complex rotation supplies the orientation. No realization family
+is part of the public root theorem. The arithmetic conclusions include
 ordered expression normalization, the evaluation quotient with directly
 descended operations, complete ordered histories, canonical finite phase
 fibres, the persistent Gaussian history source, the retained history
@@ -27,9 +27,14 @@ an off-diagonal cross term. Source geometry,
 retained response, matter, scalar, the complete generated left--right family,
 the actual projective scalar spectrum, its complete restoring response,
 the resulting normalized positive scalar spectral bottom and the combined
-positive Yang--Mills spectral bottom of the radial and coclosed blocks,
+positive Yang--Mills spectral bottom of the radial and complete generated
+coclosed blocks, the original-field Dirac operator and both of its central
+restrictions, and the original weak TT field with its unique self-adjoint
+rough operator and complete spectral set,
 four-dimensional gauge dynamics, the canonical `1-16-15` complete-matter
 short exact sequence and the
-linear TT gravity interface are parallel outputs of the same root.
+linear TT gravity interface are parallel outputs of the same root.  A positive
+Newton constant appears only in the separate dimensional-calibration module;
+it does not enter the carrier, action, Hessian or dimensionless gap theorem.
 The theorem index records the exact public declarations and scopes.
 -/

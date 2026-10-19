@@ -37,13 +37,13 @@ end SpectralConfiguration
 def equation {N : ℕ} (L z : ℝ)
     (x : SpectralConfiguration N) : SpectralConfiguration N :=
   ⟨normalizedRadialMassSq z * x.radial,
-    fun i => coclosedMassIndex L z (i.1 + 1) * x.coclosed i⟩
+    fun i => coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i⟩
 
 /-- Bilinear first variation of the same action. -/
 def firstVariation {N : ℕ} (L z : ℝ)
     (x y : SpectralConfiguration N) : ℝ :=
   normalizedRadialMassSq z * x.radial * y.radial +
-    ∑ i, coclosedMassIndex L z (i.1 + 1) *
+    ∑ i, coclosedMassIndex L z (coclosedShellDegree i.1) *
       x.coclosed i * y.coclosed i
 
 /-- Exact polarization identity.  This identifies `equation` as the Euler
@@ -54,9 +54,9 @@ theorem spectralAction_add {N : ℕ} (L z : ℝ)
       spectralAction L z x + spectralAction L z y +
         firstVariation L z x y := by
   have hcross :
-      (∑ i, coclosedMassIndex L z (i.1 + 1) *
+      (∑ i, coclosedMassIndex L z (coclosedShellDegree i.1) *
         (2 * x.coclosed i * y.coclosed i)) =
-        2 * ∑ i, coclosedMassIndex L z (i.1 + 1) *
+        2 * ∑ i, coclosedMassIndex L z (coclosedShellDegree i.1) *
           x.coclosed i * y.coclosed i := by
     rw [Finset.mul_sum]
     apply Finset.sum_congr rfl
@@ -91,7 +91,7 @@ theorem equation_eq_zero_iff {N : ℕ} {L z : ℝ}
       have heq := congrArg (fun y => y.coclosed i) h
       simp only [equation, SpectralConfiguration.zero] at heq
       exact (mul_eq_zero.mp heq).resolve_left
-        (coclosedMassIndex_pos hL hz (i.1 + 1)).ne'
+        (coclosedMassIndex_pos hL hz (coclosedShellDegree i.1)).ne'
     cases x
     simp only [SpectralConfiguration.zero] at hr ⊢
     congr
@@ -118,13 +118,13 @@ theorem firstVariation_self_pos {N : ℕ} {L z : ℝ}
         exact hnone i
       rcases hc with ⟨i, hi⟩
       have hsum : 0 < ∑ j,
-          coclosedMassIndex L z (j.1 + 1) * x.coclosed j ^ 2 := by
+          coclosedMassIndex L z (coclosedShellDegree j.1) * x.coclosed j ^ 2 := by
         apply Finset.sum_pos'
         · intro j _
-          exact mul_nonneg (coclosedMassIndex_pos hL hz (j.1 + 1)).le
+          exact mul_nonneg (coclosedMassIndex_pos hL hz (coclosedShellDegree j.1)).le
             (sq_nonneg (x.coclosed j))
         · exact ⟨i, Finset.mem_univ i,
-            mul_pos (coclosedMassIndex_pos hL hz (i.1 + 1))
+            mul_pos (coclosedMassIndex_pos hL hz (coclosedShellDegree i.1))
               (sq_pos_of_ne_zero hi)⟩
       rw [hr, zero_pow (by norm_num)]
       norm_num
@@ -134,9 +134,9 @@ theorem firstVariation_self_pos {N : ℕ} {L z : ℝ}
         exact mul_pos (mul_pos (by norm_num)
           (normalizedRadialMassSq_pos hz)) (sq_pos_of_ne_zero hr)
       have hsum : 0 ≤ (1 / 2 : ℝ) * ∑ i,
-          coclosedMassIndex L z (i.1 + 1) * x.coclosed i ^ 2 := by
+          coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i ^ 2 := by
         exact mul_nonneg (by norm_num) (Finset.sum_nonneg fun i _ =>
-          mul_nonneg (coclosedMassIndex_pos hL hz (i.1 + 1)).le
+          mul_nonneg (coclosedMassIndex_pos hL hz (coclosedShellDegree i.1)).le
             (sq_nonneg (x.coclosed i)))
       exact add_pos_of_pos_of_nonneg hrad hsum
   rw [firstVariation_self_eq_two_action]

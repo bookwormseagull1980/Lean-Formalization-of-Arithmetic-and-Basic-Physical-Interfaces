@@ -17,9 +17,8 @@ public import GeneratedFoundations.Physical.SourceCliffordChirality
 /-!
 # Internal response on the common generated matter carrier
 
-The root data `d`, `h`, `μ`, and `hμ` jointly express minimal unbiased
-compositional change. The orientation `o` and positive width `b` index its
-coordinate and scale realizations. The response algebra, vacuum, phase,
+The canonical root supplies the unit-covariance width and the orientation
+of its original complex rotation. The response algebra, vacuum, phase,
 quotient and elementary connector below are internal source constructions.
 The two chiral sectors are the ranges of the primitive central projections
 of the actual source Clifford even algebra, transported to the same Hermite
@@ -62,6 +61,9 @@ open SourceJointResponse SourceMinimalRepresentation SourceChiralCarrier
 open SourceMatterCharge SourceScalarConnector
 open ReversalRealConnector (Spinor connectorOfDoublet)
 
+local notation "b" => Source.CanonicalRealization.width
+local notation "hb" => Source.CanonicalRealization.width_pos
+
 local instance : NormedRing SourceMatterPhaseExponential.MatterEnd :=
   ContinuousLinearMap.toNormedRing
 
@@ -69,7 +71,7 @@ local instance : IsTopologicalRing SourceMatterPhaseExponential.MatterEnd :=
   NonUnitalSeminormedRing.toIsTopologicalRing
 
 /-- The generated even algebra and its actual two source sectors. -/
-structure ChiralConclusions (b : ℝ) (hb : 0 < b) : Prop where
+structure ChiralConclusions : Prop where
   grading_generated : SourceCliffordConnector.grading =
     -(SourceCliffordConnector.clifford 1 *
       SourceCliffordConnector.clifford SourceCliffordChirality.sourceI *
@@ -100,7 +102,7 @@ structure ChiralConclusions (b : ℝ) (hb : 0 < b) : Prop where
     Module.finrank ℂ (LinearMap.range (SourceCliffordChirality.sourcePositive hb).toLinearMap) = 8 ∧
       Module.finrank ℂ (LinearMap.range (SourceCliffordChirality.sourceNegative hb).toLinearMap) = 8
 
-theorem source_chirality {b : ℝ} (hb : 0 < b) : ChiralConclusions b hb where
+theorem source_chirality : ChiralConclusions where
   grading_generated := SourceCliffordChirality.grading_from_source_product
   real_even_algebra := ⟨SourceCliffordChirality.evenEquiv⟩
   complex_even_algebra := ⟨SourceCliffordChirality.complexEvenEquiv⟩
@@ -115,10 +117,10 @@ theorem source_chirality {b : ℝ} (hb : 0 < b) : ChiralConclusions b hb where
   source_dimensions := ⟨SourceCliffordChirality.sourcePositive_finrank hb,
     SourceCliffordChirality.sourceNegative_finrank hb⟩
 
-/-- Internal physical outputs on the generated source objects at each
-positive width, with the classification domains explicit in the fields. -/
-structure Conclusions (b : ℝ) (hb : 0 < b) : Prop where
-  chirality : ChiralConclusions b hb
+/-- Internal physical outputs of the canonical source, with the classification
+domains explicit in the fields. No realization argument is supplied. -/
+structure Conclusions : Prop where
+  chirality : ChiralConclusions
   least_source : IsLeastFaithfulRepresentation sourceCarrierRepresentation
   least_classification : ∀ (H : Type) [NormedAddCommGroup H] [InnerProductSpace ℂ H]
     [FiniteDimensional ℂ H] (ρ : JointEnd →ₐ[ℂ] Module.End ℂ H),
@@ -216,8 +218,8 @@ structure Conclusions (b : ℝ) (hb : 0 < b) : Prop where
   scalar_invariant : SourceScalarInvariant.Conclusions
   scalar_descent : ∀ H : Spinor, SourceChargedQuotient.Descends (scalarConnector H) ↔ H = 0
 
-theorem source_internalResponse {b : ℝ} (hb : 0 < b) : Conclusions b hb where
-  chirality := source_chirality hb
+theorem source_internalResponse : Conclusions where
+  chirality := source_chirality
   least_source := sourceCarrierRepresentation_isLeast
   least_classification := fun H _ _ _ ρ hρ => least_unitarilyEquivalentToSource (H := H) ρ hρ
   least_pair_transport := fun _ _ _ _ _ _ _ _ ρL ρR hL hR =>
@@ -256,29 +258,12 @@ theorem source_internalResponse {b : ℝ} (hb : 0 < b) : Conclusions b hb where
   scalar_invariant := SourceScalarInvariant.sourceScalarInvariantConclusions
   scalar_descent := SourceChargedQuotient.scalarConnector_descends_iff
 
-/-- The root data determine the Gaussian amplitude at every orientation and
-positive width. The same width indexes the physical carrier's Hermite
-realization, so no independent physical amplitude is supplied. -/
-theorem minimalChange_internalResponse
-    (d : MinimalCarrier.OrthogonalChangeDatum) (h : MinimalCarrier.IsMinimal d)
-    (o : OrientationOnCarrier d) {μ : ℝ → Measure (TraceLieSpace d h)}
-    (hμ : HilbertCompositionalAxioms μ) {b : ℝ} (hb : 0 < b) :
-    (μ (b ^ 2 / 2)).map (OrientedTraceCoordinate.coordinate d h o) =
-        volume.withDensity (fun y => ENNReal.ofReal (Operations.HermiteSource.groundProfile b y ^ 2)) ∧
-      Conclusions b hb :=
-  ⟨SourceOrigin.coordinate_ground_density d h hμ
-    (OrientedTraceCoordinate.coordinate d h o) hb, source_internalResponse hb⟩
-
-/-- Geometric and finite physical outputs of the same root data, for every
-orientation and positive width. Their individual records retain the exact
-comparison classes and mathematical scope. -/
-theorem generatedSourceResponse
-    (d : MinimalCarrier.OrthogonalChangeDatum) (h : MinimalCarrier.IsMinimal d)
-    (o : OrientationOnCarrier d) (μ : ℝ → Measure (TraceLieSpace d h))
-    (hμ : HilbertCompositionalAxioms μ) (b : ℝ) (hb : 0 < b) :
-    Geometry.GeneratedSourceGeometry.Conclusions d h o μ b hb ∧ Conclusions b hb :=
-  ⟨Geometry.GeneratedSourceGeometry.generatedSourceGeometry d h o μ b hb hμ,
-    source_internalResponse hb⟩
+/-- Geometric and finite physical outputs of the one canonical root. -/
+theorem generatedSourceResponse :
+    Geometry.GeneratedSourceGeometry.Conclusions ∧
+      Conclusions :=
+  ⟨Geometry.GeneratedSourceGeometry.generatedSourceGeometry,
+    source_internalResponse⟩
 
 /-- Each supplied chiral realization is arbitrary before its least faithful
 condition is imposed. One unitary transports both labelled algebra actions. -/

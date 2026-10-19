@@ -35,14 +35,14 @@ theorem spectralAction_coercive {N : ℕ} (L z : ℝ)
       (generatedYangMillsGapSq_le_radial L z) (sq_nonneg x.radial)
   have hmode : ∀ i : Fin N,
       generatedYangMillsGapSq L z * x.coclosed i ^ 2 ≤
-        coclosedMassIndex L z (i.1 + 1) * x.coclosed i ^ 2 := by
+        coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i ^ 2 := by
     intro i
     exact mul_le_mul_of_nonneg_right
-      (generatedYangMillsGapSq_le_coclosed (Nat.succ_le_succ (Nat.zero_le i.1)))
+      (generatedYangMillsGapSq_le_coclosed (coclosedShellDegree_positive i.1))
       (sq_nonneg (x.coclosed i))
   have hsum :
       ∑ i, generatedYangMillsGapSq L z * x.coclosed i ^ 2 ≤
-        ∑ i, coclosedMassIndex L z (i.1 + 1) * x.coclosed i ^ 2 :=
+        ∑ i, coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i ^ 2 :=
     Finset.sum_le_sum fun i _ => hmode i
   unfold SpectralConfiguration.normSq spectralAction
   rw [mul_add, Finset.mul_sum]

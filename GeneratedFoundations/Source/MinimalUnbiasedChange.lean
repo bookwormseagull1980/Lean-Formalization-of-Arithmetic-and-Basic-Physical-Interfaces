@@ -11,7 +11,9 @@ normalization, independent composition, square-root scaling, finite second
 moment and unit covariance. These are the contents of minimal unbiased
 compositional change; no Gaussian formula is a field of the datum.
 
-Orientations and positive widths index realizations of this root datum.
+Orientation and width variables occur in coordinate-level lemmas, but the
+closed construction does not accept them as realization inputs. Unit covariance
+and the original complex rotation fix their canonical values downstream.
 Endpoint readouts, reflecting operators, arithmetic and physical response
 objects are defined and proved downstream. Neither their values nor their
 properties are fields here. Their internal definitions and the comparison

@@ -15,23 +15,34 @@ explicit source class. Addition, multiplication, factorization, reduced
 expressions and complete ordered histories are structures of that same
 natural-number construction, not alternative constructions.
 
-The sole public root entry is
-`GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange`. From one
-`Source.MinimalUnbiasedChange.Datum`, it simultaneously produces source closure,
-the complete generated natural-number system, and the basic physical interface.
-The arithmetic and physical branches are parallel conclusions of this theorem;
-neither is assumed by the other. The former branch-by-branch compatibility
-wrappers have been removed from the current library.
+The sole closed-world entry is
+`GeneratedFoundations.CanonicalClosedWorld.generated`. It accepts no
+carrier, probability law, arithmetic source, physical source, forcing term, or
+boundary datum. Minimal unbiased compositional change is the sole abstract
+root; upstream classification selects the rotation carrier as its canonical
+representative, and the positive-parameter compositional law is constructed
+uniquely. The theorem then produces source
+closure, the complete generated natural-number system, and the basic physical
+interface. It does not quantify over a family of widths or orientations: unit
+covariance fixes the dimensionless width and the original complex rotation
+supplies its canonical oriented presentation before the theorem is assembled.
+Reversing that presentation gives the proved conjugate structure. The arithmetic and
+physical branches are parallel conclusions;
+neither is assumed by the other.
 
 ## 2. Concrete record
 
-The released source is pinned to Lean 4.34.0 and mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. The current audit records 273
-modules, 13,854 constants, 7,231 named type checks, and 298 indexed
-claims. These are library and audit counts, not a count of independent
-mathematical theorems. The transitive audit permits only Lean's
-declared `propext`, `Classical.choice`, and `Quot.sound` axioms; no custom
-axioms or proof placeholders are part of the released proof sources.
+The source is pinned to Lean 4.34.0 and mathlib commit
+`5ed2965256430c3649e86755f9576b54eca72435`. The 19 October canonical-root audit
+passed for all 346 local modules imported by the zero-argument entry, with
+16,584 compiled constants, 8,490 named type checks and 342 indexed claims.
+The root and its dependencies use only Lean's `propext`, `Classical.choice`
+and `Quot.sound`; there are no local axioms or proof placeholders.
+The separately scoped 18 October release audit records 273 modules, 13,854
+constants, 7,231 named type checks and 298 indexed claims for that earlier
+whole-library snapshot. These are library and audit counts, not counts of
+independent mathematical theorems. The current root record does not cover
+research modules outside its actual import closure.
 
 ## 3. Program implementation
 
@@ -97,27 +108,27 @@ The index's `manuscript_review_status` separately records the semantic review
 of mapped clauses and any changed sources awaiting review. The stored review snapshot must not be
 silently replaced merely because a label still exists in an updated manuscript.
 
-The sole root input is minimal unbiased compositional change, represented by
-`Source.MinimalUnbiasedChange.Datum`. Its four fields are the orthogonal change
-datum, carrier minimality, a law on the generated trace Lie line, and the
-composition/scaling/variance conditions on that law. The root type stores the
-normalized square-root form of the scale law.  A separate variance-scale
-rigidity theorem starts from an arbitrary nonnegative same-shape scale and
-proves that compositional variance additivity and unit normalization force
-this square-root form.  No Gaussian formula is assumed.
-The existing existence theorem supplies a compatible law, and uniqueness fixes
-it at positive parameters on that carrier.
+The sole root is minimal unbiased compositional change. The zero-argument
+closed-world entry internally uses the least carrier proved by the comparison
+theorem and the compositional law supplied by the existence--uniqueness
+theorem. `Source.MinimalUnbiasedChange.Datum` remains an implementation and
+comparison package, not a second input to the generated world. A separate
+variance-scale rigidity theorem starts from an arbitrary nonnegative
+same-shape scale and proves that compositional variance additivity and unit
+normalization force the square-root law. No Gaussian formula is assumed.
 
-Orientations and positive widths index realizations. The common
-`fromMinimalUnbiasedChange` theorem quantifies over all of them in its
-conclusion. Endpoint values, reflecting boundary operators, spectral data,
-arithmetic operations and physical response objects are not root fields or
-additional caller-supplied hypotheses.
+The geometric and physical output records, as well as the common root theorem,
+have no orientation or width parameter. The internal-response and chirality
+aggregates are likewise parameter-free; the unused parameterized root wrapper
+has been removed. Scale and reversal calculations use variables only in their
+individual covariance and uniqueness lemmas. Endpoint values,
+reflecting boundary operators, spectral data, arithmetic operations and
+physical response objects are generated conclusions, not root fields.
 
 On the physical branch, the generated projective scalar shells determine the
 complete dimensionless conformal response. The library proves its compact
 continuity, strict increase, unboundedness and positive curvature, hence a
-unique positive balance for every positive source drive. The same balance
+unique positive balance for every positive generated source response. The same balance
 gives a positive normalized radial gap and the bottom of the complete even
 scalar tower, attained by its constant shell. At one generated response unit,
 the unique balance and positive bottom are canonical objects of the root
@@ -287,11 +298,25 @@ axiom audit records its transitive logical dependencies. Review of its premises
 and correspondence to the manuscript is a separate semantic assessment and is
 not implied by a successful verification manifest.
 
-The current 273-module library has passed compilation and the complete
-compiled-environment axiom audit. The saved record covers 13,854 constants,
+The 18 October release snapshot passed compilation and the complete
+compiled-environment axiom audit. That record covers 13,854 constants,
 7,231 named type checks and 298 indexed claims. These counts have different
 meanings; consult the index for the precise scope of each claim and use
-`--check-manifest` to confirm that the record matches the current sources.
+`--check-manifest` to determine whether that record still matches the current sources.
+
+The canonical root and its entire transitive local import closure have a
+separate audit command:
+
+```text
+python scripts/verify_canonical_root.py --lake-exe <path-to-pinned-lake>
+```
+
+It builds the actual root module, includes every imported intermediate module,
+and applies the same compiled-environment collector and axiom allowlist as the
+whole-library verifier. The independent `canonical-root-verification.json`
+records that exact source scope, both verifiers, the toolchain and dependency
+fingerprints. Unimported research extensions remain in the whole-library
+verification scope rather than being silently counted as checked by this run.
 
 See [AXIOMS.md](AXIOMS.md) for the complete logical-axiom allowlist, the
 expanded root conditions, the retained construction and classification
@@ -302,16 +327,15 @@ not been performed.
 
 ## Constructed physical interface
 
-`GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange` is the single
-root entry. It takes only `Source.MinimalUnbiasedChange.Datum` and gives all
-conclusions for every orientation and positive width. Its `physical_interface`
-field supplies the basic physical interface alongside, but not as an assumption
-of, the single generated natural-number system and its source closure.
-Expanded-argument theorems remain
-available inside the component modules for applications to a particular
-realization.
+`GeneratedFoundations.CanonicalClosedWorld.generated` is the single
+closed-world entry. It gives the conclusions at the canonical complex
+orientation and uniquely fixed unit-covariance width without accepting another source object. Its
+`physical_interface` field supplies the basic physical interface alongside,
+but not as an assumption of, the single generated natural-number system and
+its source closure. Coordinate-level parameterized lemmas are proof machinery,
+not public alternatives to this generated world.
 
-The same law and width determine the source used throughout each realization.
+The same generated law and uniquely fixed width determine the source throughout.
 The unit-information endpoint and peak-equivalent width are evaluated from its
 Gaussian profile. The actual source average, transported through the reflecting
 isometry, is identified with the constructed Neumann evolution. Conservation
@@ -324,13 +348,20 @@ constants; it is not an additional assumption of the root construction.
 | Exchange-retained response | `SourceSplitResponse.generated_split`, `retainedEquiv` | The actual pre-exchange response commuting with exchange is exactly the block algebra on the symmetric and alternating carriers; the original tensor action is intertwined with the joint response. |
 | Source frames | `SourceFrameConstruction.generated_frames`, `relativeTransition_cocycle`, `relativeTransition_unique` | Colour, phase and pseudoreal frame classifications; relative transitions constructed from source frames satisfy the cocycle and act uniquely on the common matter carrier. |
 | Least matter | `SourceInternalResponse.least_chiral_pair`, `Conclusions.least_source`, `Conclusions.least_classification` | The canonical faithful module attains the least dimension; arbitrary least faithful representations are unitarily equivalent to it, including the paired chiral action. The intertwiner itself is not asserted to be unique. |
-| Vacuum and charge | `SourceInternalResponse.source_internalResponse` | Actual vacuum stabilizer, continuous source lift, primitive charge classification, six-element gauge kernel and faithful effective action. |
+| Vacuum and charge | `SourceInternalResponse.source_internalResponse` | Zero-argument output of the canonical source: actual vacuum stabilizer, continuous source lift, primitive charge classification, six-element gauge kernel and faithful effective action. |
 | Generated gauge group | `SourceGeneratedGaugeGroup.sourceGeneratedGaugeGroup`, `sourceFactorClosure_eq_generated`, `generatedGaugeGroup_least` | The determinant-one changes of the generated colour carrier, the group generated by the source-spin axes and the exhausted phase circle generate the full intrinsic operator group. Its exact six-element kernel gives the effective quotient `(SU(3) x SU(2) x U(1)) / Z6`; the descended scalar action is a colour singlet, the defining weak doublet and has phase character one half. |
 | Elementary connector | `SourceScalarConnector.canonical_elementary`, `elementary_iff_unique_doublet` | The canonical family satisfies independent-source naturality and reversal reality; every connector in that comparison class has a unique doublet coordinate. Its original Gaussian realization and covariance are included. |
 | Relativistic algebraic interface | `SourceHermitianReadout.coordinatesEquivHermitian`, `SourceLorentzCarrier.posSemidef_iff_futureCone`, `coordinateTransform_futureUnit_iff` | All Hermitian two-by-two matrices have unique four-real coordinates. Their determinant has signature `(+---)`, their positive cone is exactly the closed algebraic future cone, determinant-one congruence preserves the form, and the generated future unit has the special-unitary stabilizer equation. |
 | Four-dimensional gauge dynamics | `SourceFourDimensionalGaugeKinematics.sourceFourDimensionalGaugeProperties`, `SourceFourDimensionalYangMills.sourceFourDimensionalYangMillsProperties` | The Hermitian readout supplies the four coordinate directions. The generated colour directions exhaust the skew-Hermitian traceless `3 x 3` algebra; connection curvature, local covariance, the source-normalized positive colour form and its Lorentz contraction are proved without adding a lattice or gauge group. |
 | Internal Yang--Mills response | `SourceColourAdjointCasimir.adjointCasimir_generator`, `SourceInternalYangMillsResponse.properties` | The explicit generated colour matrices give adjoint Casimir `3`; the endpoint ratio gives `L_c=sqrt(pi)`; and the actual `(4,2)` source carrier gives dimension `15`, Casimir `16`, the unique normalized affine drive and `120` colour-connection coefficients. |
-| Radial/coclosed spectral bottom | `SourceRadialMassIntertwiner.properties`, `SourceGeneratedYangMillsGap.properties` | The finite Gaussian score fixes the radial normalization. The unique generator-preserving one-dimensional unitary intertwines the radial and scalar constant evolutions. On the positive condensed branch, the normalized radial block and every coclosed connection shell are positive, so their direct-sum bottom is strictly positive. |
+| Generated Yang--Mills action, differential Hessian and spectral gap | `SourceHaarCurvatureTrace.action_eq_trace`, `SourceHaarYangMillsHessian.action_secondDeriv`, `SourceOneFormCoclosedSpectrum.coclosedHilbertBasis`, `CanonicalYangMills.generated` | The nonlinear action is evaluated on the original Haar one-form fields; its curvature term equals the integral of the actual colour-matrix curvature trace. Differentiation gives the radial block and the source curl-squared connection block, with zero mixed second derivative. The weak divergence kernel has a complete basis of differentiated source eigenfields. The original-field Hessian has a unique self-adjoint closure, its full weighted-square domain, an attained positive bottom and the corresponding finite-occupation Fock gap. Every colour and every nongauge field direction is retained. |
+| Newton mass calibration | `CanonicalYangMillsUnits.generated`, `CanonicalYangMillsUnits.gapMass_sq`, `CanonicalYangMillsUnits.gapMass_unique` | The dimensional readout takes only a positive Newton constant; the IR radius has already been generated. In the stated reduced-Planck convention, the emergence mass squared is `1/(16*pi*G_N)` and the unique positive gap mass squared is `gapSq/(16*pi*G_N)`. The calibration cancels from their ratio and does not enter the action, condensate or operator. |
+| Canonical Yang--Mills response | `CanonicalYangMills.generated` | The generated IR radius is `sqrt(2*pi)` and exceeds the critical radius. Its unique positive condensed amplitude, original-Haar-field action, self-adjoint differential response Hessian, attained positive spectral bottom and finite-occupation gap are outputs of a theorem without realization arguments. |
+| Geometric volume and colour covariance | `SourceProjectiveVolume.roundMeasure_total`, `SourceGeneratedYangMillsGap.transverseCovarianceAction_eq`, `CanonicalYangMills.sourceColourContraction` | The actual ambient polar measure and two-sheeted quotient give `pi^2*L^3`. Isotropic variance with the generated total intensity is fixed across the 24 spatial-colour components; the two transverse directions and the actual adjoint double commutator compute the connection response shift. |
+| Orientation reversal of the nonlinear response | `CanonicalYangMills.responseAction_orientation_reverse` | Conjugating the complete connection jet preserves its curvature trace, connection norm and common radial response. Together with the source orientation classification, this identifies the response in the two orientation presentations. |
+| Differentiated source spinor | `SourceSpinorCovariantDerivative.polynomialDirac_eq_contraction`, `SourceSpinorHaarBlock.differential_normalizedSynthesis`, `SourceSpinorClosedSpectrum.closedDirac_unique`, `SourceSpinorResolvent.spectrum_half_integers` | The Koszul formula computes the spin connection from the original trace-metric source frame. Clifford contraction gives the actual field differential. Its complete Haar basis yields a unique self-adjoint closure on the full weighted-square domain, spectrum `+/- (k+3/2)` and a full-domain squared-norm lower bound `9/4`. Bounded two-sided resolvents exclude additional continuous and residual spectrum. |
+| Both central spinor sectors | `SourceSpinorParitySpectrum.closedSectorDirac_is_restriction`, `SourceSpinorParityResolvent.spectrum_labels` | The actual central pullback determines two closed field subspaces. Their Dirac operators are restrictions of the same original operator on the entire closed domain. In the positive central sector the positive branch has even `k` and the negative branch odd `k`; the other sector reverses these parities. Complete sector bases and bounded two-sided inverses prove presence and exhaustion of both spectra. |
+| Differentiated projective TT tensor | `SourceTensorCovariantDerivative.rough_coefficientTensor`, `SourceTensorTTBlock.ttRough_eq_curl_square`, `SourceTensorTTClosedSpectrum.closedRough_unique`, `SourceTensorTTSpectrum.spectrum_labels` | The original nine-component tensor Haar space supplies the closed weak kernel of symmetry, trace and covariant divergence. Koszul differentiation yields `rough = curl squared - 3`. Its complete differentiated basis gives the unique self-adjoint rough closure and full weighted-square domain. Nonzero polynomial witnesses and bounded two-sided resolvents prove exactly the eigenvalues `k(k+2)-2`, for even `k >= 2`, with attained bottom `6` in the unit trace-metric frame. No tensor branch or gap is an input. |
 | TT carrier and response endpoint | `SourceTransverseTraceless.sourceTransverseTracelessProperties`, `SourceTensorResponseEndpoint.sourceTensorResponseEndpointProperties` | Symmetry, transversality and vanishing trace determine a unique plus/cross decomposition and a two-dimensional TT carrier. The mass-weighted kernel has the unique maximum `4/27` at `y=1/3`; a positive fixed spectral coefficient has the unique endpoint `c=27A/4`. |
 | Linear tensor gravity | `SourceLinearizedGravity.sourceLinearizedGravityProperties`, `generalTensorOperator_coefficients_unique` | Gauge annihilation, transversality and unit TT normalization uniquely select the five coefficients of the local two-derivative linear Einstein operator. It annihilates pure gauge tensors, reduces to `Q² I₂` on the derived TT carrier, has a unique sourced solution away from zero momentum and an exact positive-residue simple pole at `Q²=0`. |
 

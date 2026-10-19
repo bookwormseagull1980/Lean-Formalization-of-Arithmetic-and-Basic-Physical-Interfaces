@@ -26,7 +26,7 @@ open SourceGeneratedYangMillsEquation SourceGeneratedYangMillsCoercivity
 def spectralFlow {N : ℕ} (L z time : ℝ) (x : SpectralConfiguration N) :
     SpectralConfiguration N :=
   ⟨Real.exp (-time * normalizedRadialMassSq z) * x.radial,
-    fun i => Real.exp (-time * coclosedMassIndex L z (i.1 + 1)) *
+    fun i => Real.exp (-time * coclosedMassIndex L z (coclosedShellDegree i.1)) *
       x.coclosed i⟩
 
 @[simp] theorem flow_zero_time {N : ℕ} (L z : ℝ)
@@ -55,15 +55,15 @@ theorem flow_add_time {N : ℕ} (L z s t : ℝ)
             Real.exp_add]
         ring
       have hc :
-          (fun i => Real.exp (-s * coclosedMassIndex L z (i.1 + 1)) *
-              (Real.exp (-t * coclosedMassIndex L z (i.1 + 1)) *
+          (fun i => Real.exp (-s * coclosedMassIndex L z (coclosedShellDegree i.1)) *
+              (Real.exp (-t * coclosedMassIndex L z (coclosedShellDegree i.1)) *
                 coclosed i)) =
             fun i => Real.exp (-(s + t) *
-              coclosedMassIndex L z (i.1 + 1)) * coclosed i := by
+              coclosedMassIndex L z (coclosedShellDegree i.1)) * coclosed i := by
         funext i
-        rw [show -(s + t) * coclosedMassIndex L z (i.1 + 1) =
-              -s * coclosedMassIndex L z (i.1 + 1) +
-                -t * coclosedMassIndex L z (i.1 + 1) by ring,
+        rw [show -(s + t) * coclosedMassIndex L z (coclosedShellDegree i.1) =
+              -s * coclosedMassIndex L z (coclosedShellDegree i.1) +
+                -t * coclosedMassIndex L z (coclosedShellDegree i.1) by ring,
             Real.exp_add]
         ring
       simp only [spectralFlow]
@@ -98,16 +98,16 @@ theorem spectralAction_flow_le {N : ℕ} {L z time : ℝ}
     (generatedYangMillsGapSq_le_radial L z)
     (normalizedRadialMassSq_pos hz).le htime (value := x.radial)
   have hmode : ∀ i : Fin N,
-      coclosedMassIndex L z (i.1 + 1) *
-          (Real.exp (-time * coclosedMassIndex L z (i.1 + 1)) *
+      coclosedMassIndex L z (coclosedShellDegree i.1) *
+          (Real.exp (-time * coclosedMassIndex L z (coclosedShellDegree i.1)) *
             x.coclosed i) ^ 2 ≤
         Real.exp (-2 * time * generatedYangMillsGapSq L z) *
-          (coclosedMassIndex L z (i.1 + 1) * x.coclosed i ^ 2) := by
+          (coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i ^ 2) := by
     intro i
     exact weighted_exp_decay
       (generatedYangMillsGapSq_le_coclosed
-        (Nat.succ_le_succ (Nat.zero_le i.1)))
-      (coclosedMassIndex_pos hL hz (i.1 + 1)).le htime
+        (coclosedShellDegree_positive i.1))
+      (coclosedMassIndex_pos hL hz (coclosedShellDegree i.1)).le htime
       (value := x.coclosed i)
   have hsum := Finset.sum_le_sum fun i (_hi : i ∈ Finset.univ) => hmode i
   rw [← Finset.mul_sum] at hsum
@@ -115,34 +115,34 @@ theorem spectralAction_flow_le {N : ℕ} {L z time : ℝ}
     (1 / 2 : ℝ) * normalizedRadialMassSq z *
           (Real.exp (-time * normalizedRadialMassSq z) * x.radial) ^ 2 +
         (1 / 2 : ℝ) * ∑ i,
-          coclosedMassIndex L z (i.1 + 1) *
-            (Real.exp (-time * coclosedMassIndex L z (i.1 + 1)) *
+          coclosedMassIndex L z (coclosedShellDegree i.1) *
+            (Real.exp (-time * coclosedMassIndex L z (coclosedShellDegree i.1)) *
               x.coclosed i) ^ 2 ≤
       Real.exp (-2 * time * generatedYangMillsGapSq L z) *
         ((1 / 2 : ℝ) * normalizedRadialMassSq z * x.radial ^ 2 +
           (1 / 2 : ℝ) * ∑ i,
-            coclosedMassIndex L z (i.1 + 1) * x.coclosed i ^ 2)
+            coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i ^ 2)
   calc
     _ = (1 / 2 : ℝ) *
           (normalizedRadialMassSq z *
             (Real.exp (-time * normalizedRadialMassSq z) * x.radial) ^ 2) +
         (1 / 2 : ℝ) * ∑ i,
-          coclosedMassIndex L z (i.1 + 1) *
-            (Real.exp (-time * coclosedMassIndex L z (i.1 + 1)) *
+          coclosedMassIndex L z (coclosedShellDegree i.1) *
+            (Real.exp (-time * coclosedMassIndex L z (coclosedShellDegree i.1)) *
               x.coclosed i) ^ 2 := by ring
     _ ≤ (1 / 2 : ℝ) *
           (Real.exp (-2 * time * generatedYangMillsGapSq L z) *
             (normalizedRadialMassSq z * x.radial ^ 2)) +
         (1 / 2 : ℝ) *
           (Real.exp (-2 * time * generatedYangMillsGapSq L z) *
-            ∑ i, coclosedMassIndex L z (i.1 + 1) * x.coclosed i ^ 2) :=
+            ∑ i, coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i ^ 2) :=
       add_le_add
         (mul_le_mul_of_nonneg_left hrad (by norm_num))
         (mul_le_mul_of_nonneg_left hsum (by norm_num))
     _ = Real.exp (-2 * time * generatedYangMillsGapSq L z) *
         ((1 / 2 : ℝ) * normalizedRadialMassSq z * x.radial ^ 2 +
           (1 / 2 : ℝ) * ∑ i,
-            coclosedMassIndex L z (i.1 + 1) * x.coclosed i ^ 2) := by ring
+            coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i ^ 2) := by ring
 
 /-- In particular, the action is nonincreasing along forward generated time. -/
 theorem spectralAction_flow_le_initial {N : ℕ} {L z time : ℝ}

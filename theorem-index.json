@@ -32,13 +32,13 @@
     "compatibility_datum": "GeneratedFoundations.Source.MinimalUnbiasedChange.Datum",
     "meaning": "The canonical root contains only the minimal orthogonal change carrier and its minimality proof. The positive-parameter compositional Gaussian law is constructed internally and is unique in the stated C/S/V comparison class. The compatibility datum packages the same derived law for existing modules.",
     "fields": ["change", "minimal"],
-    "realization_indices": "Every orientation and positive width is quantified in the root conclusions. These indices are not extra root principles.",
+    "realization_indices": "The public generated theorem has no realization index. Unit covariance fixes the positive dimensionless width to one and the original complex rotation fixes the orientation; parameterized component lemmas are internal proof machinery.",
     "internal_constructions": "The unique compositional Gaussian law, calibrated information and mass readouts, endpoints, reflecting closure, spectra, arithmetic, finite-fibre reduced-expression resolution, the complete occupation--scale source, its center action, canonical Mobius--Gaussian readout and endpoint ledger, physical responses, the intrinsic generated gauge group, the canonical neutral-complete-charged short exact sequence, four-dimensional gauge kinematics, Yang--Mills covariance, the two-dimensional transverse--traceless carrier, the tensor-response endpoint, the local linear Einstein operator, and the complete normalized conformal response with its canonical scalar spectral bottom are constructed internally. Definitions and uniqueness comparison classes remain explicit; their outputs are not root assumptions."
   },
   "common_source_integration": {
-    "entry": "GeneratedFoundations.CommonFoundation.fromCanonicalRoot",
+    "entry": "GeneratedFoundations.CanonicalClosedWorld.generated",
     "status": "source_integrated",
-    "scope": "One canonical minimal-change carrier internally generates its unique positive-parameter compositional Gaussian law and simultaneously yields source closure, native arithmetic with prime factorization, the ordered-expression evaluation quotient, complete histories, the global occupation--scale center closure, the canonical Mobius--Gaussian readout, its exact positive endpoint-sector energy ledger, and the physical branch through the canonical complete-matter exact sequence and generated gauge and geometric interfaces. Orientation and positive width are universally quantified realization indices rather than additional root data."
+    "scope": "The zero-argument canonical minimal-change root internally generates its unique positive-parameter compositional Gaussian law, fixes the unit-covariance width and original complex orientation, and simultaneously yields source closure, native arithmetic with prime factorization, the ordered-expression evaluation quotient, complete histories, the global occupation--scale center closure, the canonical Mobius--Gaussian readout, its exact positive endpoint-sector energy ledger, and the physical branch through the canonical complete-matter exact sequence and generated gauge and geometric interfaces."
   },
   "manuscript_snapshot_method": "Starting from main.tex, recursively resolve local TeX input/include files. Sort relative POSIX paths in ordinal order. Hash the UTF-8 concatenation of relative_path, NUL, lowercase file SHA-256, LF for each file. The graph includes main.tex and local macro inputs; class/style files, bibliography files and external images are excluded. These identities locate the reviewed sources and do not certify semantic coverage.",
   "manuscripts": [
@@ -434,20 +434,12 @@
     "scope": "For every canonical minimal-change carrier, every competing compositional law satisfying the same C/S/V comparison class agrees with the internally constructed Gaussian law at every positive parameter. No probability law is a field of the canonical root datum."
   },
   {
-    "name": "GeneratedFoundations.CommonFoundation.fromCanonicalRoot",
-    "module": "GeneratedFoundations.CommonFoundation",
+    "name": "GeneratedFoundations.CanonicalClosedWorld.generated",
+    "module": "GeneratedFoundations.CanonicalClosedWorld",
     "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
-    "label": "canonical common-root interface",
+    "label": "zero-input canonical common-root interface",
     "coverage_kind": "root_interface",
-    "scope": "Starting only from the canonical minimal-change carrier, constructs the unique positive-parameter compositional law internally and returns the common arithmetic and physical conclusions for every orientation and positive width."
-  },
-  {
-    "name": "GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange",
-    "module": "GeneratedFoundations.CommonFoundation",
-    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
-    "label": "common-root interface",
-    "coverage_kind": "root_interface",
-    "scope": "Compatibility interface packaging source closure, native arithmetic and factorization, expression and history structure, the global occupation--scale center closure, the canonical Mobius--Gaussian coherent readout, the exact endpoint centre-energy ledger, and the physical interface including the canonical complete-matter exact sequence as simultaneous conclusions of one MinimalUnbiasedChange.Datum. The canonical entry constructs this packaged law internally."
+    "scope": "Without accepting a carrier, law, width, orientation, coupling or boundary datum, packages source closure, native arithmetic and factorization, expression and history structure, the global occupation--scale center closure, the canonical Mobius--Gaussian coherent readout, the exact endpoint centre-energy ledger, and the physical interface including the canonical complete-matter exact sequence as simultaneous conclusions of minimal unbiased compositional change."
   },
   {
     "name": "GeneratedFoundations.Arithmetic.JointOccupationScale.jointOccupationScaleConclusions",
@@ -658,7 +650,7 @@
     "label": "prop:smtypecompletion",
     "tex_source": "sections-en/sec04_emergent_structures.tex",
     "coverage_kind": "clause",
-    "scope": "Constructs the source Clifford sectors and their actual Hermite ranges, least faithful source module, fixed-unitary transport of all responses, vacuum stabilizer and lift, primitive charge, faithful global quotient, charged response quotient and elementary connector on the same source carrier. Comparison conditions remain explicit; no aggregate P4-P6 assumption is an argument."
+    "scope": "Constructs the source Clifford sectors and their actual Hermite ranges, least faithful source module, fixed-unitary transport of all responses, vacuum stabilizer and lift, primitive charge, faithful global quotient, charged response quotient and elementary connector on the canonical source carrier. This aggregate theorem has no width, orientation, carrier or probability-law argument. Its component classification domains remain explicit."
   },
   {
     "name": "GeneratedFoundations.Physical.SourceCompleteMatterExactSequence.conclusions",
@@ -766,7 +758,7 @@
     "label": "prop:smtypecompletion",
     "tex_source": "sections-en/sec04_emergent_structures.tex",
     "coverage_kind": "clause",
-    "scope": "Collects the generated grading, real and complex even algebras, primitive real projections, spinor dimensions, actual Hermite intertwining, range identification and eight-plus-eight source dimensions. Its only realization parameter is the positive source width."
+    "scope": "Collects the generated grading, real and complex even algebras, primitive real projections, spinor dimensions, actual Hermite intertwining, range identification and eight-plus-eight source dimensions at the canonical unit-covariance width. This aggregate theorem takes no realization parameter."
   },
   {
     "name": "GeneratedFoundations.Physical.SourceColourPhase.exists_phase_specialUnitary",
@@ -922,13 +914,13 @@
     "scope": "Packages the generated origins of the colour, weak and phase factors, their minimal generation of the intrinsic operator group, the exact central kernel and the descended scalar representation with colour-singlet, defining-doublet and half-phase characters."
   },
   {
-    "name": "GeneratedFoundations.Physical.SourcePhysicalInterface.minimalChange_physicalInterface",
+    "name": "GeneratedFoundations.Physical.SourcePhysicalInterface.generated",
     "module": "GeneratedFoundations.Physical.SourcePhysicalInterface",
     "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
     "label": "prop:smtypecompletion",
     "tex_source": "sections-en/sec04_emergent_structures.tex",
     "coverage_kind": "clause",
-    "scope": "From one minimal unbiased compositional change datum, for every orientation and positive width, this theorem combines the common-law geometry, exchange-retained algebra, frames, internal response and same-source Hermitian determinant interface, and exports the generated gauge group, four-dimensional gauge, Yang--Mills, TT-response, linear-gravity, projective scalar-spectrum and complete conformal-response certificates. The cited manuscript label maps the generated gauge-and-scalar completion fields of this aggregate theorem; later field clauses have their own mappings. Endpoints, boundary operators and P4--P6 conclusions are internally constructed. No separate probability law is supplied by the caller. Compilation and axiom evidence is recorded separately in the matching verification manifest."
+    "scope": "With no carrier, law, width or orientation argument, this theorem combines the canonical common-law geometry, exchange-retained algebra, frames, internal response and same-source Hermitian determinant interface, and exports the generated gauge group, four-dimensional gauge, Yang--Mills, TT-response, linear-gravity, projective scalar-spectrum and complete conformal-response certificates. The cited manuscript label maps the generated gauge-and-scalar completion fields of this aggregate theorem; later field clauses have their own mappings. Endpoints, boundary operators and P4--P6 conclusions are internally constructed. Compilation and axiom evidence is recorded separately in the matching verification manifest."
   },
   {
     "name": "GeneratedFoundations.Physical.SourceConformalResponse.conformalIndex_eq_scalar_shift",
@@ -1072,7 +1064,7 @@
     "label": "eq:generated-ym-normalization-p4",
     "tex_source": "sections-en/sec08_construction.tex",
     "coverage_kind": "clause",
-    "scope": "The computed colour ratio 3/8 divided by the round projective volume gives the displayed feedback coefficient 3/(8 pi^2 L^3). The round projective volume formula is the manuscript's geometric input to this finite algebraic identity."
+    "scope": "The computed colour ratio 3/8 divided by the generated projective volume gives the feedback coefficient 3/(8 pi^2 L^3). The volume coefficient is derived from the actual ambient Lebesgue polar measure and the proved two-sheeted source quotient in SourceProjectiveVolume."
   },
   {
     "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap.generatedYangMillsGapSq_pos",
@@ -2743,6 +2735,358 @@
       "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
       "label": "prop:single-higgs",
       "scope": "Real-linear equivalence between the complex two-component coordinate space and all reversal-real matrices; not a complex-linear solution subspace."
+    },
+    {
+      "name": "GeneratedFoundations.Source.CanonicalRealization.width_unique",
+      "module": "GeneratedFoundations.Source.CanonicalRealization",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unit-covariance width uniqueness",
+      "coverage_kind": "root_uniqueness",
+      "scope": "Among positive Gaussian widths, equality of the squared width with the unit-covariance source parameter forces the canonical width one."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsResponseHessian.commonResponseAction_scale",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsResponseHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "exact nonlinear Yang--Mills response expansion",
+      "coverage_kind": "theorem",
+      "scope": "Expands the common radial and nonlinear connection response exactly through quartic order; the radial--connection interaction first appears cubically, so it contributes no mixed Hessian term."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap.normalizedRadialMassSq_eq_scoreVariance_mul_completeCurvature",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "source-derived radial Hessian coefficient",
+      "coverage_kind": "theorem",
+      "scope": "Identifies the normalized radial Hessian coefficient exactly with the generated intensity-score variance times the curvature of the complete restoring response; no independent radial mass coefficient is inserted."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedCoclosedOneForm.selfAdjoint_extension_unique",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedCoclosedOneForm",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete coclosed operator closure",
+      "coverage_kind": "theorem",
+      "scope": "On the square-summable space of both generated vector branches, every polarization, every positive odd degree and all eight colours, the finite spectral multiplier has a unique self-adjoint extension with the displayed weighted domain."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsFullReduction.hessianQuadratic_eq_sourceDecomposedQuadratic",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsFullReduction",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "exact generated Yang--Mills modal coefficient decomposition",
+      "coverage_kind": "theorem",
+      "scope": "The complete finite-core Hessian is exactly the sum, mode by mode, of the generated Hodge/Casimir coefficient and the common Gaussian response coefficient; no branch, multiplicity or colour direction is omitted."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsPhysicalHessian.selfAdjoint_extension_unique",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsPhysicalHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique complete physical Hessian closure",
+      "coverage_kind": "theorem",
+      "scope": "The radial plus complete coclosed finite spectral core has exactly one self-adjoint extension on the generated physical response Hilbert space."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsPhysicalHessian.operator_domain_iff_summable",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsPhysicalHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete physical Hessian domain",
+      "coverage_kind": "theorem",
+      "scope": "Characterizes the full closed-operator domain by weighted square summability over the radial mode and every generated coclosed branch, polarization and colour mode."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsClosure.conclusions",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsClosure",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "framework-internal generated Yang--Mills theorem",
+      "coverage_kind": "root_interface",
+      "scope": "Packages nonlinear local gauge invariance, the derived zero mixed Hessian, the complete generated coclosed tower, exact source decomposition, unique self-adjoint closure, cutoff-independent coercivity, the attained positive bottom and its bosonic Fock gap on every generated condensed state."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedRadialVariation.sourceRadialForce_hasDerivAt_zero",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedRadialVariation",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete source restoring derivative",
+      "coverage_kind": "theorem",
+      "scope": "Differentiates the complete summable shell response and proves that its normalized restoring derivative equals the radial mass coefficient; the summable derivative majorant is uniform on the positive intensity axis."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalYangMills.generated",
+      "module": "GeneratedFoundations.Physical.CanonicalYangMills",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "canonical Yang--Mills response without realization arguments",
+      "coverage_kind": "root_interface",
+      "scope": "At the generated infrared radius sqrt(2*pi), produces the unique positive condensed amplitude, the original-Haar-field nonlinear action and its self-adjoint differential response Hessian, a positive attained mode bottom and the finite-occupation vacuum and gap. No radius, amplitude, orientation, width, Newton constant or mass is supplied to this theorem."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsNewtonAnchor.gapRatio_anchor_independent",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsNewtonAnchor",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "separate Newton dimensional calibration",
+      "coverage_kind": "calibration",
+      "scope": "A positive Newton constant attaches a common physical mass unit only after the dimensionless theorem; the Yang--Mills gap-to-emergence-scale ratio is exactly independent of that calibration."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedRadialVariation.sourceRadialPotential_secondDeriv_zero",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedRadialVariation",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "integrated complete source potential and derived curvature",
+      "coverage_kind": "theorem",
+      "scope": "The reference-subtracted complete restoring force has a primitive on the positive-intensity interval. The derivative of that primitive's derivative at equilibrium is exactly the generated normalized radial mass coefficient."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsResponseHessian.sourceCommonResponseAction_secondDeriv",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsResponseHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual second derivative of the nonlinear common response",
+      "coverage_kind": "theorem",
+      "scope": "For positive generated intensity, differentiating the nonlinear complete radial potential and the full curvature/connection response twice along any joint ray gives the explicit common quadratic variation."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsResponseHessian.sourceCommonResponseAction_mixed_secondDeriv_zero",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsResponseHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "vanishing actual mixed radial-connection derivative",
+      "coverage_kind": "theorem",
+      "scope": "The iterated mixed derivative of the nonlinear common action vanishes at zero connection by differentiation, without defining the mixed block to be zero."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsFrameResponse.commonFrameResponseAction_gauge_invariant",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsFrameResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "gauge invariance of the full moving-frame response",
+      "coverage_kind": "theorem",
+      "scope": "A simultaneous local generated colour change of connection and source frame preserves the integrated radial potential, nonlinear curvature density and covariant frame-derivative response. The Gaussian connection coefficient is unchanged."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsFrameResponse.commonFrameResponseAction_sourceOrbit",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsFrameResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "exact source-frame restriction and transport",
+      "coverage_kind": "theorem",
+      "scope": "On every local colour-frame transform of the generated Lie-algebra connection in the canonical source frame, the covariant response equals the original nonlinear common source action exactly. No independent coupling or frame is supplied to the root theorem."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceHaarCurvatureTrace.action_eq_trace",
+      "module": "GeneratedFoundations.Physical.SourceHaarCurvatureTrace",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "original Haar action and generated colour curvature trace",
+      "coverage_kind": "theorem",
+      "scope": "Identifies the original Haar-field nonlinear action with the integral of the actual generated colour-matrix curvature trace, with the source-derived normalization."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceHaarYangMillsHessian.action_secondDeriv",
+      "module": "GeneratedFoundations.Physical.SourceHaarYangMillsHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual original-field nonlinear second variation",
+      "coverage_kind": "theorem",
+      "scope": "Computes the second derivative of the common nonlinear action along joint radial and original coclosed Haar-field variations. The resulting core is identified with the differentiated curl-squared response rather than a supplied spectral table."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceOneFormCoclosedSpectrum.coclosedHilbertBasis",
+      "module": "GeneratedFoundations.Geometry.SourceOneFormCoclosedSpectrum",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete original-field coclosed Hilbert basis",
+      "coverage_kind": "definition_with_proved_properties",
+      "scope": "Constructs a complete orthonormal basis of the actual closed weak-divergence kernel in the original projective Haar field space. Completeness uses the differentiated curl and the equality of its zero blocks with gradient ranges."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinorCovariantDerivative.polynomialDirac_eq_contraction",
+      "module": "GeneratedFoundations.Geometry.SourceSpinorCovariantDerivative",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "spin connection and actual Clifford contraction",
+      "coverage_kind": "theorem",
+      "scope": "The Koszul coefficients of the generated source frame determine the spin connection. Its Clifford contraction equals the computed first-order source Dirac differential, including the derived three-halves connection term."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinorHaarBlock.differential_normalizedSynthesis",
+      "module": "GeneratedFoundations.Geometry.SourceSpinorHaarBlock",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "original Haar spinor differential intertwining",
+      "coverage_kind": "theorem",
+      "scope": "The actual pointwise source-frame Dirac derivative intertwines normalized matrix-coefficient synthesis with the derived finite differential block on every entire source row."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinorMultiplicity.branch_multiplicities",
+      "module": "GeneratedFoundations.Geometry.SourceSpinorMultiplicity",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "differentiated spinor branch multiplicities",
+      "coverage_kind": "theorem",
+      "scope": "The two kinetic branches in source degree m have dimensions m+2 and m. Their dimensions follow from the differentiated operator, its complete finite basis and its zero trace. The lower branch is absent in degree zero."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinorClosedSpectrum.closedDirac_unique",
+      "module": "GeneratedFoundations.Geometry.SourceSpinorClosedSpectrum",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique self-adjoint original-field spinor closure",
+      "coverage_kind": "theorem",
+      "scope": "The differentiated finite Haar-field core has exactly one self-adjoint extension on the original two-component Haar space. Its domain is the complete weighted-square coefficient domain."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinorResolvent.spectrum_half_integers",
+      "module": "GeneratedFoundations.Geometry.SourceSpinorResolvent",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "exhaustive original-field spinor spectrum",
+      "coverage_kind": "theorem",
+      "scope": "The complete spectrum of the derived closed Dirac operator consists exactly of the positive and negative k+3/2 towers. Bounded two-sided resolvents on the full original-field domain exclude all other spectral points."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinorClosedSpectrum.closedDirac_norm_lower",
+      "module": "GeneratedFoundations.Geometry.SourceSpinorClosedSpectrum",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "full-domain spinor norm gap",
+      "coverage_kind": "theorem",
+      "scope": "Every original Haar spinor in the full closed Dirac domain satisfies (9/4) times its squared norm at most the squared norm of its Dirac derivative, with no spectral-cutoff factor."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinorParitySpectrum.closedSectorDirac_is_restriction",
+      "module": "GeneratedFoundations.Geometry.SourceSpinorParitySpectrum",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "central-sector restrictions on the full original Dirac domain",
+      "coverage_kind": "theorem",
+      "scope": "Both eigenspaces of the actual central pullback are closed. Their complete differentiated bases give self-adjoint sector operators, whose full domains agree exactly with the original Dirac domain intersected with each sector. The sector operators equal the original field operator on those entire domains."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinorParityResolvent.spectrum_labels",
+      "module": "GeneratedFoundations.Geometry.SourceSpinorParityResolvent",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete spectra of both central spinor sectors",
+      "coverage_kind": "theorem",
+      "scope": "Bounded two-sided inverses show that the positive central sector has precisely positive even-label and negative odd-label half-integer eigenvalues. The opposite sector has the reverse parities. Both branch presence and full spectral exhaustion follow from the differentiated source operator."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceTensorCovariantDerivative.rough_coefficientTensor",
+      "module": "GeneratedFoundations.Geometry.SourceTensorCovariantDerivative",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "original tensor-field covariant differential",
+      "coverage_kind": "theorem",
+      "scope": "The source Koszul connection acts on both tensor indices. Its actual second-order field differential intertwines original matrix-coefficient synthesis with the differentiated finite rough operator, before a TT branch or eigenbasis is chosen."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceTensorTTBlock.ttRough_eq_curl_square",
+      "module": "GeneratedFoundations.Geometry.SourceTensorTTBlock",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "derived TT curl and rough identity",
+      "coverage_kind": "theorem",
+      "scope": "On the actual simultaneous kernel of tensor symmetry defect, trace and covariant divergence, the differentiated rough operator equals the square of the differentiated tensor curl minus three times the identity."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceTensorTTField.finiteTTCore_orthogonal",
+      "module": "GeneratedFoundations.Geometry.SourceTensorTTField",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "completeness in the original weak TT field",
+      "coverage_kind": "theorem",
+      "scope": "The finite span of differentiated TT eigenfields has zero orthogonal complement in the closed weak TT subspace of the original nine-component projective Haar field. No sequence-space replacement or omitted row is assumed."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceTensorTTClosedSpectrum.closedRough_unique",
+      "module": "GeneratedFoundations.Geometry.SourceTensorTTClosedSpectrum",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique self-adjoint original TT closure",
+      "coverage_kind": "theorem",
+      "scope": "The original finite TT differential has a unique self-adjoint extension on the full original TT field. Its domain is the full eigenvalue-weighted square-summable coefficient domain."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceTensorTTClosedSpectrum.closedRough_quadratic_lower",
+      "module": "GeneratedFoundations.Geometry.SourceTensorTTClosedSpectrum",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "full-domain TT quadratic lower bound",
+      "coverage_kind": "theorem",
+      "scope": "Every field in the full closed TT rough domain satisfies six times its squared norm at most its actual quadratic rough energy. The constant follows from differentiated block identities and connection-energy nonnegativity; it is independent of all finite cutoffs."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceTensorTTWitness.upper_branch_present",
+      "module": "GeneratedFoundations.Geometry.SourceTensorTTWitness",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "nonzero original TT branch witnesses",
+      "coverage_kind": "theorem",
+      "scope": "In every source degree a highest homogeneous polynomial yields an actual nonzero symmetric trace-free divergence-free tensor with computed curl eigenvalue m+3. Branch presence does not rely on an assumed multiplicity table."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceTensorTTSpectrum.spectrum_labels",
+      "module": "GeneratedFoundations.Geometry.SourceTensorTTSpectrum",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete original projective TT spectral set",
+      "coverage_kind": "theorem",
+      "scope": "The full closed TT rough spectrum is exactly k(k+2)-2 for even k at least two in the original unit trace-metric frame. Actual polynomial witnesses give presence, and bounded two-sided resolvents on the full domain give exhaustion. This spectral-set theorem does not assert the separate representation-labelled multiplicity formula."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceTensorTTSystem.generated",
+      "module": "GeneratedFoundations.Geometry.SourceTensorTTSystem",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "zero-input generated TT differential system",
+      "coverage_kind": "theorem",
+      "scope": "The original tensor connection, differentiated rough operator, complete weak TT field, unique self-adjoint closure, full domain, exhaustive spectral set and attained spectral bottom are outputs with no supplied tensor carrier, connection, branch, gap or boundary parameter."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceProjectiveVolume.sphereMeasure_total",
+      "module": "GeneratedFoundations.Geometry.SourceProjectiveVolume",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "source angular measure from ambient polar decomposition",
+      "coverage_kind": "theorem",
+      "scope": "The actual Lebesgue angular measure of the trace-metric unit source sphere has total mass 2*pi^2. The coefficient is computed using the measured four-dimensional ambient ball and agrees with its radial volume derivative."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceProjectiveVolume.roundVolume_eq_radialFlux",
+      "module": "GeneratedFoundations.Geometry.SourceProjectiveVolume",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "generated projective volume and actual covering multiplicity",
+      "coverage_kind": "theorem",
+      "scope": "At every positive radius, the projective volume is the radial derivative of the actual ambient ball volume divided by the cardinality of each actual source projection fibre. The previously proved two-sheeted covering determines this factor without a supplied geometric constant."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceProjectiveVolume.roundMeasure_total",
+      "module": "GeneratedFoundations.Geometry.SourceProjectiveVolume",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual central quotient angular-volume measure",
+      "coverage_kind": "theorem",
+      "scope": "The ambient angular measure is pushed through the source's actual central quotient, divided by the covering multiplicity and scaled in its three angular dimensions. The resulting positive measure has total real mass pi^2*r^3 at every positive radius."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalYangMillsUnits.emergenceMass_sq",
+      "module": "GeneratedFoundations.Physical.CanonicalYangMillsUnits",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "canonical endpoint emergence mass in Newton units",
+      "coverage_kind": "theorem",
+      "scope": "The generated IR radius is used without a radius argument. Its squared endpoint ratio is one half, so the permitted positive Newton calibration gives emergence mass squared 1/(16*pi*G_N) in the stated reduced-Planck convention."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalYangMillsUnits.gapMass_sq",
+      "module": "GeneratedFoundations.Physical.CanonicalYangMillsUnits",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "absolute canonical Yang--Mills gap calibration",
+      "coverage_kind": "theorem",
+      "scope": "The already attained dimensionless original-field Hessian bottom gives gap mass squared gapSq/(16*pi*G_N). The Newton constant is the only argument of the dimensional readout and enters neither the generated radius nor the action, condensate, operator or positivity proof."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalYangMillsUnits.gapMass_unique",
+      "module": "GeneratedFoundations.Physical.CanonicalYangMillsUnits",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique positive mass after Newton calibration",
+      "coverage_kind": "theorem",
+      "scope": "For each permitted positive Newton calibration, the generated absolute mass is the unique positive real number with the derived squared mass. The ratio to the emergence mass is exactly sqrt(gapSq) and is independent of that calibration."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap.transverseCovarianceAction_eq",
+      "module": "GeneratedFoundations.Physical.SourceGeneratedYangMillsGap",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual spatial-colour second-moment contraction",
+      "coverage_kind": "theorem",
+      "scope": "At fixed total source intensity, isotropy fixes the variance on the 24 spatial-colour components. Summing the actual adjoint double commutator over the two other spatial directions computes the Gaussian quadratic response coefficient. This is a finite covariance contraction, not a statement about the expectation of the complete nonlinear field action."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalYangMills.sourceColourContraction",
+      "module": "GeneratedFoundations.Physical.CanonicalYangMills",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "canonical generated source covariance coefficient",
+      "coverage_kind": "theorem",
+      "scope": "The source intensity is determined by the unique condensed amplitude at the generated infrared radius. Its actual traceless-colour covariance contraction equals the shift in that canonical response Hessian, without a supplied intensity, radius or coupling argument."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalYangMills.responseAction_orientation_reverse",
+      "module": "GeneratedFoundations.Physical.CanonicalYangMills",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "orientation independence of the actual common source response",
+      "coverage_kind": "theorem",
+      "scope": "Coefficient conjugation transports both values and derivatives of the complete connection jet and conjugates its nonlinear matrix curvature. Its real trace pairing and connection norm are unchanged, so the canonical common nonlinear radial-connection response is exactly invariant."
     }
   ],
   "planned": [

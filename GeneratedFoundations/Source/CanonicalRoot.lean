@@ -11,11 +11,15 @@ satisfying the compositional axioms.  The law is not free: the preceding
 existence--uniqueness theorem constructs it from the carrier and identifies
 every competing compositional law at every positive parameter.
 
-This file separates the data that a caller must provide from the completion
-that the library constructs.  A `CanonicalRoot` contains only an orthogonal
-change datum and its minimality proof.  Its minimal unbiased compositional
-completion is defined internally.  No claim is made about the unconstrained
-values of a real-indexed law at nonpositive parameters.
+This file separates the sole abstract root, minimal unbiased compositional
+change, from its comparison presentations.  `MinimalCarrier` proves that every
+minimal presentation is two-dimensional and orthogonally intertwines the
+circle action.  `rotationDatum` is therefore used as the canonical
+representative; it is not an additional root axiom.  The compositional law is
+then constructed internally and is unique at every positive parameter.  A
+general `Datum` remains only for representation-independence statements.  No
+claim is made about unconstrained values of a real-indexed law at nonpositive
+parameters.
 -/
 
 @[expose] public section
@@ -27,8 +31,9 @@ open GeneratedFoundations.Probability
 
 namespace GeneratedFoundations.Source.CanonicalRoot
 
-/-- The caller-supplied part of the root: a change carrier in the declared
-comparison class together with a proof that it is least-dimensional. -/
+/-- A presentation of the intrinsic root in the declared comparison class,
+together with its least-dimension proof.  Presentations are comparison
+objects, not independent inputs to the closed construction. -/
 structure Datum where
   change : MinimalCarrier.OrthogonalChangeDatum
   minimal : MinimalCarrier.IsMinimal change
@@ -38,11 +43,25 @@ root, represented by the library's existing compatibility package. -/
 def complete (root : Datum) : MinimalUnbiasedChange.Datum :=
   MinimalUnbiasedChange.fromMinimalCarrier root.change root.minimal
 
+/-- The canonical representative of the sole minimal-change root.  Its carrier
+and minimality are proved upstream; no carrier is supplied by a caller. -/
+def canonical : Datum where
+  change := MinimalCarrier.rotationDatum
+  minimal := MinimalCarrier.rotationDatum_isMinimal
+
+/-- The unique positive-parameter compositional completion used by the closed
+generated world. -/
+def generated : MinimalUnbiasedChange.Datum := complete canonical
+
+@[simp] theorem canonical_change : canonical.change = MinimalCarrier.rotationDatum := rfl
+
+@[simp] theorem generated_change : generated.change = MinimalCarrier.rotationDatum := rfl
+
 @[simp] theorem complete_change (root : Datum) :
     (complete root).change = root.change := rfl
 
-/-- Forgetting the stored law from an existing root package leaves its
-caller-supplied canonical root. -/
+/-- Forgetting the stored law from another presentation leaves its underlying
+minimal comparison presentation. -/
 def ofLegacy (source : MinimalUnbiasedChange.Datum) : Datum where
   change := source.change
   minimal := source.minimal
@@ -71,10 +90,6 @@ theorem law_unique (root : Datum)
   exact MinimalUnbiasedChange.law_unique (complete root) nu hnu t ht
 
 /-- The canonical root has a concrete realization. -/
-theorem datum_exists : Nonempty Datum :=
-  ⟨{
-    change := MinimalCarrier.rotationDatum
-    minimal := MinimalCarrier.rotationDatum_isMinimal
-  }⟩
+theorem datum_exists : Nonempty Datum := ⟨canonical⟩
 
 end GeneratedFoundations.Source.CanonicalRoot

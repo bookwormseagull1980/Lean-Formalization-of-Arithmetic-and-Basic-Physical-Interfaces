@@ -101,7 +101,7 @@ theorem generatedMoebius_eq_zero_of_not_squarefree {n : ℕ}
 
 /-- The legal unoccupied prefix is the disjoint union of the paired base and
 the birth boundary. -/
-theorem unoccupiedPrefix_eq_union (p N : ℕ) (hp : 0 < p) :
+theorem unoccupiedPrefix_eq_union (p N : ℕ) (_hp : 0 < p) :
     unoccupiedPrefix p N = pairedBase p N ∪ birthBoundary p N := by
   ext n
   simp only [mem_unoccupiedPrefix, Finset.mem_union, mem_pairedBase,
@@ -142,8 +142,8 @@ theorem cutoffAmplitude_eq_unoccupied_add_occupied
     intro n _hn
     by_cases hsq : Squarefree n
     · simp [hsq, g]
-    · rw [if_neg hsq, generatedMoebius_eq_zero_of_not_squarefree hsq]
-      simp [g]
+    · rw [ite_eq_right hsq, generatedMoebius_eq_zero_of_not_squarefree hsq]
+      simp
   have hsplit := Finset.sum_filter_add_sum_filter_not
     ((rootRange N).filter Squarefree) (fun n => p ∣ n) g
   rw [hsquarefree]
@@ -257,7 +257,7 @@ theorem gaussianWindowMass_prime_mul (L : PositiveScale) {p : ℕ}
   unfold gaussianWindowMass gaussianRootMass
   have hL : L.1 ≠ 0 := ne_of_gt L.2
   have hpR : (p : ℝ) ≠ 0 := by exact_mod_cast hp.ne_zero
-  congr 1 <;> congr 1 <;> push_cast <;> field_simp [hL, hpR] <;> ring
+  congr 1 <;> congr 1 <;> push_cast <;> field_simp [hL, hpR]
 
 /-- Exact natural-cutoff descent specialized to the two native Gaussian
 endpoints.  The interior is a same-source scale difference; only the legal

@@ -16,9 +16,11 @@ The retained colour line has zero generator action. The source tensor
 and chiral lifts therefore identify the existing scalar colour response
 with this quadratic sum at `kappa = 4 / 3`.
 
-The normalization is an explicit convention. The manuscript's statement
-that the colour Casimir is positive does not, by itself, select its scale.
-The source colour space, retained line and matter carrier are the
+The normalization is fixed by the source trace metric: the generators are
+orthonormal for `2 * trace (T_a T_b)`, and the quadratic sum is proved invariant
+under every orthogonal change of such a normalized basis. Thus `4/3` is a
+calculated source coefficient, not an independent coupling. The source colour
+space, retained line and matter carrier are the
 constructions imported from the exchange-retained response and least-module
 classification. This file identifies their normalized defining colour
 response; the source construction and frame classification are proved in

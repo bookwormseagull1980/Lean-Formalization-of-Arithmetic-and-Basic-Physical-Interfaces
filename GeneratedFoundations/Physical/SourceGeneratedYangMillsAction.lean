@@ -10,10 +10,10 @@ public import Mathlib.Tactic.Positivity
 
 The generated four-dimensional colour curvature, its trace normalization, the
 unique condensed response and the projective coclosed spectrum are assembled
-here into one action.  The local action density retains the nonlinear
-curvature.  The spectral action is its exact radial/coclosed Hessian on every
-finite generated spectral truncation; its constants do not depend on the
-truncation.
+here.  The local action density retains the nonlinear curvature.  The finite
+spectral action is a canonical one-coordinate-per-shell witness for the same
+generated eigenvalue law; the complete branches, multiplicities and colours
+are retained by `SourceGeneratedYangMillsFullReduction`.
 -/
 
 @[expose] public section
@@ -77,8 +77,11 @@ theorem localActionDensity_generated_nonneg {z : ℝ} (hz : 0 < z)
     (mul_nonneg (mul_nonneg (by norm_num)
       (normalizedRadialMassSq_pos hz).le) (sq_nonneg radial))
 
-/-- A generated radial/coclosed configuration through shell cutoff `N`.  The
-cutoff is universally quantified and does not enter any coercivity constant. -/
+/-- A finite radial/coclosed shell witness through cutoff `N`.  Its
+`i`-th coclosed coordinate is the positive odd RP3 shell
+`coclosedShellDegree i`; the cutoff is universally quantified and does not
+enter any coercivity constant.  Branch, polarization and colour multiplicities
+are intentionally suppressed here and restored in the complete response core. -/
 structure SpectralConfiguration (N : ℕ) where
   radial : ℝ
   coclosed : Fin N → ℝ
@@ -124,13 +127,12 @@ theorem normSq_eq_zero_iff {N : ℕ} (x : SpectralConfiguration N) :
 
 end SpectralConfiguration
 
-/-- Exact generated quadratic action on the radial/coclosed spectral
-truncation. -/
+/-- Canonical generated quadratic action on the finite shell witness. -/
 def spectralAction {N : ℕ} (L z : ℝ)
     (x : SpectralConfiguration N) : ℝ :=
   (1 / 2 : ℝ) * normalizedRadialMassSq z * x.radial ^ 2 +
     (1 / 2 : ℝ) * ∑ i,
-      coclosedMassIndex L z (i.1 + 1) * x.coclosed i ^ 2
+      coclosedMassIndex L z (coclosedShellDegree i.1) * x.coclosed i ^ 2
 
 theorem spectralAction_nonneg {N : ℕ} {L z : ℝ}
     (hL : 0 < L) (hz : 0 < z) (x : SpectralConfiguration N) :
@@ -140,7 +142,7 @@ theorem spectralAction_nonneg {N : ℕ} {L z : ℝ}
   · exact mul_nonneg (mul_nonneg (by norm_num)
       (normalizedRadialMassSq_pos hz).le) (sq_nonneg x.radial)
   · exact mul_nonneg (by norm_num) (Finset.sum_nonneg fun i _ =>
-      mul_nonneg (coclosedMassIndex_pos hL hz (i.1 + 1)).le
+      mul_nonneg (coclosedMassIndex_pos hL hz (coclosedShellDegree i.1)).le
         (sq_nonneg (x.coclosed i)))
 
 /-- Bundled action interface. -/

@@ -6,16 +6,16 @@ public import GeneratedFoundations.Physical.GlobalGaugeKernel
 /-!
 # The reduced gauge action on the source matter carrier
 
-The six coordinate blocks are obtained by a specified rearrangement of
+The six coordinate blocks are obtained by the canonical rearrangement of
 the orthonormal colour, retained-line, spin and chiral basis. The spin
 basis is the image of the original Gaussian vacuum and first excitation.
 Conjugating the complete block representation by this coordinate map
 therefore defines an action on the actual source matter space. Its exact
 kernel is transported by an explicit intertwining relation.
 
-This construction uses the localized frame action and the vacuum
-reduction of the specified realization rules. It does not infer those
-rules from the unreduced source group alone.
+The block action is the already generated source action transported through
+this explicit coordinate equivalence. No further realization rule is supplied
+to the construction.
 -/
 
 @[expose] public section

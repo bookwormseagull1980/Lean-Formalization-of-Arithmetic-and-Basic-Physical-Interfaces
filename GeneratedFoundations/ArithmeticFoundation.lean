@@ -38,11 +38,10 @@ public import GeneratedFoundations.Spectral.GaussianHeatConvolution
 /-!
 # Arithmetic foundation from minimal unbiased compositional change
 
-The arithmetic component of
-`CommonFoundation.fromMinimalUnbiasedChange` takes one root datum and covers
-every carrier orientation and positive width in its conclusions.
-The datum contains the minimal original change action and its compositional
-probability law. Orientations and widths index realizations; the endpoints,
+The arithmetic component of `CommonFoundation.generated` is a zero-input
+conclusion. The canonical minimal change action and its unique compositional
+law are generated internally; unit covariance fixes the dimensionless width
+and the original complex rotation fixes the orientation. The endpoints,
 reflecting operator and arithmetic objects are constructed internally. The
 endpoint and boundary comparisons retain the calibrated readout definitions
 and separated homogeneous boundary class used in those constructions.

@@ -11,17 +11,21 @@ public import GeneratedFoundations.Physical.SourceConformalResponse
 public import GeneratedFoundations.Physical.SourceInternalYangMillsResponse
 public import GeneratedFoundations.Physical.SourceRadialMassIntertwiner
 public import GeneratedFoundations.Physical.SourceLorentzCarrier
-public import GeneratedFoundations.Physical.SourceGeneratedYangMillsClosure
+public import GeneratedFoundations.Physical.CanonicalYangMills
+public import GeneratedFoundations.Physical.CanonicalYangMillsUnits
+public import GeneratedFoundations.Geometry.SourceSpinorSystem
+public import GeneratedFoundations.Geometry.SourceTensorTTSystem
 public import GeneratedFoundations.Source.MinimalUnbiasedChange
+public import GeneratedFoundations.Source.CanonicalRealization
 
 /-!
 # Generated source to the basic physical interfaces
 
-The sole root package is minimal unbiased compositional change. The physical
-component of `GeneratedFoundations.CommonFoundation.fromMinimalUnbiasedChange`
-gives the interface for every orientation and positive width of that datum.
-These are realization indices, not additional root principles. The
-expanded-argument theorem below is retained for applications.
+The sole root package is minimal unbiased compositional change. Its canonical
+carrier, unit-covariance Gaussian width and original complex orientation are
+fixed before the physical interface is assembled. The theorem below therefore
+accepts no realization parameter. The root interface does not restate the
+component comparison theorems as a parameterized family.
 The endpoints, reflecting source evolution, exchange-retained response,
 source frames, least matter realization, vacuum lift and elementary connector
 are internal constructions and outputs. In particular, no endpoint, boundary
@@ -51,7 +55,8 @@ parameter in the root datum.  The three spatial directions then carry the
 actual symmetric, transverse and traceless constraint space.  Solving these
 constraints gives exactly two polarization amplitudes.  The tensor response
 has the unique mass-fraction maximum `4/27`, every positive fixed spectral
-coefficient has one positive endpoint, and the external two-derivative tensor
+coefficient has one positive endpoint, and the generated four-coordinate
+two-derivative tensor
 operator is uniquely selected in its local five-coefficient class by gauge
 annihilation, transversality and unit TT normalization.  Its TT reduction is
 `Q² I₂`, with the resulting simple massless pole and positive residue. The
@@ -60,10 +65,20 @@ family, with dimensions, central characters and Casimir operators computed
 uniformly. The actual projective scalar spectrum is anchored to the closed
 source quotient operator. Its unique condensed response, normalized radial
 block and positive odd coclosed colour-connection tower combine into the
-strictly positive generated Yang--Mills spectral bottom. Selecting vector,
-spinor and TT field branches is
-not bundled into this root conclusion until their differential-operator
-classification has itself been derived.
+strictly positive generated Yang--Mills spectral bottom. The coclosed vector
+space and its spectrum are constructed by differentiation in the original
+Haar field space; its nonlinear action and closed differential Hessian enter
+the canonical Yang--Mills conclusion. The spinor output likewise differentiates
+the source frame, computes its spin connection and constructs the complete
+closed Dirac operator on the original Haar fields. Its two central sectors
+are restrictions on the full operator domain. The original nine-component
+tensor Haar space likewise supplies the closed weak TT kernel. Its actual
+Koszul differential has a unique self-adjoint rough closure, full weighted
+domain and spectrum k(k+2)-2 for even k at least two, with attained lower
+edge six in the unit trace-metric frame. These spectral values are derived
+from differential identities and nonzero source-polynomial witnesses;
+the separate representation multiplicity tables are not inputs to this
+operator construction.
 -/
 
 @[expose] public section
@@ -81,15 +96,13 @@ namespace GeneratedFoundations.Physical.SourcePhysicalInterface
 
 open SourceHermitianReadout
 
-/-- Outputs of the common source construction, including its actual actions. -/
-structure Conclusions
-    (d : MinimalCarrier.OrthogonalChangeDatum) (h : MinimalCarrier.IsMinimal d)
-    (o : OrientationOnCarrier d) (μ : ℝ → Measure (TraceLieSpace d h))
-    (b : ℝ) (hb : 0 < b) : Prop where
-  geometry : Geometry.GeneratedSourceGeometry.Conclusions d h o μ b hb
+/-- The physical outputs of the unique canonical realization. The proposition
+has no carrier, law, width or orientation parameter. -/
+structure Conclusions : Prop where
+  geometry : Geometry.GeneratedSourceGeometry.Conclusions
   split_response : SourceSplitResponse.SplitConclusions
   frames : SourceFrameConstruction.FrameConclusions
-  internal_response : SourceInternalResponse.Conclusions b hb
+  internal_response : SourceInternalResponse.Conclusions
   complete_matter_exact_sequence : SourceCompleteMatterExactSequence.Conclusions
   generated_gauge_group : SourceGeneratedGaugeGroup.FactorOriginProperties
   four_dimensional_gauge_kinematics :
@@ -117,37 +130,47 @@ structure Conclusions
   generated_lorentz_carrier : SourceLorentzCarrier.Properties
   generated_yang_mills_gap : SourceGeneratedYangMillsGap.Properties
   generated_yang_mills_closure : SourceGeneratedYangMillsClosure.Conclusions
-  spin_same_source : ∀ (M : Mat2) (v : SourceVacuumTransport.V hb),
-    SourceSpinIdentification.sourceUnitary hb (SourceVacuumTransport.sourceAction hb M v) =
-      SourceSpinIdentification.spinAction M (SourceSpinIdentification.sourceUnitary hb v)
+  canonical_yang_mills : CanonicalYangMills.Conclusions
+  canonical_yang_mills_units : CanonicalYangMillsUnits.Conclusions
+  generated_spinor : Geometry.SourceSpinorSystem.Conclusions
+  generated_tensor_tt : Geometry.SourceTensorTTSystem.Conclusions
+  spin_same_source : ∀ (M : Mat2)
+      (v : SourceVacuumTransport.V Source.CanonicalRealization.width_pos),
+    SourceSpinIdentification.sourceUnitary Source.CanonicalRealization.width_pos
+        (SourceVacuumTransport.sourceAction Source.CanonicalRealization.width_pos M v) =
+      SourceSpinIdentification.spinAction M
+        (SourceSpinIdentification.sourceUnitary
+          Source.CanonicalRealization.width_pos v)
   hermitian_coordinates : ∀ X : Mat2, X.IsHermitian →
     ∃! q : RealCoordinates, hermitianMatrix q = X
   determinant_signature : ∀ q : RealCoordinates,
     (hermitianMatrix q).det = (determinantForm q : ℂ)
   determinant_invariant : ∀ A : Mat2, A.det = 1 → ∀ q : RealCoordinates,
     determinantForm (coordinateTransform A q) = determinantForm q
-  hermitian_same_coordinates : ∀ (q : RealCoordinates) (v : SourceVacuumTransport.V hb),
-    Operations.HermiteSource.sourceCoordinates hb (sourceHermitianAction hb q v) =
+  hermitian_same_coordinates : ∀ (q : RealCoordinates)
+      (v : SourceVacuumTransport.V Source.CanonicalRealization.width_pos),
+    Operations.HermiteSource.sourceCoordinates Source.CanonicalRealization.width_pos
+        (sourceHermitianAction Source.CanonicalRealization.width_pos q v) =
       WithLp.toLp 2 (spinorAction (hermitianMatrix q)
-        (fun i => Operations.HermiteSource.sourceCoordinates hb v i))
-  hermitian_original_action : ∀ (q : RealCoordinates) (v : SourceVacuumTransport.V hb),
-    (sourceHermitianAction hb q v : ComplexL2) = corner hb (hermitianMatrix q) v
+        (fun i => Operations.HermiteSource.sourceCoordinates
+          Source.CanonicalRealization.width_pos v i))
+  hermitian_original_action : ∀ (q : RealCoordinates)
+      (v : SourceVacuumTransport.V Source.CanonicalRealization.width_pos),
+    (sourceHermitianAction Source.CanonicalRealization.width_pos q v : ComplexL2) =
+      corner Source.CanonicalRealization.width_pos (hermitianMatrix q) v
 
-/-- The physical branch of one minimal unbiased compositional change datum,
-for every orientation and positive realization width. No probability law,
-endpoint, boundary operator or physical-interface conclusion is supplied by
-the caller outside that sole datum. -/
-theorem minimalChange_physicalInterface
-    (source : MinimalUnbiasedChange.Datum) :
-    ∀ (o : OrientationOnCarrier source.change) (b : ℝ) (hb : 0 < b),
-      Conclusions source.change source.minimal o source.law b hb := by
-  intro o b hb
+/-! ## Zero-input physical entry -/
+
+/-- Minimal unbiased compositional change generates the canonical physical
+interface without a carrier, law, width, orientation, coupling or boundary
+argument. Unit covariance has already fixed the width to one and the canonical
+complex rotation supplies the orientation. -/
+theorem generated : Conclusions := by
   refine {
   geometry := Geometry.GeneratedSourceGeometry.generatedSourceGeometry
-    source.change source.minimal o source.law b hb source.compositional
   split_response := SourceSplitResponse.generated_split
   frames := SourceFrameConstruction.generated_frames
-  internal_response := SourceInternalResponse.source_internalResponse hb
+  internal_response := SourceInternalResponse.source_internalResponse
   complete_matter_exact_sequence := SourceCompleteMatterExactSequence.conclusions
   generated_gauge_group := SourceGeneratedGaugeGroup.sourceGeneratedGaugeGroupProperties
   four_dimensional_gauge_kinematics :=
@@ -175,7 +198,12 @@ theorem minimalChange_physicalInterface
   generated_lorentz_carrier := SourceLorentzCarrier.properties
   generated_yang_mills_gap := SourceGeneratedYangMillsGap.properties
   generated_yang_mills_closure := SourceGeneratedYangMillsClosure.conclusions
-  spin_same_source := SourceSpinIdentification.sourceUnitary_matrix hb
+  canonical_yang_mills := CanonicalYangMills.generated
+  canonical_yang_mills_units := CanonicalYangMillsUnits.generated
+  generated_spinor := Geometry.SourceSpinorSystem.generated
+  generated_tensor_tt := Geometry.SourceTensorTTSystem.generated
+  spin_same_source := SourceSpinIdentification.sourceUnitary_matrix
+    Source.CanonicalRealization.width_pos
   hermitian_coordinates := by
     intro X hX
     refine ⟨matrixCoordinates X, hermitianMatrix_matrixCoordinates X hX, ?_⟩
@@ -185,8 +213,10 @@ theorem minimalChange_physicalInterface
       _ = matrixCoordinates X := congrArg matrixCoordinates hq
   determinant_signature := det_hermitianMatrix
   determinant_invariant := determinantForm_coordinateTransform
-  hermitian_same_coordinates := sourceHermitianAction_coordinates hb
-  hermitian_original_action := sourceHermitianAction_coe hb
+  hermitian_same_coordinates := sourceHermitianAction_coordinates
+    Source.CanonicalRealization.width_pos
+  hermitian_original_action := sourceHermitianAction_coe
+    Source.CanonicalRealization.width_pos
   }
 
 end GeneratedFoundations.Physical.SourcePhysicalInterface

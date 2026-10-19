@@ -12,20 +12,21 @@ public import GeneratedFoundations.Geometry.SourceSmoothPolar
 public import GeneratedFoundations.Geometry.SourceThreeRotations
 public import GeneratedFoundations.Geometry.SourceProjectiveOrthogonal
 public import GeneratedFoundations.Geometry.SourceMinimalSpin
+public import GeneratedFoundations.Geometry.SourceOneFormCoclosedSpectrum
 public import GeneratedFoundations.Geometry.SourceFiniteControlDiffusion
 public import GeneratedFoundations.Operations.SourceProcessAlgebra
 public import GeneratedFoundations.Operations.SourceSpinCornerFlow
 public import GeneratedFoundations.Spectral.PhysicalWindowSpectrum
 public import GeneratedFoundations.Spectral.NeumannScaleTransport
+public import GeneratedFoundations.Source.CanonicalRealization
 
 /-!
 # Geometry and spin of one generated source
 
-The minimal unbiased compositional-change data are expressed jointly by
-`d`, its minimality proof `h`, the trace-line law `μ`, and its compositional
-laws `hμ`. The orientation `o` and positive width `b` index realizations of
-the construction for every such orientation and width. They select a
-coordinate and scale, rather than supplying further physical structures.
+The minimal unbiased compositional-change root supplies its canonical carrier,
+unique positive-parameter trace-line law, unit-covariance width and original
+complex orientation. The geometric output record and its construction theorem
+accept no carrier, law, orientation or width argument.
 The three density normalizations, correlation endpoints, reflecting
 spectral closure, finite source operations, complete process observations,
 central quotient, endpoint spectrum, real amplitude metric and minimal spin
@@ -40,10 +41,14 @@ sheets. Positive polar coordinates use the original sphere atlas and have
 the actual derivative given by the source trace formula.
 
 `Conclusions` is a record of proved outputs. `generatedSourceGeometry`
-constructs it from the common root data at each realization index. In
-particular, the quotient spectrum denotes
+constructs it directly from the canonical root. In particular, the quotient spectrum denotes
 the spectrum defined by bounded inverses on the full differential domain,
 and its multiplicities are dimensions of actual eigenspaces.
+The one-form field is the complete three-component quotient Haar space.
+Differentiation in the generated orthonormal frame determines its curl,
+whose unique self-adjoint closure retains every source row. The weak
+divergence kernel has the complete nonzero-curl eigenbasis and the attained
+squared lower edge four.
 
 The record does not assert all differential-geometric clauses of P1--P3.
 The spherical capacity comparison is explicitly limited to the stated
@@ -83,11 +88,14 @@ open GeneratedFoundations.Geometry.SourceDirectionalGenerator (Direction)
 
 namespace GeneratedFoundations.Geometry.GeneratedSourceGeometry
 
-variable (d : MinimalCarrier.OrthogonalChangeDatum) (h : MinimalCarrier.IsMinimal d)
-variable (o : OrientationOnCarrier d) (μ : ℝ → Measure (TraceLieSpace d h))
-variable (b : ℝ) (hb : 0 < b)
+local notation "d" => Source.CanonicalRoot.generated.change
+local notation "h" => Source.CanonicalRoot.generated.minimal
+local notation "o" => Source.CanonicalRealization.orientation
+local notation "μ" => Source.CanonicalRoot.generated.law
+local notation "b" => Source.CanonicalRealization.width
+local notation "hb" => Source.CanonicalRealization.width_pos
 
-/-- Outputs of the common-source construction at one orientation and width.
+/-- Outputs of the canonical common-source construction, with no parameters.
 The comparison classes and maps remain explicit in the field types; the
 record does not encode the manuscript's full differential geometry. -/
 structure Conclusions : Prop where
@@ -160,6 +168,25 @@ structure Conclusions : Prop where
   endpoint_compact_resolvent : ∃ R : QuotientL2 →L[ℂ] QuotientL2,
     SourceEndpointSpectrum.IsResolvent (SourceEndpointCasimir.radius b) (-1) R ∧
       IsCompactOperator R
+  one_form_curl_selfAdjoint :
+    IsSelfAdjoint SourceOneFormCurlSpectrum.closedCurl
+  one_form_curl_unique : ∀ S,
+    IsSelfAdjoint S → SourceOneFormCurlSpectrum.finiteCurl ≤ S →
+      S = SourceOneFormCurlSpectrum.closedCurl
+  one_form_coclosed_expansion : ∀ A : SourceOneFormClosedHodge.coclosedField,
+    HasSum (fun a : SourceOneFormCoclosedSpectrum.CoclosedIndex =>
+      inner ℂ (SourceOneFormCoclosedSpectrum.coclosedHilbertBasis a) A •
+        SourceOneFormCoclosedSpectrum.coclosedHilbertBasis a) A
+  one_form_coclosed_bound : ∀ A : SourceOneFormCurlSpectrum.closedCurl.domain,
+    A.val ∈ SourceOneFormClosedHodge.coclosedField →
+      4 * ‖A.val‖ ^ 2 ≤ ‖SourceOneFormCurlSpectrum.closedCurl A‖ ^ 2
+  one_form_coclosed_attainment :
+    ‖SourceOneFormLowestCurl.lowestField‖ = 1 ∧
+      SourceOneFormLowestCurl.lowestField ∈ SourceOneFormClosedHodge.coclosedField ∧
+      ‖SourceOneFormCurlSpectrum.closedCurl SourceOneFormLowestCurl.lowestDomain‖ ^ 2 = 4
+  one_form_projective_parity : ∀ a : SourceOneFormCoclosedSpectrum.CoclosedIndex,
+    ∃ l : ℕ, Odd l ∧ 1 ≤ l ∧
+      SourceOneFormCurlSpectrum.eigenvalue a.val ^ 2 = ((l : ℝ) + 1) ^ 2
   same_degree_capacity : ∀ l : ℕ, Even l →
     Module.finrank ℂ (SourceFiniteCornerAlgebra.Carrier hb l →ₗ[ℂ]
       SourceFiniteCornerAlgebra.Carrier hb l) =
@@ -185,10 +212,10 @@ structure Conclusions : Prop where
     Module.finrank ℝ (SourceSphereTangent.SphereTangent (sourceSphereHomeomorph U)) = 3
   tangent_metric_positive : ∀ (q : Sphere3) (v : SourceSphereTangent.SphereTangent q),
     v ≠ 0 → 0 < SourceSphereTangent.sphereMetric q v v
-  tangent_polar_unique : ∀ (U : SU2) (h : ℍ),
+  tangent_polar_unique : ∀ (U : SU2) (v : ℍ),
     ∃! x : ℝ × SourceSphereTangent.SphereTangent (sourceSphereHomeomorph U),
       SourceSphereTangent.polarTangentMap (sourceSphereHomeomorph U)
-        (SourceEndpointCasimir.radius b) x = h
+        (SourceEndpointCasimir.radius b) x = v
   endpoint_tangent_metric : ∀ (U : SU2)
     (x y : ℝ × SourceSphereTangent.SphereTangent (sourceSphereHomeomorph U)),
     (Matrix.trace
@@ -247,12 +274,11 @@ structure Conclusions : Prop where
   spin_least : SourceMinimalSpin.IsLeastCentreSensitive
     (SourceSymmetricUnitary.unitaryRepresentation 1)
 
-/-- The same root data generate every record field for each orientation and
-positive width. This width indexes both the interval realization and the
-geometric endpoint; neither endpoint nor spectral closure is supplied. -/
-theorem generatedSourceGeometry (hμ : HilbertCompositionalAxioms μ) :
-    Conclusions d h o μ b hb := by
-  obtain ⟨hprofile, hoverlap, hground⟩ := Physical.SourceOrigin.common_densities d h hμ o hb
+/-- The canonical minimal-change root generates every geometric record field.
+The Gaussian law, width and orientation have already been constructed. -/
+theorem generatedSourceGeometry : Conclusions := by
+  obtain ⟨hprofile, hoverlap, hground⟩ := Physical.SourceOrigin.common_densities
+    d h Source.CanonicalRoot.generated.compositional o hb
   refine {
     correlation_density := hprofile
     overlap_density := hoverlap
@@ -283,6 +309,15 @@ theorem generatedSourceGeometry (hμ : HilbertCompositionalAxioms μ) :
     endpoint_multiplicity := SourceEndpointSpectrum.endpoint_multiplicity hb
     endpoint_compact_resolvent := SourceEndpointSpectrum.has_compact_resolvent
       (SourceEndpointCasimir.radius_pos hb).ne'
+    one_form_curl_selfAdjoint := SourceOneFormCurlSpectrum.closedCurl_selfAdjoint
+    one_form_curl_unique := SourceOneFormCurlSpectrum.closedCurl_unique
+    one_form_coclosed_expansion := fun A => by
+      simpa only [HilbertBasis.repr_apply_apply] using
+        SourceOneFormCoclosedSpectrum.coclosedHilbertBasis.hasSum_repr A
+    one_form_coclosed_bound := SourceOneFormClosedHodge.closedCurl_coclosed_coercivity
+    one_form_coclosed_attainment := SourceOneFormLowestCurl.complete_coclosed_bottom.2
+    one_form_projective_parity := fun a =>
+      SourceOneFormCurlBranches.every_nongauge_field_mode_has_odd_degree a.val a.property
     same_degree_capacity := SourceSphereCapacity.source_corner_endpoint_finrank hb
     spherical_capacity_unique := SourceSphereCapacity.source_capacity_even_iff hb
     spherical_affine_unique := SourceSphereCapacity.affine_even_iff
@@ -292,8 +327,8 @@ theorem generatedSourceGeometry (hμ : HilbertCompositionalAxioms μ) :
     endpoint_trace_metric := fun U => source_group_trace_polar U (SourceEndpointCasimir.radius b)
     tangent_dimension := fun U => SourceSphereTangent.tangent_finrank (sourceSphereHomeomorph U)
     tangent_metric_positive := fun q v hv => SourceSphereTangent.sphereMetric_pos q hv
-    tangent_polar_unique := fun U h => SourceSphereTangent.polarTangent_existsUnique
-      (sourceSphereHomeomorph U) (SourceEndpointCasimir.radius_pos hb).ne' h
+    tangent_polar_unique := fun U v => SourceSphereTangent.polarTangent_existsUnique
+      (sourceSphereHomeomorph U) (SourceEndpointCasimir.radius_pos hb).ne' v
     endpoint_tangent_metric := fun U => SourceSphereTangent.source_group_trace_polar_tangent U
       (SourceEndpointCasimir.radius b)
     positive_polar_smooth := SourceSmoothPolar.polar_contMDiff

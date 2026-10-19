@@ -38,9 +38,8 @@ on its orthogonal complement. The operation group's centre is exactly
 `{I, -I}`, and its algebraic central quotient has precisely the corresponding
 two-element fibres. Its rotation double cover and projective-space
 identification are separate geometric assertions.
-The physical component of `CommonFoundation.fromMinimalUnbiasedChange` takes
-only the minimal unbiased compositional change datum. For every orientation
-and positive width, it collects the
+The physical component of `CommonFoundation.generated` is instantiated at the
+canonical carrier, unit-covariance width and original complex orientation. It collects the
 source geometry, exchange-retained response, frame classifications, least
 faithful matter, vacuum phase lift and elementary connector. The source maps
 identify their actual actions, rather than only matching dimensions. The
@@ -71,9 +70,10 @@ bottom without an additional coupling or scale datum. The generated critical
 radius and colour feedback then select a unique condensed Yang--Mills
 coordinate. The normalized radial/scalar block and the complete positive-odd
 coclosed colour-connection tower have a common strictly positive direct-sum
-spectral bottom. Field-type branch labels
-remain outside the root package until their
-differential-operator classification is derived. This import graph includes
+spectral bottom. The spinor and TT tensor outputs differentiate the original
+source fields, construct their full closed operators and prove spectral
+exhaustion. Their complete-field theorems enter the same zero-input root;
+representation-label tables do not define these operators. This import graph includes
 the implemented proof sources.
 Its current kernel-verification status is governed by a fresh build and axiom
 audit, not by the presence of this entry point.
