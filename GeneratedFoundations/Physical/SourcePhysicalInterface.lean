@@ -14,6 +14,7 @@ public import GeneratedFoundations.Physical.SourceLorentzCarrier
 public import GeneratedFoundations.Physical.CanonicalYangMills
 public import GeneratedFoundations.Physical.CanonicalYangMillsUnits
 public import GeneratedFoundations.Physical.SourceTorsionContent
+public import GeneratedFoundations.Physical.SourceClosedCenterResponse
 public import GeneratedFoundations.Physical.SourceTTGaussianCoefficient
 public import GeneratedFoundations.Physical.SourceCollectiveGravityClosure
 public import GeneratedFoundations.Physical.CanonicalMatterBundle
@@ -99,6 +100,10 @@ groups the gauge and matter layers and keeps the physical outputs without
 repeating every intermediate bundle.  The older `Conclusions` remains a
 compatibility bundle and is not the zero-argument root's physical field.
 `torsion_content` is the exact content theorem `tau=1/50`.
+`closed_centre_response` computes the complete sixteen-state centre trace,
+its unique unbiased exponential-probe point and its fluctuation--response identity. Its
+common-response theorem retains arbitrary matrix entries within each
+eight-dimensional block, with the same response on both chiral copies.
 
 Division of labour: Lean proves the **structural** source/spectrum/operator/
 Hessian/Fock-core/collective-gravity statements.  V5 supplies the numerical
@@ -186,6 +191,7 @@ structure CoreConclusions : Prop where
     SourceConformalResponse.CompleteProperties
   canonical_yang_mills : CanonicalYangMills.Conclusions
   torsion_content : SourceTorsionContent.Conclusions
+  closed_centre_response : SourceClosedCenterResponse.Conclusions
   finite_gaussian_tt_response : SourceTTGaussianCoefficient.Conclusions
   generated_spinor : Geometry.SourceSpinorSystem.Conclusions
   generated_tensor_tt : Geometry.SourceTensorTTSystem.Conclusions
@@ -343,6 +349,7 @@ theorem generatedCore : CoreConclusions where
     generated.generated_complete_conformal_response
   canonical_yang_mills := generated.canonical_yang_mills
   torsion_content := generated.torsion_content
+  closed_centre_response := SourceClosedCenterResponse.generated
   finite_gaussian_tt_response := SourceTTGaussianCoefficient.generated
   generated_spinor := generated.generated_spinor
   generated_tensor_tt := generated.generated_tensor_tt

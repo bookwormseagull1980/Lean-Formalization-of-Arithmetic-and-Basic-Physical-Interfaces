@@ -236,6 +236,50 @@ The coherent budget has the exact, separate reconstruction
 `integral B_N^2 = integral C_N * (B_N^2/C_N)` with the scale weight on both
 sides. Its capacity factor is retained inside the integral.
 
+`CapacityRestoredWindowBudget` makes the finite probability normalization
+explicit on the actual level-five observation `n^2 < 5 L^2`. Its positive
+and negative probabilities are the two Gaussian sector masses divided by
+their own total capacity. Empty observations have zero first and second
+moments. For the same window, with centre variance `v`, it proves
+
+```text
+B_visible^2 = C_visible^2 * (1-v).
+```
+
+Capacity conservation is part of this same ledger. The visible and outside
+capacities add to the complete capacity, pointwise and inside the weighted
+scale integral. A joint prime flip preserves both the Gaussian response and
+window membership. At a genuine prime birth the paired old capacity, its
+transported return and the unpaired old boundary add exactly to the new total.
+The resolved capacity plus its actual unresolved complement is identical
+before and after that birth, inside the same complete source; no external
+capacity enters this balance.
+Opposite-centre mixing transfers its potential loss `D_mix` to transverse
+capacity:
+
+```text
+T_after = T_old + T_return + D_mix,
+V_after + T_after = C_after.
+```
+
+The level-five capacity and normalized-potential scale budgets are uniformly
+finite for every `sigma > 1/2`, over all natural cutoffs. The coherent budget
+retains the factor `C_visible^2`. On a genuine prime update, the exact
+capacity-restored dissipation balance is
+
+```text
+(C_old+C_return)*D_mix - C_return*V_old - C_old*V_return
+  = 2*B_old*B_return.
+```
+
+Thus its signed correlation is present before the first inequality.
+The complete energy and the window energy satisfy two-sided comparisons
+with coefficients `2` and a squared Gaussian tail independent of the natural
+generation cutoff `N`. This tail bound still depends on the observation
+scale `L`; its pointwise estimate does not assert all-scale integrability.
+The remaining growth estimate concerns the capacity-restored coherent
+integral, including the signed visible--outside response.
+
 `GaussianPrefixTail` replaces the outside-cardinality bound by a convergent
 envelope. For `K = ceil(sqrt(R) * L) > 0`, put
 
@@ -484,6 +528,7 @@ constants; it is not an additional assumption of the root construction.
 | Canonical Yang--Mills response | `CanonicalYangMills.generated` | The generated IR **edge** `sqrt(2*pi)` exceeds the critical ratio. Its unique positive condensed amplitude, original-Haar-field action, self-adjoint differential response Hessian, attained positive spectral bottom and finite-occupation gap are outputs of a theorem without realization arguments. This is the **IR-edge model**; the V5 **TT-endpoint** model `kL` is separate and certificate-conditional in `CanonicalYangMillsTT`, not this theorem. |
 | Torsion content `1/50` | `SourceTorsionContent.generated` | The generated hypercharge operator gives `sum c*Y^2=10/3`; the left/charged-right counts are `8/7`; the charged quotient has dimension `15`. Hence `(N_L-N_R)/(N_f*sum Y^2)=1/50` as a rational theorem, not a fitted parameter. |
 | V5 finite Gaussian TT coefficient | `SourceTTGaussianCoefficient.generated`, `existsUnique_endpoint` | The eight retained branches use the generated torsion value and the actual Gaussian frequency integrals. Their coefficient `A5` is strictly positive and selects the unique positive radius `27*A5/4` with response `A5/c=4/27`. These integral and uniqueness results are outputs of the zero-argument physical interface. |
+| Complete matter centre response | `SourceClosedCenterResponse.generated` | The actual sixteen-state basis carries the generated grading and exchange. Exchange preserves the total capacity for every weight on this carrier. Every common left/right matrix response has zero centre trace. Its finite exponential trace is `cosh h`; the logarithmic response is `tanh h`, with positive susceptibility `1/cosh(h)^2`. The exponential probe family has a unique unbiased point, with centre bias zero, fluctuation one and restoring Hessian one. The neutral direction is retained. |
 | V5 TT-endpoint Yang--Mills model (separate) | `SourceTTResponse.EndpointCertificate`, `endpointCertificateOfBounds`, `CanonicalYangMillsTT.generated` | A geometric enclosure of the actual coefficient places its unique radius between the critical radius and the IR edge. Every endpoint certificate has this same radius; it contains no independent response value. The condensed TT-endpoint Yang--Mills conclusion uses that geometric enclosure and remains separate from the IR-edge Yang--Mills theorem. |
 | Geometric volume and colour covariance | `SourceProjectiveVolume.roundMeasure_total`, `SourceGeneratedYangMillsGap.transverseCovarianceAction_eq`, `CanonicalYangMills.sourceColourContraction` | The actual ambient polar measure and two-sheeted quotient give `pi^2*L^3`. Isotropic variance with the generated total intensity is fixed across the 24 spatial-colour components; the two transverse directions and the actual adjoint double commutator compute the connection response shift. |
 | Orientation reversal of the nonlinear response | `CanonicalYangMills.responseAction_orientation_reverse` | Conjugating the complete connection jet preserves its curvature trace, connection norm and common radial response. Together with the source orientation classification, this identifies the response in the two orientation presentations. |

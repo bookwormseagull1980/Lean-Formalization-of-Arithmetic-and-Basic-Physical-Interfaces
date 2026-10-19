@@ -6,6 +6,7 @@ public import GeneratedFoundations.Analysis.NaturalCutoffPrimeDescent
 public import GeneratedFoundations.Analysis.MaximumPrimeFactorRelativeStage
 public import GeneratedFoundations.Analysis.NaturalSourceScaleBudget
 public import GeneratedFoundations.Analysis.GaussianPrefixTail
+public import GeneratedFoundations.Analysis.CapacityRestoredWindowBudget
 public import GeneratedFoundations.Physical.SourcePhysicalInterface
 public import GeneratedFoundations.Source.CanonicalRealization
 
@@ -92,6 +93,7 @@ structure Conclusions : Prop where
   gaussian_window_ledger : Analysis.GaussianWindowCapacity.Conclusions
   gaussian_prefix_tail : Analysis.GaussianPrefixTail.Conclusions
   natural_source_scale_budget : Analysis.NaturalSourceScaleBudget.Conclusions
+  capacity_restored_window : Analysis.CapacityRestoredWindowBudget.Conclusions
   physical_interface : Physical.SourcePhysicalInterface.CoreConclusions
 
 /-- Minimal unbiased compositional change generates the complete common world
@@ -122,6 +124,7 @@ theorem generated : Conclusions := by
     gaussian_window_ledger := Analysis.GaussianWindowCapacity.conclusions
     gaussian_prefix_tail := Analysis.GaussianPrefixTail.conclusions
     natural_source_scale_budget := Analysis.NaturalSourceScaleBudget.conclusions
+    capacity_restored_window := Analysis.CapacityRestoredWindowBudget.conclusions
     physical_interface := Physical.SourcePhysicalInterface.generatedCore }
   · let : Fact (0 < windowLengthGenerated width) :=
       ⟨windowLengthGenerated_pos width_pos⟩

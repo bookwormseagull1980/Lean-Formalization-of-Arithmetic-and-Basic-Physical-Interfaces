@@ -3354,6 +3354,70 @@
       "label": "cutoff-independent Gaussian capacity and coherent tail errors",
       "coverage_kind": "theorem",
       "scope": "For positive first omitted label K, the outside capacity and amplitude error are bounded by exp(-K^2/L^2)/(1-exp(-K/L^2)), uniformly over natural cutoffs. The coherent error retains the visible-outside term 2*abs(B_visible)*T in addition to T^2."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceClosedCenterResponse.generated",
+      "module": "GeneratedFoundations.Physical.SourceClosedCenterResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete matter centre trace and fluctuation-response closure",
+      "coverage_kind": "theorem",
+      "scope": "The constructed sixteen-state carrier has its actual grading eigenvalues and exchange action. Exchange preserves total capacity for every weight on this carrier. Its exponential centre trace is cosh, its logarithmic derivative is tanh, and the susceptibility is strictly positive. The unique unbiased probe coordinate is zero; its bias is zero, fluctuation one and restoring Hessian one. This zero-argument package is part of the physical root."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceClosedCenterResponse.common_response_centre_trace",
+      "module": "GeneratedFoundations.Physical.SourceClosedCenterResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "centre balance of the full common matrix response",
+      "coverage_kind": "theorem",
+      "scope": "For every endomorphism A of the actual eight-dimensional source carrier, trace(grading*diag(A,A)) is zero on FullMatter. All within-block matrix entries are retained; the common-response property is stated explicitly."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget.conclusions",
+      "module": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "weighted level-five probabilities and capacity-restored Gaussian energy",
+      "coverage_kind": "theorem",
+      "scope": "The actual level-five Gaussian sector masses define normalized probabilities when nonempty. Capacity conservation is retained for window plus outside, the joint prime flip and genuine prime birth including its cutoff boundary. Mixing transfers the potential loss to transverse capacity. Their capacity and B^2/C scale budgets are uniformly finite for sigma>1/2. The coherent window energy equals C^2 times its centre-variance deficit, with the actual capacity retained inside the integral. Empty observations have zero moments."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget.generated_restored_dissipation",
+      "module": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual divisor-return dissipation after capacity restoration",
+      "coverage_kind": "theorem",
+      "scope": "On the real stageBefore and stagePairedBase sets, restored mixing dissipation minus both capacity-transfer terms equals twice the signed old-return correlation. The same nonnegative weight is used on the old labels and their genuine multiplied returns."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget.completeEnergy_le_window_and_tail",
+      "module": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "uniform-coefficient recovery of complete energy from the Gaussian window",
+      "coverage_kind": "theorem",
+      "scope": "Complete coherent energy is at most twice the actual visible energy plus twice the squared Gaussian tail. This tail envelope is independent of the natural generation cutoff N, but depends on the observation scale and window cutoff. The numerical coefficient is independent of both scales and cutoff, and the signed reconstruction precedes this inequality."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget.fiveCapacityBudget_conservation",
+      "module": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "conservation of complete Gaussian capacity across the window boundary",
+      "coverage_kind": "theorem",
+      "scope": "Inside the same weighted scale integral, the actual visible and retained outside capacities add exactly to the complete natural-prefix capacity. Both retain their original Gaussian and squarefree-support weights."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget.generated_transverse_capacity_transfer",
+      "module": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "conservative transfer from central potential to transverse capacity",
+      "coverage_kind": "theorem",
+      "scope": "For the genuine generated old and prime-return source, the new transverse capacity is exactly the sum of both prior transverse capacities and their nonnegative mixing dissipation. Together with actual total-capacity additivity, this retains the complete positive mass."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget.generated_closed_capacity_conservation",
+      "module": "GeneratedFoundations.Analysis.CapacityRestoredWindowBudget",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "resolved-unresolved capacity conservation on the same generated source",
+      "coverage_kind": "theorem",
+      "scope": "For every genuine prime birth in a complete natural prefix, resolved capacity plus the capacity of its actual unresolved complement is identical before and after the update. Both complements are subsets of the same original source; no external capacity is introduced."
     }
   ],
   "planned": [
