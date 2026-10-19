@@ -19,9 +19,12 @@ the two transverse--traceless tensor branches.  Their parity, dimensions,
 Casimir values, curvature shifts and lowest levels are proved here.
 
 This is the finite representation-theoretic layer of the field-spectrum
-argument.  It does not replace the subsequent construction of the vector,
-spinor and tensor Hilbert spaces, their differential operators, or the proof
-that the displayed branches exhaust those closed operators.
+argument.  The operator-level construction is carried out separately in
+`Geometry.SourceOneForm*`, `Geometry.SourceSpinor*` and
+`Geometry.SourceTensorTT*`: those modules construct the original Haar field
+spaces, differential operators, closed domains and exhaustive spectral
+bases.  The labels here are used to identify their spectra; they are not a
+substitute for those operator theorems.
 -/
 
 @[expose] public section

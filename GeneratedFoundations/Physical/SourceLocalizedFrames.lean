@@ -6,7 +6,9 @@ public import Mathlib.Topology.VectorBundle.Basic
 /-!
 # Hermitian frames on overlapping response-bundle charts
 
-The fibers are an arbitrary family over the localization base. A frame is
+This module gives comparison theorems for an arbitrary family of fibers;
+the concrete generated bundle is constructed in `CanonicalMatterBundle`.
+The arbitrary family is not a datum of that construction. A frame here is
 obtained from a fiberwise Hermitian local trivialization, only on its base
 set. Changes of frame satisfy the passive convention and the triple-overlap
 cocycle identity. No global identification of the fibers is used.

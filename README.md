@@ -30,13 +30,31 @@ Reversing that presentation gives the proved conjugate structure. The arithmetic
 physical branches are parallel conclusions;
 neither is assumed by the other.
 
+The concrete matter bundle is now constructed on the generated Hermitian
+four-carrier with the complete source matter space as its fibre. Its global
+coordinates, unitary frame action, relative transitions and passive-component
+compatibility are proved in `Physical.CanonicalMatterBundle`; no arbitrary
+family of fibres or local compatibility premise is supplied to that entry.
+The arbitrary-bundle lemmas remain comparison theorems with their stated
+premises, rather than assumptions of this concrete construction.
+
+`Physical.SourceNonlinearTensorAction` constructs the first-order nonlinear
+tensor density on the same four-carrier. The actual density variation under
+affine dilation uniquely fixes the relative cubic self-coupling to one inside
+the unit-normalized quadratic-plus-cubic class. Its density and connection
+weights are calculated from their Lie transformations. General local
+diffeomorphism covariance and the nonlinear metric field equations are
+separate from this affine-dilation result.
+
 ## 2. Concrete record
 
 The source is pinned to Lean 4.34.0 and mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The 19 October canonical-root audit
 passed for all 346 local modules imported by the zero-argument entry, with
 16,584 compiled constants, 8,490 named type checks and 342 indexed claims.
-The root and its dependencies use only Lean's `propext`, `Classical.choice`
+Those counts describe that audited snapshot, before the concrete-bundle and
+nonlinear-density extensions above. The root and its dependencies in that
+snapshot use only Lean's `propext`, `Classical.choice`
 and `Quot.sound`; there are no local axioms or proof placeholders.
 The separately scoped 18 October release audit records 273 modules, 13,854
 constants, 7,231 named type checks and 298 indexed claims for that earlier

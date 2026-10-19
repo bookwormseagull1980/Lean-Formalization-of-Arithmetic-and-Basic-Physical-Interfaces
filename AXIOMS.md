@@ -262,6 +262,21 @@ linear Einstein tensor operator with its simple massless pole.  These modules
 quantify over field configurations and momenta after the carrier is generated;
 they do not enlarge `MinimalUnbiasedChange.Datum`.
 
+The concrete source matter bundle is also a root output: its base is the already
+generated Hermitian four-carrier and its fibre is the complete source matter
+Hilbert space. Its coordinate uniqueness, unitary frame transformations,
+transition cocycle and component compatibility are proved internally. Generic
+bundle comparison lemmas are not hypotheses of this construction.
+
+The nonlinear tensor density is constructed on that same coordinate carrier.
+Inside the first-order quadratic-plus-cubic comparison class with the existing
+unit linear normalization, affine-dilation covariance fixes the cubic
+coefficient uniquely. The proof differentiates the density and computes its
+residual as `2*(c-1)*eta.R_quadratic`; a torsion-free configuration with
+`eta.R_quadratic=-2` detects every coefficient other than one. This result
+does not postulate the residual to be zero. It covers affine dilation, not
+the full nonlinear metric variational system.
+
 The generated Yang--Mills response is part of the same root output. The
 endpoint ratio fixes the critical radius; the `(4,2)` source carrier and
 explicit colour matrices fix the long-root and adjoint Casimirs; and their

@@ -21,7 +21,7 @@
       {"paper": "A Spectral Construction of Natural-Number Arithmetic", "tex_source": "sections-en/appendix_l_expression_resolution.tex", "mapped_declarations": 3, "sha256": "c1c7a8f0c5a89866e4a271347a60c82e55cb9eea359b6a89df21f4fcc92d594d", "scope": "Formalized appendix clauses are the intrinsic depth bound used for fibre finiteness, injectivity of right-unit insertion on reduced expressions, and constancy of the existing Gaussian scalar response on evaluation fibres. The exact fibre recursion and initial counts, h_n < 8^n, Hilbert coisometry and uniform-difference splitting, whole-tree telescoping and orthogonal successor assembly are not included."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec03_disorder_axiom.tex", "mapped_declarations": 26, "sha256": "4922c582d492719961ac960b5f676c86f32fe960affbca76aee3f4b53bdcb83d", "scope": "The normalized affine first-order ladder class, phase-independent ordered products, order-neutral half-sum, actual Hermite completeness, self-adjoint closure and full-space central phase. The affine and self-adjoint-extension comparison classes remain part of the respective conclusions, not new fields of the root datum."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec04_emergent_structures.tex", "mapped_declarations": 50, "sha256": "72d73ba50caa6080904fa7247dca0775f73ac0cd5d74d60c5aa49e6ba001f863", "scope": "Constructed exchange-retained algebra, least faithful representations, source frames, block-phase rigidity, phase lift and elementary doublet comparison. Exact spherical capacity uniqueness and the actual three-dimensional source tangent space are separately mapped; the complete-spectrum Weyl asymptotics and general dimension inference are not certified by these entries. The generated Clifford even algebra, its primitive real central projections, two-dimensional spinor ranges and actual eight-dimensional Hermite sectors are indexed separately. Least pairs admit unique transport of every operator after fixing the realizing unitary; the two residual block phases are basis gauge, not physical parameters. Colour determinant-phase factorization is pointwise, with cube-root ambiguity. The generated colour, source-spin and lifted-phase families minimally generate the intrinsic operator group; the computed central kernel gives its effective quotient, and the scalar representation descends through the same kernel. The generated IR length is the geometric amplitude-shell radius, not an independent fitted length."},
-      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec08_construction.tex", "mapped_declarations": 18, "sha256": "882e799b9754180e33d55751dbee796877b6444b3bed29d670966a7e562811b1", "scope": "The actual even scalar shells determine the dimensionless conformal indices and multiplicities. Their complete restoring response is unbounded and strictly increasing, so every positive generated drive has one positive balance and a positive normalized scalar bottom. The same source representation computes the long-root dimension 15 and Casimir 16; the endpoint ratio gives the critical radius; the unit-slope affine comparison class fixes the relative drive; the explicit colour basis gives the adjoint Casimir 3 and the 120 connection-coefficient count. The normalized one-dimensional radial and scalar blocks have a unique generator-preserving unitary and an exactly intertwined scalar mass semigroup. The generated feedback identity and finite radial/coclosed spectral combination are formalized; full unbounded operator domains and the round projective volume formula remain manuscript arguments."},
+      {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec08_construction.tex", "mapped_declarations": 18, "sha256": "882e799b9754180e33d55751dbee796877b6444b3bed29d670966a7e562811b1", "scope": "The actual even scalar shells determine the dimensionless conformal indices and multiplicities. Their complete restoring response is unbounded and strictly increasing, so every positive generated drive has one positive balance and a positive normalized scalar bottom. The same source representation computes the long-root dimension 15 and Casimir 16; the endpoint ratio gives the critical radius; the unit-slope affine comparison class fixes the relative drive; the explicit colour basis gives the adjoint Casimir 3 and the 120 connection-coefficient count. The normalized one-dimensional radial and scalar blocks have a unique generator-preserving unitary and an exactly intertwined scalar mass semigroup. The generated feedback identity, finite radial/coclosed spectral combination, full unbounded operator domains and the round projective volume formula are formalized; the original-Haar-field nonlinear action, second variation, mixed-Hessian vanishing, closed self-adjoint response operator and attained bottom are recorded in the operator-level entries."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/sec10_lorentz_carrier.tex", "mapped_declarations": 6, "sha256": "d77e0d71a3225ee94fb5cc90f50f71424f01ca834b0d5b0d1a1692c002e70d2b", "scope": "The four-real Hermitian carrier, Minkowski determinant form, equality of the positive-semidefinite cone with the algebraic future cone, determinant-one form invariance, future-unit stabilizer equation and central-sign action are formalized. The global image classification as SO+(1,3), affine event C*-algebra, Poincare completion and quantum-field reconstruction are not declarations in this finite interface."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/appendix_f_source_response.tex", "mapped_declarations": 14, "sha256": "faeb55d59cde363ec0bf325bb5fb10d0eb02416e8aa47309baf7fd13e62d4c75", "scope": "Actual source compression, generated SU(2) operations, restricted oscillator phase and central quotient clauses. Individual mappings do not certify the complete appendix, all source-state completions, the SO(3) double cover or the Clifford theorem simply because they share a proposition label."},
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/proofs_source_operations.tex", "mapped_declarations": 4, "sha256": "11dfa7ddd536b5b1397adcc1ba4fd9110fdd76d2fe605ec89824e5e75198af0a", "scope": "The local Gaussian cycle and the algebraic central-quotient clause. The local cycle is I-2P and differs from the global sign; centre-invariant observations are a specified retained observation class. The four entries alone do not certify the complete process algebra, general finite-variance diffusion limit or polar-metric proof."}
@@ -3087,6 +3087,94 @@
       "label": "orientation independence of the actual common source response",
       "coverage_kind": "theorem",
       "scope": "Coefficient conjugation transports both values and derivatives of the complete connection jet and conjugates its nonlinear matrix curvature. Its real trace pairing and connection norm are unchanged, so the canonical common nonlinear radial-connection response is exactly invariant."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceOneFormSystem.generated",
+      "module": "GeneratedFoundations.Geometry.SourceOneFormSystem",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "zero-input generated coclosed one-form differential system",
+      "coverage_kind": "theorem",
+      "scope": "The original Haar one-form space, source curl, closed Hodge Laplacian, complete coclosed Hilbert basis, full field basis, complete weighted domain and Hilbert-sum decomposition are outputs with no supplied one-form carrier, connection, spectrum or cutoff."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceHaarConnectionHessian.operator_selfAdjoint",
+      "module": "GeneratedFoundations.Physical.SourceHaarConnectionHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "closed self-adjoint connection Hessian on the original Haar field",
+      "coverage_kind": "theorem",
+      "scope": "The differentiated source curl plus Gaussian colour-covariance response has a unique self-adjoint closed extension on the actual weak-divergence kernel of the original Haar field space."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceHaarConnectionHessian.complete_coercivity",
+      "module": "GeneratedFoundations.Physical.SourceHaarConnectionHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "closed-domain connection coercivity",
+      "coverage_kind": "theorem",
+      "scope": "The closed connection Hessian controls the full weighted-square domain by its lowest generated response eigenvalue, uniformly in the omitted finite cutoff."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceHaarYangMillsHessian.gap_attained",
+      "module": "GeneratedFoundations.Physical.SourceHaarYangMillsHessian",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "attained original-Haar-field Yang--Mills bottom",
+      "coverage_kind": "theorem",
+      "scope": "The complete radial plus colour response basis diagonalizes the closed original-field Hessian, and the minimizing generated mode attains the positive bottom exactly."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalMatterBundle.generated",
+      "module": "GeneratedFoundations.Physical.CanonicalMatterBundle",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "concrete generated matter bundle and compatible components",
+      "coverage_kind": "theorem",
+      "scope": "The product of the generated Hermitian four-carrier and complete source matter fibre has its own global coordinates, unitary fibre action, relative-transition cocycle and component compatibility. No arbitrary bundle or compatibility witness is supplied to this conclusion. This does not classify other bundle topologies."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.CanonicalMatterBundle.transition_unique",
+      "module": "GeneratedFoundations.Physical.CanonicalMatterBundle",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "faithful source action fixes relative transitions",
+      "coverage_kind": "theorem",
+      "scope": "For two configurations of the already generated gauge action, faithfulness uniquely determines the relative transition on each complete source fibre."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceNonlinearTensorAction.background_source_signature",
+      "module": "GeneratedFoundations.Physical.SourceNonlinearTensorAction",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "nonlinear tensor density uses the source determinant signature",
+      "coverage_kind": "theorem",
+      "scope": "The background contraction in the first-order density is exactly the Lorentz determinant form on the previously generated Hermitian four-carrier."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceNonlinearTensorAction.dilationRay_eq_liePath",
+      "module": "GeneratedFoundations.Physical.SourceNonlinearTensorAction",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "density variation follows the actual affine Lie path",
+      "coverage_kind": "theorem",
+      "scope": "The polynomial ray used for differentiation is exactly the path of the tensor density, connection and connection derivative under affine dilation at the origin."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceNonlinearTensorAction.dilationWardResidual_eq",
+      "module": "GeneratedFoundations.Physical.SourceNonlinearTensorAction",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "differentiated nonlinear affine Ward residual",
+      "coverage_kind": "theorem",
+      "scope": "Differentiating the actual first-order density gives residual 2(c-1) times the background quadratic Ricci contraction, for every local configuration."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceNonlinearTensorAction.cubicCoefficient_iff",
+      "module": "GeneratedFoundations.Physical.SourceNonlinearTensorAction",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique relative cubic coefficient in the normalized first-order class",
+      "coverage_kind": "theorem",
+      "scope": "Within the specified unit-normalized quadratic-plus-cubic density class, affine-dilation covariance for all configurations is equivalent to c=1. This proves neither classification of all nonlinear actions nor the full local-diffeomorphism identity."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceNonlinearTensorAction.generated",
+      "module": "GeneratedFoundations.Physical.SourceNonlinearTensorAction",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "zero-input nonlinear density and affine self-coupling theorem",
+      "coverage_kind": "theorem",
+      "scope": "The generated four-carrier supplies the first-order nonlinear density, actual dilation derivatives and unique relative cubic coefficient in the stated comparison class, with no supplied carrier or coupling parameter."
     }
   ],
   "planned": [

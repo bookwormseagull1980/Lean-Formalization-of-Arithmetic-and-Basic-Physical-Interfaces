@@ -13,8 +13,11 @@ public import GeneratedFoundations.Physical.SourceRadialMassIntertwiner
 public import GeneratedFoundations.Physical.SourceLorentzCarrier
 public import GeneratedFoundations.Physical.CanonicalYangMills
 public import GeneratedFoundations.Physical.CanonicalYangMillsUnits
+public import GeneratedFoundations.Physical.CanonicalMatterBundle
+public import GeneratedFoundations.Physical.SourceNonlinearTensorAction
 public import GeneratedFoundations.Geometry.SourceSpinorSystem
 public import GeneratedFoundations.Geometry.SourceTensorTTSystem
+public import GeneratedFoundations.Geometry.SourceOneFormSystem
 public import GeneratedFoundations.Source.MinimalUnbiasedChange
 public import GeneratedFoundations.Source.CanonicalRealization
 
@@ -102,6 +105,8 @@ structure Conclusions : Prop where
   geometry : Geometry.GeneratedSourceGeometry.Conclusions
   split_response : SourceSplitResponse.SplitConclusions
   frames : SourceFrameConstruction.FrameConclusions
+  canonical_matter_bundle : CanonicalMatterBundle.Conclusions
+  nonlinear_tensor_density : SourceNonlinearTensorAction.Conclusions
   internal_response : SourceInternalResponse.Conclusions
   complete_matter_exact_sequence : SourceCompleteMatterExactSequence.Conclusions
   generated_gauge_group : SourceGeneratedGaugeGroup.FactorOriginProperties
@@ -134,6 +139,7 @@ structure Conclusions : Prop where
   canonical_yang_mills_units : CanonicalYangMillsUnits.Conclusions
   generated_spinor : Geometry.SourceSpinorSystem.Conclusions
   generated_tensor_tt : Geometry.SourceTensorTTSystem.Conclusions
+  generated_one_form : Geometry.SourceOneFormSystem.Conclusions
   spin_same_source : ∀ (M : Mat2)
       (v : SourceVacuumTransport.V Source.CanonicalRealization.width_pos),
     SourceSpinIdentification.sourceUnitary Source.CanonicalRealization.width_pos
@@ -170,6 +176,8 @@ theorem generated : Conclusions := by
   geometry := Geometry.GeneratedSourceGeometry.generatedSourceGeometry
   split_response := SourceSplitResponse.generated_split
   frames := SourceFrameConstruction.generated_frames
+  canonical_matter_bundle := CanonicalMatterBundle.generated
+  nonlinear_tensor_density := SourceNonlinearTensorAction.generated
   internal_response := SourceInternalResponse.source_internalResponse
   complete_matter_exact_sequence := SourceCompleteMatterExactSequence.conclusions
   generated_gauge_group := SourceGeneratedGaugeGroup.sourceGeneratedGaugeGroupProperties
@@ -202,6 +210,7 @@ theorem generated : Conclusions := by
   canonical_yang_mills_units := CanonicalYangMillsUnits.generated
   generated_spinor := Geometry.SourceSpinorSystem.generated
   generated_tensor_tt := Geometry.SourceTensorTTSystem.generated
+  generated_one_form := Geometry.SourceOneFormSystem.generated
   spin_same_source := SourceSpinIdentification.sourceUnitary_matrix
     Source.CanonicalRealization.width_pos
   hermitian_coordinates := by

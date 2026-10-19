@@ -11,6 +11,9 @@ public import GeneratedFoundations.Physical.SourceFrameConnection
 # Effective transitions on actual local matter frames
 
 The Hermitian charts below belong to an arbitrary localized matter bundle.
+These are comparison results. The zero-input physical entry separately
+constructs its concrete bundle and proves its transition and component
+identities in `CanonicalMatterBundle`, without assuming the premises below.
 Compatibility with the specified frame realization means that their actual
 overlap maps act through the previously derived joint matter characters.
 This is a restriction on the realization; an arbitrary Hermitian bundle is

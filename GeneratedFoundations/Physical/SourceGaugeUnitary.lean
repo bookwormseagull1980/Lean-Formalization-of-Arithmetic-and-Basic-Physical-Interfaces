@@ -15,10 +15,11 @@ only for this explicit pairing calculation, without identifying its
 default product norm with the source Hilbert norm.
 
 Each of the six matrix blocks preserves its pairing. Consequently the
-already specified reduced gauge representation is unitary, and its
+internally constructed reduced gauge representation is unitary, and its
 quotient by the computed central subgroup acts faithfully and unitarily
-on the same carrier. The localized frame and vacuum-reduction assumptions
-remain those of the source gauge transport construction.
+on the same carrier. No local bundle or compatibility witness is an argument
+of this construction. General localized comparison theorems occur separately;
+the concrete generated bundle is assembled in `CanonicalMatterBundle`.
 -/
 
 @[expose] public section
