@@ -3175,6 +3175,78 @@
       "label": "zero-input nonlinear density and affine self-coupling theorem",
       "coverage_kind": "theorem",
       "scope": "The generated four-carrier supplies the first-order nonlinear density, actual dilation derivatives and unique relative cubic coefficient in the stated comparison class, with no supplied carrier or coupling parameter."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.PrimeCapacity.CapacityPair.transverse_eq",
+      "module": "GeneratedFoundations.Analysis.PrimeCapacity",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "transverse prime-capacity identity",
+      "coverage_kind": "theorem",
+      "scope": "For a positive two-sector capacity pair C=C_++C_- and B=C_+-C_-, the transverse capacity C-B^2/C equals 4*C_+*C_-/C and is nonnegative. This is the exact capacity algebra, not a zero-free theorem."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.PrimeCapacity.summable_primeWeight",
+      "module": "GeneratedFoundations.Analysis.PrimeCapacity",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "Gaussian prime-capacity summability for sigma>1/2",
+      "coverage_kind": "theorem",
+      "scope": "The positive Gaussian prime weight exp(-beta p^2/2)*p^(-2 sigma) is summable over the primes for beta>=0 and sigma>1/2. The proof uses the Gaussian factor bound and Mathlib's prime rpow summability criterion."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.PrimeCapacity.unitPrimeCapacity_transverse_nonneg",
+      "module": "GeneratedFoundations.Analysis.PrimeCapacity",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "positive unit-prime transverse capacity",
+      "coverage_kind": "theorem",
+      "scope": "The unit-plus-prime capacity pair has a positive total and nonnegative transverse capacity. This supplies the analytic prime-capacity layer; the missing step is the covariance/zero-free bound identifying it with the zeta zeros."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CapacityEnergyLedger.capacity_mul_potential_eq_coherentEnergy",
+      "module": "GeneratedFoundations.Analysis.CapacityEnergyLedger",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "zero-capacity-safe coherent energy reconstruction",
+      "coverage_kind": "theorem",
+      "scope": "For nonnegative generated centre sectors, coherent energy B^2 equals capacity C times the potential B^2/C, including the empty source."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.CapacityEnergyLedger.generated_stage_coherentEnergy_increment",
+      "module": "GeneratedFoundations.Analysis.CapacityEnergyLedger",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual prime-stage capacity-weighted energy ledger",
+      "coverage_kind": "theorem",
+      "scope": "The actual maximum-prime-factor update has energy increment c*V_old+(C+c)*V_return-(C+c)*D_join. The old state includes its legal cutoff boundary; the source capacity increase and full signed old-birth cross term are retained."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.GaussianWindowCapacity.conclusions",
+      "module": "GeneratedFoundations.Analysis.GaussianWindowCapacity",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "Gaussian window capacity and complete coherent response",
+      "coverage_kind": "theorem",
+      "scope": "Observation windows n^2<R*L^2 partition the same generated endpoint source into nonnegative visible and outside pairs, with exact capacity and signed reconstruction, complete coherent energy including the cross term, joint prime-flip covariance and an explicit finite Gaussian tail bound. The observation indices are not source inputs."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.GaussianWindowCapacity.five_window_complete",
+      "module": "GeneratedFoundations.Analysis.GaussianWindowCapacity",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "level-five Gaussian window with retained outside source",
+      "coverage_kind": "theorem",
+      "scope": "The concrete level-five visible pair and its outside pair reconstruct the canonical endpoint source exactly. This is the level-five observation instance, not a uniqueness theorem selecting that level."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.GaussianWindowCapacity.windowed_stage_coherentEnergy_correlation",
+      "module": "GeneratedFoundations.Analysis.GaussianWindowCapacity",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual windowed Gaussian prime-stage energy transport",
+      "coverage_kind": "theorem",
+      "scope": "The original Gaussian weight restricted by n^2<R*L^2 obeys exact prime-birth covariance at L/p. Its actual maximum-prime-factor stage energy increment retains the returned self-energy and full signed old-return interaction, including the strict window boundary."
+    },
+    {
+      "name": "GeneratedFoundations.Analysis.GaussianWindowCapacity.coherentEnergy_window_error",
+      "module": "GeneratedFoundations.Analysis.GaussianWindowCapacity",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete coherent energy error from retained outside capacity",
+      "coverage_kind": "theorem",
+      "scope": "The full-to-visible coherent energy error is bounded by C_outside^2+2*abs(B_visible)*C_outside using the actual nonnegative outside source. The cross term is retained in the exact reconstruction before this finite error estimate."
     }
   ],
   "planned": [

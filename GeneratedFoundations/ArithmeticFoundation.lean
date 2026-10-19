@@ -34,6 +34,8 @@ public import GeneratedFoundations.Spectral.NeumannHeatSemigroup
 public import GeneratedFoundations.Spectral.NeumannSpectralProjections
 public import GeneratedFoundations.Spectral.NeumannHeatTrace
 public import GeneratedFoundations.Spectral.GaussianHeatConvolution
+public import GeneratedFoundations.Analysis.PrimeCapacity
+public import GeneratedFoundations.Analysis.GaussianWindowCapacity
 
 /-!
 # Arithmetic foundation from minimal unbiased compositional change

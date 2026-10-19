@@ -176,6 +176,42 @@ records the particular statement or clause supported by a Lean declaration;
 several declarations may support one manuscript result. Full coverage requires
 matching all premises and conclusions and completing the intervening construction.
 
+## Gaussian observation windows and capacity-weighted energy
+
+The arithmetic entry also exposes `GaussianWindowCapacity`. At observation
+level `R`, the generated square spectrum is partitioned by `n^2 < R*L^2`.
+The level-five instance uses the same Gaussian endpoint weights and central
+character as the complete source. Visible and outside sector pairs add
+exactly to the canonical endpoint pair. Their capacities and signed responses
+are additive; coherent energy retains the full visible--outside cross term.
+Every visible label is bounded by `ceil(sqrt(R)*L)`, and the visible pair
+stabilizes once the natural prefix reaches that cutoff.
+The window predicate is invariant under the joint prime occupation--scale
+flip and transports under a prime birth with the same scale change `L/p` as
+the Gaussian response. Restricting the original Gaussian weight and filtering
+the generated labels produce exactly the same visible source. The windowed
+prime-stage energy therefore obeys the signed old--return correlation ledger
+with the transported scale and the strict boundary condition both retained.
+
+`CapacityEnergyLedger` distinguishes coherent energy `E=B^2` from central
+potential `V=B^2/C`. It proves `E=C*V`, including empty sources, and connects
+the transverse-capacity algebra to the actual generated centre sectors.
+For a genuine prime stage with old capacity `C` and return capacity `c`,
+the exact energy increment is
+`c*V_old + (C+c)*V_return - (C+c)*D_join`.
+The returned source and the old source are combined before taking an
+estimate; the actual natural-cutoff boundary is retained in the old state.
+The relative-potential comparison likewise keeps its capacity factor:
+`E <= 2*C*relativePotential`.
+
+Outside the window, each Gaussian endpoint weight is at most `exp(-R)`.
+The finite tail certificate displays its cardinal factor explicitly:
+`abs(B-B_visible) <= card(outsideLabels)*exp(-R)`.
+Using the actual outside capacity also certifies the complete energy error:
+`abs(E-E_visible) <= C_outside^2 + 2*abs(B_visible)*C_outside`.
+No fixed observation level is inferred from the arithmetic partition itself;
+level five is a concrete member of this covariant observation family.
+
 ## Environment
 
 The project pins Lean 4.34.0 and mathlib commit

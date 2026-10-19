@@ -79,8 +79,7 @@ theorem twisted_resistanceEnergy_le_untwisted
   have hsquare : twistedEdgeLoad phase request e ^ 2 ≤
       untwistedEdgeLoad request e ^ 2 := by
     rw [← sq_abs]
-    nlinarith [sq_nonneg
-      (untwistedEdgeLoad request e - |twistedEdgeLoad phase request e|)]
+    exact (sq_le_sq₀ (abs_nonneg _) hpositive).mpr hload
   exact div_le_div_of_nonneg_right hsquare (le_of_lt (hconductance e))
 
 /-- The canonical centre character of every finite prime occupation has unit
