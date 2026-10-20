@@ -15,6 +15,7 @@ public import GeneratedFoundations.Geometry.SourceSpinCentre
 public import GeneratedFoundations.Physical.MatrixModuleClassification
 public import GeneratedFoundations.Physical.MinimalFaithfulModule
 public import GeneratedFoundations.Physical.ReversalRealConnector
+public import GeneratedFoundations.Physical.SourceReversalIsometry
 public import GeneratedFoundations.Physical.SourcePhysicalInterface
 
 /-!

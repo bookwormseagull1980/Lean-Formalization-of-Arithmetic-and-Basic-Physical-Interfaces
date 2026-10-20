@@ -3,6 +3,7 @@ module
 public import GeneratedFoundations.Physical.SourceLocalizedMatter
 public import GeneratedFoundations.Physical.SourceGaugeCocycle
 public import GeneratedFoundations.Physical.SourceColourPhase
+public import GeneratedFoundations.Physical.SourceReversalIsometry
 
 /-!
 # Frames and relative transitions on the generated matter carrier

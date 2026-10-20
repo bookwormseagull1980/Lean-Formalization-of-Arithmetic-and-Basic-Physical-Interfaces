@@ -65,6 +65,19 @@ def test_source_only_never_calls_process_or_claims_compilation(project, monkeypa
     assert not (project / verify.MANIFEST_NAME).exists()
 
 
+def test_compatibility_exports_are_kept_in_named_inventory():
+    code = "namespace A\nexport Common.Proofs (\n  first\n  second\n)\nend A\n"
+    assert verify.source_declarations(code) == {"A.first", "A.second"}
+    assert verify.source_declarations("export Common.Proofs (third)\n") == {"third"}
+
+
+def test_malformed_export_list_is_rejected():
+    with pytest.raises(verify.VerificationError, match="Unterminated export"):
+        verify.source_declarations("namespace A\nexport Common.Proofs (first\n")
+    with pytest.raises(verify.VerificationError, match="Unsupported exported"):
+        verify.source_declarations("export Common.Proofs (first => second)\n")
+
+
 def test_subprocess_limits_lean_workers(project, monkeypatch):
     def fake_run(command, **options):
         assert options["env"]["LEAN_NUM_THREADS"] == "1"
@@ -288,6 +301,43 @@ def named_output():
             "'GeneratedFoundations.identity' does not depend on any axioms\n")
 
 
+def test_resolved_export_is_linked_to_the_checked_constant(project):
+    state = verify.check_sources(project)
+    record = {"name": "GeneratedFoundations.identity", "resolved": "Common.Proofs.original",
+              "axioms": ["propext"]}
+    compiled = [{"name": record["resolved"], "module": "GeneratedFoundations.Basic",
+                 "kind": "theorem", "unsafe": False, "partial": False, "axioms": ["propext"]}]
+    output = verify.NAMED_PREFIX + json.dumps(record) + "\n" + environment_output(compiled)
+    inventory, axioms = verify.check_environment_output(output, state)
+    assert inventory["named_resolutions"] == {record["name"]: record["resolved"]}
+    assert axioms == {record["resolved"]: ["propext"]}
+
+
+@pytest.mark.parametrize("damage", ["missing_target", "duplicate", "incomplete", "axioms", "disagree"])
+def test_resolved_export_reports_fail_closed(project, damage):
+    state = verify.check_sources(project)
+    record = {"name": "GeneratedFoundations.identity", "resolved": "Common.Proofs.original", "axioms": []}
+    compiled = [{"name": record["resolved"], "module": "GeneratedFoundations.Basic",
+                 "kind": "theorem", "unsafe": False, "partial": False, "axioms": []}]
+    expected = state.declarations
+    if damage == "missing_target":
+        record["resolved"] = "Common.Proofs.missing"
+    elif damage == "incomplete":
+        expected += ("GeneratedFoundations.other",)
+    elif damage == "axioms":
+        record["axioms"] = ["Injected.assumption"]
+    elif damage == "disagree":
+        record["axioms"] = ["propext"]
+    output = verify.NAMED_PREFIX + json.dumps(record) + "\n"
+    if damage == "duplicate":
+        output += output
+    with pytest.raises(verify.VerificationError):
+        if damage == "incomplete":
+            verify.check_axiom_output(output, expected)
+        else:
+            verify.check_environment_output(output + environment_output(compiled), state)
+
+
 def test_environment_audits_private_anonymous_and_generated_names_by_origin(project):
     state = verify.check_sources(project)
     names = ["GeneratedFoundations.identity", "_private.GeneratedFoundations.Basic.0.hidden",
@@ -396,10 +446,12 @@ def processes(project, monkeypatch):
                 raise subprocess.TimeoutExpired(command, options["timeout"])
             code, output = configuration["probe_code"], configuration["probe_output"]
         elif command[1:3] == ["--no-cache", "build"]:
-            assert len(command) == 4
-            assert command[-1] in {"+GeneratedFoundations.Basic", "+GeneratedFoundations", "GeneratedFoundations"}
+            assert 1 <= len(command[3:]) <= verify.BUILD_BATCH_SIZE
+            assert set(command[3:]) <= {"+GeneratedFoundations.Basic", "+GeneratedFoundations", "GeneratedFoundations"}
             code = 1 if failure == "build_failed" else 0
             output = "error: simulated failed Lean build" if code else "Build completed successfully"
+            if configuration.get("build_warning_target") in command[3:]:
+                output += "\nwarning: simulated compiler diagnostic"
         else:
             assert command[1:3] == ["--no-cache", "lean"]
             audit = Path(command[-1]).read_text(encoding="utf-8")
@@ -461,7 +513,56 @@ def test_freshness_probe_covers_all_modules_and_never_skips_axiom_audit(project,
     assert builds == expected_builds
     assert len([call for call in calls if call[:2] == ["--no-cache", "lean"]]) == 1
     manifest = json.loads((project / verify.MANIFEST_NAME).read_text(encoding="utf-8"))
-    assert manifest["build_mode"] == ("up_to_date" if code == 0 else "serial_build")
+    assert manifest["build_mode"] == ("up_to_date" if code == 0 else "batched_build")
+
+
+def test_rebuild_batches_bound_targets_preserve_dependencies_and_check_library(project, monkeypatch):
+    for name in ("Middle", "Other", "Top"):
+        parent = "Basic" if name != "Top" else "Middle"
+        (project / "GeneratedFoundations" / (name + ".lean")).write_text(
+            f"module\npublic import GeneratedFoundations.{parent}\n", encoding="utf-8")
+    (project / "GeneratedFoundations.lean").write_text(
+        "module\npublic import GeneratedFoundations.Top\npublic import GeneratedFoundations.Other\n",
+        encoding="utf-8")
+    state = verify.check_sources(project)
+    order = verify.module_build_order(state)
+    calls = []
+    monkeypatch.setattr(verify, "run_result", lambda *args: (3, "unrecognized stale output"))
+
+    def record(command, *args):
+        calls.append(command)
+        return "Build completed successfully"
+
+    monkeypatch.setattr(verify, "run", record)
+    mode, built = verify.build_modules("lake", project, state, 30)
+    batches = [command[3:] for command in calls[:-1]]
+    assert mode == "batched_build" and built == order
+    assert all(1 <= len(batch) <= verify.BUILD_BATCH_SIZE for batch in batches)
+    assert any(len(batch) > 1 for batch in batches)
+    assert sorted(target for batch in batches for target in batch) == sorted("+" + module for module in order)
+    finished = set()
+    for batch in batches:
+        for target in batch:
+            dependencies = verify.imports(verify.lean_code(state.modules[target[1:]].read_text(encoding="utf-8")))
+            assert dependencies & state.modules.keys() <= finished
+        finished.update(target[1:] for target in batch)
+    assert calls[-1] == ["lake", "--no-cache", "build", verify.LIBRARY]
+
+
+def test_stale_frontier_rebuild_includes_every_local_dependent(project):
+    state = verify.check_sources(project)
+    order = verify.module_build_order(state)
+    assert verify.affected_build_order(state, order,
+        "Building GeneratedFoundations.Basic\nerror: target is out-of-date") == order
+    assert verify.affected_build_order(state, order,
+        "Building GeneratedFoundations\nerror: target is out-of-date") == ("GeneratedFoundations",)
+
+
+@pytest.mark.parametrize("output", ["unrecognized stale output", "Building External.Dependency"])
+def test_unrecognized_stale_frontier_uses_full_order(project, output):
+    state = verify.check_sources(project)
+    order = verify.module_build_order(state)
+    assert verify.affected_build_order(state, order, output) == order
 
 
 @pytest.mark.parametrize("code", [1, 2, 4, -9])
@@ -485,6 +586,18 @@ def test_fresh_probe_warning_rejects_stored_diagnostics(project, processes):
     configuration, calls, arguments = processes
     configuration["probe_output"] = "warning: diagnostic replayed from a prior compilation"
     assert verify.main(arguments) == 1
+    assert not any(call[:2] == ["--no-cache", "lean"] for call in calls)
+    assert not (project / verify.MANIFEST_NAME).exists()
+
+
+@pytest.mark.parametrize("target", ["+GeneratedFoundations.Basic", "+GeneratedFoundations", "GeneratedFoundations"])
+def test_build_collects_warnings_but_never_audits_or_publishes_success(project, processes, target):
+    configuration, calls, arguments = processes
+    configuration["probe_code"] = 3
+    configuration["build_warning_target"] = target
+    assert verify.main(arguments) == 1
+    assert [target for call in calls if call[:2] == ["--no-cache", "build"] for target in call[2:]] == [
+        "+GeneratedFoundations.Basic", "+GeneratedFoundations", "GeneratedFoundations"]
     assert not any(call[:2] == ["--no-cache", "lean"] for call in calls)
     assert not (project / verify.MANIFEST_NAME).exists()
 

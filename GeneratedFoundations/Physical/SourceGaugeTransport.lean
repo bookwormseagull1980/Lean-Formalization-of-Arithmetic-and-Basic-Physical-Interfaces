@@ -2,6 +2,8 @@ module
 
 public import GeneratedFoundations.Physical.SourceChiralCarrier
 public import GeneratedFoundations.Physical.GlobalGaugeKernel
+public import GeneratedFoundations.Operations.UnitaryRepresentation
+public import GeneratedFoundations.Operations.OrthonormalCoordinates
 
 /-!
 # The reduced gauge action on the source matter carrier
@@ -78,61 +80,21 @@ def splitCoordinates : (FullIndex → ℂ) ≃ₗ[ℂ] GlobalGaugeKernel.Matter 
 def coordinates : FullMatter ≃ₗ[ℂ] GlobalGaugeKernel.Matter :=
   fullBasis.toBasis.equivFun.trans splitCoordinates
 
-theorem orthonormalBasis_equivFun {ι E : Type*} [Fintype ι] [DecidableEq ι]
-    [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-    (e : OrthonormalBasis ι ℂ E) (i : ι) :
-    e.toBasis.equivFun (e i) = Pi.single i 1 := by
-  funext j
-  simp [Pi.single_apply, eq_comm]
+export Operations.OrthonormalCoordinates (orthonormalBasis_equivFun)
 
 theorem coordinates_basis (i : FullIndex) :
     coordinates (fullBasis i) = pack (Pi.single i 1) :=
   congrArg pack (orthonormalBasis_equivFun fullBasis i)
 
-def transportRepresentation {G E F : Type*} [Monoid G]
-    [AddCommGroup E] [Module ℂ E] [AddCommGroup F] [Module ℂ F]
-    (e : E ≃ₗ[ℂ] F) (ρ : G →* Module.End ℂ F) : G →* Module.End ℂ E :=
-  (e.symm.conjAlgEquiv ℂ).toAlgHom.toMonoidHom.comp ρ
+export Operations.UnitaryRepresentation
+  (transportRepresentation conjugate_intertwines conjugate_eq_one_iff
+    transportRepresentation_intertwines transportRepresentation_eq_one_iff
+    transportRepresentation_intertwines_linear)
 
 /-- The matrix-coordinate action acts on the original source Hilbert carrier
 through a concrete coordinate equivalence. -/
 def representation : GlobalGaugeKernel.GaugeGroup →* Module.End ℂ FullMatter :=
   transportRepresentation coordinates GlobalGaugeKernel.representation
-
-theorem conjugate_intertwines {E F : Type*}
-    [AddCommGroup E] [Module ℂ E] [AddCommGroup F] [Module ℂ F]
-    (e : E ≃ₗ[ℂ] F) (A : Module.End ℂ F) (x : E) :
-    e ((e.symm.conjAlgEquiv ℂ) A x) = A (e x) :=
-  e.apply_symm_apply _
-
-theorem conjugate_eq_one_iff {E F : Type*}
-    [AddCommGroup E] [Module ℂ E] [AddCommGroup F] [Module ℂ F]
-    (e : E ≃ₗ[ℂ] F) (A : Module.End ℂ F) :
-    (e.symm.conjAlgEquiv ℂ) A = 1 ↔ A = 1 := by
-  constructor
-  · intro h
-    exact (e.symm.conjAlgEquiv ℂ).injective (h.trans (map_one (e.symm.conjAlgEquiv ℂ)).symm)
-  · rintro rfl
-    exact map_one (e.symm.conjAlgEquiv ℂ)
-
-theorem transportRepresentation_intertwines {G E F : Type*} [Monoid G]
-    [AddCommGroup E] [Module ℂ E] [AddCommGroup F] [Module ℂ F]
-    (e : E ≃ₗ[ℂ] F) (ρ : G →* Module.End ℂ F) (g : G) (x : E) :
-    e (transportRepresentation e ρ g x) = ρ g (e x) :=
-  conjugate_intertwines e (ρ g) x
-
-theorem transportRepresentation_eq_one_iff {G E F : Type*} [Monoid G]
-    [AddCommGroup E] [Module ℂ E] [AddCommGroup F] [Module ℂ F]
-    (e : E ≃ₗ[ℂ] F) (ρ : G →* Module.End ℂ F) (g : G) :
-    transportRepresentation e ρ g = 1 ↔ ρ g = 1 :=
-  conjugate_eq_one_iff e (ρ g)
-
-theorem transportRepresentation_intertwines_linear {G E F : Type*} [Monoid G]
-    [AddCommGroup E] [Module ℂ E] [AddCommGroup F] [Module ℂ F]
-    (e : E ≃ₗ[ℂ] F) (ρ : G →* Module.End ℂ F) (g : G) :
-    e.toLinearMap.comp (transportRepresentation e ρ g) = (ρ g).comp e.toLinearMap := by
-  apply LinearMap.ext
-  exact transportRepresentation_intertwines e ρ g
 
 theorem coordinates_intertwines_linear (g : GlobalGaugeKernel.GaugeGroup) :
     coordinates.toLinearMap.comp (representation g) =

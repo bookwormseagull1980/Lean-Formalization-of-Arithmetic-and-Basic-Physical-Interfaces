@@ -89,12 +89,32 @@ theorem radialToConstant_intertwines (massSq time : ℝ) (z : RadialBlock) :
       scalarMassEvolution massSq time (radialToConstant z) := by
   rfl
 
+/-- The long-root curvature-response shift carried by the same generated
+connection.  It is `2 z / (3 L^2)` in the source normalization; it is not a
+separate curvature parameter. -/
+def curvatureObservationShift (L z : ℝ) : ℝ :=
+  2 * z / (3 * L ^ 2)
+
+theorem curvatureObservationShift_pos {L z : ℝ}
+    (hL : 0 < L) (hz : 0 < z) :
+    0 < curvatureObservationShift L z := by
+  unfold curvatureObservationShift
+  exact div_pos (mul_pos (by norm_num) hz)
+    (mul_pos (by norm_num) (sq_pos_of_pos hL))
+
 /-- Coefficient of the normalized radial source projected onto the scalar
-constant block, written entirely with the generated long-root eigenvalue,
-complete curvature and response amplitude. -/
+constant block.  The second term is the curvature-observation shift
+`O'(q) = lambda_R + 2 alpha_R q`, written in the source coordinate
+`z = g_YM L^2 q`.  It must not be replaced by `2 z H'(z)`. -/
 def radialProjectionCoefficient (L z : ℝ) : ℝ :=
-  (longRootEigenvalue L + 2 * completeCurvature z * z) * z *
+  (longRootEigenvalue L + curvatureObservationShift L z) * z *
     Real.sqrt (2 / coefficientCount)
+
+theorem radialProjectionCoefficient_eq_observation (L z : ℝ) :
+    radialProjectionCoefficient L z =
+      (longRootEigenvalue L + 2 * z / (3 * L ^ 2)) * z *
+        Real.sqrt (2 / coefficientCount) := by
+  simp [radialProjectionCoefficient, curvatureObservationShift]
 
 theorem radialProjectionCoefficient_pos {L z : ℝ}
     (hL : 0 < L) (hz : 0 < z) :
@@ -102,13 +122,13 @@ theorem radialProjectionCoefficient_pos {L z : ℝ}
   have heigen : 0 < longRootEigenvalue L := by
     rw [longRootEigenvalue_eq]
     exact div_pos (by norm_num) (sq_pos_of_pos hL)
-  have hcurv : 0 < completeCurvature z := completeCurvature_pos hz.le
+  have hshift : 0 < curvatureObservationShift L z :=
+    curvatureObservationShift_pos hL hz
   have hsqrt : 0 < Real.sqrt (2 / coefficientCount) := by
     apply Real.sqrt_pos.2
     exact div_pos (by norm_num) coefficientCount_pos
   unfold radialProjectionCoefficient
-  exact mul_pos (mul_pos (add_pos heigen (mul_pos (mul_pos (by norm_num) hcurv) hz)) hz)
-    hsqrt
+  exact mul_pos (mul_pos (add_pos heigen hshift) hz) hsqrt
 
 /-- The finite conclusions of the generated radial/scalar identification. -/
 structure Properties : Prop where

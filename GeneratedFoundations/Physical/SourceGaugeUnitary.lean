@@ -1,6 +1,7 @@
 module
 
 public import GeneratedFoundations.Physical.SourceGlobalGaugeGroup
+public import GeneratedFoundations.Operations.UnitaryRepresentation
 public import Mathlib.Analysis.InnerProductSpace.Adjoint
 public import Mathlib.LinearAlgebra.Matrix.ConjTranspose
 public import Mathlib.LinearAlgebra.Matrix.Kronecker
@@ -30,13 +31,16 @@ open scoped BigOperators Kronecker
 
 namespace GeneratedFoundations.Physical.SourceGaugeUnitary
 
+export GeneratedFoundations.Operations.UnitaryRepresentation (
+  representationLinearEquiv representation_mem_unitary_of_adjoint
+)
+
 open SourceChiralCarrier SourceGaugeTransport
 
 abbrev GaugeGroup := GlobalGaugeKernel.GaugeGroup
 abbrev EffectiveGroup := SourceGlobalGaugeGroup.EffectiveGroup
 
-/-- The Hermitian pairing of a single finite coordinate block. -/
-def vectorInner {ι : Type*} [Fintype ι] (x y : ι → ℂ) : ℂ := star x ⬝ᵥ y
+export Operations.UnitaryRepresentation (vectorInner vectorInner_mulVec)
 
 /-- The sum of all six block pairings, including the neutral right line. -/
 def sixBlockInner (x y : GlobalGaugeKernel.Matter) : ℂ :=
@@ -62,13 +66,6 @@ theorem coordinates_inner (x y : FullMatter) :
     WithLp.ofLp (fullBasis.repr y) = _
   rw [dotProduct_comm, ← EuclideanSpace.inner_eq_star_dotProduct]
   exact fullBasis.repr.inner_map_map x y
-
-theorem vectorInner_mulVec {ι : Type*} [Fintype ι] [DecidableEq ι]
-    {A : Matrix ι ι ℂ} (hA : A ∈ Matrix.unitaryGroup ι ℂ) (x y : ι → ℂ) :
-    vectorInner (A.mulVec x) (A.mulVec y) = vectorInner x y := by
-  have ha : A.conjTranspose * A = 1 := Matrix.mem_unitaryGroup_iff'.mp hA
-  simp only [vectorInner, Matrix.star_mulVec, Matrix.dotProduct_mulVec,
-    Matrix.vecMul_vecMul, ha, Matrix.vecMul_one]
 
 private theorem circle_smul_unitary {ι : Type*} [Fintype ι] [DecidableEq ι]
     (z : Circle) {A : Matrix ι ι ℂ} (hA : A ∈ Matrix.unitaryGroup ι ℂ) :
@@ -154,12 +151,6 @@ theorem representation_norm (g : GaugeGroup) (x : FullMatter) :
     ‖representation g x‖ = ‖x‖ :=
   (LinearMap.norm_map_iff_inner_map_map (representation g)).mpr (representation_inner g) x
 
-def representationLinearEquiv {G E : Type*} [Group G]
-    [AddCommGroup E] [Module ℂ E] (ρ : G →* Module.End ℂ E) (g : G) : E ≃ₗ[ℂ] E :=
-  LinearEquiv.ofLinearMap (ρ g) (ρ g⁻¹)
-    ((ρ.map_mul g g⁻¹).symm.trans ((congrArg ρ (mul_inv_cancel g)).trans ρ.map_one))
-    ((ρ.map_mul g⁻¹ g).symm.trans ((congrArg ρ (inv_mul_cancel g)).trans ρ.map_one))
-
 /-- The inverse is the already specified action of the inverse group element. -/
 def linearAction (g : GaugeGroup) : FullMatter ≃ₗ[ℂ] FullMatter :=
   representationLinearEquiv representation g
@@ -192,15 +183,6 @@ theorem representation_adjoint (g : GaugeGroup) :
   apply (LinearMap.eq_adjoint_iff _ _).mpr
   intro x y
   exact (unitaryAction g).symm.inner_map_eq_flip x y
-
-theorem representation_mem_unitary_of_adjoint {G E : Type*} [Group G]
-    [NormedAddCommGroup E] [InnerProductSpace ℂ E] [FiniteDimensional ℂ E]
-    (ρ : G →* Module.End ℂ E) (hρ : ∀ g, (ρ g).adjoint = ρ g⁻¹) (g : G) :
-    ρ g ∈ unitary (Module.End ℂ E) := by
-  rw [Unitary.mem_iff, LinearMap.star_eq_adjoint, hρ]
-  constructor <;> rw [← map_mul]
-  · rw [inv_mul_cancel, map_one]
-  · rw [mul_inv_cancel, map_one]
 
 theorem representation_mem_unitary (g : GaugeGroup) :
     representation g ∈ unitary (Module.End ℂ FullMatter) :=

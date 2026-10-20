@@ -310,4 +310,20 @@ theorem unitaryAction_joint_continuous (m : ℕ) :
   exact (((continuous_apply i).comp B.equivFunL.continuous).comp continuous_snd).smul
     ((unitaryAction_orbit_continuous m (B i)).comp continuous_fst)
 
+/-- The polynomial source operator transported to its actual Haar carrier. -/
+def sourceOperator (m : ℕ) (U : SU2) : Module.End ℂ (HilbertCarrier m) :=
+  (carrierEquiv m).conjAlgEquiv ℂ (sourceRepresentation m U)
+
+theorem sourceOperator_apply (m : ℕ) (U : SU2) (p : Carrier m) :
+    sourceOperator m U (carrierEquiv m p) =
+      carrierEquiv m (sourceRepresentation m U p) := by
+  simp [sourceOperator, LinearEquiv.conjAlgEquiv_apply]
+
+theorem sourceOperator_eq_unitary (m : ℕ) (U : SU2) :
+    sourceOperator m U = (unitaryAction m U).toLinearEquiv.toLinearMap := by
+  apply LinearMap.ext
+  intro x
+  obtain ⟨p, rfl⟩ := (carrierEquiv m).surjective x
+  exact (sourceOperator_apply m U p).trans (unitaryAction_apply_carrier m U p).symm
+
 end GeneratedFoundations.Geometry.SourceSymmetricUnitary

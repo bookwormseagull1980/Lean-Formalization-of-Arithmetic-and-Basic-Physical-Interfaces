@@ -88,7 +88,8 @@
   "B2": {
     "scope_class": "shared_construction",
     "mathematical_declarations": [
-      "GeneratedFoundations.Operations.SourceFiniteCornerAlgebra.adjoin_sourceAnnihilator_eq_top"
+      "GeneratedFoundations.Operations.SourceFiniteCornerAlgebra.adjoin_sourceAnnihilator_eq_top",
+      "GeneratedFoundations.Geometry.SourceQuadraticResponse.responseAlgebra_eq_top"
     ],
     "objects": "The generated finite Hermite corner.",
     "construction": "The compressed source operation generates its whole star algebra.",
@@ -98,10 +99,16 @@
     "scope_class": "distinct_outputs",
     "mathematical_declarations": [
       "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_eigenvalue",
-      "GeneratedFoundations.Operations.SourceFiniteCornerAlgebra.matrixEquiv"
+      "GeneratedFoundations.Operations.SourceFiniteCornerAlgebra.matrixEquiv",
+      "GeneratedFoundations.Geometry.SourceSpinIdentification.coordinateEquiv_inner",
+      "GeneratedFoundations.Geometry.SourceSpinIdentification.sourceUnitary_matrix",
+      "GeneratedFoundations.Correlation.SourceOrigin.common_source_spin",
+      "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.hermiteIsometry_range",
+      "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.hermiteIsometry_left",
+      "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.hermiteIsometry_right"
     ],
     "objects": "The Hermite oscillator and reflected interval systems.",
-    "construction": "Reuse their complete constructions with their own operator laws.",
+    "construction": "Reuse their complete constructions with their own operator laws. The ordered Gaussian two-mode carrier is explicitly unitarily identified with its degree-one Haar orbit; all matrix responses and number flow intertwine in that source identification.",
     "hypotheses_and_scope": "Different spectra are not called generator-intertwining equivalent."
   },
   "B4": {
@@ -109,7 +116,15 @@
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.representation",
       "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.faithful",
-      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.full"
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.full",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.action_coefficient",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.fullHermiteOperator_injective",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.fullHermiteOperator_entries",
+      "GeneratedFoundations.Operations.SourceComplexAmplitude.complex_adjoin_eq_top",
+      "GeneratedFoundations.Operations.SourceCliffordComplex.complexEvenEquiv",
+      "GeneratedFoundations.Geometry.SourceJointResponse.responseAlgebra_eq_top",
+      "GeneratedFoundations.Geometry.SourceJointResponse.spin_sourceAlgebra_eq_top",
+      "GeneratedFoundations.Geometry.SourcePreExchangeResponse.responseAlgebra_eq_top"
     ],
     "objects": "All coefficients of an actual history--phase fibre.",
     "construction": "Matrix-to-endomorphism equivalence on this concrete finite space.",
@@ -119,20 +134,36 @@
     "scope_class": "distinct_outputs",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.GeneratedPrimeParity.modeCentre_mul",
-      "GeneratedFoundations.Arithmetic.HistoryObservation.reconstruct"
+      "GeneratedFoundations.Arithmetic.HistoryObservation.reconstruct",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.sign_eq_rootCentre",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.reflection_central",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.sourceMatrix_occupation",
+      "GeneratedFoundations.Arithmetic.HistoryCentralPhase.generator_eq_grading",
+      "GeneratedFoundations.Arithmetic.HistoryCentralPhase.flow_sectors"
     ],
     "objects": "Prime-occupation parity and history exchange.",
-    "construction": "Each action and its preserved structure are separately proved.",
+    "construction": "Each action and its preserved structure are separately proved. The continuous central phase is derived from that same generated grading, on the original complete coefficient space.",
     "hypotheses_and_scope": "The two actions are not identified by their signs alone."
   },
   "B6": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.coefficient",
-      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.tomography"
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.tomography",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.fullHermiteOperator_entries",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.hermiteIsometry_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.hermiteIsometry_connector",
+      "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullAction_faithful",
+      "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullAction_adjoint",
+      "GeneratedFoundations.Arithmetic.HistoryHaarResponse.complete_response_invariant",
+      "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.basis_action_entry",
+      "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.basis_connector_entry",
+      "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.fullMatrixCoordinates_action",
+      "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.complete_inner",
+      "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.norm_sq"
     ],
     "objects": "Complete matrix observations on the history--phase coefficient space.",
-    "construction": "Basis preparation recovers every matrix coefficient.",
+    "construction": "Basis preparation recovers every matrix coefficient. Its complete source-sector coefficient space also has an explicit Haar realization, preserving arbitrary cross-label and cross-sector matrix responses and adjoints.",
     "hypotheses_and_scope": "Off-diagonal entries are retained."
   },
   "B7": {
@@ -160,7 +191,14 @@
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.Total",
-      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_total"
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_total",
+      "GeneratedFoundations.Arithmetic.HistoryRootSectors.native_space_dimension",
+      "GeneratedFoundations.Arithmetic.HistoryRootSectors.native_intertwining",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.nativeCoordinates",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.sector_finrank",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.space_finrank",
+      "GeneratedFoundations.Arithmetic.HistoryHaarResponse.haar_dimension",
+      "GeneratedFoundations.Arithmetic.HistorySourceNaturality.elementarySpace_finrank"
     ],
     "objects": "Every generated root with retained history and finite phase.",
     "construction": "The dependent bundle is built from complete arithmetic fibres.",
@@ -171,109 +209,304 @@
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryObservation.evenPart_idempotent",
       "GeneratedFoundations.Arithmetic.HistoryObservation.oddPart_idempotent",
-      "GeneratedFoundations.Arithmetic.HistoryObservation.energy_decomposition"
+      "GeneratedFoundations.Arithmetic.HistoryObservation.energy_decomposition",
+      "GeneratedFoundations.Arithmetic.HistoryRootSectors.sector_reconstruction",
+      "GeneratedFoundations.Arithmetic.HistoryRootSectors.sector_orthogonal",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.positiveProjection",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.negativeProjection",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.sectorCoordinates",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.sector_energy",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.matrix_central_iff",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.matrix_odd_iff",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.odd_exchanges",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.gaussian_central",
+      "GeneratedFoundations.Arithmetic.HistoryCentralSectors.reflection_central",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.sectorCoordinates_positiveProjection",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.sectorCoordinates_negativeProjection",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.exchange_positive",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.exchange_negative",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.sourceMatrix_odd",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.sourceMatrix_occupation",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.fullHermiteOperator_sourceMatrix",
+      "GeneratedFoundations.Operations.SourceCliffordSectors.primitiveCentral_iff",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.hermiteIsometry_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.hermiteIsometry_connector",
+      "GeneratedFoundations.Arithmetic.HistoryComplexConnector.sectorCoordinates_connector",
+      "GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector_on_positive",
+      "GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector_on_negative",
+      "GeneratedFoundations.Arithmetic.HistoryEvenResponse.sectorCoordinates_matrix",
+      "GeneratedFoundations.Arithmetic.HistorySourceNaturality.reversal_square",
+      "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.fullReversal_inner",
+      "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.fullReversal_square",
+      "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.gaussian_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.occupation_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryChiralBlocks.diagonalBlocks_adjoint",
+      "GeneratedFoundations.Arithmetic.HistoryChiralBlocks.projections_orthogonal",
+      "GeneratedFoundations.Arithmetic.HistoryChiralBlocks.grading_eq_projections",
+      "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.basis_grading_entry",
+      "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.hermiteIsometry_grading",
+      "GeneratedFoundations.Arithmetic.HistoryJointCentreResponse.grading_eq_source",
+      "GeneratedFoundations.Arithmetic.HistoryJointCentreResponse.exchange_fullBasis",
+      "GeneratedFoundations.Arithmetic.HistoryJointCentreResponse.exchange_capacity_conservation"
     ],
-    "objects": "The actual history reflection sectors.",
-    "construction": "Weighted orthogonal projections with exact reconstruction.",
-    "hypotheses_and_scope": "No forced physical dimension or sector multiplicity."
+    "objects": "Actual occupation-parity sectors of the complete history-phase carrier, source Clifford sectors acting on its source response coordinate, and ordered-history reflection.",
+    "construction": "Intrinsic occupation projections give unitary reconstruction and exact full-operator block equations. The common even source algebra has exactly two primitive central projections. Its faithful action on actual history-phase labels has an explicit source-sector exchange and a faithful full-matrix Gaussian/Hermite realization. Complete complex responses have exact inclusion formulas and independent even actions on the two source sectors. The complete joint charge carrier also has its own actual source grading, basis exchange and capacity permutation; these are proved on every original history-phase coefficient.",
+    "hypotheses_and_scope": "Source chirality, occupation parity and history reflection are distinct actions. Source connectors exchange source chirality and commute with occupation parity; reflection is occupation-even. Dimensions are derived from actual label counts; no physical sixteen-dimensional carrier or equality of arithmetic occupation-sector dimensions is imposed."
   },
   "C3": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.invariant_factorization",
-      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.residual_zero_iff"
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.residual_zero_iff",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.invariant_complete_quotient_exact",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.quotientRetained",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.full_reconstruction",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.quotient_finrank",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.descend_existsUnique",
+      "GeneratedFoundations.Arithmetic.HistoryJointChargeQuotient.generated",
+      "GeneratedFoundations.Arithmetic.HistoryChargedReconstruction.generated",
+      "GeneratedFoundations.Arithmetic.HistoryRightChargeQuotient.generated"
     ],
-    "objects": "Phase-invariant functions and discarded phase detail.",
-    "construction": "The projection has a unique quotient factor and an explicit residual.",
-    "hypotheses_and_scope": "Only phase-blind observations descend unchanged."
+    "objects": "Phase-invariant real observations, the complete generated history-phase fibre, and its actual zero-average detail quotient.",
+    "construction": "The actual phase average gives the invariant subspace. Its inclusion and quotient are exact, the quotient is canonically the zero-average subspace, and complete reconstruction and universal factorization are proved. The zero-weight spectral projection of the actual joint charge gives the complete neutral kernel. Its orthogonal complement reconstructs the full coefficient vector and canonically represents the quotient; the right kernel is explicitly equivalent to the whole neutral space.",
+    "hypotheses_and_scope": "Only annihilating responses factor through this quotient. Dimensions are H, H*(n+1), H*n for actual history count H; no physical matter count is copied. The same generated probability law gives its exact weighted-energy decomposition. For n >= 2 the neutral rank is H_n, the full charged quotient has (4n+3)H_n dimensions and the right charged quotient (2n+1)H_n. The additional neutral sector at n=1 is calculated separately."
   },
   "C4": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.OccupationResponse.character_composition",
-      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.translate_faithful"
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.translate_faithful",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseAction.matrix_action",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseAction.matrix_trace",
+      "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.relativeResponse_trace",
+      "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.primitive_traceFree_iff",
+      "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.generatedResponse_unique",
+      "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.oriented_relative_existsUnique",
+      "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.relativeResponse_energy",
+      "GeneratedFoundations.Arithmetic.HistoryCentralPhase.flow_eq_exp",
+      "GeneratedFoundations.Arithmetic.HistoryCentralPhase.flow_eq_one_iff",
+      "GeneratedFoundations.Arithmetic.HistoryCentralPhase.flow_derivative",
+      "GeneratedFoundations.Arithmetic.HistoryJointCharge.generated",
+      "GeneratedFoundations.Arithmetic.HistoryJointChargeClassification.generated",
+      "GeneratedFoundations.Arithmetic.HistoryJointQuadraticResponse.generated",
+      "GeneratedFoundations.Arithmetic.HistoryDetailCasimir.generated",
+      "GeneratedFoundations.Arithmetic.HistoryChargedCasimirResponse.generated",
+      "GeneratedFoundations.Arithmetic.HistoryJointCircleAction.action_sector",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.relative_kernel"
     ],
     "objects": "Native occupation character and actual finite phase translations.",
-    "construction": "Characters are tied to the existing occupation and fibre operations.",
-    "hypotheses_and_scope": "Occupation parity and additive phase are not conflated."
+    "construction": "Characters are tied to the existing occupation and fibre operations. The actual finite phase translations act unitarily on the complete complex coefficient space. Their exact permutation matrix and regular character are computed. The phase-invariant and zero-average dimensions additionally derive the primitive trace-free relative weights (-n,1), with unique positive-detail orientation and actual phase covariance. Existence and uniqueness of the oriented primitive pair and the exact weighted response energy are proved; the mixed term vanishes by the actual phase-average orthogonality. The actual occupation character now generates a continuous unitary phase group with computed two-pi kernel and exact exponential realization; it is distinct from the finite additive phase action. Integral realization and primitive neutral-fixing orientation uniquely determine the joint weights. The actual normalized charge square and the complete trace-dual Casimir of the phase-detail space form one positive response, with computed full and right kernels, trace and phase covariance. The joint circle acts with the actually computed rank-dependent characters; their kernels are determined before taking a quotient.",
+    "hypotheses_and_scope": "Occupation parity and additive phase are not conflated. These are relative observation weights, not the physical charge lattice; at root one the detail sector vanishes. The Casimir coefficient is calculated at detail dimension n H_n; no physical kappa or colour dimension is inserted. Kernel comparisons for the combined response state n >= 2."
   },
   "C5": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.translate_faithful",
-      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.reconstruct"
+      "GeneratedFoundations.Arithmetic.HistoryMatrixAlgebra.reconstruct",
+      "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation.least_iff",
+      "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation.least_unique",
+      "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation.coefficient_commutant",
+      "GeneratedFoundations.Arithmetic.HistoryRootSectors.least_iff_coordinates",
+      "GeneratedFoundations.Arithmetic.HistoryRootSectors.native_least_iff",
+      "GeneratedFoundations.Arithmetic.HistoryRootSectors.native_least_unitarilyEquivalent",
+      "GeneratedFoundations.Arithmetic.HistoryCliffordAction.fullHermiteOperator_injective",
+      "GeneratedFoundations.Operations.SourceVacuumTransport.transport_unique_up_to_phase",
+      "GeneratedFoundations.Arithmetic.HistorySourceNaturality.natural_iff_existsUnique_source",
+      "GeneratedFoundations.Arithmetic.HistorySourceNaturality.natural_reversal_iff_unique_doublet",
+      "GeneratedFoundations.Arithmetic.HistorySourceNaturality.natural_reversal_iff_unique_quaternion",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.natural_selfAdjoint_odd_iff",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.elementary_iff_unique_doublet",
+      "GeneratedFoundations.Geometry.SourceExchangeResponse.splitSourceNatural_iff_unique_spinor",
+      "GeneratedFoundations.Geometry.SourceExchangeResponse.splitElementary_iff_unique_doublet",
+      "GeneratedFoundations.Arithmetic.HistoryTracelessCoordinates.coordinateEquiv",
+      "GeneratedFoundations.Arithmetic.HistoryTracelessCoordinates.realCoordinateEquiv",
+      "GeneratedFoundations.Arithmetic.HistoryTracelessCoordinates.trace_norm_formula",
+      "GeneratedFoundations.Arithmetic.HistoryTracelessCoordinates.coordinateEquiv_unique"
     ],
-    "objects": "Phase translation and the complete coefficient action.",
-    "construction": "Faithfulness and unique matrix reconstruction on the actual carrier.",
-    "hypotheses_and_scope": "Uniqueness is for these specified action coordinates."
+    "objects": "The actual complete history--phase coefficient algebra and its root-preserving sector products.",
+    "construction": "Matrix units give the multiplicity decomposition, actual least dimension, scalar commutant and unitary classification of least adjoint-compatible realizations. Full naturality, self-adjointness and oddness classify an arbitrary complete two-sector matrix as one unique complex connector. The original pointwise reversal selects its unique doublet coordinate. The common exchange unitary transports the independent tensor-source naturality and elementary classification without discarding mixed matrix blocks. Unique traceless coordinates eliminate exactly one diagonal entry and return its coherent contribution in the trace Gram metric. The real Lie form is identified by the transported adjoint constraint, rather than by falsely declaring all matrix entries real.",
+    "hypotheses_and_scope": "Comparison realizations are unital and faithful; unitary uniqueness uses adjoint compatibility. It is equivalence of realizations, not uniqueness of the intertwiner. The sector algebra preserves roots, with an explicit unitary identification of the actual native coefficient carrier. The common two-mode determinant-line intertwiner is separately unique up to unit complex phase on the stated special-unitary comparison class."
   },
   "C6": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition_cocycle",
-      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.reflection_translate"
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.reflection_translate",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.transition_unique",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.components_transition",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.frameMatrix_existsUnique",
+      "GeneratedFoundations.Geometry.HermitianFrames.transition_unique",
+      "GeneratedFoundations.Geometry.SourceScalarResponse.frameDoublet_mul",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.scalarConnector_covariant",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.compatibleConnectors_iff_doublets",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.doublet_two_routes",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.transition_cocycle",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.centralDefects_iff_quotientCocycle",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.response_two_routes",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.centralRelift_quotient",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.quotientFromRealized_unique",
+      "GeneratedFoundations.Geometry.SourceReversalIsometry.framedReversal_transport",
+      "GeneratedFoundations.Geometry.SourceReversalIsometry.intertwinesReversal_transport_iff",
+      "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.frame_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.fullAntiunitary_unique",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.relativeTransition_unique",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.relativeTransition_cocycle",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.relativeTransition_components",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.relativeTransition_passive",
+      "GeneratedFoundations.Arithmetic.HistoryFrameDeterminant.frame_exists_phase_specialUnitary",
+      "GeneratedFoundations.Arithmetic.HistoryFrameDeterminant.frame_decomposition_ambiguity",
+      "GeneratedFoundations.Arithmetic.HistoryFrameClassification.generated",
+      "GeneratedFoundations.Geometry.SourcePhaseFrames.unitary_existsUnique_phase",
+      "GeneratedFoundations.Arithmetic.HistoryReversalCharts.localReversal_eq_iff_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryReversalCharts.commonReversal_existsUnique",
+      "GeneratedFoundations.Arithmetic.HistoryLocalizedResponse.compatibleLifts_iff",
+      "GeneratedFoundations.Arithmetic.HistoryScalarGluing.doublet_two_routes",
+      "GeneratedFoundations.Arithmetic.HistoryScalarGluing.centralRelift_doublets_iff",
+      "GeneratedFoundations.Arithmetic.HistoryScalarGluing.transformed_columns",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.coordinates_roundtrip",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.coordinates_symm_roundtrip",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteConnector.connector_joint_covariant"
     ],
-    "objects": "Relative phase frames over the history fibre.",
-    "construction": "Actual translations satisfy the transition cocycle.",
-    "hypotheses_and_scope": "This transport is flat, with no extra curvature inferred."
+    "objects": "The actual phase frames on the complete coefficient fibre and their passive changes of coordinates.",
+    "construction": "Native unitary translations determine exact transitions and their unique phases. The complete orthonormal arithmetic basis realizes every unitary matrix of the actual fibre size uniquely. Two independent generated source frames act covariantly on the complete elementary connector; its unique doublet coordinates satisfy precisely the same transition law. Actual history-indexed frame fields have canonical identity frames and exact transition cocycles. The actual source response kernel also permits nontrivial central lift defects, with an exact effective cocycle and unique reconstruction from the generated response image. Complete matrix-response frames have exact unitary cocycles, passive components and unique transitions in the faithful effective source image. Complete unitary frame classification includes the phase/special-unitary decomposition and its exact root-of-unity ambiguity at the actual generated dimension. Local full-fibre antiunitaries glue exactly when transitions intertwine the actual reversal. Compatible effective response charts have unique overlap actions. Complete group coordinates have both inverse identities and preserve the full matrix connector under the simultaneous source-frame and generated phase action.",
+    "hypotheses_and_scope": "General Hermitian chart comparison is shared upstream, with overlap and metric hypotheses retained. The actual native frames do not assume a separately supplied bundle or compatibility witness."
   },
   "C7": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_unique",
-      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_marginal"
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_marginal",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.gaugeAction_projection",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.gaugeAction_norm",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.gaugeAction_inverse",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.FrameField",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.canonicalFrame",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.actual_connector_overlap",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.local_elementary_doublets",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.compatibleDoublets_apply_sections",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.compatibleSections_passive",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.compatibleSections_inner",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.compatibleSections_norm",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.changeFrame_canonical",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.changeFrame_inverse",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.changeFrame_projection",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.components_inner",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.base_card",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.globalCoordinates_unique",
+      "GeneratedFoundations.Arithmetic.HistoryResponseFrames.section_components_transition"
     ],
     "objects": "The constructed complete history--phase bundle and its positive law.",
-    "construction": "Translation invariance and the generated history marginal uniquely fix its law.",
-    "hypotheses_and_scope": "The marginal is already generated; it is not a caller root input."
+    "construction": "Translation invariance and the generated history marginal uniquely fix its law. The actual history-indexed source frame field and canonical identity frame realize the local connector transition law. On comparison patches, complete elementary connectors have unique doublet coordinates, and their action preserves compatible complete-state sections. Full-state sections retain the lifted source action; their passive transition law, inner products and norms are proved directly. The response total space over actual history-phase labels has a canonical identity frame and inner-product-preserving frame changes. The base cardinal, unique base/fibre coordinates and section transition are derived for the concrete full-response bundle.",
+    "hypotheses_and_scope": "The marginal is already generated; it is not a caller root input. The coefficient bundle is dependent over positive roots; its fibres are not replaced by the physical four-coordinate trivial matter bundle."
   },
   "C8": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.phaseProjection_unique",
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.retained_residual_decomposition",
-      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.energy_decomposition"
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.energy_decomposition",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseAction.matrix_kernel",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseAction.unitary_faithful",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.quotientRetained_apply",
+      "GeneratedFoundations.Geometry.SourceFrameQuotient.response_kernel_iff",
+      "GeneratedFoundations.Geometry.SourceFrameQuotient.kernel_card",
+      "GeneratedFoundations.Geometry.SourceFrameQuotient.effectiveResponse_unique",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.frame_action_faithful",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.state_centralSign",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.elementary_response_kernel",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.effectiveConjugation_faithful",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.effectiveEquivRange",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.generated_realization_unique",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.stateResponse_not_descend",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.centralDefects_iff_responseCocycle",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.centralRelift_defects_iff",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.realizedCocycle_iff",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.quotientFromRealized_unique",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.complete_response_inner",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.inner_eq_responseInner",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.unitaryRepresentation_faithful",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.representation_adjoint",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.unitaryRepresentation_quotient",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.unitaryRepresentation_unique",
+      "GeneratedFoundations.Arithmetic.HistoryLocalizedResponse.compatible_lifts_two_signs",
+      "GeneratedFoundations.Arithmetic.HistoryLocalizedResponse.compatible_effective_unique",
+      "GeneratedFoundations.Arithmetic.HistoryLocalizedResponse.compatible_responses_iff",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.representation_faithful",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.factorClosure_eq_generated",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.presentation_factorization_unique"
     ],
-    "objects": "Visible phase quotient and retained complement.",
-    "construction": "Unique projection, full reconstruction and weighted energy decomposition.",
-    "hypotheses_and_scope": "The complement is stored, not set to zero."
+    "objects": "Actual history-phase states, all complete two-sector response matrices and their full Hilbert-Schmidt space, the computed central kernel, and its effective quotient.",
+    "construction": "The independent generated source frames act faithfully on full states. Their simultaneous sign is minus identity on states, while the complete conjugation response has exactly the two-element central kernel. Its quotient action is faithful on every full matrix, is uniquely determined by representatives, and is canonically the generated response image. Central overlap defects are equivalent to an effective cocycle; kernel relifts leave the effective transitions unchanged. Realized response transitions reconstruct unique quotient transitions. Localized full-response charts derive their two-sign lift ambiguity and the equivalence of matrix and Hilbert response gluing. The complete state-group presentation is faithful at positive cutoff and is the least group generated by its actual three factors. Its kernel is distinct from the previously calculated two-sign kernel on response operators.",
+    "hypotheses_and_scope": "The full state representation does not descend through this response quotient, as proved explicitly. The phase-average observation quotient is a separate construction with full retained-detail reconstruction. Neither quotient copies the physical sixth-root kernel or its charge weights. Arbitrary patch comparisons keep overlap hypotheses; actual native history frames are internally constructed."
   },
   "D1": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryObservation.energy_eq_zero_iff",
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.mean_eq_probability_sum",
-      "GeneratedFoundations.Analysis.HistoryReactionComplex.pairOne_zero_iff"
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.pairOne_zero_iff",
+      "GeneratedFoundations.Geometry.SourceHermitianReadout.coordinatesEquivHermitian",
+      "GeneratedFoundations.Geometry.SourceLorentzCarrier.posSemidef_iff_futureCone",
+      "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullUnitary_inner",
+      "GeneratedFoundations.Geometry.HilbertTraceQuadratic.energy_basis",
+      "GeneratedFoundations.Geometry.HilbertTraceQuadratic.energy_eq_zero_iff",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.transportedInner_preserved",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.complete_pair",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.complete_coercivity",
+      "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.lieMatrix_image",
+      "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.unitary_conjugate_mem"
     ],
     "objects": "History probability and actual Gaussian reaction conductances.",
-    "construction": "Positive faithful pairings are proved on both actual cochain spaces.",
-    "hypotheses_and_scope": "The probability pairing and reaction-edge pairing remain distinct."
+    "construction": "Positive faithful pairings are proved on both actual cochain spaces. The complete trace form is basis independent, positive and definite. Gaussian transport preserves its pulled-back fibre metric. The complete operation-algebra double commutator has exactly the scalar kernel; its trace-orthogonal form has lower bound four uniformly in the finite history cutoff. The skew-traceless projection has exactly its stated image and is invariant under every unitary frame of that carrier.",
+    "hypotheses_and_scope": "The probability pairing and reaction-edge pairing remain distinct. The same source two-mode algebra also gives the real Hermitian determinant geometry and exact positive-semidefinite cone; its invariant form is not identified with the positive history pairing."
   },
   "D2": {
-    "scope_class": "distinct_outputs",
+    "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition_cocycle",
-      "GeneratedFoundations.Geometry.SourceOneFormSystem.generated"
+      "GeneratedFoundations.Geometry.SourceOneFormSystem.generated",
+      "GeneratedFoundations.Geometry.SourceFrameConnection.covariantAt_transformed",
+      "GeneratedFoundations.Geometry.SourceFrameConnection.transformedForm_unique",
+      "GeneratedFoundations.Geometry.SourceFrameConnection.transformedForm_trans",
+      "GeneratedFoundations.Geometry.SourceFrameConnection.hermitian_overlap_covariance",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.transportMatrix_eq_gaussian",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.transport_hasDerivAt",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.transported_section_parallel",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.connection_unique",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.passive_covariance",
+      "GeneratedFoundations.Arithmetic.HistoryGaugeJets.covariantComponent_transform",
+      "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.operatorJet"
     ],
-    "objects": "Discrete phase transport and continuous common source connection.",
-    "construction": "Each is a concrete transport on its own carrier.",
-    "hypotheses_and_scope": "The discrete phase cocycle is not declared to be a nonzero continuous curvature."
+    "objects": "Actual Gaussian scale transport on the complete finite arithmetic fibre and nonlinear coefficient-coordinate connection jets on that state carrier.",
+    "construction": "The exponential is exactly the original root-square Gaussian. Its derivative, unique parallel connection, inverse frame and passive covariance are proved. The source-frame matter covariant derivative is proved separately.",
+    "hypotheses_and_scope": "Finite cutoffs and observation times are internal variables. No bounded infinite-dimensional inverse is inferred. Formal jets and actual differentiable transport have separate proofs."
   },
   "D3": {
     "scope_class": "distinct_outputs",
     "mathematical_declarations": [
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.transition_cocycle",
-      "GeneratedFoundations.Analysis.HistoryReactionComplex.differential_primitive"
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.differential_primitive",
+      "GeneratedFoundations.Geometry.ConnectionJetAlgebra.curvature_add",
+      "GeneratedFoundations.Arithmetic.HistoryGaugeJets.curvature_transform",
+      "GeneratedFoundations.Arithmetic.HistoryGaugeJets.bianchi",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.connection_curvature_zero",
+      "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.curvature_mem",
+      "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.curvature_operatorJet",
+      "GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.curvature",
+      "GeneratedFoundations.Arithmetic.HistoryHaarCurvatureTrace.curvature_matrix",
+      "GeneratedFoundations.Arithmetic.HistoryHaarCurvatureTrace.action_eq_trace"
     ],
-    "objects": "Relative phase frames and the free assembly-history complex.",
-    "construction": "Exact flat cocycle and explicit integration of the actual reaction differential.",
-    "hypotheses_and_scope": "Algebraic associativity is not inserted as a new closed edge."
+    "objects": "Actual one-coordinate Gaussian connection and noncommutative jets indexed by history-phase coordinates.",
+    "construction": "The Gaussian connection is flat by calculation. Jet curvature transforms by conjugation under the complete product rule and satisfies Bianchi. Addition retains all mixed commutators. The actual skew-traceless connection curvature stays in its generated Lie image and intertwines exactly with the complete Hilbert-operator curvature. The continuous Haar field is separately constructed. Its nonlinear commutator is the actual matrix commutator, and its action equals the integrated matrix-curvature trace on the original fields.",
+    "hypotheses_and_scope": "Nonzero curvature is not inferred from a discrete cocycle. Symmetry of mixed derivatives is explicit; arbitrary formal jets are not asserted differentiably realizable. The continuous Haar construction and its finite smooth core are distinguished from formal connection jets."
   },
   "D4": {
     "scope_class": "shared_construction",
     "mathematical_declarations": [
       "GeneratedFoundations.Spectral.NeumannScaleTransport.domainEquiv",
-      "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_operator_intertwining"
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_operator_intertwining",
+      "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_scalar_eigenspace_finrank",
+      "GeneratedFoundations.Geometry.SourceFieldSpectrum.scalarEigenvalue_eq_source_scaled"
     ],
     "objects": "The full reflected scalar operator and its domain.",
     "construction": "The existing complete source operator is shared by both branches.",
@@ -287,7 +520,9 @@
       "GeneratedFoundations.Analysis.HistoryReactionComplex.zero_decomposition",
       "GeneratedFoundations.Analysis.HistoryReactionHodge.pythagoras",
       "GeneratedFoundations.Analysis.HistoryReactionHodge.unique_orthogonal_coefficient",
-      "GeneratedFoundations.Analysis.HistoryReactionHodge.complete_hodge"
+      "GeneratedFoundations.Analysis.HistoryReactionHodge.complete_hodge",
+      "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_vector_branch_casimir",
+      "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_vector_branch_finrank"
     ],
     "objects": "Actual history zero- and one-cochains.",
     "construction": "Weighted adjoint, a canonical chain contraction and the actual leaf-charge orthogonal decomposition are constructed.",
@@ -298,19 +533,30 @@
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_symmetric",
       "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_square",
-      "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_odd"
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_odd",
+      "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_spinor_branch_finrank",
+      "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_tauMinus_parity",
+      "GeneratedFoundations.Arithmetic.HistorySignedCurvature.density_local_covariance",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureScaling.full_density_scale"
     ],
     "objects": "The graded finite history differential operator.",
-    "construction": "The weighted symmetric odd operator squares to the two actual Laplacians.",
+    "construction": "The weighted symmetric odd operator squares to the two actual Laplacians. The signed centre contraction is locally covariant on all retained coordinate directions. The actual linear, bracket and interference contributions have exact scale powers before taking any norm bound.",
     "hypotheses_and_scope": "The degree-zero square is the previously derived full reaction Hessian."
   },
   "D7": {
     "scope_class": "shared_construction",
     "mathematical_declarations": [
-      "GeneratedFoundations.Geometry.SourceTensorTTSystem.generated"
+      "GeneratedFoundations.Geometry.SourceTensorTTSystem.generated",
+      "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_tt_branch_casimir",
+      "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_tt_branch_finrank",
+      "GeneratedFoundations.Geometry.SourceSpatialCarrier.slice_finrank",
+      "GeneratedFoundations.Geometry.SourceSpatialCarrier.mem_slice_iff_trace_zero",
+      "GeneratedFoundations.Geometry.SourceSpatialCarrier.determinant_eq_zero_iff",
+      "GeneratedFoundations.Geometry.SourceAxisTT.existsUnique_polarization",
+      "GeneratedFoundations.Geometry.SourceAxisTT.ttMode_finrank"
     ],
     "objects": "The common source tensor Haar fields and weak constraints.",
-    "construction": "Reuse the complete tensor system before physical/arithmetic interpretation.",
+    "construction": "Reuse the complete tensor system before physical/arithmetic interpretation. The spatial coordinates are proved to parametrize the actual traceless Hermitian slice; solving its transverse and trace constraints gives the unique two-polarization coordinates.",
     "hypotheses_and_scope": "No arithmetic Einstein equation is inferred solely from source tensor constraints."
   },
   "D8": {
@@ -319,50 +565,86 @@
       "GeneratedFoundations.Geometry.SourceOneFormSystem.generated",
       "GeneratedFoundations.Geometry.SourceSpinorSystem.generated",
       "GeneratedFoundations.Geometry.SourceTensorTTSystem.generated",
-      "GeneratedFoundations.Analysis.HistoryReactionComplex.differential_surjective"
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.differential_surjective",
+      "GeneratedFoundations.Arithmetic.HistoryHaarClosedHessian.operator_selfAdjoint",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.operator_unique",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.operator_domain",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.domain_iff"
     ],
     "objects": "Complete continuous source systems and finite history cochains.",
-    "construction": "Full shared operator domains coexist with exhaustive finite history sums.",
-    "hypotheses_and_scope": "The shared unbounded differential systems retain their operator domains. The separate complete history reaction operator is constructed by an operator-norm limit on its full coefficient Hilbert space."
+    "construction": "Full shared operator domains coexist with exhaustive finite history sums. The complete arithmetic matrix-valued coclosed Haar Hessian has a complete eigenbasis and a unique self-adjoint closure. Adding the actual homogeneous source-state response retains the full field-domain condition and gives explicit component operators.",
+    "hypotheses_and_scope": "The shared unbounded differential systems retain their operator domains. The separate complete history reaction operator is constructed by an operator-norm limit on its full coefficient Hilbert space. The finite state response is combined with the unbounded Haar field operator. A finite list of one state per shell is not substituted for the original field Hilbert space."
   },
   "E1": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryGibbsResponse.response",
-      "GeneratedFoundations.Analysis.HistoryPhaseResponse.partition_eq_root"
+      "GeneratedFoundations.Analysis.HistoryPhaseResponse.partition_eq_root",
+      "GeneratedFoundations.Geometry.SourceScalarAmplitude.det_connector",
+      "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.operator_square",
+      "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.intensity_frame_invariant",
+      "GeneratedFoundations.Geometry.SourceConformalResponse.completeProperties",
+      "GeneratedFoundations.Geometry.SourceConformalResponse.finiteProperties",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance.transverseAction_eq",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance.closed_variance"
     ],
     "objects": "Log-partition response of the actual generated reference.",
-    "construction": "Strictly positive intensities and exact normalization select the response.",
+    "construction": "Actual history Gibbs responses coexist with the complete scalar-shell response of the identical upstream source geometry. The latter is shared without moving any physical dimensional calibration. The full traceless matrix basis fixes the actual Gaussian component variance and transverse Casimir response. At the closed centre the generated susceptibility fixes intensity to one.",
     "hypotheses_and_scope": "Observation perturbations are variables, not added source data."
   },
   "E2": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionForm.action",
-      "GeneratedFoundations.Analysis.HistoryReactionForm.conductance_from_children"
+      "GeneratedFoundations.Analysis.HistoryReactionForm.conductance_from_children",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.action",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointVariation.action_line",
+      "GeneratedFoundations.Geometry.SourceNonlinearTensor.density",
+      "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction.action",
+      "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction.action_ray"
     ],
     "objects": "All ordered additive and multiplicative assemblies.",
-    "construction": "Their generated conductances enter one common action.",
-    "hypotheses_and_scope": "No reaction branch or repeated child incidence is removed."
+    "construction": "Their generated conductances enter one common action. Separately, the full finite operator curvature has its complete half trace-norm action. The complete operation-algebra action has its own scalar kernel and full line expansion. The common nonlinear tensor density retains derivative and quadratic connection terms. The continuous Haar connection and the complete homogeneous state additionally share one nonlinear action. Its full ray expansion keeps the cubic curvature term, quartic commutator term and connection-state interaction.",
+    "hypotheses_and_scope": "No reaction branch or repeated child incidence is removed. The state in this joint action is homogeneous; arbitrary spatial matter fields are not included by this theorem."
   },
   "E3": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionForm.action_line_hasDerivAt",
-      "GeneratedFoundations.Analysis.HistoryReactionForm.action_line_deriv"
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action_line_deriv",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.curvature_line",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.action_first_deriv",
+      "GeneratedFoundations.Geometry.SourceConformalVariation.potential_hasDerivAt",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointVariation.firstVariation_eq_deriv",
+      "GeneratedFoundations.Geometry.SourceNonlinearTensor.dilationRay_hasDerivAt_zero",
+      "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction.action_hasDerivAt",
+      "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction.action_connection_ray",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointEquation.action_hasDerivAt"
     ],
     "objects": "Actual finite history action.",
-    "construction": "Exact line derivative for every finite perturbation.",
+    "construction": "Exact line derivative for every finite perturbation. Its nonlinear curvature line is quadratic; the exact quartic trace action has actual real first and second derivatives. Both the full adjoint action derivative and the common tensor affine Lie-path derivative are calculated from their actual densities. The complete nonlinear Haar action is differentiated along actual connection-state rays. The closed Hessian action also has an actual real derivative on its exact operator domain.",
     "hypotheses_and_scope": "Gaussian source dependence is retained in its conductance."
   },
   "E4": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionForm.full_mixed_expansion",
-      "GeneratedFoundations.Analysis.HistoryReactionForm.action_mixed_variation"
+      "GeneratedFoundations.Analysis.HistoryReactionForm.action_mixed_variation",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.action_second_deriv",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.action_mixed_deriv",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.hessian_symm",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.hessian_diagonal",
+      "GeneratedFoundations.Geometry.SourceConformalVariation.potential_secondDeriv",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointVariation.hessian_eq_mixed_deriv",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointVariation.hessian_symm",
+      "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction.action_mixed_secondDeriv_zero",
+      "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction.hessian_polarization",
+      "GeneratedFoundations.Arithmetic.HistoryCentreJointVariation.action_ray_secondDeriv_zero",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.action_secondDeriv"
     ],
     "objects": "The full three-leg history response.",
-    "construction": "All three pairwise mixed terms are expanded before estimating.",
+    "construction": "All three pairwise mixed terms are expanded before estimating. The curvature action mixed derivative contains both linearized-curvature pairing and the background pairing with mixed commutators. It is symmetric, agrees with the diagonal second derivative and is invariant under simultaneous changes of all frame data. The operation-algebra mixed derivative equals the previously computed complete Casimir form; its scalar kernel is retained. At the zero connection/state vacuum the mixed derivative is computed by successive actual derivatives of the nonlinear action. Its vanishing is not assumed in a separately defined diagonal model. The actual centre-field mixed variation is retained, and the complete Haar-state action has its independently derived closed Hessian on the proved domain.",
     "hypotheses_and_scope": "No mixed block is assumed to vanish."
   },
   "E5": {
@@ -370,21 +652,36 @@
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionKernel.operator_zero_iff_leaf",
       "GeneratedFoundations.Analysis.HistoryReactionKernel.equilibrium_unique_stationary",
-      "GeneratedFoundations.Analysis.HistoryReactionKernel.positive_on_anchored"
+      "GeneratedFoundations.Analysis.HistoryReactionKernel.positive_on_anchored",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.hessian_flat_nonneg",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.hessian_flat_eq_zero_iff",
+      "GeneratedFoundations.Geometry.SourceConformalVariation.existsUnique_stationary",
+      "GeneratedFoundations.Geometry.SourceConformalVariation.potential_curvature_pos",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointVariation.stationary_iff_scalar",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointVariation.hessian_coercivity",
+      "GeneratedFoundations.Arithmetic.HistoryCentrePotential.equilibrium_unique",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.gapSq_lower",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.gap_attained"
     ],
     "objects": "Actual equilibrium and constrained restoring form.",
-    "construction": "History induction determines the complete leaf-charge kernel.",
-    "hypotheses_and_scope": "The unit anchor and N>=1 are explicit; no uniform reaction gap follows merely from positivity."
+    "construction": "The actual arithmetic reaction equilibrium and the shared geometric scalar equilibrium are separately derived. The integrated complete scalar response has exactly its canonical positive stationary intensity and strictly positive second derivative throughout the positive domain. The operation-algebra action has exactly its scalar stationary space, with lower bound four on the actual traceless response. The source-centre equilibrium is zero. The separate complete Haar-state vacuum Hessian has the attained bottom min(4,c_N), uniformly at least 15/8. Neither assertion is substituted for a uniform gap of the Gaussian reaction operator.",
+    "hypotheses_and_scope": "The unit anchor and N>=1 are explicit; no uniform reaction gap follows merely from positivity. No strict gap is inferred for this constrained curvature form from nonnegativity alone."
   },
   "E6": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionOperator.mixed_hessian_operator",
-      "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_square"
+      "GeneratedFoundations.Analysis.HistoryReactionComplex.dirac_square",
+      "GeneratedFoundations.Geometry.SourceConformalVariation.completeResponse_hasDerivAt",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointVariation.firstVariation_hasDerivAt",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointVariation.operator_pair_symm",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointCore.finiteOperator_eq_differentialCore",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointCore.action_secondDeriv",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointEquation.generated"
     ],
     "objects": "Incidence, Gaussian conductance and actual Hessian.",
-    "construction": "The varied action and the squared graded operator give the same degree-zero operator.",
-    "hypotheses_and_scope": "This is an actual operator identity, not a separate spectral definition."
+    "construction": "The varied action and the squared graded operator give the same degree-zero operator. The complete adjoint Hessian is independently obtained by differentiating the actual first variation. On the entire finite smooth core the joint second variation is the actual differential operator. Its closed-domain Euler equation, polarization identity, coercivity and unique stationary state are proved.",
+    "hypotheses_and_scope": "This is an actual operator identity, not a separate spectral definition. The closed-domain equation is the quadratic vacuum equation, not the full nonlinear stationary equation."
   },
   "E7": {
     "scope_class": "arithmetic_instance",
@@ -392,21 +689,50 @@
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.projection_residual_orthogonal",
       "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.energy_decomposition",
       "GeneratedFoundations.Analysis.HistoryResponseReduction.schur_identity",
-      "GeneratedFoundations.Analysis.HistoryResponseReduction.residual_energy_le"
+      "GeneratedFoundations.Analysis.HistoryResponseReduction.residual_energy_le",
+      "GeneratedFoundations.Geometry.SourceLinearTensor.fpOperator_on_TT",
+      "GeneratedFoundations.Geometry.SourceLinearTensor.reducedFieldEquation_unique",
+      "GeneratedFoundations.Geometry.SourceTensorResponse.ttInverseCovariance_propagator"
     ],
     "objects": "The actual phase projection and complete Hermitian history Hessian.",
-    "construction": "The phase complement is retained. The full Gibbs Hessian admits exact directional Schur reduction, including off-diagonal observations and the eliminated energy.",
+    "construction": "The phase complement is retained. The full Gibbs Hessian admits exact directional Schur reduction, including off-diagonal observations and the eliminated energy. The common linear tensor constraint reduction and inverse covariance are also shared exactly.",
     "hypotheses_and_scope": "The null-direction case follows from the proved scalar kernel. A unique Schur coefficient is asserted only for a non-null direction."
   },
   "E8": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionCovariance.action_covariant",
-      "GeneratedFoundations.Analysis.HistoryReactionCovariance.mixed_hessian_covariant"
+      "GeneratedFoundations.Analysis.HistoryReactionCovariance.mixed_hessian_covariant",
+      "GeneratedFoundations.Arithmetic.HistoryEvenResponse.action_connector_covariance",
+      "GeneratedFoundations.Arithmetic.HistoryEvenResponse.hermite_covariance",
+      "GeneratedFoundations.Operations.SourceVacuumTransport.twistedAction_eq_det_smul_conjugatedAction",
+      "GeneratedFoundations.Geometry.SourceLorentzCarrier.coordinateTransform_preserves_form",
+      "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.complete_response_invariant",
+      "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.relativeResponse_phase_covariant",
+      "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullUnitary_even",
+      "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullUnitary_connector",
+      "GeneratedFoundations.Arithmetic.HistorySourceNaturality.haar_source_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.scalarConnector_covariant",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.hermite_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.haar_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.complete_observation",
+      "GeneratedFoundations.Geometry.SourceExchangeResponse.operatorTransport_adjoint",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.full_response_intertwines",
+      "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.complete_response_inner",
+      "GeneratedFoundations.Arithmetic.HistoryGaugeJets.curvatureDensity_transform",
+      "GeneratedFoundations.Arithmetic.HistoryGaugeJets.curvatureDensity_eq_zero_iff",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.action_changeFrame",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.firstVariation_changeFrame",
+      "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.hessian_changeFrame",
+      "GeneratedFoundations.Geometry.SourceLinearTensor.generalTensorOperator_coefficients_unique",
+      "GeneratedFoundations.Geometry.SourceNonlinearTensor.cubicCoefficient_iff",
+      "GeneratedFoundations.Geometry.SourceNonlinearTensor.dilationRay_eq_liePath",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteConnector.complete_response",
+      "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.tripleDefect_kernel_iff"
     ],
     "objects": "The complete generated history action under reflection.",
-    "construction": "Reflection reindexes the actual channels and preserves conductances.",
-    "hypotheses_and_scope": "This symmetry is not asserted to be a full nonlinear spacetime gauge theory."
+    "construction": "Reflection reindexes the actual channels and preserves conductances. The simultaneous state and full-operator response intertwines exactly and preserves arbitrary coherent sesquilinear observations. The full operator-jet curvature and its positive trace density satisfy the nonlinear local frame law. Complete first variations and mixed Hessians transform with the same action under generated constant source frames. The common source tensor has the unique normalized five-coefficient linear member and an actual nonlinear affine-dilation covariance test with unique cubic coefficient. The complete joint action preserves arbitrary coherent inner products and has the explicit triple-overlap defect law.",
+    "hypotheses_and_scope": "This symmetry is not asserted to be a full nonlinear spacetime gauge theory. The independent source-sector congruence is proved on the complete arithmetic coefficient operator and its original Gaussian realization; no unproved physical gauge representation is transferred. The local jet identity does not identify the reaction action with a spacetime field action."
   },
   "F1": {
     "scope_class": "arithmetic_instance",
@@ -435,10 +761,13 @@
       "GeneratedFoundations.Analysis.HistoryReactionFlow.generator_apply",
       "GeneratedFoundations.Analysis.HistoryReactionComplex.adjoint_identity",
       "GeneratedFoundations.Analysis.HistoryReactionHilbert.operator_selfAdjoint",
-      "GeneratedFoundations.Analysis.HistoryReactionHilbert.norm_layer_le"
+      "GeneratedFoundations.Analysis.HistoryReactionHilbert.norm_layer_le",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.operator_selfAdjoint",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.operator_unique",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.operator_components"
     ],
     "objects": "Finite coefficient operators and the complete Hilbert space of all actual generated histories.",
-    "construction": "All Gaussian-weighted three-leg rank-one layers are absolutely summable in operator norm. Their sum is bounded and self-adjoint on the whole history Hilbert space.",
+    "construction": "All Gaussian-weighted three-leg rank-one layers are absolutely summable in operator norm. Their sum is bounded and self-adjoint on the whole history Hilbert space. The continuous Haar/state branch has its own unique self-adjoint closed differential generator with explicit unbounded domain and full component identification.",
     "hypotheses_and_scope": "At each positive Gaussian observation strength and scale. The constant nine in the layer estimate is independent of history counts. The existing complete Neumann operator separately retains its unbounded domain."
   },
   "F4": {
@@ -447,34 +776,58 @@
       "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_add",
       "GeneratedFoundations.Analysis.HistoryReactionFlow.flow_hasDerivAt",
       "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.flow_add",
-      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.flow_hasDerivAt"
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.flow_hasDerivAt",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.flow_add_time",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.flow_hasDerivAt_apply",
+      "GeneratedFoundations.Arithmetic.HistoryCentralPhase.flow_add",
+      "GeneratedFoundations.Arithmetic.HistoryCentralPhase.flow_continuous",
+      "GeneratedFoundations.Arithmetic.HistoryHaarHeatGenerator.rightGenerator_iff",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointFlow.flow_continuous",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointFlow.flow_preserves_domain",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointFlow.rightGenerator_iff"
     ],
-    "objects": "Exponentials of the actual finite and complete history reaction generators.",
-    "construction": "The complete bounded operator generates the proved semigroup and evolution equation on the whole history Hilbert space.",
-    "hypotheses_and_scope": "Not replaced by the distinct two-sector reflection flow. No uniform positive reaction gap is imposed."
+    "objects": "Exponentials of the actual finite and complete history reaction generators, and the separate complete finite operation-algebra Casimir.",
+    "construction": "The complete bounded reaction operator generates the proved semigroup and evolution equation on the whole history Hilbert space. The complete finite operation-algebra Casimir separately gives an explicit semigroup; its pointwise derivative is minus that same Casimir applied to the evolving operator. The separate occupation phase group is strongly continuous and unitary; it is not a dissipative reaction flow. The complete Haar heat flow and joint field-state flow have their exact right generators: existence is equivalent to membership in the respective closed-operator domains.",
+    "hypotheses_and_scope": "The reaction, two-sector reflection and operation-algebra flows retain their distinct carriers and generators. No uniform positive reaction gap is imposed; the operation-algebra result is uniform over its finite cutoffs and is not identified with a limit on all history coefficients. Joint norm decay uses the computed gap min(4, the defining-state coefficient), uniformly at least 15/8. This is the linear vacuum Hessian flow, not uniform exponential decay for the Gaussian history-reaction action."
   },
   "F5": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionFlow.charge_preserved",
-      "GeneratedFoundations.Analysis.GaussianWindowCapacity.capacity_conservation"
+      "GeneratedFoundations.Analysis.GaussianWindowCapacity.capacity_conservation",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.trace_flow"
     ],
-    "objects": "Leaf-charge conservation and retained window complements.",
-    "construction": "Conserved charge follows from the actual kernel; window capacity retains the outside source.",
+    "objects": "Leaf-charge conservation, retained window complements and the scalar kernel of the complete operation algebra.",
+    "construction": "Conserved charge follows from the actual reaction kernel; window capacity retains the outside source. The separate operation-algebra evolution preserves trace and its scalar projection exactly.",
     "hypotheses_and_scope": "No external source is added to the closed generator."
   },
   "F6": {
-    "scope_class": "partial_scope",
+    "scope_class": "distinct_outputs",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryReactionFlow.energy_hasDerivAt",
       "GeneratedFoundations.Analysis.HistoryReactionFlow.action_hasDerivAt",
       "GeneratedFoundations.Analysis.HistoryReactionFlow.action_antitone",
       "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.energy_hasDerivAt",
-      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.norm_flow_le"
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.norm_flow_le",
+      "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.exists_anchored_unit_small_response",
+      "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.no_uniform_anchored_coercivity",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.action_hasDerivAt",
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.action_flow_le_initial",
+      "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.tail_quadratic_nonneg",
+      "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.high_root_dissipation_le",
+      "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.exists_positive_action_small_dissipation",
+      "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.no_uniform_action_coercivity",
+      "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.no_uniform_exponential_action",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction_flow",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction_flow_deriv",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction_uniform_decay",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction_nonincreasing",
+      "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.flow_zero_input",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointFlow.flow_uniform_decay"
     ],
-    "objects": "Coefficient energy and the actual reaction action.",
-    "construction": "The finite derivatives are the negative form and negative operator square. Complete-space coefficient energy also has the exact negative-form derivative and a cutoff-independent contraction factor one.",
-    "hypotheses_and_scope": "Exact finite and full-space dissipation is proved. A strictly positive cutoff-independent reaction decay rate is a separate comparison from nonincrease."
+    "objects": "Coefficient energy, the complete actual Gaussian reaction action and its exact dissipation, compared with the separate physical reduced action.",
+    "construction": "The full history coefficient energy has derivative minus the complete reaction form, and the full action has derivative minus the squared complete operator. Both are nonincreasing. The positive operator tail gives a dissipation-to-action bound on actual high-root parent histories. Those histories have strictly positive action and arbitrarily small relative dissipation. The forward derivative comparison then proves that no positive exponential action rate with prefactor one can hold uniformly over all actual root levels. The distinct operation-algebra Casimir action is nonincreasing with its proved uniform rate and exact preservation of zero input. The complete Haar-state Hessian flow has norm bound exp(-15*t/8) on the whole field-state space. This is a positive restoring-rate theorem for a different, explicitly constructed operator.",
+    "hypotheses_and_scope": "At fixed positive Gaussian observation coordinates, with the actual full coefficient carrier and all incidence cross terms. The witness also has zero unit-leaf coefficient and positive action, so a zero-action conserved mode is not responsible. The negative theorem concerns a uniform exponential estimate on this reaction carrier, not arbitrary separately constrained quotients. A separate actual operation-algebra Casimir is now evaluated: after retaining its scalar kernel, its response action has exact exponential factor exp(-2*d_N*t), hence the cutoff-independent bound exp(-8*t). Its own action derivative and generator equation are proved. These are different operators. The physical, source Neumann and occupation operators retain their own proved gaps."
   },
   "F7": {
     "scope_class": "distinct_outputs",
@@ -484,11 +837,12 @@
       "GeneratedFoundations.Arithmetic.OccupationResponse.heat_nonvacuum_le",
       "GeneratedFoundations.Arithmetic.OccupationResponse.particleNumber_composition",
       "GeneratedFoundations.Arithmetic.OccupationResponse.particleNumber_eq_zero_iff",
-      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_groundOccupation"
+      "GeneratedFoundations.Arithmetic.OccupationResponse.energy_groundOccupation",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointFock.generated"
     ],
     "objects": "Native prime occupation and whole-root Gaussian energy.",
-    "construction": "The actual occupation lift retains the multiplicative joint energy, additive prime multiplicity, unique empty occupation, one-prime states and attainment of its lower edge.",
-    "hypotheses_and_scope": "Its nonvacuum bound 3 belongs to this occupation Hamiltonian, not to every reaction generator."
+    "construction": "The actual occupation lift retains the multiplicative joint energy, additive prime multiplicity, unique empty occupation, one-prime states and attainment of its lower edge. Finite occupations of the complete joint Haar-Hessian basis are also constructed, with additive energy, unique vacuum, attained gap and the matching heat weights.",
+    "hypotheses_and_scope": "Its nonvacuum bound 3 belongs to this occupation Hamiltonian, not to every reaction generator. This additive joint-Hessian occupation Hamiltonian and the original whole-root Gaussian prime occupation energy remain different operators."
   },
   "F8": {
     "scope_class": "arithmetic_instance",
@@ -497,21 +851,30 @@
       "GeneratedFoundations.Analysis.HistoryReactionHilbert.finite_form_tendsto",
       "GeneratedFoundations.Analysis.HistoryReactionHilbert.cutoffOperator_tendsto",
       "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.cutoff_evolution_tendsto",
-      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.cutoff_flow_tendsto"
+      "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.cutoff_flow_tendsto",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointCore.generated",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.operator_unique",
+      "GeneratedFoundations.Arithmetic.HistoryHaarHeatGenerator.rightGenerator_domain_iff"
     ],
     "objects": "Complete shared heat evolution and the full actual history Hilbert-space reaction evolution.",
-    "construction": "Finite reaction forms converge exactly to the full form; root-layer operators and their fixed-time exponentials converge in operator norm.",
+    "construction": "Finite reaction forms converge exactly to the full form; root-layer operators and their fixed-time exponentials converge in operator norm. The actual differential core is identified before closing the operator. The complete field/domain and generator comparisons retain all shell and matrix multiplicities.",
     "hypotheses_and_scope": "The limit is proved at fixed positive Gaussian observation coordinates and fixed time. It includes every finite reaction cross term and does not assume a positive spectral gap."
   },
   "G1": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.HistoryPhaseResponse.response_rank",
-      "GeneratedFoundations.Analysis.HistoryGibbsResponse.response_rank"
+      "GeneratedFoundations.Analysis.HistoryGibbsResponse.response_rank",
+      "GeneratedFoundations.Arithmetic.HistoryChargeContent.generated",
+      "GeneratedFoundations.Arithmetic.HistoryRightChargeQuotient.generated",
+      "GeneratedFoundations.Arithmetic.HistoryChargedCasimirResponse.response_trace",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance.componentCount_eq",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance.componentVariance_unique",
+      "GeneratedFoundations.Arithmetic.HistoryCentreNormalization.scoreScale_sq_mul_variance"
     ],
     "objects": "All Hermitian directions of the actual finite fibre.",
-    "construction": "The rank is computed from the proved scalar kernel.",
-    "hypotheses_and_scope": "The carrier cardinality is arithmetic, not copied from physical 16 or 15."
+    "construction": "The rank is computed from the proved scalar kernel. Exact source-sector capacities and the normalized charge-square trace retain every history multiplicity. The right quotient rank agrees with the independently computed right charged capacity. The actual number of independent traceless coefficients determines the unique isotropic component variance. Normalized centre response uses the computed variance rather than a physical multiplicity.",
+    "hypotheses_and_scope": "The carrier cardinality is arithmetic, not copied from physical 16 or 15. At n=3 the content ratio is 1/(50 H_3); it is not set equal to a physical 1/50 after removing history multiplicity."
   },
   "G2": {
     "scope_class": "arithmetic_instance",
@@ -520,49 +883,66 @@
       "GeneratedFoundations.Analysis.HistoryGibbsResponse.orientation_hessian",
       "GeneratedFoundations.Analysis.HistoryCentralResponse.bias_hasDerivAt",
       "GeneratedFoundations.Analysis.HistoryCentralResponse.closed_hessian",
-      "GeneratedFoundations.Analysis.HistoryCentralResponse.susceptibility_zero_iff"
+      "GeneratedFoundations.Analysis.HistoryCentralResponse.susceptibility_zero_iff",
+      "GeneratedFoundations.Arithmetic.HistoryJointCentreResponse.generated",
+      "GeneratedFoundations.Arithmetic.HistoryCentreNormalization.normalizedForce_hasDerivAt",
+      "GeneratedFoundations.Arithmetic.HistoryCentreNormalization.responseToConstant_unique",
+      "GeneratedFoundations.Arithmetic.HistoryCentreNormalization.responseToConstant_intertwines"
     ],
     "objects": "The actual history probability and orientation observable.",
-    "construction": "The log-partition derivative is the bias and its next derivative is the actual variance at every probe coordinate; at zero it equals the full Hermitian Hessian direction.",
-    "hypotheses_and_scope": "No sign-randomness or free equilibrium measure is assumed. Constant-score fibres have zero fluctuation; the physical unit variance is not imposed on a different carrier."
+    "construction": "The log-partition derivative is the bias and its next derivative is the actual variance at every probe coordinate; at zero it equals the full Hermitian Hessian direction. On the same full joint charge carrier, the actual source grading yields normalized cosh partition, tanh bias, positive fluctuation and inverse restoring Hessian. Its closed bias is zero, whereas quotient bias is calculated from the actual unequal retained capacities. The normalized force derivative equals its actual response projection; its one-dimensional isometry is unique after fixing the generator and intertwines the same evolution.",
+    "hypotheses_and_scope": "No sign-randomness or free equilibrium measure is assumed. Constant-score fibres have zero fluctuation; the physical unit variance is not imposed on a different carrier. The source-centre observable is distinct from the existing history-orientation score and arithmetic occupation parity. Probe coordinates describe derivatives of the fixed source response, not new root data."
   },
   "G3": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.GaussianWindowCapacity.window_partition",
-      "GeneratedFoundations.Analysis.GaussianPrefixTail.coherent_energy_uniform_error"
+      "GeneratedFoundations.Analysis.GaussianPrefixTail.coherent_energy_uniform_error",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse.coefficient_pos",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse.existsUnique_responseRoot"
     ],
     "objects": "Gaussian visible window and retained outside labels.",
-    "construction": "Exact reconstruction precedes the explicit tail estimate.",
+    "construction": "Exact reconstruction precedes the explicit tail estimate. A finite observed set of actual joint-Hessian modes gives a positive Gaussian response integral and its unique algebraic response root. A positive window level and a nonempty observed set are explicit observation parameters.",
     "hypotheses_and_scope": "Observation window parameters are not replacements for the natural generation cutoff."
   },
   "G4": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
-      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_unique"
+      "GeneratedFoundations.Arithmetic.HistoryPhaseBundle.probability_unique",
+      "GeneratedFoundations.Geometry.SourceConformalResponse.canonicalAmplitude_unique",
+      "GeneratedFoundations.Geometry.SourceTensorResponse.unique_response_maximizer",
+      "GeneratedFoundations.Geometry.SourceTensorResponse.existsUnique_positive_endpoint",
+      "GeneratedFoundations.Geometry.SourceNonlinearTensor.cubicCoefficient_unique",
+      "GeneratedFoundations.Arithmetic.HistoryCentralPhase.flow_eq_one_iff",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse.response_eq_iff"
     ],
     "objects": "Actual phase law and its comparison class.",
-    "construction": "Translation symmetry and the generated marginal fix the law uniquely.",
+    "construction": "Translation symmetry and the generated marginal fix the law uniquely. The shared tensor endpoint selection, nonlinear comparison coefficient and actual arithmetic phase kernel each retain their own stated uniqueness class. The response equation characterizes that arithmetic spectral root uniquely. It does not identify it with a physical geometric radius or impose the physical conditional R=5 selection.",
     "hypotheses_and_scope": "No automatic arithmetic selection of the physical cutoff R=5 is claimed."
   },
   "G5": {
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.Analysis.GaussianPrefixTail.coherent_energy_uniform_error",
-      "GeneratedFoundations.Analysis.GaussianWindowCapacity.label_le_windowCutoff"
+      "GeneratedFoundations.Analysis.GaussianWindowCapacity.label_le_windowCutoff",
+      "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse.consume_interval",
+      "GeneratedFoundations.Arithmetic.HistoryResponseCertificates.consume_gap_interval",
+      "GeneratedFoundations.Arithmetic.HistoryResponseCertificates.gapMass_unique"
     ],
     "objects": "Finite source observations and explicit error envelopes.",
-    "construction": "Lean inequalities supply finite certificate-consumption bounds.",
+    "construction": "Lean inequalities supply finite certificate-consumption bounds. Interval consumers act on the actual positive arithmetic response coefficient and on the attained dimensionless gap. Interval premises must enclose those actual quantities.",
     "hypotheses_and_scope": "Source inventory, kernel proof and numerical interval evidence are kept distinct."
   },
   "G6": {
     "scope_class": "shared_construction",
     "mathematical_declarations": [
       "GeneratedFoundations.Source.CommonSource.generated",
-      "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_eigenvalue"
+      "GeneratedFoundations.Spectral.NeumannScaleTransport.normalized_eigenvalue",
+      "GeneratedFoundations.Arithmetic.HistoryResponseCertificates.gapSq_bounds",
+      "GeneratedFoundations.Arithmetic.HistoryResponseCertificates.gapMass_bounds"
     ],
     "objects": "Dimensionless source width and normalized spectra.",
-    "construction": "Unit covariance and generated spectral unit fix normalization.",
+    "construction": "Unit covariance and generated spectral unit fix normalization. The resulting mathematical mass parameter is the unique nonnegative square root of the computed dimensionless Hessian bottom; no Newton anchor is imported.",
     "hypotheses_and_scope": "Physical dimensional calibration stays outside the dimensionless mathematical root."
   },
   "G7": {
@@ -580,10 +960,12 @@
     "scope_class": "arithmetic_instance",
     "mathematical_declarations": [
       "GeneratedFoundations.MathematicalInterface.generated",
-      "GeneratedFoundations.Source.CommonSource.generated"
+      "GeneratedFoundations.Source.CommonSource.generated",
+      "GeneratedFoundations.Arithmetic.HistoryHaarJointEquation.generated",
+      "GeneratedFoundations.Arithmetic.HistoryChargedCasimirResponse.generated"
     ],
     "objects": "The independent mathematical entry and common source entry.",
-    "construction": "Both connect actual proved constructions without importing Physical modules.",
+    "construction": "Both connect actual proved constructions without importing Physical modules. The new complete-domain equation and internally derived joint charge/Casimir response are assembled into the independent mathematical interface. Per-module checks and final aggregate verification are separately recorded.",
     "hypotheses_and_scope": "Feature evidence does not mark all individual physical declarations reviewed."
   }
 }

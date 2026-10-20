@@ -1,6 +1,8 @@
 module
 
 public import GeneratedFoundations.Physical.SourceGaugeUnitary
+public import GeneratedFoundations.Geometry.EffectiveActionCocycle
+public import GeneratedFoundations.Operations.UnitaryRepresentation
 
 /-!
 # Common-phase lifts and the effective gauge cocycle
@@ -34,6 +36,10 @@ open scoped Kronecker
 
 namespace GeneratedFoundations.Physical.SourceGaugeCocycle
 
+export GeneratedFoundations.Geometry.EffectiveActionCocycle (
+  CocycleOn mapped_mul_inv_eq_one_iff map_cocycle_iff cocycleOn_self cocycleOn_inverse
+)
+
 open SourceChiralCarrier
 open SourceGlobalGaugeGroup (centralSix EffectiveGroup)
 open SourceGaugeUnitary (unitaryRepresentation effectiveUnitaryRepresentation)
@@ -43,16 +49,7 @@ abbrev MatterUnitary := FullMatter ≃ₗᵢ[ℂ] FullMatter
 
 def quotientMap : GaugeGroup →* EffectiveGroup := QuotientGroup.mk' centralSix
 
-theorem linearIsometryEquiv_eq_one_iff {E : Type*}
-    [NormedAddCommGroup E] [InnerProductSpace ℂ E] (U : E ≃ₗᵢ[ℂ] E) :
-    U = 1 ↔ U.toLinearEquiv.toLinearMap = 1 := by
-  constructor
-  · intro h
-    exact congrArg (fun V : E ≃ₗᵢ[ℂ] E => V.toLinearEquiv.toLinearMap) h
-  · intro h
-    apply LinearIsometryEquiv.ext
-    intro x
-    exact LinearMap.congr_fun h x
+export Operations.UnitaryRepresentation (linearIsometryEquiv_eq_one_iff)
 
 theorem unitary_eq_one_iff_end (g : GaugeGroup) :
     unitaryRepresentation g = 1 ↔ SourceGaugeTransport.representation g = 1 :=
@@ -118,10 +115,6 @@ theorem quotient_eq_iff_unitary (g h : GaugeGroup) :
     exact (effectiveUnitary_quotientMap g).trans
       (he.trans (effectiveUnitary_quotientMap h).symm)
 
-theorem mapped_mul_inv_eq_one_iff {G H : Type*} [Group G] [Group H]
-    (ρ : G →* H) (g h : G) : ρ (g * h⁻¹) = 1 ↔ ρ g = ρ h := by
-  rw [map_mul, map_inv, mul_inv_eq_one]
-
 theorem unitary_eq_iff_central_difference (g h : GaugeGroup) :
     unitaryRepresentation g = unitaryRepresentation h ↔ g * h⁻¹ ∈ centralSix :=
   (mapped_mul_inv_eq_one_iff unitaryRepresentation g h).symm.trans
@@ -158,9 +151,6 @@ def unitaryTransition (g : LiftData ι X) (i j : ι) (x : X) : MatterUnitary :=
 
 def tripleDefect (g : LiftData ι X) (i j k : ι) (x : X) : GaugeGroup :=
   g i j x * g j k x * (g i k x)⁻¹
-
-def CocycleOn {G : Type*} [Mul G] (U : ι → Set X) (t : ι → ι → X → G) : Prop :=
-  ∀ i j k x, x ∈ U i → x ∈ U j → x ∈ U k → t i j x * t j k x = t i k x
 
 def CentralDefects (U : ι → Set X) (g : LiftData ι X) : Prop :=
   ∀ i j k x, x ∈ U i → x ∈ U j → x ∈ U k → tripleDefect g i j k x ∈ centralSix
@@ -200,15 +190,6 @@ theorem centralDefects_iff_unitaryCocycle (U : ι → Set X) (g : LiftData ι X)
   unfold CentralDefects CocycleOn
   simp only [tripleDefect_mem_iff]
 
-theorem map_cocycle_iff {G H : Type*} [Monoid G] [Monoid H]
-    (ρ : G →* H) (hρ : Function.Injective ρ) (U : ι → Set X)
-    (q : ι → ι → X → G) : CocycleOn U q ↔ CocycleOn U (fun i j x => ρ (q i j x)) := by
-  constructor
-  · intro h i j k x hi hj hk
-    exact (ρ.map_mul (q i j x) (q j k x)).symm.trans (congrArg ρ (h i j k x hi hj hk))
-  · intro h i j k x hi hj hk
-    exact hρ ((ρ.map_mul (q i j x) (q j k x)).trans (h i j k x hi hj hk))
-
 /-- Faithfulness of the already constructed quotient gives the converse. -/
 theorem effectiveCocycle_iff_unitaryCocycle (U : ι → Set X)
     (q : ι → ι → X → EffectiveGroup) :
@@ -230,18 +211,6 @@ theorem centralDefects_iff_quotientCocycle (U : ι → Set X) (g : LiftData ι X
     CentralDefects U g ↔ CocycleOn U (quotientTransition g) :=
   (centralDefects_iff_unitaryCocycle U g).trans
     (quotientCocycle_iff_unitaryCocycle U g).symm
-
-theorem cocycleOn_self {G : Type*} [Group G] {U : ι → Set X}
-    {t : ι → ι → X → G} (ht : CocycleOn U t) (i : ι) (x : X) (hi : x ∈ U i) :
-    t i i x = 1 := by
-  exact mul_left_cancel ((ht i i i x hi hi hi).trans (mul_one (t i i x)).symm)
-
-theorem cocycleOn_inverse {G : Type*} [Group G] {U : ι → Set X}
-    {t : ι → ι → X → G} (ht : CocycleOn U t) (i j : ι) (x : X)
-    (hi : x ∈ U i) (hj : x ∈ U j) : t j i x = (t i j x)⁻¹ := by
-  have he : t i j x * t j i x = t i j x * (t i j x)⁻¹ := by
-    rw [ht i j i x hi hj hi, cocycleOn_self ht i x hi, mul_inv_cancel]
-  exact mul_left_cancel he
 
 def centralRelift (z : ι → ι → X → GlobalGaugeKernel.sixthRoots)
     (g : LiftData ι X) : LiftData ι X :=

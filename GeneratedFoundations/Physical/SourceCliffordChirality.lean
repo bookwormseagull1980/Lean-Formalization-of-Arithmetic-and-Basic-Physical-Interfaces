@@ -1,7 +1,10 @@
 module
 
+public import GeneratedFoundations.Operations.SourceCliffordSectors
+public import GeneratedFoundations.Operations.SourceCliffordComplex
 public import GeneratedFoundations.Physical.SourceCliffordConnector
 public import GeneratedFoundations.Physical.SourceChiralCarrier
+public import GeneratedFoundations.Physical.ReversalRealConnector
 public import Mathlib.LinearAlgebra.Dimension.Constructions
 
 /-!
@@ -26,482 +29,79 @@ open SourceCliffordConnector
 open GeneratedFoundations.Geometry.SourceQuaternionAmplitude
 open ReversalRealConnector (Mat2)
 
-/-- Pairs of source amplitudes act on the two diagonal blocks. -/
-def pairMap : (ℍ × ℍ) →ₐ[ℝ] ChiralMatrix where
-  toFun p := Matrix.fromBlocks (matrixMap p.1) 0 0 (matrixMap p.2)
-  map_zero' := by simp
-  map_one' := by simp [Matrix.fromBlocks_one]
-  map_add' p q := by simp [Matrix.fromBlocks_add]
-  map_mul' p q := by simp [Matrix.fromBlocks_multiply]
-  commutes' r := by
-    change Matrix.fromBlocks (matrixMap (algebraMap ℝ ℍ r)) 0 0
-      (matrixMap (algebraMap ℝ ℍ r)) = algebraMap ℝ ChiralMatrix r
-    simp only [Algebra.algebraMap_eq_smul_one, map_smul, map_one]
-    simpa only [Matrix.fromBlocks_smul, smul_zero] using
-      congrArg (fun M : ChiralMatrix => r • M)
-        (Matrix.fromBlocks_one : Matrix.fromBlocks (1 : Mat2) 0 0 1 = (1 : ChiralMatrix))
-
-theorem pairMap_injective : Function.Injective pairMap := by
-  intro p q h
-  apply Prod.ext
-  · apply matrixMap_injective
-    ext i j
-    exact congrArg (fun M : ChiralMatrix => M (Sum.inl i) (Sum.inl j)) h
-  · apply matrixMap_injective
-    ext i j
-    exact congrArg (fun M : ChiralMatrix => M (Sum.inr i) (Sum.inr j)) h
-
-theorem clifford_mul (p q : ℍ) :
-    clifford p * clifford q = pairMap (p * star q, star p * q) := by
-  simp [clifford, pairMap, Matrix.fromBlocks_multiply, matrixMap_star]
-
-/-- The even algebra uses actual pairs of source generators. -/
-def evenSourceAlgebra : Subalgebra ℝ ChiralMatrix :=
-  Algebra.adjoin ℝ {A | ∃ p q : ℍ, A = clifford p * clifford q}
-
-theorem clifford_mul_mem (p q : ℍ) : clifford p * clifford q ∈ evenSourceAlgebra :=
-  Algebra.subset_adjoin ⟨p, q, rfl⟩
-
-def sourceI : ℍ := ⟨0, 1, 0, 0⟩
-def sourceJ : ℍ := ⟨0, 0, 1, 0⟩
-def sourceK : ℍ := ⟨0, 0, 0, 1⟩
-
-theorem matrixMap_sourceI : matrixMap sourceI = matrixBasis.i := by
-  simp [sourceI, matrixMap_eq, matrixBasis]
-
-theorem matrixMap_sourceJ : matrixMap sourceJ = matrixBasis.j := by
-  simp [sourceJ, matrixMap_eq, matrixBasis]
-
-theorem matrixMap_sourceK : matrixMap sourceK = matrixBasis.k := by
-  simp [sourceK, matrixMap_eq, matrixBasis]
-
-theorem grading_eq_pairMap : grading = pairMap (1, -1) := by
-  simp [grading, pairMap]
-
-/-- The sign follows the ordered source quaternion basis used here. -/
-theorem grading_from_source_product :
-    grading = -(clifford 1 * clifford sourceI * (clifford sourceJ * clifford sourceK)) := by
-  rw [clifford_mul, clifford_mul, ← map_mul, ← map_neg, grading_eq_pairMap]
-  apply congrArg pairMap
-  ext <;> norm_num [sourceI, sourceJ, sourceK, QuaternionAlgebra.star_mk,
-    QuaternionAlgebra.mk_mul_mk]
-
-theorem grading_mem_even : grading ∈ evenSourceAlgebra := by
-  rw [grading_from_source_product]
-  exact evenSourceAlgebra.neg_mem
-    (evenSourceAlgebra.mul_mem (clifford_mul_mem 1 sourceI)
-      (clifford_mul_mem sourceJ sourceK))
-
-def positiveProjection : ChiralMatrix := pairMap (1, 0)
-def negativeProjection : ChiralMatrix := pairMap (0, 1)
-
-theorem positiveProjection_formula :
-    positiveProjection = (1 / 2 : ℝ) • (1 + grading) := by
-  ext i j
-  rcases i with i | i <;> rcases j with j | j <;>
-    simp [positiveProjection, pairMap, grading, Matrix.one_apply]
-  all_goals split_ifs <;> norm_num
-
-theorem negativeProjection_formula :
-    negativeProjection = (1 / 2 : ℝ) • (1 - grading) := by
-  ext i j
-  rcases i with i | i <;> rcases j with j | j <;>
-    simp [negativeProjection, pairMap, grading, Matrix.one_apply]
-  all_goals split_ifs <;> norm_num
-
-theorem positiveProjection_mem_even : positiveProjection ∈ evenSourceAlgebra := by
-  rw [positiveProjection_formula]
-  exact evenSourceAlgebra.smul_mem
-    (evenSourceAlgebra.add_mem evenSourceAlgebra.one_mem grading_mem_even) _
-
-theorem negativeProjection_mem_even : negativeProjection ∈ evenSourceAlgebra := by
-  rw [negativeProjection_formula]
-  exact evenSourceAlgebra.smul_mem
-    (evenSourceAlgebra.sub_mem evenSourceAlgebra.one_mem grading_mem_even) _
-
-theorem pairMap_decomposition (p q : ℍ) :
-    pairMap (p, q) = positiveProjection * (clifford p * clifford 1) +
-      negativeProjection * (clifford (star q) * clifford 1) := by
-  change pairMap (p, q) = pairMap (1, 0) * (clifford p * clifford 1) +
-    pairMap (0, 1) * (clifford (star q) * clifford 1)
-  rw [clifford_mul, clifford_mul, ← map_mul, ← map_mul, ← map_add]
-  congr 1
-  ext <;> simp
-
-theorem pairMap_mem_even (p : ℍ × ℍ) : pairMap p ∈ evenSourceAlgebra := by
-  rw [pairMap_decomposition p.1 p.2]
-  exact evenSourceAlgebra.add_mem
-    (evenSourceAlgebra.mul_mem positiveProjection_mem_even (clifford_mul_mem p.1 1))
-    (evenSourceAlgebra.mul_mem negativeProjection_mem_even (clifford_mul_mem (star p.2) 1))
-
-theorem evenSourceAlgebra_eq_range : evenSourceAlgebra = pairMap.range := by
-  apply le_antisymm
-  · apply Algebra.adjoin_le
-    rintro A ⟨p, q, rfl⟩
-    exact ⟨(p * star q, star p * q), (clifford_mul p q).symm⟩
-  · rintro A ⟨p, rfl⟩
-    exact pairMap_mem_even p
-
-/-- The equivalence is proved from the generated even algebra. -/
-def evenEquiv : (ℍ × ℍ) ≃ₐ[ℝ] evenSourceAlgebra :=
-  AlgEquiv.ofBijective (pairMap.codRestrict evenSourceAlgebra pairMap_mem_even)
-    ⟨fun p q h => pairMap_injective (congrArg Subtype.val h), by
-      rintro ⟨A, hA⟩
-      rw [evenSourceAlgebra_eq_range] at hA
-      obtain ⟨p, rfl⟩ := hA
-      exact ⟨p, rfl⟩⟩
-
-@[simp] theorem evenEquiv_coe (p : ℍ × ℍ) :
-    (evenEquiv p : ChiralMatrix) = pairMap p := rfl
-
-def positive : evenSourceAlgebra := evenEquiv (1, 0)
-def negative : evenSourceAlgebra := evenEquiv (0, 1)
-
-@[simp] theorem positive_coe : (positive : ChiralMatrix) = positiveProjection := rfl
-@[simp] theorem negative_coe : (negative : ChiralMatrix) = negativeProjection := rfl
-
-theorem positive_ne_zero : positive ≠ 0 := by
-  intro h
-  have h' : ((1, 0) : ℍ × ℍ) = 0 := evenEquiv.injective (h.trans (map_zero evenEquiv).symm)
-  have := congrArg Prod.fst h'
-  exact one_ne_zero this
-
-theorem negative_ne_zero : negative ≠ 0 := by
-  intro h
-  have h' : ((0, 1) : ℍ × ℍ) = 0 := evenEquiv.injective (h.trans (map_zero evenEquiv).symm)
-  have := congrArg Prod.snd h'
-  exact one_ne_zero this
-
-theorem positive_ne_one : positive ≠ 1 := by
-  intro h
-  have h' : ((1, 0) : ℍ × ℍ) = 1 := evenEquiv.injective (h.trans (map_one evenEquiv).symm)
-  have := congrArg Prod.snd h'
-  exact zero_ne_one this
-
-theorem negative_ne_one : negative ≠ 1 := by
-  intro h
-  have h' : ((0, 1) : ℍ × ℍ) = 1 := evenEquiv.injective (h.trans (map_one evenEquiv).symm)
-  have := congrArg Prod.fst h'
-  exact zero_ne_one this
-
-theorem positive_ne_negative : positive ≠ negative := by
-  intro h
-  have h' : ((1, 0) : ℍ × ℍ) = (0, 1) := evenEquiv.injective h
-  have := congrArg Prod.fst h'
-  exact one_ne_zero this
-
-@[simp] theorem positive_square : positive * positive = positive := by
-  change evenEquiv (1, 0) * evenEquiv (1, 0) = evenEquiv (1, 0)
-  rw [← map_mul]
-  congr 1
-  ext <;> simp
-
-@[simp] theorem negative_square : negative * negative = negative := by
-  change evenEquiv (0, 1) * evenEquiv (0, 1) = evenEquiv (0, 1)
-  rw [← map_mul]
-  congr 1
-  ext <;> simp
-
-@[simp] theorem positive_mul_negative : positive * negative = 0 := by
-  change evenEquiv (1, 0) * evenEquiv (0, 1) = 0
-  rw [← map_mul]
-  have h : ((1, 0) : ℍ × ℍ) * (0, 1) = 0 := by ext <;> simp
-  rw [h, map_zero]
-
-@[simp] theorem negative_mul_positive : negative * positive = 0 := by
-  change evenEquiv (0, 1) * evenEquiv (1, 0) = 0
-  rw [← map_mul]
-  have h : ((0, 1) : ℍ × ℍ) * (1, 0) = 0 := by ext <;> simp
-  rw [h, map_zero]
-
-theorem projections_sum : positive + negative = 1 := by
-  change evenEquiv (1, 0) + evenEquiv (0, 1) = 1
-  rw [← map_add]
-  have h : ((1, 0) : ℍ × ℍ) + (0, 1) = 1 := by ext <;> simp
-  rw [h, map_one]
-
-theorem positive_commutes (A : evenSourceAlgebra) : positive * A = A * positive := by
-  obtain ⟨⟨p, q⟩, rfl⟩ := evenEquiv.surjective A
-  change evenEquiv (1, 0) * evenEquiv (p, q) = evenEquiv (p, q) * evenEquiv (1, 0)
-  rw [← map_mul, ← map_mul]
-  congr 1
-  ext <;> simp
-
-theorem negative_commutes (A : evenSourceAlgebra) : negative * A = A * negative := by
-  obtain ⟨⟨p, q⟩, rfl⟩ := evenEquiv.surjective A
-  change evenEquiv (0, 1) * evenEquiv (p, q) = evenEquiv (p, q) * evenEquiv (0, 1)
-  rw [← map_mul, ← map_mul]
-  congr 1
-  ext <;> simp
-
-private theorem quaternion_idempotent (q : ℍ) (h : q * q = q) : q = 0 ∨ q = 1 := by
-  by_cases hq : q = 0
-  · exact Or.inl hq
-  · right
-    have h' := congrArg (fun x : ℍ => q⁻¹ * x) h
-    simpa only [← mul_assoc, inv_mul_cancel₀ hq, one_mul] using h'
-
-/-- There are no further idempotents in the real source even algebra. -/
-theorem idempotent_classification (P : evenSourceAlgebra) (hP : P * P = P) :
-    P = 0 ∨ P = 1 ∨ P = positive ∨ P = negative := by
-  obtain ⟨⟨p, q⟩, rfl⟩ := evenEquiv.surjective P
-  have hpq : (p, q) * (p, q) = (p, q) :=
-    evenEquiv.injective ((map_mul evenEquiv _ _).trans hP)
-  have hp := quaternion_idempotent p (congrArg Prod.fst hpq)
-  have hq := quaternion_idempotent q (congrArg Prod.snd hpq)
-  rcases hp with rfl | rfl <;> rcases hq with rfl | rfl
-  · exact Or.inl (map_zero evenEquiv)
-  · exact Or.inr (Or.inr (Or.inr rfl))
-  · exact Or.inr (Or.inr (Or.inl rfl))
-  · exact Or.inr (Or.inl (map_one evenEquiv))
-
-/-- Primitivity is tested against all idempotents of the computed even algebra. -/
-def IsPrimitiveCentral (P : evenSourceAlgebra) : Prop :=
-  P ≠ 0 ∧ P * P = P ∧ (∀ A : evenSourceAlgebra, P * A = A * P) ∧
-    ∀ E : evenSourceAlgebra, E * E = E → E * P = E → E = 0 ∨ E = P
-
-theorem positive_primitiveCentral : IsPrimitiveCentral positive := by
-  refine ⟨positive_ne_zero, positive_square, positive_commutes, ?_⟩
-  intro E hE hEP
-  rcases idempotent_classification E hE with rfl | rfl | rfl | rfl
-  · exact Or.inl rfl
-  · simp only [one_mul] at hEP
-    exact (positive_ne_one hEP).elim
-  · exact Or.inr rfl
-  · rw [negative_mul_positive] at hEP
-    exact (negative_ne_zero hEP.symm).elim
-
-theorem negative_primitiveCentral : IsPrimitiveCentral negative := by
-  refine ⟨negative_ne_zero, negative_square, negative_commutes, ?_⟩
-  intro E hE hEP
-  rcases idempotent_classification E hE with rfl | rfl | rfl | rfl
-  · exact Or.inl rfl
-  · simp only [one_mul] at hEP
-    exact (negative_ne_one hEP).elim
-  · rw [positive_mul_negative] at hEP
-    exact (positive_ne_zero hEP.symm).elim
-  · exact Or.inr rfl
-
-theorem primitiveCentral_iff (P : evenSourceAlgebra) :
-    IsPrimitiveCentral P ↔ P = positive ∨ P = negative := by
-  constructor
-  · intro hP
-    rcases idempotent_classification P hP.2.1 with rfl | rfl | h | h
-    · exact (hP.1 rfl).elim
-    · have h := hP.2.2.2 positive positive_square (mul_one positive)
-      exact (h.elim positive_ne_zero positive_ne_one).elim
-    · exact Or.inl h
-    · exact Or.inr h
-  · rintro (rfl | rfl)
-    · exact positive_primitiveCentral
-    · exact negative_primitiveCentral
-
-/-- Complex scalar extension inside the same actual matrix representation. -/
-def complexEvenSourceAlgebra : Subalgebra ℂ ChiralMatrix :=
-  Algebra.adjoin ℂ (evenSourceAlgebra : Set ChiralMatrix)
-
-theorem complexEvenSourceAlgebra_eq_adjoin_pairs :
-    complexEvenSourceAlgebra =
-      Algebra.adjoin ℂ {A | ∃ p q : ℍ, A = clifford p * clifford q} := by
-  apply le_antisymm
-  · have h : evenSourceAlgebra ≤
-        (Algebra.adjoin ℂ {A | ∃ p q : ℍ, A = clifford p * clifford q}).restrictScalars ℝ := by
-      apply Algebra.adjoin_le
-      intro A hA
-      change A ∈ Algebra.adjoin ℂ {A | ∃ p q : ℍ, A = clifford p * clifford q}
-      exact Algebra.subset_adjoin (R := ℂ) hA
-    exact Algebra.adjoin_le h
-  · apply Algebra.adjoin_le
-    rintro A ⟨p, q, rfl⟩
-    exact Algebra.subset_adjoin (clifford_mul_mem p q)
-
-def complexPairMap : (Mat2 × Mat2) →ₐ[ℂ] ChiralMatrix where
-  toFun p := Matrix.fromBlocks p.1 0 0 p.2
-  map_zero' := by simp
-  map_one' := Matrix.fromBlocks_one
-  map_add' p q := by simp [Matrix.fromBlocks_add]
-  map_mul' p q := by simp [Matrix.fromBlocks_multiply]
-  commutes' r := by
-    change Matrix.fromBlocks (algebraMap ℂ Mat2 r) 0 0 (algebraMap ℂ Mat2 r) =
-      algebraMap ℂ ChiralMatrix r
-    simp only [Algebra.algebraMap_eq_smul_one]
-    simpa only [Matrix.fromBlocks_smul, smul_zero] using
-      congrArg (fun M : ChiralMatrix => r • M)
-        (Matrix.fromBlocks_one : Matrix.fromBlocks (1 : Mat2) 0 0 1 = (1 : ChiralMatrix))
-
-theorem complexPairMap_injective : Function.Injective complexPairMap := by
-  intro p q h
-  apply Prod.ext
-  · ext i j
-    exact congrArg (fun M : ChiralMatrix => M (Sum.inl i) (Sum.inl j)) h
-  · ext i j
-    exact congrArg (fun M : ChiralMatrix => M (Sum.inr i) (Sum.inr j)) h
-
-private def diagonalMap : Mat2 →ₐ[ℂ] ChiralMatrix :=
-  complexPairMap.comp ((AlgHom.id ℂ Mat2).prod (AlgHom.id ℂ Mat2))
-
-private theorem diagonalMap_mem_complexEven (M : Mat2) :
-    diagonalMap M ∈ complexEvenSourceAlgebra := by
-  let f := diagonalMap.comp SourceSpinIdentification.spinActionEquiv.symm.toAlgHom
-  have htop : complexEvenSourceAlgebra.comap f = ⊤ := by
-    apply SourceJointResponse.containing_spin_source_eq_top
-    intro U
-    change diagonalMap (SourceSpinIdentification.spinActionEquiv.symm
-      (SourceJointResponse.sourceOperator 1 U)) ∈ complexEvenSourceAlgebra
-    rw [← SourceSpinIdentification.spinAction_sourceOperator]
-    change diagonalMap (SourceSpinIdentification.spinActionEquiv.symm
-      (SourceSpinIdentification.spinActionEquiv (U : Mat2))) ∈ complexEvenSourceAlgebra
-    rw [AlgEquiv.symm_apply_apply]
-    have hU : diagonalMap (U : Mat2) = pairMap (ofMatrix U, ofMatrix U) := by
-      change Matrix.fromBlocks (U : Mat2) 0 0 (U : Mat2) =
-        Matrix.fromBlocks (matrixMap (ofMatrix U)) 0 0 (matrixMap (ofMatrix U))
-      rw [matrixMap_of_specialUnitary]
-    rw [hU]
-    exact Algebra.subset_adjoin (pairMap_mem_even _)
-  have hM : SourceSpinIdentification.spinAction M ∈ complexEvenSourceAlgebra.comap f := by
-    rw [htop]
-    trivial
-  change diagonalMap (SourceSpinIdentification.spinActionEquiv.symm
-    (SourceSpinIdentification.spinActionEquiv M)) ∈ complexEvenSourceAlgebra at hM
-  simpa only [AlgEquiv.symm_apply_apply] using hM
-
-theorem complexPairMap_mem (p : Mat2 × Mat2) : complexPairMap p ∈ complexEvenSourceAlgebra := by
-  have h : complexPairMap p = positiveProjection * diagonalMap p.1 +
-      negativeProjection * diagonalMap p.2 := by
-    simp [complexPairMap, positiveProjection, negativeProjection, diagonalMap, pairMap,
-      Matrix.fromBlocks_multiply, Matrix.fromBlocks_add]
-  rw [h]
-  exact complexEvenSourceAlgebra.add_mem
-    (complexEvenSourceAlgebra.mul_mem (Algebra.subset_adjoin positiveProjection_mem_even)
-      (diagonalMap_mem_complexEven p.1))
-    (complexEvenSourceAlgebra.mul_mem (Algebra.subset_adjoin negativeProjection_mem_even)
-      (diagonalMap_mem_complexEven p.2))
-
-theorem complexEvenSourceAlgebra_eq_range : complexEvenSourceAlgebra = complexPairMap.range := by
-  apply le_antisymm
-  · apply Algebra.adjoin_le
-    intro A hA
-    rw [evenSourceAlgebra_eq_range] at hA
-    obtain ⟨p, rfl⟩ := hA
-    exact ⟨(matrixMap p.1, matrixMap p.2), rfl⟩
-  · rintro A ⟨p, rfl⟩
-    exact complexPairMap_mem p
-
-/-- The complex even algebra has exactly the two existing two-by-two factors. -/
-def complexEvenEquiv : (Mat2 × Mat2) ≃ₐ[ℂ] complexEvenSourceAlgebra :=
-  AlgEquiv.ofBijective (complexPairMap.codRestrict complexEvenSourceAlgebra complexPairMap_mem)
-    ⟨fun p q h => complexPairMap_injective (congrArg Subtype.val h), by
-      rintro ⟨A, hA⟩
-      rw [complexEvenSourceAlgebra_eq_range] at hA
-      obtain ⟨p, rfl⟩ := hA
-      exact ⟨p, rfl⟩⟩
-
-abbrev SpinorCarrier := ChiralIndex → ℂ
-
-theorem positiveProjection_mulVec (v : SpinorCarrier) :
-    positiveProjection.mulVec v = Sum.elim (fun i => v (Sum.inl i)) (fun _ => 0) := by
-  ext i
-  rcases i with i | i <;>
-    simp [positiveProjection, pairMap, Matrix.fromBlocks_mulVec]
-
-theorem negativeProjection_mulVec (v : SpinorCarrier) :
-    negativeProjection.mulVec v = Sum.elim (fun _ => 0) (fun i => v (Sum.inr i)) := by
-  ext i
-  rcases i with i | i <;>
-    simp [negativeProjection, pairMap, Matrix.fromBlocks_mulVec]
-
-def positiveSpace : Submodule ℂ SpinorCarrier := LinearMap.range positiveProjection.mulVecLin
-def negativeSpace : Submodule ℂ SpinorCarrier := LinearMap.range negativeProjection.mulVecLin
-
-def positiveCoordinates : (Fin 2 → ℂ) ≃ₗ[ℂ] positiveSpace where
-  toFun v := ⟨Sum.elim v (fun _ => 0), ⟨Sum.elim v (fun _ => 0), by
-    change positiveProjection.mulVec _ = _
-    rw [positiveProjection_mulVec]
-    rfl⟩⟩
-  invFun v i := v.val (Sum.inl i)
-  left_inv v := rfl
-  right_inv v := by
-    rcases v with ⟨v, ⟨w, rfl⟩⟩
-    apply Subtype.ext
-    change Sum.elim (fun i => positiveProjection.mulVec w (Sum.inl i)) (fun _ => 0) =
-      positiveProjection.mulVec w
-    simp only [positiveProjection_mulVec, Sum.elim_inl]
-  map_add' v w := by
-    apply Subtype.ext
-    ext i
-    rcases i with i | i <;> simp
-  map_smul' r v := by
-    apply Subtype.ext
-    ext i
-    rcases i with i | i <;> simp
-
-def negativeCoordinates : (Fin 2 → ℂ) ≃ₗ[ℂ] negativeSpace where
-  toFun v := ⟨Sum.elim (fun _ => 0) v, ⟨Sum.elim (fun _ => 0) v, by
-    change negativeProjection.mulVec _ = _
-    rw [negativeProjection_mulVec]
-    rfl⟩⟩
-  invFun v i := v.val (Sum.inr i)
-  left_inv v := rfl
-  right_inv v := by
-    rcases v with ⟨v, ⟨w, rfl⟩⟩
-    apply Subtype.ext
-    change Sum.elim (fun _ => 0) (fun i => negativeProjection.mulVec w (Sum.inr i)) =
-      negativeProjection.mulVec w
-    simp only [negativeProjection_mulVec, Sum.elim_inr]
-  map_add' v w := by
-    apply Subtype.ext
-    ext i
-    rcases i with i | i <;> simp
-  map_smul' r v := by
-    apply Subtype.ext
-    ext i
-    rcases i with i | i <;> simp
-
-theorem positiveSpace_finrank : Module.finrank ℂ positiveSpace = 2 := by
-  rw [← positiveCoordinates.finrank_eq, Module.finrank_fintype_fun_eq_card]
-  rfl
-
-theorem negativeSpace_finrank : Module.finrank ℂ negativeSpace = 2 := by
-  rw [← negativeCoordinates.finrank_eq, Module.finrank_fintype_fun_eq_card]
-  rfl
-
-theorem positiveProjection_formula_complex :
-    positiveProjection = (1 / 2 : ℂ) • (1 + grading) := by
-  ext i j
-  rcases i with i | i <;> rcases j with j | j <;>
-    simp [positiveProjection, pairMap, grading, Matrix.one_apply]
-  all_goals split_ifs <;> norm_num
-
-theorem negativeProjection_formula_complex :
-    negativeProjection = (1 / 2 : ℂ) • (1 - grading) := by
-  ext i j
-  rcases i with i | i <;> rcases j with j | j <;>
-    simp [negativeProjection, pairMap, grading, Matrix.one_apply]
-  all_goals split_ifs <;> norm_num
-
-/-- The existing colour factor acts trivially on the two source projections. -/
-def colourPositive (d : ℕ) : ColourMatrix d :=
-  (1 : Matrix (Fin d) (Fin d) ℂ) ⊗ₖ positiveProjection
-
-def colourNegative (d : ℕ) : ColourMatrix d :=
-  (1 : Matrix (Fin d) (Fin d) ℂ) ⊗ₖ negativeProjection
-
-theorem colourPositive_formula (d : ℕ) :
-    colourPositive d = (1 / 2 : ℂ) • (1 + colourGrading d) := by
-  rw [colourPositive, positiveProjection_formula_complex, Matrix.kronecker_smul,
-    Matrix.kronecker_add, Matrix.one_kronecker_one]
-  rfl
-
-theorem colourNegative_formula (d : ℕ) :
-    colourNegative d = (1 / 2 : ℂ) • (1 - colourGrading d) := by
-  have hsub : (1 : Matrix (Fin d) (Fin d) ℂ) ⊗ₖ (1 - grading) =
-      (1 : Matrix (Fin d) (Fin d) ℂ) ⊗ₖ (1 : ChiralMatrix) -
-        (1 : Matrix (Fin d) (Fin d) ℂ) ⊗ₖ grading := by
-    ext ⟨i, a⟩ ⟨j, b⟩
-    exact mul_sub _ _ _
-  rw [colourNegative, negativeProjection_formula_complex, Matrix.kronecker_smul,
-    hsub, Matrix.one_kronecker_one]
-  rfl
+export GeneratedFoundations.Operations.SourceCliffordSectors (
+  IsPrimitiveCentral
+  clifford_mul
+  clifford_mul_mem
+  evenEquiv
+  evenEquiv_coe
+  evenSourceAlgebra
+  evenSourceAlgebra_eq_range
+  grading_eq_pairMap
+  grading_from_source_product
+  grading_mem_even
+  idempotent_classification
+  matrixMap_sourceI
+  matrixMap_sourceJ
+  matrixMap_sourceK
+  negative
+  negativeProjection
+  negativeProjection_formula
+  negativeProjection_mem_even
+  negative_coe
+  negative_commutes
+  negative_mul_positive
+  negative_ne_one
+  negative_ne_zero
+  negative_primitiveCentral
+  negative_square
+  pairMap
+  pairMap_decomposition
+  pairMap_injective
+  pairMap_mem_even
+  positive
+  positiveProjection
+  positiveProjection_formula
+  positiveProjection_mem_even
+  positive_coe
+  positive_commutes
+  positive_mul_negative
+  positive_ne_negative
+  positive_ne_one
+  positive_ne_zero
+  positive_primitiveCentral
+  positive_square
+  primitiveCentral_iff
+  projections_sum
+  sourceI
+  sourceJ
+  sourceK
+)
+
+export GeneratedFoundations.Operations.SourceCliffordComplex (
+  complexEvenSourceAlgebra
+  complexEvenSourceAlgebra_eq_adjoin_pairs
+  complexPairMap
+  complexPairMap_injective
+  complexPairMap_mem
+  complexEvenSourceAlgebra_eq_range
+  complexEvenEquiv
+  SpinorCarrier
+  positiveProjection_mulVec
+  negativeProjection_mulVec
+  positiveSpace
+  negativeSpace
+  positiveCoordinates
+  negativeCoordinates
+  positiveSpace_finrank
+  negativeSpace_finrank
+  positiveProjection_formula_complex
+  negativeProjection_formula_complex
+  colourPositive
+  colourNegative
+  colourPositive_formula
+  colourNegative_formula
+)
 
 private theorem positive_from_sum_difference {V : Type*} [AddCommGroup V] [Module ℂ V]
     (P Q G e : V) (hs : P + Q = e) (hg : G = P - Q) :

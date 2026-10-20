@@ -1,6 +1,6 @@
 module
 
-public import GeneratedFoundations.Physical.SourceOrigin
+public import GeneratedFoundations.Correlation.SourceOrigin
 public import GeneratedFoundations.Geometry.SourceSphereCapacity
 public import GeneratedFoundations.Geometry.SourceProjectiveGeometry
 public import GeneratedFoundations.Geometry.SourceOrthogonalCover
@@ -76,8 +76,8 @@ open GeneratedFoundations.Operations
 open GeneratedFoundations.Operations.HermiteSource (groundProfile)
 open GeneratedFoundations.Operations.SourceSpinCorner (Mat2)
 open GeneratedFoundations.Operations.SourceSpinCornerGroup (SU2)
-open GeneratedFoundations.Physical.SourceVacuumTransport (V basisVector sourceAction)
-open GeneratedFoundations.Physical.SourceSpinIdentification
+open GeneratedFoundations.Operations.SourceVacuumTransport (V basisVector sourceAction)
+open GeneratedFoundations.Geometry.SourceSpinIdentification
 open GeneratedFoundations.Geometry.SourceSpinCentre (CentralQuotient negativeIdentity)
 open GeneratedFoundations.Geometry.SourceCentralObservations (invariantAlgebra quotientContinuous)
 open GeneratedFoundations.Geometry.SourceQuaternionAmplitude
@@ -277,7 +277,7 @@ structure Conclusions : Prop where
 /-- The canonical minimal-change root generates every geometric record field.
 The Gaussian law, width and orientation have already been constructed. -/
 theorem generatedSourceGeometry : Conclusions := by
-  obtain ⟨hprofile, hoverlap, hground⟩ := Physical.SourceOrigin.common_densities
+  obtain ⟨hprofile, hoverlap, hground⟩ := Correlation.SourceOrigin.common_densities
     d h Source.CanonicalRoot.generated.compositional o hb
   refine {
     correlation_density := hprofile

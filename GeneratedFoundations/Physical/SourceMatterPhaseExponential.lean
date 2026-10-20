@@ -2,6 +2,7 @@ module
 
 public import GeneratedFoundations.Physical.SourceGaugeTransport
 public import GeneratedFoundations.Physical.SourceMatterCharge
+public import GeneratedFoundations.Operations.FinitePhaseFlow
 public import Mathlib.Analysis.Normed.Algebra.MatrixExponential
 public import Mathlib.Topology.Algebra.Module.FiniteDimension
 
@@ -181,12 +182,8 @@ private theorem continuous_algebraHom_map_exp {A B : Type*}
     [NormedRing A] [NormedAlgebra ℂ A] [CompleteSpace A]
     [Ring B] [Algebra ℂ B] [TopologicalSpace B] [IsTopologicalRing B] [T2Space B]
     (f : A →ₐ[ℂ] B) (hf : Continuous f) (a : A) :
-    f (NormedSpace.exp a) = NormedSpace.exp (f a) := by
-  rw [NormedSpace.exp_eq_tsum ℂ, NormedSpace.exp_eq_tsum ℂ]
-  refine ((NormedSpace.expSeries_summable' (𝕂 := ℂ) a).hasSum.map f hf).tsum_eq.symm.trans ?_
-  apply tsum_congr
-  intro n
-  simp only [Function.comp_def, map_smul, map_pow]
+    f (NormedSpace.exp a) = NormedSpace.exp (f a) :=
+  Operations.FinitePhaseFlow.map_exp f hf a
 
 private theorem matrixRealization_exp (M : SourceCliffordConnector.ColourMatrix 4) :
     matrixRealization (NormedSpace.exp M) = NormedSpace.exp (matrixRealization M) :=

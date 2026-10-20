@@ -30,6 +30,47 @@ Reversing that presentation gives the proved conjugate structure. The arithmetic
 physical branches are parallel conclusions;
 neither is assumed by the other.
 
+The mathematical response interface includes least faithful Hilbert
+realizations of the actual complete history--phase fibres and their
+root-preserving sector products. Their dimensions are derived from the
+actual fibre cardinalities. Matrix-unit decomposition and adjoint compatibility
+give uniqueness up to unitary intertwining; no physical carrier dimension is
+imposed on these arithmetic spaces. The general classification proofs are
+shared upstream, with the former physical names preserved as compatibility
+exports.
+
+`HistoryCentralSectors` resolves the actual complete arithmetic coefficient
+space into its intrinsic prime-occupation sectors. Their dimensions are
+computed independently, and unitary coordinates retain every operator block.
+`HistoryCliffordAction` also represents the common source Clifford operations
+on all retained history--phase labels. Its source-sector exchange commutes
+with occupation parity and Gaussian multiplication. Source chirality,
+occupation parity and ordered-history reversal are therefore distinguished
+by proved action identities. The full arithmetic/source matrix action has a
+faithful realization in the original Gaussian/Hermite space, with every
+matrix coefficient recovered by an explicit inverse.
+
+The complete complex response is retained: arbitrary source connectors act
+between explicit orthogonal sector inclusions, and independent even actions
+have the proved connector covariance in both coefficient and Gaussian
+coordinates. The finite phase action has an exact permutation matrix, trivial
+kernel and computed trace. Its observation quotient is canonically the
+zero-average detail space, with exact reconstruction, actual fibre dimensions
+and a unique factorization for every response annihilating the invariant part.
+
+The determinant line of the two original Gaussian modes and the Hermitian
+matrix cone are shared source constructions. Both branches use the same
+proofs, with the original physical names retained as compatibility exports.
+The determinant phase remains explicit, and the positive-semidefinite cone
+includes its degenerate boundary.
+
+The actual phase bundle now has unitary frames, unique relative transitions,
+passive components and complete response covariance. Its invariant and
+zero-average spaces also determine their own primitive trace-free relative
+weights `(-n,1)`, using their proved dimensions `H` and `H*n`. The degenerate
+unit-root case remains explicit. Physical carrier dimensions and charge
+numbers are not substituted into these arithmetic constructions.
+
 ### Two internal-radius conventions (do not mix)
 
 | object | meaning | value |
@@ -418,8 +459,10 @@ For the complete source, build, and axiom audit, run
 Lake executable on the search path, or supply `--lake-exe`. The verifier checks
 all explicit local module targets and the library with Lake's `--no-build`
 mode. If they are fresh, it proceeds directly to the complete declaration
-audit. If Lake requests rebuilding (exit code 3), it builds every local module
-in dependency order, one process at a time, followed by the library. Other
+audit. If Lake requests rebuilding (exit code 3), it rebuilds the affected local
+modules in dependency order, in batches of at most two independent ready targets
+per Lake process, followed by the library. Targets in a batch may compile together;
+completed dependencies are reused. Other
 nonzero probe results fail verification. Both paths check the actual imported
 dependency revisions, every collected public named declaration, and every
 constant originating in a local module of the compiled environment. The
@@ -583,6 +626,92 @@ actual reaction action contains every ordered three-leg assembly and all its
 mixed terms. Its varied Hessian is the same operator used in the finite
 reaction evolution and in the squared graded differential.
 
+The ordered Gaussian two-mode source has an explicit Haar realization in
+`Geometry.SourceSpinIdentification`. The map preserves the metric, every
+complex matrix response and the actual number flow. `HistoryHaarResponse`
+applies it at every generated history--phase label in both source sectors,
+preserving arbitrary cross-label entries and the full adjoint. Its dimension
+is four times the actual arithmetic label count.
+
+`HistorySourceNaturality` classifies arbitrary matrices on the complete
+history factor tensored with that source. Commutation with the actual full
+history matrix algebra forces one unique source matrix. The original
+pointwise reversal then gives one unique doublet or quaternion coordinate;
+the resulting real response space has dimension four. The constructed family
+satisfies both equations, with its Gaussian and Haar actions explicitly
+intertwined. These are concrete arithmetic constructions using common
+matrix-unit proofs.
+
+`HistoryElementaryConnector` applies the same classification to an arbitrary
+complete two-sector operator. Naturality, self-adjointness and oddness force
+its unique off-diagonal complex block; the native source reversal then forces
+one unique doublet. Both independent source frames act on this full operator.
+Actual history-indexed frames have a canonical identity frame, exact cocycles
+and compatible local doublet coordinates. Applying the connector preserves
+compatible complete-state sections. Its Gaussian and Haar realizations retain
+all matrix elements and cross terms.
+
+`Geometry.SourceScalarResponse` and `SourceExchangeResponse` hold the shared
+source classification and the actual orthogonal exchange transport. The
+transport preserves inner products, arbitrary endomorphisms, adjoints and the
+independent-source naturality equations. Physical-specific phase weights and
+the physical effective quotient stay in the physical branch.
+
+`HistoryEffectiveFrames` calculates the actual two-element kernel of the
+source-frame action on every complete arithmetic response operator. The
+effective quotient is faithful, has a unique action on the generated image,
+and gives exact overlap cocycles when lifted defects lie in that kernel.
+The full state action remains faithful and retains the simultaneous minus
+sign; it does not descend through the response quotient. Its full inner
+products and coherent matrix observations are preserved. This distinction
+keeps the arithmetic state and its effective operator observation separate.
+
+`HistoryEffectiveResponseSpace` realizes that same effective action on the
+complete Hilbert space of all matrix coefficients. Its inner product is
+proved equal to the trace pairing, and its effective unitary representation
+is faithful and uniquely determined by the original conjugation action.
+The inverse, adjoint and norm laws retain all off-diagonal coefficients.
+
+The concrete response bundle has the actual history--phase label set as its
+base, with uniquely specified base/fibre coordinates. Local Hermitian charts
+have exact effective transitions and a computed two-sign lift ambiguity.
+Full matrix gluing and response-Hilbert gluing are equivalent.
+`HistoryReversalCharts` gives the unique common full-fibre antiunitary on
+overlaps whose transitions intertwine the original reversal.
+
+`HistoryGaussianConnection` identifies the exponential of the actual
+root-square generator with the original Gaussian, differentiates it, and
+proves uniqueness of its parallel scale connection. Its inverse frames and
+transported metric are finite-dimensional constructions. On the same full
+state fibre, `HistoryGaugeJets` proves the nonlinear connection product rule,
+covariant matter derivative, curvature covariance and Bianchi identity. The
+positive invariant curvature density uses the complete operator trace norm.
+Its formal coefficient-coordinate jets and the actual one-dimensional
+Gaussian scale transport remain distinct constructions.
+
+`HistoryCurvatureVariation` computes the actual first, second and mixed
+derivatives of that complete finite curvature action. The mixed Hessian
+retains its background-curvature/commutator term and transforms with the
+same action under generated frame changes. At flat background its nullspace
+is precisely the vanishing-linearized-curvature subspace.
+
+`HistoryScalarAmplitude` gives the complete elementary response a separately
+computed norm law: its square is the source-doublet intensity times identity
+on every arithmetic label. This intensity is positive for a nonzero doublet
+and invariant under the independent source frames. The full inner-product
+identity includes arbitrary cross-label coherent states. This operator and
+the history reaction generator have different, explicitly proved kernels.
+
+`HistoryReversalIsometry` supplies the actual antiunitary on every retained
+history--phase label and on both source chiral sectors. Its square is minus
+the identity. The Gaussian--Haar realization intertwines it with the original
+source reversal; the complete elementary connector, independent source
+frames, Gaussian multiplication and arithmetic occupation parity obey the
+proved compatibility laws. This source operation preserves occupation
+parity. `HistoryChiralBlocks` separately permits arbitrary operators on each
+complete sector and derives their adjoints, exchange and grading formulas,
+including cross-history and cross-phase coefficients.
+
 The complete history coefficient Hilbert space also carries the actual
 Gaussian reaction operator. Its root layers converge absolutely in operator
 norm, using the normalized history law rather than a history-count bound.
@@ -592,7 +721,13 @@ operator exponentials converge to its full-space contraction evolution.
 The history complex has a unique unit-anchored primitive and a separate
 orthogonal leaf-charge/coexact decomposition. The finite reaction evolution
 preserves leaf charge, dissipates coefficient energy by the reaction form and
-dissipates action by the squared actual operator. Schur reduction of the
+dissipates the complete action by the squared actual operator. The positive
+root-layer tail produces anchored unit states of strictly positive action
+with arbitrarily small action-relative dissipation. Thus, at fixed positive
+Gaussian observation coordinates, this complete coefficient flow has no
+positive uniform exponential action rate with prefactor one. Its exact
+dissipation and contraction remain valid; the occupation and physical
+Hamiltonians have their own separately proved spectral outputs. Schur reduction of the
 complete Gibbs Hessian retains the eliminated energy, including singular
 directions through the proved scalar kernel. The orientation probe satisfies
 the exact log-partition and variance identities; its zero-probe susceptibility
@@ -606,6 +741,36 @@ including those used by physical modules outside the public entry. The proved
 full-history limit and contraction are distinct from a strictly positive
 cutoff-independent reaction-gap theorem. Different arithmetic and physical carriers
 retain their own dimensions, invariant directions and response constants.
+
+The complete Haar connection--state response supplies a separate restoring
+operator. `HistoryHaarCoupledAction` computes its nonlinear action and mixed
+second variation. `HistoryHaarJointCore` identifies the differential core;
+`HistoryHaarJointHessian` proves the unique self-adjoint closure, its domain,
+the attained bottom `min(4,c_N)` and the cutoff-independent lower bound `15/8`.
+`HistoryHaarJointFlow` proves the complete flow, its right-generator domain and
+norm decay `exp(-15*t/8)`. These theorems do not assert a positive gap for the
+different Gaussian history-reaction generator.
+
+`HistoryCompleteSourceGroup` constructs the faithful joint state action from
+the two source frames and the actual rank-dependent circle. Its least
+generated group, complete coefficient coordinates, factorization and overlap
+defects are proved. `HistoryCompleteConnector` retains its full source/phase
+covariance and all coherent observations. The state kernel and the effective
+response kernel are calculated separately.
+
+`HistoryGaussianCovariance` determines the variance from the actual full-basis
+coefficient count. `HistoryGaussianWindowResponse` uses the actual joint-Hessian
+eigenvalues in its finite-window Gaussian integral, with positivity, a unique
+algebraic response root and interval consumers. Physical window selections,
+geometric radius certificates and dimensional calibration keep their own
+premises; they are not inserted as mathematical source data.
+
+Every declaration in the 91 physical modules and their 241 supporting modules
+now has an object-and-scope comparison. The inventory distinguishes proved
+arithmetic analogues, identical shared results and physical-specific outputs.
+Both branches remain independent at the import level and meet only at their
+common generated source and upstream mathematical constructions. The
+inventory and compiled verification remain separate records.
 
 ## Constructed physical interface
 

@@ -3723,6 +3723,2234 @@
     "label": "attained arithmetic occupation lower edge",
     "coverage_kind": "theorem",
     "scope": "The generated positive mode of root two attains energy three and is not the vacuum. This attains the previously proved occupation lower bound and does not identify it with a gap of the reaction operator."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation.least_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual history-phase least realization criterion",
+    "coverage_kind": "theorem",
+    "scope": "For faithful adjoint-compatible representations of the full matrix algebra of the actual complete history-phase fibre, the derived fibre dimension is equivalent to the genuine universal least-dimension property. Comparison carriers are not root inputs."
+  },{
+    "name": "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation.least_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unitary classification of actual history-phase realizations",
+    "coverage_kind": "theorem",
+    "scope": "Any two least faithful adjoint-compatible realizations of the actual fibre algebra are unitarily intertwined on every matrix and vector. This is uniqueness up to unitary equivalence, not uniqueness of the intertwiner."
+  },{
+    "name": "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation.coefficient_commutant",
+    "module": "GeneratedFoundations.Arithmetic.HistoryModuleRepresentation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "scalar commutant of full history-phase operations",
+    "coverage_kind": "theorem",
+    "scope": "A linear map commuting with every actual full-matrix coefficient operation is multiplication by a unique complex scalar. The statement concerns the full algebra, not just the smaller translation and reflection subgroup."
+  },{
+    "name": "GeneratedFoundations.Arithmetic.HistoryRootSectors.native_intertwining",
+    "module": "GeneratedFoundations.Arithmetic.HistoryRootSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete root-sector coefficient transport",
+    "coverage_kind": "theorem",
+    "scope": "The explicit unitary coordinates of all actual history-phase fibres up to a root cutoff intertwine every root-preserving native matrix operation with its complete block-coordinate action. The actual inner product is preserved."
+  },{
+    "name": "GeneratedFoundations.Arithmetic.HistoryRootSectors.least_unitarilyEquivalent",
+    "module": "GeneratedFoundations.Arithmetic.HistoryRootSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "least root-preserving history-sector realization",
+    "coverage_kind": "theorem",
+    "scope": "Every faithful adjoint-compatible realization attaining the sum of actual fibre cardinalities is unitarily equivalent to the constructed root-sector realization. Each block retains all history and phase matrix entries."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryRootSectors.sector_reconstruction",
+    "module": "GeneratedFoundations.Arithmetic.HistoryRootSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete reconstruction from actual root sectors",
+    "coverage_kind": "theorem",
+    "scope": "Self-adjoint, pairwise orthogonal projections induced by the actual native root identities sum to the identity and reconstruct every retained coefficient state. This is the root-preserving operation algebra; it does not remove operations between distinct roots from the larger full algebra."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryRootSectors.native_least_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryRootSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "universal least realization of actual root-sector operations",
+    "coverage_kind": "theorem",
+    "scope": "The internally derived native dimension criterion is equivalent to the universal lower-dimension comparison against every faithful finite-dimensional realization of the same actual algebra. Adjoint compatibility is retained in the least realization."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryRootSectors.native_least_unitarilyEquivalent",
+    "module": "GeneratedFoundations.Arithmetic.HistoryRootSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "native unitary classification of actual root-sector realizations",
+    "coverage_kind": "theorem",
+    "scope": "Every least faithful adjoint-compatible realization is unitarily intertwined directly with the actual native history-phase coefficient carrier on every operation and state, rather than only with abstract matrix coordinates."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentralSectors.generated",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentralSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete occupation-parity observation sectors",
+    "coverage_kind": "theorem",
+    "scope": "Intrinsic prime-occupation sign, adjoint projections, unitary sector coordinates, full operator block equations, exact Gaussian composition and independent history reflection on every retained history-phase label."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentralSectors.sector_energy",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentralSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "orthogonal reconstruction of actual arithmetic occupation sectors",
+    "coverage_kind": "theorem",
+    "scope": "The exact sum of squared sector norms equals the full coefficient norm; neither equality of sector dimensions nor a physical carrier dimension is assumed."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentralSectors.matrix_central_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentralSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete central-operator coefficient criterion",
+    "coverage_kind": "theorem",
+    "scope": "Commutation is equivalent to an equation on every matrix entry, including cross-root and cross-sector entries."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentralSectors.matrix_odd_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentralSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete odd-operator coefficient criterion",
+    "coverage_kind": "theorem",
+    "scope": "Anticommutation is equivalent to the actual grading equation on every full matrix coefficient."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentralSectors.operatorCoordinates_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentralSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique full operator transport to occupation-sector coordinates",
+    "coverage_kind": "theorem",
+    "scope": "After the intrinsic unitary coordinates are fixed, there is exactly one operator intertwining every input; no cross term is discarded."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentralSectors.reflection_central",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentralSectors",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "distinct history reversal and occupation grading",
+    "coverage_kind": "theorem",
+    "scope": "Ordered-history reflection preserves the prime occupation of the root, so its actual action commutes with the occupation grading."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.generated",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "common-source Clifford action on complete arithmetic observations",
+    "coverage_kind": "theorem",
+    "scope": "The actual history-phase label count fixes the response multiplicity; its complete matrix action, source chirality, occupation parity, Gaussian compatibility and faithful Hermite return are separately proved."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.sectorCoordinates_positiveProjection",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "source chirality coordinates on actual arithmetic observations",
+    "coverage_kind": "theorem",
+    "scope": "The unitary restriction to source chirality intertwines the positive projection with the actual first coordinate sector."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.sectorCoordinates_negativeProjection",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "negative source chirality coordinates on actual arithmetic observations",
+    "coverage_kind": "theorem",
+    "scope": "The unitary restriction to source chirality intertwines the negative projection with the actual second coordinate sector."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.exchange_positive",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual source exchange between arithmetic source-response sectors",
+    "coverage_kind": "theorem",
+    "scope": "The source unit connector exchanges source-chiral projections; it is not identified with a prime occupation flip."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.sourceMatrix_occupation",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "independence of occupation parity and source chirality",
+    "coverage_kind": "theorem",
+    "scope": "Uniform source Clifford responses commute with actual prime-occupation grading on the arithmetic factor."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.fullHermiteOperator_sourceMatrix",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "exact source/arithmetic Gaussian operation transport",
+    "coverage_kind": "theorem",
+    "scope": "The full matrix realization of the arithmetic source connector is exactly the original Hermite source connector at the internally generated width and actual label count."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.fullHermiteOperator_entries",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "recovery of every arithmetic-source matrix entry",
+    "coverage_kind": "theorem",
+    "scope": "All cross-history and cross-source-sector entries are recovered exactly from the actual Gaussian/Hermite operator by the proved matrix-coordinate inverse."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.fullHermiteOperator_injective",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "faithful Gaussian realization of complete arithmetic-source matrices",
+    "coverage_kind": "theorem",
+    "scope": "No matrix entry is lost when realized in the finite Hermite corner of the original Gaussian Hilbert space."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.hermiteIsometry_intertwines",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "state-isometric transport of every arithmetic-source operator",
+    "coverage_kind": "theorem",
+    "scope": "An explicit linear isometry into actual Gaussian Hermite states intertwines every full matrix operation on every input, retaining cross-history and cross-source-sector action."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCliffordAction.hermiteIsometry_connector",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCliffordAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "same-source Clifford transport on actual arithmetic states",
+    "coverage_kind": "theorem",
+    "scope": "The actual state isometry intertwines each generated quaternion connector exactly with its original Gaussian/Hermite source operator at the internally generated width."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceComplexAmplitude.matrix_decomposition",
+    "module": "GeneratedFoundations.Operations.SourceComplexAmplitude",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete complex source response",
+    "coverage_kind": "theorem",
+    "scope": "Every two-by-two complex response has its explicit source-real quaternionic decomposition."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceComplexAmplitude.decomposition_unique",
+    "module": "GeneratedFoundations.Operations.SourceComplexAmplitude",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique real-form components",
+    "coverage_kind": "theorem",
+    "scope": "Both real source components of the complex response are uniquely determined."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceCliffordComplex.complexEvenEquiv",
+    "module": "GeneratedFoundations.Operations.SourceCliffordComplex",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete complex even source algebra",
+    "coverage_kind": "theorem",
+    "scope": "The actual complex extension of the generated real even algebra is equivalent to Mat2(C) x Mat2(C)."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.SourceCliffordComplex.connector_covariance",
+    "module": "GeneratedFoundations.Operations.SourceCliffordComplex",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "source-sector congruence",
+    "coverage_kind": "theorem",
+    "scope": "Both independent source-sector responses transform the connector and its adjoint block together."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector_real_decomposition",
+    "module": "GeneratedFoundations.Arithmetic.HistoryComplexConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual complex response completeness",
+    "coverage_kind": "theorem",
+    "scope": "The quaternionic slice is the unique real-form slice of the full complex connector family."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector_on_positive",
+    "module": "GeneratedFoundations.Arithmetic.HistoryComplexConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "positive-sector connector transport",
+    "coverage_kind": "theorem",
+    "scope": "The actual positive inclusion is sent to the actual negative inclusion through the adjoint sector response."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector_on_negative",
+    "module": "GeneratedFoundations.Arithmetic.HistoryComplexConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "negative-sector connector transport",
+    "coverage_kind": "theorem",
+    "scope": "The actual negative inclusion is sent to the actual positive inclusion through the original sector response."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryComplexConnector.sectorCoordinates_connector",
+    "module": "GeneratedFoundations.Arithmetic.HistoryComplexConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "full connector block formula",
+    "coverage_kind": "theorem",
+    "scope": "The exact two-sector action retains every generated history-phase label."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryComplexConnector.hermiteConnector_intertwines",
+    "module": "GeneratedFoundations.Arithmetic.HistoryComplexConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "original Gaussian complex-response transport",
+    "coverage_kind": "theorem",
+    "scope": "The actual state isometry intertwines every complex connector with its original Gaussian/Hermite operator."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEvenResponse.matrix_injective",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEvenResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "faithful independent even response",
+    "coverage_kind": "theorem",
+    "scope": "The complete even source algebra acts faithfully on the actual history-phase source carrier."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEvenResponse.action_connector_covariance",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEvenResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "full arithmetic connector covariance",
+    "coverage_kind": "theorem",
+    "scope": "The independent even responses and their Hilbert adjoints give the exact complete connector congruence."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEvenResponse.hermite_covariance",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEvenResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "Gaussian realization of joint covariance",
+    "coverage_kind": "theorem",
+    "scope": "The same complete connector congruence holds after faithful transport to the original Gaussian space."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.invariant_complete_quotient_exact",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "exact complete phase sequence",
+    "coverage_kind": "theorem",
+    "scope": "The internally constructed invariant subspace and actual quotient form an exact sequence at the complete fibre."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.quotientRetained_apply",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonical retained quotient representative",
+    "coverage_kind": "theorem",
+    "scope": "The quotient is linearly equivalent to the actual zero-average phase detail with its exact representative formula."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.full_reconstruction",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete quotient reconstruction",
+    "coverage_kind": "theorem",
+    "scope": "The phase average and retained quotient representative reconstruct each full input exactly."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.quotient_finrank",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual effective phase dimension",
+    "coverage_kind": "theorem",
+    "scope": "The real quotient dimension is the generated history count times n above positive root n+1."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.descend_existsUnique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual phase quotient universal property",
+    "coverage_kind": "theorem",
+    "scope": "Every linear response annihilating the actual invariant subspace has a unique quotient factor."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence.retained_energy",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseExactSequence",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "weighted quotient energy reconstruction",
+    "coverage_kind": "theorem",
+    "scope": "The original generated probability energy splits exactly into its projected part and retained quotient detail."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseAction.unitary_faithful",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "faithful actual phase transport",
+    "coverage_kind": "theorem",
+    "scope": "Actual finite-kernel translations give a faithful unitary action on the complete coefficient space."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseAction.matrix_action",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "phase matrix and actual Hilbert action",
+    "coverage_kind": "theorem",
+    "scope": "The actual permutation matrix representation equals the phase-translation unitary on every input."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseAction.matrix_kernel",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual phase action kernel",
+    "coverage_kind": "theorem",
+    "scope": "The computed phase-action kernel is trivial, without imposing a physical central-quotient order."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryPhaseAction.matrix_trace",
+    "module": "GeneratedFoundations.Arithmetic.HistoryPhaseAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual phase regular character",
+    "coverage_kind": "theorem",
+    "scope": "The complete phase-action trace is the generated fibre size at zero phase and zero elsewhere."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.exists_anchored_unit_small_response",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual high-root small-response states",
+    "coverage_kind": "theorem",
+    "scope": "For each fixed positive Gaussian observation and each positive tolerance there is an actual unit history state anchored at zero unit-leaf value whose full reaction response and form are smaller than the tolerance."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.no_uniform_anchored_coercivity",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete reaction lower-edge distinction",
+    "coverage_kind": "theorem",
+    "scope": "The actual complete reaction form has no strictly positive coefficient-norm coercivity constant on the unit-anchored subspace. This does not by itself classify the full charge quotient or its action-decay spectrum."
+  },
+    {
+      "name": "GeneratedFoundations.Operations.SourceVacuumTransport.determinantLine_finrank",
+      "module": "GeneratedFoundations.Operations.SourceVacuumTransport",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "source alternating determinant line",
+      "coverage_kind": "theorem",
+      "scope": "The normalized alternating tensor of the two actual Gaussian modes spans a line of complex dimension one."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.SourceVacuumTransport.twistedAction_eq_det_smul_conjugatedAction",
+      "module": "GeneratedFoundations.Operations.SourceVacuumTransport",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete determinant twist",
+      "coverage_kind": "theorem",
+      "scope": "The tensor-twisted action equals the conjugated original source action multiplied by the matrix determinant; the factor is retained for arbitrary matrices."
+    },
+    {
+      "name": "GeneratedFoundations.Operations.SourceVacuumTransport.transport_unique_up_to_phase",
+      "module": "GeneratedFoundations.Operations.SourceVacuumTransport",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "source transport comparison class",
+      "coverage_kind": "theorem",
+      "scope": "Every unitary intertwiner for the stated special-unitary source action differs from the constructed determinant-line transport by one unit complex phase."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceHermitianReadout.coordinatesEquivHermitian",
+      "module": "GeneratedFoundations.Geometry.SourceHermitianReadout",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete source Hermitian coordinates",
+      "coverage_kind": "theorem",
+      "scope": "The real Hermitian part of the same source two-mode matrix algebra has explicit inverse four-coordinate maps."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceLorentzCarrier.posSemidef_iff_futureCone",
+      "module": "GeneratedFoundations.Geometry.SourceLorentzCarrier",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete positive Hermitian cone",
+      "coverage_kind": "theorem",
+      "scope": "The actual positive-semidefinite source matrices are precisely the future determinant cone, including its degenerate boundary."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceLorentzCarrier.coordinateTransform_preserves_form",
+      "module": "GeneratedFoundations.Geometry.SourceLorentzCarrier",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "source determinant-form congruence",
+      "coverage_kind": "theorem",
+      "scope": "Determinant-one congruence preserves the generated Hermitian determinant form."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.HermitianFrames.transition_unique",
+      "module": "GeneratedFoundations.Geometry.HermitianFrames",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "Hermitian chart transition uniqueness",
+      "coverage_kind": "theorem",
+      "scope": "On an actual chart overlap the Hermitian frames determine their unitary relative transition uniquely; all chart hypotheses remain explicit."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.HermitianFrames.frameMatrix_existsUnique",
+      "module": "GeneratedFoundations.Geometry.HermitianFrames",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete unitary frame coordinates",
+      "coverage_kind": "theorem",
+      "scope": "Every unitary matrix is realized by exactly one unitary map of the stated orthonormal Hilbert carrier."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.gaugeAction_inverse",
+      "module": "GeneratedFoundations.Arithmetic.HistoryPhaseFrames",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual dependent phase-bundle inverse",
+      "coverage_kind": "theorem",
+      "scope": "The native phase field acts invertibly on the actual root-indexed coefficient bundle, retaining the base and its fibre norm."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.transition_unique",
+      "module": "GeneratedFoundations.Arithmetic.HistoryPhaseFrames",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "native phase transition uniqueness",
+      "coverage_kind": "theorem",
+      "scope": "Faithfulness of the actual phase action makes the relative phase unique among all competitors on the complete fibre."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.frameMatrix_existsUnique",
+      "module": "GeneratedFoundations.Arithmetic.HistoryPhaseFrames",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual complete arithmetic frame realization",
+      "coverage_kind": "theorem",
+      "scope": "All unitary matrices of the derived complete fibre cardinality have unique frame realizations on that actual arithmetic Hilbert space."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryPhaseFrames.complete_response_invariant",
+      "module": "GeneratedFoundations.Arithmetic.HistoryPhaseFrames",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete arithmetic frame covariance",
+      "coverage_kind": "theorem",
+      "scope": "Simultaneous unitary transport of the state and full response preserves every sesquilinear response, including non-diagonal coefficients."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.relativeResponse_trace",
+      "module": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual relative phase-response trace",
+      "coverage_kind": "theorem",
+      "scope": "The invariant and zero-average projections give the exact trace H*(a+n*b), with H the actual history count and integer competitors a,b."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.primitive_traceFree_iff",
+      "module": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "primitive relative arithmetic weights",
+      "coverage_kind": "theorem",
+      "scope": "The trace-free primitive integer pair on actual dimensions H,H*n is (-n,1) or its simultaneous negative; no physical dimension is imposed."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.generatedResponse_unique",
+      "module": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique oriented relative arithmetic response",
+      "coverage_kind": "theorem",
+      "scope": "The positive detail orientation selects the unique primitive trace-free response. The root-one detail space is degenerate and is not claimed to be a faithful two-sector carrier."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.relativeResponse_phase_covariant",
+      "module": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "native phase covariance of relative response",
+      "coverage_kind": "theorem",
+      "scope": "The actual relative operator commutes with pullback by the native generated phase translations."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.oriented_relative_existsUnique",
+      "module": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique oriented primitive relative pair",
+      "coverage_kind": "theorem",
+      "scope": "Weights (-n,1) are forced by the actual invariant/detail ranks; root one remains degenerate."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge.relativeResponse_energy",
+      "module": "GeneratedFoundations.Arithmetic.HistoryRelativeCharge",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual weighted energy of relative response",
+      "coverage_kind": "theorem",
+      "scope": "The complete phase probability energy splits with squared relative weights because the previously constructed projection and residual are orthogonal."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinIdentification.coordinateEquiv_inner",
+      "module": "GeneratedFoundations.Geometry.SourceSpinIdentification",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "original Gaussian-Haar inner product",
+      "coverage_kind": "theorem",
+      "scope": "The actual ordered polynomial orbit preserves the Gaussian coordinate metric under normalized Haar integration."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinIdentification.sourceUnitary_matrix",
+      "module": "GeneratedFoundations.Geometry.SourceSpinIdentification",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "all source matrices in Haar realization",
+      "coverage_kind": "theorem",
+      "scope": "The original two-mode Gaussian action and degree-one Haar action intertwine for every complex matrix."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceSpinIdentification.spinAction_flow_original",
+      "module": "GeneratedFoundations.Geometry.SourceSpinIdentification",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "source number flow in Haar realization",
+      "coverage_kind": "theorem",
+      "scope": "The same unitary transports the actual Gaussian number flow, including its original finite-corner control."
+    },
+    {
+      "name": "GeneratedFoundations.Correlation.SourceOrigin.common_source_spin",
+      "module": "GeneratedFoundations.Correlation.SourceOrigin",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "single law, Gaussian-Haar carrier and endpoint",
+      "coverage_kind": "theorem",
+      "scope": "The oscillator vacuum density, all matrix responses, ordered basis and endpoint radius have the same positive width and original source law."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryHaarResponse.sectorEquiv_inner",
+      "module": "GeneratedFoundations.Arithmetic.HistoryHaarResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual arithmetic Haar sector metric",
+      "coverage_kind": "theorem",
+      "scope": "Every generated history and finite phase is retained; the original two-mode polynomial identification is applied at every label."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullAction_faithful",
+      "module": "GeneratedFoundations.Arithmetic.HistoryHaarResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete arithmetic Haar action",
+      "coverage_kind": "theorem",
+      "scope": "The full coefficient algebra acts faithfully after an explicit unitary equivalence; cross-label coefficients are retained."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullAction_adjoint",
+      "module": "GeneratedFoundations.Arithmetic.HistoryHaarResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete arithmetic Haar adjoint",
+      "coverage_kind": "theorem",
+      "scope": "Conjugation by the constructed unitary transports the full adjoint."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryHaarResponse.complete_response_invariant",
+      "module": "GeneratedFoundations.Arithmetic.HistoryHaarResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "all coherent Haar cross responses",
+      "coverage_kind": "theorem",
+      "scope": "The complete sesquilinear response of arbitrary states and matrices is invariant under transport."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullUnitary_even",
+      "module": "GeneratedFoundations.Arithmetic.HistoryHaarResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "independent arithmetic Haar sectors",
+      "coverage_kind": "theorem",
+      "scope": "The two arbitrary complex source responses act separately on the two actual source sectors."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullUnitary_connector",
+      "module": "GeneratedFoundations.Arithmetic.HistoryHaarResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual Haar odd connector",
+      "coverage_kind": "theorem",
+      "scope": "The full odd response exchanges the two actual sectors with M and its adjoint on every arithmetic label."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryHaarResponse.haar_dimension",
+      "module": "GeneratedFoundations.Arithmetic.HistoryHaarResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "derived complete Haar dimension",
+      "coverage_kind": "theorem",
+      "scope": "The dimension is four times the actual generated history-phase label count, without a physical multiplicity input."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceQuadraticResponse.responseAlgebra_eq_top",
+      "module": "GeneratedFoundations.Geometry.SourceQuadraticResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete common quadratic response algebra",
+      "coverage_kind": "theorem",
+      "scope": "Explicit source interpolation and actual matrix units generate every degree-two endomorphism."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceJointResponse.responseAlgebra_eq_top",
+      "module": "GeneratedFoundations.Geometry.SourceJointResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete independent common source blocks",
+      "coverage_kind": "theorem",
+      "scope": "Independent responses on the actual symmetric, alternating and spin carriers generate both complete endomorphism blocks."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourceJointResponse.spin_sourceAlgebra_eq_top",
+      "module": "GeneratedFoundations.Geometry.SourceJointResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "defining source algebra",
+      "coverage_kind": "theorem",
+      "scope": "Two explicit defining source elements generate all spin matrix units."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistoryHaarResponse.fullUnitary_inner",
+      "module": "GeneratedFoundations.Arithmetic.HistoryHaarResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complete arithmetic Gaussian-Haar metric",
+      "coverage_kind": "theorem",
+      "scope": "The explicit unitary preserves the complete inner product before an operator or state is selected."
+    },
+    {
+      "name": "GeneratedFoundations.Geometry.SourcePreExchangeResponse.sourceNatural_iff_existsUnique_spinor",
+      "module": "GeneratedFoundations.Geometry.SourcePreExchangeResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "common tensor-source naturality",
+      "coverage_kind": "theorem",
+      "scope": "Two independent actual source actions generate the complete tensor-factor algebra and determine the unique reduced endomorphism."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistorySourceNaturality.natural_iff_existsUnique_source",
+      "module": "GeneratedFoundations.Arithmetic.HistorySourceNaturality",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual history naturality classification",
+      "coverage_kind": "theorem",
+      "scope": "Full matrix-unit commutation is tested on an arbitrary matrix before its unique uniform source factor is inferred."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistorySourceNaturality.haar_source_intertwines",
+      "module": "GeneratedFoundations.Arithmetic.HistorySourceNaturality",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "natural source Gaussian-Haar transport",
+      "coverage_kind": "theorem",
+      "scope": "The inferred source factor is the actual Gaussian sector action and intertwines with its pointwise Haar response."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistorySourceNaturality.reversal_square",
+      "module": "GeneratedFoundations.Arithmetic.HistorySourceNaturality",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "actual pointwise source reversal",
+      "coverage_kind": "theorem",
+      "scope": "The original antilinear source reversal acts at every retained history-phase label and squares to minus identity."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistorySourceNaturality.natural_reversal_iff_unique_doublet",
+      "module": "GeneratedFoundations.Arithmetic.HistorySourceNaturality",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique actual elementary doublet",
+      "coverage_kind": "theorem",
+      "scope": "For an arbitrary complete matrix, actual history naturality and the native reversal equation are equivalent to one unique complex doublet source coordinate."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistorySourceNaturality.natural_reversal_iff_unique_quaternion",
+      "module": "GeneratedFoundations.Arithmetic.HistorySourceNaturality",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique actual source quaternion",
+      "coverage_kind": "theorem",
+      "scope": "The same arbitrary-input classification gives a unique original source quaternion without changing the arithmetic labels."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistorySourceNaturality.canonical_elementary",
+      "module": "GeneratedFoundations.Arithmetic.HistorySourceNaturality",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "generated elementary family",
+      "coverage_kind": "theorem",
+      "scope": "The constructed source family satisfies actual history naturality and reversal compatibility as proved outputs."
+    },
+    {
+      "name": "GeneratedFoundations.Arithmetic.HistorySourceNaturality.elementarySpace_finrank",
+      "module": "GeneratedFoundations.Arithmetic.HistorySourceNaturality",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "derived elementary response dimension",
+      "coverage_kind": "theorem",
+      "scope": "The real response subspace has dimension four, derived from the original reversal equation rather than a physical multiplicity."
+    },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceScalarResponse.frameDoublet_mul",
+    "module": "GeneratedFoundations.Geometry.SourceScalarResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "independent common source frames",
+    "coverage_kind": "theorem",
+    "scope": "Both generated source frames act on the unique doublet coordinate with the exact composition law."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceExchangeResponse.splitTensorUnitary",
+    "module": "GeneratedFoundations.Geometry.SourceExchangeResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "normalized common exchange unitary",
+    "coverage_kind": "theorem",
+    "scope": "The actual tensor source has a normalized orthogonal symmetric--alternating decomposition preserving its complete inner product."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceExchangeResponse.operatorTransport_adjoint",
+    "module": "GeneratedFoundations.Geometry.SourceExchangeResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "common exchange preserves full adjoints",
+    "coverage_kind": "theorem",
+    "scope": "Conjugation by the actual exchange unitary transports every endomorphism and its adjoint, including mixed blocks."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceExchangeResponse.splitSourceNatural_iff_unique_spinor",
+    "module": "GeneratedFoundations.Geometry.SourceExchangeResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "exchange-retained source naturality",
+    "coverage_kind": "theorem",
+    "scope": "Independent source naturality after exchange determines the same unique source response as before exchange."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceExchangeResponse.splitElementary_iff_unique_doublet",
+    "module": "GeneratedFoundations.Geometry.SourceExchangeResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "exchange-retained elementary classification",
+    "coverage_kind": "theorem",
+    "scope": "The actual exchange unitary preserves naturality and the original reversal equation defining the unique doublet coordinate."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.natural_selfAdjoint_odd_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete arithmetic connector classification",
+    "coverage_kind": "theorem",
+    "scope": "An arbitrary full matrix satisfying actual history naturality, self-adjointness and oddness is exactly one uniquely determined complex connector."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.elementary_iff_unique_doublet",
+    "module": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique complete arithmetic doublet connector",
+    "coverage_kind": "theorem",
+    "scope": "The native source reversal selects one unique doublet coordinate on the complete history--phase and two-sector carrier."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.scalarConnector_covariant",
+    "module": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete independent-frame covariance",
+    "coverage_kind": "theorem",
+    "scope": "The complete connector transforms under both independent source frames; no cross-label or cross-sector matrix element is dropped."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.local_elementary_doublets",
+    "module": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "local elementary reconstruction",
+    "coverage_kind": "theorem",
+    "scope": "On the stated comparison patches, compatible arbitrary complete elementary matrices reconstruct unique doublet coordinates on each patch."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.actual_connector_overlap",
+    "module": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual history-frame overlap",
+    "coverage_kind": "theorem",
+    "scope": "History-indexed source frame fields and their internally constructed transitions satisfy exact complete-operator gluing."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.compatibleDoublets_apply_sections",
+    "module": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "local full-state response gluing",
+    "coverage_kind": "theorem",
+    "scope": "Applying compatible full elementary connectors preserves the exact source-frame transition law of complete-state sections."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector.complete_observation",
+    "module": "GeneratedFoundations.Arithmetic.HistoryElementaryConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete elementary Gaussian-Haar response",
+    "coverage_kind": "theorem",
+    "scope": "The original Gaussian realization and the explicit Haar unitary give identical sesquilinear observations for arbitrary complete states."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFrameQuotient.response_kernel_iff",
+    "module": "GeneratedFoundations.Geometry.SourceFrameQuotient",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "calculated native source response kernel",
+    "coverage_kind": "theorem",
+    "scope": "All independent source frames fixing every original doublet are exactly identity or simultaneous minus identity."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFrameQuotient.kernel_card",
+    "module": "GeneratedFoundations.Geometry.SourceFrameQuotient",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "native response kernel cardinality",
+    "coverage_kind": "theorem",
+    "scope": "The kernel is the cyclic subgroup of the calculated central sign and has cardinality two."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFrameQuotient.effectiveResponse_unique",
+    "module": "GeneratedFoundations.Geometry.SourceFrameQuotient",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique effective source response",
+    "coverage_kind": "theorem",
+    "scope": "The response quotient action is determined uniquely by its action on generated frame representatives."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.frame_action_faithful",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "faithful complete arithmetic state action",
+    "coverage_kind": "theorem",
+    "scope": "The independent source frames act faithfully on every actual history-phase carrier."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.state_centralSign",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "retained source sign on full states",
+    "coverage_kind": "theorem",
+    "scope": "The common central sign is minus identity on actual complete states."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.elementary_response_kernel",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete elementary operator kernel",
+    "coverage_kind": "theorem",
+    "scope": "Equality of arbitrary full elementary response operators derives the exact two-element kernel."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.effectiveConjugation_faithful",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "faithful effective action on all responses",
+    "coverage_kind": "theorem",
+    "scope": "The quotient action is faithful on every full matrix, not only the elementary family."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.conjugation_eq_iff_central_difference",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "equality of complete responses modulo the actual centre",
+    "coverage_kind": "theorem",
+    "scope": "Two source frames have the same complete conjugation action exactly when their difference is one of the computed two central signs."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.effectiveConjugation_inner",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "invariant complete response pairing",
+    "coverage_kind": "theorem",
+    "scope": "The effective action preserves the full trace-adjoint pairing on arbitrary complete matrices."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.effectiveEquivRange_apply",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "effective quotient and generated operator image",
+    "coverage_kind": "theorem",
+    "scope": "The canonical quotient-to-image group equivalence evaluates to the actual complete conjugation response."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.generated_realization_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique generated effective realization",
+    "coverage_kind": "theorem",
+    "scope": "Every faithful comparison realization with exactly the generated complete response image has a unique action-compatible group equivalence."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.stateResponse_not_descend",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "full states retain the central lift",
+    "coverage_kind": "theorem",
+    "scope": "The faithful complete state action cannot factor through the response quotient because its central sign acts as minus identity."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.centralDefects_iff_responseCocycle",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "central defects and complete response cocycles",
+    "coverage_kind": "theorem",
+    "scope": "Actual product lifts have only kernel defects exactly when their complete response transitions obey the overlap cocycle."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.centralRelift_defects_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "invariance under actual kernel relifts",
+    "coverage_kind": "theorem",
+    "scope": "Changing overlap lifts by elements of the calculated kernel preserves the central-defect condition."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.quotientFromRealized_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unique effective transition reconstruction",
+    "coverage_kind": "theorem",
+    "scope": "Transitions in the actual generated response image reconstruct one unique quotient transition."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.compatibleSections_inner",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "inner products of full-state local sections",
+    "coverage_kind": "theorem",
+    "scope": "Compatible full-state sections preserve their full inner products on overlaps under the original lifted source action."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.complete_response_inner",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete coherent frame covariance",
+    "coverage_kind": "theorem",
+    "scope": "Simultaneous transformation of arbitrary complete states and the full response operator preserves every sesquilinear observation."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.action_hasDerivAt",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete reaction-action dissipation",
+    "coverage_kind": "theorem",
+    "scope": "The action on the complete history Hilbert space differentiates to minus the squared actual full reaction operator. All incidence cross terms are retained."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow.action_flow_le_initial",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionHilbertFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete reaction-action monotonicity",
+    "coverage_kind": "theorem",
+    "scope": "Forward nonincrease of the complete action at fixed positive Gaussian observation coordinates."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.tail_quadratic_nonneg",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "positive complete root-layer tail",
+    "coverage_kind": "theorem",
+    "scope": "The discarded root layers of the actual norm-convergent reaction operator have nonnegative quadratic form."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.high_root_dissipation_le",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "actual action-relative tail bound",
+    "coverage_kind": "theorem",
+    "scope": "For actual high-root basis states, the squared complete response is bounded by the actual positive-tail norm times the complete reaction form."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.exists_positive_action_small_dissipation",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "positive-action small-dissipation states",
+    "coverage_kind": "theorem",
+    "scope": "At fixed positive Gaussian observation coordinates, actual anchored unit histories have strictly positive full action and arbitrarily small action-relative dissipation."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.no_uniform_action_coercivity",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete anchored reaction spectral edge",
+    "coverage_kind": "theorem",
+    "scope": "No positive constant bounds the squared response below by that constant times the full action on the complete unit-leaf-anchored coefficient carrier."
+  },
+  {
+    "name": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge.no_uniform_exponential_action",
+    "module": "GeneratedFoundations.Analysis.HistoryReactionSpectralEdge",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete anchored action decay classification",
+    "coverage_kind": "theorem",
+    "scope": "No positive uniform exponential forward action rate with prefactor one holds on this full anchored carrier. Different constrained quotients are outside this theorem."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.inner_eq_responseInner",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "inner eq responseInner",
+    "coverage_kind": "theorem",
+    "scope": "The complete response inner product equals its full Hilbert-Schmidt trace."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.unitaryRepresentation_faithful",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unitaryRepresentation faithful",
+    "coverage_kind": "theorem",
+    "scope": "Faithful effective source action on every arithmetic response matrix."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.representation_adjoint",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "representation adjoint",
+    "coverage_kind": "theorem",
+    "scope": "The complete response adjoint is the inverse group action."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.unitaryRepresentation_quotient",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unitaryRepresentation quotient",
+    "coverage_kind": "theorem",
+    "scope": "Quotient representatives give the original complete conjugation formula."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace.unitaryRepresentation_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unitaryRepresentation unique",
+    "coverage_kind": "theorem",
+    "scope": "Uniqueness among unitary actions compatible with the actual quotient formula."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.fullReversal_inner",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "fullReversal inner",
+    "coverage_kind": "theorem",
+    "scope": "Antiunitarity on both complete arithmetic source sectors, including all labels."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.fullReversal_square",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "fullReversal square",
+    "coverage_kind": "theorem",
+    "scope": "The actual source reversal squares to minus the identity."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.haar_intertwines",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "haar intertwines",
+    "coverage_kind": "theorem",
+    "scope": "The original Gaussian-Haar unitary intertwines source reversal at every arithmetic label."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.fullAntiunitary_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "fullAntiunitary unique",
+    "coverage_kind": "theorem",
+    "scope": "Uniqueness among all antiunitaries satisfying the actual source-sector coordinate formula."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.frame_intertwines",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "frame intertwines",
+    "coverage_kind": "theorem",
+    "scope": "Independent generated source frames preserve the complete source antiunitary."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.connector_intertwines",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "connector intertwines",
+    "coverage_kind": "theorem",
+    "scope": "Source reversal commutes with the complete elementary connector including its adjoint block."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.occupation_intertwines",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "occupation intertwines",
+    "coverage_kind": "theorem",
+    "scope": "Source reversal preserves the actual prime-occupation parity."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry.gaussian_intertwines",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalIsometry",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "gaussian intertwines",
+    "coverage_kind": "theorem",
+    "scope": "Source reversal commutes with actual real Gaussian multiplication."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralBlocks.diagonalBlocks_adjoint",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralBlocks",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "diagonalBlocks adjoint",
+    "coverage_kind": "theorem",
+    "scope": "Complete sector-block adjoints for arbitrary sector endomorphisms with cross-history coefficients."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralBlocks.source_blocks",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralBlocks",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "source blocks",
+    "coverage_kind": "theorem",
+    "scope": "The uniform source responses form a proved subfamily of complete sector blocks."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralBlocks.exchange_diagonalBlocks",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralBlocks",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "exchange diagonalBlocks",
+    "coverage_kind": "theorem",
+    "scope": "Actual source exchange swaps arbitrary complete sector blocks."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralBlocks.grading_eq_projections",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralBlocks",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "grading eq projections",
+    "coverage_kind": "theorem",
+    "scope": "Source grading is the difference of its actual orthogonal projections."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.basis_action_entry",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "basis action entry",
+    "coverage_kind": "theorem",
+    "scope": "All complete arithmetic/source matrix coefficients."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.fullMatrixCoordinates_action",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "fullMatrixCoordinates action",
+    "coverage_kind": "theorem",
+    "scope": "Metric coordinates agree with actual matrix reindexing."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.hermiteIsometry_range",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "hermiteIsometry range",
+    "coverage_kind": "theorem",
+    "scope": "Exact finite Hermite span of the full arithmetic carrier."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.hermiteIsometry_left",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "hermiteIsometry left",
+    "coverage_kind": "theorem",
+    "scope": "Explicit Hermite mode for every source-left arithmetic basis vector."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.hermiteIsometry_right",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "hermiteIsometry right",
+    "coverage_kind": "theorem",
+    "scope": "Explicit Hermite mode for every source-right arithmetic basis vector."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates.hermiteIsometry_grading",
+    "module": "GeneratedFoundations.Arithmetic.HistoryChiralCoordinates",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "hermiteIsometry grading",
+    "coverage_kind": "theorem",
+    "scope": "Actual source grading is intertwined with the common Hermite grading."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryResponseFrames.relativeTransition_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryResponseFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "relativeTransition unique",
+    "coverage_kind": "theorem",
+    "scope": "Unique effective transition within the complete generated response action."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryResponseFrames.relativeTransition_unitary_cocycle",
+    "module": "GeneratedFoundations.Arithmetic.HistoryResponseFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "relativeTransition unitary cocycle",
+    "coverage_kind": "theorem",
+    "scope": "Exact cocycle on all response matrix coefficients."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryResponseFrames.relativeTransition_components",
+    "module": "GeneratedFoundations.Arithmetic.HistoryResponseFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "relativeTransition components",
+    "coverage_kind": "theorem",
+    "scope": "Passive response components use the actual effective transition."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryResponseFrames.components_inner",
+    "module": "GeneratedFoundations.Arithmetic.HistoryResponseFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "components inner",
+    "coverage_kind": "theorem",
+    "scope": "Full response inner product is independent of its source frame."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryResponseFrames.changeFrame_canonical",
+    "module": "GeneratedFoundations.Arithmetic.HistoryResponseFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "changeFrame canonical",
+    "coverage_kind": "theorem",
+    "scope": "Canonical identity frame on the actual response total space."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryFrameDeterminant.frame_exists_phase_specialUnitary",
+    "module": "GeneratedFoundations.Arithmetic.HistoryFrameDeterminant",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "frame exists phase specialUnitary",
+    "coverage_kind": "theorem",
+    "scope": "Every unitary of the actual arithmetic fibre has a determinant phase and special-unitary factor at its derived positive dimension."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryFrameDeterminant.frame_decomposition_ambiguity",
+    "module": "GeneratedFoundations.Arithmetic.HistoryFrameDeterminant",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "frame decomposition ambiguity",
+    "coverage_kind": "theorem",
+    "scope": "Exact root-of-unity ambiguity; no continuous choice of determinant root is asserted."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryFrameClassification.generated",
+    "module": "GeneratedFoundations.Arithmetic.HistoryFrameClassification",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated",
+    "coverage_kind": "theorem",
+    "scope": "Canonical arithmetic frame classifications and original source line/pseudoreal classifications on their respective carriers."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFrameConnection.transformedForm_unique",
+    "module": "GeneratedFoundations.Geometry.SourceFrameConnection",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "transformedForm unique",
+    "coverage_kind": "theorem",
+    "scope": "Passive connection transformation is uniquely forced by covariance for all differentiable sections on the stated real patch."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.transportMatrix_eq_gaussian",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianConnection",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "transportMatrix eq gaussian",
+    "coverage_kind": "theorem",
+    "scope": "The finite root-square exponential equals the original Gaussian response."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.transport_hasDerivAt",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianConnection",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "transport hasDerivAt",
+    "coverage_kind": "theorem",
+    "scope": "Actual scale derivative of the complete finite Gaussian operator."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.connection_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianConnection",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "connection unique",
+    "coverage_kind": "theorem",
+    "scope": "Parallelism of all native transported sections uniquely fixes the scale connection."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianConnection.coherent_response_preserved",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianConnection",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "coherent response preserved",
+    "coverage_kind": "theorem",
+    "scope": "Pulled-back fibre metric preserves every coherent operator response."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryResponseFrames.globalCoordinates_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryResponseFrames",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "globalCoordinates unique",
+    "coverage_kind": "theorem",
+    "scope": "Unique coordinates preserving actual base and full response fibre."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLocalizedResponse.compatible_lifts_two_signs",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLocalizedResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "compatible lifts two signs",
+    "coverage_kind": "theorem",
+    "scope": "Computed two-sign ambiguity of compatible response-chart lifts."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLocalizedResponse.compatible_responses_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLocalizedResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "compatible responses iff",
+    "coverage_kind": "theorem",
+    "scope": "Exact equivalence of full matrix and response-Hilbert gluing."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryReversalCharts.commonReversal_existsUnique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryReversalCharts",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "commonReversal existsUnique",
+    "coverage_kind": "theorem",
+    "scope": "Unique complete-fibre antiunitary on compatible overlaps."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourcePseudorealCharts.commonReversal_existsUnique",
+    "module": "GeneratedFoundations.Geometry.SourcePseudorealCharts",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "commonReversal existsUnique",
+    "coverage_kind": "theorem",
+    "scope": "Shared original-source reversal chart theorem with explicit overlap hypotheses."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.ConnectionJetAlgebra.curvature_add",
+    "module": "GeneratedFoundations.Geometry.ConnectionJetAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "curvature add",
+    "coverage_kind": "theorem",
+    "scope": "All mixed commutators in curvature addition remain explicit."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.ConnectionJetAlgebra.curvature_transform",
+    "module": "GeneratedFoundations.Geometry.ConnectionJetAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "curvature transform",
+    "coverage_kind": "theorem",
+    "scope": "Nonlinear curvature covariance derived from the complete connection product rule."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.ConnectionJetAlgebra.bianchi",
+    "module": "GeneratedFoundations.Geometry.ConnectionJetAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "bianchi",
+    "coverage_kind": "theorem",
+    "scope": "Full cyclic identity on symmetric second jets."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.HilbertTraceQuadratic.energy_eq_zero_iff",
+    "module": "GeneratedFoundations.Geometry.HilbertTraceQuadratic",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "energy eq zero iff",
+    "coverage_kind": "theorem",
+    "scope": "The complete finite endomorphism trace form is positive definite."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaugeJets.generated",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaugeJets",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated",
+    "coverage_kind": "theorem",
+    "scope": "Actual source-frame covariant derivative, nonlinear curvature covariance, Bianchi identity and positive invariant density."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.HilbertTraceVariation.energy_quadratic_path",
+    "module": "GeneratedFoundations.Geometry.HilbertTraceVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "energy quadratic path",
+    "coverage_kind": "theorem",
+    "scope": "Exact quartic trace energy with all cross coefficients."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.HilbertTraceVariation.pair_quadratic_linear_hasDerivAt_zero",
+    "module": "GeneratedFoundations.Geometry.HilbertTraceVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "pair quadratic linear hasDerivAt zero",
+    "coverage_kind": "theorem",
+    "scope": "Actual derivative of the complete mixed trace pairing."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.action_first_deriv",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "action first deriv",
+    "coverage_kind": "theorem",
+    "scope": "First derivative of the complete finite arithmetic curvature action."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.action_second_deriv",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "action second deriv",
+    "coverage_kind": "theorem",
+    "scope": "Second derivative retains the background-curvature/commutator contribution."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.action_mixed_deriv",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "action mixed deriv",
+    "coverage_kind": "theorem",
+    "scope": "Actual two-direction mixed derivative of the same action."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.hessian_diagonal",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "hessian diagonal",
+    "coverage_kind": "theorem",
+    "scope": "Mixed Hessian diagonal equals the independently derived second line derivative."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.hessian_flat_eq_zero_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "hessian flat eq zero iff",
+    "coverage_kind": "theorem",
+    "scope": "At flat background the Hessian kernel is exactly vanishing linearized curvature."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation.hessian_changeFrame",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCurvatureVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "hessian changeFrame",
+    "coverage_kind": "theorem",
+    "scope": "Complete nonlinear Hessian is invariant under simultaneous generated frame changes."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.MatrixAdjointCasimir.sandwich_eq",
+    "module": "GeneratedFoundations.Operations.MatrixAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "sandwich eq",
+    "coverage_kind": "theorem",
+    "scope": "Complete matrix-unit sandwich is trace times identity."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.MatrixAdjointCasimir.adjointSum_expansion",
+    "module": "GeneratedFoundations.Operations.MatrixAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "adjointSum expansion",
+    "coverage_kind": "theorem",
+    "scope": "Full paired double commutator expansion retains both sandwich terms."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.MatrixAdjointCasimir.casimir_eq",
+    "module": "GeneratedFoundations.Operations.MatrixAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "casimir eq",
+    "coverage_kind": "theorem",
+    "scope": "Half-normalized full adjoint action is d X minus trace(X) identity."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.MatrixAdjointCasimir.casimir_kernel",
+    "module": "GeneratedFoundations.Operations.MatrixAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "casimir kernel",
+    "coverage_kind": "theorem",
+    "scope": "On a nonempty finite carrier the exact kernel is the scalar subspace."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.scalarConnector_square",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "scalarConnector square",
+    "coverage_kind": "theorem",
+    "scope": "Full actual arithmetic connector squares to source intensity times identity."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.operator_square",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "operator square",
+    "coverage_kind": "theorem",
+    "scope": "The same square identity holds on the complete history-phase Hilbert fibre."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.complete_inner",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete inner",
+    "coverage_kind": "theorem",
+    "scope": "All sesquilinear pairings scale by the same source intensity."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.norm_sq",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "norm sq",
+    "coverage_kind": "theorem",
+    "scope": "The actual connector norm law has no label-count factor."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude.intensity_frame_invariant",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarAmplitude",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "intensity frame invariant",
+    "coverage_kind": "theorem",
+    "scope": "Two independent generated source frames preserve scalar intensity."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension_eq",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "dimension eq",
+    "coverage_kind": "theorem",
+    "scope": "Complete carrier dimension is four times the actual history-label cardinal."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.tracelessUnit_reconstruct",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "tracelessUnit reconstruct",
+    "coverage_kind": "theorem",
+    "scope": "The actual redundant traceless family reconstructs the complete trace-free projection."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.tracelessUnit_spans",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "tracelessUnit spans",
+    "coverage_kind": "theorem",
+    "scope": "Every traceless arithmetic operator is spanned by the actual constructed family."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.casimir_eq",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "casimir eq",
+    "coverage_kind": "theorem",
+    "scope": "The complete actual adjoint action is evaluated on every coefficient."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.casimir_tracelessUnit_real",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "casimir tracelessUnit real",
+    "coverage_kind": "theorem",
+    "scope": "Every constructed traceless direction has the derived real adjoint index."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.operator_kernel",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "operator kernel",
+    "coverage_kind": "theorem",
+    "scope": "The complete Hilbert-operator adjoint kernel is exactly scalar."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.complete_decomposition",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete decomposition",
+    "coverage_kind": "theorem",
+    "scope": "Every actual full operator splits into scalar and traceless parts."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.scalar_traceless_orthogonal",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "scalar traceless orthogonal",
+    "coverage_kind": "theorem",
+    "scope": "The scalar kernel and every traceless direction are trace-orthogonal."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.complete_pair",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete pair",
+    "coverage_kind": "theorem",
+    "scope": "The full Casimir form equals actual dimension times complete traceless energy."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.complete_coercivity",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointCasimir",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete coercivity",
+    "coverage_kind": "theorem",
+    "scope": "The actual trace-free form has lower bound four uniformly over finite cutoffs."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.lieMatrix_image",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "lieMatrix image",
+    "coverage_kind": "theorem",
+    "scope": "The actual real-linear projection has precisely the skew-adjoint traceless image."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.lieMatrix_idempotent",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "lieMatrix idempotent",
+    "coverage_kind": "theorem",
+    "scope": "The generated Lie projection is idempotent."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.lieMatrix_real_smul",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "lieMatrix real smul",
+    "coverage_kind": "theorem",
+    "scope": "The actual skew-traceless projection is real linear in scalar directions."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.commutator_mem",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "commutator mem",
+    "coverage_kind": "theorem",
+    "scope": "The complete generated Lie image is closed under commutators."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.unitary_conjugate_mem",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "unitary conjugate mem",
+    "coverage_kind": "theorem",
+    "scope": "Every unitary frame of the complete carrier preserves the actual Lie image."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.curvature_mem",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "curvature mem",
+    "coverage_kind": "theorem",
+    "scope": "Complete constrained connection curvature stays in its own Lie image."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra.curvature_operatorJet",
+    "module": "GeneratedFoundations.Arithmetic.HistoryLieAlgebra",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "curvature operatorJet",
+    "coverage_kind": "theorem",
+    "scope": "All derivative and nonlinear commutator terms intertwine with the full Hilbert action."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarGluing.doublet_eq_of_response_eq",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarGluing",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "doublet eq of response eq",
+    "coverage_kind": "theorem",
+    "scope": "Equal complete response actions force the same unique scalar doublet action."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarGluing.doublet_kernel_relift",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarGluing",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "doublet kernel relift",
+    "coverage_kind": "theorem",
+    "scope": "Changes of lift in the computed response kernel leave the doublet unchanged."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarGluing.transformed_columns",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarGluing",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "transformed columns",
+    "coverage_kind": "theorem",
+    "scope": "Both transformed columns retain the original pseudoreal relation."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarGluing.doublet_two_routes",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarGluing",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "doublet two routes",
+    "coverage_kind": "theorem",
+    "scope": "Actual central triple defects suffice for scalar two-route overlap consistency."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryScalarGluing.centralRelift_doublets_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryScalarGluing",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "centralRelift doublets iff",
+    "coverage_kind": "theorem",
+    "scope": "Scalar overlap compatibility is invariant under actual response-kernel relifts."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.flow_add_time",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "flow add time",
+    "coverage_kind": "theorem",
+    "scope": "The explicit complete operation-algebra flow has the exact semigroup law."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.flow_hasDerivAt_apply",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "flow hasDerivAt apply",
+    "coverage_kind": "theorem",
+    "scope": "Its pointwise derivative is minus its actual complete Casimir generator."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.trace_flow",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "trace flow",
+    "coverage_kind": "theorem",
+    "scope": "The actual Casimir evolution preserves trace exactly."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction_zero_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "responseAction zero iff",
+    "coverage_kind": "theorem",
+    "scope": "The response action vanishes exactly on the scalar kernel."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction_flow",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "responseAction flow",
+    "coverage_kind": "theorem",
+    "scope": "The full response action has the exact factor exp(-2*d_N*t)."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction_uniform_decay",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "responseAction uniform decay",
+    "coverage_kind": "theorem",
+    "scope": "The action bound exp(-8*t) is uniform over every finite history cutoff."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow.responseAction_flow_deriv",
+    "module": "GeneratedFoundations.Arithmetic.HistoryAdjointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "responseAction flow deriv",
+    "coverage_kind": "theorem",
+    "scope": "The derivative of that same full response action is evaluated exactly."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_scalar_eigenspace_finrank",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated scalar eigenspace finrank",
+    "coverage_kind": "theorem",
+    "scope": "The scalar labels have the multiplicities of the actual closed source Casimir."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_vector_branch_casimir",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated vector branch casimir",
+    "coverage_kind": "theorem",
+    "scope": "Both one-form branches have their computed common-source Casimir."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_vector_branch_finrank",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated vector branch finrank",
+    "coverage_kind": "theorem",
+    "scope": "Each source one-form branch has its representation-theoretic multiplicity."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_spinor_branch_finrank",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated spinor branch finrank",
+    "coverage_kind": "theorem",
+    "scope": "The source spinor branch multiplicities are computed before branch interpretation."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_tt_branch_casimir",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated tt branch casimir",
+    "coverage_kind": "theorem",
+    "scope": "The constrained tensor labels have the computed source Casimir."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.generated_tt_branch_finrank",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated tt branch finrank",
+    "coverage_kind": "theorem",
+    "scope": "The source tensor branches have their actual representation dimensions."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.vector_no_zero_mode",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "vector no zero mode",
+    "coverage_kind": "theorem",
+    "scope": "The source vector labels have no zero mode."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.dirac_no_zero_mode",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "dirac no zero mode",
+    "coverage_kind": "theorem",
+    "scope": "The source Dirac labels have no zero mode."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.ttRoughEigenvalue_ge_lowest",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "ttRoughEigenvalue ge lowest",
+    "coverage_kind": "theorem",
+    "scope": "The tensor rough labels retain the proved lowest value."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceFieldSpectrum.generatedScalarProperties",
+    "module": "GeneratedFoundations.Geometry.SourceFieldSpectrum",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generatedScalarProperties",
+    "coverage_kind": "theorem",
+    "scope": "The actual scalar spectral anchor is part of the shared mathematical entry."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.curvatureTerm_summable",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "curvatureTerm summable",
+    "coverage_kind": "theorem",
+    "scope": "One uniform p-series majorant controls the complete nonnegative-intensity curvature."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.responseTerm_summable",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "responseTerm summable",
+    "coverage_kind": "theorem",
+    "scope": "The complete shell response is summable at every nonnegative intensity."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.completeResponse_continuousOn_Icc",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "completeResponse continuousOn Icc",
+    "coverage_kind": "theorem",
+    "scope": "The complete scalar response is continuous on each compact nonnegative interval."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.completeResponse_strictMonoOn",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "completeResponse strictMonoOn",
+    "coverage_kind": "theorem",
+    "scope": "The complete response is strictly increasing on the nonnegative intensity axis."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.completeResponse_unboundedAbove",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "completeResponse unboundedAbove",
+    "coverage_kind": "theorem",
+    "scope": "Finite shell counts force the complete response to be unbounded above."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.existsUnique_completeResponse_root",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "existsUnique completeResponse root",
+    "coverage_kind": "theorem",
+    "scope": "Every positive target has one positive root of this same geometric response."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.canonicalAmplitude_unique",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonicalAmplitude unique",
+    "coverage_kind": "theorem",
+    "scope": "The existing unit-response normalization uniquely selects the canonical amplitude."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.canonicalRadialGap_pos",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonicalRadialGap pos",
+    "coverage_kind": "theorem",
+    "scope": "The scalar response at that generated balance has a strictly positive bottom."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalResponse.canonicalRadialGap_le_massIndex",
+    "module": "GeneratedFoundations.Geometry.SourceConformalResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "canonicalRadialGap le massIndex",
+    "coverage_kind": "theorem",
+    "scope": "The same positive bottom bounds every label in the complete scalar tower."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalVariation.completeResponse_hasDerivAt",
+    "module": "GeneratedFoundations.Geometry.SourceConformalVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "completeResponse hasDerivAt",
+    "coverage_kind": "theorem",
+    "scope": "Differentiation of the complete sum is justified by its summable shell majorant."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalVariation.potential_hasDerivAt",
+    "module": "GeneratedFoundations.Geometry.SourceConformalVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "potential hasDerivAt",
+    "coverage_kind": "theorem",
+    "scope": "The integrated complete potential has the original restoring response as its derivative."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalVariation.potential_secondDeriv",
+    "module": "GeneratedFoundations.Geometry.SourceConformalVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "potential secondDeriv",
+    "coverage_kind": "theorem",
+    "scope": "The actual second derivative equals the complete shell curvature."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalVariation.stationary_iff_canonical",
+    "module": "GeneratedFoundations.Geometry.SourceConformalVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "stationary iff canonical",
+    "coverage_kind": "theorem",
+    "scope": "Stationarity of the integrated potential selects precisely the canonical positive amplitude."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalVariation.existsUnique_stationary",
+    "module": "GeneratedFoundations.Geometry.SourceConformalVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "existsUnique stationary",
+    "coverage_kind": "theorem",
+    "scope": "The complete potential has exactly one positive stationary intensity."
+  },
+  {
+    "name": "GeneratedFoundations.Geometry.SourceConformalVariation.potential_curvature_pos",
+    "module": "GeneratedFoundations.Geometry.SourceConformalVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "potential curvature pos",
+    "coverage_kind": "theorem",
+    "scope": "Its second derivative is strictly positive on the full positive intensity domain."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction.action_mixed_secondDeriv_zero",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "action mixed secondDeriv zero",
+    "coverage_kind": "theorem",
+    "scope": "Successive actual derivatives of the complete nonlinear connection-state action give its vacuum mixed block."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction.hessian_operator",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarCoupledAction",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "hessian operator",
+    "coverage_kind": "theorem",
+    "scope": "The actual nonlinear action Hessian equals the differential field operator and full defining-state response on the smooth core."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointCore.finiteOperator_eq_differentialCore",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointCore",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "finiteOperator eq differentialCore",
+    "coverage_kind": "theorem",
+    "scope": "The complete finite smooth core agrees with the independently constructed differential operator."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.operator_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "operator unique",
+    "coverage_kind": "theorem",
+    "scope": "The complete field-state differential core has a unique self-adjoint extension."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.domain_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "domain iff",
+    "coverage_kind": "theorem",
+    "scope": "The exact joint closed-operator domain retains the complete unbounded field component and finite state component."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.operator_components",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "operator components",
+    "coverage_kind": "theorem",
+    "scope": "The complete closed Hessian acts by the actual field and state operators on its proved domain."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.gapSq_lower",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "gapSq lower",
+    "coverage_kind": "theorem",
+    "scope": "The attained complete joint Hessian bottom is uniformly at least 15/8 for every arithmetic cutoff."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.gap_attained",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "gap attained",
+    "coverage_kind": "theorem",
+    "scope": "The bottom min(4,c_N) is attained by an actual unit basis vector in the operator domain."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian.action_secondDeriv",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointHessian",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "action secondDeriv",
+    "coverage_kind": "theorem",
+    "scope": "The complete joint closed operator agrees with the action second derivative on its actual core."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointEquation.generated",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointEquation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated",
+    "coverage_kind": "theorem",
+    "scope": "The closed-domain Euler equation, polarization and unique quadratic equilibrium follow from the actual joint Hessian."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointFlow.flow_uniform_decay",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "flow uniform decay",
+    "coverage_kind": "theorem",
+    "scope": "The complete joint field-state norm decays at least as exp(-15*t/8), uniformly in arithmetic cutoff."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointFlow.rightGenerator_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointFlow",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "rightGenerator iff",
+    "coverage_kind": "theorem",
+    "scope": "An actual right derivative exists exactly on the proved domain and equals minus the complete joint operator."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryHaarJointFock.generated",
+    "module": "GeneratedFoundations.Arithmetic.HistoryHaarJointFock",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated",
+    "coverage_kind": "theorem",
+    "scope": "Finite occupations of the full joint eigenbasis have additive energy, unique vacuum, attained gap and actual heat weights."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.representation_faithful",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "representation faithful",
+    "coverage_kind": "theorem",
+    "scope": "Both source frames and the rank-dependent relative circle act faithfully on the complete state carrier at positive cutoff."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.factorClosure_eq_generated",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "factorClosure eq generated",
+    "coverage_kind": "theorem",
+    "scope": "The actual image is precisely the least group generated by the three source factor actions."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.presentation_factorization_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "presentation factorization unique",
+    "coverage_kind": "theorem",
+    "scope": "The three factor coordinates of the complete joint presentation are unique."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.coordinates_roundtrip",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "coordinates roundtrip",
+    "coverage_kind": "theorem",
+    "scope": "Complete history-phase/source coordinate transport has its actual inverse."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup.tripleDefect_kernel_iff",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "tripleDefect kernel iff",
+    "coverage_kind": "theorem",
+    "scope": "The actual triple-overlap defect is in the state kernel exactly when the presentation cocycle closes."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCompleteConnector.connector_joint_covariant",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCompleteConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "connector joint covariant",
+    "coverage_kind": "theorem",
+    "scope": "The complete elementary connector transforms under both source frames and the actual relative circle before any projection."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCompleteConnector.complete_response",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCompleteConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complete response",
+    "coverage_kind": "theorem",
+    "scope": "The full connector transport preserves arbitrary coherent sesquilinear observations."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCompleteConnector.circle_neutralSection",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCompleteConnector",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "circle neutralSection",
+    "coverage_kind": "theorem",
+    "scope": "The actual canonical neutral section is fixed by the generated circle; no invariance under arbitrary source exchange is imposed."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentrePotential.equilibrium_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentrePotential",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "equilibrium unique",
+    "coverage_kind": "theorem",
+    "scope": "The actual closed-centre potential has zero as its unique stationary coordinate."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentreJointVariation.action_ray_secondDeriv_zero",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentreJointVariation",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "action ray secondDeriv zero",
+    "coverage_kind": "theorem",
+    "scope": "The centre-curvature joint action has its actual second variation with retained channel terms."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentreNormalization.normalizedForce_hasDerivAt",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentreNormalization",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "normalizedForce hasDerivAt",
+    "coverage_kind": "theorem",
+    "scope": "The derivative of the normalized centre force is the actual response projection."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentreNormalization.responseToConstant_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentreNormalization",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "responseToConstant unique",
+    "coverage_kind": "theorem",
+    "scope": "The one-dimensional normalized response isometry is unique in its stated generator-preserving class."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCentreNormalization.responseToConstant_intertwines",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCentreNormalization",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "responseToConstant intertwines",
+    "coverage_kind": "theorem",
+    "scope": "The same isometry intertwines the actual normalized evolution."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance.componentVariance_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "componentVariance unique",
+    "coverage_kind": "theorem",
+    "scope": "Isotropic variance is uniquely determined by the actual full coefficient count and fixed total intensity."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance.transverseAction_eq",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "transverseAction eq",
+    "coverage_kind": "theorem",
+    "scope": "The complete transverse Casimir sum is the computed scalar on the actual traceless response."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance.transverseShift_affine",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "transverseShift affine",
+    "coverage_kind": "theorem",
+    "scope": "The actual transverse response is affine in source intensity with its actual computed coefficient."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance.closed_variance",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianCovariance",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "closed variance",
+    "coverage_kind": "theorem",
+    "scope": "The closed source-centre intensity fixes the actual normalized component variance."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse.coefficient_pos",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "coefficient pos",
+    "coverage_kind": "theorem",
+    "scope": "The actual finite joint-Hessian Gaussian response coefficient is positive for a positive observation level and nonempty observed set."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse.existsUnique_responseRoot",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "existsUnique responseRoot",
+    "coverage_kind": "theorem",
+    "scope": "The actual arithmetic spectral response has one positive algebraic root; no identification with a physical radius is assumed."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse.consume_interval",
+    "module": "GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "consume interval",
+    "coverage_kind": "theorem",
+    "scope": "An interval enclosing the actual spectral integral yields the corresponding exact algebraic root interval."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryResponseCertificates.gapMass_unique",
+    "module": "GeneratedFoundations.Arithmetic.HistoryResponseCertificates",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "gapMass unique",
+    "coverage_kind": "theorem",
+    "scope": "The computed dimensionless Hessian bottom has a unique nonnegative square root."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryResponseCertificates.consume_gap_interval",
+    "module": "GeneratedFoundations.Arithmetic.HistoryResponseCertificates",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "consume gap interval",
+    "coverage_kind": "theorem",
+    "scope": "Squared interval bounds on the actual Hessian bottom yield the dimensionless mass interval."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistorySignedCurvature.density_local_covariance",
+    "module": "GeneratedFoundations.Arithmetic.HistorySignedCurvature",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "density local covariance",
+    "coverage_kind": "theorem",
+    "scope": "The signed centre contraction of full arithmetic curvature is covariant under the actual local generated frames."
+  },
+  {
+    "name": "GeneratedFoundations.Arithmetic.HistoryCurvatureScaling.full_density_scale",
+    "module": "GeneratedFoundations.Arithmetic.HistoryCurvatureScaling",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "full density scale",
+    "coverage_kind": "theorem",
+    "scope": "The full finite curvature density retains its exact quadratic, cubic interference and quartic scaling terms."
   }
 ],
   "planned": [

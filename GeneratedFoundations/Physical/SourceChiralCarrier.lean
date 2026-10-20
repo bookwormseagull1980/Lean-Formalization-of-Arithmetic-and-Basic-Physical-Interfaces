@@ -3,6 +3,9 @@ module
 public import GeneratedFoundations.Physical.SourceMinimalRepresentation
 public import GeneratedFoundations.Physical.SourceCliffordConnector
 public import GeneratedFoundations.Physical.SourceSpinIdentification
+public import GeneratedFoundations.Operations.OrthonormalCoordinates
+public import GeneratedFoundations.Geometry.SourceSpinCoordinates
+public import GeneratedFoundations.Geometry.SourceFactorBases
 public import Mathlib.Analysis.InnerProductSpace.ProdL2
 public import Mathlib.Analysis.InnerProductSpace.TensorProduct
 public import Mathlib.Logic.Equiv.Fin.Basic
@@ -305,12 +308,7 @@ theorem grading_right (x : SourceCarrier) : grading (rightInclusion x) = -rightI
   apply WithLp.ofLp_injective 2
   simp [WithLp.ofLp_neg]
 
-/-- The colour and retained-line coordinates are chosen separately. -/
-def colourBasis : OrthonormalBasis (Fin 3) ℂ W :=
-  (stdOrthonormalBasis ℂ W).reindex (finCongr (hilbertCarrier_finrank 2))
-
-def lineBasis : OrthonormalBasis (Fin 1) ℂ L :=
-  (stdOrthonormalBasis ℂ L).reindex (finCongr (hilbertCarrier_finrank 0))
+export GeneratedFoundations.Geometry.SourceFactorBases (colourBasis lineBasis)
 
 /-- This is the source-normalized degree-one basis, including its vacuum phase convention. -/
 def spinBasis : OrthonormalBasis (Fin 2) ℂ S := SourceSpinIdentification.spinBasis
@@ -350,36 +348,16 @@ def fullBasis : OrthonormalBasis FullIndex ℂ FullMatter :=
 def sourceCoordinates : SourceCarrier ≃ₗᵢ[ℂ] EuclideanSpace ℂ SourceIndex := sourceBasis.repr
 def fullCoordinates : FullMatter ≃ₗᵢ[ℂ] EuclideanSpace ℂ FullIndex := fullBasis.repr
 
-def spinMatrixCoordinates : Module.End ℂ S ≃⋆ₐ[ℂ] Matrix (Fin 2) (Fin 2) ℂ :=
-  LinearMap.toMatrixOrthonormal spinBasis
-
-theorem spinMatrixCoordinates_apply (h : Module.End ℂ S) (i j : Fin 2) :
-    spinMatrixCoordinates h i j = inner ℂ (spinBasis i) (h (spinBasis j)) :=
-  LinearMap.toMatrixOrthonormal_apply_apply spinBasis h i j
-
-theorem spinMatrixCoordinates_adjoint (h : Module.End ℂ S) :
-    spinMatrixCoordinates h.adjoint = (spinMatrixCoordinates h).conjTranspose := by
-  change spinMatrixCoordinates (star h) = star (spinMatrixCoordinates h)
-  exact map_star spinMatrixCoordinates h
-
-/-- These matrix coordinates use the same phase frame as the actual Gaussian control. -/
-theorem spinMatrixCoordinates_spinAction (M : Matrix (Fin 2) (Fin 2) ℂ) :
-    spinMatrixCoordinates (SourceSpinIdentification.spinAction M) = M :=
-  SourceSpinIdentification.spinAction_matrix M
-
-theorem spinMatrixCoordinates_sourceOperator
-    (U : Operations.SourceSpinCornerGroup.SU2) :
-    spinMatrixCoordinates (sourceOperator 1 U) =
-      (U : Operations.SourceSpinCorner.Mat2) := by
-  rw [← SourceSpinIdentification.spinAction_sourceOperator]
-  exact spinMatrixCoordinates_spinAction _
+export GeneratedFoundations.Geometry.SourceSpinCoordinates (
+    spinMatrixCoordinates spinMatrixCoordinates_apply spinMatrixCoordinates_adjoint
+    spinMatrixCoordinates_spinAction spinMatrixCoordinates_sourceOperator)
 
 theorem sourceBasis_spin_entry (h : Module.End ℂ S)
     (c d : ColourLabel) (i j : SpinLabel) :
     inner ℂ (sourceBasis (c, i)) (spinOnSource h (sourceBasis (d, j))) =
       (if c = d then 1 else 0) * spinMatrixCoordinates h i j := by
   cases c <;> cases d <;>
-    simp [WithLp.prod_inner_apply, spinMatrixCoordinates_apply,
+    simp [WithLp.prod_inner_apply, spinMatrixCoordinates_apply, spinBasis,
       OrthonormalBasis.inner_eq_ite, TensorProduct.inner_tmul]
 
 /-- The common `I ⊗ h` is visible entry by entry on both original tensor sectors. -/
@@ -452,17 +430,8 @@ theorem fullMatrixCoordinates_grading :
   simp only [finSumFinEquiv.symm.injective.eq_iff, SourceCliffordConnector.colourGrading,
     Matrix.kronecker_apply, Matrix.one_apply]
 
-/-- The quaternion matrix acts on the actual source spin Hilbert space through its fixed basis. -/
-def quaternionSpin (q : ℍ) : Module.End ℂ S :=
-  spinMatrixCoordinates.symm (Geometry.SourceQuaternionAmplitude.matrixMap q)
-
-theorem quaternionSpin_eq_sourceAction (q : ℍ) :
-    quaternionSpin q = SourceSpinIdentification.spinAction
-      (Geometry.SourceQuaternionAmplitude.matrixMap q) := by
-  apply spinMatrixCoordinates.injective
-  exact (spinMatrixCoordinates.apply_symm_apply
-    (Geometry.SourceQuaternionAmplitude.matrixMap q)).trans
-      (spinMatrixCoordinates_spinAction (Geometry.SourceQuaternionAmplitude.matrixMap q)).symm
+export GeneratedFoundations.Geometry.SourceSpinCoordinates (
+    quaternionSpin quaternionSpin_eq_sourceAction)
 
 theorem fullMatrixCoordinates_quaternion (q : ℍ) :
     fullMatrixCoordinates (connector (quaternionSpin q)) =
@@ -502,11 +471,7 @@ def hermiteLinear {b : ℝ} (hb : 0 < b) : FullMatter →ₗ[ℂ] ComplexL2 :=
   hermiteBasis.toBasis.constr ℂ
     (fun i => state hb (SourceCliffordConnector.sourceMode i))
 
-theorem orthonormal_constr_basis {ι E F : Type*} [Fintype ι]
-    [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-    [AddCommGroup F] [Module ℂ F] (e : OrthonormalBasis ι ℂ E)
-    (v : ι → F) (i : ι) : e.toBasis.constr ℂ v (e i) = v i :=
-  e.toBasis.constr_basis ℂ v i
+export GeneratedFoundations.Operations.OrthonormalCoordinates (orthonormal_constr_basis)
 
 @[simp] theorem hermiteLinear_basis {b : ℝ} (hb : 0 < b)
     (i : SourceCliffordConnector.ColourIndex 4) :
@@ -520,12 +485,7 @@ theorem hermiteLinear_orthonormal {b : ℝ} (hb : 0 < b) :
     (SourceCliffordConnector.sourceMode_injective 4)
   simpa only [Function.comp_def, hermiteLinear_basis] using h
 
-def orthonormalLinearIsometry {ι E F : Type*} [Fintype ι]
-    [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-    [NormedAddCommGroup F] [InnerProductSpace ℂ F]
-    (e : OrthonormalBasis ι ℂ E) (f : E →ₗ[ℂ] F)
-    (hf : Orthonormal ℂ (f ∘ e)) : E →ₗᵢ[ℂ] F :=
-  f.isometryOfOrthonormal (v := e.toBasis) e.orthonormal hf
+export GeneratedFoundations.Operations.OrthonormalCoordinates (orthonormalLinearIsometry)
 
 def hermiteIsometry {b : ℝ} (hb : 0 < b) : FullMatter →ₗᵢ[ℂ] ComplexL2 :=
   orthonormalLinearIsometry hermiteBasis (hermiteLinear hb) (hermiteLinear_orthonormal hb)
@@ -580,18 +540,8 @@ theorem hermiteIsometry_range {b : ℝ} (hb : 0 < b) :
   change LinearMap.range (hermiteBasis.toBasis.constr ℂ _) = _
   exact hermiteBasis.toBasis.constr_range ℂ
 
-theorem orthonormalBasis_linearMap_ext {ι E F : Type*} [Fintype ι]
-    [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-    [AddCommGroup F] [Module ℂ F] (e : OrthonormalBasis ι ℂ E)
-    (f g : E →ₗ[ℂ] F) (h : ∀ i, f (e i) = g (e i)) : f = g :=
-  e.toBasis.ext h
-
-theorem orthonormalBasis_map_expansion {ι E F : Type*} [Fintype ι]
-    [NormedAddCommGroup E] [InnerProductSpace ℂ E]
-    [AddCommGroup F] [Module ℂ F] (e : OrthonormalBasis ι ℂ E)
-    (f : E →ₗ[ℂ] F) (x : E) : f x = ∑ i, e.repr x i • f (e i) := by
-  conv_lhs => rw [← e.sum_repr x]
-  simp only [map_sum, map_smul]
+export GeneratedFoundations.Operations.OrthonormalCoordinates (
+    orthonormalBasis_linearMap_ext orthonormalBasis_map_expansion)
 
 theorem hermiteIsometry_intertwines_basis {b : ℝ} (hb : 0 < b)
     (A : Module.End ℂ FullMatter) (j : SourceCliffordConnector.ColourIndex 4) :

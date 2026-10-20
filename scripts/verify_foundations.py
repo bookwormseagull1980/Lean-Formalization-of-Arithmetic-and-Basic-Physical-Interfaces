@@ -37,8 +37,10 @@ EXPECTED_TOOLCHAIN = "leanprover/lean4:v4.34.0"
 EXPECTED_VERSION = "4.34.0"
 EXPECTED_MATHLIB_REV = "5ed2965256430c3649e86755f9576b54eca72435"
 LIBRARY = "GeneratedFoundations"
+BUILD_BATCH_SIZE = 2
 ALLOWED_AXIOMS = frozenset({"propext", "Classical.choice", "Quot.sound"})
 ENVIRONMENT_PREFIX = "FOUNDATIONS_ENVIRONMENT "
+NAMED_PREFIX = "FOUNDATIONS_NAMED "
 ENVIRONMENT_METHOD = "import_all_local_modules_then_enumerate_environment_constants"
 # Ordinary Lean identifiers may contain Unicode letters and numeric subscripts.
 # Keep the whole identifier when generating the kernel's declaration audit.
@@ -145,9 +147,28 @@ audit of private, local, anonymous-instance and macro-generated constants.
 """
     scopes: list[tuple[str, str]] = []
     names: set[str] = set()
+    exported: list[str] | None = None
     for line in code.splitlines():
         stripped = line.strip()
         stripped = re.sub(r"^(?:@\[[^\]]*\]\s*)+", "", stripped)
+        # Re-exported compatibility names remain part of the public source
+        # API. They resolve to the original common proof in Lean, and must
+        # not disappear from branch inventories when that proof is moved.
+        export = re.match(rf"^export\s+{NAME}\s*\((.*)$", stripped)
+        if export:
+            exported = []
+            stripped = export.group(1)
+        if exported is not None:
+            closed = ")" in stripped
+            exported.extend(stripped.split(")", 1)[0].split())
+            if closed:
+                prefix = ".".join(value for kind, value in scopes if kind == "namespace")
+                for name in exported:
+                    if not re.fullmatch(NAME, name):
+                        raise VerificationError(f"Unsupported exported declaration name: {name}")
+                    names.add(f"{prefix}.{name}" if prefix else name)
+                exported = None
+            continue
         scope = re.match(rf"^(?:(?:noncomputable|public|private)\s+)*(namespace|section)\b(?:\s+({NAME}))?", stripped)
         if scope:
             scopes.append((scope.group(1), scope.group(2) or ""))
@@ -174,6 +195,8 @@ audit of private, local, anonymous-instance and macro-generated constants.
                 prefix = ".".join(value for kind, value in scopes if kind == "namespace")
                 name = f"{prefix}.{name}" if prefix else name
             names.add(name)
+    if exported is not None:
+        raise VerificationError("Unterminated export declaration list")
     return names
 
 
@@ -301,6 +324,16 @@ def audit_source(state: SourceState) -> str:
               "meta section", "open Lean Elab Command", "",
               'elab "foundations_progress " stage:str : command => do',
               '  IO.eprintln s!"FOUNDATIONS_PROGRESS {stage.getString} at {← IO.monoMsNow} ms"',
+              '',
+              'elab "foundations_named_axioms " requested:str id:ident : command => do',
+              '  let names ← liftCoreM <| realizeGlobalConstWithInfos id',
+              '  unless names.length == 1 do',
+              '    throwError "Expected one resolved declaration for {requested.getString}"',
+              '  let name := names.head!',
+              '  let axioms ← Lean.collectAxioms name',
+              f'  IO.println ("{NAMED_PREFIX}" ++ (Json.mkObj',
+              '    [("name", toJson requested.getString), ("resolved", toJson name.toString),',
+              '     ("axioms", toJson (axioms.map Name.toString))]).compress)',
               "end", "",
               f'foundations_progress "named declarations 0/{len(state.declarations)}"']
     for position, name in enumerate(state.declarations, 1):
@@ -309,7 +342,7 @@ def audit_source(state: SourceState) -> str:
         # transitive axiom inventory do not depend on pretty-printing options.
         lines += ["set_option pp.all false in", f"#check {name}",
                   "set_option pp.all false in", "set_option pp.universes false in",
-                  f"#print axioms {name}"]
+                  f"#print axioms {name}", f'foundations_named_axioms "{name}" {name}']
         if position % 250 == 0 or position == len(state.declarations):
             lines.append(f'foundations_progress "named declarations {position}/{len(state.declarations)}"')
     module_names = ", ".join(f"`{module}" for module in sorted(state.modules))
@@ -401,7 +434,44 @@ def module_build_order(state: SourceState) -> tuple[str, ...]:
     return tuple(ordered)
 
 
+def named_axiom_records(output: str, expected: tuple[str, ...]) -> dict[str, dict]:
+    """Read Lean's resolved names, including exports which add no new constant.
+
+    An alias is checked by Lean's name resolver, then linked to its actual
+    compiled constant. The full environment audit still checks that constant,
+    its origin module and every transitive axiom independently of source names.
+    """
+    records = {}
+    expected_names = set(expected)
+    for line in output.splitlines():
+        if not line.startswith(NAMED_PREFIX):
+            continue
+        try:
+            item = json.loads(line[len(NAMED_PREFIX):])
+        except json.JSONDecodeError as exc:
+            raise VerificationError("Malformed resolved declaration report") from exc
+        if (not isinstance(item, dict) or set(item) != {"name", "resolved", "axioms"}
+                or not isinstance(item.get("name"), str) or item["name"] not in expected_names
+                or item["name"] in records or not isinstance(item.get("resolved"), str)
+                or not re.fullmatch(NAME, item["resolved"])
+                or not isinstance(item.get("axioms"), list)
+                or not all(isinstance(ax, str) for ax in item["axioms"])
+                or len(set(item["axioms"])) != len(item["axioms"])):
+            raise VerificationError("Invalid or repeated resolved declaration report")
+        unexpected = set(item["axioms"]) - ALLOWED_AXIOMS
+        if unexpected:
+            raise VerificationError(
+                f"Disallowed transitive axioms for {item['name']}: {sorted(unexpected)}")
+        records[item["name"]] = item
+    if records and set(records) != expected_names:
+        raise VerificationError("Incomplete resolved declaration coverage")
+    return records
+
+
 def check_axiom_output(output: str, expected: tuple[str, ...]) -> dict[str, list[str]]:
+    resolved = named_axiom_records(output, expected)
+    if resolved:
+        return {name: sorted(item["axioms"]) for name, item in resolved.items()}
     # Scan the audit log once: rescanning it for every declaration makes the
     # parser quadratic in a complete library's otherwise modest report size.
     reports: dict[str, list[str]] = {name: [] for name in expected}
@@ -481,14 +551,17 @@ def check_environment_output(output: str, state: SourceState) -> tuple[dict, dic
             raise VerificationError("Unexpected compiled environment event")
     if module_counts != actual_counts or first["count"] != len(declarations):
         raise VerificationError("Compiled environment module or declaration coverage is incomplete")
-    missing = set(state.declarations) - declarations.keys()
+    resolved = named_axiom_records(output, state.declarations)
+    name_map = {name: resolved[name]["resolved"] if resolved else name for name in state.declarations}
+    missing = set(name_map.values()) - declarations.keys()
     if missing:
         raise VerificationError(f"Named declarations missing from compiled environment: {sorted(missing)}")
     named_axioms = check_axiom_output(output, state.declarations)
-    if any(axioms[name] != used for name, used in named_axioms.items()):
+    if any(axioms[name_map[name]] != used for name, used in named_axioms.items()):
         raise VerificationError("Named and complete environment axiom reports disagree")
     return ({"method": ENVIRONMENT_METHOD, "modules": dict(sorted(module_counts.items())),
              "declarations": dict(sorted(declarations.items())),
+             "named_resolutions": dict(sorted(name_map.items())),
              "independent_checker": "not_run"}, dict(sorted(axioms.items())))
 
 
@@ -663,6 +736,40 @@ def tool_evidence(lake: str, project: Path, timeout: int) -> dict[str, str]:
             "lean_sha256": sha256_file(lean), "lake_sha256": sha256_file(Path(lake))}
 
 
+def affected_build_order(state: SourceState, order: tuple[str, ...], output: str) -> tuple[str, ...]:
+    """Restrict rebuilds to the stale local frontier and its dependents.
+
+    Lake still checks the entire library before and after these rebuilds.
+    Unrecognized output falls back to the complete topological order; this
+    optimization never establishes freshness or replaces the compiled audit.
+    """
+    reported = set(re.findall(r"\bBuilding ([\w.]+)", output))
+    if not reported or not reported <= state.modules.keys():
+        return order
+    affected = set(reported)
+    for module in order:
+        code = lean_code(state.modules[module].read_text(encoding="utf-8-sig"))
+        if imports(code) & affected:
+            affected.add(module)
+    return tuple(module for module in order if module in affected)
+
+
+def module_build_batches(state: SourceState, order: tuple[str, ...]) -> tuple[tuple[str, ...], ...]:
+    """Batch only independent ready targets; never race an unfinished import."""
+    pending = set(order)
+    dependencies = {module: imports(lean_code(state.modules[module].read_text(encoding="utf-8-sig")))
+                    & pending for module in order}
+    batches = []
+    while pending:
+        batch = tuple(module for module in order
+                      if module in pending and not dependencies[module] & pending)[:BUILD_BATCH_SIZE]
+        if not batch:
+            raise VerificationError("Local import cycle prevents a ready build batch")
+        batches.append(batch)
+        pending.difference_update(batch)
+    return tuple(batches)
+
+
 def build_modules(lake: str, project: Path, state: SourceState, timeout: int) -> tuple[str, tuple[str, ...]]:
     # Computing the complete graph first preserves cycle detection on a fresh build.
     order = module_build_order(state)
@@ -677,16 +784,25 @@ def build_modules(lake: str, project: Path, state: SourceState, timeout: int) ->
         raise VerificationError(f"Lake freshness check failed with exit code {code}")
     # In pinned Lake 4.34.0, code 3 requests a rebuild. It can coexist with other
     # errors, so it never establishes success or justifies skipping any target.
-    # One module per process also limits Lake's independent compiler jobs.
-    # Lean's own worker limit alone does not serialize a multi-target build.
-    for module in order:
-        output = run([lake, "--no-cache", "build", "+" + module], project, timeout)
+    # Submit bounded batches in topological order. Imports outside a batch have
+    # already been built (or were fresh at the probe); independent targets can
+    # compile together without starting the entire stale frontier at once.
+    # Lean's worker limit alone does not bound Lake's compiler subprocesses.
+    rebuild_order = affected_build_order(state, order, output)
+    print(f"BATCH REBUILD: {len(rebuild_order)} affected local modules of {len(order)}; up to {BUILD_BATCH_SIZE} targets per batch; complete library check retained.", flush=True)
+    warning_targets = []
+    for batch in module_build_batches(state, rebuild_order):
+        output = run([lake, "--no-cache", "build"] + ["+" + module for module in batch], project, timeout)
         if re.search(r"\bwarning:", output, re.IGNORECASE):
-            raise VerificationError(f"Lean build emitted warnings in {module}")
+            warning_targets.extend(batch)
     output = run([lake, "--no-cache", "build", LIBRARY], project, timeout)
     if re.search(r"\bwarning:", output, re.IGNORECASE):
-        raise VerificationError("Lean library build emitted warnings")
-    return "serial_build", order
+        warning_targets.append(LIBRARY)
+    # Finish collecting diagnostics in the single build batch. Warnings still
+    # reject verification before any axiom audit or success record is published.
+    if warning_targets:
+        raise VerificationError("Lean build emitted warnings in: " + ", ".join(warning_targets))
+    return "batched_build", order
 
 
 def manifest_target(project: Path, path: Path | None) -> Path:
@@ -805,7 +921,7 @@ def check_manifest(project: Path, path: Path | None, lake_exe: str | None, timeo
     verified_at = datetime.fromisoformat(record.get("verified_at", ""))
     if verified_at.tzinfo is None or verified_at > datetime.now(timezone.utc):
         raise VerificationError("Manifest has an invalid verification time")
-    if record.get("build_mode") not in {"up_to_date", "serial_build"}:
+    if record.get("build_mode") not in {"up_to_date", "serial_build", "batched_build"}:
         raise VerificationError("Manifest has no successful build mode")
     log = project / AUDIT_LOG
     expected_audit = {"path": AUDIT_LOG, "sha256": sha256_file(log),

@@ -1,6 +1,7 @@
 module
 
 public import GeneratedFoundations.Physical.SourceGeneratedYangMillsGap
+public import GeneratedFoundations.Geometry.SourceConformalVariation
 public import Mathlib.Analysis.Calculus.SmoothSeries
 public import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
@@ -27,48 +28,9 @@ namespace GeneratedFoundations.Physical.SourceGeneratedRadialVariation
 
 open SourceConformalResponse SourceRadialMassIntertwiner SourceGeneratedYangMillsGap
 
-set_option backward.isDefEq.respectTransparency false in
-/-- Exact derivative of one generated shell, before summing the tower. -/
-theorem responseTerm_hasDerivAt (j : ℕ) {z : ℝ} (hz : 0 < z) :
-    HasDerivAt (responseTerm j) (curvatureTerm j z) z := by
-  have hc : conformalIndex j ≠ 0 := (conformalIndex_pos j).ne'
-  have hcz : conformalIndex j + z ≠ 0 :=
-    (add_pos (conformalIndex_pos j) hz).ne'
-  have hd := ((hasDerivAt_id z).const_mul (conformalMultiplicity j)).div
-    ((hasDerivAt_const z (conformalIndex j)).mul
-      ((hasDerivAt_id z).const_add (conformalIndex j))) (mul_ne_zero hc hcz)
-  change HasDerivAt
-    (fun y => conformalMultiplicity j * y /
-      (conformalIndex j * (conformalIndex j + y)))
-    (conformalMultiplicity j / (conformalIndex j + z) ^ 2) z
-  convert! hd using 1
-  simp only [Pi.mul_apply, id_eq, mul_one, zero_mul, zero_add]
-  field_simp
-  ring
-
-/-- The complete restoring response has the complete curvature as its actual
-derivative. The same summable majorant works on the entire positive axis. -/
-theorem completeResponse_hasDerivAt {z : ℝ} (hz : 0 < z) :
-    HasDerivAt completeResponse (completeCurvature z) z := by
-  apply hasDerivAt_tsum_of_isPreconnected
-    (u := fun j => curvatureTerm j 0)
-    (g' := fun j y => curvatureTerm j y)
-    (t := Set.Ioi (0 : ℝ))
-    (y₀ := z) (curvatureTerm_summable (le_refl 0))
-    isOpen_Ioi (convex_Ioi (0 : ℝ)).isPreconnected
-  · intro j y hy
-    exact responseTerm_hasDerivAt j hy
-  · intro j y hy
-    rw [Real.norm_eq_abs, abs_of_pos (curvatureTerm_pos j hy.le)]
-    simp only [curvatureTerm, add_zero]
-    apply div_le_div_of_nonneg_left (conformalMultiplicity_pos j).le
-      (sq_pos_of_pos (conformalIndex_pos j))
-    have hy0 : 0 < y := hy
-    nlinarith [conformalIndex_pos j,
-      mul_nonneg (conformalIndex_pos j).le hy0.le, sq_nonneg y]
-  · exact hz
-  · exact responseTerm_summable hz.le
-  · exact hz
+export Geometry.SourceConformalVariation (
+  responseTerm_hasDerivAt completeResponse_hasDerivAt
+)
 
 theorem scoreVariance_nonneg (z : ℝ) : 0 ≤ scoreVariance z := by
   exact div_nonneg (mul_nonneg (by norm_num) (sq_nonneg z))

@@ -94,6 +94,40 @@ theorem norm_flow_le {alpha L : ℝ} (ha : 0 < alpha) (hL : 0 < L)
   dsimp [energy] at he
   nlinarith [norm_nonneg (flow alpha L t f), norm_nonneg f]
 
+/-- The complete action has the same exact dissipation law as its finite
+reaction restrictions. The full operator occurs twice before taking a norm;
+none of its mixed incidence terms is replaced by a diagonal bound. -/
+theorem action_hasDerivAt {alpha L : ℝ} (ha : 0 < alpha) (hL : 0 < L)
+    (t : ℝ) (f : Space) :
+    HasDerivAt (fun u => action alpha L (flow alpha L u f))
+      (-‖operator alpha L (flow alpha L t f)‖ ^ 2) t := by
+  have hf := flow_hasDerivAt alpha L t f
+  have hK := (hasDerivAt_const t (operator alpha L)).clm_apply hf
+  have h := (hf.inner ℝ hK).div_const 2
+  have hs : inner ℝ (flow alpha L t f)
+      (operator alpha L (operator alpha L (flow alpha L t f))) =
+        ‖operator alpha L (flow alpha L t f)‖ ^ 2 := by
+    exact ((operator_symmetric ha hL) (flow alpha L t f)
+      (operator alpha L (flow alpha L t f))).symm.trans (real_inner_self_eq_norm_sq _)
+  convert h using 1
+  · rfl
+  · simp only [zero_apply, zero_add, map_neg,
+      inner_neg_left, inner_neg_right, hs, real_inner_self_eq_norm_sq]
+    ring
+
+theorem action_antitone {alpha L : ℝ} (ha : 0 < alpha) (hL : 0 < L) (f : Space) :
+    Antitone (fun t => action alpha L (flow alpha L t f)) := by
+  apply antitone_of_deriv_nonpos
+  · exact fun t => (action_hasDerivAt ha hL t f).differentiableAt
+  · intro t
+    rw [(action_hasDerivAt ha hL t f).deriv]
+    exact neg_nonpos.mpr (sq_nonneg _)
+
+theorem action_flow_le_initial {alpha L : ℝ} (ha : 0 < alpha) (hL : 0 < L)
+    {t : ℝ} (ht : 0 ≤ t) (f : Space) :
+    action alpha L (flow alpha L t f) ≤ action alpha L f := by
+  simpa only [flow_zero] using action_antitone ha hL f ht
+
 theorem cutoff_evolution_tendsto {alpha L : ℝ} (ha : 0 < alpha) (hL : 0 < L)
     (t : ℝ) :
     Tendsto (fun N => NormedSpace.exp (t • (-cutoffOperator alpha L N))) atTop
@@ -115,6 +149,11 @@ structure Conclusions : Prop where
   full_dissipation : ∀ {alpha L : ℝ}, 0 < alpha → 0 < L → ∀ t f,
     HasDerivAt (fun u => energy (flow alpha L u f))
       (-form alpha L (flow alpha L t f) (flow alpha L t f)) t
+  action_dissipation : ∀ {alpha L : ℝ}, 0 < alpha → 0 < L → ∀ t f,
+    HasDerivAt (fun u => action alpha L (flow alpha L u f))
+      (-‖operator alpha L (flow alpha L t f)‖ ^ 2) t
+  action_nonincrease : ∀ {alpha L : ℝ}, 0 < alpha → 0 < L → ∀ {t : ℝ}, 0 ≤ t →
+    ∀ f, action alpha L (flow alpha L t f) ≤ action alpha L f
   contraction : ∀ {alpha L : ℝ}, 0 < alpha → 0 < L → ∀ {t : ℝ}, 0 ≤ t →
     ∀ f, ‖flow alpha L t f‖ ≤ ‖f‖
   cutoff_limit : ∀ {alpha L : ℝ}, 0 < alpha → 0 < L → ∀ t f,
@@ -125,6 +164,8 @@ theorem generated : Conclusions where
   semigroup := flow_add
   equation := flow_hasDerivAt
   full_dissipation := energy_hasDerivAt
+  action_dissipation := action_hasDerivAt
+  action_nonincrease := action_flow_le_initial
   contraction := norm_flow_le
   cutoff_limit := cutoff_flow_tendsto
 

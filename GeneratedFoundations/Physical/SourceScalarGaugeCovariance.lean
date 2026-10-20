@@ -3,6 +3,8 @@ module
 public import GeneratedFoundations.Physical.SourceScalarConnector
 public import GeneratedFoundations.Physical.SourceGaugeCocycle
 public import GeneratedFoundations.Physical.SourceExchangeConnectorTransport
+public import GeneratedFoundations.Operations.OrthonormalCoordinates
+public import GeneratedFoundations.Operations.UnitaryRepresentation
 
 /-!
 # Gauge covariance and local gluing of the actual scalar connector
@@ -40,12 +42,7 @@ six-block rearrangement or the Hermite-mode permutation. -/
 def matrixCoordinates : Module.End ℂ FullMatter ≃⋆ₐ[ℂ] Matrix FullIndex FullIndex ℂ :=
   LinearMap.toMatrixOrthonormal fullBasis
 
-theorem basis_equivFun_inner {E ι : Type*} [NormedAddCommGroup E]
-    [InnerProductSpace ℂ E] [Fintype ι]
-    (b : OrthonormalBasis ι ℂ E) (x : E) (i : ι) :
-    b.toBasis.equivFun x i = inner ℂ (b i) x := by
-  change (b.repr x).ofLp i = _
-  exact b.repr_apply_apply x i
+export Operations.OrthonormalCoordinates (basis_equivFun_inner)
 
 private theorem unpack_coordinates (x : FullMatter) (i : FullIndex) :
     unpack (coordinates x) i = inner ℂ (fullBasis i) x := by
@@ -166,14 +163,14 @@ private theorem spinFrameMatrix_intertwines (g : GaugeGroup) (M : Mat2) :
     spinFrameMatrix g * chiralMatrix M =
       chiralMatrix (gaugeMatrix g.2.1 g.2.2 M) * spinFrameMatrix g := by
   let L : Mat2 := g.2.1
-  let R : Mat2 := SourcePhaseLift.stabilizerFrame g.2.2
+  let R : Mat2 := Geometry.SourcePhaseLift.stabilizerFrame g.2.2
   have hL : L.conjTranspose * L = 1 :=
     Matrix.mem_unitaryGroup_iff'.mp
       (Matrix.mem_specialUnitaryGroup_iff.mp g.2.1.property).1
   have hR : R.conjTranspose * R = 1 :=
     Matrix.mem_unitaryGroup_iff'.mp
       (Matrix.mem_specialUnitaryGroup_iff.mp
-        (SourcePhaseLift.stabilizerFrame g.2.2).property).1
+        (Geometry.SourcePhaseLift.stabilizerFrame g.2.2).property).1
   have hupper : L * M = gaugeMatrix g.2.1 g.2.2 M * R := by
     change L * M = (L * M * R.conjTranspose) * R
     rw [mul_assoc, hR, mul_one]
@@ -188,10 +185,7 @@ private theorem spinFrameMatrix_intertwines (g : GaugeGroup) (M : Mat2) :
   simp only [Matrix.fromBlocks_multiply, mul_zero, zero_mul, add_zero, zero_add]
   rw [← hupper, ← hlower]
 
-theorem algebraEquiv_mul_eq_of_images {A B : Type*}
-    [Semiring A] [Algebra ℂ A] [Semiring B] [Algebra ℂ B]
-    (e : A ≃ₐ[ℂ] B) (a b c d : A) (h : e a * e b = e c * e d) : a * b = c * d :=
-  e.injective ((map_mul e a b).trans (h.trans (map_mul e c d).symm))
+export Operations.UnitaryRepresentation (algebraEquiv_mul_eq_of_images)
 
 /-- Colour cancels because the same factor acts on both sides of the
 connector. No special property of a coordinate sup norm is used. -/
@@ -245,11 +239,8 @@ theorem scalarConnector_intertwines (g : GaugeGroup) (H : Spinor) :
   simpa only [scalarConnector, scalarAction, gaugeSpin_doubletLift] using
     connector_intertwines g (doubletLift H)
 
-/-- Conjugation on the actual sixteen-dimensional Hilbert space. -/
-theorem conjugate_of_intertwines {G A : Type*} [Group G] [Monoid A]
-    (ρ : G →* A) (g : G) (a b : A) (h : ρ g * a = b * ρ g) :
-    ρ g * a * ρ g⁻¹ = b := by
-  rw [h, mul_assoc, ← map_mul, mul_inv_cancel, map_one, mul_one]
+/- Conjugation on the actual sixteen-dimensional Hilbert space. -/
+export Operations.UnitaryRepresentation (conjugate_of_intertwines)
 
 theorem scalarConnector_covariant (g : GaugeGroup) (H : Spinor) :
     representation g * scalarConnector H * representation g⁻¹ =
