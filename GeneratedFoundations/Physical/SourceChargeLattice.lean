@@ -16,8 +16,10 @@ trace and its action on the joint source carrier are computed before an
 orientation is chosen. Primitivity means that every common integer divisor
 is a unit, rather than that a particular weight has already been set to one.
 
-For the residual charge, the right generator has weights `1/2` and `-1/2`
-and is zero on the left copy. Integral competitors are classified from
+For the residual charge, fixing the transported vacuum locks the right
+rotation to the relative colour scalar phase. Primitivity fixes its charge
+unit. This locking is a stabilizer constraint. The right generator has
+weights `1/2` and `-1/2` and is zero on the left copy. Integral competitors are classified from
 these data and pointwise fixation of either scalar vacuum weight. The
 integer lattice calculation is separate from the identification of its
 weight spaces with a full chiral Hilbert realization. In particular, no

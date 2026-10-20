@@ -16,6 +16,11 @@ At its origin the normalized trace is the closed, unbiased source state.
 The fluctuation and restoring coefficients are computed from this trace.
 The operator identity also covers every common left/right response, without
 requiring that response to be a scalar matrix.
+
+Exchange preserves capacity on the complete carrier, and equal chiral
+blocks have zero graded trace. Separately, the neutral kernel of the
+charge response gives the fifteen-dimensional charged quotient. The
+quotient count is not inferred from cancellation of the complete trace.
 -/
 
 @[expose] public section

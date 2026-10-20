@@ -12,6 +12,8 @@ public import GeneratedFoundations.Physical.SourceTTEndpointInterval
 -- deliberately not a field of CommonFoundation.Conclusions.
 public import GeneratedFoundations.Physical.SourceTTResponse
 public import GeneratedFoundations.Physical.CanonicalYangMillsTT
+public import GeneratedFoundations.Physical.SourceResolutionCompensation
+public import GeneratedFoundations.Physical.SourcePhaseCharge
 
 /-!
 # Generated foundations: implemented declarations

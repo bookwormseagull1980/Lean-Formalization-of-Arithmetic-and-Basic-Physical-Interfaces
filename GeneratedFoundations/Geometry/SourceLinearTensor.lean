@@ -13,6 +13,11 @@ is the Fierz--Pauli/linear Einstein operator in momentum form.  Its gauge
 identity is proved directly, and its restriction to the transverse--
 traceless carrier is the scalar inverse covariance `Q² I₂`.  This joins the
 derived two-polarization space to the massless pole certificate.
+
+The coefficient uniqueness statement concerns the displayed five-term
+local second-order class, with its unit TT normalization. The contractions
+in this module use the Euclidean momentum representation; the Hermitian
+determinant carrier supplies the separate Lorentzian kinematic interface.
 -/
 
 @[expose] public section

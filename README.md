@@ -590,6 +590,17 @@ rather than stored as assumptions in the starting data. Comparison hypotheses
 in classification theorems and compatibility with separately supplied local
 bundle charts remain explicit.
 
+The physical mechanisms have separate statements. Exchange preserves the
+complete matter capacity; equal chiral responses have zero signed centre
+trace; removing the neutral charge kernel gives the charged quotient.
+`Physical.SourceResolutionCompensation` uses the existing quotient heat map,
+source derivatives and colour matrices to construct the nonlinear response,
+its resolution correction and their exact composition law on finite
+coefficient fields. `Physical.SourcePhaseCharge` retains both real field
+equation residuals in the source work identity and proves phase charge
+conservation when their common equations hold. These clauses are mapped to
+the manuscript formulas in `theorem-index.json`.
+
 Uniqueness statements specify their comparison class and equivalence relation.
 The library does not use unproved mathematical axioms or proof placeholders.
 An entry is reported as kernel-checked only after compilation. The automatic

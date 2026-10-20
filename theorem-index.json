@@ -27,6 +27,29 @@
       {"paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap", "tex_source": "sections-en/proofs_source_operations.tex", "mapped_declarations": 4, "sha256": "11dfa7ddd536b5b1397adcc1ba4fd9110fdd76d2fe605ec89824e5e75198af0a", "scope": "The local Gaussian cycle and the algebraic central-quotient clause. The local cycle is I-2P and differs from the global sign; centre-invariant observations are a specified retained observation class. The four entries alone do not certify the complete process algebra, general finite-variance diffusion limit or polar-metric proof."}
     ]
   },
+  "physical_mechanism_review": {
+    "scope": "The mechanism clauses below were checked against their displayed manuscript formulas and actual Lean types. The three complete-carrier conclusions are parallel: exchange capacity, equal-response centre trace and neutral-kernel quotient. Resolution uses the existing quotient heat, actual source derivatives and colour matrices on the full chiral matter carrier. Phase conservation uses both real matter equations; their residual terms are retained in the preceding identity. Existing theorem and proposition levels are preserved.",
+    "sources": [
+      {
+        "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+        "tex_source": "sections-en/sec04_emergent_structures.tex",
+        "sha256": "b317ac40d9c2051d776a9a5fe1e2d0362ec59436182b3ed0371c69a2314dc133",
+        "scope": "Vacuum stabilizer fixes the relative charge direction; primitiveness fixes its unit. Complete-carrier exchange, common-response centre trace and neutral charge kernel are distinct statements."
+      },
+      {
+        "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+        "tex_source": "sections-en/proofs_native_modal_algebra.tex",
+        "sha256": "d98b1ad294eb5efb703b56c05b9c7521524c5d902f3e067e93df189f6b109bc0",
+        "scope": "The new indexed clauses concern finite coefficient colour curvature and matter response, exact compensation, composition and transport; the source quotient heat intertwining is included."
+      },
+      {
+        "paper": "The Spectrum of a Compact Internal Space II: Effective Couplings and Mass Scales",
+        "tex_source": "sections-en/appendix_g.tex",
+        "sha256": "dc155c242c0e25e1d697c2526779971d93706e863ca7e5b84532cfe7c90357e0",
+        "scope": "The new indexed clauses cover the algebraic rotational source work identity of the retained real pair, its phase charge derivative, conservation on both component equations and positive phase rate on the regular positive-charge branch."
+      }
+    ]
+  },
   "root_input": {
     "datum": "GeneratedFoundations.Source.CanonicalRoot.Datum",
     "compatibility_datum": "GeneratedFoundations.Source.MinimalUnbiasedChange.Datum",
@@ -82,6 +105,78 @@
     }
   ],
   "declarations": [
+  {
+    "name": "GeneratedFoundations.Physical.SourceResolutionCompensation.includeScalar_coreHeat",
+    "module": "GeneratedFoundations.Physical.SourceResolutionCompensation",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:native-joint-resolution-p4",
+    "tex_source": "sections-en/proofs_native_modal_algebra.tex",
+    "coverage_kind": "clause",
+    "scope": "The finite even coefficient heat map intertwines with the already constructed source quotient Haar heat map. Both matrix indices and the continuous coefficient realization are retained."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceResolutionCompensation.compensation_cocycle",
+    "module": "GeneratedFoundations.Physical.SourceResolutionCompensation",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:native-joint-resolution-cocycle-p4",
+    "tex_source": "sections-en/proofs_native_modal_algebra.tex",
+    "coverage_kind": "clause",
+    "scope": "The actual nonlinear colour curvature and colour covariant derivative of the full sixteen-coordinate matter field obey the exact Gaussian resolution compensation cocycle. All continuous products are retained before passing to Haar space."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceResolutionCompensation.resolution_add",
+    "module": "GeneratedFoundations.Physical.SourceResolutionCompensation",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:native-joint-resolution-update-p4",
+    "tex_source": "sections-en/proofs_native_modal_algebra.tex",
+    "coverage_kind": "clause",
+    "scope": "Two successive resolutions of finite source fields and their full Haar response residuals equal their combined resolution. This is the exact composition clause."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceResolutionCompensation.complete_response_transport",
+    "module": "GeneratedFoundations.Physical.SourceResolutionCompensation",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "eq:native-joint-response-preservation-p4",
+    "tex_source": "sections-en/proofs_native_modal_algebra.tex",
+    "coverage_kind": "clause",
+    "scope": "Curvature and the complete matter colour response, each with its residual, are transported by the same source heat map. This is covariance under resolution, not constancy of their values."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceResolutionCompensation.residual_unique",
+    "module": "GeneratedFoundations.Physical.SourceResolutionCompensation",
+    "paper": "The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap",
+    "label": "prop:native-joint-resolution-p4",
+    "tex_source": "sections-en/proofs_native_modal_algebra.tex",
+    "coverage_kind": "clause",
+    "scope": "For the fixed field heat evolution and complete response transport, the unresolved response update is unique."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourcePhaseCharge.phase_work_identity",
+    "module": "GeneratedFoundations.Physical.SourcePhaseCharge",
+    "paper": "The Spectrum of a Compact Internal Space II: Effective Couplings and Mass Scales",
+    "label": "eq:p5-auxiliary-phase-charge",
+    "tex_source": "sections-en/appendix_g.tex",
+    "coverage_kind": "clause",
+    "scope": "The real pair phase charge identity retains both field equation residuals with common kinetic and restoring coefficients. The identity precedes the use of either equation."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourcePhaseCharge.phase_charge_conservation",
+    "module": "GeneratedFoundations.Physical.SourcePhaseCharge",
+    "paper": "The Spectrum of a Compact Internal Space II: Effective Couplings and Mass Scales",
+    "label": "eq:p5-auxiliary-phase-charge",
+    "tex_source": "sections-en/appendix_g.tex",
+    "coverage_kind": "clause",
+    "scope": "The phase charge of the retained real pair has zero derivative on their two common source dependent equations; W is the product a^3 M and the restoring coefficient includes the same volume."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourcePhaseCharge.phase_rate_pos",
+    "module": "GeneratedFoundations.Physical.SourcePhaseCharge",
+    "paper": "The Spectrum of a Compact Internal Space II: Effective Couplings and Mass Scales",
+    "label": "eq:p5-auxiliary-phase-charge",
+    "tex_source": "sections-en/appendix_g.tex",
+    "coverage_kind": "clause",
+    "scope": "The displayed angular rate is positive on a positive-charge regular branch with positive volume, kinetic coefficient and squared amplitude."
+  },
   {
     "name": "GeneratedFoundations.Geometry.SourceSphereCapacity.capacity_all_iff",
     "module": "GeneratedFoundations.Geometry.SourceSphereCapacity",

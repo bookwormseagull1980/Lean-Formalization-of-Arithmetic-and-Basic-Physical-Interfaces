@@ -21,6 +21,11 @@ fields and proves the actual action-to-operator identity on their complete
 core. `CanonicalYangMills` assembles that differential realization at the
 generated IR radius together with the nonlinear local response.
 
+Common frame covariance identifies equivalent presentations. The radial
+and relative connection restoring operators determine the excitation cost;
+the lower of their positive spectral edges sets the complete gap. A pure
+frame direction is removed by the quotient and is not a physical excitation.
+
 The earlier one-coordinate-per-shell truncations remain useful finite
 witnesses.  They are identified below only as restrictions of the generated
 eigenvalue law; they no longer carry the word `complete`.
