@@ -278,6 +278,10 @@ def test_generated_audit_checks_all_signatures_and_complete_environment(project)
     assert f'named declarations {len(state.declarations)}/{len(state.declarations)}' in audit
     assert "FOUNDATIONS_PROGRESS environment inventory start" in audit
     assert "FOUNDATIONS_PROGRESS axioms" in audit
+    assert audit.count("set_option maxHeartbeats 0 in\n") == 2
+    assert 'set_option maxHeartbeats 0 in\nelab "foundations_environment_audit"' in audit
+    assert "set_option maxHeartbeats 0 in\nfoundations_environment_audit\n" in audit
+    assert "set_option maxHeartbeats 0 in\n#check" not in audit
     assert "Lean.collectAxioms name" in audit
     assert "info.isUnsafe" in audit and "info.isPartial" in audit
 

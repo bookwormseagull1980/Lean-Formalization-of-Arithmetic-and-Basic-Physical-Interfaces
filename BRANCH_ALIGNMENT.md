@@ -168,9 +168,9 @@ elementary classification. `Geometry.SourceExchangeResponse` constructs the
 normalized orthogonal exchange of the actual tensor source, transports every
 endomorphism and its adjoint, and proves equivalence of both full naturality
 and elementary classification before and after that exchange. The old
-physical names export these same upstream constants. Local checks of the
-new common and arithmetic modules have passed; aggregate compatibility and
-whole-library validation remain in the final verification batch.
+physical names export these same upstream constants. Their compatibility is
+checked together with the common and arithmetic modules in the final
+whole-library verification, rather than inferred from the source comparison.
 
 `Operations.MatrixModuleClassification` and `MatrixBlockRepresentations`
 contain the general matrix-unit proofs formerly located in the physical
@@ -425,10 +425,14 @@ verifier checks the actual compiled declaration environment and its transitive
 axioms. Its exact source snapshot determines the scope of a verification
 record. The branch inventory never substitutes for that check.
 
-The final whole-library build is deferred until the alignment implementation
-is complete. Local checks of an affected module establish only that module's
-elaboration; they do not certify the final aggregate or all compatibility
-exports. Source-inventory refreshes do not launch a Lean build.
+The final verification covers all 549 local Lean modules, including the
+independent entries, their common aggregate and the compatibility exports.
+It checks 13,308 named declaration types and audits the transitive axioms of
+24,087 project-owned compiled constants, including private declarations and
+generated helpers. The 705 indexed claims belong to that same source snapshot.
+The independent record is `verification/branch-alignment-verification.json`;
+its preserved compiler output is `verification/branch-alignment-audit.txt`.
+Source-inventory refreshes do not launch a Lean build or replace this audit.
 
 Compatibility exports retain the physical API without duplicating its proof.
 The verifier asks Lean to resolve every public name, records its actual kernel

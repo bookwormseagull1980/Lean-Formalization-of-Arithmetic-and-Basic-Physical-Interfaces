@@ -2,8 +2,8 @@
 
 This directory preserves the V1.0 verification snapshot of **Lean
 Formalization of Arithmetic and Basic Physical Interfaces**. The Lean namespace
-remains `GeneratedFoundations`; this snapshot is not a claim of current
-working-tree freshness.
+remains `GeneratedFoundations`. The original filenames below identify that
+historical snapshot; the branch-alignment evidence uses separate filenames.
 
 The evidence consists of `verification-manifest.json`, the complete
 `foundations-audit.txt`, and `SHA256SUMS.json`. The manifest binds the proof
@@ -45,3 +45,24 @@ These three source ledgers do not extend the preserved V1.0 verification
 snapshot above. A current kernel/environment audit is produced separately by
 the foundations verifier; only its source-bound manifest establishes which
 compiled declarations and transitive axioms were checked in that run.
+
+The branch-alignment proof record is
+`branch-alignment-verification.json`. Its complete compiler output is preserved
+as `branch-alignment-audit.txt`, a byte-identical copy of the run's
+`.lake/foundations-audit.txt`. The manifest retains that original log path and
+its SHA-256. The separate `branch-alignment-SHA256SUMS.json` inventory binds
+the preserved proof evidence, the three comparison ledgers and their
+explanatory documents; it does not alter the historical V1.0 evidence.
+
+To reproduce this independently named run from the repository root:
+
+```text
+python -m scripts.verify_foundations --manifest verification/branch-alignment-verification.json
+```
+
+The verifier first checks all local targets for freshness. Already compiled
+modules are reused; affected targets are rebuilt in dependency-respecting
+batches. Both paths run the complete named-declaration and compiled-environment
+axiom audit. A saved manifest must match the actual sources, dependency locks,
+verifier and tools. Merely retaining the JSON file does not make a later source
+snapshot verified.

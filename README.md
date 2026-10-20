@@ -170,7 +170,16 @@ separate from this affine-dilation result.
 ## 2. Concrete record
 
 The source is pinned to Lean 4.34.0 and mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. The 19 October canonical-root audit
+`5ed2965256430c3649e86755f9576b54eca72435`. The branch-alignment verification
+record covers all 549 local modules, 24,087 project-owned compiled constants,
+13,308 named type checks and 705 indexed claims. It includes both independent
+branches, their common aggregate, compatibility exports and research modules.
+The implementation and per-declaration comparison are recorded in
+`BRANCH_ALIGNMENT.md` and the three branch-alignment ledgers under
+`verification/`. The compiler audit and the semantic comparison have separate
+records and scopes.
+
+The earlier 19 October canonical-root audit
 passed for all 346 local modules imported by the zero-argument entry, with
 16,584 compiled constants, 8,490 named type checks and the indexed claims
 recorded in `theorem-index.json`.
@@ -181,8 +190,9 @@ and `Quot.sound`; there are no local axioms or proof placeholders.
 The separately scoped 18 October release audit records 273 modules, 13,854
 constants, 7,231 named type checks and 298 indexed claims for that earlier
 whole-library snapshot. These are library and audit counts, not counts of
-independent mathematical theorems. The current root record does not cover
-research modules outside its actual import closure.
+independent mathematical theorems. That earlier canonical-root record does not
+cover research modules outside its actual import closure; the later
+branch-alignment record covers the whole implemented library.
 
 ## 3. Program implementation
 
@@ -504,11 +514,14 @@ this directory. `--manifest PATH` selects another JSON output. The record binds:
 - The generated audit probe, all named declaration signatures and the complete axiom log
   at `.lake/foundations-audit.txt` by SHA-256.
 
-The current record and audit log are build artifacts, ignored by Git by default.
-Release evidence is retained together in `verification/`: the manifest,
-its complete audit log, and a relative-file hash inventory. Those preserved
-files are the V1.0 evidence snapshot (239 source files), not a claim that the
-current working tree is freshly verified; the current root audit is separate.
+The default record and audit log are build artifacts, ignored by Git. Release
+evidence is retained together in `verification/`: the original
+`verification-manifest.json`, `foundations-audit.txt` and `SHA256SUMS.json`
+preserve the V1.0 snapshot (239 source files). The independent
+`branch-alignment-verification.json`, `branch-alignment-audit.txt` and
+`branch-alignment-SHA256SUMS.json` preserve the later whole-library alignment
+run, separately from that historical snapshot. The comparison ledger and
+construction scopes are described in `BRANCH_ALIGNMENT.md`.
 Public records use relative source paths and do not contain local installation
 paths. A source
 change, an index or lock change, a verifier change, a changed tool or dependency,

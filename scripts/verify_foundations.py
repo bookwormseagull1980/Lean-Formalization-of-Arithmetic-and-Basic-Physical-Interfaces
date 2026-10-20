@@ -346,7 +346,12 @@ def audit_source(state: SourceState) -> str:
         if position % 250 == 0 or position == len(state.declarations):
             lines.append(f'foundations_progress "named declarations {position}/{len(state.declarations)}"')
     module_names = ", ".join(f"`{module}" for module in sorted(state.modules))
+    # The exhaustive utility elaborates a literal containing every local module.
+    # Its work grows with the audit inventory, not with a theorem's proof search.
+    # Remove the per-command heartbeat cap only for this generated utility and
+    # its invocation; the subprocess wall-clock timeout remains enforced.
     lines += ["", "meta section", "open Lean Elab Command", "",
+              "set_option maxHeartbeats 0 in",
               'elab "foundations_environment_audit" : command => do',
               '  IO.eprintln s!"FOUNDATIONS_PROGRESS environment inventory start at {← IO.monoMsNow} ms"',
               "  let env := (← getEnv).setExporting false",
@@ -405,7 +410,7 @@ def audit_source(state: SourceState) -> str:
               '      IO.eprintln s!"FOUNDATIONS_PROGRESS axioms {audited}/{declarations.size} at {← IO.monoMsNow} ms"',
               f'  IO.println ("{ENVIRONMENT_PREFIX}" ++ (Json.mkObj',
               '    [("event", toJson "end"), ("count", toJson declarations.size)]).compress)',
-              "", "foundations_environment_audit", ""]
+              "", "set_option maxHeartbeats 0 in", "foundations_environment_audit", ""]
     return "\n".join(lines) + "\n"
 
 
