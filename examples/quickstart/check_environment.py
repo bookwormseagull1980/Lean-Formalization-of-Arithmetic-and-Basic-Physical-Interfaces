@@ -1,8 +1,9 @@
 """Small release smoke test for the public Lean proof package.
 
-This checks the pinned source metadata and the three public root entries. It is
-deliberately independent of Lean compilation; the full proof and axiom audit is
-performed by ``scripts/verify_foundations.py`` and the repository CI workflow.
+This checks the pinned source metadata, canonical root, and public branch
+entries. It is deliberately independent of Lean compilation; the full proof
+and axiom audit is performed by ``scripts/verify_foundations.py`` and the
+repository CI workflow.
 """
 
 from __future__ import annotations
@@ -15,24 +16,24 @@ ROOT = Path(__file__).resolve().parents[2]
 EXPECTED_TOOLCHAIN = "leanprover/lean4:v4.34.0"
 EXPECTED_MATHLIB = "5ed2965256430c3649e86755f9576b54eca72435"
 EXPECTED_ROOTS = [
-    "Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
-    "Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange",
-    "Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange",
+    "GeneratedFoundations.CanonicalClosedWorld.generated",
+    "GeneratedFoundations.MathematicalInterface.generated",
+    "GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore",
 ]
 
 
 def main() -> None:
     toolchain = (ROOT / "lean-toolchain").read_text(encoding="utf-8").strip()
     lock = json.loads((ROOT / "lake-manifest.json").read_text(encoding="utf-8"))
-    manifest_text = json.dumps(lock, sort_keys=True)
     index = json.loads((ROOT / "theorem-index.json").read_text(encoding="utf-8"))
-    index_text = json.dumps(index, sort_keys=True)
+    indexed_names = {entry["name"] for entry in index["declarations"]}
 
     if toolchain != EXPECTED_TOOLCHAIN:
         raise SystemExit(f"unexpected Lean toolchain: {toolchain}")
-    if EXPECTED_MATHLIB not in manifest_text:
+    mathlib = [package for package in lock["packages"] if package["name"] == "mathlib"]
+    if len(mathlib) != 1 or mathlib[0].get("rev") != EXPECTED_MATHLIB:
         raise SystemExit("pinned mathlib commit is missing from lake-manifest.json")
-    missing = [name for name in EXPECTED_ROOTS if name not in index_text]
+    missing = [name for name in EXPECTED_ROOTS if name not in indexed_names]
     if missing:
         raise SystemExit(f"root entry missing from theorem-index.json: {missing[0]}")
     for required in (

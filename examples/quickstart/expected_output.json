@@ -2,9 +2,9 @@
   "lean_toolchain": "leanprover/lean4:v4.34.0",
   "mathlib_commit": "5ed2965256430c3649e86755f9576b54eca72435",
   "root_entries": [
-    "Arithmetic.GeneratedFoundation.fromMinimalUnbiasedChange",
-    "Arithmetic.ReducedExpression.resolution_fromMinimalUnbiasedChange",
-    "Physical.SourcePhysicalInterface.fromMinimalUnbiasedChange"
+    "GeneratedFoundations.CanonicalClosedWorld.generated",
+    "GeneratedFoundations.MathematicalInterface.generated",
+    "GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore"
   ],
   "theorem_index_present": true,
   "axioms_document_present": true,
