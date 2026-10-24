@@ -14,6 +14,8 @@ public import GeneratedFoundations.Physical.SourceTTResponse
 public import GeneratedFoundations.Physical.CanonicalYangMillsTT
 public import GeneratedFoundations.Physical.SourceResolutionCompensation
 public import GeneratedFoundations.Physical.SourcePhaseCharge
+public import GeneratedFoundations.Physical.SourceCurvatureSusceptibility
+public import GeneratedFoundations.Physical.SourceDeterminantCompensation
 
 /-!
 # Generated foundations: implemented declarations

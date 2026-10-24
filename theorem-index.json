@@ -105,6 +105,70 @@
     }
   ],
   "declarations": [
+    {
+      "name": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility.centered_third",
+      "module": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "finite radial centered third moment",
+      "coverage_kind": "theorem",
+      "scope": "Exact algebra of the finite Gaussian-contraction moment recurrence. This entry does not formalize the Gaussian integral that identifies that recurrence with a probability law."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility.normalized_fourth",
+      "module": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "finite radial normalized fourth moment",
+      "coverage_kind": "theorem",
+      "scope": "Variance-normalized fourth moment 3+12/M derived from the explicit contraction recurrence for nonzero M."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility.joint_hessian_square",
+      "module": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "joint curvature Schur response",
+      "coverage_kind": "theorem",
+      "scope": "Completion of the square for the finite joint Hessian, retaining the residual source curvature. The analytic partial Legendre transform is not assumed to have been formalized by this identity."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility.susceptibility_mass_identity",
+      "module": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "static susceptibility and normalized radial mass",
+      "coverage_kind": "theorem",
+      "scope": "The collective static susceptibility equals squared source overlap divided by radial mass squared in the generated 120-coefficient variance convention; it does not identify a coefficient Mehler rate with that mass."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility.staticSusceptibility_pos",
+      "module": "GeneratedFoundations.Physical.SourceCurvatureSusceptibility",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "positive static susceptibility",
+      "coverage_kind": "theorem",
+      "scope": "Positive residual covariance and positive restoring curvature imply a positive total static Schur response."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceDeterminantCompensation.scalar_correction_unique",
+      "module": "GeneratedFoundations.Physical.SourceDeterminantCompensation",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "unique determinant compensation",
+      "coverage_kind": "theorem",
+      "scope": "For every invertible actual Gaussian-corner matrix, the inverse determinant is the unique scalar correcting its determinant-line tensor action to the transported original source action."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceDeterminantCompensation.relativeAction_mul",
+      "module": "GeneratedFoundations.Physical.SourceDeterminantCompensation",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "compensated action composition",
+      "coverage_kind": "theorem",
+      "scope": "The corrected actual source actions preserve composition on invertible matrices."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceDeterminantCompensation.relativeAction_transport",
+      "module": "GeneratedFoundations.Physical.SourceDeterminantCompensation",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "compensated source intertwiner",
+      "coverage_kind": "theorem",
+      "scope": "The determinant-corrected action intertwines the actual source action through the already constructed unitary vacuum transport."
+    },
   {
     "name": "GeneratedFoundations.Physical.SourceResolutionCompensation.includeScalar_coreHeat",
     "module": "GeneratedFoundations.Physical.SourceResolutionCompensation",

@@ -66,3 +66,23 @@ batches. Both paths run the complete named-declaration and compiled-environment
 axiom audit. A saved manifest must match the actual sources, dependency locks,
 verifier and tools. Merely retaining the JSON file does not make a later source
 snapshot verified.
+
+## Finite source-response supplement
+
+`SourceCurvatureSusceptibility` checks the Gaussian-contraction moment
+recurrence, the finite joint-Hessian Schur identity and the radial mass
+normalization. `SourceDeterminantCompensation` proves the unique inverse
+determinant correction, its composition law and its intertwining with the
+actual Gaussian-corner source action. The theorem index records the exact
+scope of each entry. Analytic integration, infinite-dimensional source
+completion and field reconstruction retain their manuscript proofs.
+
+The independently named current-library check is reproduced by
+
+```text
+python scripts/verify_foundations.py --manifest verification/source-response-verification.json
+```
+
+This record binds the current compiled library and its axiom audit. It is
+separate from the historical evidence above and from numerical verification
+of Coarse Graining Genesis Framework.
