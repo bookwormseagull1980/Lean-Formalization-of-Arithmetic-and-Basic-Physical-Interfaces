@@ -4,7 +4,7 @@
   "scope": "Branch alignment evidence, comparison ledgers, verification code, tests and explanatory documents; Lean source hashes and dependency locks are bound in the proof manifest",
   "files": {
     "BRANCH_ALIGNMENT.md": "194621010d8f3503666ca88b85846441913078161b111662ba1b71e1bba80177",
-    "README.md": "22f856459990d7e0c3d9ad39587bbb6c7a0f4bd58852ffd73840fbeee03b4d77",
+    "README.md": "b5d6c63af915aebf2f414a52feba7eba1e6fae5bfdea327f5dddc8c9f9f68282",
     "scripts/branch_alignment.py": "d30ef51ec9062ae78f97aff1ea4d8a6ed19e94e91f13a6e3419ee5cdd3a61ea1",
     "scripts/verify_foundations.py": "a6f58b2a76a79d951fd4d169e1e0e7c0fafa48d7adf8056dd56252c868b8858b",
     "tests/test_branch_alignment.py": "b7930375db4a7584ee804aaad9b94abbd341c263bc365b045ef95d591ff3d2b0",

@@ -2,33 +2,50 @@
 
 [![Lean verification](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml)
 [![Zenodo concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23254521.svg)](https://doi.org/10.5281/zenodo.23254521)
-[![Zenodo V1.0 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23254522.svg)](https://doi.org/10.5281/zenodo.23254522)
 
 Source repository: [Lean Formalization of Arithmetic and Basic Physical Interfaces](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces).
 
-## 1. Narrative
+## 1. Research overview
 
-This project makes a common foundational claim checkable in Lean: starting from
-minimal unbiased compositional change, one constructs a single generated
-natural-number system and a basic physical response interface within one
-explicit source class. Addition, multiplication, factorization, reduced
-expressions and complete ordered histories are structures of that same
-natural-number construction, not alternative constructions.
+### One generated source, two proved branches
 
-The sole closed-world entry is
-`GeneratedFoundations.CanonicalClosedWorld.generated`. It accepts no
-carrier, probability law, arithmetic source, physical source, forcing term, or
-boundary datum. Minimal unbiased compositional change is the sole abstract
-root; upstream classification selects the rotation carrier as its canonical
-representative, and the positive-parameter compositional law is constructed
-uniquely. The theorem then produces source
-closure, the complete generated natural-number system, and the basic physical
-interface. It does not quantify over a family of widths or orientations: unit
-covariance fixes the dimensionless width and the original complex rotation
-supplies its canonical oriented presentation before the theorem is assembled.
-Reversing that presentation gives the proved conjugate structure. The arithmetic and
-physical branches are parallel conclusions;
-neither is assumed by the other.
+This Lean 4 library formalizes a common generating construction for natural-number arithmetic and basic physical response. The two branches use the identical source object and shared upstream theorems. Their subsequent carriers and observables are constructed on that source, with the relevant comparison classes recorded in the formal statements.
+
+The library's central achievement is an assembled theorem whose dependencies can be inspected down to individual declarations. The public closed-world entry, `GeneratedFoundations.CanonicalClosedWorld.generated`, takes no user-supplied carrier, probability law, arithmetic system or physical source. The source class and its normalization are implemented in the construction. Classification selects its rotation carrier, and compositional uniqueness supplies the Gaussian law used by both branches.
+
+This architecture makes the generating claim precise. A result has an explicit object, a declared type and a proof with auditable premises. Shared source results are reused directly. Parallel arithmetic and physical realizations retain their own dimensions and operators.
+
+### Arithmetic, histories and actual response
+
+The arithmetic branch constructs the correlation window, reflecting spectrum and ordered positive modes. Modulation, cascade and the first positive mode supply addition, multiplication and successor. Recursion and unique factorization are proved for this generated system. Scale transport includes operator domains and Gaussian time rescaling, and orientation reversal gives the conjugate arithmetic presentation.
+
+Ordered expressions then resolve the ways of obtaining a value. Normalization imposes the specified zero and unit reductions while preserving operation types, input order and brackets. Finite evaluation fibres, their recursive positive laws and finite phase extensions retain information that disappears under numerical evaluation. Whole-tree identities account for the relation between root energy, leaf contributions and assembly defects.
+
+The formal response construction uses these actual histories and source weights. It includes finite Hermitian responses, assembly detailed balance, and the complete assembly operator and its evolution. Conditional readout separates visible values from history differences. This makes construction history available to an operator theory and to the analysis of reduced evolution.
+
+The arithmetic response spaces have faithful Hilbert realizations whose dimensions come from their own fibre cardinalities. Adjoint-compatible matrix actions give uniqueness up to unitary intertwining. Intrinsic prime-occupation sectors, source Clifford actions and history reversal have separately proved action identities. Their distinction preserves the complete arithmetic coefficient space and its operator blocks.
+
+### Physical structure and a generated mass-gap theorem
+
+The physical branch constructs compact internal spectra and the gauge-matter response within the stated continuation class. Its outputs include the faithfully acting group $(SU(3)\times SU(2)\times U(1))/\mathbb Z_6$, the sixteen-dimensional complex matter carrier and the scalar connector given by one complex weak doublet. The concrete matter bundle is built on the generated Hermitian four-carrier. Its unitary frames, transition cocycle and passive-component compatibility are proved for that bundle.
+
+The Yang-Mills construction includes the nonlinear action, its self-adjoint differential Hessian, the collective radial block and the complete coclosed color-connection block. Positivity and attainment of the spectral bottom yield a mass-gap theorem for the generated infrared-edge operator. The finite-occupation Fock completion retains the vacuum and positive excitation gap.
+
+The determinant line, Hermitian cone and source phase give additional geometric interfaces shared with the arithmetic response construction. A first-order nonlinear tensor density on the generated four-carrier has a relative cubic coefficient uniquely fixed by affine-dilation covariance in the unit-normalized quadratic-plus-cubic class. These results make the field and response interfaces concrete through their operators, bundles and transformation laws.
+
+### Exact interfaces to numerical calculation
+
+The canonical operator uses the Gaussian infrared edge, while the V5 calculation uses the tensor-response endpoint. The library supplies a separate certificate-dependent theorem for the latter coefficient model. A V5 branch-reduction certificate identifies its full active finite response with that model by an exact change of variable. This gives a precise connection between a formal root theorem and a numerical interval calculation.
+
+The distinction is productive. Lean establishes the structural result and its dependence on the coefficient enclosure. V5 computes the finite spectral coefficient and supplies the external certificate. Each part of the connection can be examined at the layer where its evidence is produced.
+
+### Proof evidence and research use
+
+The theorem index maps manuscript claims to formal declarations. Pinned dependencies make the proof environment reproducible, and the verifier checks compiled declarations and their transitive axioms. Scoped audit records distinguish the canonical root, its import closure and separately collected research extensions. The recorded canonical-root audit uses Lean's standard logical axioms `propext`, `Classical.choice` and `Quot.sound`, with no project-local axioms or proof placeholders in that audited closure.
+
+The library contributes a formal construction of arithmetic with generation history, a compatible physical response branch, faithful operator realizations and a generated Yang-Mills mass-gap theorem. Its mathematical value also lies in making the common origin testable: shared constructions, concrete branch instances and different outputs are distinguished by their actual types and proofs. Subsequent research can therefore reuse the established source, operations and response identities with their dependencies already explicit.
+
+### Arithmetic response realizations
 
 The mathematical response interface includes least faithful Hilbert
 realizations of the actual complete history--phase fibres and their
@@ -207,11 +224,8 @@ request to `main`.
 
 The CI and verifier make the compiled declarations, dependency locks, source
 hashes, and transitive axiom audit reproducible. The theorem index records the
-reviewed manuscript clauses and their corresponding declarations. Cite the
-version series with DOI
-`[10.5281/zenodo.23254521](https://doi.org/10.5281/zenodo.23254521)` or the
-released V1.0 record with DOI
-`[10.5281/zenodo.23254522](https://doi.org/10.5281/zenodo.23254522)`.
+reviewed manuscript clauses and their corresponding declarations. Cite the version series with its concept DOI
+[10.5281/zenodo.23254521](https://doi.org/10.5281/zenodo.23254521).
 
 The verifier audits two dependency-separated entries: the current root library
 and `GeneratedFoundations.ResearchExtensions`. The latter contains the
