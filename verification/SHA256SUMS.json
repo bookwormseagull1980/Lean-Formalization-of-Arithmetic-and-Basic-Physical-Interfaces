@@ -6,7 +6,7 @@
     ".gitattributes": "01f9a55aec3a839e9a3c67e1a6ea28a671210f38b5bd5fbb67bd9e6b72f0a9eb",
     ".gitignore": "68d3c40542bb90a6edda1acef0a975765c0c3df0ad88484b985540e4e93c30de",
     "AXIOMS.md": "124226df88af17a4e6d4f18d92fc4e6a93fe9cd966f28f4c1c61af7cb9c1409f",
-    "CITATION.cff": "201d207aa3c00c212cd5a344a8957c0ecfe926c27922b71f6f6675367a398d44",
+    "CITATION.cff": "09cdc5bf6c44e9ca26f55ec6ad9f204c4f0ab55da276610be8547c936d547b74",
     "GeneratedFoundations.lean": "9ebf8d2204637a48ffa765def1e9c6bfb45ee4bb1b980e00423c12699eee5737",
     "GeneratedFoundations/Arithmetic/CircleCharacters.lean": "767f64e70e6f981e3deec97204e7acd006cecf3fc163e28baac592fc73e3c869",
     "GeneratedFoundations/Arithmetic/CircleEndomorphisms.lean": "241266bce613986679cda258e0f9edef0c2f611be3104a4d66ce964085e3df3a",
@@ -245,9 +245,9 @@
     "lake-manifest.json": "3c5cddb5e4fa49638fb0ee026b9863edd962079c34741a5c21513d783c9bb3c2",
     "lakefile.lean": "431e0bcec0eeba66cd7c0d51396c9c7e1e9c1504c78ef332f13aeddc4c081838",
     "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
-    "LICENSE": "9a7067ddd031f5e405febc16f1ddb27cc72959d3eb86866459d877028844cf2c",
+    "LICENSE": "ce0c52aca4a7380d0488e20851366cb95efc5b7bd6e038cb206b47c5a8fa4bbe",
     "pyproject.toml": "3435ea2bd0315875e45229d9694b48a0bba801acc23e27b18cd1fef5206eaa03",
-    "README.md": "b5d6c63af915aebf2f414a52feba7eba1e6fae5bfdea327f5dddc8c9f9f68282",
+    "README.md": "5edf0ef815350db15b97071309e7f7c69b7a6cb6ae1c9fdfe2df217d9490df88",
     "REFERENCES.md": "f0d708f998ad2a54ea95a858a19858b394bb0e1fc139360bdd2a8978b559c86c",
     "requirements-test.txt": "53ba3661814448861713ea6f9d766f41901e670eace485ce9babd75ea783ad87",
     "scripts/__init__.py": "2ff35238b08f0bc26b01a8df79c000eb6c8ac0e2011339934b6f99a766fc0bde",
@@ -256,6 +256,12 @@
     "theorem-index.json": "6471d347c934d6e080e43fc754a4e8879a21bc3e0ad540e7a1c70d545c2982c6",
     "verification/foundations-audit.txt": "487c3f0b4b1bbf8fbbafde4fd6c926cf96ae3b92e6a7975201a62e3174419b12",
     "verification/README.md": "0a2adbe71ae98db269c3a3583f3a3d9babf7271e1330e4ca9fa639933a304b76",
-    "verification/verification-manifest.json": "90c2fa9073b08c66cd05d8fad85460ffbd1abba9915d02cd999f6ea2148a841b"
+    "verification/verification-manifest.json": "90c2fa9073b08c66cd05d8fad85460ffbd1abba9915d02cd999f6ea2148a841b",
+    "REFERENCE.md": "b5d6c63af915aebf2f414a52feba7eba1e6fae5bfdea327f5dddc8c9f9f68282",
+    "CONTRIBUTING.md": "f3a48f8ff8b9a39684e57096f064d2b172d492edb8438ac9582024b2a63bb1ac",
+    ".github/ISSUE_TEMPLATE/correction.yml": "ebf60fefc3c2b81d11fb7779cb62053fc42ed0362ce9eeaa54fe870e063c98c6",
+    ".github/ISSUE_TEMPLATE/reproduction.yml": "311057386303f8b4e6ec51a2744422c481e481d2513aa3d8563cfbd142c87821",
+    ".github/ISSUE_TEMPLATE/config.yml": "a62f2c0b4761027dec46d7d0815289665b9b0a1b552d2b1e25e70faa1116f81d",
+    ".github/social-preview.png": "7c41ec3a1f7601807ecb1871e725c7f7afd9753c86c7dc7c49defb14b79368fc"
   }
 }
