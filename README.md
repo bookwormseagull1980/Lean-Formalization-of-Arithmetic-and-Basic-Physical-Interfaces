@@ -49,7 +49,7 @@ response is nonzero.
 Thus the formalized object contains more information than a numerical value or
 a circle-power label. The construction records the source, evaluation,
 conditional geometry and evolution needed to follow that information. The
-[arithmetic paper](https://doi.org/10.5281/zenodo.22512592) gives the mathematical
+[arithmetic paper](https://ssrn.com/abstract=7421398) gives the mathematical
 development and worked examples.
 
 ### The generated Yang-Mills spectral-gap theorem
@@ -68,7 +68,7 @@ The principal declarations include
 The separate transverse-traceless realization,
 `CanonicalYangMillsTT.generated`, takes an endpoint certificate. Its radius and
 dimensional calibration are distinct from the Gaussian IR-edge realization.
-The [physical construction paper](https://doi.org/10.5281/zenodo.22067117) and
+The [physical construction paper](https://ssrn.com/abstract=7352020) and
 [V5 correspondence](https://github.com/bookwormseagull1980/coarse-graining-genesis/blob/master/docs/LEAN_CORRESPONDENCE.md)
 explain this interface.
 

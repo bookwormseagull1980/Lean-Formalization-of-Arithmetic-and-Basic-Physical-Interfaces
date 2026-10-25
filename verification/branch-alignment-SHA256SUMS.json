@@ -4,7 +4,7 @@
   "scope": "Branch alignment evidence, comparison ledgers, verification code, tests and explanatory documents; Lean source hashes and dependency locks are bound in the proof manifest",
   "files": {
     "BRANCH_ALIGNMENT.md": "194621010d8f3503666ca88b85846441913078161b111662ba1b71e1bba80177",
-    "README.md": "5edf0ef815350db15b97071309e7f7c69b7a6cb6ae1c9fdfe2df217d9490df88",
+    "README.md": "784c49f4a9bab78ec9d5e4f7ec3eeb33ea1cf5360bb131c548512e54124bf8e7",
     "scripts/branch_alignment.py": "d30ef51ec9062ae78f97aff1ea4d8a6ed19e94e91f13a6e3419ee5cdd3a61ea1",
     "scripts/verify_foundations.py": "a6f58b2a76a79d951fd4d169e1e0e7c0fafa48d7adf8056dd56252c868b8858b",
     "tests/test_branch_alignment.py": "b7930375db4a7584ee804aaad9b94abbd341c263bc365b045ef95d591ff3d2b0",
@@ -18,7 +18,7 @@
     "verification/README.md": "ab4b0be4cedb9f5f7e04cc4a317cadb05033a5d5f3b5a3d3c613979995a52d0b",
     "REFERENCE.md": "b5d6c63af915aebf2f414a52feba7eba1e6fae5bfdea327f5dddc8c9f9f68282",
     "CITATION.cff": "09cdc5bf6c44e9ca26f55ec6ad9f204c4f0ab55da276610be8547c936d547b74",
-    "LICENSE": "ce0c52aca4a7380d0488e20851366cb95efc5b7bd6e038cb206b47c5a8fa4bbe",
+    "LICENSE": "72ac648d93ac2cecbfaa245be884561b0adef709549110e19ae3fd01cf3a7d10",
     "CONTRIBUTING.md": "f3a48f8ff8b9a39684e57096f064d2b172d492edb8438ac9582024b2a63bb1ac",
     ".github/ISSUE_TEMPLATE/correction.yml": "ebf60fefc3c2b81d11fb7779cb62053fc42ed0362ce9eeaa54fe870e063c98c6",
     ".github/ISSUE_TEMPLATE/reproduction.yml": "311057386303f8b4e6ec51a2744422c481e481d2513aa3d8563cfbd142c87821",
