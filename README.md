@@ -134,3 +134,25 @@ include the declaration, revision and relevant output.
 Subjects: Lean 4, mathlib, formal verification, generated arithmetic, natural
 numbers, Gaussian measures, spectral theory, history dynamics, Yang-Mills,
 mass gap, gauge theory, matter representations and mathematical physics.
+
+## Research subjects and results
+
+### Primary subjects
+
+Lean 4; Formalized mathematics; Machine-checked proofs; Interactive theorem proving; Proof assistants; Yang-Mills theory; Mass gap; Natural-number arithmetic; Spectral theory; Mathematical physics; Formal verification; mathlib.
+
+### Research subjects
+
+Foundations of arithmetic; Natural-number objects; Unique factorization; Gaussian measures; Convolution semigroups; Neumann spectra; Arithmetic expression trees; Conditional expectation; History-dependent dynamics; Gauge groups; Standard Model representations; Yang-Mills action; Spectral gaps; Self-adjoint operators; Hilbert spaces.
+
+### Methods
+
+Dependent type theory; Kernel-checked proofs; Theorem formalization; Functional analysis; Operator theory; Quadratic forms; Weighted Hilbert spaces; Coercivity estimates; Orthogonal decomposition; Hodge decomposition; Fock space; Representation theory; Recursive definitions; Formal proof dependencies; Axiom auditing.
+
+### Results and research questions
+
+Machine-checked construction of natural-number arithmetic; Formal proof of unique prime factorization on generated modes; Formalized Gaussian source selection; Verified scale and orientation transport; Formalized arithmetic expression-history assembly; Machine-checked gauge and matter construction; Self-adjoint Yang-Mills Hessian and complete coercivity in Lean; Attained positive spectral gap for the generated Yang-Mills operator.
+
+### Chinese subject terms
+
+Lean形式化; 机器核验数学证明; 交互式定理证明; 证明助手; 自然数构造; 唯一素因数分解; 杨米尔斯质量间隙; 自伴算子; 强制性估计; 规范物质表示; 数学物理; 形式化验证.
