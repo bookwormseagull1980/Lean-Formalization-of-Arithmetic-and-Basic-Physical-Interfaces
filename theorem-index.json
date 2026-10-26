@@ -3472,7 +3472,7 @@
       "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
       "label": "integer level selection with explicit shell support",
       "coverage_kind": "theorem",
-      "scope": "Strict monotonicity, the certified level-four lower crossing, the three-position condition and the separately retained shell support 49/(4*pi)<R<=16/pi select R=5. The shell support is not inferred from the three-position condition alone."
+      "scope": "Strict monotonicity, the certified level-four lower crossing, the three-position condition sqrt(11/2)<c(R)<=sqrt(15/2) and the separately retained shell support 49/(4*pi)<R<=16/pi select R=5. The left-open, right-closed position interval agrees with the manuscript's strict spectral cutoff. The shell support is not inferred from the three-position condition alone."
     },
     {
       "name": "GeneratedFoundations.Analysis.NaturalSourceScaleBudget.capacityBudget_eq",

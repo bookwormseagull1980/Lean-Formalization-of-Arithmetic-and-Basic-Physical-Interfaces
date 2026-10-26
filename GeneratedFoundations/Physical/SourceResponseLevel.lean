@@ -13,7 +13,10 @@ The finite Gaussian window is indexed by a positive natural level.  The
 three-position condition gives two real inequalities on the endpoint root
 `c R`:
 
-  `sqrt(11/2) <= c R` and `c R < sqrt(15/2)`.
+  `sqrt(11/2) < c R` and `c R <= sqrt(15/2)`.
+
+The lower edge is excluded and the upper edge is retained because the
+spectral projection uses a strict upper cutoff.
 
 The shell support is a distinct condition: the last retained index is `49/4`
 and the first excluded index is `16`. It gives `49/(4*pi) < R <= 16/pi`.
@@ -33,7 +36,7 @@ abbrev ResponseLevel := ℕ
 
 /-- The three-position condition at a given endpoint root value. -/
 def ThreePosition (c : ℝ) : Prop :=
-  Real.sqrt (11 / 2 : ℝ) ≤ c ∧ c < Real.sqrt (15 / 2 : ℝ)
+  Real.sqrt (11 / 2 : ℝ) < c ∧ c ≤ Real.sqrt (15 / 2 : ℝ)
 
 /-- The retained shell set is unchanged precisely on this bandwidth range. -/
 def SameShellSupport (R : ResponseLevel) : Prop :=
@@ -56,8 +59,8 @@ theorem sameShellSupport_five : SameShellSupport 5 := by
 
 /-- The three-position condition at level `5`, from the two local bounds. -/
 theorem threePosition_five {c : ResponseLevel → ℝ}
-    (h5lo : Real.sqrt (11 / 2 : ℝ) ≤ c 5)
-    (h5hi : c 5 < Real.sqrt (15 / 2 : ℝ)) :
+    (h5lo : Real.sqrt (11 / 2 : ℝ) < c 5)
+    (h5hi : c 5 ≤ Real.sqrt (15 / 2 : ℝ)) :
     ThreePosition (c 5) :=
   ⟨h5lo, h5hi⟩
 
@@ -71,7 +74,7 @@ theorem threePosition_eq_five {c : ResponseLevel → ℝ}
     have hcRle : c R ≤ c 4 := cert.strictMono.monotone hRle
     have hlt : c R < Real.sqrt (11 / 2 : ℝ) :=
       lt_of_le_of_lt hcRle cert.four_lt
-    exact (not_le_of_gt hlt) hR.1
+    exact lt_asymm hlt hR.1
   have hUpper : (R : ℝ) ≤ 16 / Real.pi := hsupport.2
   have hpi : (8 / 3 : ℝ) < Real.pi := by
     linarith [Real.pi_gt_three]
