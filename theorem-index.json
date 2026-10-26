@@ -6110,6 +6110,158 @@
     "label": "full density scale",
     "coverage_kind": "theorem",
     "scope": "The full finite curvature density retains its exact quadratic, cubic interference and quartic scaling terms."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.scalarSourceProjection_square",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "scalarSourceProjection square",
+    "coverage_kind": "theorem",
+    "scope": "The actual scalar-spin source projection is idempotent."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.scalarSourceProjection_adjoint",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "scalarSourceProjection adjoint",
+    "coverage_kind": "theorem",
+    "scope": "The actual scalar-spin source projection is self-adjoint."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.leptonProjection_square",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "leptonProjection square",
+    "coverage_kind": "theorem",
+    "scope": "Both chiral scalar-spin summands define an idempotent complete lepton projection."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.leptonProjection_adjoint",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "leptonProjection adjoint",
+    "coverage_kind": "theorem",
+    "scope": "The complete lepton projection is self-adjoint and includes the neutral direction."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.scalarSourceProjection_spin",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "scalarSourceProjection spin",
+    "coverage_kind": "theorem",
+    "scope": "The scalar-spin projection commutes with the actual spin response."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.leptonProjection_connector",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "leptonProjection connector",
+    "coverage_kind": "theorem",
+    "scope": "The actual elementary scalar connector preserves the complete lepton carrier."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.leptonProjection_colouredResponse",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "leptonProjection colouredResponse",
+    "coverage_kind": "theorem",
+    "scope": "A response supported on the coloured summand is annihilated on the left by the lepton projection."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.colouredResponse_leptonProjection",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "colouredResponse leptonProjection",
+    "coverage_kind": "theorem",
+    "scope": "A response supported on the coloured summand annihilates the lepton projection on the right."
+  },
+  {
+    "name": "GeneratedFoundations.Physical.SourceMatterCompression.generated",
+    "module": "GeneratedFoundations.Physical.SourceMatterCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "generated",
+    "coverage_kind": "theorem",
+    "scope": "The zero-argument matter-compression bundle contains the canonical projection, connector compatibility, colour annihilation and complete finite covariant decompositions."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.retainedConnection_split",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "retainedConnection split",
+    "coverage_kind": "theorem",
+    "scope": "The retained connection contains both the original connection and the moving readout."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.covariantJet_reconstruction",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "covariantJet reconstruction",
+    "coverage_kind": "theorem",
+    "scope": "The retained and orthogonal complementary blocks reconstruct the original covariant jet."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.complementConnection_orthogonal",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complementConnection orthogonal",
+    "coverage_kind": "theorem",
+    "scope": "For an orthonormal readout, the complementary connection is orthogonal to its range."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.covariantJet_decomposition_unique",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "covariantJet decomposition unique",
+    "coverage_kind": "theorem",
+    "scope": "Reconstruction and orthogonality uniquely determine the two compressed connection blocks."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.retainedConnection_skew",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "retainedConnection skew",
+    "coverage_kind": "theorem",
+    "scope": "An orthonormal readout derivative and skew-adjoint original connection give a skew-adjoint retained connection."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.covariantJet_gram",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "covariantJet gram",
+    "coverage_kind": "theorem",
+    "scope": "The complete quadratic Gram equals the retained Gram plus the orthogonal complement Gram."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.covariantJet_gram_expansion",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "covariantJet gram expansion",
+    "coverage_kind": "theorem",
+    "scope": "The complete covariant Gram retains both original-connection and moving-readout interference terms."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.covariantJet_passive",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "covariantJet passive",
+    "coverage_kind": "theorem",
+    "scope": "Simultaneous passive transport of connection and readout derivative transports the full covariant jet."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.retainedConnection_passive",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "retainedConnection passive",
+    "coverage_kind": "theorem",
+    "scope": "The retained connection is invariant under simultaneous passive source-frame transport."
+  },
+  {
+    "name": "GeneratedFoundations.Operations.CovariantCompression.complementConnection_passive",
+    "module": "GeneratedFoundations.Operations.CovariantCompression",
+    "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+    "label": "complementConnection passive",
+    "coverage_kind": "theorem",
+    "scope": "The complementary connection transforms covariantly under the same passive source-frame transport."
   }
 ],
   "planned": [

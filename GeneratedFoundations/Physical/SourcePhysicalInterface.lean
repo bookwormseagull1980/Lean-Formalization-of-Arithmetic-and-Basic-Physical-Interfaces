@@ -2,6 +2,7 @@ module
 
 public import GeneratedFoundations.Physical.SourceInternalResponse
 public import GeneratedFoundations.Physical.SourceCompleteMatterExactSequence
+public import GeneratedFoundations.Physical.SourceMatterCompression
 public import GeneratedFoundations.Physical.SourceSplitResponse
 public import GeneratedFoundations.Physical.SourceFrameConstruction
 public import GeneratedFoundations.Physical.SourceFourDimensionalYangMills
@@ -138,10 +139,12 @@ structure GaugeConclusions : Prop where
   kinematics : SourceFourDimensionalGaugeKinematics.Properties
   colourYangMills : SourceFourDimensionalYangMills.Properties
 
-/-- The matter-sector core: the concrete bundle and its exact sequence. -/
+/-- The matter-sector core: the concrete bundle, its exact sequence and
+complete covariant compression with the orthogonal complement retained. -/
 structure MatterConclusions : Prop where
   bundle : CanonicalMatterBundle.Conclusions
   exactSequence : SourceCompleteMatterExactSequence.Conclusions
+  compression : SourceMatterCompression.Conclusions
 
 /-- The Hermitian readout core, grouped into one field. -/
 structure HermitianConclusions : Prop where
@@ -344,7 +347,8 @@ theorem generatedCore : CoreConclusions where
     colourYangMills := generated.four_dimensional_colour_yang_mills }
   matter := {
     bundle := generated.canonical_matter_bundle
-    exactSequence := generated.complete_matter_exact_sequence }
+    exactSequence := generated.complete_matter_exact_sequence
+    compression := SourceMatterCompression.generated }
   transverse_traceless_carrier := generated.transverse_traceless_carrier
   tensor_response_endpoint := generated.tensor_response_endpoint
   collective_gravity := SourceCollectiveGravityClosure.generated

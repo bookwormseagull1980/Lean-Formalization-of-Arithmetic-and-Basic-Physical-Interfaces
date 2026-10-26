@@ -494,3 +494,26 @@ resolvent-trace bound obtained from it. This semantic
 review does not cover unmapped manuscript assertions. The completed
 compiled audit verifies the formal statements and their dependencies; it
 does not replace this separate review of manuscript correspondence.
+
+## Complete covariant matter compression
+
+`Physical.SourceMatterCompression.generated` constructs the complete lepton
+projection from the existing scalar-spin source summands in both chiral
+copies. Its idempotence, adjoint, scalar-connector compatibility and
+two-sided annihilation of coloured responses are proved on the actual
+generated carrier. The neutral direction is retained.
+
+`Operations.CovariantCompression` proves reconstruction, orthogonality,
+uniqueness, the complete quadratic Gram decomposition and simultaneous
+passive transport of the connection and moving readout. Its matrix
+variables are field configurations; orthonormality and metric
+compatibility state the coordinate domains of the respective identities.
+They introduce no field configuration or coupling into the root datum.
+The proved bundle is included in
+`SourcePhysicalInterface.generatedCore.matter.compression`.
+
+The two modules and physical interface have passed targeted compilation.
+The nineteen indexed declarations and `generatedCore` have also been
+checked with `#print axioms`; their dependencies are limited to `propext`,
+`Classical.choice` and `Quot.sound`. This targeted check does not replace
+the separately recorded whole-library audit.
