@@ -3,6 +3,7 @@ module
 public import GeneratedFoundations.Physical.SourceInternalResponse
 public import GeneratedFoundations.Physical.SourceCompleteMatterExactSequence
 public import GeneratedFoundations.Physical.SourceMatterCompression
+public import GeneratedFoundations.Physical.SourceMatterPoleResponse
 public import GeneratedFoundations.Physical.SourceSplitResponse
 public import GeneratedFoundations.Physical.SourceFrameConstruction
 public import GeneratedFoundations.Physical.SourceFourDimensionalYangMills
@@ -145,6 +146,7 @@ structure MatterConclusions : Prop where
   bundle : CanonicalMatterBundle.Conclusions
   exactSequence : SourceCompleteMatterExactSequence.Conclusions
   compression : SourceMatterCompression.Conclusions
+  spectralResponse : SourceMatterPoleResponse.Conclusions
 
 /-- The Hermitian readout core, grouped into one field. -/
 structure HermitianConclusions : Prop where
@@ -348,7 +350,8 @@ theorem generatedCore : CoreConclusions where
   matter := {
     bundle := generated.canonical_matter_bundle
     exactSequence := generated.complete_matter_exact_sequence
-    compression := SourceMatterCompression.generated }
+    compression := SourceMatterCompression.generated
+    spectralResponse := SourceMatterPoleResponse.generated }
   transverse_traceless_carrier := generated.transverse_traceless_carrier
   tensor_response_endpoint := generated.tensor_response_endpoint
   collective_gravity := SourceCollectiveGravityClosure.generated

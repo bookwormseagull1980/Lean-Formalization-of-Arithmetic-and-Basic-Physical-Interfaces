@@ -517,3 +517,22 @@ The nineteen indexed declarations and `generatedCore` have also been
 checked with `#print axioms`; their dependencies are limited to `propext`,
 `Classical.choice` and `Quot.sound`. This targeted check does not replace
 the separately recorded whole-library audit.
+
+## Matter energies, residues and the joint state
+
+`Physical.SourceMatterPoleResponse` proves the finite block elimination
+equation, eigenvector reconstruction, its full Gram normalization, the
+positive return metric, the exact two-energy inverse-response identity
+and the derivative of the actual complementary resolvent. The trace
+identity for a common state proves that its two CAR orderings have the
+unit equal-time normalization. No product-state assumption is used.
+
+Its matrix variables describe configurations; inverse and resolvent
+conditions specify analytic domains. The unit trace and CAR clauses
+describe a normalized matter response. They do not choose a source state,
+interaction, clock conversion or finite mass coefficient. The proved
+operations are exported by
+`SourcePhysicalInterface.generatedCore.matter.spectralResponse` alongside
+all previously present physical branches. No custom axiom or `sorry`
+was introduced. Targeted compilation and the eleven declaration checks
+are recorded separately from the whole-library audit.

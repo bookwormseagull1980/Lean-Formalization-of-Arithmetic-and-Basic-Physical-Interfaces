@@ -6262,7 +6262,95 @@
     "label": "complementConnection passive",
     "coverage_kind": "theorem",
     "scope": "The complementary connection transforms covariantly under the same passive source-frame transport."
-  }
+  },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.eigenvectorLift_gram",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "eigenvectorLift gram",
+      "coverage_kind": "theorem",
+      "scope": "The lifted full eigenvector has Gram I+W^dagger W, including its complementary amplitude."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.returnMetric_posDef",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "returnMetric posDef",
+      "coverage_kind": "theorem",
+      "scope": "The retained energy normalization I+(RV)^dagger(RV) is strictly positive."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.returnMetric_eq",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "returnMetric eq",
+      "coverage_kind": "theorem",
+      "scope": "For a Hermitian complementary resolvent the lifted norm equals I+V^dagger R^2 V."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.complement_reconstruction",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complement reconstruction",
+      "coverage_kind": "theorem",
+      "scope": "The same complementary inverse reconstructs the lower block of the complete matter equation."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.eigenvectorLift_equation_iff",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "eigenvectorLift equation iff",
+      "coverage_kind": "theorem",
+      "scope": "The complete finite block eigenvalue equation and its reduced inverse-response equation are equivalent on the same lifted vector."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.complement_resolvent_difference",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complement resolvent difference",
+      "coverage_kind": "theorem",
+      "scope": "Exact two-energy resolvent identity for the same complementary operator."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.reducedKernel_difference",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "reducedKernel difference",
+      "coverage_kind": "theorem",
+      "scope": "The exact divided difference of the reduced inverse response retains the complementary normalization term."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.complement_resolvent_derivative",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "complement resolvent derivative",
+      "coverage_kind": "theorem",
+      "scope": "The actual complementary resolvent has derivative minus its square on its resolvent domain."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.jointState_gram",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "jointState gram",
+      "coverage_kind": "theorem",
+      "scope": "Both CAR orderings use the same state square root in the joint transition trace Gram."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.jointState_car_normalization",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "jointState car normalization",
+      "coverage_kind": "theorem",
+      "scope": "The complete CAR and unit state trace fix the joint equal-time normalization."
+    },
+    {
+      "name": "GeneratedFoundations.Physical.SourceMatterPoleResponse.generated",
+      "module": "GeneratedFoundations.Physical.SourceMatterPoleResponse",
+      "paper": "Lean Formalization of Arithmetic and Basic Physical Interfaces",
+      "label": "generated",
+      "coverage_kind": "theorem",
+      "scope": "The finite matter energy, normalization and joint-state operations are proved with no additional root data."
+    }
 ],
   "planned": [
     {"id": "A1", "target": "Minimal carrier, orientation and complex structure"},
