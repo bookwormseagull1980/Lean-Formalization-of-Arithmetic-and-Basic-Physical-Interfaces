@@ -116,6 +116,8 @@ The [Book-and-Articles collection](https://github.com/bookwormseagull1980/Book-a
 contains the reading PDFs and their individual archival identifiers.
 [V5](https://github.com/bookwormseagull1980/coarse-graining-genesis)
 provides the numerical response calculations and interval certificates.
+The companion paper on [effective couplings and mass scales](https://arxiv.org/abs/2607.24329)
+is available as arXiv:2607.24329, [DOI 10.48550/arXiv.2607.24329](https://doi.org/10.48550/arXiv.2607.24329).
 The [shared portal](https://bookwormseagull1980.github.io/Book-and-Articles/)
 organizes arithmetic, prime operators, gauge theory, gravity and certified
 computation into reading routes.
