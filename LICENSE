@@ -1,4 +1,5 @@
-Coarse-Graining Genesis Framework V5.0
+Lean Formalization of Arithmetic and Basic Physical Interfaces
+Companion numerical framework: Coarse-Graining Genesis Framework V5.0
 Author: Jinku Guo <guojk@nwpu.edu.cn>
 Northwestern Polytechnical University, Xi'an 710072, China
 ORCID: 0009-0000-6600-6171
@@ -28,7 +29,7 @@ framework MUST cite all three of the following:
        Gauge Structure and a Scalar Mass Gap. Unpublished manuscript.
        Guo, J. (2026g). The Spectrum of a Compact Internal Space II:
        Effective Couplings and Mass Scales. Unpublished manuscript.
-  3. the source  — this Git repository: https://github.com/bookwormseagull1980/coarse-graining-genesis
+  3. the source  — this Git repository: https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces
 
 The complete bibliography is given in REFERENCES.md and CITATION.cff.
 

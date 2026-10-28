@@ -11,6 +11,13 @@ public import GeneratedFoundations.Physical.SourceTTEndpointInterval
 -- Separate V5 TT-endpoint model: imported for audit coverage only.  It is
 -- deliberately not a field of CommonFoundation.Conclusions.
 public import GeneratedFoundations.Physical.SourceTTResponse
+public import GeneratedFoundations.Physical.SourceTTComparisonInformation
+public import GeneratedFoundations.Physical.SourceTTEquilibriumClosure
+public import GeneratedFoundations.Physical.SourceTTEventVertex
+public import GeneratedFoundations.Physical.SourceTTReferenceCalibration
+public import GeneratedFoundations.Physical.SourceTTRelativeFisher
+public import GeneratedFoundations.Physical.SourceTTScalarFrameSupport
+public import GeneratedFoundations.Physical.SourceTTTensorConnectedResponse
 public import GeneratedFoundations.Physical.CanonicalYangMillsTT
 public import GeneratedFoundations.Physical.SourceResolutionCompensation
 public import GeneratedFoundations.Physical.SourcePhaseCharge

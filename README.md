@@ -1,1098 +1,160 @@
 # Lean Formalization of Arithmetic and Basic Physical Interfaces
 
-[![Lean verification](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml)
-[![Zenodo concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23254521.svg)](https://doi.org/10.5281/zenodo.23254521)
-[![Zenodo V1.0 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23254522.svg)](https://doi.org/10.5281/zenodo.23254522)
+## Mathematics and physics from minimal change
 
-Source repository: [Lean Formalization of Arithmetic and Basic Physical Interfaces](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces).
+[![Lean verification](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions/workflows/ci.yml/badge.svg)](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23254521.svg)](https://doi.org/10.5281/zenodo.23254521)
 
-## 1. Narrative
+**Jinku Guo · Northwestern Polytechnical University**
 
-This project makes a common foundational claim checkable in Lean: starting from
-minimal unbiased compositional change, one constructs a single generated
-natural-number system and a basic physical response interface within one
-explicit source class. Addition, multiplication, factorization, reduced
-expressions and complete ordered histories are structures of that same
-natural-number construction, not alternative constructions.
+[Research portal](https://bookwormseagull1980.github.io/Book-and-Articles/) ·
+[Theorem index](theorem-index.json) · [Complete technical reference](REFERENCE.md) ·
+[Branch alignment](BRANCH_ALIGNMENT.md) · [Discussions](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/discussions)
 
-The sole closed-world entry is
-`GeneratedFoundations.CanonicalClosedWorld.generated`. It accepts no
-carrier, probability law, arithmetic source, physical source, forcing term, or
-boundary datum. Minimal unbiased compositional change is the sole abstract
-root; upstream classification selects the rotation carrier as its canonical
-representative, and the positive-parameter compositional law is constructed
-uniquely. The theorem then produces source
-closure, the complete generated natural-number system, and the basic physical
-interface. It does not quantify over a family of widths or orientations: unit
-covariance fixes the dimensionless width and the original complex rotation
-supplies its canonical oriented presentation before the theorem is assembled.
-Reversing that presentation gives the proved conjugate structure. The arithmetic and
-physical branches are parallel conclusions;
-neither is assumed by the other.
+This Lean 4/mathlib library develops a common generating source into
+natural-number arithmetic, finite expression histories and basic physical
+response structures. Its arithmetic branch retains how a value is generated,
+then proves that retained history differences can affect later value response.
+Its physical branch constructs gauge and matter data and proves the generated
+Yang-Mills action, complete differential Hessian and attained positive spectral
+gap in the specified source model.
 
-The mathematical response interface includes least faithful Hilbert
-realizations of the actual complete history--phase fibres and their
-root-preserving sector products. Their dimensions are derived from the
-actual fibre cardinalities. Matrix-unit decomposition and adjoint compatibility
-give uniqueness up to unitary intertwining; no physical carrier dimension is
-imposed on these arithmetic spaces. The general classification proofs are
-shared upstream, with the former physical names preserved as compatibility
-exports.
+The formal statements expose the hypotheses, types and comparison classes of
+each conclusion. The theorem index links these statements to the companion
+manuscripts. Compiler and axiom audits record the declarations actually checked
+in each audit; the full technical reference preserves the detailed construction
+and the separate audit snapshots.
 
-`HistoryCentralSectors` resolves the actual complete arithmetic coefficient
-space into its intrinsic prime-occupation sectors. Their dimensions are
-computed independently, and unitary coordinates retain every operator block.
-`HistoryCliffordAction` also represents the common source Clifford operations
-on all retained history--phase labels. Its source-sector exchange commutes
-with occupation parity and Gaussian multiplication. Source chirality,
-occupation parity and ordered-history reversal are therefore distinguished
-by proved action identities. The full arithmetic/source matrix action has a
-faithful realization in the original Gaussian/Hermite space, with every
-matrix coefficient recovered by an explicit inverse.
+## What the library establishes
 
-The complete complex response is retained: arbitrary source connectors act
-between explicit orthogonal sector inclusions, and independent even actions
-have the proved connector covariance in both coefficient and Gaussian
-coordinates. The finite phase action has an exact permutation matrix, trivial
-kernel and computed trace. Its observation quotient is canonically the
-zero-average detail space, with exact reconstruction, actual fibre dimensions
-and a unique factorization for every response annihilating the invariant part.
+| Construction | Principal output | Formal entry |
+| --- | --- | --- |
+| Common source | Minimal carrier, Gaussian law, correlation endpoints and reflected spectral structure | [Canonical closed world](GeneratedFoundations/CanonicalClosedWorld.lean) |
+| Native arithmetic | Ordered Peano operations, recursion, unique prime factorization, scale and orientation transport | [Generated arithmetic foundation](GeneratedFoundations/Arithmetic/GeneratedFoundation.lean) |
+| Retained expressions | Finite expression fibres, conditional history source, history geometry and complete assembly dynamics | [Complete history dynamics](GeneratedFoundations/Arithmetic/CompleteHistoryDynamics.lean) |
+| Observable history response | Coupling of internal differences to value response and exact elimination with memory | [History response reduction](GeneratedFoundations/Analysis/HistoryResponseReduction.lean) |
+| Gauge and matter | The generated gauge-matter bundle in the stated continuation class | [Canonical matter bundle](GeneratedFoundations/Physical/CanonicalMatterBundle.lean) |
+| Yang-Mills action and gap | Original-field curvature action, self-adjoint Hessian, complete coercivity and attained spectral bottom | [Canonical Yang-Mills](GeneratedFoundations/Physical/CanonicalYangMills.lean) and [Hessian](GeneratedFoundations/Physical/SourceHaarYangMillsHessian.lean) |
 
-The determinant line of the two original Gaussian modes and the Hermitian
-matrix cone are shared source constructions. Both branches use the same
-proofs, with the original physical names retained as compatibility exports.
-The determinant phase remains explicit, and the positive-semidefinite cone
-includes its degenerate boundary.
+### Arithmetic with information about its construction
 
-The actual phase bundle now has unitary frames, unique relative transitions,
-passive components and complete response covariance. Its invariant and
-zero-average spaces also determine their own primitive trace-free relative
-weights `(-n,1)`, using their proved dimensions `H` and `H*n`. The degenerate
-unit-root case remains explicit. Physical carrier dimensions and charge
-numbers are not substituted into these arithmetic constructions.
+The source produces an ordered mode family on which the native operations are
+defined. Winding degree supplies the subsequent numerical certification.
+Ordered expressions retain brackets, operation labels and input order before
+evaluation. Conditional readout separates arithmetic values from internal
+history variation. The complete assembly operator has an explicit history
+component whose initial value readout vanishes but whose subsequent value
+response is nonzero.
 
-### Two internal-radius conventions (do not mix)
+Thus the formalized object contains more information than a numerical value or
+a circle-power label. The construction records the source, evaluation,
+conditional geometry and evolution needed to follow that information. The
+[arithmetic paper](https://ssrn.com/abstract=7421398) gives the mathematical
+development and worked examples.
 
-| object | meaning | value |
-|---|---|---:|
-| `SourceEndpointCasimir.radius b = irEndpoint b` | IR **edge** of the Gaussian correlation window; the Lean canonical entry's internal radius | `sqrt(2*pi) ≈ 2.506628` |
-| `kL` (V5) | finite-response **TT endpoint**: root of the TT spectral-sum equation `A(L)=4/27` | `2.493534` |
-| `criticalRadius` | endpoint **ratio** `irEndpoint/uvEndpoint = sqrt(pi)`, not an edge | `1.772454` |
-| `R=5` (V5) | finite **response-domain level** `q^2 < R Lambda^2`, not an internal radius | `5` |
+### The generated Yang-Mills spectral-gap theorem
 
-`CanonicalYangMills` is the unconditional **IR-edge** model.  The V5
-**TT-endpoint** model is separate and certificate-conditional:
-`CanonicalYangMillsTT.generated` takes a
-`SourceTTResponse.EndpointCertificate`.  It is deliberately not a field of
-`CommonFoundation.Conclusions`; the zero-argument entry and the V5 TT model
-are never identified.  At the IR edge the TT sum is about `0.147374`, below
-`4/27`, so the two closures are genuinely different.
+`CanonicalYangMills.generated` combines the source-generated IR-edge radius,
+nonlinear action, positive condensed response and original-field differential
+Hessian. The connection sector uses the complete weak divergence kernel on the
+Haar one-form space. The Hessian has its unique self-adjoint closure on the
+explicit weighted-square domain, and the positive spectral bottom is attained.
+Finite occupation gives the corresponding Fock gap.
 
-The zero-argument physical surface is
-`SourcePhysicalInterface.CoreConclusions` (proved by `generatedCore`).  It
-groups the gauge and matter layers and keeps the physical outputs without
-repeating every intermediate bundle; the older `Conclusions` remains a
-compatibility bundle for finer layers.
-
-### Lean versus V5
-
-Lean proves the **structural** physical branch: source and Gaussian law,
-internal spectra, field spaces/operators/domains, YM nonlinear action and
-Hessian, the finite-occupation Fock core and its heat semigroup, collective
-linear gravity, `4/27`, `1/50`, and a certificate-conditional TT endpoint
-root/interval layer for a **reduced eight-branch coefficient model** (given its
-coefficient interval). Its identification with the full V5 finite spectral
-sum is supplied by the separate V5 certificate described below; that bridge
-is not formalized in this Lean branch.
-V5 supplies the **numerical** layer: the TT spectral coefficient, Gaussian
-frequency integral, finite-domain `R=5` bounds and effective gravitational
-parameters.  `SourceTTEndpointInterval` consumes a V5 coefficient interval;
-`SourceResponseLevel` consumes the V5 lower bound and proves the integer
-selection.  The effective Einstein completion is macroscopic, not a
-microscopic closure of the collective TT response.  No independent graviton
-field or separate gravitational Fock space is introduced.
-
-### Yang--Mills mass gap proved in the generated IR-edge model
-
-The zero-argument theorem proves a **Yang--Mills mass gap** for the generated
-Yang--Mills operator. `CanonicalYangMills.generated` combines the nonlinear
-generated action, the self-adjoint differential Hessian (radial block plus the
-complete coclosed colour-connection block), the attained positive spectral
-bottom and the finite-occupation Fock gap. The relevant theorem names are
+The principal declarations include
 `SourceHaarYangMillsHessian.operator_selfAdjoint`,
-`SourceHaarYangMillsHessian.complete_coercivity`,
-`SourceHaarYangMillsHessian.gap_attained` and
-`CanonicalYangMills.generated`.
+`SourceHaarYangMillsHessian.complete_coercivity` and
+`SourceHaarYangMillsHessian.gap_attained`.
+The separate transverse-traceless realization,
+`CanonicalYangMillsTT.generated`, takes an endpoint certificate. Its radius and
+dimensional calibration are distinct from the Gaussian IR-edge realization.
+The [physical construction paper](https://ssrn.com/abstract=7352020) and
+[V5 correspondence](https://github.com/bookwormseagull1980/coarse-graining-genesis/blob/master/docs/LEAN_CORRESPONDENCE.md)
+explain this interface.
 
-The comparison uses the ordinary trace on the full real adjoint field.
-`Physical.SourceAdjointComparison` proves the finite trace decomposition
-into eight scalar copies and differentiates the resulting adjoint restoring
-response. The scalar balance target is therefore divided by eight, whereas
-the source information metric still counts all 120 real connection
-coefficients. `SourceGeneratedRadialVariation` differentiates this same
-potential in the normalized source coordinate; its radial mass squared is
-`(2*8/120)*z^2*completeCurvature z`. The colour covariance factor `1/8`
-and the comparison trace multiplicity `8` enter different contractions.
+## First checks
 
-This is a mass-gap theorem for the **generated finite IR-edge operator**, not a
-proof of the Clay four-dimensional QCD mass-gap problem. It uses the IR edge
-`sqrt(2*pi)`, not the V5 TT endpoint `kL`, and it does not use a V5 numerical
-input. The separate V5 TT-endpoint number is a different operator and is not
-identified with this theorem.
+Use the pinned version in `lean-toolchain` and the dependencies in
+`lake-manifest.json`. From the repository root:
 
-### The V5 TT-endpoint interface is an exact reduction
-
-`SourceTTGaussianCoefficient` defines the eight active branches with response
-`A_5/c`; `SourceTTEndpointInterval` proves the algebraic root/interval
-statement for that coefficient model. The V5 endpoint is the root of the full
-finite spectral sum `A_V5(c)=4/27`.
-
-V5's `tt_branch_reduction` certificate supplies the missing bridge: on the
-certified endpoint bracket the full active V5 spectrum consists of exactly
-these eight branches, and the change of variable `u=c*omega` proves
-`A_V5(c)=A_5/c` exactly. The V5 scaled-response interval is identical to the
-Lean coefficient interval. Thus the Lean root theorem applies to the V5 full
-response as an exact model reduction, not a numerical approximation.
-
-The bridge is a V5 table/interval certificate; it is not a Lean import and is
-not formalized inside this repository. `CanonicalYangMillsTT` remains a
-certificate-conditional comparison module, not a field of
-`CommonFoundation.Conclusions` and not a dependency of the zero-argument
-physical theorem. V5 remains a separate release whose calculation and test
-imports do not read this repository.
-
-The concrete matter bundle is now constructed on the generated Hermitian
-four-carrier with the complete source matter space as its fibre. Its global
-coordinates, unitary frame action, relative transitions and passive-component
-compatibility are proved in `Physical.CanonicalMatterBundle`; no arbitrary
-family of fibres or local compatibility premise is supplied to that entry.
-The arbitrary-bundle lemmas remain comparison theorems with their stated
-premises, rather than assumptions of this concrete construction.
-
-`Physical.SourceNonlinearTensorAction` constructs the first-order nonlinear
-tensor density on the same four-carrier. The actual density variation under
-affine dilation uniquely fixes the relative cubic self-coupling to one inside
-the unit-normalized quadratic-plus-cubic class. Its density and connection
-weights are calculated from their Lie transformations. General local
-diffeomorphism covariance and the nonlinear metric field equations are
-separate from this affine-dilation result.
-
-## 2. Concrete record
-
-The source is pinned to Lean 4.34.0 and mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435`. The branch-alignment verification
-record from 20 October covers all 549 local modules, 24,087 project-owned compiled constants,
-13,308 named type checks and 705 indexed claims. It includes both independent
-branches, their common aggregate, compatibility exports and research modules.
-The feature comparison records a remaining selection scope separately:
-the arithmetic Gaussian spectral endpoint is unique for each fixed
-generation prefix, positive observation level and nonempty observed set.
-The source has not yet selected that level and set, so these theorems do
-not supply a unique numerical arithmetic counterpart of the physical
-finite-response endpoint `kL`.
-The implementation and per-declaration comparison are recorded in
-`BRANCH_ALIGNMENT.md` and the three branch-alignment ledgers under
-`verification/`. The compiler audit and the semantic comparison have separate
-records and scopes.
-
-The earlier 19 October canonical-root audit
-passed for all 346 local modules imported by the zero-argument entry, with
-16,584 compiled constants, 8,490 named type checks and the indexed claims
-recorded in `theorem-index.json`.
-Those counts describe that audited snapshot, before the concrete-bundle and
-nonlinear-density extensions above. The root and its dependencies in that
-snapshot use only Lean's `propext`, `Classical.choice`
-and `Quot.sound`; there are no local axioms or proof placeholders.
-The separately scoped 18 October release audit records 273 modules, 13,854
-constants, 7,231 named type checks and 298 indexed claims for that earlier
-whole-library snapshot. These are library and audit counts, not counts of
-independent mathematical theorems. That earlier canonical-root record does not
-cover research modules outside its actual import closure; the later
-branch-alignment record covers the whole implemented library.
-
-## 3. Program implementation
-
-For a first check, run the standard-library-only smoke test in
-[`examples/quickstart`](examples/quickstart). For the complete package, install
-the pinned Lean toolchain, run `lake build`, then run
-`python scripts/verify_foundations.py`. The public workflow performs these
-checks together with the verifier regression tests on every push and pull
-request to `main`.
-
-## 4. Reproducible verification
-
-The CI and verifier make the compiled declarations, dependency locks, source
-hashes, and transitive axiom audit reproducible. The theorem index records the
-reviewed manuscript clauses and their corresponding declarations. Cite the
-version series with DOI
-`[10.5281/zenodo.23254521](https://doi.org/10.5281/zenodo.23254521)` or the
-released V1.0 record with DOI
-`[10.5281/zenodo.23254522](https://doi.org/10.5281/zenodo.23254522)`.
-
-The verifier audits two dependency-separated entries: the current root library
-and `GeneratedFoundations.ResearchExtensions`. The latter contains the
-intrinsic prime-parity and squarefree signed source, their classical
-Liouville/Moebius coordinate identifications, finite signed-energy and residue
-Fourier observations, and the finite recovery kernel selected from the later
-generated-world analysis. That kernel proves canonical minimal-frontier
-evaluation, the order-two factorial-overlap algebra and exact doubled-tilt
-edge balance. Audit coverage of these research extensions does not place them
-in the root import closure.
-
-## Detailed scope and boundaries
-
-This independent Lean 4 library formalizes the common mathematical
-foundations used in:
-
-- J. Guo, *A Spectral Construction of Natural-Number Arithmetic*.
-- J. Guo, *The Spectrum of a Compact Internal Space I: Gauge Structure and a Scalar Mass Gap*.
-
-The arithmetic root also exposes a finite-fibre reduced-expression resolution.
-Ordered binary expressions are normalized only by the stated unit and
-absorbing-zero laws; their evaluation quotient is the already generated
-native-mode semiring, and evaluation commutes with canonical scale and
-orientation transport. This adds pre-evaluation resolution without adding a
-field to the root datum or replacing the existing arithmetic.
-
-The common root theorem constructs one native natural-number system, including
-its arithmetic, factorization, reduced-expression resolution, complete ordered
-history and phase fibres, intrinsic history observables, an exact whole-history
-transport ledger and detailed-balance edge dynamics, together with the basic
-internal physical interface. Intrinsic signed arithmetic observations, finite
-Fourier and signed-energy constructions, and the finite generated recovery
-kernel are collected under the separate
-`GeneratedFoundations.ResearchExtensions` entry and do not enter this root
-chain. Its exact
-conclusions and comparison classes are recorded in `theorem-index.json`;
-this scope does not include every assertion of the two manuscripts.
-Each mapped statement has a relative TeX source path and label. The index also
-records hashes of those source files and of each manuscript's local recursive
-TeX input graph, with its hashing convention and exclusions. These identify the
-reviewed manuscript sources; they do not replace review of the stated premises
-and conclusions.
-The index's `manuscript_review_status` separately records the semantic review
-of mapped clauses and any changed sources awaiting review. The stored review snapshot must not be
-silently replaced merely because a label still exists in an updated manuscript.
-
-The sole root is minimal unbiased compositional change. The zero-argument
-closed-world entry internally uses the least carrier proved by the comparison
-theorem and the compositional law supplied by the existence--uniqueness
-theorem. `Source.MinimalUnbiasedChange.Datum` remains an implementation and
-comparison package, not a second input to the generated world. A separate
-variance-scale rigidity theorem starts from an arbitrary nonnegative
-same-shape scale and proves that compositional variance additivity and unit
-normalization force the square-root law. No Gaussian formula is assumed.
-
-The geometric and physical output records, as well as the common root theorem,
-have no orientation or width parameter. The internal-response and chirality
-aggregates are likewise parameter-free; the unused parameterized root wrapper
-has been removed. Scale and reversal calculations use variables only in their
-individual covariance and uniqueness lemmas. Endpoint values,
-reflecting boundary operators, spectral data, arithmetic operations and
-physical response objects are generated conclusions, not root fields.
-
-On the physical branch, the generated projective scalar shells determine the
-complete dimensionless conformal response. The library proves its compact
-continuity, strict increase, unboundedness and positive curvature, hence a
-unique positive balance for every positive generated source response. The same balance
-gives a positive normalized radial gap and the bottom of the complete even
-scalar tower, attained by its constant shell. At one generated response unit,
-the unique balance and positive bottom are canonical objects of the root
-output. No coupling, reference radius, kinetic normalization, spectrum table
-or mass-gap value is added to the root datum in this construction.
-
-Structural conditions, realization indices and calculated outputs have
-different roles. The C/S/V conditions define the source class. Calibrated
-additive information and normalized translation-invariant mass characterize
-the fixed endpoint readouts; their evaluation on the source profile gives
-the endpoint values. Even reflection constructs the conserving closure,
-while the separated-boundary theorem classifies constant-preserving
-competitors. These characterizations are not adjustable fitting parameters,
-and their comparison classes must not be omitted from uniqueness claims.
-In particular, additive information alone determines a multiple of the
-negative logarithm; nonnegativity already supplies the regularity needed for
-this classification, and the unit calibration at `exp(-1)` fixes that multiple.
-Uniqueness throughout is at the equivalence level stated in each theorem,
-not literal equality of all choices of coordinates or realizing maps.
-For the least physical carrier, the commutant calculation makes this last
-qualification exact: any unitary ambiguity is one basis phase on each simple
-response block.
-
-Declaration counts include named definitions, abbreviations, auxiliary lemmas
-and theorems. They are not counts of manuscript theorems. A manuscript mapping
-records the particular statement or clause supported by a Lean declaration;
-several declarations may support one manuscript result. Full coverage requires
-matching all premises and conclusions and completing the intervening construction.
-
-## Gaussian observation windows and capacity-weighted energy
-
-The common root now also exposes the actual maximum-prime-factor stages,
-their relative-potential ledger, the complete natural-prefix scale budget
-and the cutoff-independent Gaussian tail. These are conclusions of the
-constructed source; no balance or decay hypothesis is supplied to the root.
-
-`NaturalSourceScaleBudget` integrates the full squarefree occupation
-capacity `C_N`, rather than only the unit--prime pair. If `I_sigma` is the
-empty-occupation Gaussian budget, its exact formula is
-
-```text
-integral C_N(exp u) exp(-2 sigma u) du
-  = I_sigma * sum_{1 <= n <= N, generated-squarefree n} n^(-2 sigma).
+```sh
+python examples/quickstart/check_environment.py
+lake build
+python scripts/verify_foundations.py
 ```
 
-For every `sigma > 1/2` this is bounded independently of `N`. The same bound
-controls the normalized potential `B_N^2/C_N`, including empty prefixes.
-The coherent budget has the exact, separate reconstruction
-`integral B_N^2 = integral C_N * (B_N^2/C_N)` with the scale weight on both
-sides. Its capacity factor is retained inside the integral.
+The first command checks the local environment. The build checks the imported
+Lean declarations. The verifier runs the repository's named checks and produces
+the corresponding audit information. The [quick-start guide](examples/quickstart/README.md)
+and [verification reference](verification/README.md) explain the records and
+the extra regression-test dependencies.
 
-`CapacityRestoredWindowBudget` makes the finite probability normalization
-explicit on the actual level-five observation `n^2 < 5 L^2`. Its positive
-and negative probabilities are the two Gaussian sector masses divided by
-their own total capacity. Empty observations have zero first and second
-moments. For the same window, with centre variance `v`, it proves
+The [public workflow](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/actions)
+is the current branch check. The stored audits identify their own source
+snapshot, import closure and axiom scope. Module and declaration counts belong
+to those records. The [full reference](REFERENCE.md) distinguishes the earlier
+canonical-root audit from the later whole-library branch alignment.
 
-```text
-B_visible^2 = C_visible^2 * (1-v).
-```
+## Reading and reviewing the formalization
 
-Capacity conservation is part of this same ledger. The visible and outside
-capacities add to the complete capacity, pointwise and inside the weighted
-scale integral. A joint prime flip preserves both the Gaussian response and
-window membership. At a genuine prime birth the paired old capacity, its
-transported return and the unpaired old boundary add exactly to the new total.
-The resolved capacity plus its actual unresolved complement is identical
-before and after that birth, inside the same complete source; no external
-capacity enters this balance.
-Opposite-centre mixing transfers its potential loss `D_mix` to transverse
-capacity:
+1. Read the companion manuscript's construction and choose the relevant claim
+   in [theorem-index.json](theorem-index.json).
+2. Follow its declaration and hypotheses to the source module. The canonical
+   entry and the more general interface often have different input types.
+3. Consult [BRANCH_ALIGNMENT.md](BRANCH_ALIGNMENT.md) and the stored verification
+   records for the mapping and the checked source snapshot.
+4. Run the pinned build and verifier to reproduce the checks on the revision
+   being studied.
 
-```text
-T_after = T_old + T_return + D_mix,
-V_after + T_after = C_after.
-```
+The technical reference retains the detailed treatment of Gaussian selection,
+endpoints, arithmetic and history dynamics, physical continuation, the two
+Yang-Mills radius realizations, units, logical axioms and proof coverage.
 
-The level-five capacity and normalized-potential scale budgets are uniformly
-finite for every `sigma > 1/2`, over all natural cutoffs. The coherent budget
-retains the factor `C_visible^2`. On a genuine prime update, the exact
-capacity-restored dissipation balance is
+## Papers, calculations and citation
 
-```text
-(C_old+C_return)*D_mix - C_return*V_old - C_old*V_return
-  = 2*B_old*B_return.
-```
+The [Book-and-Articles collection](https://github.com/bookwormseagull1980/Book-and-Articles)
+contains the reading PDFs and their individual archival identifiers.
+[V5](https://github.com/bookwormseagull1980/coarse-graining-genesis)
+provides the numerical response calculations and interval certificates.
+The companion paper on [effective couplings and mass scales](https://arxiv.org/abs/2607.24329)
+is available as arXiv:2607.24329, [DOI 10.48550/arXiv.2607.24329](https://doi.org/10.48550/arXiv.2607.24329).
+The [shared portal](https://bookwormseagull1980.github.io/Book-and-Articles/)
+organizes arithmetic, prime operators, gauge theory, gravity and certified
+computation into reading routes.
 
-Thus its signed correlation is present before the first inequality.
-The complete energy and the window energy satisfy two-sided comparisons
-with coefficients `2` and a squared Gaussian tail independent of the natural
-generation cutoff `N`. This tail bound still depends on the observation
-scale `L`; its pointwise estimate does not assert all-scale integrability.
-The remaining growth estimate concerns the capacity-restored coherent
-integral, including the signed visible--outside response.
+Cite the proof library using its concept DOI,
+[10.5281/zenodo.23254521](https://doi.org/10.5281/zenodo.23254521), together with
+the relevant companion paper. [CITATION.cff](CITATION.cff) supplies machine-readable
+metadata. The source revision identifies a particular reproduction.
+[LICENSE](LICENSE) preserves the copyright and attribution terms.
 
-`CoherentScaleTransport` implements the common-response comparison within
-the arithmetic branch itself. At a genuine maximum-prime birth, its response
-is the paired old response minus that same response at `L/p`, plus the actual
-unpaired cutoff boundary. With `E_sigma(S)` denoting the complete coherent
-scale energy of the finite generated set `S`, it proves
+Mathematical questions are welcome in
+[Discussions](https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces/discussions).
+For a failed check or a statement-to-paper discrepancy, use the issue forms and
+include the declaration, revision and relevant output.
 
-```text
-E_sigma(after) - E_sigma(before)
-  = p^(-2 sigma) * E_sigma(paired) - 2 * C_sigma(before, paired at L/p).
-```
+Subjects: Lean 4, mathlib, formal verification, generated arithmetic, natural
+numbers, Gaussian measures, spectral theory, history dynamics, Yang-Mills,
+mass gap, gauge theory, matter representations and mathematical physics.
 
-Here `C_sigma` is the real signed correlation under the original scale
-measure. Its integrability is derived from the finite Gaussian source before
-linearity of the integral is used. The return coefficient applies to the
-capacity-restored square, and the old response includes the complete cutoff
-boundary. A quadratic comparison is applied only after combining these two
-responses; it retains the old energy and paired-return energy separately.
-It is not a bound on the signed correlation that can be discarded in an
-iteration. This module imports only arithmetic and analysis modules.
+## Research subjects and results
 
-`MaximumPrimeFactorRelativeStage` retains the full binary relative potential
-on that same stage. Its Jensen--Shannon loss is at least one half of the
-actual quadratic mixing loss: `JS >= C_old*C_return*(m_old+m_return)^2 /
-(2*(C_old+C_return))`. The plus sign follows from the generated prime birth's
-center reversal. The old block includes the natural cutoff boundary, and
-the returned Gaussian block is evaluated at `L/p`. The proof uses convexity
-of the full entropy remainder, including pure-sector and zero-capacity
-cases. The constant `1/2` is independent of cutoff and scale. The positive
-return potential remains in the budget; this estimate does not remove the
-capacity-restoration terms of the coherent scale energy. The balanced law
-used in this binary comparison is distinct from the actual Gaussian state.
+### Primary subjects
 
-The physical branch independently proves that the centre trace of responses
-`diag(A,B)` is `trace(A-B)`. Its common-response cancellation is the case
-`A=B`; it is not a statement that arbitrary unequal observation responses
-have vanishing centre trace. Neither branch uses the other as a premise.
+Lean 4; Formalized mathematics; Machine-checked proofs; Interactive theorem proving; Proof assistants; Yang-Mills theory; Mass gap; Natural-number arithmetic; Spectral theory; Mathematical physics; Formal verification; mathlib.
 
-`JointOccupationScaleTransport` distinguishes that finite-state comparison
-from the measure-preserving action on all finite prime occupations and all
-logarithmic scales. The invariant base measure is counting measure times
-`du`. The actual unweighted Gaussian profile is not integrable on this
-space. For the existing scale weight `exp(-2 sigma u)`, prime insertion or
-removal changes the density by its exact generated prime factor. Its unique
-positive half-density compensator gives an involutive transport preserving
-the complete nonnegative quadratic integral, including infinite values.
-It commutes with Gaussian multiplication and reverses the centre character.
-For `sigma > 0`, the constant source amplitude is not fixed by this
-transport. These distinctions keep measure preservation, state invariance
-and finiteness as separate, proved statements on the same closed source.
+### Research subjects
 
-`GaussianPrefixTail` replaces the outside-cardinality bound by a convergent
-envelope. For `K = ceil(sqrt(R) * L) > 0`, put
+Foundations of arithmetic; Natural-number objects; Unique factorization; Gaussian measures; Convolution semigroups; Neumann spectra; Arithmetic expression trees; Conditional expectation; History-dependent dynamics; Gauge groups; Standard Model representations; Yang-Mills action; Spectral gaps; Self-adjoint operators; Hilbert spaces.
 
-```text
-r = exp(-K/L^2),
-T = exp(-K^2/L^2) / (1-r).
-```
+### Methods
 
-For every natural cutoff, `C_outside <= T`, the signed amplitude error is
-at most `T`, and the coherent energy error is at most
-`T^2 + 2*abs(B_visible)*T`. The bound is independent of the number of
-omitted labels. The observation scale and window level remain explicit.
+Dependent type theory; Kernel-checked proofs; Theorem formalization; Functional analysis; Operator theory; Quadratic forms; Weighted Hilbert spaces; Coercivity estimates; Orthogonal decomposition; Hodge decomposition; Fock space; Representation theory; Recursive definitions; Formal proof dependencies; Axiom auditing.
 
-The arithmetic entry also exposes `GaussianWindowCapacity`. At observation
-level `R`, the generated square spectrum is partitioned by `n^2 < R*L^2`.
-The level-five instance uses the same Gaussian endpoint weights and central
-character as the complete source. Visible and outside sector pairs add
-exactly to the canonical endpoint pair. Their capacities and signed responses
-are additive; coherent energy retains the full visible--outside cross term.
-Every visible label is bounded by `ceil(sqrt(R)*L)`, and the visible pair
-stabilizes once the natural prefix reaches that cutoff.
-The window predicate is invariant under the joint prime occupation--scale
-flip and transports under a prime birth with the same scale change `L/p` as
-the Gaussian response. Restricting the original Gaussian weight and filtering
-the generated labels produce exactly the same visible source. The windowed
-prime-stage energy therefore obeys the signed old--return correlation ledger
-with the transported scale and the strict boundary condition both retained.
+### Results and research questions
 
-`CapacityEnergyLedger` distinguishes coherent energy `E=B^2` from central
-potential `V=B^2/C`. It proves `E=C*V`, including empty sources, and connects
-the transverse-capacity algebra to the actual generated centre sectors.
-For a genuine prime stage with old capacity `C` and return capacity `c`,
-the exact energy increment is
-`c*V_old + (C+c)*V_return - (C+c)*D_join`.
-The returned source and the old source are combined before taking an
-estimate; the actual natural-cutoff boundary is retained in the old state.
-The relative-potential comparison likewise keeps its capacity factor:
-`E <= 2*C*relativePotential`.
+Machine-checked construction of natural-number arithmetic; Formal proof of unique prime factorization on generated modes; Formalized Gaussian source selection; Verified scale and orientation transport; Formalized arithmetic expression-history assembly; Machine-checked gauge and matter construction; Self-adjoint Yang-Mills Hessian and complete coercivity in Lean; Attained positive spectral gap for the generated Yang-Mills operator.
 
-Outside the window, each Gaussian endpoint weight is at most `exp(-R)`.
-The finite tail certificate displays its cardinal factor explicitly:
-`abs(B-B_visible) <= card(outsideLabels)*exp(-R)`.
-Using the actual outside capacity also certifies the complete energy error:
-`abs(E-E_visible) <= C_outside^2 + 2*abs(B_visible)*C_outside`.
-No fixed observation level is inferred from the arithmetic partition itself;
-level five is a concrete member of this covariant observation family.
+### Chinese subject terms
 
-## Environment
-
-The project pins Lean 4.34.0 and mathlib commit
-`5ed2965256430c3649e86755f9576b54eca72435` (the mathlib v4.34.0 release).
-The dependency manifest must be kept with the proof sources. The Lake package
-and Lean namespace retain the identifier `GeneratedFoundations`.
-
-A fresh checkout requires Git, Python 3.10 or later, and the pinned Lean
-toolchain. To retain the default directory used by the V5 integration, clone
-the repository with
-`git clone https://github.com/bookwormseagull1980/Lean-Formalization-of-Arithmetic-and-Basic-Physical-Interfaces.git Foundations-from-Minimal-Change`.
-Select the pinned Lean toolchain with `elan` using `lean-toolchain`. Restore the
-locked dependencies with `lake build`; do not update the dependency lock to
-newer revisions. The full verifier below then checks every local target and
-the transitive axioms. Its elapsed time depends on whether dependencies and
-compiled objects are already available. A cached audit time is not a claim
-about first-time installation or compilation.
-
-For the complete source, build, and axiom audit, run
-`python scripts/verify_foundations.py` from the repository root with the pinned
-Lake executable on the search path, or supply `--lake-exe`. The verifier checks
-all explicit local module targets and the library with Lake's `--no-build`
-mode. If they are fresh, it proceeds directly to the complete declaration
-audit. If Lake requests rebuilding (exit code 3), it rebuilds the affected local
-modules in dependency order, in batches of at most two independent ready targets
-per Lake process, followed by the library. Targets in a batch may compile together;
-completed dependencies are reused. Other
-nonzero probe results fail verification. Both paths check the actual imported
-dependency revisions, every collected public named declaration, and every
-constant originating in a local module of the compiled environment. The
-environment inventory includes private declarations, anonymous instances and
-generated helpers; neither path skips the axiom audit.
-Its `--source-only` option checks source coverage and locks without certifying
-compiled proofs. Implicit introduction of undeclared variables is disabled.
-
-This project is independent of the Lean 4.7.0 proof archive distributed with
-the Coarse-Graining Genesis Framework V5. Neither archive's verification
-status is a substitute for verification of the other.
-
-The verifier uses only the Python standard library. To run its regression
-tests, install `requirements-test.txt` and run `python -m pytest` from this
-directory. These tests exercise the verification machinery, not the
-mathematical proofs; compilation and the axiom audit are separate checks.
-
-The public GitHub Actions workflow runs the same sequence on pushes and pull
-requests to `main`: it installs the toolchain named by `lean-toolchain`, runs
-`lake build` with `LEAN_NUM_THREADS=1`, installs the pinned Python test dependencies,
-runs the verifier regression tests, and performs a complete compiled proof and
-transitive axiom audit. The workflow keeps the resulting manifest and audit
-log as run artifacts; its dependency and build caches only accelerate the run
-and do not replace the locked source and manifest checks.
-
-## Independent verification record
-
-A complete successful run atomically writes `verification-manifest.json` in
-this directory. `--manifest PATH` selects another JSON output. The record binds:
-
-- Every local Lean source, the toolchain and dependency locks, the theorem
-  index, and the verifier itself by SHA-256.
-- The actual Lean and Lake versions and executable hashes, and the actual
-  dependency commits with their tracked files checked for local changes.
-- The full local build order, indexed declarations, and the transitive axiom
-  set reported for every project-owned compiled constant, with its source
-  module and declaration kind. Public named declarations retain their
-  separate type and axiom checks.
-- The generated audit probe, all named declaration signatures and the complete axiom log
-  at `.lake/foundations-audit.txt` by SHA-256.
-
-The default record and audit log are build artifacts, ignored by Git. Release
-evidence is retained together in `verification/`: the original
-`verification-manifest.json`, `foundations-audit.txt` and `SHA256SUMS.json`
-preserve the V1.0 snapshot (239 source files). The independent
-`branch-alignment-verification.json`, `branch-alignment-audit.txt` and
-`branch-alignment-SHA256SUMS.json` preserve the later whole-library alignment
-run, separately from that historical snapshot. The comparison ledger and
-construction scopes are described in `BRANCH_ALIGNMENT.md`.
-Public records use relative source paths and do not contain local installation
-paths. A source
-change, an index or lock change, a verifier change, a changed tool or dependency,
-or a missing or changed audit log requires fresh verification before that
-record can be treated as current. Record presence alone is not a success check.
-A different operating system may produce different executable hashes. A
-reproduction therefore creates a new complete verification record for its
-actual tools; it need not reproduce the original platform's binary hashes.
-
-Use `python scripts/verify_foundations.py --check-manifest` from the repository
-root (with the same Lake selection, and `--manifest PATH` if applicable) to
-compare a saved record with the current sources, log, tools, and dependencies.
-This runs version and dependency checks but does not build or rerun Lean's proof
-audit. Its result is **record current** or a nonzero **stale or invalid** result,
-not a new compiled-proof verification. A failed verification attempt never
-publishes a new success record and does not replace the previous one; its exit
-status remains failure regardless of any older record on disk.
-
-The manifest is reproducibility evidence, not a signed attestation or protection
-against deliberate modification of both records and logs. It does not certify
-the semantic correspondence to a manuscript, the completion of all planned
-proofs, or any physical calculation. This verifier neither reads nor updates
-V5's numerical `run_manifest.json`. An independently verified proof package
-does not make an old numerical run current.
-
-## Relation to the numerical software
-
-This repository is the sole maintained source of this proof library. The
-Coarse-Graining Genesis Framework V5 is a separate, self-contained release: its
-calculation and test imports do not read this checkout, and it carries its own
-small Lean 4.7 archive under `lean_proofs/`. V5 has no
-`foundations-reference.json` and no `--foundations` verification entry; the
-earlier cross-repository pin was removed.
-
-The two releases are therefore independent build units. The only cross-reference
-is documentary and one-way: the certificate-conditional TT-endpoint module
-(`SourceTTResponse` / `CanonicalYangMillsTT`) describes the numerical interval
-supplied by the V5 endpoint calculation, while the zero-argument
-`CanonicalClosedWorld.generated` entry does not use that V5 TT model.
-
-A complete run of this repository writes its own independent
-`verification-manifest.json`; it does not update V5's numerical run record.
-The record's scope remains the currently implemented library. Its presence does
-not certify the full manuscript chain or any numerical run. Reading the saved
-status checks the proof record, local proof sources, verifier and audit log;
-it does not rerun compilation or inspect the current compiler installation.
-
-Downloaded dependencies and build caches are not a second source of truth. An
-altered proof snapshot must not be reported as the pinned one. Numerical-run
-hashes are not
-refreshed merely because a proof check passed. For proof development without
-physical reproduction or aggregate-record publication, use this repository's
-`scripts/verify_foundations.py` directly.
-
-## Proof boundaries
-
-The root input retains exactly the explicit conditions of minimal unbiased
-compositional change. Endpoint readouts and reflecting closure are internal
-constructions. Their definitions, calibrations and comparison classes remain
-visible in the supporting theorems; constructing them does not by itself
-classify every possible readout of a Gaussian profile.
-The physical source interface constructs the exchange-retained response,
-least matter module, vacuum lift and elementary connector. It does not take
-P4--P6 as an aggregate hypothesis. Intermediate conclusions must be proved
-rather than stored as assumptions in the starting data. Comparison hypotheses
-in classification theorems and compatibility with separately supplied local
-bundle charts remain explicit.
-
-The physical mechanisms have separate statements. Exchange preserves the
-complete matter capacity; equal chiral responses have zero signed centre
-trace; removing the neutral charge kernel gives the charged quotient.
-`Physical.SourceResolutionCompensation` uses the existing quotient heat map,
-source derivatives and colour matrices to construct the nonlinear response,
-its resolution correction and their exact composition law on finite
-coefficient fields. `Physical.SourcePhaseCharge` retains both real field
-equation residuals in the source work identity and proves phase charge
-conservation when their common equations hold. These clauses are mapped to
-the manuscript formulas in `theorem-index.json`.
-
-Uniqueness statements specify their comparison class and equivalence relation.
-The library does not use unproved mathematical axioms or proof placeholders.
-An entry is reported as kernel-checked only after compilation. The automatic
-axiom audit records its transitive logical dependencies. Review of its premises
-and correspondence to the manuscript is a separate semantic assessment and is
-not implied by a successful verification manifest.
-
-The 18 October release snapshot passed compilation and the complete
-compiled-environment axiom audit. That record covers 13,854 constants,
-7,231 named type checks and 298 indexed claims. These counts have different
-meanings; consult the index for the precise scope of each claim and use
-`--check-manifest` to determine whether that record still matches the current sources.
-
-The canonical root and its entire transitive local import closure have a
-separate audit command:
-
-```text
-python scripts/verify_canonical_root.py --lake-exe <path-to-pinned-lake>
-```
-
-It builds the actual root module, includes every imported intermediate module,
-and applies the same compiled-environment collector and axiom allowlist as the
-whole-library verifier. The independent `canonical-root-verification.json`
-records that exact source scope, both verifiers, the toolchain and dependency
-fingerprints. Unimported research extensions remain in the whole-library
-verification scope rather than being silently counted as checked by this run.
-
-See [AXIOMS.md](AXIOMS.md) for the complete logical-axiom allowlist, the
-expanded root conditions, the retained construction and classification
-restrictions, and the limits of the current axiom collector. In particular,
-absence of custom axioms does not establish that every downstream choice is
-forced uniquely by the root datum. Independent external proof checking has
-not been performed.
-
-## Parallel mathematical and physical constructions
-
-Both branches use `Source.CommonSource.generated`, the same zero-argument
-construction from `Source.CanonicalRoot.generated`. The mathematical response
-entry is `MathematicalInterface.generated`; the physical response entry is
-`SourcePhysicalInterface.generatedCore`. `CommonFoundation.generated` gathers
-them. The mathematical entry has no transitive dependency on `Physical`.
-
-The mathematical instances use complete generated histories, their finite
-phase fibres, the persistent positive source law and native prime occupations.
-Their full Hermitian Gibbs response includes off-diagonal observations. The
-actual reaction action contains every ordered three-leg assembly and all its
-mixed terms. Its varied Hessian is the same operator used in the finite
-reaction evolution and in the squared graded differential.
-
-`HistoryPrefixGibbsResponse` constructs the response on the existing complete
-root--history--phase prefix. The reference intensity retains each root's
-Gaussian mass and its generated conditional law; its partition is exactly
-the sum of those root masses. The full matrix Hessian has a positive
-weighted-square formula on every entry, including cross-root entries, and
-its kernel consists precisely of scalar matrices. The central susceptibility
-is `1 - m^2` for the actual weighted occupation mean `m`; a zero mean is not
-inserted. This construction is bundled into `MathematicalInterface.generated`
-and imports no physical premise.
-
-`HistoryPrefixResponseReduction` performs exact Schur elimination in that
-same full-prefix Hessian. Its identity retains the square of the removed
-response and includes scalar directions without assuming an inverse. Both
-observations may contain arbitrary cross-root, cross-history and cross-phase
-matrix entries.
-
-`HistoryPrefixMobiusResponse` distinguishes the occupation center `Gamma`
-from the native Mobius probe `M = Gamma S`, where `S` is the generated
-square-free projector. The state still contains every positive root. In its
-actual Gaussian law, put `s = <S>` and `m = <M>`. The joint Hessian entries
-are `s - m^2`, `m(1 - s)` and `s(1 - s)`. Removing the support observation
-leaves exactly `s - m^2/s`, including the full-support case; the unit root
-proves `s > 0` internally. Restoring the actual partition gives `Zs = C`
-and `Zm = B`, where `C` is the original square-free support capacity and
-`B` the original signed Gaussian amplitude. The restored reduced response
-is exactly `C - B^2/C`. The two endpoint amplitudes, with the
-unit root retained, are combined before any coherent square. No root
-capacity, excluded probe support or endpoint cross term is discarded.
-
-`HistoryPrefixBirthResponse` connects the actual prefix extension to this
-same Hessian. Adjoining root `N+2` retains its complete history--phase fibre;
-its fraction `gamma` is its Gaussian mass divided by the new partition.
-The mixed birth response is exactly `gamma(1-gamma)(f_new-m_old)`.
-The full mixed covariance update holds for every pair of root observations
-in the same state, including the actual Mobius probe and square-free support.
-Schur elimination leaves `(1-gamma) H_old`; restoring the original partition
-gives exactly `Z_old H_old`. The complete restored fluctuation additionally
-contains `w_new(1-gamma)(f_new-m_old)^2`.
-
-For arbitrary Hermitian observations, `Operations.GibbsBlockResponse`
-separates the block-diagonal and cross-block parts orthogonally in the
-original response metric. The cross-block part remains an explicit
-logarithmic-mean weighted sum of every ordered matrix-entry square. The
-block-diagonal part still contains the covariance between its block means.
-This construction preserves both that covariance and the full matrix
-coherence at the actual birth.
-
-`HistoryPrefixSubsetResponse` places finite root-set observations in that
-unchanged positive prefix state. Subset centering is orthogonal to its
-support observation. Restoring the complete partition gives the exact
-capacity-weighted conditional covariance; the support/complement response
-term and the complement's original positive mass are both retained.
-
-`HistoryPrefixPrimeStageResponse` applies this response to the genuine
-maximum-prime stage: the entire old set `O = P union Q` remains present,
-and the birth is exactly `pP`. Write `C_O,B_O` for the actual old capacity
-and signed response, and `C_R,B_R` for the returned old source at `L/p`.
-The stage has `C_A = C_O + C_R` and `B_A = B_O - B_R`. Its restored
-center/birth Hessian entries are
-`C_A - B_A^2/C_A`, `C_O C_R/C_A`, and
-`-(C_O B_R + B_O C_R)/C_A`. Their exact Schur square equals the existing
-opposite-center mixing dissipation. Removing the birth direction leaves
-exactly the sum of the old and returned transverse capacities, including
-the empty-birth case. All weights, native signs and the unpaired cutoff
-boundary remain in the same source; arbitrary cross-birth matrix entries
-retain their logarithmic-mean weights in the complete prefix Hessian.
-
-`HistoryPrefixResolution` connects that complete matrix response to the
-existing root-square Gaussian resolution. Its retained half-density is
-`exp(-t*n^2/(2*L^2))` on every original history--phase fibre. Sandwiching by
-this diagonal matrix transports the actual unnormalized reference from
-`alpha` to `alpha+t`. The capacity loss is exactly the sum of the original
-channel intensities times `1-exp(-t*n^2/L^2)`; normalized transport retains
-the new-to-old partition ratio. No root weights or conditional fibre laws
-are replaced. Here `t` changes the Gaussian observation, independently of
-prime generation.
-
-For arbitrary full matrices, the product defect is exactly
-`M K (I-M^2) J M`; for `J=K` and the first factor `K*`, this is positive
-semidefinite. The complete exponential response has its own exact
-resolution compensation, with no sign imposed on that general correction.
-The compensation satisfies the composition law and is uniquely fixed by
-transport of the total response. Starting with zero unresolved response
-constructs its entire residual internally. This is the arithmetic
-counterpart of the physical resolution-compensation mechanism, proved
-without importing the physical branch or truncating the matrix exponential.
-
-`Operations.GibbsResolutionLedger` treats the full exponential divided
-difference by its integral on `[0,1]`, including repeated intensities.
-`HistoryPrefixResolutionResponse` applies it to the actual Gaussian source:
-its log intensity changes by `-t*n^2/L^2`. For every full Hermitian
-observation held fixed, the old capacity-restored connected response equals
-the new response, the complete nonnegative logarithmic-mean kernel loss,
-and the new capacity times the squared change of the actual mean. There is
-also an exact mixed-observation identity. Every ordered cross-label matrix
-entry remains in the kernel loss. As a consequence, at fixed `L` the full
-restored response contracts by `exp(-t/L^2)`, independently of the prefix
-size. The parameter advances `alpha`; the factor retains its dependence on
-the observation scale `L`. The original prime-birth and complement ledgers
-remain separate exact updates in the same state.
-
-The observation reduction is minimized again in the transported metric.
-`HistoryPrefixResponseReduction.shifted_square` retains the square of every
-deviation from that actual minimizer, including a null eliminated direction.
-Consequently the reduced response satisfies the same Gaussian contraction.
-For the native Mobius and square-free support observations this is exactly
-the original transverse capacity `C-B^2/C`, with its capacity restored at
-each resolution.
-
-`HistoryPrefixBirthResolution` joins the actual natural-prefix update to
-that same resolution ledger. Write `V_N` for the original capacity-restored
-root response, `J_N=w_new*(1-gamma)*(f_new-m_old)^2` for its computed birth
-contribution and `D_N` for its complete resolution loss. Then
-`V_(N+1)(alpha+t)+D_(N+1)=V_N(alpha)+J_N(alpha)` exactly. The two update orders
-obey `J_N(alpha+t)+D_(N+1)=J_N(alpha)+D_N`; no monotonicity of the birth term
-is assumed. Iterating gives the exact finite cumulative birth/loss balance.
-Arbitrary full Hermitian matrices have the same common ledger with their
-within-birth and cross-birth responses retained separately. Every cross-birth
-entry keeps its original logarithmic-mean weight, and its zero diagonal makes
-its re-centering cost exactly zero at both references. This connects actual
-birth to resolution without identifying their parameters or replacing the
-new Gaussian mass by an independent source term.
-
-`Operations.GibbsFullResponse` extends the connected response from zero to
-every finite Hermitian observation. Its derivative is the actual normalized
-exponential trace. Diagonalizing the full observed logarithm transports both
-perturbation directions by the same unitary and gives the complete
-logarithmic-mean Hessian, including all noncommuting matrix directions. The
-Hessian is nonnegative, its kernel consists exactly of scalar matrices, and
-every nonzero traceless direction has strictly positive curvature at each
-finite observation.
-
-`HistoryPrefixNonlinearResponse` applies that theorem to the original
-Gaussian root/history/phase reference. A diagonal observation `f` has exact
-intensity `I_i*exp(f_i)`, with its complete partition computed from those
-weights. For a root observation the complete conditional history--phase
-law is preserved. The first derivative is its actual tilted mean; the full
-diagonal Hessian is its covariance. Writing `m` for the tilted native Mobius
-mean and `s` for its tilted square-free support fraction gives the entries
-`s-m^2`, `m*(1-s)` and `s*(1-s)`. The intrinsic occupation center has curvature
-`1-mean(center)^2`. The unit and first prime already prove strictly positive
-Mobius curvature in every prefix containing both roots, at every finite
-diagonal observation. The original reference mean is computed, with no
-balance condition imposed on it. These finite-observation response theorems
-are independent of a uniform lower bound as the prefix or observation grows.
-
-`HistoryPrefixObservedResolution` propagates that finite observation along
-the actual Gaussian resolution at fixed scale. Its observed log intensity
-changes by exactly `-t*n^2/L^2`; hence the complete logarithmic-mean kernel
-and the capacity-restored response contract by `exp(-t/L^2)`, independently
-of prefix size and finite likelihood. The response directions remain
-arbitrary Hermitian matrices. The exact ledger retains both the positive
-kernel loss and the actual re-centering square. `GibbsSchurResponse` also
-proves that the reduced response obeys this comparison when its minimizing
-coefficient is recomputed in the new observed metric, including scalar null
-directions.
-
-`HistoryPrefixObservedBirth` uses one root likelihood across successive
-natural prefixes. The actual new mass is its Gaussian root mass times the
-same exponential likelihood; the full conditional history--phase fibre is
-preserved. Its exact mixed birth covariance, restored birth fluctuation and
-Gaussian loss give a common cumulative ledger. Full matrix observations
-retain every ordered cross-birth entry. This extends the original-reference
-birth and resolution theorems to finite observations without replacing the
-complete partition or the native occupation observations. The Gaussian
-resolution parameter and observation scale retain their distinct meanings.
-
-The ordered Gaussian two-mode source has an explicit Haar realization in
-`Geometry.SourceSpinIdentification`. The map preserves the metric, every
-complex matrix response and the actual number flow. `HistoryHaarResponse`
-applies it at every generated history--phase label in both source sectors,
-preserving arbitrary cross-label entries and the full adjoint. Its dimension
-is four times the actual arithmetic label count.
-
-`HistorySourceNaturality` classifies arbitrary matrices on the complete
-history factor tensored with that source. Commutation with the actual full
-history matrix algebra forces one unique source matrix. The original
-pointwise reversal then gives one unique doublet or quaternion coordinate;
-the resulting real response space has dimension four. The constructed family
-satisfies both equations, with its Gaussian and Haar actions explicitly
-intertwined. These are concrete arithmetic constructions using common
-matrix-unit proofs.
-
-`HistoryElementaryConnector` applies the same classification to an arbitrary
-complete two-sector operator. Naturality, self-adjointness and oddness force
-its unique off-diagonal complex block; the native source reversal then forces
-one unique doublet. Both independent source frames act on this full operator.
-Actual history-indexed frames have a canonical identity frame, exact cocycles
-and compatible local doublet coordinates. Applying the connector preserves
-compatible complete-state sections. Its Gaussian and Haar realizations retain
-all matrix elements and cross terms.
-
-`Geometry.SourceScalarResponse` and `SourceExchangeResponse` hold the shared
-source classification and the actual orthogonal exchange transport. The
-transport preserves inner products, arbitrary endomorphisms, adjoints and the
-independent-source naturality equations. Physical-specific phase weights and
-the physical effective quotient stay in the physical branch.
-
-`HistoryEffectiveFrames` calculates the actual two-element kernel of the
-source-frame action on every complete arithmetic response operator. The
-effective quotient is faithful, has a unique action on the generated image,
-and gives exact overlap cocycles when lifted defects lie in that kernel.
-The full state action remains faithful and retains the simultaneous minus
-sign; it does not descend through the response quotient. Its full inner
-products and coherent matrix observations are preserved. This distinction
-keeps the arithmetic state and its effective operator observation separate.
-
-`HistoryEffectiveResponseSpace` realizes that same effective action on the
-complete Hilbert space of all matrix coefficients. Its inner product is
-proved equal to the trace pairing, and its effective unitary representation
-is faithful and uniquely determined by the original conjugation action.
-The inverse, adjoint and norm laws retain all off-diagonal coefficients.
-
-The concrete response bundle has the actual history--phase label set as its
-base, with uniquely specified base/fibre coordinates. Local Hermitian charts
-have exact effective transitions and a computed two-sign lift ambiguity.
-Full matrix gluing and response-Hilbert gluing are equivalent.
-`HistoryReversalCharts` gives the unique common full-fibre antiunitary on
-overlaps whose transitions intertwine the original reversal.
-
-`HistoryGaussianConnection` identifies the exponential of the actual
-root-square generator with the original Gaussian, differentiates it, and
-proves uniqueness of its parallel scale connection. Its inverse frames and
-transported metric are finite-dimensional constructions. On the same full
-state fibre, `HistoryGaugeJets` proves the nonlinear connection product rule,
-covariant matter derivative, curvature covariance and Bianchi identity. The
-positive invariant curvature density uses the complete operator trace norm.
-Its formal coefficient-coordinate jets and the actual one-dimensional
-Gaussian scale transport remain distinct constructions.
-
-`HistoryCurvatureVariation` computes the actual first, second and mixed
-derivatives of that complete finite curvature action. The mixed Hessian
-retains its background-curvature/commutator term and transforms with the
-same action under generated frame changes. At flat background its nullspace
-is precisely the vanishing-linearized-curvature subspace.
-
-`HistoryScalarAmplitude` gives the complete elementary response a separately
-computed norm law: its square is the source-doublet intensity times identity
-on every arithmetic label. This intensity is positive for a nonzero doublet
-and invariant under the independent source frames. The full inner-product
-identity includes arbitrary cross-label coherent states. This operator and
-the history reaction generator have different, explicitly proved kernels.
-
-`HistoryReversalIsometry` supplies the actual antiunitary on every retained
-history--phase label and on both source chiral sectors. Its square is minus
-the identity. The Gaussian--Haar realization intertwines it with the original
-source reversal; the complete elementary connector, independent source
-frames, Gaussian multiplication and arithmetic occupation parity obey the
-proved compatibility laws. This source operation preserves occupation
-parity. `HistoryChiralBlocks` separately permits arbitrary operators on each
-complete sector and derives their adjoints, exchange and grading formulas,
-including cross-history and cross-phase coefficients.
-
-The complete history coefficient Hilbert space also carries the actual
-Gaussian reaction operator. Its root layers converge absolutely in operator
-norm, using the normalized history law rather than a history-count bound.
-The finite quadratic forms converge to its full form, and their embedded
-operator exponentials converge to its full-space contraction evolution.
-
-The history complex has a unique unit-anchored primitive and a separate
-orthogonal leaf-charge/coexact decomposition. The finite reaction evolution
-preserves leaf charge, dissipates coefficient energy by the reaction form and
-dissipates the complete action by the squared actual operator. The positive
-root-layer tail produces anchored unit states of strictly positive action
-with arbitrarily small action-relative dissipation. Thus, at fixed positive
-Gaussian observation coordinates, this complete coefficient flow has no
-positive uniform exponential action rate with prefactor one. Its exact
-dissipation and contraction remain valid; the occupation and physical
-Hamiltonians have their own separately proved spectral outputs. Schur reduction of the
-complete Gibbs Hessian retains the eliminated energy, including singular
-directions through the proved scalar kernel. The orientation probe satisfies
-the exact log-partition and variance identities; its zero-probe susceptibility
-is the same direction of that full Gaussian Hessian.
-
-[BRANCH_ALIGNMENT.md](BRANCH_ALIGNMENT.md) gives the 56-feature construction
-ledger and the declaration-level review procedure. Feature coverage and
-individual declaration review are separate. The inventory includes supporting
-source, probability, correlation, operation, geometry and spectral declarations,
-including those used by physical modules outside the public entry. The proved
-full-history limit and contraction are distinct from a strictly positive
-cutoff-independent reaction-gap theorem. Different arithmetic and physical carriers
-retain their own dimensions, invariant directions and response constants.
-
-The complete Haar connection--state response supplies a separate restoring
-operator. `HistoryHaarCoupledAction` computes its nonlinear action and mixed
-second variation. `HistoryHaarJointCore` identifies the differential core;
-`HistoryHaarJointHessian` proves the unique self-adjoint closure, its domain,
-the attained bottom `min(4,c_N)` and the cutoff-independent lower bound `15/8`.
-`HistoryHaarJointFlow` proves the complete flow, its right-generator domain and
-norm decay `exp(-15*t/8)`. These theorems do not assert a positive gap for the
-different Gaussian history-reaction generator.
-
-`HistoryCompleteSourceGroup` constructs the faithful joint state action from
-the two source frames and the actual rank-dependent circle. Its least
-generated group, complete coefficient coordinates, factorization and overlap
-defects are proved. `HistoryCompleteConnector` retains its full source/phase
-covariance and all coherent observations. The state kernel and the effective
-response kernel are calculated separately.
-
-`HistoryGaussianCovariance` determines the variance from the actual full-basis
-coefficient count. `HistoryGaussianWindowResponse` uses the actual joint-Hessian
-eigenvalues in its finite-window Gaussian integral, with positivity, a unique
-algebraic response root and interval consumers. Physical window selections,
-geometric radius certificates and dimensional calibration keep their own
-premises; they are not inserted as mathematical source data.
-
-The inventory covers 98 physical modules and their 242 supporting modules.
-The reviewed declarations retain their object-and-scope comparisons;
-all 15 declarations of `SourceMatterPoleResponse` now have concrete arithmetic
-counterparts in `HistoryPoleResponse`. The inventory distinguishes
-proved arithmetic analogues, identical shared results and physical-specific outputs.
-Both branches remain independent at the import level and meet only at their
-common generated source and upstream mathematical constructions. The
-inventory and compiled verification remain separate records.
-
-`HistoryPoleResponse` decomposes the existing complete history--phase operator
-along its source sectors without discarding cross-history entries. Eliminating
-the complementary block determines the reduced equation and the norm of the
-same lifted vector. At a real energy in the complementary resolvent domain,
-the derivative of the reduced inverse is exactly this positive normalization.
-The constructed state retains the actual Gaussian prefix weights: summing its
-four generated source coordinates recovers the original history marginal.
-Both trace orderings are retained in the exact source Gram. These operations
-are exported by the mathematical entry independently of the physical branch.
-They do not select an observation level or a finite spectral set for the
-separate Gaussian-window root.
-
-The comparison also includes complete covariant compression, phase-charge
-conservation, determinant compensation and nonlinear connection/section
-resolution. `HistoryCovariantCompression` retains the actual phase-average
-complement and its connector compatibility; the common rectangular-jet
-theorems retain both moving-readout interference terms. `HistoryPhaseCharge`
-proves conservation on the constructed complete phase flow.
-`HistoryDeterminantCompensation` derives the unique inverse-character
-correction on every actual arithmetic label.
-
-`HistoryFieldResolution` evaluates full nonlinear matrix and section
-products on continuous source representatives before passing to Haar space.
-Its exact compensation, joint semigroup and unique residual are independent
-arithmetic constructions. `HistoryAdjointComparison` uses the actual
-independent adjoint rank, with one generated total intensity, to select a
-unique positive comparison equilibrium. `HistoryIntensitySusceptibility`
-retains that restoring curvature and the finite coefficient correction
-`3+12/M_N`. Physical multiplicities are not substituted for arithmetic counts.
-
-## Constructed physical interface
-
-`GeneratedFoundations.CanonicalClosedWorld.generated` is the single
-closed-world entry. It gives the conclusions at the canonical complex
-orientation and uniquely fixed unit-covariance width without accepting another source object. Its
-`physical_interface` field supplies the basic physical interface alongside,
-but not as an assumption of, the single generated natural-number system and
-its source closure. Coordinate-level parameterized lemmas are proof machinery,
-not public alternatives to this generated world.
-
-The same generated law and uniquely fixed width determine the source throughout.
-The unit-information endpoint and peak-equivalent width are evaluated from its
-Gaussian profile. The actual source average, transported through the reflecting
-isometry, is identified with the constructed Neumann evolution. Conservation
-and boundary properties are proved outputs. The comparison theorem for
-separated homogeneous boundary conditions retains its stated acceptance of
-constants; it is not an additional assumption of the root construction.
-
-| Construction | Principal declarations | Scope |
-|---|---|---|
-| Exchange-retained response | `SourceSplitResponse.generated_split`, `retainedEquiv` | The actual pre-exchange response commuting with exchange is exactly the block algebra on the symmetric and alternating carriers; the original tensor action is intertwined with the joint response. |
-| Source frames | `SourceFrameConstruction.generated_frames`, `relativeTransition_cocycle`, `relativeTransition_unique` | Colour, phase and pseudoreal frame classifications; relative transitions constructed from source frames satisfy the cocycle and act uniquely on the common matter carrier. |
-| Least matter | `SourceInternalResponse.least_chiral_pair`, `Conclusions.least_source`, `Conclusions.least_classification` | The canonical faithful module attains the least dimension; arbitrary least faithful representations are unitarily equivalent to it, including the paired chiral action. The intertwiner itself is not asserted to be unique. |
-| Vacuum and charge | `SourceInternalResponse.source_internalResponse` | Zero-argument output of the canonical source: actual vacuum stabilizer, continuous source lift, primitive charge classification, six-element gauge kernel and faithful effective action. |
-| Generated gauge group | `SourceGeneratedGaugeGroup.sourceGeneratedGaugeGroup`, `sourceFactorClosure_eq_generated`, `generatedGaugeGroup_least` | The determinant-one changes of the generated colour carrier, the group generated by the source-spin axes and the exhausted phase circle generate the full intrinsic operator group. Its exact six-element kernel gives the effective quotient `(SU(3) x SU(2) x U(1)) / Z6`; the descended scalar action is a colour singlet, the defining weak doublet and has phase character one half. |
-| Elementary connector | `SourceScalarConnector.canonical_elementary`, `elementary_iff_unique_doublet` | The canonical family satisfies independent-source naturality and reversal reality; every connector in that comparison class has a unique doublet coordinate. Its original Gaussian realization and covariance are included. |
-| Relativistic algebraic interface | `SourceHermitianReadout.coordinatesEquivHermitian`, `SourceLorentzCarrier.posSemidef_iff_futureCone`, `coordinateTransform_futureUnit_iff` | All Hermitian two-by-two matrices have unique four-real coordinates. Their determinant has signature `(+---)`, their positive cone is exactly the closed algebraic future cone, determinant-one congruence preserves the form, and the generated future unit has the special-unitary stabilizer equation. |
-| Four-dimensional gauge dynamics | `SourceFourDimensionalGaugeKinematics.sourceFourDimensionalGaugeProperties`, `SourceFourDimensionalYangMills.sourceFourDimensionalYangMillsProperties` | The Hermitian readout supplies the four coordinate directions. The generated colour directions exhaust the skew-Hermitian traceless `3 x 3` algebra; connection curvature, local covariance, the source-normalized positive colour form and its Lorentz contraction are proved without adding a lattice or gauge group. |
-| Internal Yang--Mills response | `SourceColourAdjointCasimir.adjointCasimir_generator`, `SourceInternalYangMillsResponse.properties` | The explicit generated colour matrices give adjoint Casimir `3`; the endpoint ratio gives `L_c=sqrt(pi)`; and the actual `(4,2)` source carrier gives dimension `15`, Casimir `16`, the unique normalized affine drive and `120` colour-connection coefficients. |
-| Generated Yang--Mills action, differential Hessian and spectral gap | `SourceHaarCurvatureTrace.action_eq_trace`, `SourceHaarYangMillsHessian.action_secondDeriv`, `SourceOneFormCoclosedSpectrum.coclosedHilbertBasis`, `CanonicalYangMills.generated` | The nonlinear action is evaluated on the original Haar one-form fields; its curvature term equals the integral of the actual colour-matrix curvature trace. Differentiation gives the radial block and the source curl-squared connection block, with zero mixed second derivative. The weak divergence kernel has a complete basis of differentiated source eigenfields. The original-field Hessian has a unique self-adjoint closure, its full weighted-square domain, an attained positive bottom and the corresponding finite-occupation Fock gap. Every colour and every nongauge field direction is retained. The radius in this row is the IR edge of `CanonicalYangMills`, not the V5 TT endpoint `kL`. |
-| Newton mass calibration | `CanonicalYangMillsUnits.generated`, `CanonicalYangMillsUnits.gapMass_sq`, `CanonicalYangMillsUnits.gapMass_unique` | The dimensional readout takes only a positive Newton constant; the IR radius has already been generated. In the stated reduced-Planck convention, the emergence mass squared is `1/(16*pi*G_N)` and the unique positive gap mass squared is `gapSq/(16*pi*G_N)`. The calibration cancels from their ratio and does not enter the action, condensate or operator. This calibration belongs to the IR-edge model; V5's TT endpoint `kL` is a different radius and its absolute gap is not this one. |
-| Canonical Yang--Mills response | `CanonicalYangMills.generated` | The generated IR **edge** `sqrt(2*pi)` exceeds the critical ratio. Its unique positive condensed amplitude, original-Haar-field action, self-adjoint differential response Hessian, attained positive spectral bottom and finite-occupation gap are outputs of a theorem without realization arguments. This is the **IR-edge model**; the V5 **TT-endpoint** model `kL` is separate and certificate-conditional in `CanonicalYangMillsTT`, not this theorem. |
-| Torsion content `1/50` | `SourceTorsionContent.generated` | The generated hypercharge operator gives `sum c*Y^2=10/3`; the left/charged-right counts are `8/7`; the charged quotient has dimension `15`. Hence `(N_L-N_R)/(N_f*sum Y^2)=1/50` as a rational theorem, not a fitted parameter. |
-| Finite Gaussian TT coefficient and source normalization | `SourceTTGaussianCoefficient.generated`, `coefficient_eq_gaussian_response`, `calibrated_response_eq_iff` | The eight retained branches use the generated torsion and Gaussian frequency integrals. Each rational kernel is twice the variance of the stated kinetic quadratic insertion in its original positive-precision Gaussian law. Their positive coefficient gives the unique radius `27*A5/4` under the existing endpoint rule. Simultaneous positive calibration of the spectral response and reference profile preserves that radius. The normalization results are included in the physical interface; they do not replace a projected-source vertex calculation for a different insertion. |
-| Complete matter centre response | `SourceClosedCenterResponse.generated` | The actual sixteen-state basis carries the generated grading and exchange. Exchange preserves the total capacity for every weight on this carrier. Every common left/right matrix response has zero centre trace. Its finite exponential trace is `cosh h`; the logarithmic response is `tanh h`, with positive susceptibility `1/cosh(h)^2`. The exponential probe family has a unique unbiased point, with centre bias zero, fluctuation one and restoring Hessian one. The neutral direction is retained. |
-| V5 TT-endpoint Yang--Mills model (separate, reduced coefficient) | `SourceTTResponse.EndpointCertificate`, `endpointCertificateOfBounds`, `CanonicalYangMillsTT.generated` | A geometric enclosure of the reduced eight-branch coefficient places its unique radius between the critical radius and the IR edge. Every endpoint certificate has this same radius; it contains no independent response value. The condensed TT-endpoint Yang--Mills conclusion uses that enclosure and remains separate from the IR-edge Yang--Mills theorem. The exact reduction from the full V5 finite spectral response is certified separately in V5 and is not formalized here. |
-| Geometric volume and colour covariance | `SourceProjectiveVolume.roundMeasure_total`, `SourceGeneratedYangMillsGap.transverseCovarianceAction_eq`, `CanonicalYangMills.sourceColourContraction` | The actual ambient polar measure and two-sheeted quotient give `pi^2*L^3`. Isotropic variance with the generated total intensity is fixed across the 24 spatial-colour components; the two transverse directions and the actual adjoint double commutator compute the connection response shift. |
-| Orientation reversal of the nonlinear response | `CanonicalYangMills.responseAction_orientation_reverse` | Conjugating the complete connection jet preserves its curvature trace, connection norm and common radial response. Together with the source orientation classification, this identifies the response in the two orientation presentations. |
-| Differentiated source spinor | `SourceSpinorCovariantDerivative.polynomialDirac_eq_contraction`, `SourceSpinorHaarBlock.differential_normalizedSynthesis`, `SourceSpinorClosedSpectrum.closedDirac_unique`, `SourceSpinorResolvent.spectrum_half_integers` | The Koszul formula computes the spin connection from the original trace-metric source frame. Clifford contraction gives the actual field differential. Its complete Haar basis yields a unique self-adjoint closure on the full weighted-square domain, spectrum `+/- (k+3/2)` and a full-domain squared-norm lower bound `9/4`. Bounded two-sided resolvents exclude additional continuous and residual spectrum. |
-| Both central spinor sectors | `SourceSpinorParitySpectrum.closedSectorDirac_is_restriction`, `SourceSpinorParityResolvent.spectrum_labels` | The actual central pullback determines two closed field subspaces. Their Dirac operators are restrictions of the same original operator on the entire closed domain. In the positive central sector the positive branch has even `k` and the negative branch odd `k`; the other sector reverses these parities. Complete sector bases and bounded two-sided inverses prove presence and exhaustion of both spectra. |
-| Differentiated projective TT tensor | `SourceTensorCovariantDerivative.rough_coefficientTensor`, `SourceTensorTTBlock.ttRough_eq_curl_square`, `SourceTensorTTClosedSpectrum.closedRough_unique`, `SourceTensorTTSpectrum.spectrum_labels` | The original nine-component tensor Haar space supplies the closed weak kernel of symmetry, trace and covariant divergence. Koszul differentiation yields `rough = curl squared - 3`. Its complete differentiated basis gives the unique self-adjoint rough closure and full weighted-square domain. Nonzero polynomial witnesses and bounded two-sided resolvents prove exactly the eigenvalues `k(k+2)-2`, for even `k >= 2`, with attained bottom `6` in the unit trace-metric frame. No tensor branch or gap is an input. |
-| TT carrier and response endpoint | `SourceTransverseTraceless.sourceTransverseTracelessProperties`, `SourceTensorResponseEndpoint.sourceTensorResponseEndpointProperties` | Symmetry, transversality and vanishing trace determine a unique plus/cross decomposition and a two-dimensional TT carrier. The mass-weighted kernel has the unique maximum `4/27` at `y=1/3`; a positive fixed spectral coefficient has the unique endpoint `c=27A/4`. |
-| TT response normalization | `SourceTTResponseNormalization.generated`, `fixed_weight_logMass_hasDerivAt`, `kineticLogPartition_second_response`, `nonlinear_partition_second_response` | The half-trace pairing gives unit orthogonal plus/cross polarizations. The per-leg logarithmic mass derivative of the two-leg kernel is exactly `y*(1-y)^2`. The second derivative of the logarithm of the actual Gaussian integral equals the quadratic-score variance. A nonlinear precision path retains its direct second term. A weighted spectral derivative is distinguished from the original spectral integral; the maximum alone does not imply the endpoint matching equation. |
-| TT endpoint balance | `SourceTTEndpointBalance.effectiveGradient_hasDerivAt`, `critical_endpoint_iff_direct_response`, `fixed_source_all_positive_levels` | Differentiating the original Gaussian integral gives the complete Hessian: direct comparison response plus the mean second precision vertex minus the score variance. In the reduced form `Z - kappa*(A/c)/2`, zero Hessian matches the level `4/27` exactly when `Z=2*kappa/27`. This is an equivalence with the required direct-response identity stated explicitly; no evaluation of that identity for the full generated source is asserted. The unchanged fixed coefficient admits a unique crossing at every positive level. |
-| Gaussian TT response-realization boundary | `SourceTTClosureBoundary.realizable_iff`, `least_realizable_radius`, `boundary_split_unique`, `endpoint_of_source_realization` | The original unit-precision Gaussian comparison realizes exactly the mass-weighted response range `[0,4/27]`. The class defined by realizability of `A/c` has the unique least radius `27*A/4` and boundary fraction `1/3`, without a threshold in its definition. Transport to a physical source explicitly requires identification of its admissible states and selection of the least boundary by its native update. Weighted saturation forces every positive-weight fraction to equal `1/3`; the complete deficit controls their squared deviations. |
-| Fixed-branch source domain and endpoint update | `SourceTTNativeEndpoint.finite_source_exists_unique`, `crossing_update_eq`, `update_least_boundary_iff_level` | Every finite projection of the retained positive-precision family has its unique original Gaussian at every positive radius. This source-existence condition alone is weaker than the separate response-realization class. The implemented crossing update is exactly `c -> A/theta`; it selects the candidate least boundary if and only if its supplied level is `4/27`. The source-level origin of that level and the physical admissibility identification are not derived from the iteration. Homogeneous radius changes preserve the actual modal mass fractions. |
-| Original Gaussian equilibrium closure | `FinitePrecisionEquilibrium.coordinate_mehler_preserves_law`, `covariance_fixed_iff`, `SourceTTEquilibriumClosure.equilibrium_and_feedback_iff` | The original independent equilibrium update preserves the entire finite Gaussian law, with different restoring rates allowed on all spectral coordinates. Its fixed covariance is unique for each prescribed innovation law. Across the retained radius family, equilibrium closure alone holds at every positive radius. Adding the existing homogeneous ladder factors `c^4/D` and `J/c^4` gives `J=D`, with no remaining radius equation. These computed conditions do not identify physical endpoint admissibility with the separate split-response realization class. |
-| Linear tensor gravity | `SourceLinearizedGravity.sourceLinearizedGravityProperties`, `generalTensorOperator_coefficients_unique` | Gauge annihilation, transversality and unit TT normalization uniquely select the five coefficients of the local two-derivative linear Einstein operator. It annihilates pure gauge tensors, reduces to `Q² I₂` on the derived TT carrier, has a unique sourced solution away from zero momentum and an exact positive-residue simple pole at `Q²=0`. |
-
-The common root, its physical component and all local dependencies have
-compiled successfully. The complete axiom inventory reports only `propext`,
-`Classical.choice` and `Quot.sound`; the common root depends on exactly these
-three. `AXIOMS.md` describes the inventory, including generated
-recursion implementation entries, and the limits of this evidence. The
-public entry exports the common root, while the physical component itself does
-not import arithmetic constructions.
-The relative-frame construction does not claim existence of arbitrary
-nontrivial bundles.  Field and jet values in the gauge and tensor modules are
-variables of configuration spaces on the generated four-carrier; they are not
-additional fields of `MinimalUnbiasedChange.Datum`.
+Lean形式化; 机器核验数学证明; 交互式定理证明; 证明助手; 自然数构造; 唯一素因数分解; 杨米尔斯质量间隙; 自伴算子; 强制性估计; 规范物质表示; 数学物理; 形式化验证.
