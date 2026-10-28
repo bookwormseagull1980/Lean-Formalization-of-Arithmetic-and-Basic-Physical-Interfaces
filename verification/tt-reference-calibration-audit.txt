@@ -1,0 +1,93 @@
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel_eq {t : ℝ} (ht : 0 < t) :
+  GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel t = 4 * t / (t + 2) ^ 3
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel_pos {t : ℝ} (ht : 0 < t) :
+  0 < GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel t
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel_one :
+  GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel 1 = 4 / 27
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceLevel_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius_eq {t : ℝ} (ht : 0 < t) (A : ℝ) :
+  GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A t = A * (t + 2) ^ 3 / (4 * t)
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius_one (A : ℝ) :
+  GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A 1 =
+    GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.relative_reference_defect {A t : ℝ} (hA : 0 < A)
+  (ht : 0 < t) :
+  GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A t /
+        GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A -
+      1 =
+    (t - 1) ^ 2 * (t + 8) / (27 * t)
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.relative_reference_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.peak_reference_least {A t : ℝ} (hA : 0 < A) (ht : 0 < t) :
+  GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A ≤
+    GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A t
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.peak_reference_least' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.peak_reference_equality_iff {A t : ℝ} (hA : 0 < A)
+  (ht : 0 < t) :
+  GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A t =
+      GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A ↔
+    t = 1
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.peak_reference_equality_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius_hasDerivAt {t : ℝ} (ht : 0 < t) (A : ℝ) :
+  HasDerivAt (GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A)
+    (A * (t + 2) ^ 2 * (t - 1) / (2 * t ^ 2)) t
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius_stationary (A : ℝ) :
+  HasDerivAt (GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A) 0 1
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius_stationary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.ten_percent_reference_bound {A t : ℝ} (hA : 0 < A)
+  (ht0 : 9 / 10 ≤ t) (ht1 : t ≤ 11 / 10) :
+  0 ≤
+      GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A t /
+          GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A -
+        1 ∧
+    GeneratedFoundations.Physical.SourceTTReferenceCalibration.referenceRadius A t /
+          GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A -
+        1 ≤
+      89 / 24300
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.ten_percent_reference_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.deficitProfile_eq (a b z u : ℝ) :
+  GeneratedFoundations.Physical.SourceTTReferenceCalibration.deficitProfile a b z u =
+    4 / 27 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.envelope a u -
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.deficitProfile_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTReferenceCalibration.actual_trace_capacity_deficit (z : ℝ) :
+  4 / 27 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient -
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z =
+    1 / (32 * Real.pi ^ 3) *
+      ∑ i,
+        (GeneratedFoundations.Physical.SourceTTGaussianCoefficient.branch i).2.2 *
+          ∫ (u : ℝ) in 0..GeneratedFoundations.Physical.SourceTTCollectiveComparison.upper i,
+            GeneratedFoundations.Physical.SourceTTReferenceCalibration.deficitProfile
+              (GeneratedFoundations.Physical.SourceTTGaussianCoefficient.branch i).1
+              (GeneratedFoundations.Physical.SourceTTGaussianCoefficient.branch i).2.1 z u
+'GeneratedFoundations.Physical.SourceTTReferenceCalibration.actual_trace_capacity_deficit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,144 @@
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile_continuous {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z : ℝ) : Continuous (GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile a b z)
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile_continuous {a b : ℝ} (ha : 0 ≤ a)
+  (hb : 0 < b) (z : ℝ) : Continuous (GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z)
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile_bounds {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z u : ℝ) :
+  0 ≤ GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u ∧
+    GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u ≤
+      4 / 27 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.envelope a u
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile_le_kineticProfile {a b : ℝ} (ha : 0 ≤ a)
+  (hb : 0 < b) (z u : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u ≤
+    GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile a b z u
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile_hasDerivAt {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z u : ℝ) :
+  HasDerivAt (fun t => GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile a b t u)
+    (-2 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u) z
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.frequency_response_hasDerivAt {a b : ℝ} (ha : 0 ≤ a)
+  (hb : 0 < b) (z v : ℝ) :
+  HasDerivAt
+    (fun t => ∫ (u : ℝ) in 0..v, GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile a b t u)
+    (-2 * ∫ (u : ℝ) in 0..v, GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u) z
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient_zero :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient 0 =
+    GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient_pos (z : ℝ) :
+  0 < GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient z
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient_pos (z : ℝ) :
+  0 < GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient_hasDerivAt (z : ℝ) :
+  HasDerivAt GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient
+    (-2 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z) z
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient_pos :
+  0 < GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient_bound (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z ≤
+    4 / 27 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient_le_massCoefficient (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z ≤
+    GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient z
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction_bounds (z : ℝ) :
+  0 < GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z ∧
+    GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z ≤ 1
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.response_hasDerivAt (c z : ℝ) :
+  HasDerivAt (GeneratedFoundations.Physical.SourceTTCollectiveComparison.response c)
+    (-2 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.massResponse c z) z
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.normalized_response {c : ℝ} (hc : c ≠ 0) (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.response c z /
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.traceWeight c =
+    GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient z /
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.normalized_massResponse {c : ℝ} (hc : c ≠ 0) (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.massResponse c z /
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.traceWeight c =
+    GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z /
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.normalized_massResponse_bound {c : ℝ} (hc : c ≠ 0) (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.massResponse c z /
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.traceWeight c ≤
+    4 / 27
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_zero :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius 0 =
+    GeneratedFoundations.Physical.SourceTTGaussianCoefficient.radius
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_response (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.response
+      (GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius z) z =
+    4 / 27
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_hasDerivAt (z : ℝ) :
+  HasDerivAt GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius
+    (-27 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z / 2) z
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_deriv_neg (z : ℝ) :
+  deriv GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius z < 0
+GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_log_hasDerivAt (z : ℝ) :
+  HasDerivAt (fun t => Real.log (GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius t))
+    (-2 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z) z
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile_le_kineticProfile' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.frequency_response_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient_le_massCoefficient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.response_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.normalized_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.normalized_massResponse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.normalized_massResponse_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_deriv_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCollectiveComparison.matchedRadius_log_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

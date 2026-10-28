@@ -1,0 +1,140 @@
+GeneratedFoundations.Operations.FinitePrecisionEquilibrium.composition_preserves_law.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (p : ι → ℝ) {r s : ℝ} (hrs : r ^ 2 + s ^ 2 = 1) :
+  GeneratedFoundations.Operations.FinitePrecisionEquilibrium.compositionLaw p r s =
+    GeneratedFoundations.Operations.FinitePrecisionGaussian.law p
+GeneratedFoundations.Operations.FinitePrecisionEquilibrium.mehler_preserves_law.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (p : ι → ℝ) {omega time : ℝ} (homega : 0 ≤ omega) (htime : 0 ≤ time) :
+  GeneratedFoundations.Operations.FinitePrecisionEquilibrium.mehlerLaw p omega time =
+    GeneratedFoundations.Operations.FinitePrecisionGaussian.law p
+GeneratedFoundations.Operations.FinitePrecisionEquilibrium.law_eq_product.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] {p : ι → ℝ} (hp : ∀ (i : ι), 0 < p i) :
+  MeasureTheory.Measure.map (WithLp.toLp 2)
+      (MeasureTheory.Measure.pi fun i => GeneratedFoundations.Operations.GaussianPrecisionKL.law (p i)) =
+    GeneratedFoundations.Operations.FinitePrecisionGaussian.law p
+GeneratedFoundations.Operations.FinitePrecisionEquilibrium.scalar_composition_preserves_law (p : ℝ) {r s : ℝ}
+  (hrs : r ^ 2 + s ^ 2 = 1) :
+  GeneratedFoundations.Operations.FinitePrecisionEquilibrium.scalarCompositionLaw p r s =
+    GeneratedFoundations.Operations.GaussianPrecisionKL.law p
+GeneratedFoundations.Operations.FinitePrecisionEquilibrium.coordinate_composition_preserves_law.{u_1} {ι : Type u_1}
+  [Fintype ι] [DecidableEq ι] {p : ι → ℝ} (hp : ∀ (i : ι), 0 < p i) (r s : ι → ℝ)
+  (hrs : ∀ (i : ι), r i ^ 2 + s i ^ 2 = 1) :
+  GeneratedFoundations.Operations.FinitePrecisionEquilibrium.coordinateCompositionLaw p r s =
+    GeneratedFoundations.Operations.FinitePrecisionGaussian.law p
+GeneratedFoundations.Operations.FinitePrecisionEquilibrium.coordinate_mehler_preserves_law.{u_1} {ι : Type u_1}
+  [Fintype ι] [DecidableEq ι] {p : ι → ℝ} (hp : ∀ (i : ι), 0 < p i) (omega : ι → ℝ) {time : ℝ}
+  (homega : ∀ (i : ι), 0 ≤ omega i) (htime : 0 ≤ time) :
+  GeneratedFoundations.Operations.FinitePrecisionEquilibrium.coordinateMehlerLaw p omega time =
+    GeneratedFoundations.Operations.FinitePrecisionGaussian.law p
+GeneratedFoundations.Operations.FinitePrecisionEquilibrium.covariance_fixed_iff.{u_1} {ι : Type u_1} [DecidableEq ι]
+  (p : ι → ℝ) {r : ℝ} (hr : r ^ 2 ≠ 1) (C : Matrix ι ι ℝ) :
+  GeneratedFoundations.Operations.FinitePrecisionEquilibrium.covarianceUpdate p r C = C ↔
+    C = GeneratedFoundations.Operations.FinitePrecisionGaussian.covarianceMatrix p
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.original_source_equilibrium.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] {c : ℝ} (hc : 0 < c) (mode : ι → Fin 8) (u : ι → ℝ) {omega : ι → ℝ} {time : ℝ}
+  (homega : ∀ (i : ι), 0 ≤ omega i) (htime : 0 ≤ time) :
+  GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibriumLaw c mode u omega time =
+    GeneratedFoundations.Physical.SourceTTEquilibriumClosure.sourceLaw c mode u
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.all_source_expectations_preserved.{u_1} {ι : Type u_1}
+  [Fintype ι] [DecidableEq ι] {c : ℝ} (hc : 0 < c) (mode : ι → Fin 8) (u : ι → ℝ) {omega : ι → ℝ} {time : ℝ}
+  (homega : ∀ (i : ι), 0 ≤ omega i) (htime : 0 ≤ time)
+  (f : GeneratedFoundations.Operations.FinitePrecisionGaussian.Space ι → ℝ) :
+  ∫ (x : GeneratedFoundations.Operations.FinitePrecisionGaussian.Space ι),
+      f x ∂GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibriumLaw c mode u omega time =
+    ∫ (x : GeneratedFoundations.Operations.FinitePrecisionGaussian.Space ι),
+      f x ∂GeneratedFoundations.Physical.SourceTTEquilibriumClosure.sourceLaw c mode u
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.tt_score_variance_preserved.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] {c : ℝ} (hc : 0 < c) (mode : ι → Fin 8) (u q2 : ι → ℝ) {omega : ι → ℝ} {time : ℝ}
+  (homega : ∀ (i : ι), 0 ≤ omega i) (htime : 0 ≤ time) :
+  ProbabilityTheory.variance (GeneratedFoundations.Operations.FinitePrecisionGaussian.score q2)
+      (GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibriumLaw c mode u omega time) =
+    ProbabilityTheory.variance (GeneratedFoundations.Operations.FinitePrecisionGaussian.score q2)
+      (GeneratedFoundations.Physical.SourceTTEquilibriumClosure.sourceLaw c mode u)
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.finite_equilibrium_closed_iff (c : ℝ) :
+  GeneratedFoundations.Physical.SourceTTEquilibriumClosure.FiniteEquilibriumClosed c ↔ 0 < c
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.finite_equilibrium_closed_radii :
+  {c | GeneratedFoundations.Physical.SourceTTEquilibriumClosure.FiniteEquilibriumClosed c} = Set.Ioi 0
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_closed_outside_realization :
+  ∃ c,
+    GeneratedFoundations.Physical.SourceTTEquilibriumClosure.FiniteEquilibriumClosed c ∧
+      ¬GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable
+          GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient c
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_closed_below_boundary_in_interval {lo hi : ℝ}
+  (hlo : 0 < lo) (hbelow : lo < GeneratedFoundations.Physical.SourceTTGaussianCoefficient.radius)
+  (habove : GeneratedFoundations.Physical.SourceTTGaussianCoefficient.radius ≤ hi) :
+  ∃ c ∈ Set.Ioo lo hi,
+    GeneratedFoundations.Physical.SourceTTEquilibriumClosure.FiniteEquilibriumClosed c ∧
+      ¬GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable
+          GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient c
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_closure_not_realization :
+  ¬∀ (c : ℝ),
+      GeneratedFoundations.Physical.SourceTTEquilibriumClosure.FiniteEquilibriumClosed c ↔
+        GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable
+          GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient c
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_and_feedback_iff (J D c : ℝ) (hD : D ≠ 0) :
+  GeneratedFoundations.Physical.SourceTTEquilibriumClosure.FiniteEquilibriumClosed c ∧ c ^ 4 / D * (J / c ^ 4) = 1 ↔
+    0 < c ∧ J = D
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.feedback_critical_radii (J D : ℝ) (hD : D ≠ 0) (hJD : J = D) :
+  {c |
+      GeneratedFoundations.Physical.SourceTTEquilibriumClosure.FiniteEquilibriumClosed c ∧
+        c ^ 4 / D * (J / c ^ 4) = 1} =
+    Set.Ioi 0
+GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_feedback_outside_realization (J D : ℝ) (hD : D ≠ 0)
+  (hJD : J = D) :
+  ∃ c,
+    (GeneratedFoundations.Physical.SourceTTEquilibriumClosure.FiniteEquilibriumClosed c ∧ c ^ 4 / D * (J / c ^ 4) = 1) ∧
+      ¬GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable
+          GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient c
+'GeneratedFoundations.Operations.FinitePrecisionEquilibrium.composition_preserves_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FinitePrecisionEquilibrium.mehler_preserves_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FinitePrecisionEquilibrium.law_eq_product' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FinitePrecisionEquilibrium.scalar_composition_preserves_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FinitePrecisionEquilibrium.coordinate_composition_preserves_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FinitePrecisionEquilibrium.coordinate_mehler_preserves_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FinitePrecisionEquilibrium.covariance_fixed_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.original_source_equilibrium' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.all_source_expectations_preserved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.tt_score_variance_preserved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.finite_equilibrium_closed_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.finite_equilibrium_closed_radii' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_closed_outside_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_closed_below_boundary_in_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_closure_not_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_and_feedback_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.feedback_critical_radii' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEquilibriumClosure.equilibrium_feedback_outside_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

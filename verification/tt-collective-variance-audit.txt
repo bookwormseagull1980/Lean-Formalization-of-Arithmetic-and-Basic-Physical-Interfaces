@@ -1,0 +1,173 @@
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction_continuous {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z : ℝ) : Continuous (GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction a b z)
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction_bounds {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b) (z u : ℝ) :
+  0 ≤ GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction a b z u ∧
+    GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction a b z u ≤ 1
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction_hasDerivAt {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z u : ℝ) :
+  HasDerivAt (fun t => GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction a b t u)
+    (GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction a b z u *
+      (1 - GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction a b z u))
+    z
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.fraction_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile_continuous {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z : ℝ) : Continuous (GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile a b z)
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile_bounds {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z u : ℝ) :
+  0 ≤ GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile a b z u ∧
+    GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile a b z u ≤
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.capacityProfile_hasDerivAt {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z u : ℝ) :
+  HasDerivAt (fun t => GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b t u)
+    (GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u -
+      3 * GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile a b z u)
+    z
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.capacityProfile_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.frequency_capacity_hasDerivAt {a b : ℝ} (ha : 0 ≤ a)
+  (hb : 0 < b) (z v : ℝ) :
+  HasDerivAt
+    (fun t => ∫ (u : ℝ) in 0..v, GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b t u)
+    ((∫ (u : ℝ) in 0..v, GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u) -
+      3 * ∫ (u : ℝ) in 0..v, GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile a b z u)
+    z
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.frequency_capacity_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.capacityCoefficient_hasDerivAt (z : ℝ) :
+  HasDerivAt GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient
+    (GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z -
+      3 * GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondCoefficient z)
+    z
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.capacityCoefficient_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile_continuous {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z m : ℝ) : Continuous (GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile a b z m)
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile_nonneg (a b z m u : ℝ) :
+  0 ≤ GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile a b z m u
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile_expansion {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b)
+  (z m u : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile a b z m u =
+    GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondProfile a b z u -
+        2 * m * GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityProfile a b z u +
+      m ^ 2 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.kineticProfile a b z u
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredProfile_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient_nonneg (z m : ℝ) :
+  0 ≤ GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient z m
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredIntegral_pos (z m : ℝ)
+  (i : GeneratedFoundations.Physical.SourceTTCollectiveComparison.Branch) :
+  0 < GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredIntegral z m i
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredIntegral_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient_pos (z m : ℝ) :
+  0 < GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient z m
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient_eq (z m : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient z m =
+    GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondCoefficient z -
+        2 * m * GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z +
+      m ^ 2 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient z
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.centeredCoefficient_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance_nonneg (z : ℝ) :
+  0 ≤ GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance z
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance_pos (z : ℝ) :
+  0 < GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance z
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance_eq (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance z =
+    GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondCoefficient z /
+        GeneratedFoundations.Physical.SourceTTCollectiveComparison.massCoefficient z -
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z ^ 2
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.effectiveMassFraction_hasDerivAt (z : ℝ) :
+  HasDerivAt GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction
+    (GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z *
+        (1 - GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z) -
+      3 * GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance z)
+    z
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.effectiveMassFraction_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.effectiveMassFraction_deriv_le (z : ℝ) :
+  deriv GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z ≤
+    GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z *
+      (1 - GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z)
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.effectiveMassFraction_deriv_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.one_split_derivative_iff (z : ℝ) :
+  deriv GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z =
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z *
+        (1 - GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z) ↔
+    GeneratedFoundations.Physical.SourceTTCollectiveVariance.responseVariance z = 0
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.one_split_derivative_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.effectiveMassFraction_deriv_lt (z : ℝ) :
+  deriv GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z <
+    GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z *
+      (1 - GeneratedFoundations.Physical.SourceTTCollectiveComparison.effectiveMassFraction z)
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.effectiveMassFraction_deriv_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.stationary_capacity_iff (z : ℝ) :
+  deriv GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z = 0 ↔
+    GeneratedFoundations.Physical.SourceTTCollectiveVariance.secondCoefficient z /
+        GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z =
+      1 / 3
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.stationary_capacity_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.capacityCoefficient_strict_bound (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z <
+    4 / 27 * GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.capacityCoefficient_strict_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTCollectiveVariance.normalized_capacity_strict_bound (z : ℝ) :
+  GeneratedFoundations.Physical.SourceTTCollectiveComparison.capacityCoefficient z /
+      GeneratedFoundations.Physical.SourceTTCollectiveComparison.weightCoefficient <
+    4 / 27
+'GeneratedFoundations.Physical.SourceTTCollectiveVariance.normalized_capacity_strict_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

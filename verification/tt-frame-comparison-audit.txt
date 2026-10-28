@@ -1,0 +1,235 @@
+GeneratedFoundations.Physical.SourceTTFrameComparison.axisDerivative_eq (a : Fin 3) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.axisDerivative a =
+    ![!![0, 0, 0; 0, 0, 2; 0, -2, 0], !![0, 0, -2; 0, 0, 0; 2, 0, 0], !![0, 2, 0; -2, 0, 0; 0, 0, 0]] a
+'GeneratedFoundations.Physical.SourceTTFrameComparison.axisDerivative_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.vertex_formula
+  (h : GeneratedFoundations.Physical.SourceTTFrameComparison.Mat) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.vertex h = 4 • (Matrix.trace h • 1 - Matrix.transpose h)
+'GeneratedFoundations.Physical.SourceTTFrameComparison.vertex_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.kinetic_operator :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.vertex 1 = 8 • 1
+'GeneratedFoundations.Physical.SourceTTFrameComparison.kinetic_operator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.tt_vertex (a b : ℝ) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+      (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b) =
+    -4 • GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b
+'GeneratedFoundations.Physical.SourceTTFrameComparison.tt_vertex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.tt_second_trace (a b c d : ℝ) :
+  Matrix.trace
+      (GeneratedFoundations.Physical.SourceTTFrameComparison.secondVertex
+        (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b)
+        (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix c d)) =
+    8 * (a * c + b * d)
+'GeneratedFoundations.Physical.SourceTTFrameComparison.tt_second_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.vertex_gram
+  (R : GeneratedFoundations.Physical.SourceTTFrameComparison.Mat) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.vertex (Matrix.transpose R * R) =
+    ∑ i,
+      Matrix.transpose (GeneratedFoundations.Physical.SourceTTFrameComparison.changedDerivative R i) *
+        GeneratedFoundations.Physical.SourceTTFrameComparison.changedDerivative R i
+'GeneratedFoundations.Physical.SourceTTFrameComparison.vertex_gram' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.frame_precision_posDef {p : ℝ} (hp : 8 < p)
+  (h : GeneratedFoundations.Physical.SourceTTFrameComparison.Mat) (t : ℝ) :
+  ((Matrix.diagonal fun x => p - 8) +
+      GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+        (Matrix.transpose (1 + (t / 2) • h) * (1 + (t / 2) • h))).PosDef
+'GeneratedFoundations.Physical.SourceTTFrameComparison.frame_precision_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision_expansion (p a b t : ℝ) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision p
+      (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b) t =
+    (Matrix.diagonal fun x => p) +
+        t •
+          GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+            (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b) +
+      (t ^ 2 / 2) •
+        GeneratedFoundations.Physical.SourceTTFrameComparison.secondVertex
+          (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b)
+          (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b)
+'GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision_zero (p a b : ℝ) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision p
+      (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b) 0 =
+    Matrix.diagonal fun x => p
+'GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision_hasDerivAt (p a b t : ℝ) :
+  HasDerivAt
+    (GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision p
+      (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b))
+    (GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonVertex a b t) t
+'GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonVertex_hasDerivAt (a b t : ℝ) :
+  HasDerivAt (GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonVertex a b)
+    (GeneratedFoundations.Physical.SourceTTFrameComparison.secondVertex
+      (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b)
+      (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b))
+    t
+'GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonVertex_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.precision_posDef {p : ℝ} (hp : 0 < p) :
+  Matrix.PosDef (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p)
+'GeneratedFoundations.Physical.SourceTTFrameComparison.precision_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.precision_inverse (p : ℝ) :
+  (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p)⁻¹ = Matrix.diagonal fun x => p⁻¹
+'GeneratedFoundations.Physical.SourceTTFrameComparison.precision_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.row_covariance {p : ℝ} (hp : 0 < p) (a b c d : ℝ) :
+  ProbabilityTheory.covariance
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+          (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b)))
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+          (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix c d)))
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p)) =
+    16 / p ^ 2 * (a * c + b * d)
+'GeneratedFoundations.Physical.SourceTTFrameComparison.row_covariance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.row_direct {p : ℝ} (hp : 0 < p) (a b c d : ℝ) :
+  ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space (Fin 3)),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.secondVertex
+          (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b)
+          (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix c d))
+        x ∂GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p) =
+    4 / p * (a * c + b * d)
+'GeneratedFoundations.Physical.SourceTTFrameComparison.row_direct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.rowHessian_eq {p : ℝ} (hp : 0 < p) (a b c d : ℝ) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.rowHessian p a b c d = 4 * (p - 4) / p ^ 2 * (a * c + b * d)
+'GeneratedFoundations.Physical.SourceTTFrameComparison.rowHessian_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.rowHessian_pos {p : ℝ} (hp : 8 < p) (a b : ℝ)
+  (hab : a ≠ 0 ∨ b ≠ 0) : 0 < GeneratedFoundations.Physical.SourceTTFrameComparison.rowHessian p a b a b
+'GeneratedFoundations.Physical.SourceTTFrameComparison.rowHessian_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.original_frame_force_hasDerivAt {p : ℝ} (hp : 8 < p) (a b : ℝ) :
+  HasDerivAt
+    (fun t =>
+      ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space (Fin 3)),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonVertex a b t)
+          x ∂GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.comparisonPrecision p
+            (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b) t))
+    (GeneratedFoundations.Physical.SourceTTFrameComparison.rowHessian p a b a b) 0
+'GeneratedFoundations.Physical.SourceTTFrameComparison.original_frame_force_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.repeated_precision (p : ℝ) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+      (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p) =
+    Matrix.diagonal fun x => p
+'GeneratedFoundations.Physical.SourceTTFrameComparison.repeated_precision' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.repeated_inverse {p : ℝ} (hp : 0 < p) :
+  (GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p))⁻¹ =
+    GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+      (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p)⁻¹
+'GeneratedFoundations.Physical.SourceTTFrameComparison.repeated_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.repeated_covariance {p : ℝ} (hp : 0 < p) (a b c d : ℝ) :
+  ProbabilityTheory.covariance
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+            (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b))))
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+            (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix c d))))
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p))) =
+    3 *
+      ProbabilityTheory.covariance
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+            (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix a b)))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+            (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix c d)))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.precision p))
+'GeneratedFoundations.Physical.SourceTTFrameComparison.repeated_covariance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse_original_law {omega m2 : ℝ} (hm : 0 ≤ m2) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse omega m2 =
+    2 *
+      ProbabilityTheory.covariance
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+            (GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+              (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix 1 0))))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+            (GeneratedFoundations.Physical.SourceTTFrameComparison.vertex
+              (GeneratedFoundations.Geometry.SourceAxisTT.ttMatrix 1 0))))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+          (GeneratedFoundations.Physical.SourceTTFrameComparison.repeatRows
+            (GeneratedFoundations.Physical.SourceTTFrameComparison.precision
+              (GeneratedFoundations.Physical.SourceTTFrameComparison.shellPrecision omega m2))))
+'GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse_original_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse_eq {omega m2 : ℝ} (hm : 0 ≤ m2) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse omega m2 = 96 / (omega ^ 2 + 8 + m2) ^ 2
+'GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.shell_response_conversion {omega m2 : ℝ} (hm : 0 ≤ m2) :
+  GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse omega m2 =
+    32 / (3 * (omega ^ 2 + 8) ^ 2) *
+      (9 * GeneratedFoundations.Geometry.SourceTensorResponse.ttKernel (omega ^ 2 + 8) m2)
+'GeneratedFoundations.Physical.SourceTTFrameComparison.shell_response_conversion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.no_common_shell_conversion {m2 beta : ℝ} (hm : 0 ≤ m2) :
+  ¬(GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse 0 m2 =
+        beta * (9 * GeneratedFoundations.Geometry.SourceTensorResponse.ttKernel 8 m2) ∧
+      GeneratedFoundations.Physical.SourceTTFrameComparison.shellTensorResponse 1 m2 =
+        beta * (9 * GeneratedFoundations.Geometry.SourceTensorResponse.ttKernel 9 m2))
+'GeneratedFoundations.Physical.SourceTTFrameComparison.no_common_shell_conversion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourceTTFrameComparison.shell_complete_hessian {omega m2 : ℝ} (hm : 0 ≤ m2) :
+  3 *
+      GeneratedFoundations.Physical.SourceTTFrameComparison.rowHessian
+        (GeneratedFoundations.Physical.SourceTTFrameComparison.shellPrecision omega m2) 1 0 1 0 =
+    12 * (omega ^ 2 + 4 + m2) / (omega ^ 2 + 8 + m2) ^ 2
+'GeneratedFoundations.Physical.SourceTTFrameComparison.shell_complete_hessian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

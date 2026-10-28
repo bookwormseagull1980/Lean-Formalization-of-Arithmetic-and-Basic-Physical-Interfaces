@@ -1,0 +1,69 @@
+'GeneratedFoundations.Operations.PositiveMomentCompletion.ratio_drift_eq_variance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.PositiveMomentCompletion.moment_budget_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.PositiveMomentCompletion.moment_successor_bound_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.PositiveMomentCompletion.polynomial_tests_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonInformation.equal_powers_opposite_variation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonInformation.massGenerator_not_function_of_capacity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonInformation.joint_readout_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCompleteComparisonClosure.positiveReference_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCompleteComparisonClosure.completeReferenceAt_iff_realizable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCompleteComparisonClosure.existsUnique_coveringReference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCompleteComparisonClosure.existing_operation_characterized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonMeasure.source_moment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonMeasure.peak_mass' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonMeasure.trace_ratio_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonMeasure.least_source_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTMomentClosure.sourceMoment_connected_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTMomentClosure.source_successor_tests_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTMomentClosure.localizingPositive_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTMomentClosure.completeMomentReference_iff_localizing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTMomentClosure.existsUnique_completeMomentReference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTMomentClosure.source_comparison_closure_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTMomentClosure.implemented_operation_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTMomentClosure.operation_unique_from_complete_responses' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

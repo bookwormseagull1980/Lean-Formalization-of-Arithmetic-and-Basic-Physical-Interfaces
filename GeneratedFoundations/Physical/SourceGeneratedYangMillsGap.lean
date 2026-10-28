@@ -1,6 +1,7 @@
 module
 
 public import GeneratedFoundations.Physical.SourceRadialMassIntertwiner
+public import GeneratedFoundations.Physical.SourceAdjointComparison
 public import GeneratedFoundations.Physical.SourceRP3FieldSpectrum
 public import GeneratedFoundations.Geometry.SourceProjectiveVolume
 public import Mathlib.Tactic.Linarith
@@ -34,6 +35,7 @@ open GeneratedFoundations.Physical.SourceConformalResponse
 open GeneratedFoundations.Physical.SourceInternalYangMillsResponse
 open GeneratedFoundations.Physical.SourceRadialMassIntertwiner
 open GeneratedFoundations.Physical.SourceRP3FieldSpectrum
+open GeneratedFoundations.Physical.SourceAdjointComparison
 
 namespace GeneratedFoundations.Physical.SourceGeneratedYangMillsGap
 
@@ -63,7 +65,7 @@ theorem generatedFeedback_pos {L : ℝ} (hL : 0 < L) :
 
 /-- The generated restoring target, with no independent coupling input. -/
 def generatedTarget (L : ℝ) : ℝ :=
-  responseTarget L (generatedFeedback L)
+  responseTarget L (generatedFeedback L) / adjointTraceMultiplicity
 
 /-- Dimensionless response coordinate carried by a Gaussian connection of
 source intensity `q`.  The factor is the already generated colour feedback
@@ -147,21 +149,22 @@ theorem transverseCovarianceAction_eq (L q : ℝ) (i : Fin 3)
 /-- The source-normalized radial mass squared.  The factor 120 is the actual
 number of long-root colour-connection coefficients. -/
 def normalizedRadialMassSq (z : ℝ) : ℝ :=
-  z * generatedRadialGap z / (2 * coefficientCount)
+  adjointTraceMultiplicity * z * generatedRadialGap z / (2 * coefficientCount)
 
 /-- The normalized radial coefficient is not an independent mass insertion.
 It is exactly the variance of the source-generated intensity score multiplied
 by the curvature of the complete restoring response. -/
-theorem normalizedRadialMassSq_eq_scoreVariance_mul_completeCurvature
+theorem normalizedRadialMassSq_eq_scoreVariance_mul_adjointCurvature
     (z : ℝ) :
-    normalizedRadialMassSq z = scoreVariance z * completeCurvature z := by
-  unfold normalizedRadialMassSq scoreVariance generatedRadialGap
+    normalizedRadialMassSq z = scoreVariance z * adjointCurvature z := by
+  unfold normalizedRadialMassSq scoreVariance generatedRadialGap adjointCurvature
   ring
 
 theorem normalizedRadialMassSq_pos {z : ℝ} (hz : 0 < z) :
     0 < normalizedRadialMassSq z := by
   unfold normalizedRadialMassSq
-  exact div_pos (mul_pos hz (generatedRadialGap_pos hz))
+  exact div_pos (mul_pos (mul_pos adjointTraceMultiplicity_pos hz)
+    (generatedRadialGap_pos hz))
     (mul_pos (by norm_num) coefficientCount_pos)
 
 /-- Common response shift of the coclosed colour-connection tower. -/
@@ -265,7 +268,8 @@ theorem existsUnique_generatedYangMillsGap {L : ℝ}
       0 < generatedYangMillsGapSq L z := by
   have hLp : 0 < L := criticalRadius_pos.trans hL
   obtain ⟨z, hz, hunique⟩ :=
-    existsUnique_response_with_scalarGap hL (generatedFeedback_pos hLp)
+    existsUnique_root_with_scalarGap (div_pos
+      (responseTarget_pos hL (generatedFeedback_pos hLp)) adjointTraceMultiplicity_pos)
   refine ⟨z, ⟨hz.1, hz.2.1, generatedYangMillsGapSq_pos hLp hz.1⟩, ?_⟩
   intro y hy
   apply hunique y

@@ -1,0 +1,5 @@
+import GeneratedFoundations.Physical.SourceMatterEventInsertions
+
+#print axioms GeneratedFoundations.Physical.SourceMatterEventInsertions.transport_identity
+#print axioms GeneratedFoundations.Physical.SourceMatterEventInsertions.coincident_pair
+#print axioms GeneratedFoundations.Physical.SourceMatterEventInsertions.prepared_coincident_pair

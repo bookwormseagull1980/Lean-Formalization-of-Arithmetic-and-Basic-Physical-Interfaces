@@ -2,6 +2,7 @@ module
 
 public import GeneratedFoundations.Physical.SourceTorsionContent
 public import GeneratedFoundations.Physical.SourceTensorResponseEndpoint
+public import GeneratedFoundations.Physical.SourceTTResponseNormalization
 public import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 public import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 public import Mathlib.Analysis.Real.Pi.Bounds
@@ -23,6 +24,12 @@ endpoint bracket, the full active V5 spectrum is exactly these eight branches
 and that `A_V5(c)=A_5/c`; that bridge is not formalized in this module.
 Numerical enclosures of the coefficient are additional, independently
 checkable propositions about this coefficient model.
+
+The kinetic insertion in the same positive precision Gaussian realizes
+each rational mode kernel as twice its quadratic-score variance. The
+coefficient below is therefore also an integral of these source responses.
+The common-normalization theorem transports the existing endpoint rule
+under simultaneous calibration of the coefficient and reference profile.
 -/
 
 @[expose] public section
@@ -70,9 +77,30 @@ theorem kernel_continuous {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b) :
   unfold kernel
   fun_prop (disch := exact hd _)
 
+/-- The selected kinetic comparison has the displayed kernel in its original
+one-coordinate Gaussian law, including the real quadratic-insertion factor. -/
+theorem kernel_eq_gaussian_response {a b : ℝ} (ha : 0 ≤ a) (hb : 0 < b) (u : ℝ) :
+    kernel a b u =
+      SourceTTResponseNormalization.gaussianModeResponse (u ^ 2 + a) b *
+        Real.exp (-(u ^ 2 + a) / Real.pi) := by
+  rw [SourceTTResponseNormalization.gaussianModeResponse_eq _ _
+    (by nlinarith [sq_nonneg u])]
+  simp only [kernel, ttKernel, div_pow]
+
 def branchIntegral (i : Fin 8) : ℝ :=
   ∫ u in (0 : ℝ)..Real.sqrt (5 * Real.pi - (branch i).1),
     kernel (branch i).1 (branch i).2.1 u
+
+theorem branchIntegral_eq_gaussian_response (i : Fin 8) :
+    branchIntegral i =
+      ∫ u in (0 : ℝ)..Real.sqrt (5 * Real.pi - (branch i).1),
+        SourceTTResponseNormalization.gaussianModeResponse
+          (u ^ 2 + (branch i).1) (branch i).2.1 *
+            Real.exp (-(u ^ 2 + (branch i).1) / Real.pi) := by
+  unfold branchIntegral
+  congr 1
+  funext u
+  exact kernel_eq_gaussian_response (branch_bounds i).1 (branch_bounds i).2.2.1 u
 
 theorem branchIntegral_pos (i : Fin 8) : 0 < branchIntegral i := by
   obtain ⟨ha, hwindow, hb, _⟩ := branch_bounds i
@@ -90,6 +118,15 @@ by the universal endpoint factor `27/4`. -/
 def coefficient : ℝ :=
   (1 / (32 * Real.pi ^ 3)) *
     ∑ i : Fin 8, (branch i).2.2 * branchIntegral i
+
+theorem coefficient_eq_gaussian_response :
+    coefficient = (1 / (32 * Real.pi ^ 3)) *
+      ∑ i : Fin 8, (branch i).2.2 *
+        (∫ u in (0 : ℝ)..Real.sqrt (5 * Real.pi - (branch i).1),
+          SourceTTResponseNormalization.gaussianModeResponse
+            (u ^ 2 + (branch i).1) (branch i).2.1 *
+              Real.exp (-(u ^ 2 + (branch i).1) / Real.pi)) := by
+  simp only [coefficient, branchIntegral_eq_gaussian_response]
 
 theorem coefficient_pos : 0 < coefficient := by
   unfold coefficient
@@ -120,7 +157,16 @@ theorem existsUnique_endpoint : ∃! c : ℝ, 0 < c ∧ response c = 4 / 27 := b
   intro c hc
   exact (response_eq_iff hc.1).mp hc.2
 
+/-- Rescaling the same source response and its reference profile preserves
+the actual integral-defined endpoint. -/
+theorem calibrated_response_eq_iff {κ c : ℝ} (hκ : 0 < κ) (hc : 0 < c) :
+    κ * response c = κ * massWeightedResponse (1 / 3) ↔ c = radius := by
+  simpa only [SourceTTResponseNormalization.calibratedResponse,
+    SourceTTResponseNormalization.calibratedProfile, response, radius] using
+    SourceTTResponseNormalization.common_normalization_matching_iff hκ coefficient_pos hc
+
 structure Conclusions : Prop where
+  normalization : SourceTTResponseNormalization.Conclusions
   content_torsion : torsion = 1 / 50
   coefficient_positive : 0 < coefficient
   endpoint_positive : 0 < radius
@@ -128,6 +174,7 @@ structure Conclusions : Prop where
   endpoint_unique : ∀ c : ℝ, 0 < c → (response c = 4 / 27 ↔ c = radius)
 
 theorem generated : Conclusions where
+  normalization := SourceTTResponseNormalization.generated
   content_torsion := torsion_eq
   coefficient_positive := coefficient_pos
   endpoint_positive := radius_pos

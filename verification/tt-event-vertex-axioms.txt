@@ -1,0 +1,96 @@
+'GeneratedFoundations.Geometry.SourceAxialEventTT.temporalComparison_axialTT' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceAxialEventTT.temporalComparison_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceAxialEventTT.temporalComparison_not_spatialLift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceAxialEventTT.frequency_kinetic_square' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceAxialEventTT.precision_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceAxialEventTT.precision_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceAxialEventTT.firstVertex_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceAxialEventTT.precision_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.GaussianPrecisionRelativeCurvature.referenceActionMean_secondDeriv_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.GaussianPrecisionRelativeCurvature.negativeLogPartition_secondDeriv_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.GaussianPrecisionRelativeCurvature.relativePath_secondDeriv_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.GaussianPrecisionRelativeCurvature.relativePath_eq_kl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.GaussianPrecisionRelativeCurvature.relativePath_eq_llr_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.GaussianPrecisionRelativeCurvature.actualKL_secondDeriv_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.frequency_ne_zero_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.eventVertex_visible_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.eventVertex_from_precision' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_direct_vertex' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.actual_eventKL_secondDeriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.canonical_eventKL_secondDeriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.pure_frequency_reference_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_reference_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_vertex_at_peak' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_half_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_half_readout_at_peak' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_half_readout_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_trace_eq_sourceMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_trace_ratio_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_complete_reference_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.event_endpoint_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.implemented_operation_event_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEventVertex.operation_unique_from_event_responses' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

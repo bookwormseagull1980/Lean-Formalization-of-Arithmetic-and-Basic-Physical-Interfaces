@@ -1,0 +1,115 @@
+GeneratedFoundations.Physical.SourceTTEndpointBalance.effectiveAction_hasDerivAt.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (p v : ℝ → ι → ℝ) (r z : ℝ) (C : ℝ → ℝ) (b : ℝ) (hr : ∀ (i : ι), 0 < p r i)
+  (hp : ∀ (i : ι), 0 < p z i) (hv : ∀ (i : ι), HasDerivAt (fun t => p t i) (v z i) z) (hC : HasDerivAt C b z) :
+  HasDerivAt (GeneratedFoundations.Physical.SourceTTEndpointBalance.effectiveAction p r C)
+    (b + GeneratedFoundations.Operations.FinitePrecisionPath.force p v z) z
+GeneratedFoundations.Physical.SourceTTEndpointBalance.effectiveGradient_hasDerivAt.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (p v a : ℝ → ι → ℝ) (B : ℝ → ℝ) (z Z : ℝ) (hp : ∀ (i : ι), 0 < p z i)
+  (hv : ∀ (i : ι), HasDerivAt (fun t => p t i) (v z i) z) (ha : ∀ (i : ι), HasDerivAt (fun t => v t i) (a z i) z)
+  (hB : HasDerivAt B Z z) :
+  HasDerivAt (fun t => B t + GeneratedFoundations.Operations.FinitePrecisionPath.force p v t)
+    (Z +
+        ∫ (x : GeneratedFoundations.Operations.FinitePrecisionGaussian.Space ι),
+          GeneratedFoundations.Operations.FinitePrecisionGaussian.score (a z)
+            x ∂GeneratedFoundations.Operations.FinitePrecisionGaussian.law (p z) -
+      ProbabilityTheory.variance (GeneratedFoundations.Operations.FinitePrecisionGaussian.score (v z))
+        (GeneratedFoundations.Operations.FinitePrecisionGaussian.law (p z)))
+    z
+GeneratedFoundations.Physical.SourceTTEndpointBalance.full_criticality_iff.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (p v a : ℝ → ι → ℝ) (z Z : ℝ) (hp : ∀ (i : ι), 0 < p z i) :
+  Z + GeneratedFoundations.Operations.FinitePrecisionPath.curvature p v a z = 0 ↔
+    ProbabilityTheory.variance (GeneratedFoundations.Operations.FinitePrecisionGaussian.score (v z))
+        (GeneratedFoundations.Operations.FinitePrecisionGaussian.law (p z)) =
+      Z +
+        ∫ (x : GeneratedFoundations.Operations.FinitePrecisionGaussian.Space ι),
+          GeneratedFoundations.Operations.FinitePrecisionGaussian.score (a z)
+            x ∂GeneratedFoundations.Operations.FinitePrecisionGaussian.law (p z)
+GeneratedFoundations.Physical.SourceTTEndpointBalance.kineticEffectiveAction_hasDerivAt.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (q2 m2 : ι → ℝ) (Z z : ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i)
+  (hz : ∀ (i : ι), 0 < q2 i + m2 i + z * q2 i) :
+  HasDerivAt (GeneratedFoundations.Physical.SourceTTEndpointBalance.kineticEffectiveAction q2 m2 Z)
+    (Z * z - deriv (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticLogPartition q2 m2) z) z
+GeneratedFoundations.Physical.SourceTTEndpointBalance.kineticEffectiveGradient_hasDerivAt.{u_1} {ι : Type u_1}
+  [Fintype ι] [DecidableEq ι] (q2 m2 : ι → ℝ) (Z : ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i) :
+  HasDerivAt
+    (fun z => Z * z - deriv (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticLogPartition q2 m2) z)
+    (Z - GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianKineticResponse q2 m2 / 2) 0
+GeneratedFoundations.Physical.SourceTTEndpointBalance.kinetic_criticality_iff.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (q2 m2 : ι → ℝ) (Z : ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i) :
+  Z - GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianKineticResponse q2 m2 / 2 = 0 ↔
+    ∑ i, GeneratedFoundations.Geometry.SourceTensorResponse.ttKernel (q2 i) (m2 i) = 2 * Z
+GeneratedFoundations.Physical.SourceTTEndpointBalance.reduced_criticality_iff {A κ Z c : ℝ} (hκ : 0 < κ) :
+  GeneratedFoundations.Physical.SourceTTEndpointBalance.reducedHessian A κ Z c = 0 ↔ A / c = 2 * Z / κ
+GeneratedFoundations.Physical.SourceTTEndpointBalance.critical_endpoint_iff_direct_response {A κ Z c : ℝ} (hκ : 0 < κ)
+  (hcrit : GeneratedFoundations.Physical.SourceTTEndpointBalance.reducedHessian A κ Z c = 0) :
+  A / c = 4 / 27 ↔ Z = 2 * κ / 27
+GeneratedFoundations.Physical.SourceTTEndpointBalance.endpoint_of_source_balance {A κ Z c : ℝ} (hA : 0 < A) (hκ : 0 < κ)
+  (hc : 0 < c) (hcrit : GeneratedFoundations.Physical.SourceTTEndpointBalance.reducedHessian A κ Z c = 0)
+  (hZ : Z = 2 * κ / 27) : c = GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A
+GeneratedFoundations.Physical.SourceTTEndpointBalance.reduced_critical_radius {A κ Z c : ℝ} (hκ : 0 < κ) (hZ : 0 < Z)
+  (hc : 0 < c) : GeneratedFoundations.Physical.SourceTTEndpointBalance.reducedHessian A κ Z c = 0 ↔ c = κ * A / (2 * Z)
+GeneratedFoundations.Physical.SourceTTEndpointBalance.unique_crossing_at_any_level {A θ : ℝ} (hA : 0 < A) (hθ : 0 < θ) :
+  ∃! c, 0 < c ∧ A / c = θ
+GeneratedFoundations.Physical.SourceTTEndpointBalance.fixed_source_all_positive_levels (θ : ℝ) (hθ : 0 < θ) :
+  ∃! c, 0 < c ∧ GeneratedFoundations.Physical.SourceTTGaussianCoefficient.response c = θ
+GeneratedFoundations.Physical.SourceTTEndpointBalance.distinct_matching_levels {A θ η : ℝ} (hA : 0 < A) (hθ : 0 < θ)
+  (hη : 0 < η) (hne : θ ≠ η) : A / θ ≠ A / η
+GeneratedFoundations.Physical.SourceTTEndpointBalance.feedback_scale_cancellation (J D c : ℝ) (hD : D ≠ 0)
+  (hc : c ≠ 0) : c ^ 4 / D * (J / c ^ 4) = J / D
+GeneratedFoundations.Physical.SourceTTEndpointBalance.weighted_response_defect.{u_1} {ι : Type u_1} [Fintype ι]
+  (w y : ι → ℝ) :
+  4 / 27 * ∑ i, w i - ∑ i, w i * GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse (y i) =
+    ∑ i, w i * ((y i - 1 / 3) ^ 2 * (4 / 3 - y i))
+GeneratedFoundations.Physical.SourceTTEndpointBalance.mode_at_profile_maximum :
+  GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse
+        (GeneratedFoundations.Geometry.SourceTensorResponse.massFraction 2 1) =
+      4 / 27 ∧
+    GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianModeResponse 2 1 = 4 / 9
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.effectiveAction_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.effectiveGradient_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.full_criticality_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.kineticEffectiveAction_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.kineticEffectiveGradient_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.kinetic_criticality_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.reduced_criticality_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.critical_endpoint_iff_direct_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.endpoint_of_source_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.reduced_critical_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.unique_crossing_at_any_level' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.fixed_source_all_positive_levels' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.distinct_matching_levels' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.feedback_scale_cancellation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.weighted_response_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTEndpointBalance.mode_at_profile_maximum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

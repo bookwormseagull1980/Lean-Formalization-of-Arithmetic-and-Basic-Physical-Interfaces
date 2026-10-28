@@ -1,0 +1,110 @@
+GeneratedFoundations.Physical.SourceTTClosureBoundary.splitLaw_eq_unit (y : ℝ) :
+  GeneratedFoundations.Physical.SourceTTClosureBoundary.splitLaw y =
+    GeneratedFoundations.Operations.FinitePrecisionGaussian.law fun x => 1
+GeneratedFoundations.Physical.SourceTTClosureBoundary.splitResponse_eq (y : ℝ) :
+  GeneratedFoundations.Physical.SourceTTClosureBoundary.splitResponse y =
+    GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse y
+GeneratedFoundations.Physical.SourceTTClosureBoundary.exists_split_of_mem_range {t : ℝ} (ht0 : 0 ≤ t)
+  (ht1 : t ≤ 4 / 27) :
+  ∃ y ∈ Set.Icc 0 (1 / 3), GeneratedFoundations.Physical.SourceTTClosureBoundary.splitResponse y = t
+GeneratedFoundations.Physical.SourceTTClosureBoundary.split_response_range :
+  GeneratedFoundations.Physical.SourceTTClosureBoundary.splitResponse '' Set.Icc 0 1 = Set.Icc 0 (4 / 27)
+GeneratedFoundations.Physical.SourceTTClosureBoundary.realizable_iff {A : ℝ} (hA : 0 < A) (c : ℝ) :
+  GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable A c ↔
+    GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A ≤ c
+GeneratedFoundations.Physical.SourceTTClosureBoundary.realizable_set {A : ℝ} (hA : 0 < A) :
+  {c | GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable A c} =
+    Set.Ici (GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A)
+GeneratedFoundations.Physical.SourceTTClosureBoundary.least_realizable_radius {A : ℝ} (hA : 0 < A) :
+  IsLeast {c | GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable A c}
+    (GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A)
+GeneratedFoundations.Physical.SourceTTClosureBoundary.least_radius_unique {A c : ℝ} (hA : 0 < A)
+  (hfirst : IsLeast {r | GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable A r} c) :
+  c = GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A
+GeneratedFoundations.Physical.SourceTTClosureBoundary.least_realizable_iff_matching {A c : ℝ} (hA : 0 < A)
+  (hc : 0 < c) : IsLeast {r | GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable A r} c ↔ A / c = 4 / 27
+GeneratedFoundations.Physical.SourceTTClosureBoundary.realization_radius_defect {A c y : ℝ} (hc : 0 < c)
+  (hmatch : A / c = GeneratedFoundations.Physical.SourceTTClosureBoundary.splitResponse y) :
+  c - GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A = 27 * c / 4 * (y - 1 / 3) ^ 2 * (4 / 3 - y)
+GeneratedFoundations.Physical.SourceTTClosureBoundary.boundary_split_unique {A y : ℝ} (hA : 0 < A)
+  (hy : y ∈ Set.Icc 0 1)
+  (hmatch :
+    A / GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A =
+      GeneratedFoundations.Physical.SourceTTClosureBoundary.splitResponse y) :
+  y = 1 / 3
+GeneratedFoundations.Physical.SourceTTClosureBoundary.endpoint_of_source_realization {A c : ℝ} {Admissible : ℝ → Prop}
+  (hA : 0 < A) (hreal : ∀ (r : ℝ), Admissible r ↔ GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable A r)
+  (hfirst : IsLeast {r | Admissible r} c) :
+  c = GeneratedFoundations.Geometry.SourceTensorResponse.endpointRoot A ∧ A / c = 4 / 27
+GeneratedFoundations.Physical.SourceTTClosureBoundary.common_calibration_realizable {A c κ : ℝ} (hκ : 0 < κ) :
+  (0 < c ∧ ∃ y ∈ Set.Icc 0 1, κ * (A / c) = κ * GeneratedFoundations.Physical.SourceTTClosureBoundary.splitResponse y) ↔
+    GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable A c
+GeneratedFoundations.Physical.SourceTTClosureBoundary.fixed_coefficient_boundary :
+  IsLeast
+    {c |
+      GeneratedFoundations.Physical.SourceTTClosureBoundary.Realizable
+        GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient c}
+    GeneratedFoundations.Physical.SourceTTGaussianCoefficient.radius
+GeneratedFoundations.Physical.SourceTTClosureBoundary.weighted_saturation_iff.{u_1} {ι : Type u_1} [Fintype ι]
+  (w y : ι → ℝ) (hw : ∀ (i : ι), 0 ≤ w i) (hy : ∀ (i : ι), y i ∈ Set.Icc 0 1) :
+  ∑ i, w i * GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse (y i) = 4 / 27 * ∑ i, w i ↔
+    ∀ (i : ι), w i = 0 ∨ y i = 1 / 3
+GeneratedFoundations.Physical.SourceTTClosureBoundary.weighted_concentration.{u_1} {ι : Type u_1} [Fintype ι]
+  (w y : ι → ℝ) (hw : ∀ (i : ι), 0 ≤ w i) (hy : ∀ (i : ι), y i ∈ Set.Icc 0 1) :
+  ∑ i, w i * (y i - 1 / 3) ^ 2 ≤
+    3 * (4 / 27 * ∑ i, w i - ∑ i, w i * GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse (y i))
+GeneratedFoundations.Physical.SourceTTClosureBoundary.weighted_response_strict_of_nonmaximal_mode.{u_1} {ι : Type u_1}
+  [Fintype ι] (w y : ι → ℝ) (hw : ∀ (i : ι), 0 ≤ w i) (hy : ∀ (i : ι), y i ∈ Set.Icc 0 1) (i : ι) (hwi : 0 < w i)
+  (hyi : y i ≠ 1 / 3) :
+  ∑ j, w j * GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse (y j) < 4 / 27 * ∑ j, w j
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.splitLaw_eq_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.splitResponse_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.exists_split_of_mem_range' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.split_response_range' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.realizable_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.realizable_set' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.least_realizable_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.least_radius_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.least_realizable_iff_matching' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.realization_radius_defect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.boundary_split_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.endpoint_of_source_realization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.common_calibration_realizable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.fixed_coefficient_boundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.weighted_saturation_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.weighted_concentration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTClosureBoundary.weighted_response_strict_of_nonmaximal_mode' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

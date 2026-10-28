@@ -1,0 +1,81 @@
+'GeneratedFoundations.Operations.ScalarVertexComparison.covariance_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.ScalarVertexComparison.relative_fisher_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.ScalarVertexComparison.reference_positive' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.ScalarVertexComparison.relative_fisher_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.ScalarVertexComparison.relative_operator_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.ScalarVertexComparison.relative_operator_pairing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.ScalarVertexComparison.intensity_fisher_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.ScalarVertexComparison.actual_log_partition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.ScalarVertexComparison.actual_same_vertex_reference_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTScalarFrameSupport.changedAxis_degree_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTScalarFrameSupport.constant_frame_path' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTScalarFrameSupport.constantLogPartition_actual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTScalarFrameSupport.constant_mixed_derivative_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTScalarFrameSupport.no_constant_frame_calibration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTScalarFrameSupport.nonconstant_capacity_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.normalizedVertexResponse_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.normalizedVertexResponse_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.normalizedVertexResponse_eq_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.vertexTrace_eq_sourceMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.vertexTrace_eq_sourceMoment_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.completeVertexReference_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.completeVertexReference_iff_ae' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.complete_vertex_reference_sharp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.complete_vertex_endpoint_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.intensityVertex_visible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.intensity_trace_eq_sourceMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTVertexTrace.operation_unique_from_vertex_responses' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

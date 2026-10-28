@@ -2,9 +2,16 @@ module
 
 public import GeneratedFoundations.Physical.SourceInternalResponse
 public import GeneratedFoundations.Physical.SourceCompleteMatterExactSequence
+public import GeneratedFoundations.Physical.SourceMatterCompression
+public import GeneratedFoundations.Physical.SourceMatterPoleResponse
+public import GeneratedFoundations.Physical.SourceMatterInsertions
+public import GeneratedFoundations.Physical.SourceMatterEventInsertions
+public import GeneratedFoundations.Operations.SourceCornerMinimality
+public import GeneratedFoundations.Geometry.SourceExchangeAverage
 public import GeneratedFoundations.Physical.SourceSplitResponse
 public import GeneratedFoundations.Physical.SourceFrameConstruction
 public import GeneratedFoundations.Physical.SourceFourDimensionalYangMills
+public import GeneratedFoundations.Physical.SourceAdjointEventTransport
 public import GeneratedFoundations.Physical.SourceLinearizedGravity
 public import GeneratedFoundations.Physical.SourceRP3FieldSpectrum
 public import GeneratedFoundations.Physical.SourceConformalResponse
@@ -38,6 +45,10 @@ The endpoints, reflecting source evolution, exchange-retained response,
 source frames, least matter realization, vacuum lift and elementary connector
 are internal constructions and outputs. In particular, no endpoint, boundary
 operator or aggregate P4--P6 realization premise is supplied by the caller.
+The first differential Gaussian carrier is the unique least subspace containing
+the vacuum and its actual first variation. Exchange averaging is a unique
+linear projection onto the exchange-retained response algebra, characterized
+by fixing that algebra and identifying the two exchange representatives.
 The neutral line, complete sixteen-dimensional matter carrier and charged
 fifteen-dimensional quotient form a canonical short exact sequence, and the
 charged quotient is characterized by its unique factorization property.
@@ -137,11 +148,20 @@ structure GaugeConclusions : Prop where
   group : SourceGeneratedGaugeGroup.FactorOriginProperties
   kinematics : SourceFourDimensionalGaugeKinematics.Properties
   colourYangMills : SourceFourDimensionalYangMills.Properties
+  adjointEvent : SourceAdjointEventTransport.Properties
 
-/-- The matter-sector core: the concrete bundle and its exact sequence. -/
+/-- The matter-sector core: the concrete bundle, its exact sequence and
+complete covariant compression with the orthogonal complement retained.
+`spectralResponse` gives finite-block elimination and normalization identities;
+`insertions` constructs the complete CAR algebra and its source-current lift.
+The block operators and state in those response identities are quantified
+arguments, as specified by `SourceMatterPoleResponse.Conclusions`. -/
 structure MatterConclusions : Prop where
   bundle : CanonicalMatterBundle.Conclusions
   exactSequence : SourceCompleteMatterExactSequence.Conclusions
+  compression : SourceMatterCompression.Conclusions
+  spectralResponse : SourceMatterPoleResponse.Conclusions
+  insertions : SourceMatterInsertions.Conclusions
 
 /-- The Hermitian readout core, grouped into one field. -/
 structure HermitianConclusions : Prop where
@@ -341,10 +361,14 @@ theorem generatedCore : CoreConclusions where
   gauge := {
     group := generated.generated_gauge_group
     kinematics := generated.four_dimensional_gauge_kinematics
-    colourYangMills := generated.four_dimensional_colour_yang_mills }
+    colourYangMills := generated.four_dimensional_colour_yang_mills
+    adjointEvent := SourceAdjointEventTransport.generated }
   matter := {
     bundle := generated.canonical_matter_bundle
-    exactSequence := generated.complete_matter_exact_sequence }
+    exactSequence := generated.complete_matter_exact_sequence
+    compression := SourceMatterCompression.generated
+    spectralResponse := SourceMatterPoleResponse.generated
+    insertions := SourceMatterInsertions.generated }
   transverse_traceless_carrier := generated.transverse_traceless_carrier
   tensor_response_endpoint := generated.tensor_response_endpoint
   collective_gravity := SourceCollectiveGravityClosure.generated

@@ -1,0 +1,51 @@
+'GeneratedFoundations.Physical.SourceTTFrameRelativeResponse.comparisonPrecision_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTFrameRelativeResponse.comparisonPrecision_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTFrameRelativeResponse.referenceActionMean_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTFrameRelativeResponse.relativeResponse_eq_logLikelihood_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTFrameRelativeResponse.negativeLogPartition_secondDeriv_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTFrameRelativeResponse.relativeResponse_secondDeriv_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTFrameRelativeResponse.shell_relative_hessian_eq_tensor_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTTensorConnectedResponse.actual_log_partition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTTensorConnectedResponse.actual_mixed_connected_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTTensorConnectedResponse.actual_pure_kinetic_connected_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTTensorConnectedResponse.actual_same_vertex_reference_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTRelativeFisher.tensorFisher_relative_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTRelativeFisher.relative_operator_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTRelativeFisher.referenceCalibration_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTRelativeFisher.relative_shell_eq_kinetic_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTRelativeFisher.complete_relative_KL_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTRelativeFisher.relativeShellResponse_mass_capacity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

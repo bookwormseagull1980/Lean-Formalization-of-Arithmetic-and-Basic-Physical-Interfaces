@@ -1,0 +1,51 @@
+'GeneratedFoundations.Physical.SourceTTCapacitySpectrum.readout_range' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCapacitySpectrum.readout_eq_peak_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTCapacitySpectrum.halfReadout_sSup' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.PositiveMomentRatios.positive_moment_ratio_endpoint' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.PositiveMomentRatios.ratio_defect_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.PrecisionMixedResponse.actual_capacity_power_mixed_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.PrecisionMixedResponse.original_precision_log_partition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.PrecisionMixedResponse.original_precision_split_log_partition' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.connectedTrace_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.normalizedConnectedTrace_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.connected_ratio_eq_moment_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.traceMoment_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.fraction_finite_transport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.capacity_finite_transport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.momentProfile_finite_transport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.capacity_propagator_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTComparisonTransport.mass_derivative_ne_capacity_product_at_peak' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

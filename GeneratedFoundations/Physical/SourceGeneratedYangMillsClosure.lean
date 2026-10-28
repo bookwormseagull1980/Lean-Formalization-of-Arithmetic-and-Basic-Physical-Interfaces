@@ -110,7 +110,7 @@ structure Conclusions : Prop where
         coclosedResponseShift L z
   complete_radial_from_source : ∀ z,
     normalizedRadialMassSq z =
-      scoreVariance z * SourceConformalResponse.completeCurvature z
+      scoreVariance z * SourceAdjointComparison.adjointCurvature z
   complete_radial_restoring_derivative : ∀ {z : ℝ}, 0 < z →
     HasDerivAt (SourceGeneratedRadialVariation.sourceRadialForce z)
       (normalizedRadialMassSq z) 0
@@ -167,7 +167,7 @@ theorem conclusions : Conclusions where
   complete_coclosed_from_source :=
     SourceGeneratedCoclosedOneForm.modeEigenvalue_eq_sourceCasimir_add_shift
   complete_radial_from_source :=
-    normalizedRadialMassSq_eq_scoreVariance_mul_completeCurvature
+    normalizedRadialMassSq_eq_scoreVariance_mul_adjointCurvature
   complete_radial_restoring_derivative :=
     SourceGeneratedRadialVariation.sourceRadialForce_hasDerivAt_zero
   complete_source_decomposition :=

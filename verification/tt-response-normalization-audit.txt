@@ -1,0 +1,143 @@
+GeneratedFoundations.Physical.SourceTTResponseNormalization.generated :
+  GeneratedFoundations.Physical.SourceTTResponseNormalization.Conclusions
+GeneratedFoundations.Physical.SourceTTResponseNormalization.polarization_gram :
+  GeneratedFoundations.Physical.SourceTTResponseNormalization.tensorPairing
+        ↑GeneratedFoundations.Geometry.SourceAxisTT.plusPolarization
+        ↑GeneratedFoundations.Geometry.SourceAxisTT.plusPolarization =
+      1 ∧
+    GeneratedFoundations.Physical.SourceTTResponseNormalization.tensorPairing
+          ↑GeneratedFoundations.Geometry.SourceAxisTT.crossPolarization
+          ↑GeneratedFoundations.Geometry.SourceAxisTT.crossPolarization =
+        1 ∧
+      GeneratedFoundations.Physical.SourceTTResponseNormalization.tensorPairing
+          ↑GeneratedFoundations.Geometry.SourceAxisTT.plusPolarization
+          ↑GeneratedFoundations.Geometry.SourceAxisTT.crossPolarization =
+        0
+GeneratedFoundations.Physical.SourceTTResponseNormalization.logMassKernel_hasDerivAt (q2 m2 z : ℝ)
+  (hden : q2 + Real.exp z * m2 ≠ 0) :
+  HasDerivAt (GeneratedFoundations.Physical.SourceTTResponseNormalization.logMassKernel q2 m2)
+    (-2 *
+      GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse
+        (GeneratedFoundations.Geometry.SourceTensorResponse.massFraction q2 (Real.exp z * m2)))
+    z
+GeneratedFoundations.Physical.SourceTTResponseNormalization.fixed_weight_logMass_hasDerivAt.{u_1} {ι : Type u_1}
+  [Fintype ι] (w q2 m2 : ι → ℝ) (z : ℝ) (hden : ∀ (i : ι), q2 i + Real.exp z * m2 i ≠ 0) :
+  HasDerivAt
+    (fun t => ∑ i, w i * GeneratedFoundations.Physical.SourceTTResponseNormalization.logMassKernel (q2 i) (m2 i) t)
+    (-2 *
+      ∑ i,
+        w i *
+          GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse
+            (GeneratedFoundations.Geometry.SourceTensorResponse.massFraction (q2 i) (Real.exp z * m2 i)))
+    z
+GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianKineticResponse_eq.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (q2 m2 : ι → ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i) :
+  GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianKineticResponse q2 m2 =
+    ∑ i, GeneratedFoundations.Geometry.SourceTensorResponse.ttKernel (q2 i) (m2 i)
+GeneratedFoundations.Physical.SourceTTResponseNormalization.kinetic_partition_eq.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (q2 m2 : ι → ℝ) (z : ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i)
+  (hz : ∀ (i : ι), 0 < q2 i + m2 i + z * q2 i) :
+  ∫ (x : GeneratedFoundations.Operations.FinitePrecisionGaussian.Space ι),
+      Real.exp
+        (-z *
+          GeneratedFoundations.Operations.FinitePrecisionGaussian.score q2
+            x) ∂GeneratedFoundations.Operations.FinitePrecisionGaussian.law
+        (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticPrecision q2 m2) =
+    Real.exp
+      (GeneratedFoundations.Operations.FinitePrecisionTilt.logPartition
+        (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticPrecision q2 m2) q2 z)
+GeneratedFoundations.Physical.SourceTTResponseNormalization.kinetic_partition_second_response.{u_1} {ι : Type u_1}
+  [Fintype ι] [DecidableEq ι] (q2 m2 : ι → ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i) :
+  HasDerivAt
+    (fun z =>
+      -GeneratedFoundations.Operations.FinitePrecisionTilt.mean
+          (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticPrecision q2 m2) q2 z)
+    (GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianKineticResponse q2 m2 / 2) 0
+GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticLogPartition_hasDerivAt.{u_1} {ι : Type u_1}
+  [Fintype ι] [DecidableEq ι] (q2 m2 : ι → ℝ) (z : ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i)
+  (hz : ∀ (i : ι), 0 < q2 i + m2 i + z * q2 i) :
+  HasDerivAt (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticLogPartition q2 m2)
+    (-GeneratedFoundations.Operations.FinitePrecisionTilt.mean
+        (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticPrecision q2 m2) q2 z)
+    z
+GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticLogPartition_second_response.{u_1} {ι : Type u_1}
+  [Fintype ι] [DecidableEq ι] (q2 m2 : ι → ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i) :
+  HasDerivAt (deriv (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticLogPartition q2 m2))
+    (GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianKineticResponse q2 m2 / 2) 0
+GeneratedFoundations.Physical.SourceTTResponseNormalization.nonlinear_source_response.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (p v a : ℝ → ι → ℝ) (z : ℝ) (hp : ∀ (i : ι), 0 < p z i) :
+  -GeneratedFoundations.Operations.FinitePrecisionPath.curvature p v a z =
+    ProbabilityTheory.variance (GeneratedFoundations.Operations.FinitePrecisionGaussian.score (v z))
+        (GeneratedFoundations.Operations.FinitePrecisionGaussian.law (p z)) -
+      ∫ (x : GeneratedFoundations.Operations.FinitePrecisionGaussian.Space ι),
+        GeneratedFoundations.Operations.FinitePrecisionGaussian.score (a z)
+          x ∂GeneratedFoundations.Operations.FinitePrecisionGaussian.law (p z)
+GeneratedFoundations.Physical.SourceTTResponseNormalization.nonlinear_partition_second_response.{u_1} {ι : Type u_1}
+  [Fintype ι] [DecidableEq ι] (p v a : ℝ → ι → ℝ) (z : ℝ) (hp : ∀ (i : ι), 0 < p z i)
+  (hv : ∀ (i : ι), HasDerivAt (fun t => p t i) (v z i) z) (ha : ∀ (i : ι), HasDerivAt (fun t => v t i) (a z i) z) :
+  HasDerivAt (fun t => -GeneratedFoundations.Operations.FinitePrecisionPath.force p v t)
+    (ProbabilityTheory.variance (GeneratedFoundations.Operations.FinitePrecisionGaussian.score (v z))
+        (GeneratedFoundations.Operations.FinitePrecisionGaussian.law (p z)) -
+      ∫ (x : GeneratedFoundations.Operations.FinitePrecisionGaussian.Space ι),
+        GeneratedFoundations.Operations.FinitePrecisionGaussian.score (a z)
+          x ∂GeneratedFoundations.Operations.FinitePrecisionGaussian.law (p z))
+    z
+GeneratedFoundations.Physical.SourceTTResponseNormalization.kinetic_vertex_rescaling.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (q2 m2 : ι → ℝ) (r : ℝ) (hp : ∀ (i : ι), 0 < q2 i + m2 i) :
+  2 *
+      ProbabilityTheory.variance (GeneratedFoundations.Operations.FinitePrecisionGaussian.score fun i => r * q2 i)
+        (GeneratedFoundations.Operations.FinitePrecisionGaussian.law
+          (GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticPrecision q2 m2)) =
+    r ^ 2 * GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianKineticResponse q2 m2
+GeneratedFoundations.Physical.SourceTTResponseNormalization.common_normalization_unique_endpoint {κ A : ℝ} (hκ : 0 < κ)
+  (hA : 0 < A) :
+  ∃! c,
+    0 < c ∧
+      GeneratedFoundations.Physical.SourceTTResponseNormalization.calibratedResponse κ A c =
+        GeneratedFoundations.Physical.SourceTTResponseNormalization.calibratedProfile κ (1 / 3)
+GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient_eq_gaussian_response :
+  GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient =
+    1 / (32 * Real.pi ^ 3) *
+      ∑ i,
+        (GeneratedFoundations.Physical.SourceTTGaussianCoefficient.branch i).2.2 *
+          ∫ (u : ℝ) in 0..√(5 * Real.pi - (GeneratedFoundations.Physical.SourceTTGaussianCoefficient.branch i).1),
+            GeneratedFoundations.Physical.SourceTTResponseNormalization.gaussianModeResponse
+                (u ^ 2 + (GeneratedFoundations.Physical.SourceTTGaussianCoefficient.branch i).1)
+                (GeneratedFoundations.Physical.SourceTTGaussianCoefficient.branch i).2.1 *
+              Real.exp (-(u ^ 2 + (GeneratedFoundations.Physical.SourceTTGaussianCoefficient.branch i).1) / Real.pi)
+GeneratedFoundations.Physical.SourceTTGaussianCoefficient.calibrated_response_eq_iff {κ c : ℝ} (hκ : 0 < κ)
+  (hc : 0 < c) :
+  κ * GeneratedFoundations.Physical.SourceTTGaussianCoefficient.response c =
+      κ * GeneratedFoundations.Geometry.SourceTensorResponse.massWeightedResponse (1 / 3) ↔
+    c = GeneratedFoundations.Physical.SourceTTGaussianCoefficient.radius
+GeneratedFoundations.Physical.SourceTTGaussianCoefficient.generated.normalization : GeneratedFoundations.Physical.SourceTTResponseNormalization.Conclusions
+'GeneratedFoundations.Physical.SourceTTResponseNormalization.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTResponseNormalization.fixed_weight_logMass_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTResponseNormalization.kinetic_partition_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTResponseNormalization.kinetic_partition_second_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTResponseNormalization.kineticLogPartition_second_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTResponseNormalization.nonlinear_source_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTResponseNormalization.nonlinear_partition_second_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTResponseNormalization.kinetic_vertex_rescaling' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTGaussianCoefficient.coefficient_eq_gaussian_response' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceTTGaussianCoefficient.calibrated_response_eq_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

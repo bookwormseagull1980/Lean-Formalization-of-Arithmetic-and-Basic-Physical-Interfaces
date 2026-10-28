@@ -1,0 +1,26 @@
+Command: lake env lean verification/physical-selection-audit.lean
+Exit code: 0
+
+'GeneratedFoundations.Operations.SourceCornerMinimality.firstVariation_differential' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.SourceCornerMinimality.sourceSpace_isLeast' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.SourceCornerMinimality.least_carrier_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceExchangeAverage.average_idempotent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceExchangeAverage.range_average' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Geometry.SourceExchangeAverage.average_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'elementary_family_has_distinct_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore.matter.spectralResponse : GeneratedFoundations.Physical.SourceMatterPoleResponse.Conclusions

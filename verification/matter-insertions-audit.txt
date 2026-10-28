@@ -1,0 +1,59 @@
+'GeneratedFoundations.Operations.FermionInsertions.mixed_car' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeneratedFoundations.Operations.FermionInsertions.vacuum_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FermionInsertions.transport_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FermionInsertions.oneBody_create' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FermionInsertions.oneBody_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FermionInsertions.oneBody_basis_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FermionInsertions.oneBody_one_matter' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.mixed_car' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.vacuum_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.gaugeTransport_create' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.sourceCurrent_create' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.sourceCurrent_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.chiral_cross_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.full_basis_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FermionInsertions.oneBody_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Operations.FermionInsertions.oneBody_unique_derivation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.sourceCurrent_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterInsertions.sourceCurrent_unique_derivation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore.matter.insertions : GeneratedFoundations.Physical.SourceMatterInsertions.Conclusions

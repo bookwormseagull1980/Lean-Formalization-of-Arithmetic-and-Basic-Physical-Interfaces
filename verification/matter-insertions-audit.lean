@@ -1,0 +1,22 @@
+import GeneratedFoundations.Physical.SourcePhysicalInterface
+#print axioms GeneratedFoundations.Operations.FermionInsertions.mixed_car
+#print axioms GeneratedFoundations.Operations.FermionInsertions.vacuum_pair
+#print axioms GeneratedFoundations.Operations.FermionInsertions.transport_unique
+#print axioms GeneratedFoundations.Operations.FermionInsertions.oneBody_create
+#print axioms GeneratedFoundations.Operations.FermionInsertions.oneBody_unique
+#print axioms GeneratedFoundations.Operations.FermionInsertions.oneBody_basis_independent
+#print axioms GeneratedFoundations.Operations.FermionInsertions.oneBody_one_matter
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.mixed_car
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.vacuum_pair
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.gaugeTransport_create
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.sourceCurrent_create
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.sourceCurrent_unique
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.chiral_cross_pair
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.full_basis_pair
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.generated
+#print axioms GeneratedFoundations.Operations.FermionInsertions.oneBody_mul
+#print axioms GeneratedFoundations.Operations.FermionInsertions.oneBody_unique_derivation
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.sourceCurrent_mul
+#print axioms GeneratedFoundations.Physical.SourceMatterInsertions.sourceCurrent_unique_derivation
+#print axioms GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore
+#check GeneratedFoundations.Physical.SourcePhysicalInterface.generatedCore.matter.insertions

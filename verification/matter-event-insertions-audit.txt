@@ -1,0 +1,9 @@
+'GeneratedFoundations.Physical.SourceMatterEventInsertions.transport_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterEventInsertions.coincident_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'GeneratedFoundations.Physical.SourceMatterEventInsertions.prepared_coincident_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
