@@ -206,6 +206,11 @@ def discover_modules(project: Path) -> dict[str, Path]:
         relative = path.relative_to(project)
         if ".lake" in relative.parts or relative.as_posix() == "lakefile.lean":
             continue
+        # Standalone command-line audit scripts are not library modules.
+        # Their saved Lean output is checked separately; importing the
+        # library under audit does not make that script a dependency.
+        if relative.parts[0] == "verification" and path.name.endswith("-audit.lean"):
+            continue
         if not path.resolve().is_relative_to(project.resolve()):
             raise VerificationError(f"Source symlink escapes project: {relative}")
         module = ".".join(relative.with_suffix("").parts)

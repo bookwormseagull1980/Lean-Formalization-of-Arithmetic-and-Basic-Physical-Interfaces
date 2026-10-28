@@ -178,7 +178,7 @@ when they are not arguments of the root theorem:
 | Internal Yang--Mills response | The critical radius is the already generated IR/UV endpoint ratio. The long-root dimension and Casimir come from the actual source left--right representation, while the adjoint Casimir is computed from the explicit colour matrices. The affine drive, coefficient count and feedback normalization therefore add no independent root field. |
 | Radial/coclosed mass blocks | The finite Gaussian intensity score fixes the radial metric normalization. The radial and scalar constant blocks are one-dimensional source restrictions with a unique generator-preserving unitary. Their common scalar evolution is intertwined, and the positive condensed response supplies a positive bottom for the radial block and every coclosed connection shell. |
 | Transverse--traceless carrier | `IsAxisTT` is the intersection of symmetry, transversality and trace-zero constraints on the generated three spatial coordinates. The plus/cross representation, its uniqueness and real dimension two are proved consequences of those constraints rather than a supplied two-state type. |
-| Tensor response endpoint | The kernel `q⁴/(q²+m²)²` defines the mass-fraction response `y(1-y)²`. Its unique maximum `4/27` and the positive endpoint formula `c=27A/4` are theorems. The universally quantified positive coefficient in the uniqueness theorem is a competitor variable, not an added root field. |
+| Tensor response endpoint | The per-leg logarithmic mass derivative of `q⁴/(q²+m²)²` is `y(1-y)²`, with unique maximum `4/27`. The finite kinetic quadratic insertion in the original positive-precision Gaussian has twice its variance equal to the rational kernel sum; the actual eight-branch coefficient is also its Gaussian-weighted integral. The endpoint formula `c=27A/4` is unique under the existing matching rule and invariant under a common positive calibration of both sides. The extremum theorem does not by itself select that matching rule or identify a spectral integral with its mass derivative. The positive coefficient and calibration variables are comparison variables, not new root fields. |
 | Linear gravity operator | Within the complete local five-coefficient symmetric tensor class with two momentum factors, pure-gauge annihilation, transversality on symmetric fields and unit TT normalization uniquely select coefficients `(1,-1,1,1,-1)`. The selected operator, its TT reduction, sourced inverse away from zero momentum and simple massless pole are root outputs on the generated four-carrier. |
 
 These definitions and comparison classes introduce no numerical fitting parameters. Naming them as
@@ -494,3 +494,83 @@ resolvent-trace bound obtained from it. This semantic
 review does not cover unmapped manuscript assertions. The completed
 compiled audit verifies the formal statements and their dependencies; it
 does not replace this separate review of manuscript correspondence.
+
+## Complete covariant matter compression
+
+`Physical.SourceMatterCompression.generated` constructs the complete lepton
+projection from the existing scalar-spin source summands in both chiral
+copies. Its idempotence, adjoint, scalar-connector compatibility and
+two-sided annihilation of coloured responses are proved on the actual
+generated carrier. The neutral direction is retained.
+
+`Operations.CovariantCompression` proves reconstruction, orthogonality,
+uniqueness, the complete quadratic Gram decomposition and simultaneous
+passive transport of the connection and moving readout. Its matrix
+variables are field configurations; orthonormality and metric
+compatibility state the coordinate domains of the respective identities.
+They introduce no field configuration or coupling into the root datum.
+The proved bundle is included in
+`SourcePhysicalInterface.generatedCore.matter.compression`.
+
+The two modules and physical interface have passed targeted compilation.
+The nineteen indexed declarations and `generatedCore` have also been
+checked with `#print axioms`; their dependencies are limited to `propext`,
+`Classical.choice` and `Quot.sound`. This targeted check does not replace
+the separately recorded whole-library audit.
+
+## Matter energies, residues and the joint state
+
+`Physical.SourceMatterPoleResponse` proves the finite block elimination
+equation, eigenvector reconstruction, its full Gram normalization, the
+positive return metric, the exact two-energy inverse-response identity
+and the derivative of the actual complementary resolvent. The trace
+identity for a common state proves that its two CAR orderings have the
+unit equal-time normalization. No product-state assumption is used.
+
+Its matrix variables describe configurations; inverse and resolvent
+conditions specify analytic domains. The unit trace and CAR clauses
+describe a normalized matter response. They do not choose a source state,
+interaction, clock conversion or finite mass coefficient. The proved
+operations are exported by
+`SourcePhysicalInterface.generatedCore.matter.spectralResponse` alongside
+all previously present physical branches. No custom axiom or `sorry`
+was introduced. Targeted compilation and the eleven declaration checks
+are recorded separately from the whole-library audit.
+
+## Insertions on the complete generated matter fibre
+
+`Physical.SourceMatterInsertions` constructs creation and contraction from
+the existing sixteen-dimensional source fibre and its orthonormal coordinate
+isometry. The neutral line is included. The mixed CAR product and its basis
+normalization follow from that same inner product; no insertion-normalization
+argument is supplied to the construction.
+
+`Operations.FermionInsertions` proves the unique number-preserving lift of
+a one-matter operator: its commutator with a creation operation is the
+creation operation of the original matrix action, and its value on the
+exterior unit is zero. These properties determine the lift on all exterior
+words. The lift is independent of the orthonormal basis used to calculate
+it. The stronger product-law characterization derives its zero unit value
+from the Leibniz law itself, without a separate normalization hypothesis.
+This is a statement about the fermionic exterior completion used by the
+field realization, not a classification of all possible interacting
+Hamiltonians. The exterior unit is an algebraic reference vector.
+
+The source-specific conclusions are exported through
+`SourcePhysicalInterface.generatedCore.matter.insertions`. The two new
+modules and the physical interface passed targeted compilation on
+27 October 2026. The new mixed-CAR, unique-lift, basis-independence and
+source-bundle declarations were checked with `#print axioms`; their only
+dependencies are `propext`, `Classical.choice` and `Quot.sound`. This is a
+targeted check, separate from the dated whole-library audit above.
+
+`Physical.SourceMatterEventInsertions` additionally places those concrete
+insertions between the existing complete exterior transports. Its
+coincident two-order identity and the identity after one common linear
+preparation functional use the same source inner product. The module and
+physical summary interface passed targeted compilation on 27 October 2026.
+The three declarations in `verification/matter-event-insertions-audit.lean`
+depend only on `propext`, `Classical.choice` and `Quot.sound`. The index
+records their algebraic domains; this check does not assert a derived
+interacting event Hamiltonian or formal verification of the numerical
+determinant/cofactor evaluator.

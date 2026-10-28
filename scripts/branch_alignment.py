@@ -46,7 +46,7 @@ FAMILIES = {
         "physical": "SourceQuadraticResponse SourcePreExchangeResponse SourceJointResponse "
             "SourceSplitResponse SourceInternalResponse SourcePhaseLift SourceSpinIdentification "
             "SourceVacuumTransport SourceCliffordChirality SourceCliffordConnector "
-            "SourceExchangeConnectorTransport",
+            "SourceExchangeConnectorTransport SourceDeterminantCompensation",
         "mathematical": ["Operations.SourceResponseCapacity", "Operations.SourceCoherentObservations",
             "Analysis.HistoryGibbsResponse", "Arithmetic.HistoryObservation"],
     },
@@ -61,7 +61,7 @@ FAMILIES = {
             "SourceLocalizedMatter SourceMatterCharge SourceMatterPhaseExponential "
             "SourceMinimalChiralPair SourceMinimalRepresentation SourcePhaseFrames "
             "SourcePseudorealCharts SourceReversalIsometry SourceReversalRealConnector "
-            "SourceScalarConnector SourceScalarGaugeCovariance SourceScalarInvariant",
+            "SourceScalarConnector SourceScalarGaugeCovariance SourceScalarInvariant SourceMatterCompression",
         "mathematical": ["Arithmetic.CompleteNaturalObject", "Arithmetic.HistoryPhaseBundle",
             "Arithmetic.GeneratedPrimeParity", "Analysis.FiniteResidueFourier",
             "Operations.SourceFiniteCornerAlgebra"],
@@ -77,14 +77,15 @@ FAMILIES = {
     },
     "E": {
         "method": "common action, full variation, actual operator and covariance",
-        "physical": "CanonicalYangMills SourceChargedResponse SourceCollectiveGravityClosure "
+        "physical": "CanonicalYangMills SourceAdjointComparison SourceChargedResponse SourceCollectiveGravityClosure "
             "SourceConformalResponse SourceFourDimensionalYangMills SourceGeneratedRadialVariation "
             "SourceGeneratedYangMillsAction SourceGeneratedYangMillsFrameResponse "
             "SourceGeneratedYangMillsFullReduction SourceGeneratedYangMillsPhysicalHessian "
             "SourceGeneratedYangMillsResponseHessian SourceHaarConnectionHessian "
             "SourceHaarCurvatureTrace SourceHaarYangMillsAction SourceHaarYangMillsHessian "
             "SourceInternalYangMillsResponse SourceLinearizedGravity SourceNonlinearTensorAction "
-            "SourceRadialMassIntertwiner",
+            "SourceRadialMassIntertwiner SourceCurvatureSusceptibility SourceMatterPoleResponse "
+            "SourceAdjointEventTransport",
         "mathematical": ["Analysis.HistoryGibbsResponse", "Analysis.HistoryReactionForm",
             "Analysis.HistoryReactionOperator", "Operations.GibbsConnectedResponse"],
     },
@@ -93,7 +94,8 @@ FAMILIES = {
         "physical": "SourceGeneratedYangMillsClosure SourceGeneratedYangMillsCoercivity "
             "SourceGeneratedYangMillsEquation SourceGeneratedYangMillsFlow "
             "SourceGeneratedYangMillsFock SourceGeneratedYangMillsGap SourceHaarYangMillsFock "
-            "SourceYangMillsFockSemigroup",
+            "SourceYangMillsFockSemigroup SourcePhaseCharge SourceResolutionCompensation "
+            "SourceMatterInsertions SourceMatterEventInsertions",
         "mathematical": ["Arithmetic.CompleteHistoryDynamics", "Analysis.HistoryReactionOperator",
             "Analysis.HistoryReflectionFlow", "Arithmetic.JointOccupationScale",
             "Spectral.NeumannHeatSemigroup"],
@@ -103,7 +105,15 @@ FAMILIES = {
         "physical": "CanonicalYangMillsTT CanonicalYangMillsUnits SourceClosedCenterResponse "
             "SourceGaussianResponseDomain SourceGeneratedYangMillsNewtonAnchor "
             "SourcePhysicalInterface SourceResponseLevel SourceTensorResponseEndpoint "
-            "SourceTorsionContent SourceTTEndpointInterval SourceTTGaussianCoefficient SourceTTResponse",
+            "SourceTorsionContent SourceTTEndpointInterval SourceTTGaussianCoefficient SourceTTResponse "
+            "SourceTTResponseNormalization SourceTTEndpointBalance SourceTTClosureBoundary "
+            "SourceTTNativeEndpoint SourceTTEquilibriumClosure SourceTTCollectiveComparison "
+            "SourceTTCollectiveVariance SourceTTReferenceCalibration SourceTTFrameComparison "
+            "SourceTTCapacitySpectrum SourceTTComparisonTransport "
+            "SourceTTComparisonInformation SourceTTCompleteComparisonClosure "
+            "SourceTTComparisonMeasure SourceTTMomentClosure "
+            "SourceTTTensorConnectedResponse SourceTTFrameRelativeResponse SourceTTRelativeFisher "
+            "SourceTTScalarFrameSupport SourceTTVertexTrace SourceTTEventVertex",
         "mathematical": ["Analysis.PrimeCapacity", "Analysis.GaussianWindowCapacity",
             "Analysis.GaussianPrefixTail", "Analysis.CapacityRestoredWindowBudget",
             "MathematicalInterface"],

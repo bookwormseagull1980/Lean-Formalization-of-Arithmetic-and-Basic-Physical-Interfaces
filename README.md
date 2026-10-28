@@ -124,6 +124,16 @@ bottom and the finite-occupation Fock gap. The relevant theorem names are
 `SourceHaarYangMillsHessian.gap_attained` and
 `CanonicalYangMills.generated`.
 
+The comparison uses the ordinary trace on the full real adjoint field.
+`Physical.SourceAdjointComparison` proves the finite trace decomposition
+into eight scalar copies and differentiates the resulting adjoint restoring
+response. The scalar balance target is therefore divided by eight, whereas
+the source information metric still counts all 120 real connection
+coefficients. `SourceGeneratedRadialVariation` differentiates this same
+potential in the normalized source coordinate; its radial mass squared is
+`(2*8/120)*z^2*completeCurvature z`. The colour covariance factor `1/8`
+and the comparison trace multiplicity `8` enter different contractions.
+
 This is a mass-gap theorem for the **generated finite IR-edge operator**, not a
 proof of the Clay four-dimensional QCD mass-gap problem. It uses the IR edge
 `sqrt(2*pi)`, not the V5 TT endpoint `kL`, and it does not use a V5 numerical
@@ -171,9 +181,15 @@ separate from this affine-dilation result.
 
 The source is pinned to Lean 4.34.0 and mathlib commit
 `5ed2965256430c3649e86755f9576b54eca72435`. The branch-alignment verification
-record covers all 549 local modules, 24,087 project-owned compiled constants,
+record from 20 October covers all 549 local modules, 24,087 project-owned compiled constants,
 13,308 named type checks and 705 indexed claims. It includes both independent
 branches, their common aggregate, compatibility exports and research modules.
+The feature comparison records a remaining selection scope separately:
+the arithmetic Gaussian spectral endpoint is unique for each fixed
+generation prefix, positive observation level and nonempty observed set.
+The source has not yet selected that level and set, so these theorems do
+not supply a unique numerical arithmetic counterpart of the physical
+finite-response endpoint `kL`.
 The implementation and per-declaration comparison are recorded in
 `BRANCH_ALIGNMENT.md` and the three branch-alignment ledgers under
 `verification/`. The compiler audit and the semantic comparison have separate
@@ -394,10 +410,35 @@ responses; it retains the old energy and paired-return energy separately.
 It is not a bound on the signed correlation that can be discarded in an
 iteration. This module imports only arithmetic and analysis modules.
 
+`MaximumPrimeFactorRelativeStage` retains the full binary relative potential
+on that same stage. Its Jensen--Shannon loss is at least one half of the
+actual quadratic mixing loss: `JS >= C_old*C_return*(m_old+m_return)^2 /
+(2*(C_old+C_return))`. The plus sign follows from the generated prime birth's
+center reversal. The old block includes the natural cutoff boundary, and
+the returned Gaussian block is evaluated at `L/p`. The proof uses convexity
+of the full entropy remainder, including pure-sector and zero-capacity
+cases. The constant `1/2` is independent of cutoff and scale. The positive
+return potential remains in the budget; this estimate does not remove the
+capacity-restoration terms of the coherent scale energy. The balanced law
+used in this binary comparison is distinct from the actual Gaussian state.
+
 The physical branch independently proves that the centre trace of responses
 `diag(A,B)` is `trace(A-B)`. Its common-response cancellation is the case
 `A=B`; it is not a statement that arbitrary unequal observation responses
 have vanishing centre trace. Neither branch uses the other as a premise.
+
+`JointOccupationScaleTransport` distinguishes that finite-state comparison
+from the measure-preserving action on all finite prime occupations and all
+logarithmic scales. The invariant base measure is counting measure times
+`du`. The actual unweighted Gaussian profile is not integrable on this
+space. For the existing scale weight `exp(-2 sigma u)`, prime insertion or
+removal changes the density by its exact generated prime factor. Its unique
+positive half-density compensator gives an involutive transport preserving
+the complete nonnegative quadratic integral, including infinite values.
+It commutes with Gaussian multiplication and reverses the centre character.
+For `sigma > 0`, the constant source amplitude is not fixed by this
+transport. These distinctions keep measure preservation, state invariance
+and finiteness as separate, proved statements on the same closed source.
 
 `GaussianPrefixTail` replaces the outside-cardinality bound by a convergent
 envelope. For `K = ceil(sqrt(R) * L) > 0`, put
@@ -650,6 +691,173 @@ actual reaction action contains every ordered three-leg assembly and all its
 mixed terms. Its varied Hessian is the same operator used in the finite
 reaction evolution and in the squared graded differential.
 
+`HistoryPrefixGibbsResponse` constructs the response on the existing complete
+root--history--phase prefix. The reference intensity retains each root's
+Gaussian mass and its generated conditional law; its partition is exactly
+the sum of those root masses. The full matrix Hessian has a positive
+weighted-square formula on every entry, including cross-root entries, and
+its kernel consists precisely of scalar matrices. The central susceptibility
+is `1 - m^2` for the actual weighted occupation mean `m`; a zero mean is not
+inserted. This construction is bundled into `MathematicalInterface.generated`
+and imports no physical premise.
+
+`HistoryPrefixResponseReduction` performs exact Schur elimination in that
+same full-prefix Hessian. Its identity retains the square of the removed
+response and includes scalar directions without assuming an inverse. Both
+observations may contain arbitrary cross-root, cross-history and cross-phase
+matrix entries.
+
+`HistoryPrefixMobiusResponse` distinguishes the occupation center `Gamma`
+from the native Mobius probe `M = Gamma S`, where `S` is the generated
+square-free projector. The state still contains every positive root. In its
+actual Gaussian law, put `s = <S>` and `m = <M>`. The joint Hessian entries
+are `s - m^2`, `m(1 - s)` and `s(1 - s)`. Removing the support observation
+leaves exactly `s - m^2/s`, including the full-support case; the unit root
+proves `s > 0` internally. Restoring the actual partition gives `Zs = C`
+and `Zm = B`, where `C` is the original square-free support capacity and
+`B` the original signed Gaussian amplitude. The restored reduced response
+is exactly `C - B^2/C`. The two endpoint amplitudes, with the
+unit root retained, are combined before any coherent square. No root
+capacity, excluded probe support or endpoint cross term is discarded.
+
+`HistoryPrefixBirthResponse` connects the actual prefix extension to this
+same Hessian. Adjoining root `N+2` retains its complete history--phase fibre;
+its fraction `gamma` is its Gaussian mass divided by the new partition.
+The mixed birth response is exactly `gamma(1-gamma)(f_new-m_old)`.
+The full mixed covariance update holds for every pair of root observations
+in the same state, including the actual Mobius probe and square-free support.
+Schur elimination leaves `(1-gamma) H_old`; restoring the original partition
+gives exactly `Z_old H_old`. The complete restored fluctuation additionally
+contains `w_new(1-gamma)(f_new-m_old)^2`.
+
+For arbitrary Hermitian observations, `Operations.GibbsBlockResponse`
+separates the block-diagonal and cross-block parts orthogonally in the
+original response metric. The cross-block part remains an explicit
+logarithmic-mean weighted sum of every ordered matrix-entry square. The
+block-diagonal part still contains the covariance between its block means.
+This construction preserves both that covariance and the full matrix
+coherence at the actual birth.
+
+`HistoryPrefixSubsetResponse` places finite root-set observations in that
+unchanged positive prefix state. Subset centering is orthogonal to its
+support observation. Restoring the complete partition gives the exact
+capacity-weighted conditional covariance; the support/complement response
+term and the complement's original positive mass are both retained.
+
+`HistoryPrefixPrimeStageResponse` applies this response to the genuine
+maximum-prime stage: the entire old set `O = P union Q` remains present,
+and the birth is exactly `pP`. Write `C_O,B_O` for the actual old capacity
+and signed response, and `C_R,B_R` for the returned old source at `L/p`.
+The stage has `C_A = C_O + C_R` and `B_A = B_O - B_R`. Its restored
+center/birth Hessian entries are
+`C_A - B_A^2/C_A`, `C_O C_R/C_A`, and
+`-(C_O B_R + B_O C_R)/C_A`. Their exact Schur square equals the existing
+opposite-center mixing dissipation. Removing the birth direction leaves
+exactly the sum of the old and returned transverse capacities, including
+the empty-birth case. All weights, native signs and the unpaired cutoff
+boundary remain in the same source; arbitrary cross-birth matrix entries
+retain their logarithmic-mean weights in the complete prefix Hessian.
+
+`HistoryPrefixResolution` connects that complete matrix response to the
+existing root-square Gaussian resolution. Its retained half-density is
+`exp(-t*n^2/(2*L^2))` on every original history--phase fibre. Sandwiching by
+this diagonal matrix transports the actual unnormalized reference from
+`alpha` to `alpha+t`. The capacity loss is exactly the sum of the original
+channel intensities times `1-exp(-t*n^2/L^2)`; normalized transport retains
+the new-to-old partition ratio. No root weights or conditional fibre laws
+are replaced. Here `t` changes the Gaussian observation, independently of
+prime generation.
+
+For arbitrary full matrices, the product defect is exactly
+`M K (I-M^2) J M`; for `J=K` and the first factor `K*`, this is positive
+semidefinite. The complete exponential response has its own exact
+resolution compensation, with no sign imposed on that general correction.
+The compensation satisfies the composition law and is uniquely fixed by
+transport of the total response. Starting with zero unresolved response
+constructs its entire residual internally. This is the arithmetic
+counterpart of the physical resolution-compensation mechanism, proved
+without importing the physical branch or truncating the matrix exponential.
+
+`Operations.GibbsResolutionLedger` treats the full exponential divided
+difference by its integral on `[0,1]`, including repeated intensities.
+`HistoryPrefixResolutionResponse` applies it to the actual Gaussian source:
+its log intensity changes by `-t*n^2/L^2`. For every full Hermitian
+observation held fixed, the old capacity-restored connected response equals
+the new response, the complete nonnegative logarithmic-mean kernel loss,
+and the new capacity times the squared change of the actual mean. There is
+also an exact mixed-observation identity. Every ordered cross-label matrix
+entry remains in the kernel loss. As a consequence, at fixed `L` the full
+restored response contracts by `exp(-t/L^2)`, independently of the prefix
+size. The parameter advances `alpha`; the factor retains its dependence on
+the observation scale `L`. The original prime-birth and complement ledgers
+remain separate exact updates in the same state.
+
+The observation reduction is minimized again in the transported metric.
+`HistoryPrefixResponseReduction.shifted_square` retains the square of every
+deviation from that actual minimizer, including a null eliminated direction.
+Consequently the reduced response satisfies the same Gaussian contraction.
+For the native Mobius and square-free support observations this is exactly
+the original transverse capacity `C-B^2/C`, with its capacity restored at
+each resolution.
+
+`HistoryPrefixBirthResolution` joins the actual natural-prefix update to
+that same resolution ledger. Write `V_N` for the original capacity-restored
+root response, `J_N=w_new*(1-gamma)*(f_new-m_old)^2` for its computed birth
+contribution and `D_N` for its complete resolution loss. Then
+`V_(N+1)(alpha+t)+D_(N+1)=V_N(alpha)+J_N(alpha)` exactly. The two update orders
+obey `J_N(alpha+t)+D_(N+1)=J_N(alpha)+D_N`; no monotonicity of the birth term
+is assumed. Iterating gives the exact finite cumulative birth/loss balance.
+Arbitrary full Hermitian matrices have the same common ledger with their
+within-birth and cross-birth responses retained separately. Every cross-birth
+entry keeps its original logarithmic-mean weight, and its zero diagonal makes
+its re-centering cost exactly zero at both references. This connects actual
+birth to resolution without identifying their parameters or replacing the
+new Gaussian mass by an independent source term.
+
+`Operations.GibbsFullResponse` extends the connected response from zero to
+every finite Hermitian observation. Its derivative is the actual normalized
+exponential trace. Diagonalizing the full observed logarithm transports both
+perturbation directions by the same unitary and gives the complete
+logarithmic-mean Hessian, including all noncommuting matrix directions. The
+Hessian is nonnegative, its kernel consists exactly of scalar matrices, and
+every nonzero traceless direction has strictly positive curvature at each
+finite observation.
+
+`HistoryPrefixNonlinearResponse` applies that theorem to the original
+Gaussian root/history/phase reference. A diagonal observation `f` has exact
+intensity `I_i*exp(f_i)`, with its complete partition computed from those
+weights. For a root observation the complete conditional history--phase
+law is preserved. The first derivative is its actual tilted mean; the full
+diagonal Hessian is its covariance. Writing `m` for the tilted native Mobius
+mean and `s` for its tilted square-free support fraction gives the entries
+`s-m^2`, `m*(1-s)` and `s*(1-s)`. The intrinsic occupation center has curvature
+`1-mean(center)^2`. The unit and first prime already prove strictly positive
+Mobius curvature in every prefix containing both roots, at every finite
+diagonal observation. The original reference mean is computed, with no
+balance condition imposed on it. These finite-observation response theorems
+are independent of a uniform lower bound as the prefix or observation grows.
+
+`HistoryPrefixObservedResolution` propagates that finite observation along
+the actual Gaussian resolution at fixed scale. Its observed log intensity
+changes by exactly `-t*n^2/L^2`; hence the complete logarithmic-mean kernel
+and the capacity-restored response contract by `exp(-t/L^2)`, independently
+of prefix size and finite likelihood. The response directions remain
+arbitrary Hermitian matrices. The exact ledger retains both the positive
+kernel loss and the actual re-centering square. `GibbsSchurResponse` also
+proves that the reduced response obeys this comparison when its minimizing
+coefficient is recomputed in the new observed metric, including scalar null
+directions.
+
+`HistoryPrefixObservedBirth` uses one root likelihood across successive
+natural prefixes. The actual new mass is its Gaussian root mass times the
+same exponential likelihood; the full conditional history--phase fibre is
+preserved. Its exact mixed birth covariance, restored birth fluctuation and
+Gaussian loss give a common cumulative ledger. Full matrix observations
+retain every ordered cross-birth entry. This extends the original-reference
+birth and resolution theorems to finite observations without replacing the
+complete partition or the native occupation observations. The Gaussian
+resolution parameter and observation scale retain their distinct meanings.
+
 The ordered Gaussian two-mode source has an explicit Haar realization in
 `Geometry.SourceSpinIdentification`. The map preserves the metric, every
 complex matrix response and the actual number flow. `HistoryHaarResponse`
@@ -789,12 +997,44 @@ algebraic response root and interval consumers. Physical window selections,
 geometric radius certificates and dimensional calibration keep their own
 premises; they are not inserted as mathematical source data.
 
-Every declaration in the 91 physical modules and their 241 supporting modules
-now has an object-and-scope comparison. The inventory distinguishes proved
-arithmetic analogues, identical shared results and physical-specific outputs.
+The inventory covers 98 physical modules and their 242 supporting modules.
+The reviewed declarations retain their object-and-scope comparisons;
+all 15 declarations of `SourceMatterPoleResponse` now have concrete arithmetic
+counterparts in `HistoryPoleResponse`. The inventory distinguishes
+proved arithmetic analogues, identical shared results and physical-specific outputs.
 Both branches remain independent at the import level and meet only at their
 common generated source and upstream mathematical constructions. The
 inventory and compiled verification remain separate records.
+
+`HistoryPoleResponse` decomposes the existing complete history--phase operator
+along its source sectors without discarding cross-history entries. Eliminating
+the complementary block determines the reduced equation and the norm of the
+same lifted vector. At a real energy in the complementary resolvent domain,
+the derivative of the reduced inverse is exactly this positive normalization.
+The constructed state retains the actual Gaussian prefix weights: summing its
+four generated source coordinates recovers the original history marginal.
+Both trace orderings are retained in the exact source Gram. These operations
+are exported by the mathematical entry independently of the physical branch.
+They do not select an observation level or a finite spectral set for the
+separate Gaussian-window root.
+
+The comparison also includes complete covariant compression, phase-charge
+conservation, determinant compensation and nonlinear connection/section
+resolution. `HistoryCovariantCompression` retains the actual phase-average
+complement and its connector compatibility; the common rectangular-jet
+theorems retain both moving-readout interference terms. `HistoryPhaseCharge`
+proves conservation on the constructed complete phase flow.
+`HistoryDeterminantCompensation` derives the unique inverse-character
+correction on every actual arithmetic label.
+
+`HistoryFieldResolution` evaluates full nonlinear matrix and section
+products on continuous source representatives before passing to Haar space.
+Its exact compensation, joint semigroup and unique residual are independent
+arithmetic constructions. `HistoryAdjointComparison` uses the actual
+independent adjoint rank, with one generated total intensity, to select a
+unique positive comparison equilibrium. `HistoryIntensitySusceptibility`
+retains that restoring curvature and the finite coefficient correction
+`3+12/M_N`. Physical multiplicities are not substituted for arithmetic counts.
 
 ## Constructed physical interface
 
@@ -829,7 +1069,7 @@ constants; it is not an additional assumption of the root construction.
 | Newton mass calibration | `CanonicalYangMillsUnits.generated`, `CanonicalYangMillsUnits.gapMass_sq`, `CanonicalYangMillsUnits.gapMass_unique` | The dimensional readout takes only a positive Newton constant; the IR radius has already been generated. In the stated reduced-Planck convention, the emergence mass squared is `1/(16*pi*G_N)` and the unique positive gap mass squared is `gapSq/(16*pi*G_N)`. The calibration cancels from their ratio and does not enter the action, condensate or operator. This calibration belongs to the IR-edge model; V5's TT endpoint `kL` is a different radius and its absolute gap is not this one. |
 | Canonical Yang--Mills response | `CanonicalYangMills.generated` | The generated IR **edge** `sqrt(2*pi)` exceeds the critical ratio. Its unique positive condensed amplitude, original-Haar-field action, self-adjoint differential response Hessian, attained positive spectral bottom and finite-occupation gap are outputs of a theorem without realization arguments. This is the **IR-edge model**; the V5 **TT-endpoint** model `kL` is separate and certificate-conditional in `CanonicalYangMillsTT`, not this theorem. |
 | Torsion content `1/50` | `SourceTorsionContent.generated` | The generated hypercharge operator gives `sum c*Y^2=10/3`; the left/charged-right counts are `8/7`; the charged quotient has dimension `15`. Hence `(N_L-N_R)/(N_f*sum Y^2)=1/50` as a rational theorem, not a fitted parameter. |
-| V5 finite Gaussian TT coefficient | `SourceTTGaussianCoefficient.generated`, `existsUnique_endpoint` | The eight retained branches use the generated torsion value and the actual Gaussian frequency integrals. Their coefficient `A5` is strictly positive and selects the unique positive radius `27*A5/4` with response `A5/c=4/27`. These integral and uniqueness results are outputs of the zero-argument physical interface. |
+| Finite Gaussian TT coefficient and source normalization | `SourceTTGaussianCoefficient.generated`, `coefficient_eq_gaussian_response`, `calibrated_response_eq_iff` | The eight retained branches use the generated torsion and Gaussian frequency integrals. Each rational kernel is twice the variance of the stated kinetic quadratic insertion in its original positive-precision Gaussian law. Their positive coefficient gives the unique radius `27*A5/4` under the existing endpoint rule. Simultaneous positive calibration of the spectral response and reference profile preserves that radius. The normalization results are included in the physical interface; they do not replace a projected-source vertex calculation for a different insertion. |
 | Complete matter centre response | `SourceClosedCenterResponse.generated` | The actual sixteen-state basis carries the generated grading and exchange. Exchange preserves the total capacity for every weight on this carrier. Every common left/right matrix response has zero centre trace. Its finite exponential trace is `cosh h`; the logarithmic response is `tanh h`, with positive susceptibility `1/cosh(h)^2`. The exponential probe family has a unique unbiased point, with centre bias zero, fluctuation one and restoring Hessian one. The neutral direction is retained. |
 | V5 TT-endpoint Yang--Mills model (separate, reduced coefficient) | `SourceTTResponse.EndpointCertificate`, `endpointCertificateOfBounds`, `CanonicalYangMillsTT.generated` | A geometric enclosure of the reduced eight-branch coefficient places its unique radius between the critical radius and the IR edge. Every endpoint certificate has this same radius; it contains no independent response value. The condensed TT-endpoint Yang--Mills conclusion uses that enclosure and remains separate from the IR-edge Yang--Mills theorem. The exact reduction from the full V5 finite spectral response is certified separately in V5 and is not formalized here. |
 | Geometric volume and colour covariance | `SourceProjectiveVolume.roundMeasure_total`, `SourceGeneratedYangMillsGap.transverseCovarianceAction_eq`, `CanonicalYangMills.sourceColourContraction` | The actual ambient polar measure and two-sheeted quotient give `pi^2*L^3`. Isotropic variance with the generated total intensity is fixed across the 24 spatial-colour components; the two transverse directions and the actual adjoint double commutator compute the connection response shift. |
@@ -838,6 +1078,11 @@ constants; it is not an additional assumption of the root construction.
 | Both central spinor sectors | `SourceSpinorParitySpectrum.closedSectorDirac_is_restriction`, `SourceSpinorParityResolvent.spectrum_labels` | The actual central pullback determines two closed field subspaces. Their Dirac operators are restrictions of the same original operator on the entire closed domain. In the positive central sector the positive branch has even `k` and the negative branch odd `k`; the other sector reverses these parities. Complete sector bases and bounded two-sided inverses prove presence and exhaustion of both spectra. |
 | Differentiated projective TT tensor | `SourceTensorCovariantDerivative.rough_coefficientTensor`, `SourceTensorTTBlock.ttRough_eq_curl_square`, `SourceTensorTTClosedSpectrum.closedRough_unique`, `SourceTensorTTSpectrum.spectrum_labels` | The original nine-component tensor Haar space supplies the closed weak kernel of symmetry, trace and covariant divergence. Koszul differentiation yields `rough = curl squared - 3`. Its complete differentiated basis gives the unique self-adjoint rough closure and full weighted-square domain. Nonzero polynomial witnesses and bounded two-sided resolvents prove exactly the eigenvalues `k(k+2)-2`, for even `k >= 2`, with attained bottom `6` in the unit trace-metric frame. No tensor branch or gap is an input. |
 | TT carrier and response endpoint | `SourceTransverseTraceless.sourceTransverseTracelessProperties`, `SourceTensorResponseEndpoint.sourceTensorResponseEndpointProperties` | Symmetry, transversality and vanishing trace determine a unique plus/cross decomposition and a two-dimensional TT carrier. The mass-weighted kernel has the unique maximum `4/27` at `y=1/3`; a positive fixed spectral coefficient has the unique endpoint `c=27A/4`. |
+| TT response normalization | `SourceTTResponseNormalization.generated`, `fixed_weight_logMass_hasDerivAt`, `kineticLogPartition_second_response`, `nonlinear_partition_second_response` | The half-trace pairing gives unit orthogonal plus/cross polarizations. The per-leg logarithmic mass derivative of the two-leg kernel is exactly `y*(1-y)^2`. The second derivative of the logarithm of the actual Gaussian integral equals the quadratic-score variance. A nonlinear precision path retains its direct second term. A weighted spectral derivative is distinguished from the original spectral integral; the maximum alone does not imply the endpoint matching equation. |
+| TT endpoint balance | `SourceTTEndpointBalance.effectiveGradient_hasDerivAt`, `critical_endpoint_iff_direct_response`, `fixed_source_all_positive_levels` | Differentiating the original Gaussian integral gives the complete Hessian: direct comparison response plus the mean second precision vertex minus the score variance. In the reduced form `Z - kappa*(A/c)/2`, zero Hessian matches the level `4/27` exactly when `Z=2*kappa/27`. This is an equivalence with the required direct-response identity stated explicitly; no evaluation of that identity for the full generated source is asserted. The unchanged fixed coefficient admits a unique crossing at every positive level. |
+| Gaussian TT response-realization boundary | `SourceTTClosureBoundary.realizable_iff`, `least_realizable_radius`, `boundary_split_unique`, `endpoint_of_source_realization` | The original unit-precision Gaussian comparison realizes exactly the mass-weighted response range `[0,4/27]`. The class defined by realizability of `A/c` has the unique least radius `27*A/4` and boundary fraction `1/3`, without a threshold in its definition. Transport to a physical source explicitly requires identification of its admissible states and selection of the least boundary by its native update. Weighted saturation forces every positive-weight fraction to equal `1/3`; the complete deficit controls their squared deviations. |
+| Fixed-branch source domain and endpoint update | `SourceTTNativeEndpoint.finite_source_exists_unique`, `crossing_update_eq`, `update_least_boundary_iff_level` | Every finite projection of the retained positive-precision family has its unique original Gaussian at every positive radius. This source-existence condition alone is weaker than the separate response-realization class. The implemented crossing update is exactly `c -> A/theta`; it selects the candidate least boundary if and only if its supplied level is `4/27`. The source-level origin of that level and the physical admissibility identification are not derived from the iteration. Homogeneous radius changes preserve the actual modal mass fractions. |
+| Original Gaussian equilibrium closure | `FinitePrecisionEquilibrium.coordinate_mehler_preserves_law`, `covariance_fixed_iff`, `SourceTTEquilibriumClosure.equilibrium_and_feedback_iff` | The original independent equilibrium update preserves the entire finite Gaussian law, with different restoring rates allowed on all spectral coordinates. Its fixed covariance is unique for each prescribed innovation law. Across the retained radius family, equilibrium closure alone holds at every positive radius. Adding the existing homogeneous ladder factors `c^4/D` and `J/c^4` gives `J=D`, with no remaining radius equation. These computed conditions do not identify physical endpoint admissibility with the separate split-response realization class. |
 | Linear tensor gravity | `SourceLinearizedGravity.sourceLinearizedGravityProperties`, `generalTensorOperator_coefficients_unique` | Gauge annihilation, transversality and unit TT normalization uniquely select the five coefficients of the local two-derivative linear Einstein operator. It annihilates pure gauge tensors, reduces to `Q² I₂` on the derived TT carrier, has a unique sourced solution away from zero momentum and an exact positive-residue simple pole at `Q²=0`. |
 
 The common root, its physical component and all local dependencies have

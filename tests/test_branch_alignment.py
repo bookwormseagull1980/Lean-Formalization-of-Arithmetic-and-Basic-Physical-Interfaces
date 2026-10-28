@@ -56,6 +56,17 @@ def test_new_physical_module_requires_explicit_assignment(tiny_project):
         alignment.inventory(project)
 
 
+def test_standalone_verification_audit_is_not_a_library_module(tiny_project):
+    project, _ = tiny_project
+    audit = project / "verification" / "source-check-audit.lean"
+    audit.parent.mkdir()
+    audit.write_text("import GeneratedFoundations.PhysicalInterface\n#print axioms Nat.add_comm\n",
+        encoding="utf-8")
+    report = alignment.inventory(project)
+    assert report["physical_declarations"] == 1
+    assert report["unreviewed_or_unconstructed"] == 1
+
+
 def test_physical_import_is_rejected_transitively(tiny_project):
     project, source = tiny_project
     source("GeneratedFoundations.Source.CanonicalRealization",
