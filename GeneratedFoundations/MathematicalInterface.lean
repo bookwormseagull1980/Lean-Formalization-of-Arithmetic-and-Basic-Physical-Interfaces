@@ -74,7 +74,52 @@ public import GeneratedFoundations.Arithmetic.HistoryGeneratedFrameGroup
 public import GeneratedFoundations.Arithmetic.HistoryCompleteSourceGroup
 public import GeneratedFoundations.Arithmetic.HistoryCompleteConnector
 public import GeneratedFoundations.Arithmetic.HistoryGaussianCovariance
+public import GeneratedFoundations.Arithmetic.HistoryHaarGaussianCovariance
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionCovariance
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianVariation
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionCommonBalance
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricVariation
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionVariation
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionResponse
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal
+public import GeneratedFoundations.Arithmetic.HistoryFermionInsertions
+public import GeneratedFoundations.Arithmetic.HistoryAdjointTransport
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent
+public import GeneratedFoundations.Arithmetic.HistoryAdjointComparison
+public import GeneratedFoundations.Arithmetic.HistoryIntensitySusceptibility
+public import GeneratedFoundations.Arithmetic.HistoryCovariantCompression
+public import GeneratedFoundations.Arithmetic.HistoryDeterminantCompensation
+public import GeneratedFoundations.Arithmetic.HistoryPhaseCharge
+public import GeneratedFoundations.Arithmetic.HistoryFieldResolution
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionAction
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionHessian
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionJointHessian
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionWindow
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionComparison
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionContent
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionScale
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionShells
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionProbability
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionExhaustion
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionBoundary
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionRetention
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionSourceBalance
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionEquilibrium
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionCapacityThreshold
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionRestoration
+public import GeneratedFoundations.Arithmetic.HistoryHaarSectionWindowVariation
+public import GeneratedFoundations.Arithmetic.HistoryPoleResponse
 public import GeneratedFoundations.Arithmetic.HistoryGaussianWindowResponse
+public import GeneratedFoundations.Arithmetic.HistorySpectralWindow
 public import GeneratedFoundations.Arithmetic.HistoryEffectiveResponseSpace
 public import GeneratedFoundations.Arithmetic.HistoryResponseFrames
 public import GeneratedFoundations.Arithmetic.HistoryFrameClassification
@@ -107,6 +152,17 @@ public import GeneratedFoundations.Analysis.HistoryGibbsResponse
 public import GeneratedFoundations.Analysis.HistoryCentralResponse
 public import GeneratedFoundations.Analysis.HistoryResponseReduction
 public import GeneratedFoundations.Analysis.HistoryPhaseResponse
+public import GeneratedFoundations.Analysis.HistoryPrefixGibbsResponse
+public import GeneratedFoundations.Analysis.HistoryPrefixResponseReduction
+public import GeneratedFoundations.Analysis.HistoryPrefixMobiusResponse
+public import GeneratedFoundations.Analysis.HistoryPrefixBirthResponse
+public import GeneratedFoundations.Analysis.HistoryPrefixPrimeStageResponse
+public import GeneratedFoundations.Analysis.HistoryPrefixResolution
+public import GeneratedFoundations.Analysis.HistoryPrefixResolutionResponse
+public import GeneratedFoundations.Analysis.HistoryPrefixBirthResolution
+public import GeneratedFoundations.Analysis.HistoryPrefixNonlinearResponse
+public import GeneratedFoundations.Analysis.HistoryPrefixObservedResolution
+public import GeneratedFoundations.Analysis.HistoryPrefixObservedBirth
 public import GeneratedFoundations.Analysis.HistoryReactionForm
 public import GeneratedFoundations.Analysis.HistoryReactionOperator
 public import GeneratedFoundations.Analysis.HistoryReactionKernel
@@ -280,11 +336,62 @@ structure Conclusions : Prop where
   complete_source_group : Arithmetic.HistoryCompleteSourceGroup.Conclusions
   joint_source_connector : Arithmetic.HistoryCompleteConnector.Conclusions
   actual_gaussian_covariance : Arithmetic.HistoryGaussianCovariance.Conclusions
+  normalized_haar_fibre_covariance : Arithmetic.HistoryHaarGaussianCovariance.Conclusions
+  unique_joint_gaussian_covariance : Arithmetic.HistoryHaarSectionCovariance.Conclusions
+  unique_realified_joint_gaussian : Arithmetic.HistoryHaarSectionGaussianState.Conclusions
+  common_gaussian_source_variation : Arithmetic.HistoryHaarSectionGaussianVariation.Conclusions
+  common_gaussian_balance_classification : Arithmetic.HistoryHaarSectionCommonBalance.Conclusions
+  original_spatial_metric_variation : Arithmetic.HistoryHaarSectionGeometricVariation.Conclusions
+  original_geometric_gaussian_response : Arithmetic.HistoryHaarSectionGeometricState.Conclusions
+  original_connection_response_vertices : Arithmetic.HistoryHaarSectionConnectionVariation.Conclusions
+  original_connection_gaussian_response : Arithmetic.HistoryHaarSectionConnectionResponse.Conclusions
+  collective_connection_geometry_response : Arithmetic.HistoryHaarSectionCollectiveResponse.Conclusions
+  collective_observed_window_response : Arithmetic.HistoryHaarSectionCollectiveWindow.Conclusions
+  collective_frequency_response : Arithmetic.HistoryHaarSectionFrequencyCollective.Conclusions
+  collective_frequency_boundary : Arithmetic.HistoryHaarSectionCollectiveBoundary.Conclusions
+  collective_filtered_action_response : Arithmetic.HistoryHaarSectionFilteredCollective.Conclusions
+  unique_observed_connection_gaussian : Arithmetic.HistoryHaarSectionConnectionMarginal.Conclusions
+  actual_adjoint_comparison : Arithmetic.HistoryAdjointComparison.Conclusions
+  actual_intensity_susceptibility : Arithmetic.HistoryIntensitySusceptibility.Conclusions
+  complete_covariant_compression : Arithmetic.HistoryCovariantCompression.Conclusions
+  complete_determinant_compensation : Arithmetic.HistoryDeterminantCompensation.Conclusions
+  actual_phase_charge : Arithmetic.HistoryPhaseCharge.Conclusions
+  complete_field_resolution : Arithmetic.HistoryFieldResolution.Conclusions
+  position_dependent_haar_action : Arithmetic.HistoryHaarSectionAction.Conclusions
+  closed_section_hessian : Arithmetic.HistoryHaarSectionHessian.Conclusions
+  closed_joint_section_hessian : Arithmetic.HistoryHaarSectionJointHessian.Conclusions
+  complete_section_window : Arithmetic.HistoryHaarSectionWindow.Conclusions
+  complete_section_comparison : Arithmetic.HistoryHaarSectionComparison.Conclusions
+  complete_section_content : Arithmetic.HistoryHaarSectionContent.Conclusions
+  complete_section_scale : Arithmetic.HistoryHaarSectionScale.Conclusions
+  complete_section_shells : Arithmetic.HistoryHaarSectionShells.Conclusions
+  complete_section_probability : Arithmetic.HistoryHaarSectionProbability.Conclusions
+  complete_section_exhaustion : Arithmetic.HistoryHaarSectionExhaustion.Conclusions
+  complete_section_boundary : Arithmetic.HistoryHaarSectionBoundary.Conclusions
+  complete_section_retention : Arithmetic.HistoryHaarSectionRetention.Conclusions
+  source_unit_section_balance : Arithmetic.HistoryHaarSectionSourceBalance.Conclusions
+  complete_section_equilibrium : Arithmetic.HistoryHaarSectionEquilibrium.Conclusions
+  complete_section_capacity_threshold : Arithmetic.HistoryHaarSectionCapacityThreshold.Conclusions
+  complete_section_restoration : Arithmetic.HistoryHaarSectionRestoration.Conclusions
+  complete_section_window_variation : Arithmetic.HistoryHaarSectionWindowVariation.Conclusions
+  complete_pole_response : Arithmetic.HistoryPoleResponse.Conclusions
   actual_gaussian_window_response : Arithmetic.HistoryGaussianWindowResponse.Conclusions
+  complete_spectral_window : Arithmetic.HistorySpectralWindow.Conclusions
   connected_history_response : Analysis.HistoryGibbsResponse.Conclusions
   central_history_response : Analysis.HistoryCentralResponse.Conclusions
   full_history_response_reduction : Analysis.HistoryResponseReduction.Conclusions
   complete_phase_response : Analysis.HistoryPhaseResponse.Conclusions
+  complete_prefix_response : Analysis.HistoryPrefixGibbsResponse.Conclusions
+  complete_prefix_response_reduction : Analysis.HistoryPrefixResponseReduction.Conclusions
+  actual_prefix_mobius_response : Analysis.HistoryPrefixMobiusResponse.Conclusions
+  actual_prefix_birth_response : Analysis.HistoryPrefixBirthResponse.Conclusions
+  actual_prime_stage_response : Analysis.HistoryPrefixPrimeStageResponse.Conclusions
+  complete_prefix_resolution : Analysis.HistoryPrefixResolution.Conclusions
+  gaussian_resolution_response : Analysis.HistoryPrefixResolutionResponse.Conclusions
+  compatible_birth_resolution : Analysis.HistoryPrefixBirthResolution.Conclusions
+  nonlinear_prefix_response : Analysis.HistoryPrefixNonlinearResponse.Conclusions
+  finite_observation_resolution : Analysis.HistoryPrefixObservedResolution.Conclusions
+  finite_observation_birth : Analysis.HistoryPrefixObservedBirth.Conclusions
   common_reaction_form : Analysis.HistoryReactionForm.Conclusions
   actual_reaction_operator : Analysis.HistoryReactionOperator.Conclusions
   actual_reaction_kernel : Analysis.HistoryReactionKernel.Conclusions
@@ -297,6 +404,11 @@ structure Conclusions : Prop where
   actual_reaction_spectral_edge : Analysis.HistoryReactionSpectralEdge.Conclusions
   history_reflection_flow : Analysis.HistoryReflectionFlow.Conclusions
   complete_occupation_response : Arithmetic.OccupationResponse.Conclusions
+  complete_exterior_insertions : Arithmetic.HistoryFermionInsertions.Conclusions
+  complete_adjoint_transport : Arithmetic.HistoryAdjointTransport.Conclusions
+  same_source_gaussian_equilibrium : Arithmetic.HistoryHaarSectionGaussianEquilibrium.Conclusions
+  geometric_content_compatibility : Arithmetic.HistoryHaarSectionGeometricContent.Conclusions
+  native_geometric_content_response : Arithmetic.HistoryHaarSectionGeometricSelection.Conclusions
   source_one_form_system : Geometry.SourceOneFormSystem.Conclusions
   source_spinor_system : Geometry.SourceSpinorSystem.Conclusions
   source_tensor_system : Geometry.SourceTensorTTSystem.Conclusions
@@ -440,11 +552,62 @@ theorem generated : Conclusions where
   complete_source_group := Arithmetic.HistoryCompleteSourceGroup.generated
   joint_source_connector := Arithmetic.HistoryCompleteConnector.generated
   actual_gaussian_covariance := Arithmetic.HistoryGaussianCovariance.generated
+  normalized_haar_fibre_covariance := Arithmetic.HistoryHaarGaussianCovariance.generated
+  unique_joint_gaussian_covariance := Arithmetic.HistoryHaarSectionCovariance.generated
+  unique_realified_joint_gaussian := Arithmetic.HistoryHaarSectionGaussianState.generated
+  common_gaussian_source_variation := Arithmetic.HistoryHaarSectionGaussianVariation.generated
+  common_gaussian_balance_classification := Arithmetic.HistoryHaarSectionCommonBalance.generated
+  original_spatial_metric_variation := Arithmetic.HistoryHaarSectionGeometricVariation.generated
+  original_geometric_gaussian_response := Arithmetic.HistoryHaarSectionGeometricState.generated
+  original_connection_response_vertices := Arithmetic.HistoryHaarSectionConnectionVariation.generated
+  original_connection_gaussian_response := Arithmetic.HistoryHaarSectionConnectionResponse.generated
+  collective_connection_geometry_response := Arithmetic.HistoryHaarSectionCollectiveResponse.generated
+  collective_observed_window_response := Arithmetic.HistoryHaarSectionCollectiveWindow.generated
+  collective_frequency_response := Arithmetic.HistoryHaarSectionFrequencyCollective.generated
+  collective_frequency_boundary := Arithmetic.HistoryHaarSectionCollectiveBoundary.generated
+  collective_filtered_action_response := Arithmetic.HistoryHaarSectionFilteredCollective.generated
+  unique_observed_connection_gaussian := Arithmetic.HistoryHaarSectionConnectionMarginal.generated
+  actual_adjoint_comparison := Arithmetic.HistoryAdjointComparison.generated
+  actual_intensity_susceptibility := Arithmetic.HistoryIntensitySusceptibility.generated
+  complete_covariant_compression := Arithmetic.HistoryCovariantCompression.generated
+  complete_determinant_compensation := Arithmetic.HistoryDeterminantCompensation.generated
+  actual_phase_charge := Arithmetic.HistoryPhaseCharge.generated
+  complete_field_resolution := Arithmetic.HistoryFieldResolution.generated
+  position_dependent_haar_action := Arithmetic.HistoryHaarSectionAction.generated
+  closed_section_hessian := Arithmetic.HistoryHaarSectionHessian.generated
+  closed_joint_section_hessian := Arithmetic.HistoryHaarSectionJointHessian.generated
+  complete_section_window := Arithmetic.HistoryHaarSectionWindow.generated
+  complete_section_comparison := Arithmetic.HistoryHaarSectionComparison.generated
+  complete_section_content := Arithmetic.HistoryHaarSectionContent.generated
+  complete_section_scale := Arithmetic.HistoryHaarSectionScale.generated
+  complete_section_shells := Arithmetic.HistoryHaarSectionShells.generated
+  complete_section_probability := Arithmetic.HistoryHaarSectionProbability.generated
+  complete_section_exhaustion := Arithmetic.HistoryHaarSectionExhaustion.generated
+  complete_section_boundary := Arithmetic.HistoryHaarSectionBoundary.generated
+  complete_section_retention := Arithmetic.HistoryHaarSectionRetention.generated
+  source_unit_section_balance := Arithmetic.HistoryHaarSectionSourceBalance.generated
+  complete_section_equilibrium := Arithmetic.HistoryHaarSectionEquilibrium.generated
+  complete_section_capacity_threshold := Arithmetic.HistoryHaarSectionCapacityThreshold.generated
+  complete_section_restoration := Arithmetic.HistoryHaarSectionRestoration.generated
+  complete_section_window_variation := Arithmetic.HistoryHaarSectionWindowVariation.generated
+  complete_pole_response := Arithmetic.HistoryPoleResponse.generated
   actual_gaussian_window_response := Arithmetic.HistoryGaussianWindowResponse.generated
+  complete_spectral_window := Arithmetic.HistorySpectralWindow.generated
   connected_history_response := Analysis.HistoryGibbsResponse.generated
   central_history_response := Analysis.HistoryCentralResponse.generated
   full_history_response_reduction := Analysis.HistoryResponseReduction.generated
   complete_phase_response := Analysis.HistoryPhaseResponse.generated
+  complete_prefix_response := Analysis.HistoryPrefixGibbsResponse.generated
+  complete_prefix_response_reduction := Analysis.HistoryPrefixResponseReduction.generated
+  actual_prefix_mobius_response := Analysis.HistoryPrefixMobiusResponse.generated
+  actual_prefix_birth_response := Analysis.HistoryPrefixBirthResponse.generated
+  actual_prime_stage_response := Analysis.HistoryPrefixPrimeStageResponse.generated
+  complete_prefix_resolution := Analysis.HistoryPrefixResolution.generated
+  gaussian_resolution_response := Analysis.HistoryPrefixResolutionResponse.generated
+  compatible_birth_resolution := Analysis.HistoryPrefixBirthResolution.generated
+  nonlinear_prefix_response := Analysis.HistoryPrefixNonlinearResponse.generated
+  finite_observation_resolution := Analysis.HistoryPrefixObservedResolution.generated
+  finite_observation_birth := Analysis.HistoryPrefixObservedBirth.generated
   common_reaction_form := Analysis.HistoryReactionForm.generated
   actual_reaction_operator := Analysis.HistoryReactionOperator.generated
   actual_reaction_kernel := Analysis.HistoryReactionKernel.generated
@@ -457,6 +620,11 @@ theorem generated : Conclusions where
   actual_reaction_spectral_edge := Analysis.HistoryReactionSpectralEdge.generated
   history_reflection_flow := Analysis.HistoryReflectionFlow.generated
   complete_occupation_response := Arithmetic.OccupationResponse.generated
+  complete_exterior_insertions := Arithmetic.HistoryFermionInsertions.generated
+  complete_adjoint_transport := Arithmetic.HistoryAdjointTransport.generated
+  same_source_gaussian_equilibrium := Arithmetic.HistoryHaarSectionGaussianEquilibrium.generated
+  geometric_content_compatibility := Arithmetic.HistoryHaarSectionGeometricContent.generated
+  native_geometric_content_response := Arithmetic.HistoryHaarSectionGeometricSelection.generated
   source_one_form_system := Geometry.SourceOneFormSystem.generated
   source_spinor_system := Geometry.SourceSpinorSystem.generated
   source_tensor_system := Geometry.SourceTensorTTSystem.generated

@@ -19,6 +19,12 @@ loss under ordinary joining is exactly a weighted Jensen gap for the convex
 function `t * log t`.  Reversing the central label of the second source gives
 the corresponding opposite-centre Jensen--Shannon gap.
 
+The normalized reference in `binaryDensity` is the balanced two-sector
+comparison law. The actual sector weights remain those of the generated
+source; they are not replaced by this comparison law. This potential and
+the relative entropy of a varied state against its actual Gaussian reference
+are distinct functions.
+
 All statements in this file are finite exact identities or convexity
 inequalities.  No scale limit or all-scale summability assertion is made.
 -/
@@ -93,12 +99,12 @@ theorem binaryDensity_nonneg {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1) :
   rw [hmid, binaryDensity_half, binaryDensity_reflection] at h
   linarith
 
-/-- Binary Pinsker inequality, including the two pure-sector endpoints.
-Subtracting the quadratic term leaves a convex reflection-symmetric function
-whose second derivative is `(2*p-1)^2 / (p*(1-p))`. -/
-theorem half_central_square_le_binaryDensity {p : ℝ}
-    (hp0 : 0 ≤ p) (hp1 : p ≤ 1) :
-    (1 / 2 : ℝ) * (2 * p - 1) ^ 2 ≤ binaryDensity p := by
+/-- The exact binary density minus its central square is convex, including
+both pure-sector endpoints. Its interior second derivative is
+`(2*p-1)^2 / (p*(1-p))`; no series truncation is used. -/
+theorem binaryDensity_remainder_convex :
+    ConvexOn ℝ (Set.Icc 0 1)
+      (fun p => binaryDensity p - (1 / 2 : ℝ) * (2 * p - 1) ^ 2) := by
   let f : ℝ → ℝ := fun x => binaryDensity x - (1 / 2 : ℝ) * (2 * x - 1) ^ 2
   let f' : ℝ → ℝ := fun x => Real.log x - Real.log (1 - x) - (4 * x - 2)
   let f'' : ℝ → ℝ := fun x => 1 / x + 1 / (1 - x) - 4
@@ -142,6 +148,35 @@ theorem half_central_square_le_binaryDensity {p : ℝ}
       exact (hdd x (by simpa only [interior_Icc] using hx)).hasDerivWithinAt
     · intro x hx
       exact hdd0 x (by simpa only [interior_Icc] using hx)
+  exact hconv
+
+/-- Uniform quantitative convexity of the full binary density. The retained
+square is the exact Jensen loss of the quadratic central part. -/
+theorem binaryDensity_strong_convex_combination
+    {p q lambda : ℝ}
+    (hp0 : 0 ≤ p) (hp1 : p ≤ 1)
+    (hq0 : 0 ≤ q) (hq1 : q ≤ 1)
+    (hl0 : 0 ≤ lambda) (hl1 : lambda ≤ 1) :
+    binaryDensity (lambda * p + (1 - lambda) * q) +
+        2 * lambda * (1 - lambda) * (p - q) ^ 2 ≤
+      lambda * binaryDensity p + (1 - lambda) * binaryDensity q := by
+  have h := binaryDensity_remainder_convex.2
+    (show p ∈ Set.Icc (0 : ℝ) 1 from ⟨hp0, hp1⟩)
+    (show q ∈ Set.Icc (0 : ℝ) 1 from ⟨hq0, hq1⟩)
+    hl0 (sub_nonneg.mpr hl1) (by ring)
+  simp only [smul_eq_mul] at h
+  nlinarith [show
+    lambda * ((1 / 2 : ℝ) * (2 * p - 1) ^ 2) +
+        (1 - lambda) * ((1 / 2 : ℝ) * (2 * q - 1) ^ 2) -
+        (1 / 2 : ℝ) * (2 * (lambda * p + (1 - lambda) * q) - 1) ^ 2 =
+      2 * lambda * (1 - lambda) * (p - q) ^ 2 by ring]
+
+/-- Binary Pinsker inequality, including the two pure-sector endpoints. -/
+theorem half_central_square_le_binaryDensity {p : ℝ}
+    (hp0 : 0 ≤ p) (hp1 : p ≤ 1) :
+    (1 / 2 : ℝ) * (2 * p - 1) ^ 2 ≤ binaryDensity p := by
+  let f : ℝ → ℝ := fun x => binaryDensity x - (1 / 2 : ℝ) * (2 * x - 1) ^ 2
+  have hconv : ConvexOn ℝ (Set.Icc 0 1) f := binaryDensity_remainder_convex
   have h := hconv.2 (show p ∈ Set.Icc (0 : ℝ) 1 from ⟨hp0, hp1⟩)
     (show 1 - p ∈ Set.Icc (0 : ℝ) 1 from ⟨by linarith, by linarith⟩)
     (show (0 : ℝ) ≤ 1 / 2 by norm_num)
@@ -373,6 +408,93 @@ theorem oppositeJSDissipation_nonneg (x y : CentrePair)
   rw [oppositeJSDissipation_eq_join_swap]
   exact joinJSDissipation_nonneg x (swap y)
     hxpos hxneg hyneg hypos
+
+private theorem bias_eq_two_positiveFraction_sub_one (x : CentrePair)
+    (hcap : capacity x ≠ 0) :
+    bias x = 2 * positiveFraction x - 1 := by
+  unfold bias positiveFraction signed
+  field_simp [hcap]
+  unfold capacity
+  ring
+
+/-- The full Jensen--Shannon loss controls one half of the actual quadratic
+joining loss, with a constant independent of capacity, cutoff and scale.
+Zero-capacity blocks are included. -/
+theorem half_joinDissipation_le_joinJSDissipation (x y : CentrePair)
+    (hxpos : 0 ≤ x.positive) (hxneg : 0 ≤ x.negative)
+    (hypos : 0 ≤ y.positive) (hyneg : 0 ≤ y.negative) :
+    (1 / 2 : ℝ) * joinDissipation x y ≤ joinJSDissipation x y := by
+  have hnonneg := joinJSDissipation_nonneg x y hxpos hxneg hypos hyneg
+  by_cases hx0 : capacity x = 0
+  · simpa [joinDissipation, hx0] using hnonneg
+  by_cases hy0 : capacity y = 0
+  · simpa [joinDissipation, hy0] using hnonneg
+  have hcx : 0 < capacity x :=
+    lt_of_le_of_ne (capacity_nonneg x hxpos hxneg) (Ne.symm hx0)
+  have hcy : 0 < capacity y :=
+    lt_of_le_of_ne (capacity_nonneg y hypos hyneg) (Ne.symm hy0)
+  have hcxy := add_pos hcx hcy
+  let lambda := capacity x / (capacity x + capacity y)
+  let p := positiveFraction x
+  let q := positiveFraction y
+  have hl0 : 0 ≤ lambda := div_nonneg hcx.le hcxy.le
+  have hl1 : lambda ≤ 1 := by
+    dsimp [lambda]
+    exact (div_le_one hcxy).mpr (by linarith)
+  have h := binaryDensity_strong_convex_combination
+    (positiveFraction_nonneg x hxpos hcx.le)
+    (positiveFraction_le_one x hxneg hcx)
+    (positiveFraction_nonneg y hypos hcy.le)
+    (positiveFraction_le_one y hyneg hcy) hl0 hl1
+  have hfrac : positiveFraction (add x y) =
+      lambda * p + (1 - lambda) * q := by
+    rw [positiveFraction, capacity_add]
+    dsimp [lambda, p, q, positiveFraction]
+    change (x.positive + y.positive) / (capacity x + capacity y) = _
+    field_simp [hx0, hy0, hcxy.ne']
+    ring
+  have hscaled := mul_le_mul_of_nonneg_left h hcxy.le
+  change (capacity x + capacity y) *
+    (binaryDensity (lambda * p + (1 - lambda) * q) +
+      2 * lambda * (1 - lambda) * (p - q) ^ 2) ≤
+    (capacity x + capacity y) *
+      (lambda * binaryDensity p + (1 - lambda) * binaryDensity q) at hscaled
+  have hmain : (capacity x + capacity y) *
+      binaryDensity (lambda * p + (1 - lambda) * q) =
+        relativePotential (add x y) := by
+    rw [← hfrac]
+    simp [relativePotential, capacity_add, hcxy.ne']
+  have hright : (capacity x + capacity y) *
+      (lambda * binaryDensity p + (1 - lambda) * binaryDensity q) =
+        relativePotential x + relativePotential y := by
+    simp only [relativePotential, hx0, hy0, ↓reduceIte]
+    dsimp [lambda, p, q]
+    field_simp [hcxy.ne']
+    ring
+  have hpenalty : (capacity x + capacity y) *
+      (2 * lambda * (1 - lambda) * (p - q) ^ 2) =
+        (1 / 2 : ℝ) * joinDissipation x y := by
+    rw [joinDissipation, bias_eq_two_positiveFraction_sub_one x hx0,
+      bias_eq_two_positiveFraction_sub_one y hy0]
+    dsimp [lambda, p, q]
+    field_simp [hcxy.ne']
+    ring
+  rw [mul_add, hmain, hpenalty, hright] at hscaled
+  unfold joinJSDissipation
+  linarith
+
+/-- For an actual center reversal the same lower bound contains the sum of
+the old and returned biases, before any absolute value is taken. -/
+theorem half_mixingDissipation_le_oppositeJSDissipation (x y : CentrePair)
+    (hxpos : 0 ≤ x.positive) (hxneg : 0 ≤ x.negative)
+    (hypos : 0 ≤ y.positive) (hyneg : 0 ≤ y.negative) :
+    (1 / 2 : ℝ) * mixingDissipation x y ≤ oppositeJSDissipation x y := by
+  have h := half_joinDissipation_le_joinJSDissipation x (swap y)
+    hxpos hxneg hyneg hypos
+  have hb : bias (swap y) = -bias y := by simp [bias, neg_div]
+  rw [oppositeJSDissipation_eq_join_swap]
+  simpa only [joinDissipation, mixingDissipation, capacity_swap, hb,
+    sub_neg_eq_add] using h
 
 /-- One exact finite generation stage for the full relative potential: first
 mix an oppositely labelled source, then join the legal boundary/birth source.

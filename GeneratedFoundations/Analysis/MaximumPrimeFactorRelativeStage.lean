@@ -90,6 +90,48 @@ theorem generated_stage_relative_dissipation_nonnegative
     (sectorPairOn w (stageBefore p N)) (birthPair w p N)
     hold.1 hold.2 hbirth.1 hbirth.2
 
+/-- Quantitative restoration at the actual prime birth.  The square is the
+sum of the old and returned biases because the genuine birth reverses the
+generated center character.  The old block includes its cutoff boundary. -/
+theorem generated_stage_relative_dissipation_controls_mixing
+    (w : ℕ → ℝ) {p N : ℕ} (hw : ∀ n, 0 ≤ w n) :
+    (1 / 2 : ℝ) * CentrePair.mixingDissipation
+        (beforePair w p N) (returnPair w p N) ≤
+      joinJSDissipation
+        (sectorPairOn w (stageBefore p N)) (birthPair w p N) := by
+  have hold := sectorPairOn_nonnegative w (stageBefore p N)
+    (fun n _ => hw n)
+  have hreturn := sectorPairOn_nonnegative (fun n => w (p * n))
+    (stagePairedBase p N) (fun n _ => hw (p * n))
+  change (1 / 2 : ℝ) * CentrePair.mixingDissipation
+      (beforePair w p N) (returnPair w p N) ≤
+    joinJSDissipation (beforePair w p N) (CentrePair.swap (returnPair w p N))
+  rw [← oppositeJSDissipation_eq_join_swap]
+  exact half_mixingDissipation_le_oppositeJSDissipation
+    (beforePair w p N) (returnPair w p N)
+    hold.1 hold.2 hreturn.1 hreturn.2
+
+/-- Full Gaussian relative-potential budget of a legal generated stage.
+The positive return and the quantitatively controlled mixed loss are both
+retained; no scale-summed bound is inferred from this one-stage inequality. -/
+theorem gaussian_generated_stage_quantitative_relative_budget
+    (L : PositiveScale) {p N : ℕ} (hp : p.Prime) :
+    relativePotential
+        (sectorPairOn (gaussianWindowMass L.1) (stageAfter p N)) +
+        (1 / 2 : ℝ) * CentrePair.mixingDissipation
+          (beforePair (gaussianWindowMass L.1) p N)
+          (pairedPair (gaussianWindowMass (L.1 / (p : ℝ))) p N) ≤
+      relativePotential
+          (sectorPairOn (gaussianWindowMass L.1) (stageBefore p N)) +
+        relativePotential
+          (pairedPair (gaussianWindowMass (L.1 / (p : ℝ))) p N) := by
+  have h := generated_stage_relative_dissipation_controls_mixing
+    (gaussianWindowMass L.1) (p := p) (N := N)
+    (fun n => endpointWeight_nonneg L.1 n)
+  rw [gaussian_returnPair_eq_scale_transport L hp] at h
+  have hledger := gaussian_generated_stage_relative_ledger (N := N) L hp
+  linarith
+
 /-- Bundled exact output of the full relative-potential stage. -/
 structure Conclusions : Prop where
   actual_stage : ∀ (w : ℕ → ℝ) {p N}, p.Prime →

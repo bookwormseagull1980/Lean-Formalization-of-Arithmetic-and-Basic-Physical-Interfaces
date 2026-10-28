@@ -1,0 +1,286 @@
+{
+  "theorem_count": 181,
+  "index_added_this_final_batch": 34,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "mathematical_module_closure": 535,
+  "physical_imports": 0,
+  "root_build_log": ".lake/history_math_geometric_selection_root.log",
+  "root_build_result": "Build completed successfully (4611 jobs).",
+  "root_build_linter": "No warnings in this final mathematical root batch.",
+  "public_audit_source": "verification/history-mathematical-alignment-audit.lean",
+  "public_audit_output": "verification/history-mathematical-alignment-audit.txt",
+  "joint_content_endpoint_stop": "pending",
+  "integer_level_scope": "conditional_uniqueness",
+  "functional_requirements": {
+    "full_fixed_support_connection_geometry_vertex": "proved_from_original_spatial_action",
+    "moving_support_collective_observation": "proved_original_Gaussian_weighted_full_current_boundary_birth_continuity_and_exact_retained_conditional_frequency_ledger; joint_endpoint_selection_pending",
+    "native_content_equation": "proved_fixed_support_joint_vacuum_Gaussian_content_and_original_connection_background_mean_with_full_frequency_restoring_trace",
+    "joint_content_screening_endpoint_selection": "pending",
+    "exact_resolution_schur_and_capacity_transport": "proved",
+    "same_task_selected_stop_and_scale_transfer": "pending",
+    "full_fixed_support_connection_geometry_frequency_vertex": "proved_from_original_section_action_and_original_frequency_term_with_all_mixed_and_direct_insertions",
+    "original_field_filter_and_row_readout_relation": "proved_exact_non_diagonal_correction; earlier_row_observation_preserved",
+    "full_filter_connection_geometry_frequency_vertex": "proved_first_and_direct_second_filter_insertions_and_original_varied_source_covariance",
+    "moving_support_filtered_field_observation": "proved_two_leg_pair_birth_boundary_continuity_and_complete_Schur_return; no_endpoint_stationarity_assumed",
+    "native_geometric_susceptibility": "proved_exact_full_scalar_trace_derivative_of_restoring_share",
+    "native_geometric_stationary_uniqueness": "proved_for_all_B_gt_8_at_fixed_spatial_support",
+    "native_geometric_stationary_restoration": "proved_strictly_positive_original_free_energy_curvature_at_each_stationary_point_for_B_gt_8",
+    "first_two_native_geometric_content_cells": "fully_classified_with_actual_history_dimension_and_both_curl_multiplicities; second_cell_stationary_iff_N_eq_0_and_c_eq_sqrt_128_div_15"
+  },
+  "sources": {
+    "GeneratedFoundations/Operations/FiniteMatrixGaussianMarginal.lean": {
+      "sha256": "b2d280c0f88feb1d1968f5bf5fe42cfa5db84ea12350a44e5b3757e6db935471",
+      "theorems": [
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance_posDef",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_comp",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_fromBlocks",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_inverse",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_posDef",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_law_existsUnique",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.select_apply",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.select_comp",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_covariance",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_law",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_law_comp",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_mean",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_score_covariance",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_score_mean"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionConnectionMarginal.lean": {
+      "sha256": "39cac3fb8be34b92d3990766882c92d1a0ab96f08b60caa8434d505e5d0e2fe1",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision_posDef",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision_tower",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed_comp",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed_injective",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.generated",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observation_comp",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_eq",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_existsUnique",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_tower",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observed_covariance",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.original_precision_restrict",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.scalarSupport_mono"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryFermionInsertions.lean": {
+      "sha256": "52133d5fb45cd95633e8e8f62fe3c62ffbd46a2d7b68ed4ea46734af33d57480",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.chiral_cross_pair",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.coincident_pair",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.complete_fibre",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.frameTransport_create",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.full_basis_pair",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.generated",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.mixed_car",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.prepared_coincident_pair",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_create",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_mul",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_unique",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_unique_derivation",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_vacuum",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_comp",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_create",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_identity",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_unique",
+        "GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum_pair"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryAdjointTransport.lean": {
+      "sha256": "a4e2e10da67945216991c05c0a16891e03dc3b7cb8154fa5387e890e27608458",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryAdjointTransport.covariantJet_transform",
+        "GeneratedFoundations.Arithmetic.HistoryAdjointTransport.generated",
+        "GeneratedFoundations.Arithmetic.HistoryAdjointTransport.history_connector_commute",
+        "GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kineticDensity_gauge_invariant",
+        "GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kinetic_expansion",
+        "GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kinetic_gauge_invariant",
+        "GeneratedFoundations.Arithmetic.HistoryAdjointTransport.mixed_history_trace",
+        "GeneratedFoundations.Arithmetic.HistoryAdjointTransport.single_history_trace_zero"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionGaussianEquilibrium.lean": {
+      "sha256": "6f97d83d907b006c3b632ac30030a43bf889bf6020db279dfbae1616c2dfad71",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.all_source_expectations_preserved",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.connected_response_preserved",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.generated",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.original_source_equilibrium",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.stationary_covariance_unique"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionGeometricContent.lean": {
+      "sha256": "57e4021a402aff172339200dd722df43cdef90794a2865bef8db23de268faa54",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.generated",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.logarithmic_force_content",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare_le_scalarCount",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare_nonneg",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.stationary_content_bounds",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.stationary_content_iff",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.variational_content_iff"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionCollectiveResponse.lean": {
+      "sha256": "1ccdfcce8bd40c781e644312e4a7e27287bb05ef427f966598396891417ad752",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.collective_mean_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent_hasDerivAt_zero",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent_is_action_derivative",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix_collective_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix_symmetric",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.full_collective_mean_hasDerivAt_zero",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.generated",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision_collective_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision_posDef",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.score_collective_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.score_eq_original"
+      ]
+    },
+    "GeneratedFoundations/Operations/FiniteMatrixGaussianMarginalVariation.lean": {
+      "sha256": "1b12c7357d5f7dcc537c9657a622eebf5917026da7f9a913db07587335170942",
+      "theorems": [
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance_hasDerivAt",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_hasDerivAt",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion_symmetric",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion_hasDerivAt",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_mean_hasDerivAt",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_mean_eq_return_trace",
+        "GeneratedFoundations.Operations.FiniteMatrixGaussian.full_mean_eq_retained_add_conditional"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionCollectiveWindow.lean": {
+      "sha256": "8fd1473b914f2ccb4c6220ae907cbcaaeb07e9d6c3156a9ec25f856e3417c348",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.original_precision_restrict",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw_eq",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectivePrecision_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observed_collective_mean_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.full_current_balance",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometric_current_mean",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.original_geometric_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometricMean_zero_iff",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometricMean_observed_balance",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.generated"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionFrequencyCollective.lean": {
+      "sha256": "594b09dd5b134cb4a9b2f0e2d70dd63b58350ce2a60948437ca4529b1507be34",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_posDef",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_at_source",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.score_eq_original",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_collective_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix_collective_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix_symmetric",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.collective_mean_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw_eq_map",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observed_collective_mean_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.full_current_balance",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.geometric_current_mean",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.generated"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionCollectiveBoundary.lean": {
+      "sha256": "1283f724fb6e8b051e95cfec3d76b28f4012f4efded303a4b0dd0de9ee92382f",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.sum_rowInsertion",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_eq_actual",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.sum_rowMean",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.actual_rows_in_preparation",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.integrand_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_at_birth",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean_eq_actual",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_return_balance",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.conditionalRowMean_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_return_balance",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.generated"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionFilteredCollective.lean": {
+      "sha256": "09731a8bc7eef68e7d792b6d4480022b8232b4bdbb7136e2a9c3f4b521c9a200",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filteredMatrix_apply",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_score_eq_original",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_action_eq_original",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_precision_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_first_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_score_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.actual_mean_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.row_filter_difference",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.actual_mean_eq_pairSum",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.original_row_mean_difference",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegrand_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_visible_iff",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.window_score_eq_original",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_weight_at_edge",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_at_birth",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.full_mean_eq_retained_add_conditional",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_return_balance",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.retainedPairIntegrand_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.conditionalPairIntegrand_continuous",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_return_balance",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.generated"
+      ]
+    },
+    "GeneratedFoundations/Arithmetic/HistoryHaarSectionGeometricSelection.lean": {
+      "sha256": "624dcc65e0dc8a84dbe83db7c17803733dfd80779ae664fef0e1ce48aea5dc16",
+      "theorems": [
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_eq_rows",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace_eq_rows",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarCount_eq_trace",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionCount_eq_trace",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringShare_eq_trace",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_first_cell",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_second_cell",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace_first_shell",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringShare_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope_nonneg",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope_pos",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_hasDerivAt",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_strictMonoOn",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_geometry_unique",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_curvature_eq",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_curvature_pos",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_variance_lt_directMean",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_first_cell",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.force_first_cell_neg",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_second_cell",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_iff",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.variational_second_cell_iff",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius_pos",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius_equation",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_radius",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_existsUnique_iff",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.curvature_second_cell_stationary",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_lower",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.no_stationary_second_cell_after_birth",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_zero",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_eq_four_iff",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.native_second_cell_stationary_iff",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.native_second_cell_curvature",
+        "GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated"
+      ]
+    }
+  },
+  "concurrent_physical_module": "GeneratedFoundations.Physical.SourceTTCollectiveComparison",
+  "concurrent_module_correspondence": "39 declarations pending individual review; source inventoried, no Physical build certified",
+  "axiom_audit_result": "181 public theorems checked; standard Lean axioms only",
+  "regression_tests": "28 tests passed in tests/test_branch_alignment.py"
+}

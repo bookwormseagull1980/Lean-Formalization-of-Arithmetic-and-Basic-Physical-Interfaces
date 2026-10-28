@@ -38,8 +38,10 @@ public import GeneratedFoundations.Analysis.PrimeCapacity
 public import GeneratedFoundations.Analysis.GaussianWindowCapacity
 public import GeneratedFoundations.Analysis.GaussianPrefixTail
 public import GeneratedFoundations.Analysis.NaturalSourceScaleBudget
+public import GeneratedFoundations.Analysis.JointOccupationScaleTransport
 public import GeneratedFoundations.Analysis.CapacityRestoredWindowBudget
 public import GeneratedFoundations.Analysis.CoherentScaleTransport
+public import GeneratedFoundations.Analysis.MaximumPrimeFactorRelativeStage
 public import GeneratedFoundations.MathematicalInterface
 
 /-!

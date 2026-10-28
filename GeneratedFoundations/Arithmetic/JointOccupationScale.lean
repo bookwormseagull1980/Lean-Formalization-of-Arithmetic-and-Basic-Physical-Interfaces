@@ -23,6 +23,11 @@ This module records the algebraic core of that global action.  No Mobius sign
 is supplied as source data.  The center character is a derived observation of
 the positive occupation, and the Gaussian response is evaluated only after
 the joint occupation--scale state has been formed.
+
+The invariant measure used here is counting measure times logarithmic scale
+measure.  It is not a normalized finite state.  Inserting an observation
+weight changes its transformation law; the exact weighted half-density
+transport is provided by `Analysis.JointOccupationScaleTransport`.
 -/
 
 @[expose] public section
@@ -231,8 +236,9 @@ def logJointFlipEquiv (p : PrimeIndex) :
 scale. -/
 def jointMeasure : Measure (Occupation × ℝ) := Measure.count.prod volume
 
-/-- The joint center action preserves the complete occupation--scale measure.
-This is the measure-theoretic form of the exact endpoint-free source closure. -/
+/-- The joint center action preserves counting measure times logarithmic
+scale measure on the complete source.  This is an invariance of the base
+measure; invariance of an observation-weighted state is a separate assertion. -/
 theorem logJointFlip_measurePreserving (p : PrimeIndex) :
     MeasurePreserving (logJointFlip p) jointMeasure jointMeasure := by
   have h := (toggle_measurePreserving p).skew_product
@@ -278,7 +284,9 @@ response, is invariant in logarithmic coordinates. -/
 
 /-- An integrable center-odd observable has exactly zero total response on the
 complete occupation--scale source.  This theorem is global; finite cylinders
-are computational restrictions, not part of its statement. -/
+are computational restrictions, not part of its statement.  Integrability
+must be established for the actual observable before interpreting this
+identity as a finite total response. -/
 theorem integral_centerOdd_eq_zero (p : PrimeIndex)
     (F : Occupation × ℝ → ℝ) (_hF : Integrable F jointMeasure)
     (hodd : ∀ x, F (logJointFlip p x) = -F x) :

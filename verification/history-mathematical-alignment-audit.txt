@@ -1,0 +1,1840 @@
+GeneratedFoundations.Arithmetic.HistoryAdjointTransport.covariantJet_transform (N : ℕ)
+  (q : GeneratedFoundations.Arithmetic.HistoryGaugeJets.GaugeTwoJet N)
+  (A : GeneratedFoundations.Arithmetic.HistoryGaugeJets.ConnectionJet N)
+  (μ : GeneratedFoundations.Arithmetic.HistoryGaugeJets.CoordinateIndex N)
+  (X dX : GeneratedFoundations.Arithmetic.HistoryGaugeJets.Operator N) :
+  GeneratedFoundations.Arithmetic.HistoryAdjointTransport.covariantJet N
+      ((GeneratedFoundations.Arithmetic.HistoryGaugeJets.transformConnectionJet N q A).value μ)
+      (GeneratedFoundations.Arithmetic.HistoryGaugeJets.conjugate N q.value X)
+      (GeneratedFoundations.Arithmetic.HistoryAdjointTransport.transformFieldJet N q μ X dX) =
+    GeneratedFoundations.Arithmetic.HistoryGaugeJets.conjugate N q.value
+      (GeneratedFoundations.Arithmetic.HistoryAdjointTransport.covariantJet N (A.value μ) X dX)
+'GeneratedFoundations.Arithmetic.HistoryAdjointTransport.covariantJet_transform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryAdjointTransport.generated :
+  GeneratedFoundations.Arithmetic.HistoryAdjointTransport.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryAdjointTransport.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryAdjointTransport.history_connector_commute (N : ℕ)
+  (H :
+    Matrix (GeneratedFoundations.Arithmetic.HistoryCliffordAction.HistoryLabel N)
+      (GeneratedFoundations.Arithmetic.HistoryCliffordAction.HistoryLabel N) ℂ)
+  (M : GeneratedFoundations.Operations.SourceSpinCorner.Mat2) :
+  GeneratedFoundations.Arithmetic.HistoryCliffordAction.historyLift N H *
+      GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector N M =
+    GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector N M *
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.historyLift N H
+'GeneratedFoundations.Arithmetic.HistoryAdjointTransport.history_connector_commute' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kineticDensity_gauge_invariant (N : ℕ)
+  (q : GeneratedFoundations.Arithmetic.HistoryGaugeJets.GaugeTwoJet N)
+  (A : GeneratedFoundations.Arithmetic.HistoryGaugeJets.ConnectionJet N)
+  (X :
+    GeneratedFoundations.Arithmetic.HistoryGaugeJets.CoordinateIndex N →
+      GeneratedFoundations.Arithmetic.HistoryGaugeJets.Operator N)
+  (dX :
+    GeneratedFoundations.Arithmetic.HistoryGaugeJets.CoordinateIndex N →
+      GeneratedFoundations.Arithmetic.HistoryGaugeJets.CoordinateIndex N →
+        GeneratedFoundations.Arithmetic.HistoryGaugeJets.Operator N) :
+  (GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kineticDensity N
+      (GeneratedFoundations.Arithmetic.HistoryGaugeJets.transformConnectionJet N q A)
+      (fun r => GeneratedFoundations.Arithmetic.HistoryGaugeJets.conjugate N q.value (X r)) fun μ r =>
+      GeneratedFoundations.Arithmetic.HistoryAdjointTransport.transformFieldJet N q μ (X r) (dX μ r)) =
+    GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kineticDensity N A X dX
+'GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kineticDensity_gauge_invariant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kinetic_expansion (N : ℕ)
+  (A X dX : GeneratedFoundations.Arithmetic.HistoryGaugeJets.Operator N) :
+  GeneratedFoundations.Arithmetic.HistoryGaugeJets.quadratic N
+      (GeneratedFoundations.Arithmetic.HistoryAdjointTransport.covariantJet N A X dX) =
+    GeneratedFoundations.Arithmetic.HistoryGaugeJets.quadratic N dX +
+        GeneratedFoundations.Arithmetic.HistoryGaugeJets.quadratic N (A * X - X * A) +
+      ((LinearMap.trace ℂ (GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N))
+          (LinearMap.adjoint dX * (A * X - X * A) + LinearMap.adjoint (A * X - X * A) * dX)).re
+'GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kinetic_expansion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kinetic_gauge_invariant (N : ℕ)
+  (q : GeneratedFoundations.Arithmetic.HistoryGaugeJets.GaugeTwoJet N)
+  (A : GeneratedFoundations.Arithmetic.HistoryGaugeJets.ConnectionJet N)
+  (μ : GeneratedFoundations.Arithmetic.HistoryGaugeJets.CoordinateIndex N)
+  (X dX : GeneratedFoundations.Arithmetic.HistoryGaugeJets.Operator N) :
+  GeneratedFoundations.Arithmetic.HistoryGaugeJets.quadratic N
+      (GeneratedFoundations.Arithmetic.HistoryAdjointTransport.covariantJet N
+        ((GeneratedFoundations.Arithmetic.HistoryGaugeJets.transformConnectionJet N q A).value μ)
+        (GeneratedFoundations.Arithmetic.HistoryGaugeJets.conjugate N q.value X)
+        (GeneratedFoundations.Arithmetic.HistoryAdjointTransport.transformFieldJet N q μ X dX)) =
+    GeneratedFoundations.Arithmetic.HistoryGaugeJets.quadratic N
+      (GeneratedFoundations.Arithmetic.HistoryAdjointTransport.covariantJet N (A.value μ) X dX)
+'GeneratedFoundations.Arithmetic.HistoryAdjointTransport.kinetic_gauge_invariant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryAdjointTransport.mixed_history_trace (N : ℕ)
+  (H :
+    Matrix (GeneratedFoundations.Arithmetic.HistoryCliffordAction.HistoryLabel N)
+      (GeneratedFoundations.Arithmetic.HistoryCliffordAction.HistoryLabel N) ℂ)
+  (M : GeneratedFoundations.Operations.SourceSpinCorner.Mat2) :
+  (Matrix.conjTranspose (GeneratedFoundations.Arithmetic.HistoryCliffordAction.historyLift N H) *
+            GeneratedFoundations.Arithmetic.HistoryCliffordAction.historyLift N H *
+          Matrix.conjTranspose (GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector N M) *
+        GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector N M).trace =
+    (H.conjTranspose * H).trace *
+      (Matrix.conjTranspose (GeneratedFoundations.Operations.SourceCliffordComplex.connector M) *
+          GeneratedFoundations.Operations.SourceCliffordComplex.connector M).trace
+'GeneratedFoundations.Arithmetic.HistoryAdjointTransport.mixed_history_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryAdjointTransport.single_history_trace_zero (N : ℕ)
+  (H :
+    Matrix (GeneratedFoundations.Arithmetic.HistoryCliffordAction.HistoryLabel N)
+      (GeneratedFoundations.Arithmetic.HistoryCliffordAction.HistoryLabel N) ℂ)
+  (hH : H.trace = 0) (M : GeneratedFoundations.Operations.SourceSpinCorner.Mat2) :
+  (GeneratedFoundations.Arithmetic.HistoryCliffordAction.historyLift N H *
+          Matrix.conjTranspose (GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector N M) *
+        GeneratedFoundations.Arithmetic.HistoryComplexConnector.connector N M).trace =
+    0
+'GeneratedFoundations.Arithmetic.HistoryAdjointTransport.single_history_trace_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.chiral_cross_pair (N : ℕ)
+  (v w : GeneratedFoundations.Arithmetic.HistoryCliffordAction.SectorSpace N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.remove N
+        ((GeneratedFoundations.Arithmetic.HistoryComplexConnector.positiveInclusion N) v))
+      (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N
+        ((GeneratedFoundations.Arithmetic.HistoryComplexConnector.negativeInclusion N) w)
+        (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N)) =
+    0
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.chiral_cross_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.coincident_pair (N : ℕ)
+  (before after :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (v w : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N) :
+  GeneratedFoundations.Arithmetic.HistoryFermionInsertions.removalInsertion N before LinearMap.id after v w x +
+      GeneratedFoundations.Arithmetic.HistoryFermionInsertions.insertionRemoval N before LinearMap.id after v w x =
+    inner ℂ v w •
+      (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N after)
+        ((GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N before) x)
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.coincident_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.complete_fibre (N : ℕ) :
+  Module.finrank ℂ (GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N) =
+    4 * Fintype.card (GeneratedFoundations.Arithmetic.HistoryCliffordAction.HistoryLabel N)
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.complete_fibre' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.frameTransport_create (N : ℕ)
+  (g : GeneratedFoundations.Arithmetic.HistoryElementaryConnector.Frame)
+  (v : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.frameTransport N g)
+      (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N v x) =
+    GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N
+      (((GeneratedFoundations.Arithmetic.HistoryEffectiveFrames.stateResponse N) g) v)
+      ((GeneratedFoundations.Arithmetic.HistoryFermionInsertions.frameTransport N g) x)
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.frameTransport_create' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.full_basis_pair (N : ℕ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Index N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.remove N
+        ((GeneratedFoundations.Arithmetic.HistoryCliffordAction.basis N) i))
+      (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N
+        ((GeneratedFoundations.Arithmetic.HistoryCliffordAction.basis N) j)
+        (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N)) =
+    (algebraMap ℂ (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N)) (if i = j then 1 else 0)
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.full_basis_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.generated :
+  GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.mixed_car (N : ℕ)
+  (v w : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.remove N v)
+        (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N w x) +
+      GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N w
+        ((GeneratedFoundations.Arithmetic.HistoryFermionInsertions.remove N v) x) =
+    inner ℂ v w • x
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.mixed_car' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.prepared_coincident_pair (N : ℕ)
+  (before after :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (v w : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N)
+  (preparation : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N →ₗ[ℂ] ℂ) :
+  preparation
+        (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.removalInsertion N before LinearMap.id after v w x) +
+      preparation
+        (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.insertionRemoval N before LinearMap.id after v w x) =
+    inner ℂ v w *
+      preparation
+        ((GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N after)
+          ((GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N before) x))
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.prepared_coincident_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_create (N : ℕ)
+  (A :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (v : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent N A)
+      (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N v x) =
+    GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N (A v) x +
+      GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N v
+        ((GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent N A) x)
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_create' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_mul (N : ℕ)
+  (A :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (x y : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent N A) (x * y) =
+    (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent N A) x * y +
+      x * (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent N A) y
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_mul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_unique (N : ℕ)
+  (A :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (K :
+    GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N)
+  (hv : K (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N) = 0)
+  (hi :
+    ∀ (v : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+      (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N),
+      K (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N v x) =
+        GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N (A v) x +
+          GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N v (K x)) :
+  K = GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent N A
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_unique_derivation (N : ℕ)
+  (A :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (K :
+    GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N)
+  (hprod : ∀ (x y : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N), K (x * y) = K x * y + x * K y)
+  (hsource :
+    ∀ (v : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N),
+      K
+          (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N v
+            (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N)) =
+        GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N (A v)
+          (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N)) :
+  K = GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent N A
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_unique_derivation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_vacuum (N : ℕ)
+  (A :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent N A)
+      (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N) =
+    0
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.sourceCurrent_vacuum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_comp (N : ℕ)
+  (U V :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N U)
+      ((GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N V) x) =
+    (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N (U ∘ₗ V)) x
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_comp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_create (N : ℕ)
+  (U :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (v : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N U)
+      (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N v x) =
+    GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N (U v)
+      ((GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N U) x)
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_create' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_identity (N : ℕ)
+  (x : GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N LinearMap.id) x = x
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_unique (N : ℕ)
+  (U :
+    GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N →ₗ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N)
+  (F :
+    GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N →ₐ[ℂ]
+      GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N)
+  (h :
+    ∀ (v : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N),
+      F
+          (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N v
+            (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N)) =
+        GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N (U v)
+          (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N)) :
+  F = GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport N U
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.transport_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum_pair (N : ℕ)
+  (v w : GeneratedFoundations.Arithmetic.HistoryCliffordAction.Space N) :
+  (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.remove N v)
+      (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.create N w
+        (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum N)) =
+    (algebraMap ℂ (GeneratedFoundations.Arithmetic.HistoryFermionInsertions.Fock N)) (inner ℂ v w)
+'GeneratedFoundations.Arithmetic.HistoryFermionInsertions.vacuum_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.actual_rows_in_preparation (N : ℕ) {B C u : ℝ}
+  (hBC : B ≤ C) (a : GeneratedFoundations.Arithmetic.HistoryHaarSectionHessian.Index N)
+  (ha : u ^ 2 + GeneratedFoundations.Geometry.SourceCasimirClosure.energy (↑a.2).fst < B) :
+  a ∈ GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionVariation.scalarSupport N C 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.actual_rows_in_preparation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_at_birth (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c v r : ℝ)
+  (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral N C u₀ A X c v r
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.kinetic N C u₀ i) i =
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_at_birth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_continuous (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous fun B =>
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral N C u₀ A X c v r B i
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_hasDerivAt (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) {B : ℝ}
+  (hB : GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.kinetic N C u₀ i ≠ B) :
+  HasDerivAt
+    (fun b => GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral N C u₀ A X c v r b i)
+    (Real.exp (-B) * GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.edge N C u₀ A X c v r B i) B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.branchIntegral_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.conditionalRowMean_continuous (N : ℕ) {D C : ℝ}
+  (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ}
+  (hc : 0 < c) (v r : ℝ) (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous fun u =>
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.conditionalRowMean N hDC u₀ A X c v r u i
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.conditionalRowMean_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.integrand_continuous (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.integrand N C u₀ A X c v r i)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.integrand_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_continuous (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ) :
+  Continuous (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response N C u₀ A X c v r)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_hasDerivAt (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  {B : ℝ}
+  (hregular :
+    ∀ (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀),
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.kinetic N C u₀ i ≠ B) :
+  HasDerivAt (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response N C u₀ A X c v r)
+    (Real.exp (-B) *
+      ∑ i, GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.edge N C u₀ A X c v r B i)
+    B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_return_balance (N : ℕ) {D C : ℝ}
+  (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ}
+  (hc : 0 < c) (v r B : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response N C u₀ A X c v r B =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedResponse N hDC u₀ A X c v r B +
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.conditionalResponse N hDC u₀ A X c v r B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.response_return_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean_continuous (N : ℕ) {D C : ℝ}
+  (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ}
+  (hc : 0 < c) (v r : ℝ) (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous fun u =>
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean N hDC u₀ A X c v r u i
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean_eq_actual (N : ℕ) {D C : ℝ}
+  (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ}
+  (hc : 0 < c) (v r u : ℝ) (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean N hDC u₀ A X c v r u i =
+    ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N D u₀),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N C u₀ A c u)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowInsertion i
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N C u₀ A X c u v r))
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hDC u₀))
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw N hDC u₀ A c u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean_eq_actual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_continuous (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous fun u => GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean N C u₀ A X c v r u i
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_eq_actual (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r u : ℝ)
+  (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean N C u₀ A X c v r u i =
+    ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowInsertion i
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N C u₀ A X c u v r))
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_eq_actual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_return_balance (N : ℕ) {D C : ℝ}
+  (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c v r u : ℝ)
+  (i : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean N C u₀ A X c v r u i =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.retainedRowMean N hDC u₀ A X c v r u i +
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.conditionalRowMean N hDC u₀ A X c v r u i
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean_return_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.sum_rowInsertion.{u_1} {ι : Type u_1} [Fintype ι]
+  [DecidableEq ι] (V : Matrix ι ι ℝ) :
+  ∑ i, GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowInsertion i V = V
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.sum_rowInsertion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.sum_rowMean (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r u : ℝ) :
+  ∑ i, GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.rowMean N C u₀ A X c v r u i =
+    ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N C u₀ A X c u v r)
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.sum_rowMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.collective_mean_hasDerivAt (N : ℕ) (B : ℝ)
+  (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v w : ℝ) :
+  HasDerivAt
+    (fun t =>
+      ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B (A + ↑t • Y) X
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) v)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.law N B (A + ↑t • Y)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t))
+    (∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.directMatrix N B A X Y c v w)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.law N B A c -
+      ProbabilityTheory.covariance
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B A X c v))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B A Y c w))
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.law N B A c))
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.collective_mean_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent_hasDerivAt_zero (N : ℕ)
+  (X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v : ℝ) :
+  HasDerivAt (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent N X c v)
+    (‖(GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.differentiated N) X‖ ^ 2 / c) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent_is_action_derivative (N : ℕ)
+  (X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v t : ℝ) :
+  HasDerivAt
+    (fun s =>
+      GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.action N (↑s • X) /
+        GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c v s)
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent N X c v t) t
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent_is_action_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix_collective_hasDerivAt (N : ℕ) (B : ℝ)
+  (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c v w : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B (A + ↑t • Y) X
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) v)
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.directMatrix N B A X Y c v w) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix_collective_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix_symmetric (N : ℕ) (B : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c v : ℝ) :
+  (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B A X c v).IsSymm
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix_symmetric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.full_collective_mean_hasDerivAt_zero (N : ℕ)
+  (B : ℝ) (X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.curvatureCurrent N X c v t +
+        ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+          GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B (↑t • X) X
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c v t) v)
+            x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.law N B (↑t • X)
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c v t))
+    (‖(GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.differentiated N) X‖ ^ 2 / c +
+      (∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+          GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.directMatrix N B 0 X X c v v)
+            x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.law N B 0 c -
+        ProbabilityTheory.covariance
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B 0 X c v))
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B 0 X c v))
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.law N B 0 c)))
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.full_collective_mean_hasDerivAt_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision_collective_hasDerivAt (N : ℕ) (B : ℝ)
+  (A Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c w : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N B (A + ↑t • Y)
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t))
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B A Y c w) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision_collective_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision_posDef (N : ℕ) (B : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) :
+  (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N B A c).PosDef
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.score_collective_hasDerivAt (N : ℕ) (B : ℝ)
+  (A Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c w : ℝ)
+  (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N B (A + ↑t • Y)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t))
+        x)
+    (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B A Y c w) x)
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.score_collective_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.score_eq_original (N : ℕ) (B : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c)
+  (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricVariation.geometricAction N A
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.sourceSection N B 0 x) c =
+    GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.action N A / c +
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N B A c) x
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.score_eq_original' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst_hasDerivAt (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c)
+  (v w : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst N hBC (A + ↑t • Y) X
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) v)
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveDirect N hBC A X Y c v w) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectivePrecision_hasDerivAt (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (A Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c)
+  (w : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectivePrecision N hBC (A + ↑t • Y)
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t))
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst N hBC A Y c w) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectivePrecision_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.full_current_balance (N : ℕ) {B C : ℝ} (hBC : B ≤ C)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v : ℝ) :
+  ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C 0),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N C A X c v)
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.law N C A c =
+    ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst N hBC A X c v)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw N hBC A c +
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.conditionalCovariance
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N C A c)
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC 0) *
+            GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N C A X c v).trace /
+        2
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.full_current_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometricMean_observed_balance (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometricMean N C A c =
+    -GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.action N A / c +
+        ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+          GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst N hBC A 0 c 1)
+            x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw N hBC A c +
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.conditionalCovariance
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N C A c)
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC 0) *
+            GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N C A 0 c 1).trace /
+        2
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometricMean_observed_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometricMean_zero_iff (N : ℕ) (B : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometricMean N B A c = 0 ↔
+    GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.action N A / c =
+      ↑(Fintype.card (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N B 0)) / 2 +
+        c ^ 3 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N *
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N B A c)⁻¹.trace
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometricMean_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometric_current_mean (N : ℕ) (B : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) :
+  ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B A 0 c 1)
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.law N B A c =
+    ↑(Fintype.card (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N B 0)) / 2 +
+      c ^ 3 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N *
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N B A c)⁻¹.trace
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.geometric_current_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw_eq (N : ℕ) {B C : ℝ} (hBC : B ≤ C)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw N hBC A c =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectivePrecision N hBC A c)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observed_collective_mean_hasDerivAt (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c)
+  (v w : ℝ) :
+  HasDerivAt
+    (fun t =>
+      ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst N hBC (A + ↑t • Y) X
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) v)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw N hBC (A + ↑t • Y)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t))
+    (∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveDirect N hBC A X Y c v w)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw N hBC A c -
+      ProbabilityTheory.covariance
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst N hBC A X c v))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.effectiveFirst N hBC A Y c w))
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observedLaw N hBC A c))
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.observed_collective_mean_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.original_geometric_hasDerivAt (N : ℕ) (B : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c)
+  (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B 0) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricVariation.geometricAction N A
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.sourceSection N B 0 x)
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c 1 t))
+    (-GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.action N A / c +
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.firstMatrix N B A 0 c 1) x)
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.original_geometric_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.original_precision_restrict (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c : ℝ) :
+  (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N C A c).submatrix
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC 0)
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC 0) =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.precision N B A c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveWindow.original_precision_restrict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision_posDef (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (u : ℝ) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) :
+  (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision N hBC u A).PosDef
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision_tower (N : ℕ) {B C D : ℝ}
+  (hBC : B ≤ C) (hCD : C ≤ D) (u : ℝ) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) :
+  GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision N hCD u A)
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u) =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision N ⋯ u A
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision_tower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed_comp (N : ℕ) {B C D : ℝ} (hBC : B ≤ C)
+  (hCD : C ≤ D) (u : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hCD u ∘
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N ⋯ u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed_comp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed_injective (N : ℕ) {B C : ℝ} (hBC : B ≤ C)
+  (u : ℝ) : Function.Injective (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observation_comp (N : ℕ) {B C D : ℝ} (hBC : B ≤ C)
+  (hCD : C ≤ D) (u : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observation N hBC u ∘SL
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observation N hCD u =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observation N ⋯ u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observation_comp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_eq (N : ℕ) {B C : ℝ} (hBC : B ≤ C)
+  (u : ℝ) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw N hBC u A =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision N hBC u A)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_existsUnique (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (u : ℝ) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) :
+  ∃! ν,
+    ProbabilityTheory.IsGaussian ν ∧
+      ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B u), x ∂ν = 0 ∧
+        GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.effectivePrecision N hBC u A *
+            GeneratedFoundations.Operations.FinitePrecisionGaussian.coordinateCovariance ν =
+          1
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_existsUnique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_tower (N : ℕ) {B C D : ℝ} (hBC : B ≤ C)
+  (hCD : C ≤ D) (u : ℝ) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) :
+  MeasureTheory.Measure.map
+      (⇑(GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observation N hBC u))
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw N hCD u A) =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw N ⋯ u A
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw_tower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observed_covariance (N : ℕ) {B C : ℝ} (hBC : B ≤ C)
+  (u : ℝ) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) :
+  GeneratedFoundations.Operations.FinitePrecisionGaussian.coordinateCovariance
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observedLaw N hBC u A) =
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.realPrecision N C u A)⁻¹.submatrix
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u)
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.observed_covariance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.original_precision_restrict (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (u : ℝ) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) :
+  (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.realPrecision N C u A).submatrix
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u)
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u) =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.realPrecision N B u A
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.original_precision_restrict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.scalarSupport_mono (N : ℕ) {B C : ℝ} (hBC : B ≤ C)
+  (u : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionVariation.scalarSupport N B u ⊆
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionVariation.scalarSupport N C u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.scalarSupport_mono' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.actual_mean_eq_pairSum (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (u v r : ℝ) :
+  ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ A X c u v r)
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u =
+    ∑ i, ∑ j, GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegrand N C u₀ A X c v r i j u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.actual_mean_eq_pairSum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.actual_mean_hasDerivAt (N : ℕ) (C u₀ : ℝ)
+  (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c)
+  (u v w r q : ℝ) :
+  HasDerivAt
+    (fun t =>
+      ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ (A + ↑t • Y) X
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t) v r)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ (A + ↑t • Y)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t))
+    (∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.direct N C u₀ A X Y c u v w r q)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u -
+      ProbabilityTheory.covariance
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ A X c u v r))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N C u₀ A Y c u w q))
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u))
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.actual_mean_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.conditionalPairIntegrand_continuous (N : ℕ)
+  {D C : ℝ} (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N)
+  {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.conditionalPairIntegrand N hDC u₀ A X c v r i
+      j)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.conditionalPairIntegrand_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filteredMatrix_apply (N : ℕ) (C u₀ u : ℝ)
+  (V :
+    Matrix (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀)
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filteredMatrix N C u₀ u V i j =
+    Real.exp (-(u ^ 2 + GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ i) / 2) *
+        V i j *
+      Real.exp (-(u ^ 2 + GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ j) / 2)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filteredMatrix_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_action_eq_original (N : ℕ) (C u₀ : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (u : ℝ)
+  (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricVariation.geometricAction N A
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.sourceSection N C u₀
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filterField N C u₀ u x))
+        c +
+      c ^ 3 * u ^ 2 *
+          ‖(GeneratedFoundations.Arithmetic.HistoryHaarSectionAction.sectionField N)
+                (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.sourceSection N C u₀
+                  (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filterField N C u₀ u x))‖ ^
+            2 /
+        2 =
+    GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.action N A / c +
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filteredMatrix N C u₀ u
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N C u₀ A c u))
+        x
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_action_eq_original' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_first_hasDerivAt (N : ℕ) (C u₀ : ℝ)
+  (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c u v w r q : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ (A + ↑t • Y) X
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t) v r)
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.direct N C u₀ A X Y c u v w r q) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_first_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_precision_hasDerivAt (N : ℕ) (C u₀ : ℝ)
+  (A Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c u w q : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filteredMatrix N C u₀ (u + q * t)
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N C u₀ (A + ↑t • Y)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t)))
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ A Y c u w q) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_precision_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_score_eq_original (N : ℕ) (C u₀ u : ℝ)
+  (V :
+    Matrix (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀)
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) ℝ)
+  (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀) :
+  GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filteredMatrix N C u₀ u V) x =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.score V
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filterField N C u₀ u x)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_score_eq_original' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_score_hasDerivAt (N : ℕ) (C u₀ : ℝ)
+  (A Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c u w q : ℝ)
+  (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filteredMatrix N C u₀ (u + q * t)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N C u₀ (A + ↑t • Y)
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t)))
+        x)
+    (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ A Y c u w q) x)
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.filtered_score_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.full_mean_eq_retained_add_conditional (N : ℕ)
+  {D C : ℝ} (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N)
+  {c : ℝ} (hc : 0 < c) (u v r : ℝ) :
+  ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ A X c u v r)
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u =
+    ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N D u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N C u₀ A c u)
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ A X c u v r)
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hDC u₀))
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw N hDC u₀ A c u +
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.conditionalCovariance
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N C u₀ A c u)
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hDC u₀) *
+            GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ A X c u v r).trace /
+        2
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.full_mean_eq_retained_add_conditional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.original_row_mean_difference (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (u v : ℝ) :
+  ∑ i, GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveBoundary.integrand N C u₀ A X c v 0 i u -
+      ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.first N C u₀ A X c u v 0)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u =
+    (∑ i,
+        ∑ j,
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N C u₀ A c u)⁻¹ j i *
+              GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N C u₀ A X c u v 0 i j *
+            (Real.exp
+                  (-(u ^ 2 + GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ i) /
+                    2) -
+                Real.exp
+                  (-(u ^ 2 + GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ j) /
+                    2)) ^
+              2) /
+      4
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.original_row_mean_difference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_at_birth (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c v r : ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral N C u₀ A X c v r
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairKinetic N C u₀ i j) i j =
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_at_birth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_continuous (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous fun B =>
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral N C u₀ A X c v r B i j
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_hasDerivAt (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) {B : ℝ}
+  (hB : GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairKinetic N C u₀ i j ≠ B) :
+  HasDerivAt
+    (fun b => GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral N C u₀ A X c v r b i j)
+    (Real.exp (-B) *
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairEdge N C u₀ A X c v r B i j)
+    B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegral_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegrand_continuous (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegrand N C u₀ A X c v r i j)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegrand_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_return_balance (N : ℕ) {D C : ℝ} (hDC : D ≤ C)
+  (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c v r u : ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairIntegrand N C u₀ A X c v r i j u =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.retainedPairIntegrand N hDC u₀ A X c v r i j
+        u +
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.conditionalPairIntegrand N hDC u₀ A X c v r i
+        j u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_return_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_visible_iff (N : ℕ) (C u₀ u B : ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  u ^ 2 + GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairKinetic N C u₀ i j < B ↔
+    u ^ 2 + GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ i < B ∧
+      u ^ 2 + GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ j < B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_visible_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_weight_at_edge (N : ℕ) (C u₀ B : ℝ)
+  (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀)
+  (hB : GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairKinetic N C u₀ i j < B) :
+  Real.exp
+      (-√(B - GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairKinetic N C u₀ i j) ^ 2 -
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ i +
+            GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ j) /
+          2) =
+    Real.exp (-B) *
+      Real.exp
+        (|GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ i -
+              GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.kinetic N C u₀ j| /
+          2)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pair_weight_at_edge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_continuous (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ) :
+  Continuous (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response N C u₀ A X c v r)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_hasDerivAt (N : ℕ) (C u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (v r : ℝ)
+  {B : ℝ}
+  (hregular :
+    ∀ (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀),
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairKinetic N C u₀ i j ≠ B) :
+  HasDerivAt (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response N C u₀ A X c v r)
+    (Real.exp (-B) *
+      ∑ i, ∑ j, GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.pairEdge N C u₀ A X c v r B i j)
+    B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_return_balance (N : ℕ) {D C : ℝ}
+  (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ}
+  (hc : 0 < c) (v r B : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response N C u₀ A X c v r B =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.retainedResponse N hDC u₀ A X c v r B +
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.conditionalResponse N hDC u₀ A X c v r B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.response_return_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.retainedPairIntegrand_continuous (N : ℕ) {D C : ℝ}
+  (hDC : D ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ}
+  (hc : 0 < c) (v r : ℝ) (i j : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) :
+  Continuous
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.retainedPairIntegrand N hDC u₀ A X c v r i j)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.retainedPairIntegrand_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.row_filter_difference.{u_1} {ι : Type u_1}
+  [Fintype ι] (K V : Matrix ι ι ℝ) (hK : K.IsSymm) (hV : V.IsSymm) (f : ι → ℝ) :
+  (∑ i, ∑ j, K j i * V i j * f i ^ 2) / 2 - (∑ i, ∑ j, K j i * V i j * (f i * f j)) / 2 =
+    (∑ i, ∑ j, K j i * V i j * (f i - f j) ^ 2) / 4
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.row_filter_difference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.window_score_eq_original (N : ℕ) (C u₀ u B : ℝ)
+  (V :
+    Matrix (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀)
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N C u₀) ℝ)
+  (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀) :
+  GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.windowInsertion N C u₀ u B V) x =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.score V
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.windowField N C u₀ u B x)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFilteredCollective.window_score_eq_original' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.collective_mean_hasDerivAt (N : ℕ) (B u₀ : ℝ)
+  (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c)
+  (u v w r q : ℝ) :
+  HasDerivAt
+    (fun t =>
+      ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N B u₀ (A + ↑t • Y) X
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t) v r)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N B u₀ (A + ↑t • Y)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t))
+    (∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.directMatrix N B u₀ A X Y c u v w r q)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N B u₀ A c u -
+      ProbabilityTheory.covariance
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N B u₀ A X c u v r))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N B u₀ A Y c u w q))
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N B u₀ A c u))
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.collective_mean_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix_collective_hasDerivAt (N : ℕ)
+  (B u₀ : ℝ) (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c u v w r q : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N B u₀ (A + ↑t • Y) X
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t) v r)
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.directMatrix N B u₀ A X Y c u v w r q) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix_collective_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix_symmetric (N : ℕ) (B u₀ : ℝ)
+  (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c u v r : ℝ) :
+  (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N B u₀ A X c u v r).IsSymm
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix_symmetric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.full_current_balance (N : ℕ) {B C : ℝ}
+  (hBC : B ≤ C) (u₀ : ℝ) (A X : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ}
+  (hc : 0 < c) (u v r : ℝ) :
+  ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N C u₀),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N C u₀ A X c u v r)
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u =
+    ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.effectiveFirst N hBC u₀ A X c u v r)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw N hBC u₀ A c u +
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.conditionalCovariance
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N C u₀ A c u)
+              (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u₀) *
+            GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N C u₀ A X c u v
+              r).trace /
+        2
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.full_current_balance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.geometric_current_mean (N : ℕ) (B u₀ : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (u : ℝ) :
+  ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B u₀),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N B u₀ A 0 c u 1 0)
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N B u₀ A c u =
+    ↑(Fintype.card (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.RealIndex N B u₀)) / 2 +
+      c ^ 3 * (GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N + u ^ 2) *
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N B u₀ A c u)⁻¹.trace
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.geometric_current_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw_eq_map (N : ℕ) {B C : ℝ} (hBC : B ≤ C)
+  (u₀ : ℝ) (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c)
+  (u : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw N hBC u₀ A c u =
+    MeasureTheory.Measure.map
+      (⇑(GeneratedFoundations.Operations.FiniteMatrixGaussian.select
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionMarginal.embed N hBC u₀)))
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.law N C u₀ A c u)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw_eq_map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observed_collective_mean_hasDerivAt (N : ℕ)
+  {B C : ℝ} (hBC : B ≤ C) (u₀ : ℝ) (A X Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N)
+  {c : ℝ} (hc : 0 < c) (u v w r q : ℝ) :
+  HasDerivAt
+    (fun t =>
+      ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.effectiveFirst N hBC u₀ (A + ↑t • Y) X
+            (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t) v r)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw N hBC u₀ (A + ↑t • Y)
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t))
+    (∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B u₀),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.effectiveDirect N hBC u₀ A X Y c u v w
+            r q)
+          x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw N hBC u₀ A c u -
+      ProbabilityTheory.covariance
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.effectiveFirst N hBC u₀ A X c u v r))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.effectiveFirst N hBC u₀ A Y c u w q))
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observedLaw N hBC u₀ A c u))
+    0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.observed_collective_mean_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_at_source (N : ℕ) (B u₀ : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N B u₀ A 1 u₀ =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.realPrecision N B u₀ A
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_at_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_collective_hasDerivAt (N : ℕ) (B u₀ : ℝ)
+  (A Y : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) (c u w q : ℝ) :
+  HasDerivAt
+    (fun t =>
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N B u₀ (A + ↑t • Y)
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionCollectiveResponse.scalePath c w t) (u + q * t))
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.firstMatrix N B u₀ A Y c u w q) 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_collective_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_posDef (N : ℕ) (B u₀ : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (u : ℝ) :
+  (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N B u₀ A c u).PosDef
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.score_eq_original (N : ℕ) (B u₀ : ℝ)
+  (A : GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.Coefficients N) {c : ℝ} (hc : 0 < c) (u : ℝ)
+  (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.Space N B u₀) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricVariation.geometricAction N A
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.sourceSection N B u₀ x) c +
+      c ^ 3 * u ^ 2 *
+          ‖(GeneratedFoundations.Arithmetic.HistoryHaarSectionAction.sectionField N)
+                (GeneratedFoundations.Arithmetic.HistoryHaarSectionConnectionGaussian.sourceSection N B u₀ x)‖ ^
+            2 /
+        2 =
+    GeneratedFoundations.Arithmetic.HistoryHaarMatrixCurvature.action N A / c +
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.precision N B u₀ A c u) x
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionFrequencyCollective.score_eq_original' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.all_source_expectations_preserved (N : ℕ)
+  (B u : ℝ) {omega time : ℝ} (homega : 0 ≤ omega) (htime : 0 ≤ time)
+  (f : GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.Space N B u → ℝ) :
+  ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.Space N B u),
+      f x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.equilibriumLaw N B u omega time =
+    ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.Space N B u),
+      f x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.law N B u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.all_source_expectations_preserved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.connected_response_preserved (N : ℕ) (B u : ℝ)
+  {omega time : ℝ} (homega : 0 ≤ omega) (htime : 0 ≤ time)
+  (f g : GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.Space N B u → ℝ) :
+  ProbabilityTheory.covariance f g
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.equilibriumLaw N B u omega time) =
+    ProbabilityTheory.covariance f g (GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.law N B u)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.connected_response_preserved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.original_source_equilibrium (N : ℕ) (B u : ℝ)
+  {omega time : ℝ} (homega : 0 ≤ omega) (htime : 0 ≤ time) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.equilibriumLaw N B u omega time =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.law N B u
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.original_source_equilibrium' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.stationary_covariance_unique (N : ℕ) (B u : ℝ)
+  {r : ℝ} (hr : r ^ 2 ≠ 1)
+  (C :
+    Matrix (GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.RealIndex N B u)
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.RealIndex N B u) ℝ) :
+  GeneratedFoundations.Operations.FinitePrecisionEquilibrium.covarianceUpdate
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.realPrecision N B u) r C =
+      C ↔
+    C =
+      GeneratedFoundations.Operations.FinitePrecisionGaussian.covarianceMatrix
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.realPrecision N B u)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianEquilibrium.stationary_covariance_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.logarithmic_force_content (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) :
+  c * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.scalarCount N B -
+        GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.connectionCount N B +
+      2 * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare N B c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.logarithmic_force_content' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare_le_scalarCount (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare N B c ≤
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.scalarCount N B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare_le_scalarCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare_nonneg (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) : 0 ≤ GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare N B c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.stationary_content_bounds (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) (hstationary : GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.scalarCount N B ≤
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.connectionCount N B ∧
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.connectionCount N B ≤
+      3 * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.scalarCount N B
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.stationary_content_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.stationary_content_iff (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0 ↔
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.connectionCount N B =
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.scalarCount N B +
+        2 * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare N B c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.stationary_content_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.variational_content_iff (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) :
+  deriv (GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.freeEnergy N B) c = 0 ↔
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.connectionCount N B =
+      GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.scalarCount N B +
+        2 * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare N B c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.variational_content_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionCount_eq_trace (N : ℕ) (B : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.connectionCount N B =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace N B fun x => 1
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionCount_eq_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace_eq_rows (N : ℕ) (B : ℝ)
+  (f : ℝ → ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace N B f =
+    ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N) ^ 2 *
+      ∑ m ∈ Finset.range (GeneratedFoundations.Arithmetic.HistorySpectralWindow.enumerationBound B),
+        if Even m then
+          ↑(m + 1) *
+            ((↑(m + 3) * if (↑m + 2) ^ 2 < B then f ((↑m + 2) ^ 2) else 0) +
+              ↑(m - 1) * if ↑m ^ 2 < B then f (↑m ^ 2) else 0)
+        else 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace_eq_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace_first_shell (N : ℕ) {B : ℝ}
+  (hlo : 4 < B) (hhi : B ≤ 16) (f : ℝ → ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace N B f =
+    6 * ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N) ^ 2 * f 4
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.connectionTrace_first_shell' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.curvature_second_cell_stationary (N : ℕ) {B c : ℝ}
+  (hlo : 8 < B) (hhi : B ≤ 16) (hc : 0 < c)
+  (hz : GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.curvature N B c =
+    2 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.curvature_second_cell_stationary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.force_first_cell_neg (N : ℕ) {B c : ℝ}
+  (hlo : 4 < B) (hhi : B ≤ 8) (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c < 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.force_first_cell_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.Conclusions
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_eq_four_iff (N : ℕ) :
+  GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N = 4 ↔ N = 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_eq_four_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_lower (N : ℕ) :
+  4 * (N + 1) ≤ GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_zero :
+  GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension 0 = 4
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.generated_dimension_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_first_cell (N : ℕ) {B c : ℝ}
+  (hlo : 4 < B) (hhi : B ≤ 8) (hc : 0 < c) :
+  c * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c =
+    3 * ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N) -
+      6 * ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N) ^ 2
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_first_cell' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_hasDerivAt (N : ℕ) (B : ℝ)
+  {c : ℝ} (hc : 0 < c) :
+  HasDerivAt (fun r => r * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B r)
+    (2 * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope N B c) c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_second_cell (N : ℕ) {B c : ℝ}
+  (hlo : 8 < B) (hhi : B ≤ 16) (hc : 0 < c) :
+  c * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c =
+    6 * ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N) /
+        (8 + c ^ 2 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N) *
+      ((2 - ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N)) *
+          (8 + c ^ 2 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N) +
+        3 * (c ^ 2 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N))
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_second_cell' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_strictMonoOn (N : ℕ) {B : ℝ}
+  (hB : 8 < B) :
+  StrictMonoOn (fun c => c * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c) (Set.Ioi 0)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.logarithmic_force_strictMonoOn' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.native_second_cell_curvature {B : ℝ} (hlo : 8 < B)
+  (hhi : B ≤ 16) : GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.curvature 0 B √(128 / 15) = 15 / 4
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.native_second_cell_curvature' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.native_second_cell_stationary_iff (N : ℕ) {B c : ℝ}
+  (hlo : 8 < B) (hhi : B ≤ 16) (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0 ↔ N = 0 ∧ c = √(128 / 15)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.native_second_cell_stationary_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.no_stationary_second_cell_after_birth {N : ℕ}
+  (hN : 0 < N) {B c : ℝ} (hlo : 8 < B) (hhi : B ≤ 16) (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c ≠ 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.no_stationary_second_cell_after_birth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringShare_eq_trace (N : ℕ) (B c : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare N B c =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace N B fun a =>
+      c ^ 2 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N /
+        (a + c ^ 2 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringShare_eq_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringShare_hasDerivAt (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) :
+  HasDerivAt (GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.restoringShare N B)
+    (GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope N B c) c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringShare_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope_nonneg (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) : 0 ≤ GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope N B c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope_pos (N : ℕ) {B c : ℝ} (hB : 8 < B)
+  (hc : 0 < c) : 0 < GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope N B c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarCount_eq_trace (N : ℕ) (B : ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricContent.scalarCount N B =
+    GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace N B fun x => 1
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarCount_eq_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_eq_rows (N : ℕ) (B : ℝ) (f : ℝ → ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace N B f =
+    ∑ j,
+      ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N * (2 * ↑j + 1) ^ 2) *
+        f (GeneratedFoundations.Geometry.SourceScalarKineticForm.position ↑j)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_eq_rows' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_first_cell (N : ℕ) {B : ℝ}
+  (hlo : 0 < B) (hhi : B ≤ 8) (f : ℝ → ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace N B f =
+    ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N) * f 0
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_first_cell' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_second_cell (N : ℕ) {B : ℝ}
+  (hlo : 8 < B) (hhi : B ≤ 24) (f : ℝ → ℝ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace N B f =
+    ↑(GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N) * (f 0 + 9 * f 8)
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.scalarTrace_second_cell' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius_equation (N : ℕ) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius N ^ 2 *
+      GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N =
+    16
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius_equation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius_pos (N : ℕ) :
+  0 < GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius N
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_curvature_eq (N : ℕ) (B : ℝ) {c : ℝ}
+  (hc : 0 < c) (hf : GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.curvature N B c =
+    2 * GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.restoringSlope N B c / c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_curvature_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_curvature_pos (N : ℕ) {B c : ℝ}
+  (hB : 8 < B) (hc : 0 < c) (hf : GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0) :
+  0 < GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.curvature N B c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_curvature_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_geometry_unique (N : ℕ) {B c r : ℝ}
+  (hB : 8 < B) (hc : 0 < c) (hr : 0 < r)
+  (hfc : GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0)
+  (hfr : GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B r = 0) : c = r
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_geometry_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_existsUnique_iff (N : ℕ)
+  {B : ℝ} (hlo : 8 < B) (hhi : B ≤ 16) :
+  (∃! c, 0 < c ∧ GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0) ↔
+    GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N = 4
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_existsUnique_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_iff (N : ℕ) {B c : ℝ}
+  (hlo : 8 < B) (hhi : B ≤ 16) (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0 ↔
+    GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N = 4 ∧
+      c ^ 2 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N = 16
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_radius (N : ℕ) {B c : ℝ}
+  (hlo : 8 < B) (hhi : B ≤ 16) (hc : 0 < c) :
+  GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0 ↔
+    GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N = 4 ∧
+      c = GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.secondCellRadius N
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_second_cell_radius' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_variance_lt_directMean (N : ℕ) {B c : ℝ}
+  (hB : 8 < B) (hc : 0 < c) (hf : GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.force N B c = 0) :
+  ProbabilityTheory.variance
+      (GeneratedFoundations.Operations.FinitePrecisionGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.firstRealPrecision N B c))
+      (GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.law N B c) <
+    ∫ (x : GeneratedFoundations.Arithmetic.HistoryHaarSectionGaussianState.Space N B 0),
+      GeneratedFoundations.Operations.FinitePrecisionGaussian.score
+        (GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.secondRealPrecision N B c)
+        x ∂GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.law N B c
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.stationary_variance_lt_directMean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.variational_second_cell_iff (N : ℕ) {B c : ℝ}
+  (hlo : 8 < B) (hhi : B ≤ 16) (hc : 0 < c) :
+  deriv (GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricState.freeEnergy N B) c = 0 ↔
+    GeneratedFoundations.Arithmetic.HistoryAdjointCasimir.dimension N = 4 ∧
+      c ^ 2 * GeneratedFoundations.Arithmetic.HistoryDefiningResponse.coefficient N = 16
+'GeneratedFoundations.Arithmetic.HistoryHaarSectionGeometricSelection.variational_second_cell_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.full_mean_eq_retained_add_conditional.{u_1, u_2} {ι : Type u_1}
+  {κ : Type u_2} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) (V : Matrix ι ι ℝ) :
+  ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space ι),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score V
+        x ∂GeneratedFoundations.Operations.FiniteMatrixGaussian.law P =
+    ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space κ),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion P V e)
+          x ∂GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P e) +
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.conditionalCovariance P e * V).trace / 2
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.full_mean_eq_retained_add_conditional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance_hasDerivAt.{u_1, u_2} {ι : Type u_1}
+  {κ : Type u_2} [Fintype ι] [Fintype κ] [DecidableEq ι] {P : ℝ → Matrix ι ι ℝ} {Y : Matrix ι ι ℝ} {t : ℝ} (e : κ → ι)
+  (hP : (P t).PosDef) (hY : HasDerivAt P Y t) :
+  HasDerivAt (fun s => GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance (P s) e)
+    (-GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovarianceInsertion (P t) Y e) t
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance_posDef.{u_1, u_2} {ι : Type u_1} {κ : Type u_2}
+  [Fintype ι] [DecidableEq ι] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι} (he : Function.Injective e) :
+  (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance P e).PosDef
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion_hasDerivAt.{u_1, u_2} {ι : Type u_1}
+  {κ : Type u_2} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P V : ℝ → Matrix ι ι ℝ} {Y W : Matrix ι ι ℝ}
+  {t : ℝ} {e : κ → ι} (hP : (P t).PosDef) (he : Function.Injective e) (hY : HasDerivAt P Y t) (hW : HasDerivAt V W t) :
+  HasDerivAt (fun s => GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion (P s) (V s) e)
+    (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedDirect (P t) (V t) Y W e) t
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion_symmetric.{u_1, u_2} {ι : Type u_1}
+  {κ : Type u_2} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) {Y : Matrix ι ι ℝ} (hY : Y.IsSymm) :
+  (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion P Y e).IsSymm
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion_symmetric' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_comp.{u_1, u_2, u_3} {ι : Type u_1}
+  {κ : Type u_2} {η : Type u_3} [Fintype ι] [Fintype κ] [Fintype η] [DecidableEq ι] [DecidableEq κ] [DecidableEq η]
+  {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι} (he : Function.Injective e) (f : η → κ) :
+  GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P e) f =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P (e ∘ f)
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_comp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_fromBlocks.{u_1, u_2} {ι : Type u_1}
+  {κ : Type u_2} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix (ι ⊕ κ) (ι ⊕ κ) ℝ}
+  (hP : P.PosDef) :
+  GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P Sum.inl =
+    P.toBlocks₁₁ - P.toBlocks₁₂ * P.toBlocks₂₂⁻¹ * P.toBlocks₂₁
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_fromBlocks' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_hasDerivAt.{u_1, u_2} {ι : Type u_1}
+  {κ : Type u_2} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : ℝ → Matrix ι ι ℝ} {Y : Matrix ι ι ℝ}
+  {t : ℝ} {e : κ → ι} (hP : (P t).PosDef) (he : Function.Injective e) (hY : HasDerivAt P Y t) :
+  HasDerivAt (fun s => GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision (P s) e)
+    (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion (P t) Y e) t
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_inverse.{u_1, u_2} {ι : Type u_1} {κ : Type u_2}
+  [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) :
+  (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P e)⁻¹ =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance P e
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_posDef.{u_1, u_2} {ι : Type u_1} {κ : Type u_2}
+  [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) : (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P e).PosDef
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_law_existsUnique.{u_1, u_2} {ι : Type u_1} {κ : Type u_2}
+  [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) :
+  ∃! ν,
+    ProbabilityTheory.IsGaussian ν ∧
+      ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space κ), x ∂ν = 0 ∧
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P e *
+            GeneratedFoundations.Operations.FinitePrecisionGaussian.coordinateCovariance ν =
+          1
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_law_existsUnique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_mean_eq_return_trace.{u_1, u_2} {ι : Type u_1}
+  {κ : Type u_2} [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) (V : Matrix ι ι ℝ) :
+  ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space κ),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion P V e)
+        x ∂GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P e) =
+    (GeneratedFoundations.Operations.FiniteMatrixGaussian.returnCovariance P e * V).trace / 2
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_mean_eq_return_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_mean_hasDerivAt.{u_1, u_2} {ι : Type u_1} {κ : Type u_2}
+  [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] (P V : ℝ → Matrix ι ι ℝ) (t : ℝ) (Y W : Matrix ι ι ℝ)
+  {e : κ → ι} (he : Function.Injective e) (hP : ∀ (s : ℝ), (P s).PosDef) (hY : HasDerivAt P Y t) (hW : HasDerivAt V W t)
+  (hYs : Y.IsSymm) :
+  HasDerivAt
+    (fun s =>
+      ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space κ),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion (P s) (V s) e)
+          x ∂GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision (P s) e))
+    (∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space κ),
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedDirect (P t) (V t) Y W e)
+          x ∂GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision (P t) e) -
+      ProbabilityTheory.covariance
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion (P t) (V t) e))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.score
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedInsertion (P t) Y e))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+          (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision (P t) e)))
+    t
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.retained_mean_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.select_apply.{u_1, u_2} {ι : Type u_1} {κ : Type u_2} [Fintype ι]
+  [Fintype κ] (e : κ → ι) (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space ι) (i : κ) :
+  ((GeneratedFoundations.Operations.FiniteMatrixGaussian.select e) x).ofLp i = x.ofLp (e i)
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.select_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.select_comp.{u_1, u_2, u_3} {ι : Type u_1} {κ : Type u_2}
+  {η : Type u_3} [Fintype ι] [Fintype κ] [Fintype η] (e : κ → ι) (f : η → κ) :
+  GeneratedFoundations.Operations.FiniteMatrixGaussian.select f ∘SL
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.select e =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.select (e ∘ f)
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.select_comp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_covariance.{u_1, u_2} {ι : Type u_1} {κ : Type u_2}
+  [Fintype ι] [Fintype κ] [DecidableEq ι] {P : Matrix ι ι ℝ} (hP : P.PosDef) (e : κ → ι) :
+  GeneratedFoundations.Operations.FinitePrecisionGaussian.coordinateCovariance
+      (MeasureTheory.Measure.map (⇑(GeneratedFoundations.Operations.FiniteMatrixGaussian.select e))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.law P)) =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance P e
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_covariance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_law.{u_1, u_2} {ι : Type u_1} {κ : Type u_2} [Fintype ι]
+  [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) :
+  MeasureTheory.Measure.map (⇑(GeneratedFoundations.Operations.FiniteMatrixGaussian.select e))
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.law P) =
+    GeneratedFoundations.Operations.FiniteMatrixGaussian.law
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedPrecision P e)
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_law_comp.{u_1, u_2, u_3} {ι : Type u_1} {κ : Type u_2}
+  {η : Type u_3} [Fintype ι] [Fintype κ] [Fintype η] [DecidableEq ι] (P : Matrix ι ι ℝ) (e : κ → ι) (f : η → κ) :
+  MeasureTheory.Measure.map (⇑(GeneratedFoundations.Operations.FiniteMatrixGaussian.select f))
+      (MeasureTheory.Measure.map (⇑(GeneratedFoundations.Operations.FiniteMatrixGaussian.select e))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.law P)) =
+    MeasureTheory.Measure.map (⇑(GeneratedFoundations.Operations.FiniteMatrixGaussian.select (e ∘ f)))
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.law P)
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_law_comp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_mean.{u_1, u_2} {ι : Type u_1} {κ : Type u_2} [Fintype ι]
+  [Fintype κ] [DecidableEq ι] (P : Matrix ι ι ℝ) (e : κ → ι) :
+  ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space κ),
+      x ∂MeasureTheory.Measure.map (⇑(GeneratedFoundations.Operations.FiniteMatrixGaussian.select e))
+        (GeneratedFoundations.Operations.FiniteMatrixGaussian.law P) =
+    0
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_score_covariance.{u_1, u_2} {ι : Type u_1} {κ : Type u_2}
+  [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) (V W : Matrix κ κ ℝ) (hW : W.IsSymm) :
+  ProbabilityTheory.covariance
+      (fun x =>
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score V
+          ((GeneratedFoundations.Operations.FiniteMatrixGaussian.select e) x))
+      (fun x =>
+        GeneratedFoundations.Operations.FiniteMatrixGaussian.score W
+          ((GeneratedFoundations.Operations.FiniteMatrixGaussian.select e) x))
+      (GeneratedFoundations.Operations.FiniteMatrixGaussian.law P) =
+    (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance P e * V *
+            GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance P e *
+          W).trace /
+      2
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_score_covariance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_score_mean.{u_1, u_2} {ι : Type u_1} {κ : Type u_2}
+  [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ] {P : Matrix ι ι ℝ} (hP : P.PosDef) {e : κ → ι}
+  (he : Function.Injective e) (V : Matrix κ κ ℝ) :
+  ∫ (x : GeneratedFoundations.Operations.FiniteMatrixGaussian.Space ι),
+      GeneratedFoundations.Operations.FiniteMatrixGaussian.score V
+        ((GeneratedFoundations.Operations.FiniteMatrixGaussian.select e)
+          x) ∂GeneratedFoundations.Operations.FiniteMatrixGaussian.law P =
+    (GeneratedFoundations.Operations.FiniteMatrixGaussian.retainedCovariance P e * V).trace / 2
+'GeneratedFoundations.Operations.FiniteMatrixGaussian.selected_score_mean' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
