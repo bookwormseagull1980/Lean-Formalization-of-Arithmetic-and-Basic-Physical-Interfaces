@@ -112,6 +112,11 @@ Yang-Mills radius realizations, units, logical axioms and proof coverage.
 
 ## Papers, calculations and citation
 
+The philosophical basis and common research programme are developed in
+[The Logical Starting Point of Mathematical Logic and Natural Generation](https://github.com/bookwormseagull1980/Book-and-Articles/tree/main/articles/the-logical-starting-point-of-mathematical-logic-and-natural-generation). The article connects the account of change and
+multi-level order to the arithmetic, physical and computational constructions
+and explains how the book and technical papers fit together.
+
 The [Book-and-Articles collection](https://github.com/bookwormseagull1980/Book-and-Articles)
 contains the reading PDFs and their individual archival identifiers.
 [V5](https://github.com/bookwormseagull1980/coarse-graining-genesis)
