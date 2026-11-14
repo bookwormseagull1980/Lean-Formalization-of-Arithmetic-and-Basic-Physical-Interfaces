@@ -25,6 +25,18 @@ manuscripts. Compiler and axiom audits record the declarations actually checked
 in each audit; the full technical reference preserves the detailed construction
 and the separate audit snapshots.
 
+## Questions the formal construction answers
+
+| Mathematical question | Result provided by the library | Where to inspect it |
+| --- | --- | --- |
+| How does the common source determine a spectral carrier? | Carrier classification, Gaussian selection, endpoint construction and the original reflecting operator are connected by typed maps and theorems | [Common-source entry](GeneratedFoundations/CanonicalClosedWorld.lean) |
+| Are arithmetic operations defined only after assigning integer labels? | Native response order, operations and recursion are constructed before winding-degree certification | [Arithmetic foundation](GeneratedFoundations/Arithmetic/GeneratedFoundation.lean) |
+| Does equal value mean equal subsequent response? | A retained history difference has zero initial value readout and nonzero later value response | [History response reduction](GeneratedFoundations/Analysis/HistoryResponseReduction.lean) |
+| What remains after history coordinates are eliminated? | The reduced response carries an exact memory term from the same assembly operator | [History dynamics](GeneratedFoundations/Arithmetic/CompleteHistoryDynamics.lean) and [response reduction](GeneratedFoundations/Analysis/HistoryResponseReduction.lean) |
+| Which operator has the generated Yang–Mills gap? | The original-field differential Hessian, its self-adjoint closure, full coercivity and attained spectral bottom | [Hessian declarations](GeneratedFoundations/Physical/SourceHaarYangMillsHessian.lean) |
+
+These entries give a first route into the results. The construction table below covers the broader physical interfaces, and the theorem index supplies declaration-level correspondence. A statement's checked scope is recorded by the build and axiom audit for its source revision.
+
 ## What the library establishes
 
 | Construction | Principal output | Formal entry |
